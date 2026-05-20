@@ -21,6 +21,7 @@ If you are building education agents, AI learning assistants, AI teachers, curri
 
 - [Understand In 30 Seconds](#understand-in-30-seconds)
 - [Default: Hermes Agent](#defaulthermes-agent)
+- [Install A Single Skill](#install-a-single-skill)
 - [Export To Other AI Tools Or Agents](#export-to-other-ai-tools-or-agents)
 - [Choose By Role](#choose-by-role)
 - [Skill Category Overview](#skill-category-overview)
@@ -108,6 +109,12 @@ Install the Skill Pack into Hermes Agent:
 npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
 ```
 
+Install one Skill into Hermes Agent:
+
+```bash
+npm run agent:install -- --tool hermes --skill agent-study-plan --config ~/.hermes/config.yaml
+```
+
 Print the Hermes config snippet without writing a file:
 
 ```bash
@@ -128,6 +135,26 @@ from tools.skills_tool import skills_list, skill_view
 skills_list()
 skill_view("primary-math-mental-arithmetic")
 ```
+
+## Install A Single Skill
+
+Many users only want to try one capability first instead of installing the full Skill Pack. Every install/export command supports `--skill <slug>`. You can pass it multiple times or use a comma-separated list.
+
+| Target | Command |
+| --- | --- |
+| Hermes single Skill | `npm run agent:install -- --tool hermes --skill agent-study-plan --config ~/.hermes/config.yaml` |
+| OpenClaw single Skill | `npm run agent:install -- --tool openclaw --skill primary-math-mental-arithmetic` |
+| Codex single Skill | `npm run agent:install -- --tool codex --skill agent-socratic-tutor` |
+| Cursor single Skill | `npm run agent:install -- --tool cursor --workspace /path/to/project --skill agent-study-plan` |
+| Generic Agent single Skill | `npm run agent:convert -- --tool generic-agent --skill agent-study-plan --target ./dist/one-skill` |
+
+Install multiple Skills at once:
+
+```bash
+npm run agent:install -- --tool openclaw --skill agent-study-plan,agent-mistake-review
+```
+
+If you are unsure about the slug, open the Skill table in this README or search `slug` in `catalog.json`.
 
 ## Export To Other AI Tools Or Agents
 

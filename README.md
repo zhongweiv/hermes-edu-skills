@@ -21,6 +21,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 
 - [30 秒理解](#30-秒理解)
 - [默认使用：Hermes Agent](#默认使用hermes-agent)
+- [只安装单个 Skill](#只安装单个-skill)
 - [导出给其它 AI 工具或 Agent](#导出给其它-ai-工具或-agent)
 - [按角色选择](#按角色选择)
 - [技能分类总览](#技能分类总览)
@@ -108,6 +109,12 @@ npm run validate
 npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
 ```
 
+只安装一个 Skill 到 Hermes Agent：
+
+```bash
+npm run agent:install -- --tool hermes --skill agent-study-plan --config ~/.hermes/config.yaml
+```
+
 如果你只想先查看需要写入的 Hermes 配置：
 
 ```bash
@@ -128,6 +135,26 @@ from tools.skills_tool import skills_list, skill_view
 skills_list()
 skill_view("primary-math-mental-arithmetic")
 ```
+
+## 只安装单个 Skill
+
+很多用户第一次只想试一个能力，不需要把完整 Skill Pack 全部安装。所有安装/导出命令都支持 `--skill <slug>`，可以多次传入，也可以用逗号分隔。
+
+| 目标 | 命令 |
+| --- | --- |
+| Hermes 单个 Skill | `npm run agent:install -- --tool hermes --skill agent-study-plan --config ~/.hermes/config.yaml` |
+| OpenClaw 单个 Skill | `npm run agent:install -- --tool openclaw --skill primary-math-mental-arithmetic` |
+| Codex 单个 Skill | `npm run agent:install -- --tool codex --skill agent-socratic-tutor` |
+| Cursor 单个 Skill | `npm run agent:install -- --tool cursor --workspace /path/to/project --skill agent-study-plan` |
+| 通用 Agent 单个 Skill | `npm run agent:convert -- --tool generic-agent --skill agent-study-plan --target ./dist/one-skill` |
+
+一次安装多个 Skill：
+
+```bash
+npm run agent:install -- --tool openclaw --skill agent-study-plan,agent-mistake-review
+```
+
+如果不确定 slug，可以先在 README 的 Skill 表格中点击查看，或在 `catalog.json` 中搜索 `slug`。
 
 ## 导出给其它 AI 工具或 Agent
 

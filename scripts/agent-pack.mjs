@@ -36,16 +36,20 @@ Compatibility aliases:
 
 Examples:
   npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
+  npm run agent:install -- --tool hermes --skill agent-study-plan --config ~/.hermes/config.yaml
   npm run agent:install -- --tool openclaw
+  npm run agent:install -- --tool openclaw --skill primary-math-mental-arithmetic
   npm run agent:install -- --tool codex
   npm run agent:install -- --tool claude-code --workspace .
   npm run agent:install -- --tool cursor --workspace /path/to/project
   npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
+  npm run agent:convert -- --tool generic-agent --skill agent-study-plan --target ./dist/one-skill
 
 Options:
   --category <name>       Export only one category. Can be used multiple times or comma-separated.
   --config <path>         Hermes config path.
   --include-examples      Include doc_only example Skills.
+  --skill <slug>          Export/install only selected Skill slug/name. Can be used multiple times or comma-separated.
   --target <path>         Destination directory.
   --workspace <path>      Project/workspace directory for project-scoped installs.
   --dry-run               Print actions without writing files.
@@ -61,6 +65,7 @@ function parseArgs(argv) {
     dryRun: false,
     format: '',
     includeExamples: false,
+    skills: [],
     target: '',
     tool: '',
     workspace: '',
@@ -91,6 +96,10 @@ function parseArgs(argv) {
       args.format = arg.slice('--format='.length);
     } else if (arg === '--include-examples') {
       args.includeExamples = true;
+    } else if (arg === '--skill') {
+      args.skills.push(...readValue().split(',').map((item) => item.trim()).filter(Boolean));
+    } else if (arg.startsWith('--skill=')) {
+      args.skills.push(...arg.slice('--skill='.length).split(',').map((item) => item.trim()).filter(Boolean));
     } else if (arg === '--target') {
       args.target = readValue();
     } else if (arg.startsWith('--target=')) {
@@ -141,11 +150,28 @@ function readCatalog() {
 function selectedSkills(args) {
   const catalog = readCatalog();
   const categories = new Set(args.categories);
-  return catalog.skills.filter((skill) => {
+  const requestedSkills = new Set(args.skills);
+  const selected = catalog.skills.filter((skill) => {
     if (!args.includeExamples && skill.exportMode === 'doc_only') return false;
     if (categories.size > 0 && !categories.has(skill.category)) return false;
+    if (requestedSkills.size > 0 && !requestedSkills.has(skill.slug) && !requestedSkills.has(skill.name)) return false;
     return true;
   });
+
+  if (requestedSkills.size > 0) {
+    const matched = new Set(selected.flatMap((skill) => [skill.slug, skill.name]));
+    const missing = [...requestedSkills].filter((name) => !matched.has(name));
+    if (missing.length) {
+      const examples = catalog.skills
+        .filter((skill) => skill.slug.includes(missing[0]) || skill.name.includes(missing[0]))
+        .slice(0, 5)
+        .map((skill) => skill.slug);
+      throw new Error(`Skill not found or filtered out: ${missing.join(', ')}${examples.length ? `. Similar: ${examples.join(', ')}` : ''}`);
+    }
+  }
+
+  if (selected.length === 0) throw new Error('No Skills matched the provided filters.');
+  return selected;
 }
 
 function ensureTool(tool) {
@@ -166,6 +192,11 @@ function defaultFlatTarget(tool, args) {
   if (tool === 'claude-code') return join(homeDir(), '.claude', 'skills');
   if (tool === 'generic-agent') return join(process.cwd(), 'dist', 'agent-skills');
   throw new Error(`No default flat target for ${tool}`);
+}
+
+function defaultHermesSelectedTarget(args) {
+  if (args.target) return args.target;
+  return join(homeDir(), '.hermes', 'skills', 'hermes-edu-skills');
 }
 
 function cursorTargets(args) {
@@ -305,7 +336,14 @@ function copyCursorPack(args) {
 }
 
 function installHermes(args) {
-  const skillsDir = normalizePathForConfig(skillsRoot);
+  const hasSelection = args.skills.length > 0 || args.categories.length > 0 || args.includeExamples;
+  const selectedRoot = hasSelection ? ensureSafeTarget(defaultHermesSelectedTarget(args)) : skillsRoot;
+
+  if (hasSelection) {
+    copyFlatSkills(selectedRoot, 'hermes', selectedSkills(args), args);
+  }
+
+  const skillsDir = normalizePathForConfig(selectedRoot);
 
   if (!args.config) {
     console.log('Add this to your Hermes config.yaml:');
