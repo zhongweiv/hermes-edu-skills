@@ -1,7 +1,7 @@
 ---
 name: "agent-weakness-boost"
-description: "薄弱项提升 Skill是面向专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_weakness_boost.run."
-version: "0.2.0"
+description: "把“薄弱项”从模糊标签变成一个可诊断、可练习、可复测的小专题提升闭环。 Workflow: agent_weakness_boost.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,73 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["查漏补缺"]
     scenarios: ["专项训练"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 薄弱项提升 Skill
 
-薄弱项提升 Skill是面向专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把“薄弱项”从模糊标签变成一个可诊断、可练习、可复测的小专题提升闭环。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把“薄弱项”从模糊标签变成一个可诊断、可练习、可复测的小专题提升闭环。
+
+## 最适合 / Best For
+
+- 某个知识点反复错
+- 考试后查漏补缺
+- 老师或家长想安排专项训练
+
+## 不适合 / Not For
+
+- 没有样本就断言薄弱点
+- 一次性补完整本书
+
+## 使用前请准备 / Inputs
+
+- 薄弱知识点或错题样本
+- 年级/学科
+- 目标分数或掌握标准
+- 可用时间
+- 最近错误表现
+
+## 推荐工作流 / Recommended Workflow
+
+- 用 3-5 个问题定位真实缺口
+- 区分概念/方法/审题/计算问题
+- 安排讲解和练习梯度
+- 复测并决定是否升级难度
+
+## 输出格式 / Output Format
+
+- 薄弱点诊断
+- 根因假设
+- 补强路线
+- 练习梯度
+- 复测标准
+
+## 质量检查 / Quality Checks
+
+- 诊断必须基于证据
+- 练习先少而准
+- 复测标准要明确
+- 不能只生成题目不讲原因
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有测评工具时，用用户提供的错题做诊断。
+- 没有题库时，生成原创小测并附答案。
+
+## 示例提示 / Example Prompts
+
+- 孩子分数应用题总错，帮我找薄弱原因并安排 3 天提升。
+- 函数图像这块总不会，先诊断再练习。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +114,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `查漏补缺`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

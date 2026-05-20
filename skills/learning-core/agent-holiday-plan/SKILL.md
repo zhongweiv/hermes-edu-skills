@@ -1,7 +1,7 @@
 ---
 name: "agent-holiday-plan"
-description: "寒暑假提升 Skill是面向寒暑假提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_holiday_plan.run."
-version: "0.2.0"
+description: "把寒暑假从“报复性补课”改成有节奏的巩固、预习、阅读和休息计划。 Workflow: agent_holiday_plan.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["假期计划"]
     scenarios: ["寒暑假提升"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 寒暑假提升 Skill
 
-寒暑假提升 Skill是面向寒暑假提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把寒暑假从“报复性补课”改成有节奏的巩固、预习、阅读和休息计划。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把寒暑假从“报复性补课”改成有节奏的巩固、预习、阅读和休息计划。
+
+## 最适合 / Best For
+
+- 寒暑假规划
+- 假期弯道提升
+- 家长安排每日学习
+- 开学前收心
+
+## 不适合 / Not For
+
+- 把假期排满造成抵触
+- 完全替代学校或机构课程
+
+## 使用前请准备 / Inputs
+
+- 假期天数
+- 年级
+- 薄弱科目
+- 每日可学习时间
+- 旅行/休息安排
+- 开学目标
+
+## 推荐工作流 / Recommended Workflow
+
+- 确定假期主目标
+- 分成巩固/预习/阅读/运动/休息模块
+- 安排周节奏
+- 设置轻量复盘
+- 开学前一周收心
+
+## 输出格式 / Output Format
+
+- 假期目标
+- 周计划
+- 每日模板
+- 弹性规则
+- 复盘表
+
+## 质量检查 / Quality Checks
+
+- 每天任务不过量
+- 必须保留休息和兴趣时间
+- 计划要能因旅行调整
+- 要有开学衔接
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有日历工具时，输出表格计划。
+- 没有学情数据时，让用户按强/中/弱描述科目。
+
+## 示例提示 / Example Prompts
+
+- 五年级暑假 40 天，每天 1 小时，帮我安排数学和阅读。
+- 初二升初三暑假怎么规划，别太卷但要有效。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +117,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `假期计划`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

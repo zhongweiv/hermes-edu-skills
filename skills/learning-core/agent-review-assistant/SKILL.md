@@ -1,7 +1,7 @@
 ---
 name: "agent-review-assistant"
-description: "复习助手 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_review_assistant.run."
-version: "0.2.0"
+description: "把复习从重新看笔记变成检索、纠错、归纳和再练习的闭环。 Workflow: agent_review_assistant.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,75 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["复习计划"]
     scenarios: ["单元复习"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 复习助手 Skill
 
-复习助手 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把复习从重新看笔记变成检索、纠错、归纳和再练习的闭环。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把复习从重新看笔记变成检索、纠错、归纳和再练习的闭环。
+
+## 最适合 / Best For
+
+- 单元复习
+- 期中期末前
+- 错题巩固
+- 知识点遗忘
+
+## 不适合 / Not For
+
+- 临考前要求押题
+- 只想复制一份空泛复习提纲
+
+## 使用前请准备 / Inputs
+
+- 复习范围
+- 剩余时间
+- 已掌握和薄弱点
+- 错题样本
+- 目标难度
+
+## 推荐工作流 / Recommended Workflow
+
+- 先用问题做主动回忆
+- 根据错误定位缺口
+- 归纳知识结构
+- 安排重点再练
+- 设置下一次复习时间
+
+## 输出格式 / Output Format
+
+- 复习范围
+- 主动回忆题
+- 知识结构
+- 错题巩固
+- 下次复习安排
+
+## 质量检查 / Quality Checks
+
+- 必须包含主动回忆
+- 复习重点要有依据
+- 不能只有知识点列表
+- 要安排间隔复习
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有错题库时，让用户粘贴错题或单元目录。
+- 没有日程工具时，输出下次复习提醒文本。
+
+## 示例提示 / Example Prompts
+
+- 帮我复习三年级数学第二单元，先问我再讲。
+- 期末前 7 天，帮我做英语复习安排。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +116,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `复习计划`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

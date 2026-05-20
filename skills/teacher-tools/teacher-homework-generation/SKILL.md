@@ -1,7 +1,7 @@
 ---
 name: "teacher-homework-generation"
-description: "作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_homework_generation.run."
-version: "0.2.0"
+description: "帮助老师生成分层、可批改、不过量的作业，而不是堆题。 Workflow: teacher_homework_generation.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -26,7 +26,7 @@ metadata:
 
 # 作业生成 Skill
 
-作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+帮助老师生成分层、可批改、不过量的作业，而不是堆题。
 
 ## 这个 Skill 解决什么问题 / Problem
 

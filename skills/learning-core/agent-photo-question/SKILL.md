@@ -1,7 +1,7 @@
 ---
 name: "agent-photo-question"
-description: "拍照答疑 Skill是面向拍照答疑、课后作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_photo_question.run."
-version: "0.2.0"
+description: "把拍照题目转成先识题、再讲思路、最后追问确认的学习过程，而不是只给答案。 Workflow: agent_photo_question.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -26,7 +26,7 @@ metadata:
 
 # 拍照答疑 Skill
 
-拍照答疑 Skill是面向拍照答疑、课后作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把拍照题目转成先识题、再讲思路、最后追问确认的学习过程，而不是只给答案。
 
 ## 这个 Skill 解决什么问题 / Problem
 

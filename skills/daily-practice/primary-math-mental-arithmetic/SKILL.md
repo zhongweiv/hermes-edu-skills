@@ -1,7 +1,7 @@
 ---
 name: "primary-math-mental-arithmetic"
-description: "小学口算速练 Skill是面向口算速练、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: primary_math_mental_arithmetic.run."
-version: "0.2.0"
+description: "为小学生生成短、准、可批改的口算训练，让每天 5-10 分钟练出速度、准确率和数感。 Workflow: primary_math_mental_arithmetic.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -19,14 +19,72 @@ metadata:
     standalone_support: "needs_user_input"
     public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 小学口算速练 Skill
 
-小学口算速练 Skill是面向口算速练、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+为小学生生成短、准、可批改的口算训练，让每天 5-10 分钟练出速度、准确率和数感。
+
+## 这个 Skill 解决什么问题 / Problem
+
+为小学生生成短、准、可批改的口算训练，让每天 5-10 分钟练出速度、准确率和数感。
+
+## 最适合 / Best For
+
+- 小学每日口算打卡
+- 家长陪练计算
+- 老师布置短练
+- 计算速度和准确率提升
+
+## 不适合 / Not For
+
+- 超纲竞赛题
+- 长时间机械刷题
+- 没有批改反馈的重复练习
+
+## 使用前请准备 / Inputs
+
+- 年级
+- 计算范围
+- 题量或时长
+- 难度
+- 最近容易错的类型
+
+## 推荐工作流 / Recommended Workflow
+
+- 确认年级和计算范围
+- 生成短组口算题
+- 给答案和批改标准
+- 根据错误分类
+- 安排下一组针对练习
+
+## 输出格式 / Output Format
+
+- 训练目标
+- 口算题组
+- 答案
+- 错因记录
+- 下一组建议
+
+## 质量检查 / Quality Checks
+
+- 题量匹配时长
+- 难度不能跳级
+- 答案必须可核验
+- 错题要转化为下次训练点
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有练习工具时，直接生成题目和答案。
+- 没有历史记录时，从年级默认范围开始。
+
+## 示例提示 / Example Prompts
+
+- 二年级下册表内除法，生成 20 道 5 分钟口算。
+- 孩子退位减法容易错，帮我做一组专项口算。
 
 ## 适用场景 / When To Use
 
@@ -67,7 +125,7 @@ metadata:
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
 - 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。

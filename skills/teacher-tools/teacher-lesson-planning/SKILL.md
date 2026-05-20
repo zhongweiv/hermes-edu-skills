@@ -1,7 +1,7 @@
 ---
 name: "teacher-lesson-planning"
-description: "老师备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_lesson_planning.run."
-version: "0.2.0"
+description: "把备课从罗列知识点变成目标、活动、评价一致的课堂设计。 Workflow: teacher_lesson_planning.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -26,7 +26,7 @@ metadata:
 
 # 老师备课 Skill
 
-老师备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把备课从罗列知识点变成目标、活动、评价一致的课堂设计。
 
 ## 这个 Skill 解决什么问题 / Problem
 

@@ -1,7 +1,7 @@
 ---
 name: "preschool-number-sense-daily"
 description: "学前数感每日练 Skill是面向数感游戏、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: preschool_number_sense_daily.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

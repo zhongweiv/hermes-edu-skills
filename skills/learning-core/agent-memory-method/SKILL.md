@@ -1,7 +1,7 @@
 ---
 name: "agent-memory-method"
-description: "记忆方法 Skill是面向背诵记忆的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_memory_method.run."
-version: "0.2.0"
+description: "把需要背的内容变成可提取、可复述、可间隔复习的记忆任务，而不是反复机械朗读。 Workflow: agent_memory_method.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,75 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["记忆"]
     scenarios: ["背诵记忆"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 记忆方法 Skill
 
-记忆方法 Skill是面向背诵记忆的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把需要背的内容变成可提取、可复述、可间隔复习的记忆任务，而不是反复机械朗读。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把需要背的内容变成可提取、可复述、可间隔复习的记忆任务，而不是反复机械朗读。
+
+## 最适合 / Best For
+
+- 古诗课文背诵
+- 英语单词
+- 公式概念
+- 历史地理知识点
+
+## 不适合 / Not For
+
+- 超大量内容一次性硬背
+- 完全不理解内容就要求长期记住
+
+## 使用前请准备 / Inputs
+
+- 要记忆的文本/词表/知识点
+- 年级
+- 截止时间
+- 已掌握程度
+- 容易忘的部分
+
+## 推荐工作流 / Recommended Workflow
+
+- 压缩成记忆块
+- 设计提取线索
+- 安排首次背诵和回想
+- 生成间隔复习表
+- 用小测检查能否独立提取
+
+## 输出格式 / Output Format
+
+- 记忆块
+- 提取问题
+- 背诵步骤
+- 间隔复习安排
+- 自测题
+
+## 质量检查 / Quality Checks
+
+- 必须包含主动回忆
+- 复习间隔要明确
+- 不能只给口诀
+- 要区分理解和记忆
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有记忆工具时，输出可复制的复习卡片。
+- 没有历史记录时，从当前材料生成首轮计划。
+
+## 示例提示 / Example Prompts
+
+- 帮我把这首古诗拆成今晚能背下来的步骤。
+- 这些英语单词容易混，帮我做记忆卡和复习计划。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +116,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `记忆`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

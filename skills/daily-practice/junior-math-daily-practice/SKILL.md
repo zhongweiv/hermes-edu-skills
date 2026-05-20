@@ -1,7 +1,7 @@
 ---
 name: "junior-math-daily-practice"
 description: "初中数学每日练 Skill是面向每日打卡、专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_math_daily_practice.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

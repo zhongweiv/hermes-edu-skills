@@ -1,7 +1,7 @@
 ---
 name: "agent-weekly-review"
-description: "每周复盘 Skill是面向学习报告的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_weekly_review.run."
-version: "0.2.0"
+description: "把一周学习从流水账整理成进步、问题、下周行动三件事，让学生和家长都知道下一步做什么。 Workflow: agent_weekly_review.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,75 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["阶段复盘"]
     scenarios: ["学习报告"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "report.aggregate_metrics", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 每周复盘 Skill
 
-每周复盘 Skill是面向学习报告的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把一周学习从流水账整理成进步、问题、下周行动三件事，让学生和家长都知道下一步做什么。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把一周学习从流水账整理成进步、问题、下周行动三件事，让学生和家长都知道下一步做什么。
+
+## 最适合 / Best For
+
+- 周末复盘
+- 家长查看学习状态
+- 老师做阶段反馈
+- 长期学习习惯建立
+
+## 不适合 / Not For
+
+- 没有记录却编造成果
+- 用排名或负面评价刺激学生
+
+## 使用前请准备 / Inputs
+
+- 本周学习记录
+- 练习正确率或错题
+- 完成/未完成任务
+- 学生自我感受
+- 下周目标
+
+## 推荐工作流 / Recommended Workflow
+
+- 分离事实和感受
+- 找出本周有效动作
+- 定位一个最重要问题
+- 制定下周 3 个可执行动作
+- 写一段给学生的正向反馈
+
+## 输出格式 / Output Format
+
+- 本周摘要
+- 进步证据
+- 主要问题
+- 下周三件事
+- 学生鼓励语
+
+## 质量检查 / Quality Checks
+
+- 不编造数据
+- 反馈要具体
+- 下周目标不能过多
+- 必须包含学生能执行的动作
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有平台记录时，让用户粘贴本周任务和错题。
+- 没有报表工具时，输出可保存周报。
+
+## 示例提示 / Example Prompts
+
+- 根据这一周的学习记录，帮我做周复盘和下周计划。
+- 孩子这周错题多但有进步，帮我写一份不焦虑的反馈。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +116,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `阶段复盘`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `report.aggregate_metrics`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

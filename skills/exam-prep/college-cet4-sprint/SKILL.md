@@ -1,7 +1,7 @@
 ---
 name: "college-cet4-sprint"
 description: "大学英语四级备考 Skill是面向考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: college_cet4_sprint.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

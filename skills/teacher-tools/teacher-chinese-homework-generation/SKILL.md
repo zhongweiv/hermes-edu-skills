@@ -1,7 +1,7 @@
 ---
 name: "teacher-chinese-homework-generation"
 description: "语文作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_chinese_homework_generation.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

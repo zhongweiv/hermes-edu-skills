@@ -1,7 +1,7 @@
 ---
 name: "family-screen-time-balance"
 description: "屏幕时间管理 Skill是面向习惯培养的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: family_screen_time_balance.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

@@ -1,7 +1,7 @@
 ---
 name: "primary-math-rj-textbook-sync"
-description: "人教版小学数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、口算速练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: primary_math_rj_textbook_sync.run."
-version: "0.2.0"
+description: "围绕人教版小学数学教材，把年级、册别、单元和学习目标变成可执行的预习、练习、复习和错题巩固任务。 Workflow: primary_math_rj_textbook_sync.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -26,7 +26,7 @@ metadata:
 
 # 人教版小学数学同步 Skill
 
-人教版小学数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、口算速练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+围绕人教版小学数学教材，把年级、册别、单元和学习目标变成可执行的预习、练习、复习和错题巩固任务。
 
 ## 这个 Skill 解决什么问题 / Problem
 

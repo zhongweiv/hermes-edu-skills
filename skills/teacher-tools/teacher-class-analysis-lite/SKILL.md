@@ -1,7 +1,7 @@
 ---
 name: "teacher-class-analysis-lite"
 description: "班级学情分析 Lite Skill是面向学情分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_class_analysis_lite.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

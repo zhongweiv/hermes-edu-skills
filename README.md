@@ -258,21 +258,21 @@ npm run export:agents
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [薄弱项提升 Skill](skills/learning-core/agent-weakness-boost/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 查漏补缺 | 专项训练 |
+| [薄弱项提升 Skill](skills/learning-core/agent-weakness-boost/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 查漏补缺 | 专项训练 |
 | [错题复盘 Skill](skills/learning-core/agent-mistake-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 错题订正、复习计划 | 错题订正、单元复习 |
-| [复习助手 Skill](skills/learning-core/agent-review-assistant/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [寒暑假提升 Skill](skills/learning-core/agent-holiday-plan/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 假期计划 | 寒暑假提升 |
-| [记忆方法 Skill](skills/learning-core/agent-memory-method/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 记忆 | 背诵记忆 |
-| [课前预习 Skill](skills/learning-core/agent-preview-assistant/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 预习 | 课前预习 |
-| [每周复盘 Skill](skills/learning-core/agent-weekly-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阶段复盘 | 学习报告 |
+| [复习助手 Skill](skills/learning-core/agent-review-assistant/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [寒暑假提升 Skill](skills/learning-core/agent-holiday-plan/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 假期计划 | 寒暑假提升 |
+| [记忆方法 Skill](skills/learning-core/agent-memory-method/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 记忆 | 背诵记忆 |
+| [课前预习 Skill](skills/learning-core/agent-preview-assistant/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 预习 | 课前预习 |
+| [每周复盘 Skill](skills/learning-core/agent-weekly-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阶段复盘 | 学习报告 |
 | [拍照答疑 Skill](skills/learning-core/agent-photo-question/SKILL.md) | 精品打磨 | 需工具支持 | primary、junior、senior | 综合 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | AI 讲题、图片识题 | 拍照答疑、课后作业 |
-| [启发式讲解 Skill](skills/learning-core/agent-socratic-tutor/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 启发提问 | AI 讲题 |
+| [启发式讲解 Skill](skills/learning-core/agent-socratic-tutor/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 启发提问 | AI 讲题 |
 | [学情报告 Skill](skills/learning-core/agent-learning-report/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 学情报告、学习建议 | 学习报告、家长沟通 |
 | [学习计划 Skill](skills/learning-core/agent-study-plan/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior、senior、college、adult | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 学习计划、目标管理 | 今日学习、寒暑假提升、考前规划 |
-| [学习习惯 Skill](skills/learning-core/agent-learning-habit/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 习惯培养 | 每日打卡 |
-| [专注力训练 Skill](skills/learning-core/agent-focus-training/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 专注 | 每日打卡 |
-| [作业陪伴 Skill](skills/learning-core/agent-homework-companion/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业陪伴 | 课后作业 |
-| [AI 讲题 Skill](skills/learning-core/agent-question-explanation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior、college | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | AI 讲题、举一反三 | 课后作业、同步巩固 |
+| [学习习惯 Skill](skills/learning-core/agent-learning-habit/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 习惯培养 | 每日打卡 |
+| [专注力训练 Skill](skills/learning-core/agent-focus-training/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 专注 | 每日打卡 |
+| [作业陪伴 Skill](skills/learning-core/agent-homework-companion/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业陪伴 | 课后作业 |
+| [AI 讲题 Skill](skills/learning-core/agent-question-explanation/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior、college | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | AI 讲题、举一反三 | 课后作业、同步巩固 |
 
 ### <a id="daily-practice"></a>每日练习 Daily Practice
 
@@ -301,11 +301,11 @@ npm run export:agents
 | [高中英语快速巩固 Skill](skills/daily-practice/senior-english-quick-practice/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 同步巩固、专项训练 | 每日打卡、同步巩固 |
 | [高中语文快速巩固 Skill](skills/daily-practice/senior-chinese-quick-practice/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 同步巩固、专项训练 | 每日打卡、同步巩固 |
 | [高中政治快速巩固 Skill](skills/daily-practice/senior-politics-quick-practice/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 政治 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 同步巩固、专项训练 | 每日打卡、同步巩固 |
-| [小学课文古诗背诵 Skill](skills/daily-practice/primary-chinese-recitation-daily/SKILL.md) | 增强可用 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 背诵、朗读 | 背诵记忆、每日打卡 |
+| [小学课文古诗背诵 Skill](skills/daily-practice/primary-chinese-recitation-daily/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 背诵、朗读 | 背诵记忆、每日打卡 |
 | [小学口算速练 Skill](skills/daily-practice/primary-math-mental-arithmetic/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 计算、数感 | 口算速练、每日打卡 |
-| [小学英语单词每日练 Skill](skills/daily-practice/primary-english-vocabulary-daily/SKILL.md) | 增强可用 | 需用户补充上下文 | primary | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 词汇、默写 | 每日打卡、听写默写 |
-| [小学语文字词听写 Skill](skills/daily-practice/primary-chinese-dictation-daily/SKILL.md) | 增强可用 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 听写、默写 | 听写默写、每日打卡 |
-| [小学阅读每日练 Skill](skills/daily-practice/primary-reading-daily/SKILL.md) | 增强可用 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 阅读训练、每日打卡 |
+| [小学英语单词每日练 Skill](skills/daily-practice/primary-english-vocabulary-daily/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 词汇、默写 | 每日打卡、听写默写 |
+| [小学语文字词听写 Skill](skills/daily-practice/primary-chinese-dictation-daily/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 听写、默写 | 听写默写、每日打卡 |
+| [小学阅读每日练 Skill](skills/daily-practice/primary-reading-daily/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 阅读训练、每日打卡 |
 | [学前识字每日练 Skill](skills/daily-practice/preschool-literacy-daily/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 识字 | 每日启蒙、每日打卡 |
 | [学前数感每日练 Skill](skills/daily-practice/preschool-number-sense-daily/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 数感 | 数感游戏、每日打卡 |
 

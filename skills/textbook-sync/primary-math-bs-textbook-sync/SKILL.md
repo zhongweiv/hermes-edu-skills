@@ -1,7 +1,7 @@
 ---
 name: "primary-math-bs-textbook-sync"
 description: "北师大版小学数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、口算速练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: primary_math_bs_textbook_sync.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

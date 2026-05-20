@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-recitation-daily"
-description: "小学课文古诗背诵 Skill是面向背诵记忆、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: primary_chinese_recitation_daily.run."
-version: "0.2.0"
+description: "把课文和古诗背诵拆成理解、分段、提取线索和复背检查，减少死记硬背。 Workflow: primary_chinese_recitation_daily.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,75 @@ metadata:
     subjects: ["语文"]
     abilities: ["背诵", "朗读"]
     scenarios: ["背诵记忆", "每日打卡"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 小学课文古诗背诵 Skill
 
-小学课文古诗背诵 Skill是面向背诵记忆、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把课文和古诗背诵拆成理解、分段、提取线索和复背检查，减少死记硬背。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把课文和古诗背诵拆成理解、分段、提取线索和复背检查，减少死记硬背。
+
+## 最适合 / Best For
+
+- 古诗背诵
+- 课文片段背诵
+- 家长陪背
+- 早读复习
+
+## 不适合 / Not For
+
+- 完全不理解内容就要求快速背完
+- 超长篇幅一次背诵
+
+## 使用前请准备 / Inputs
+
+- 背诵内容
+- 年级
+- 截止时间
+- 已背程度
+- 容易卡住的句子
+
+## 推荐工作流 / Recommended Workflow
+
+- 先理解大意
+- 按意义分段
+- 提取关键词线索
+- 分轮背诵
+- 用遮挡和复述检查
+
+## 输出格式 / Output Format
+
+- 内容理解
+- 分段线索
+- 背诵步骤
+- 检查问题
+- 复背安排
+
+## 质量检查 / Quality Checks
+
+- 先理解再背
+- 每段长度适合年龄
+- 必须有回想检查
+- 避免一次性过量
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有教材内容时，让用户粘贴文本。
+- 没有语音工具时，输出家长提问脚本。
+
+## 示例提示 / Example Prompts
+
+- 帮孩子背这首古诗，先讲意思再安排背诵。
+- 这段课文总卡在中间，帮我设计分段背法。
 
 ## 适用场景 / When To Use
 
@@ -60,16 +117,16 @@ metadata:
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `背诵`, `朗读`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

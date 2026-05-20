@@ -1,7 +1,7 @@
 ---
 name: "agent-mistake-review"
-description: "错题复盘 Skill是面向错题订正、单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_mistake_review.run."
-version: "0.2.0"
+description: "把错题从改正答案升级为找到错误模式并安排复习。 Workflow: agent_mistake_review.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -26,7 +26,7 @@ metadata:
 
 # 错题复盘 Skill
 
-错题复盘 Skill是面向错题订正、单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把错题从改正答案升级为找到错误模式并安排复习。
 
 ## 这个 Skill 解决什么问题 / Problem
 

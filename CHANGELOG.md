@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 - 2026-05-21
+
+- Curates the first 20 commercial-first Skills with handcrafted problem statements, usage boundaries, inputs, workflows, output formats, quality checks, fallbacks, and example prompts.
+- Upgrades the learning-core entrance Skills from template-style descriptions to user-job focused guides for study planning, photo Q&A, question explanation, review, habits, focus, homework companion, and Socratic tutoring.
+- Upgrades five high-frequency primary daily practice Skills for mental arithmetic, dictation, recitation, vocabulary, and reading practice.
+- Keeps open export eligibility unchanged: 177 public entries, 170 installable Skills, and 7 doc-only examples.
+
 ## 0.4.1 - 2026-05-21
 
 - Improves Chinese and English README structure with a dedicated Hermes default usage section.

@@ -1,7 +1,7 @@
 ---
 name: "primary-reading-daily"
-description: "小学阅读每日练 Skill是面向阅读训练、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: primary_reading_daily.run."
-version: "0.2.0"
+description: "把小学阅读练成“读懂、找依据、会表达”的短训练，而不是泛泛问读后感。 Workflow: primary_reading_daily.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,75 @@ metadata:
     subjects: ["语文"]
     abilities: ["阅读理解"]
     scenarios: ["阅读训练", "每日打卡"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 小学阅读每日练 Skill
 
-小学阅读每日练 Skill是面向阅读训练、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把小学阅读练成“读懂、找依据、会表达”的短训练，而不是泛泛问读后感。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把小学阅读练成“读懂、找依据、会表达”的短训练，而不是泛泛问读后感。
+
+## 最适合 / Best For
+
+- 每日阅读理解
+- 课外短文训练
+- 语文阅读薄弱
+- 家长陪读
+
+## 不适合 / Not For
+
+- 替孩子写完整读后感
+- 没有文本却要求精准题目
+
+## 使用前请准备 / Inputs
+
+- 阅读文本或文章主题
+- 年级
+- 训练目标
+- 题量
+- 学生常错类型
+
+## 推荐工作流 / Recommended Workflow
+
+- 先确认文章大意
+- 设计找信息/推断/表达三类问题
+- 要求答案回到文本依据
+- 讲解错误原因
+- 给一个表达提升小任务
+
+## 输出格式 / Output Format
+
+- 阅读目标
+- 问题组
+- 参考答案
+- 文本依据
+- 表达提升
+
+## 质量检查 / Quality Checks
+
+- 问题要贴合文本
+- 答案必须有依据
+- 不要过度拔高
+- 训练时间要短
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有文本库时，让用户粘贴短文。
+- 没有批改工具时，提供参考答案和自查标准。
+
+## 示例提示 / Example Prompts
+
+- 根据这篇短文，给四年级孩子出 5 道阅读题并讲答案依据。
+- 孩子阅读总写不完整，帮我做每日训练。
 
 ## 适用场景 / When To Use
 
@@ -61,16 +118,16 @@ metadata:
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `阅读理解`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

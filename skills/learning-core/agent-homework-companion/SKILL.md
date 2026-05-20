@@ -1,7 +1,7 @@
 ---
 name: "agent-homework-companion"
-description: "作业陪伴 Skill是面向课后作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_homework_companion.run."
-version: "0.2.0"
+description: "陪学生完成作业全过程：先规划顺序，再在卡住时提示，不替写，最后做自查和订正。 Workflow: agent_homework_companion.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["作业陪伴"]
     scenarios: ["课后作业"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 作业陪伴 Skill
 
-作业陪伴 Skill是面向课后作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+陪学生完成作业全过程：先规划顺序，再在卡住时提示，不替写，最后做自查和订正。
+
+## 这个 Skill 解决什么问题 / Problem
+
+陪学生完成作业全过程：先规划顺序，再在卡住时提示，不替写，最后做自查和订正。
+
+## 最适合 / Best For
+
+- 家庭作业陪伴
+- 学生容易卡在第一题
+- 家长希望少吼少催
+- 需要作业后自查
+
+## 不适合 / Not For
+
+- 代写作业
+- 替学生完成整篇作文或解答
+- 不看题目只泛泛鼓励
+
+## 使用前请准备 / Inputs
+
+- 作业清单
+- 预计时长
+- 最难的一项
+- 学生年级
+- 家长希望介入程度
+
+## 推荐工作流 / Recommended Workflow
+
+- 按难度和精力排序
+- 约定每段任务时长
+- 卡住时给提示而非答案
+- 完成后自查
+- 把错因或拖延点写入复盘
+
+## 输出格式 / Output Format
+
+- 作业路线图
+- 每段计时
+- 卡点提示
+- 自查清单
+- 家长沟通建议
+
+## 质量检查 / Quality Checks
+
+- 必须保护学生独立完成
+- 提示要逐级给出
+- 不能制造对抗
+- 结束时要有复盘
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有作业系统时，让用户粘贴作业清单。
+- 没有计时器时，输出手动执行表。
+
+## 示例提示 / Example Prompts
+
+- 今晚有数学、语文、英语作业，帮我安排顺序并陪我做。
+- 孩子写作业容易崩溃，给我一个陪伴流程。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +117,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `作业陪伴`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

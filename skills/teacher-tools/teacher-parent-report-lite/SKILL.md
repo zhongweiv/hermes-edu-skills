@@ -1,7 +1,7 @@
 ---
 name: "teacher-parent-report-lite"
 description: "家长反馈报告 Lite Skill是面向家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_parent_report_lite.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

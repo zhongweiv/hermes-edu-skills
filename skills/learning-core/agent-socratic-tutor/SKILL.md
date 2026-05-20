@@ -1,7 +1,7 @@
 ---
 name: "agent-socratic-tutor"
-description: "启发式讲解 Skill是面向AI 讲题的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_socratic_tutor.run."
-version: "0.2.0"
+description: "用启发式追问帮助学生自己走到答案，而不是把标准答案一次性倒出来。 Workflow: agent_socratic_tutor.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["启发提问"]
     scenarios: ["AI 讲题"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 启发式讲解 Skill
 
-启发式讲解 Skill是面向AI 讲题的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+用启发式追问帮助学生自己走到答案，而不是把标准答案一次性倒出来。
+
+## 这个 Skill 解决什么问题 / Problem
+
+用启发式追问帮助学生自己走到答案，而不是把标准答案一次性倒出来。
+
+## 最适合 / Best For
+
+- 概念理解困难
+- 学生有一点思路但不完整
+- 需要训练表达和推理
+- 家长想少讲多问
+
+## 不适合 / Not For
+
+- 用户明确需要快速核对事实
+- 时间极短且只要答案
+- 学生情绪已经崩溃需要先安抚
+
+## 使用前请准备 / Inputs
+
+- 题目或概念
+- 学生当前想法
+- 年级
+- 希望提示强度
+- 是否允许最后给完整解法
+
+## 推荐工作流 / Recommended Workflow
+
+- 复述学生已有理解
+- 提出一个最小下一步问题
+- 根据回答调整提示强度
+- 让学生总结思路
+- 必要时再给完整解法
+
+## 输出格式 / Output Format
+
+- 当前理解
+- 引导问题
+- 逐级提示
+- 学生复述任务
+- 最终总结
+
+## 质量检查 / Quality Checks
+
+- 每次只问一个关键问题
+- 不能连续追问造成挫败
+- 提示要逐级变明确
+- 最后要让学生用自己的话总结
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有交互工具时，输出 3 轮可复制的问答脚本。
+- 学生不回复时，给下一层提示而非直接放弃。
+
+## 示例提示 / Example Prompts
+
+- 用提问方式带我理解一元一次方程，不要直接讲完。
+- 我知道大概思路，但不会下一步，请一步步问我。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +117,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `启发提问`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

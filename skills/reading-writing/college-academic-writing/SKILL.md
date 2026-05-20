@@ -1,7 +1,7 @@
 ---
 name: "college-academic-writing"
 description: "学术写作 Skill是面向论文训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: college_academic_writing.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

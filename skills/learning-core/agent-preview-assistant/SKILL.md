@@ -1,7 +1,7 @@
 ---
 name: "agent-preview-assistant"
-description: "课前预习 Skill是面向课前预习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_preview_assistant.run."
-version: "0.2.0"
+description: "把预习从“提前看一遍”变成带问题进入课堂：先扫知识、再标疑问、最后准备课堂关注点。 Workflow: agent_preview_assistant.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,75 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["预习"]
     scenarios: ["课前预习"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 课前预习 Skill
 
-课前预习 Skill是面向课前预习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把预习从“提前看一遍”变成带问题进入课堂：先扫知识、再标疑问、最后准备课堂关注点。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把预习从“提前看一遍”变成带问题进入课堂：先扫知识、再标疑问、最后准备课堂关注点。
+
+## 最适合 / Best For
+
+- 课前预习
+- 新单元开始前
+- 学生上课容易跟不上
+- 家长陪孩子预习
+
+## 不适合 / Not For
+
+- 替代课堂学习
+- 直接讲完整课程导致学生课堂失去探索
+
+## 使用前请准备 / Inputs
+
+- 年级/学科
+- 教材版本或单元标题
+- 预习材料/目录
+- 学生已知基础
+- 课堂前可用时间
+
+## 推荐工作流 / Recommended Workflow
+
+- 快速定位本课目标
+- 激活旧知识
+- 给 3-5 个预习问题
+- 标出可能难点
+- 生成课堂听课清单
+
+## 输出格式 / Output Format
+
+- 本课要点
+- 旧知识回顾
+- 预习问题
+- 疑问清单
+- 课堂关注点
+
+## 质量检查 / Quality Checks
+
+- 不提前灌满答案
+- 问题要能引发课堂注意
+- 必须区分已会和待学
+- 控制在可完成时间内
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有教材库时，让用户输入目录或拍课本目录。
+- 没有学习记录时，用年级常见基础作为起点。
+
+## 示例提示 / Example Prompts
+
+- 明天学三角形面积，帮我做 15 分钟预习。
+- 这篇课文课前怎么预习，帮我列问题。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +116,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `预习`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

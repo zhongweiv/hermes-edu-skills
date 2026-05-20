@@ -1,7 +1,7 @@
 ---
 name: "agent-study-plan"
-description: "学习计划 Skill是面向今日学习、寒暑假提升、考前规划的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_study_plan.run."
-version: "0.2.0"
+description: "把模糊目标拆成今天、这一周和下一轮可执行的学习安排。 Workflow: agent_study_plan.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -26,7 +26,7 @@ metadata:
 
 # 学习计划 Skill
 
-学习计划 Skill是面向今日学习、寒暑假提升、考前规划的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把模糊目标拆成今天、这一周和下一轮可执行的学习安排。
 
 ## 这个 Skill 解决什么问题 / Problem
 

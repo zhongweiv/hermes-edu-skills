@@ -1,7 +1,7 @@
 ---
 name: "agent-learning-report"
-description: "学情报告 Skill是面向学习报告、家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_learning_report.run."
-version: "0.2.0"
+description: "把零散练习记录整理成家长、老师和学生都能看懂的学情判断。 Workflow: agent_learning_report.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -26,7 +26,7 @@ metadata:
 
 # 学情报告 Skill
 
-学情报告 Skill是面向学习报告、家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把零散练习记录整理成家长、老师和学生都能看懂的学情判断。
 
 ## 这个 Skill 解决什么问题 / Problem
 

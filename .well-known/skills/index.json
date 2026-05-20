@@ -1,7 +1,7 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.4.1",
-  "generatedAt": "2026-05-20T21:01:38.522Z",
+  "version": "0.5.0",
+  "generatedAt": "2026-05-20T22:07:36.948Z",
   "skills": [
     {
       "name": "adult-language-learning",
@@ -985,7 +985,7 @@
     },
     {
       "name": "agent-study-plan",
-      "description": "学习计划 Skill是面向今日学习、寒暑假提升、考前规划的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把模糊目标拆成今天、这一周和下一轮可执行的学习安排。",
       "path": "skills/learning-core/agent-study-plan/SKILL.md",
       "tags": [
         "preschool",
@@ -1004,14 +1004,14 @@
     },
     {
       "name": "primary-chinese-dictation-daily",
-      "description": "小学语文字词听写 Skill是面向听写默写、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把生字词听写做成“会读、会写、会用、会订正”的每日小闭环。",
       "path": "skills/daily-practice/primary-chinese-dictation-daily/SKILL.md",
       "tags": [
         "primary",
         "语文",
         "听写默写",
         "每日打卡",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1029,14 +1029,14 @@
     },
     {
       "name": "primary-chinese-recitation-daily",
-      "description": "小学课文古诗背诵 Skill是面向背诵记忆、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把课文和古诗背诵拆成理解、分段、提取线索和复背检查，减少死记硬背。",
       "path": "skills/daily-practice/primary-chinese-recitation-daily/SKILL.md",
       "tags": [
         "primary",
         "语文",
         "背诵记忆",
         "每日打卡",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1100,14 +1100,14 @@
     },
     {
       "name": "primary-english-vocabulary-daily",
-      "description": "小学英语单词每日练 Skill是面向每日打卡、听写默写的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "让小学英语单词练习从“背拼写”升级为音、形、义、句一起掌握。",
       "path": "skills/daily-practice/primary-english-vocabulary-daily/SKILL.md",
       "tags": [
         "primary",
         "英语",
         "每日打卡",
         "听写默写",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1177,7 +1177,7 @@
     },
     {
       "name": "primary-math-mental-arithmetic",
-      "description": "小学口算速练 Skill是面向口算速练、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "为小学生生成短、准、可批改的口算训练，让每天 5-10 分钟练出速度、准确率和数感。",
       "path": "skills/daily-practice/primary-math-mental-arithmetic/SKILL.md",
       "tags": [
         "primary",
@@ -1190,7 +1190,7 @@
     },
     {
       "name": "primary-math-rj-textbook-sync",
-      "description": "人教版小学数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、口算速练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "围绕人教版小学数学教材，把年级、册别、单元和学习目标变成可执行的预习、练习、复习和错题巩固任务。",
       "path": "skills/textbook-sync/primary-math-rj-textbook-sync/SKILL.md",
       "tags": [
         "primary",
@@ -1226,20 +1226,20 @@
     },
     {
       "name": "primary-reading-daily",
-      "description": "小学阅读每日练 Skill是面向阅读训练、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把小学阅读练成“读懂、找依据、会表达”的短训练，而不是泛泛问读后感。",
       "path": "skills/daily-practice/primary-reading-daily/SKILL.md",
       "tags": [
         "primary",
         "语文",
         "阅读训练",
         "每日打卡",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-focus-training",
-      "description": "专注力训练 Skill是面向每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把“孩子不专心”拆成可观察的学习环境、任务长度和反馈节奏，生成能立刻执行的专注训练方案。",
       "path": "skills/learning-core/agent-focus-training/SKILL.md",
       "tags": [
         "primary",
@@ -1247,13 +1247,13 @@
         "senior",
         "学习能力",
         "每日打卡",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-holiday-plan",
-      "description": "寒暑假提升 Skill是面向寒暑假提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把寒暑假从“报复性补课”改成有节奏的巩固、预习、阅读和休息计划。",
       "path": "skills/learning-core/agent-holiday-plan/SKILL.md",
       "tags": [
         "primary",
@@ -1261,13 +1261,13 @@
         "senior",
         "学习能力",
         "寒暑假提升",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-homework-companion",
-      "description": "作业陪伴 Skill是面向课后作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "陪学生完成作业全过程：先规划顺序，再在卡住时提示，不替写，最后做自查和订正。",
       "path": "skills/learning-core/agent-homework-companion/SKILL.md",
       "tags": [
         "primary",
@@ -1275,13 +1275,13 @@
         "senior",
         "学习能力",
         "课后作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-learning-habit",
-      "description": "学习习惯 Skill是面向每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把抽象的“养成学习习惯”落到固定触发、最小动作、即时反馈和家庭协作上。",
       "path": "skills/learning-core/agent-learning-habit/SKILL.md",
       "tags": [
         "primary",
@@ -1289,13 +1289,13 @@
         "senior",
         "学习能力",
         "每日打卡",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-learning-report",
-      "description": "学情报告 Skill是面向学习报告、家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把零散练习记录整理成家长、老师和学生都能看懂的学情判断。",
       "path": "skills/learning-core/agent-learning-report/SKILL.md",
       "tags": [
         "primary",
@@ -1310,7 +1310,7 @@
     },
     {
       "name": "agent-memory-method",
-      "description": "记忆方法 Skill是面向背诵记忆的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把需要背的内容变成可提取、可复述、可间隔复习的记忆任务，而不是反复机械朗读。",
       "path": "skills/learning-core/agent-memory-method/SKILL.md",
       "tags": [
         "primary",
@@ -1318,13 +1318,13 @@
         "senior",
         "学习能力",
         "背诵记忆",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-mistake-review",
-      "description": "错题复盘 Skill是面向错题订正、单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把错题从改正答案升级为找到错误模式并安排复习。",
       "path": "skills/learning-core/agent-mistake-review/SKILL.md",
       "tags": [
         "primary",
@@ -1339,7 +1339,7 @@
     },
     {
       "name": "agent-photo-question",
-      "description": "拍照答疑 Skill是面向拍照答疑、课后作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把拍照题目转成先识题、再讲思路、最后追问确认的学习过程，而不是只给答案。",
       "path": "skills/learning-core/agent-photo-question/SKILL.md",
       "tags": [
         "primary",
@@ -1354,7 +1354,7 @@
     },
     {
       "name": "agent-preview-assistant",
-      "description": "课前预习 Skill是面向课前预习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把预习从“提前看一遍”变成带问题进入课堂：先扫知识、再标疑问、最后准备课堂关注点。",
       "path": "skills/learning-core/agent-preview-assistant/SKILL.md",
       "tags": [
         "primary",
@@ -1362,13 +1362,13 @@
         "senior",
         "学习能力",
         "课前预习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-review-assistant",
-      "description": "复习助手 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把复习从重新看笔记变成检索、纠错、归纳和再练习的闭环。",
       "path": "skills/learning-core/agent-review-assistant/SKILL.md",
       "tags": [
         "primary",
@@ -1376,13 +1376,13 @@
         "senior",
         "学习能力",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-socratic-tutor",
-      "description": "启发式讲解 Skill是面向AI 讲题的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "用启发式追问帮助学生自己走到答案，而不是把标准答案一次性倒出来。",
       "path": "skills/learning-core/agent-socratic-tutor/SKILL.md",
       "tags": [
         "primary",
@@ -1390,13 +1390,13 @@
         "senior",
         "学习能力",
         "AI 讲题",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-weakness-boost",
-      "description": "薄弱项提升 Skill是面向专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把“薄弱项”从模糊标签变成一个可诊断、可练习、可复测的小专题提升闭环。",
       "path": "skills/learning-core/agent-weakness-boost/SKILL.md",
       "tags": [
         "primary",
@@ -1404,13 +1404,13 @@
         "senior",
         "学习能力",
         "专项训练",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "agent-weekly-review",
-      "description": "每周复盘 Skill是面向学习报告的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把一周学习从流水账整理成进步、问题、下周行动三件事，让学生和家长都知道下一步做什么。",
       "path": "skills/learning-core/agent-weekly-review/SKILL.md",
       "tags": [
         "primary",
@@ -1418,7 +1418,7 @@
         "senior",
         "学习能力",
         "学习报告",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1690,7 +1690,7 @@
     },
     {
       "name": "teacher-homework-generation",
-      "description": "作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助老师生成分层、可批改、不过量的作业，而不是堆题。",
       "path": "skills/teacher-tools/teacher-homework-generation/SKILL.md",
       "tags": [
         "primary",
@@ -1704,7 +1704,7 @@
     },
     {
       "name": "teacher-lesson-planning",
-      "description": "老师备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把备课从罗列知识点变成目标、活动、评价一致的课堂设计。",
       "path": "skills/teacher-tools/teacher-lesson-planning/SKILL.md",
       "tags": [
         "primary",
@@ -1963,7 +1963,7 @@
     },
     {
       "name": "agent-question-explanation",
-      "description": "AI 讲题 Skill是面向课后作业、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把一道题讲到学生真正会复述思路：先定位卡点，再用年级能听懂的语言拆解，最后用变式题确认理解。",
       "path": "skills/learning-core/agent-question-explanation/SKILL.md",
       "tags": [
         "primary",
@@ -1973,7 +1973,7 @@
         "学习能力",
         "课后作业",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },

@@ -1,7 +1,7 @@
 ---
 name: "agent-learning-habit"
-description: "学习习惯 Skill是面向每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_learning_habit.run."
-version: "0.2.0"
+description: "把抽象的“养成学习习惯”落到固定触发、最小动作、即时反馈和家庭协作上。 Workflow: agent_learning_habit.run."
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["习惯培养"]
     scenarios: ["每日打卡"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
     requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
 ---
 
 # 学习习惯 Skill
 
-学习习惯 Skill是面向每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把抽象的“养成学习习惯”落到固定触发、最小动作、即时反馈和家庭协作上。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把抽象的“养成学习习惯”落到固定触发、最小动作、即时反馈和家庭协作上。
+
+## 最适合 / Best For
+
+- 每日打卡坚持不了
+- 作业前磨蹭
+- 复习订正总忘记
+- 家长想减少催促
+
+## 不适合 / Not For
+
+- 用打卡制造焦虑
+- 把所有问题归咎于孩子不自律
+
+## 使用前请准备 / Inputs
+
+- 想养成的习惯
+- 孩子年级
+- 每天可用时间
+- 当前阻力
+- 家长能提供的支持
+
+## 推荐工作流 / Recommended Workflow
+
+- 选择一个最小习惯
+- 绑定固定触发点
+- 设计 3 分钟启动动作
+- 设置可见反馈
+- 每周复盘一次并调整难度
+
+## 输出格式 / Output Format
+
+- 习惯目标
+- 触发点
+- 最小行动
+- 家长话术
+- 打卡表
+- 复盘问题
+
+## 质量检查 / Quality Checks
+
+- 一次只改一个习惯
+- 动作必须小到能开始
+- 反馈不能只看分数
+- 要允许中断后恢复
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有打卡工具时，输出纸面记录表。
+- 没有家庭数据时，用用户描述的阻力开始设计。
+
+## 示例提示 / Example Prompts
+
+- 帮孩子建立每天 15 分钟阅读习惯，不要太复杂。
+- 孩子总忘记订正错题，帮我设计一个能坚持的流程。
 
 ## 适用场景 / When To Use
 
@@ -59,16 +117,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学习能力`
 - Abilities: `习惯培养`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
 - Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

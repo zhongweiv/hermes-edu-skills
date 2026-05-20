@@ -1,7 +1,7 @@
 ---
 name: "junior-physics-lk-textbook-sync"
 description: "鲁科版初中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_physics_lk_textbook_sync.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

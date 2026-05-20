@@ -1,7 +1,7 @@
 ---
 name: "junior-english-vocabulary-daily"
 description: "初中英语词汇每日练 Skill是面向每日打卡、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_english_vocabulary_daily.run."
-version: "0.2.0"
+version: "0.5.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
