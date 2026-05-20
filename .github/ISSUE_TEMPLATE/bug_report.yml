@@ -1,0 +1,30 @@
+name: Bug report / 问题反馈
+description: Report a broken skill, catalog issue, validation issue, or documentation problem.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请不要在 issue 中提交 API Key、学生/家长/老师个人信息、生产日志或私有系统地址。
+  - type: input
+    id: affected-area
+    attributes:
+      label: 影响范围 / Affected area
+      placeholder: skills/math/primary-math-mental-arithmetic/SKILL.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述 / Problem
+      placeholder: 描述哪里不对、怎么复现、你期望它是什么样。
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境 / Environment
+      description: 如果和 Hermes Agent 运行有关，请填写版本、系统和配置方式。
+      placeholder: Hermes Agent version, OS, config.yaml external_dirs path

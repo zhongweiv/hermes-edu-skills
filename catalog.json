@@ -1,0 +1,4424 @@
+{
+  "name": "hermes-edu-skills",
+  "version": "0.1.0",
+  "license": "MIT",
+  "generatedAt": "2026-05-20T18:16:42.407Z",
+  "skillCount": 135,
+  "skills": [
+    {
+      "name": "adult-civil-service-aptitude",
+      "slug": "adult-civil-service-aptitude",
+      "title": "公务员行测 Skill",
+      "description": "公务员行测 Skill用于考证、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "career",
+      "path": "skills/career/adult-civil-service-aptitude/SKILL.md",
+      "stages": [
+        "adult"
+      ],
+      "grades": [
+        "成人学习"
+      ],
+      "subjects": [
+        "职业教育"
+      ],
+      "abilities": [
+        "逻辑",
+        "数据分析"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "考证",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "adult-civil-service-essay",
+      "slug": "adult-civil-service-essay",
+      "title": "公务员申论 Skill",
+      "description": "公务员申论 Skill用于考证、写作提升，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "career",
+      "path": "skills/career/adult-civil-service-essay/SKILL.md",
+      "stages": [
+        "adult"
+      ],
+      "grades": [
+        "成人学习"
+      ],
+      "subjects": [
+        "职业教育"
+      ],
+      "abilities": [
+        "材料阅读",
+        "写作"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "考证",
+        "写作提升"
+      ]
+    },
+    {
+      "name": "adult-language-learning",
+      "slug": "adult-language-learning",
+      "title": "成人语言学习 Skill",
+      "description": "成人语言学习 Skill用于每日打卡、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "language",
+      "path": "skills/language/adult-language-learning/SKILL.md",
+      "stages": [
+        "adult"
+      ],
+      "grades": [
+        "成人学习"
+      ],
+      "subjects": [
+        "语言学习"
+      ],
+      "abilities": [
+        "口语",
+        "听力",
+        "词汇"
+      ],
+      "roles": [
+        "学习者",
+        "机构管理者"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "adult-teacher-certification",
+      "slug": "adult-teacher-certification",
+      "title": "教师资格证 Skill",
+      "description": "教师资格证 Skill用于考证、考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "career",
+      "path": "skills/career/adult-teacher-certification/SKILL.md",
+      "stages": [
+        "adult"
+      ],
+      "grades": [
+        "成人学习"
+      ],
+      "subjects": [
+        "职业教育"
+      ],
+      "abilities": [
+        "考试冲刺"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "考证",
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "adult-vocational-certificate",
+      "slug": "adult-vocational-certificate",
+      "title": "职业证书 Skill",
+      "description": "职业证书 Skill用于考证、考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "career",
+      "path": "skills/career/adult-vocational-certificate/SKILL.md",
+      "stages": [
+        "adult"
+      ],
+      "grades": [
+        "成人学习"
+      ],
+      "subjects": [
+        "职业教育"
+      ],
+      "abilities": [
+        "知识记忆",
+        "考试冲刺"
+      ],
+      "roles": [
+        "学习者",
+        "机构管理者"
+      ],
+      "scenarios": [
+        "考证",
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "college-academic-writing",
+      "slug": "college-academic-writing",
+      "title": "学术写作 Skill",
+      "description": "学术写作 Skill用于写作提升、论文训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "general-education",
+      "path": "skills/general-education/college-academic-writing/SKILL.md",
+      "stages": [
+        "college"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "通识"
+      ],
+      "abilities": [
+        "写作"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "写作提升",
+        "论文训练"
+      ]
+    },
+    {
+      "name": "college-cs-data-structure",
+      "slug": "college-cs-data-structure",
+      "title": "数据结构 Skill",
+      "description": "数据结构 Skill用于同步巩固、考研复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "computer-science",
+      "path": "skills/computer-science/college-cs-data-structure/SKILL.md",
+      "stages": [
+        "college"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "计算机"
+      ],
+      "abilities": [
+        "编程",
+        "算法"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "考研复习"
+      ]
+    },
+    {
+      "name": "college-english-cet4",
+      "slug": "college-english-cet4",
+      "title": "大学英语四级 Skill",
+      "description": "大学英语四级 Skill用于考前冲刺、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/college-english-cet4/SKILL.md",
+      "stages": [
+        "college"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "词汇",
+        "听力",
+        "阅读理解",
+        "写作"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "考前冲刺",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "college-english-cet6",
+      "slug": "college-english-cet6",
+      "title": "大学英语六级 Skill",
+      "description": "大学英语六级 Skill用于考前冲刺、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/college-english-cet6/SKILL.md",
+      "stages": [
+        "college"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "词汇",
+        "听力",
+        "阅读理解",
+        "写作"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "考前冲刺",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "college-math-calculus",
+      "slug": "college-math-calculus",
+      "title": "高等数学 Skill",
+      "description": "高等数学 Skill用于同步巩固、考试复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/college-math-calculus/SKILL.md",
+      "stages": [
+        "college"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "逻辑"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "考试复习"
+      ]
+    },
+    {
+      "name": "college-math-linear-algebra",
+      "slug": "college-math-linear-algebra",
+      "title": "线性代数 Skill",
+      "description": "线性代数 Skill用于同步巩固、考试复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/college-math-linear-algebra/SKILL.md",
+      "stages": [
+        "college"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "逻辑"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "考试复习"
+      ]
+    },
+    {
+      "name": "college-math-probability",
+      "slug": "college-math-probability",
+      "title": "概率论 Skill",
+      "description": "概率论 Skill用于同步巩固、考试复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/college-math-probability/SKILL.md",
+      "stages": [
+        "college"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "统计",
+        "概率"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "考试复习"
+      ]
+    },
+    {
+      "name": "college-ai-foundation",
+      "slug": "college-ai-foundation",
+      "title": "AI 基础 Skill",
+      "description": "AI 基础 Skill用于职业技能、兴趣学习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "computer-science",
+      "path": "skills/computer-science/college-ai-foundation/SKILL.md",
+      "stages": [
+        "college",
+        "adult"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "计算机"
+      ],
+      "abilities": [
+        "AI 基础"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "职业技能",
+        "兴趣学习"
+      ]
+    },
+    {
+      "name": "college-cs-algorithm",
+      "slug": "college-cs-algorithm",
+      "title": "算法 Skill",
+      "description": "算法 Skill用于职业技能、面试准备，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "computer-science",
+      "path": "skills/computer-science/college-cs-algorithm/SKILL.md",
+      "stages": [
+        "college",
+        "adult"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "计算机"
+      ],
+      "abilities": [
+        "算法",
+        "逻辑"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "职业技能",
+        "面试准备"
+      ]
+    },
+    {
+      "name": "college-cs-python",
+      "slug": "college-cs-python",
+      "title": "Python Skill",
+      "description": "Python Skill用于职业技能、课程学习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "computer-science",
+      "path": "skills/computer-science/college-cs-python/SKILL.md",
+      "stages": [
+        "college",
+        "adult"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "计算机"
+      ],
+      "abilities": [
+        "编程"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "职业技能",
+        "课程学习"
+      ]
+    },
+    {
+      "name": "college-data-analysis",
+      "slug": "college-data-analysis",
+      "title": "数据分析 Skill",
+      "description": "数据分析 Skill用于职业技能、项目训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "computer-science",
+      "path": "skills/computer-science/college-data-analysis/SKILL.md",
+      "stages": [
+        "college",
+        "adult"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "计算机"
+      ],
+      "abilities": [
+        "数据分析"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "职业技能",
+        "项目训练"
+      ]
+    },
+    {
+      "name": "college-english-ielts",
+      "slug": "college-english-ielts",
+      "title": "雅思 Skill",
+      "description": "雅思 Skill用于出国考试、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/college-english-ielts/SKILL.md",
+      "stages": [
+        "college",
+        "adult"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "听力",
+        "口语",
+        "阅读理解",
+        "写作"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "出国考试",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "college-english-postgraduate",
+      "slug": "college-english-postgraduate",
+      "title": "考研英语 Skill",
+      "description": "考研英语 Skill用于考研复习、考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/college-english-postgraduate/SKILL.md",
+      "stages": [
+        "college",
+        "adult"
+      ],
+      "grades": [
+        "考研"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "阅读理解",
+        "翻译",
+        "写作"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "考研复习",
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "college-english-toefl",
+      "slug": "college-english-toefl",
+      "title": "托福 Skill",
+      "description": "托福 Skill用于出国考试、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/college-english-toefl/SKILL.md",
+      "stages": [
+        "college",
+        "adult"
+      ],
+      "grades": [
+        "大学",
+        "成人学习"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "听力",
+        "口语",
+        "阅读理解",
+        "写作"
+      ],
+      "roles": [
+        "学习者"
+      ],
+      "scenarios": [
+        "出国考试",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "junior-biology",
+      "slug": "junior-biology",
+      "title": "初中生物 Skill",
+      "description": "初中生物 Skill用于同步巩固、考试复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "biology",
+      "path": "skills/biology/junior-biology/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级"
+      ],
+      "subjects": [
+        "生物"
+      ],
+      "abilities": [
+        "知识记忆",
+        "实验理解"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "考试复习"
+      ]
+    },
+    {
+      "name": "junior-chemistry-foundation",
+      "slug": "junior-chemistry-foundation",
+      "title": "初中化学 Skill",
+      "description": "初中化学 Skill用于同步巩固、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chemistry",
+      "path": "skills/chemistry/junior-chemistry-foundation/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "九年级"
+      ],
+      "subjects": [
+        "化学"
+      ],
+      "abilities": [
+        "实验理解",
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-chinese-classical-text",
+      "slug": "junior-chinese-classical-text",
+      "title": "初中文言文 Skill",
+      "description": "初中文言文 Skill用于同步巩固、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/junior-chinese-classical-text/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "文言文",
+        "翻译"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-chinese-composition",
+      "slug": "junior-chinese-composition",
+      "title": "初中作文 Skill",
+      "description": "初中作文 Skill用于写作提升、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/junior-chinese-composition/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "写作"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "写作提升",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-chinese-modern-reading",
+      "slug": "junior-chinese-modern-reading",
+      "title": "初中现代文阅读 Skill",
+      "description": "初中现代文阅读 Skill用于阅读训练、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/junior-chinese-modern-reading/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "阅读理解"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "阅读训练",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-chinese-poetry",
+      "slug": "junior-chinese-poetry",
+      "title": "初中古诗文 Skill",
+      "description": "初中古诗文 Skill用于背诵记忆、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/junior-chinese-poetry/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "背诵",
+        "鉴赏",
+        "默写"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "背诵记忆",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-english-grammar",
+      "slug": "junior-english-grammar",
+      "title": "初中英语语法 Skill",
+      "description": "初中英语语法 Skill用于专项训练、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/junior-english-grammar/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "语法"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-english-reading",
+      "slug": "junior-english-reading",
+      "title": "初中英语阅读 Skill",
+      "description": "初中英语阅读 Skill用于阅读训练、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/junior-english-reading/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "阅读理解"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "阅读训练",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-english-vocabulary",
+      "slug": "junior-english-vocabulary",
+      "title": "初中英语词汇 Skill",
+      "description": "初中英语词汇 Skill用于每日打卡、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/junior-english-vocabulary/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-english-writing",
+      "slug": "junior-english-writing",
+      "title": "初中英语写作 Skill",
+      "description": "初中英语写作 Skill用于写作提升、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/junior-english-writing/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "写作"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "写作提升",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-exam-sprint",
+      "slug": "junior-exam-sprint",
+      "title": "中考冲刺 Skill",
+      "description": "中考冲刺 Skill用于考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "general",
+      "path": "skills/general/junior-exam-sprint/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "九年级"
+      ],
+      "subjects": [
+        "综合"
+      ],
+      "abilities": [
+        "考试冲刺"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "junior-geography",
+      "slug": "junior-geography",
+      "title": "初中地理 Skill",
+      "description": "初中地理 Skill用于同步巩固、考试复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "geography",
+      "path": "skills/geography/junior-geography/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级"
+      ],
+      "subjects": [
+        "地理"
+      ],
+      "abilities": [
+        "知识记忆",
+        "图表分析"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "考试复习"
+      ]
+    },
+    {
+      "name": "junior-history",
+      "slug": "junior-history",
+      "title": "初中历史 Skill",
+      "description": "初中历史 Skill用于背诵记忆、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "history",
+      "path": "skills/history/junior-history/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "历史"
+      ],
+      "abilities": [
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "背诵记忆",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-math-algebra",
+      "slug": "junior-math-algebra",
+      "title": "初中代数 Skill",
+      "description": "初中代数 Skill用于同步巩固、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/junior-math-algebra/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "逻辑"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "junior-math-function",
+      "slug": "junior-math-function",
+      "title": "初中函数 Skill",
+      "description": "初中函数 Skill用于专项训练、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/junior-math-function/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "函数",
+        "逻辑"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-math-geometry",
+      "slug": "junior-math-geometry",
+      "title": "初中几何 Skill",
+      "description": "初中几何 Skill用于同步巩固、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/junior-math-geometry/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "空间想象",
+        "证明"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-math-statistics-probability",
+      "slug": "junior-math-statistics-probability",
+      "title": "初中统计概率 Skill",
+      "description": "初中统计概率 Skill用于同步巩固、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/junior-math-statistics-probability/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "统计",
+        "概率"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-physics-foundation",
+      "slug": "junior-physics-foundation",
+      "title": "初中物理 Skill",
+      "description": "初中物理 Skill用于同步巩固、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "physics",
+      "path": "skills/physics/junior-physics-foundation/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "物理"
+      ],
+      "abilities": [
+        "实验理解",
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "junior-politics",
+      "slug": "junior-politics",
+      "title": "初中道法 Skill",
+      "description": "初中道法 Skill用于背诵记忆、中考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "politics",
+      "path": "skills/politics/junior-politics/SKILL.md",
+      "stages": [
+        "junior"
+      ],
+      "grades": [
+        "七年级",
+        "八年级",
+        "九年级"
+      ],
+      "subjects": [
+        "政治"
+      ],
+      "abilities": [
+        "知识记忆",
+        "材料分析"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "背诵记忆",
+        "中考复习"
+      ]
+    },
+    {
+      "name": "preschool-attention-training",
+      "slug": "preschool-attention-training",
+      "title": "专注力训练 Skill",
+      "description": "专注力训练 Skill用于每日打卡、习惯培养，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "learning",
+      "path": "skills/learning/preschool-attention-training/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "小班",
+        "中班",
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "专注",
+        "记忆"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "习惯培养"
+      ]
+    },
+    {
+      "name": "preschool-fine-motor-writing",
+      "slug": "preschool-fine-motor-writing",
+      "title": "控笔与书写准备 Skill",
+      "description": "控笔与书写准备 Skill用于入学准备、每日练习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "learning",
+      "path": "skills/learning/preschool-fine-motor-writing/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "控笔",
+        "书写准备"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "入学准备",
+        "每日练习"
+      ]
+    },
+    {
+      "name": "preschool-language-expression",
+      "slug": "preschool-language-expression",
+      "title": "语言表达 Skill",
+      "description": "语言表达 Skill用于表达训练、亲子互动，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/preschool-language-expression/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "小班",
+        "中班",
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "表达",
+        "复述"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "表达训练",
+        "亲子互动"
+      ]
+    },
+    {
+      "name": "preschool-literacy-recognition",
+      "slug": "preschool-literacy-recognition",
+      "title": "识字启蒙 Skill",
+      "description": "识字启蒙 Skill用于每日启蒙、亲子共学，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/preschool-literacy-recognition/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "小班",
+        "中班",
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "识字",
+        "图文匹配"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "每日启蒙",
+        "亲子共学"
+      ]
+    },
+    {
+      "name": "preschool-logic-thinking",
+      "slug": "preschool-logic-thinking",
+      "title": "逻辑思维 Skill",
+      "description": "逻辑思维 Skill用于专项训练、亲子共学，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/preschool-logic-thinking/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "小班",
+        "中班",
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "逻辑",
+        "规律"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "专项训练",
+        "亲子共学"
+      ]
+    },
+    {
+      "name": "preschool-number-sense",
+      "slug": "preschool-number-sense",
+      "title": "数感启蒙 Skill",
+      "description": "数感启蒙 Skill用于数感游戏、每日启蒙，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/preschool-number-sense/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "小班",
+        "中班",
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "数感",
+        "数量感"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "数感游戏",
+        "每日启蒙"
+      ]
+    },
+    {
+      "name": "preschool-picture-book-reading",
+      "slug": "preschool-picture-book-reading",
+      "title": "绘本阅读 Skill",
+      "description": "绘本阅读 Skill用于亲子共读、阅读训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/preschool-picture-book-reading/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "小班",
+        "中班",
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "听读",
+        "表达",
+        "理解"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "亲子共读",
+        "阅读训练"
+      ]
+    },
+    {
+      "name": "preschool-pinyin-foundation",
+      "slug": "preschool-pinyin-foundation",
+      "title": "拼音启蒙 Skill",
+      "description": "拼音启蒙 Skill用于入学准备、每日打卡，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/preschool-pinyin-foundation/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "拼读",
+        "入学准备"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "入学准备",
+        "每日打卡"
+      ]
+    },
+    {
+      "name": "preschool-school-readiness",
+      "slug": "preschool-school-readiness",
+      "title": "幼小衔接综合 Skill",
+      "description": "幼小衔接综合 Skill用于入学准备、暑假提升，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "general",
+      "path": "skills/general/preschool-school-readiness/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "综合"
+      ],
+      "abilities": [
+        "识字",
+        "拼读",
+        "数感",
+        "习惯"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "入学准备",
+        "暑假提升"
+      ]
+    },
+    {
+      "name": "preschool-shape-space",
+      "slug": "preschool-shape-space",
+      "title": "图形空间 Skill",
+      "description": "图形空间 Skill用于图形游戏、入学准备，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/preschool-shape-space/SKILL.md",
+      "stages": [
+        "preschool"
+      ],
+      "grades": [
+        "小班",
+        "中班",
+        "大班",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "空间想象",
+        "图形认知"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "图形游戏",
+        "入学准备"
+      ]
+    },
+    {
+      "name": "agent-parent-companion",
+      "slug": "agent-parent-companion",
+      "title": "家长陪学 Skill",
+      "description": "家长陪学 Skill用于家长陪学，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "family",
+      "path": "skills/family/agent-parent-companion/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior"
+      ],
+      "grades": [],
+      "subjects": [
+        "家庭教育"
+      ],
+      "abilities": [
+        "陪学建议",
+        "目标管理"
+      ],
+      "roles": [
+        "家长"
+      ],
+      "scenarios": [
+        "家长陪学"
+      ]
+    },
+    {
+      "name": "agent-mistake-review",
+      "slug": "agent-mistake-review",
+      "title": "错题复习 Skill",
+      "description": "错题复习 Skill用于错题订正、单元复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "learning",
+      "path": "skills/learning/agent-mistake-review/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "错题订正",
+        "复习计划"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "错题订正",
+        "单元复习"
+      ]
+    },
+    {
+      "name": "institution-campus-dashboard",
+      "slug": "institution-campus-dashboard",
+      "title": "校区经营看板 Skill",
+      "description": "校区经营看板 Skill用于经营分析，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "institution",
+      "path": "skills/institution/institution-campus-dashboard/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "机构运营"
+      ],
+      "abilities": [
+        "运营分析"
+      ],
+      "roles": [
+        "机构管理者"
+      ],
+      "scenarios": [
+        "经营分析"
+      ]
+    },
+    {
+      "name": "institution-course-package",
+      "slug": "institution-course-package",
+      "title": "机构课程包 Skill",
+      "description": "机构课程包 Skill用于机构课程，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "institution",
+      "path": "skills/institution/institution-course-package/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "机构运营"
+      ],
+      "abilities": [
+        "课程配置"
+      ],
+      "roles": [
+        "机构管理者"
+      ],
+      "scenarios": [
+        "机构课程"
+      ]
+    },
+    {
+      "name": "institution-renewal-insight",
+      "slug": "institution-renewal-insight",
+      "title": "续费风险分析 Skill",
+      "description": "续费风险分析 Skill用于续费报告，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "institution",
+      "path": "skills/institution/institution-renewal-insight/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "机构运营"
+      ],
+      "abilities": [
+        "运营分析"
+      ],
+      "roles": [
+        "机构管理者",
+        "运营人员"
+      ],
+      "scenarios": [
+        "续费报告"
+      ]
+    },
+    {
+      "name": "institution-teacher-efficiency",
+      "slug": "institution-teacher-efficiency",
+      "title": "老师效率分析 Skill",
+      "description": "老师效率分析 Skill用于数据分析，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "institution",
+      "path": "skills/institution/institution-teacher-efficiency/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "机构运营"
+      ],
+      "abilities": [
+        "运营分析"
+      ],
+      "roles": [
+        "机构管理者"
+      ],
+      "scenarios": [
+        "数据分析"
+      ]
+    },
+    {
+      "name": "agent-memory-summary",
+      "slug": "agent-memory-summary",
+      "title": "记忆总结 Skill",
+      "description": "记忆总结 Skill用于Agent 记忆，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "system",
+      "path": "skills/system/agent-memory-summary/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "college",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "Memory 总结",
+        "偏好沉淀"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "Agent 记忆"
+      ]
+    },
+    {
+      "name": "agent-safety-guard",
+      "slug": "agent-safety-guard",
+      "title": "安全守护 Skill",
+      "description": "安全守护 Skill用于安全审核、消费保护，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "system",
+      "path": "skills/system/agent-safety-guard/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "college",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "内容安全"
+      ],
+      "abilities": [
+        "内容安全",
+        "未成年人保护"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师",
+        "学校管理者",
+        "机构管理者",
+        "运营人员"
+      ],
+      "scenarios": [
+        "安全审核",
+        "消费保护"
+      ]
+    },
+    {
+      "name": "agent-skill-recommendation",
+      "slug": "agent-skill-recommendation",
+      "title": "Skill 推荐 Skill",
+      "description": "Skill 推荐 Skill用于Skill 市场、学习计划，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "system",
+      "path": "skills/system/agent-skill-recommendation/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "college",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "推荐安装",
+        "路径规划"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "Skill 市场",
+        "学习计划"
+      ]
+    },
+    {
+      "name": "agent-study-plan",
+      "slug": "agent-study-plan",
+      "title": "学习计划 Skill",
+      "description": "学习计划 Skill用于今日学习、寒暑假提升，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "system",
+      "path": "skills/system/agent-study-plan/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "college",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "学习计划",
+        "目标管理"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "今日学习",
+        "寒暑假提升"
+      ]
+    },
+    {
+      "name": "agent-token-budget",
+      "slug": "agent-token-budget",
+      "title": "Token 预算 Skill",
+      "description": "Token 预算 Skill用于Token 成本估算、模型路由，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "system",
+      "path": "skills/system/agent-token-budget/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "college",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "成本管理"
+      ],
+      "abilities": [
+        "Token 预算",
+        "成本控制"
+      ],
+      "roles": [
+        "家长",
+        "老师",
+        "学校管理者",
+        "机构管理者",
+        "运营人员"
+      ],
+      "scenarios": [
+        "Token 成本估算",
+        "模型路由"
+      ]
+    },
+    {
+      "name": "agent-workflow-resume",
+      "slug": "agent-workflow-resume",
+      "title": "Workflow 恢复 Skill",
+      "description": "Workflow 恢复 Skill用于继续学习、失败补偿，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "system",
+      "path": "skills/system/agent-workflow-resume/SKILL.md",
+      "stages": [
+        "preschool",
+        "primary",
+        "junior",
+        "senior",
+        "college",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "Workflow 恢复",
+        "任务续接"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "继续学习",
+        "失败补偿"
+      ]
+    },
+    {
+      "name": "primary-chinese-ancient-poetry",
+      "slug": "primary-chinese-ancient-poetry",
+      "title": "古诗词 Skill",
+      "description": "古诗词 Skill用于背诵记忆、考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-ancient-poetry/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "背诵",
+        "默写",
+        "理解"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "背诵记忆",
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "primary-chinese-character-recognition",
+      "slug": "primary-chinese-character-recognition",
+      "title": "识字 Skill",
+      "description": "识字 Skill用于每日打卡、课后作业，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-character-recognition/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "识字"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "课后作业"
+      ]
+    },
+    {
+      "name": "primary-chinese-composition",
+      "slug": "primary-chinese-composition",
+      "title": "小学作文 Skill",
+      "description": "小学作文 Skill用于写作提升、考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-composition/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "写作"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "写作提升",
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "primary-chinese-dictation",
+      "slug": "primary-chinese-dictation",
+      "title": "生字听写 Skill",
+      "description": "生字听写 Skill用于听写默写、课后作业，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-dictation/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "听写",
+        "默写"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "听写默写",
+        "课后作业"
+      ]
+    },
+    {
+      "name": "primary-chinese-exam-review",
+      "slug": "primary-chinese-exam-review",
+      "title": "小学语文考试复习 Skill",
+      "description": "小学语文考试复习 Skill用于期中期末复习、考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-exam-review/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "考试冲刺"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "期中期末复习",
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "primary-chinese-picture-writing",
+      "slug": "primary-chinese-picture-writing",
+      "title": "看图写话 Skill",
+      "description": "看图写话 Skill用于写作提升、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-picture-writing/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "写作",
+        "表达"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "写作提升",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-chinese-pinyin",
+      "slug": "primary-chinese-pinyin",
+      "title": "拼音 Skill",
+      "description": "拼音 Skill用于课前预习、同步巩固，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-pinyin/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "幼小衔接"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "拼读"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "课前预习",
+        "同步巩固"
+      ]
+    },
+    {
+      "name": "primary-chinese-reading-comprehension",
+      "slug": "primary-chinese-reading-comprehension",
+      "title": "阅读理解 Skill",
+      "description": "阅读理解 Skill用于阅读训练、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-reading-comprehension/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "阅读理解"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "阅读训练",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-chinese-recitation",
+      "slug": "primary-chinese-recitation",
+      "title": "课文背诵 Skill",
+      "description": "课文背诵 Skill用于背诵记忆、每日打卡，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-recitation/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "背诵",
+        "朗读"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "背诵记忆",
+        "每日打卡"
+      ]
+    },
+    {
+      "name": "primary-chinese-required-characters",
+      "slug": "primary-chinese-required-characters",
+      "title": "必会字 Skill",
+      "description": "必会字 Skill用于单元复习、期中期末复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-required-characters/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "默写",
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "单元复习",
+        "期中期末复习"
+      ]
+    },
+    {
+      "name": "primary-chinese-sentence-training",
+      "slug": "primary-chinese-sentence-training",
+      "title": "句子训练 Skill",
+      "description": "句子训练 Skill用于写作提升、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-sentence-training/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "写作",
+        "表达"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "写作提升",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-chinese-text-preview",
+      "slug": "primary-chinese-text-preview",
+      "title": "课文预习 Skill",
+      "description": "课文预习 Skill用于课前预习、课堂同步，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-text-preview/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "课文理解",
+        "预习"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "课前预习",
+        "课堂同步"
+      ]
+    },
+    {
+      "name": "primary-chinese-unit-review",
+      "slug": "primary-chinese-unit-review",
+      "title": "语文单元复习 Skill",
+      "description": "语文单元复习 Skill用于单元复习、期中期末复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-unit-review/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "复习计划"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "单元复习",
+        "期中期末复习"
+      ]
+    },
+    {
+      "name": "primary-chinese-word-accumulation",
+      "slug": "primary-chinese-word-accumulation",
+      "title": "词语积累 Skill",
+      "description": "词语积累 Skill用于每日打卡、单元复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/primary-chinese-word-accumulation/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "词语积累"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "单元复习"
+      ]
+    },
+    {
+      "name": "primary-english-exam-review",
+      "slug": "primary-english-exam-review",
+      "title": "小学英语考试复习 Skill",
+      "description": "小学英语考试复习 Skill用于期中期末复习、考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-exam-review/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "考试冲刺"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "期中期末复习",
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "primary-english-grammar-intro",
+      "slug": "primary-english-grammar-intro",
+      "title": "语法启蒙 Skill",
+      "description": "语法启蒙 Skill用于专项训练、考试复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-grammar-intro/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "语法"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "考试复习"
+      ]
+    },
+    {
+      "name": "primary-english-letters",
+      "slug": "primary-english-letters",
+      "title": "字母 Skill",
+      "description": "字母 Skill用于课前预习、每日打卡，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-letters/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "拼读",
+        "书写"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "课前预习",
+        "每日打卡"
+      ]
+    },
+    {
+      "name": "primary-english-listening",
+      "slug": "primary-english-listening",
+      "title": "听力 Skill",
+      "description": "听力 Skill用于听力训练、考试复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-listening/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "听力"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "听力训练",
+        "考试复习"
+      ]
+    },
+    {
+      "name": "primary-english-phonics",
+      "slug": "primary-english-phonics",
+      "title": "自然拼读 Skill",
+      "description": "自然拼读 Skill用于同步巩固、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-phonics/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "拼读"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-english-reading",
+      "slug": "primary-english-reading",
+      "title": "英语阅读 Skill",
+      "description": "英语阅读 Skill用于阅读训练、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-reading/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "阅读理解"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "阅读训练",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-english-sentence-pattern",
+      "slug": "primary-english-sentence-pattern",
+      "title": "句型 Skill",
+      "description": "句型 Skill用于同步巩固、课后作业，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-sentence-pattern/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "表达"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "课后作业"
+      ]
+    },
+    {
+      "name": "primary-english-speaking",
+      "slug": "primary-english-speaking",
+      "title": "口语 Skill",
+      "description": "口语 Skill用于口语训练、每日打卡，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-speaking/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "口语"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "口语训练",
+        "每日打卡"
+      ]
+    },
+    {
+      "name": "primary-english-textbook-sync",
+      "slug": "primary-english-textbook-sync",
+      "title": "英语课文同步 Skill",
+      "description": "英语课文同步 Skill用于课堂同步、课后作业，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-textbook-sync/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "朗读",
+        "背诵",
+        "默写"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "课堂同步",
+        "课后作业"
+      ]
+    },
+    {
+      "name": "primary-english-vocabulary",
+      "slug": "primary-english-vocabulary",
+      "title": "单词 Skill",
+      "description": "单词 Skill用于每日打卡、听写默写，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/primary-english-vocabulary/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "知识记忆",
+        "默写"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "听写默写"
+      ]
+    },
+    {
+      "name": "primary-math-application-problems",
+      "slug": "primary-math-application-problems",
+      "title": "应用题 Skill",
+      "description": "应用题 Skill用于课后作业、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-application-problems/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "应用题",
+        "建模"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "课后作业",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-math-calculation",
+      "slug": "primary-math-calculation",
+      "title": "计算能力 Skill",
+      "description": "计算能力 Skill用于课后作业、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-calculation/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "课后作业",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-math-equation-intro",
+      "slug": "primary-math-equation-intro",
+      "title": "方程启蒙 Skill",
+      "description": "方程启蒙 Skill用于同步巩固、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-equation-intro/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "逻辑",
+        "建模"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-math-exam-review",
+      "slug": "primary-math-exam-review",
+      "title": "小学数学考试复习 Skill",
+      "description": "小学数学考试复习 Skill用于期中期末复习、考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-exam-review/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "考试冲刺"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "期中期末复习",
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "primary-math-fraction-decimal",
+      "slug": "primary-math-fraction-decimal",
+      "title": "分数小数 Skill",
+      "description": "分数小数 Skill用于同步巩固、单元复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-fraction-decimal/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "数感"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "单元复习"
+      ]
+    },
+    {
+      "name": "primary-math-geometry-basic",
+      "slug": "primary-math-geometry-basic",
+      "title": "几何初步 Skill",
+      "description": "几何初步 Skill用于同步巩固、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-geometry-basic/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "空间想象"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-math-mental-arithmetic",
+      "slug": "primary-math-mental-arithmetic",
+      "title": "小学口算速练 Skill",
+      "description": "小学口算速练 Skill用于口算速练、每日打卡，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-mental-arithmetic/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "幼小衔接",
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "数感"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "口算速练",
+        "每日打卡"
+      ]
+    },
+    {
+      "name": "primary-math-mental-arithmetic-rj-grade1-volume1-daily",
+      "slug": "primary-math-mental-arithmetic-rj-grade1-volume1-daily",
+      "title": "人教版一年级上册每日口算 Atomic Skill",
+      "description": "人教版一年级上册每日口算 Atomic Skill用于口算速练、每日打卡，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "atomic",
+      "path": "skills/atomic/primary-math-mental-arithmetic-rj-grade1-volume1-daily/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "数感"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "口算速练",
+        "每日打卡"
+      ]
+    },
+    {
+      "name": "primary-math-mental-arithmetic-rj-grade2-volume1-daily",
+      "slug": "primary-math-mental-arithmetic-rj-grade2-volume1-daily",
+      "title": "人教版二年级上册每日口算 Atomic Skill",
+      "description": "人教版二年级上册每日口算 Atomic Skill用于口算速练、每日打卡，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "atomic",
+      "path": "skills/atomic/primary-math-mental-arithmetic-rj-grade2-volume1-daily/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "二年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "数感"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "口算速练",
+        "每日打卡"
+      ]
+    },
+    {
+      "name": "primary-math-mistake-correction",
+      "slug": "primary-math-mistake-correction",
+      "title": "数学错题订正 Skill",
+      "description": "数学错题订正 Skill用于错题订正、单元复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-mistake-correction/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "错题订正"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "错题订正",
+        "单元复习"
+      ]
+    },
+    {
+      "name": "primary-math-mistake-review-rj-grade1-volume1-unit-review",
+      "slug": "primary-math-mistake-review-rj-grade1-volume1-unit-review",
+      "title": "人教版一年级上册数学错题单元复习 Atomic Skill",
+      "description": "人教版一年级上册数学错题单元复习 Atomic Skill用于错题订正、单元复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "atomic",
+      "path": "skills/atomic/primary-math-mistake-review-rj-grade1-volume1-unit-review/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "错题订正",
+        "复习计划"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "错题订正",
+        "单元复习"
+      ]
+    },
+    {
+      "name": "primary-math-multiplication-table",
+      "slug": "primary-math-multiplication-table",
+      "title": "乘法口诀 Skill",
+      "description": "乘法口诀 Skill用于每日打卡、听写默写，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-multiplication-table/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "二年级",
+        "三年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "听写默写"
+      ]
+    },
+    {
+      "name": "primary-math-number-sense",
+      "slug": "primary-math-number-sense",
+      "title": "数感 Skill",
+      "description": "数感 Skill用于每日打卡、同步巩固，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-number-sense/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "数感"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "同步巩固"
+      ]
+    },
+    {
+      "name": "primary-math-olympiad",
+      "slug": "primary-math-olympiad",
+      "title": "奥数拓展 Skill",
+      "description": "奥数拓展 Skill用于寒暑假提升、拔高训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-olympiad/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "逻辑",
+        "应用题"
+      ],
+      "roles": [
+        "学习者",
+        "老师",
+        "机构管理者"
+      ],
+      "scenarios": [
+        "寒暑假提升",
+        "拔高训练"
+      ]
+    },
+    {
+      "name": "primary-math-time-money",
+      "slug": "primary-math-time-money",
+      "title": "时间与人民币 Skill",
+      "description": "时间与人民币 Skill用于同步巩固、生活应用，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-time-money/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "生活数学"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "生活应用"
+      ]
+    },
+    {
+      "name": "primary-math-unit-conversion",
+      "slug": "primary-math-unit-conversion",
+      "title": "单位换算 Skill",
+      "description": "单位换算 Skill用于课后作业、专项训练，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-unit-conversion/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "课后作业",
+        "专项训练"
+      ]
+    },
+    {
+      "name": "primary-math-unit-review",
+      "slug": "primary-math-unit-review",
+      "title": "数学单元复习 Skill",
+      "description": "数学单元复习 Skill用于单元复习、期中期末复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/primary-math-unit-review/SKILL.md",
+      "stages": [
+        "primary"
+      ],
+      "grades": [
+        "一年级",
+        "二年级",
+        "三年级",
+        "四年级",
+        "五年级",
+        "六年级"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "复习计划"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "单元复习",
+        "期中期末复习"
+      ]
+    },
+    {
+      "name": "agent-learning-report",
+      "slug": "agent-learning-report",
+      "title": "学情报告 Skill",
+      "description": "学情报告 Skill用于学习报告、家长陪学，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "learning",
+      "path": "skills/learning/agent-learning-report/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "学情报告",
+        "学习计划"
+      ],
+      "roles": [
+        "家长",
+        "老师",
+        "学校管理者",
+        "机构管理者"
+      ],
+      "scenarios": [
+        "学习报告",
+        "家长陪学"
+      ]
+    },
+    {
+      "name": "agent-photo-question",
+      "slug": "agent-photo-question",
+      "title": "拍照答疑 Skill",
+      "description": "拍照答疑 Skill用于拍照答疑，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "general",
+      "path": "skills/general/agent-photo-question/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "综合"
+      ],
+      "abilities": [
+        "AI 讲题",
+        "图片识题"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "拍照答疑"
+      ]
+    },
+    {
+      "name": "school-grade-insight",
+      "slug": "school-grade-insight",
+      "title": "年级学情洞察 Skill",
+      "description": "年级学情洞察 Skill用于学校测评，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "school",
+      "path": "skills/school/school-grade-insight/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "学校管理"
+      ],
+      "abilities": [
+        "学情分析"
+      ],
+      "roles": [
+        "学校管理者"
+      ],
+      "scenarios": [
+        "学校测评"
+      ]
+    },
+    {
+      "name": "school-resource-planning",
+      "slug": "school-resource-planning",
+      "title": "校本资源规划 Skill",
+      "description": "校本资源规划 Skill用于运营配置，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "school",
+      "path": "skills/school/school-resource-planning/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "学校管理"
+      ],
+      "abilities": [
+        "资源规划"
+      ],
+      "roles": [
+        "学校管理者"
+      ],
+      "scenarios": [
+        "运营配置"
+      ]
+    },
+    {
+      "name": "school-teacher-usage",
+      "slug": "school-teacher-usage",
+      "title": "老师使用分析 Skill",
+      "description": "老师使用分析 Skill用于数据分析，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "school",
+      "path": "skills/school/school-teacher-usage/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "学校管理"
+      ],
+      "abilities": [
+        "运营分析"
+      ],
+      "roles": [
+        "学校管理者"
+      ],
+      "scenarios": [
+        "数据分析"
+      ]
+    },
+    {
+      "name": "teacher-class-analysis",
+      "slug": "teacher-class-analysis",
+      "title": "班级学情分析 Skill",
+      "description": "班级学情分析 Skill用于学情分析，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "teaching",
+      "path": "skills/teaching/teacher-class-analysis/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "教学管理"
+      ],
+      "abilities": [
+        "学情分析"
+      ],
+      "roles": [
+        "老师",
+        "学校管理者"
+      ],
+      "scenarios": [
+        "学情分析"
+      ]
+    },
+    {
+      "name": "teacher-homework-generation",
+      "slug": "teacher-homework-generation",
+      "title": "作业生成 Skill",
+      "description": "作业生成 Skill用于班级作业，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "teaching",
+      "path": "skills/teaching/teacher-homework-generation/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "教学管理"
+      ],
+      "abilities": [
+        "作业生成",
+        "分层练习"
+      ],
+      "roles": [
+        "老师"
+      ],
+      "scenarios": [
+        "班级作业"
+      ]
+    },
+    {
+      "name": "teacher-lesson-planning",
+      "slug": "teacher-lesson-planning",
+      "title": "老师备课 Skill",
+      "description": "老师备课 Skill用于老师备课，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "teaching",
+      "path": "skills/teaching/teacher-lesson-planning/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "教学管理"
+      ],
+      "abilities": [
+        "教学设计",
+        "学情分析"
+      ],
+      "roles": [
+        "老师",
+        "学校管理者",
+        "机构管理者"
+      ],
+      "scenarios": [
+        "老师备课"
+      ]
+    },
+    {
+      "name": "teacher-mistake-clustering",
+      "slug": "teacher-mistake-clustering",
+      "title": "班级错题归因 Skill",
+      "description": "班级错题归因 Skill用于错题订正，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "teaching",
+      "path": "skills/teaching/teacher-mistake-clustering/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "教学管理"
+      ],
+      "abilities": [
+        "错题订正",
+        "学情分析"
+      ],
+      "roles": [
+        "老师"
+      ],
+      "scenarios": [
+        "错题订正"
+      ]
+    },
+    {
+      "name": "teacher-parent-report",
+      "slug": "teacher-parent-report",
+      "title": "家长反馈报告 Skill",
+      "description": "家长反馈报告 Skill用于家长沟通，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "teaching",
+      "path": "skills/teaching/teacher-parent-report/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior"
+      ],
+      "grades": [],
+      "subjects": [
+        "教学管理"
+      ],
+      "abilities": [
+        "报告生成"
+      ],
+      "roles": [
+        "老师",
+        "机构管理者"
+      ],
+      "scenarios": [
+        "家长沟通"
+      ]
+    },
+    {
+      "name": "agent-organization-insight",
+      "slug": "agent-organization-insight",
+      "title": "组织洞察 Skill",
+      "description": "组织洞察 Skill用于数据分析，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "institution",
+      "path": "skills/institution/agent-organization-insight/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "机构运营"
+      ],
+      "abilities": [
+        "运营分析"
+      ],
+      "roles": [
+        "学校管理者",
+        "机构管理者",
+        "运营人员"
+      ],
+      "scenarios": [
+        "数据分析"
+      ]
+    },
+    {
+      "name": "agent-question-explanation",
+      "slug": "agent-question-explanation",
+      "title": "AI 讲题 Skill",
+      "description": "AI 讲题 Skill用于拍照答疑、课后作业，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "learning",
+      "path": "skills/learning/agent-question-explanation/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior",
+        "college"
+      ],
+      "grades": [],
+      "subjects": [
+        "学习能力"
+      ],
+      "abilities": [
+        "AI 讲题"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "拍照答疑",
+        "课后作业"
+      ]
+    },
+    {
+      "name": "agent-exam-sprint",
+      "slug": "agent-exam-sprint",
+      "title": "考前冲刺 Skill",
+      "description": "考前冲刺 Skill用于考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "general",
+      "path": "skills/general/agent-exam-sprint/SKILL.md",
+      "stages": [
+        "primary",
+        "junior",
+        "senior",
+        "college",
+        "adult"
+      ],
+      "grades": [],
+      "subjects": [
+        "综合"
+      ],
+      "abilities": [
+        "考试冲刺"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "senior-biology",
+      "slug": "senior-biology",
+      "title": "高中生物 Skill",
+      "description": "高中生物 Skill用于同步巩固、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "biology",
+      "path": "skills/biology/senior-biology/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "生物"
+      ],
+      "abilities": [
+        "知识记忆",
+        "实验理解"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-chemistry",
+      "slug": "senior-chemistry",
+      "title": "高中化学 Skill",
+      "description": "高中化学 Skill用于同步巩固、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chemistry",
+      "path": "skills/chemistry/senior-chemistry/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "化学"
+      ],
+      "abilities": [
+        "实验理解",
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-chinese-classical-text",
+      "slug": "senior-chinese-classical-text",
+      "title": "高中文言文 Skill",
+      "description": "高中文言文 Skill用于同步巩固、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/senior-chinese-classical-text/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "文言文",
+        "翻译"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-chinese-essay",
+      "slug": "senior-chinese-essay",
+      "title": "高中作文 Skill",
+      "description": "高中作文 Skill用于写作提升、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/senior-chinese-essay/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "写作"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "写作提升",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-chinese-modern-reading",
+      "slug": "senior-chinese-modern-reading",
+      "title": "高中现代文阅读 Skill",
+      "description": "高中现代文阅读 Skill用于阅读训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/senior-chinese-modern-reading/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "阅读理解"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "阅读训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-chinese-poetry-analysis",
+      "slug": "senior-chinese-poetry-analysis",
+      "title": "高中古诗词鉴赏 Skill",
+      "description": "高中古诗词鉴赏 Skill用于阅读训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "chinese",
+      "path": "skills/chinese/senior-chinese-poetry-analysis/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "语文"
+      ],
+      "abilities": [
+        "鉴赏",
+        "表达"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "阅读训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-english-grammar",
+      "slug": "senior-english-grammar",
+      "title": "高中英语语法 Skill",
+      "description": "高中英语语法 Skill用于专项训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/senior-english-grammar/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "语法"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-english-reading",
+      "slug": "senior-english-reading",
+      "title": "高中英语阅读 Skill",
+      "description": "高中英语阅读 Skill用于阅读训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/senior-english-reading/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "阅读理解"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "阅读训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-english-vocabulary",
+      "slug": "senior-english-vocabulary",
+      "title": "高中英语词汇 Skill",
+      "description": "高中英语词汇 Skill用于每日打卡、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/senior-english-vocabulary/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "家长"
+      ],
+      "scenarios": [
+        "每日打卡",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-english-writing",
+      "slug": "senior-english-writing",
+      "title": "高中英语写作 Skill",
+      "description": "高中英语写作 Skill用于写作提升、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "english",
+      "path": "skills/english/senior-english-writing/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "英语"
+      ],
+      "abilities": [
+        "写作"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "写作提升",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-gaokao-sprint",
+      "slug": "senior-gaokao-sprint",
+      "title": "高考冲刺 Skill",
+      "description": "高考冲刺 Skill用于考前冲刺，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "general",
+      "path": "skills/general/senior-gaokao-sprint/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高三"
+      ],
+      "subjects": [
+        "综合"
+      ],
+      "abilities": [
+        "考试冲刺"
+      ],
+      "roles": [
+        "学习者",
+        "家长",
+        "老师"
+      ],
+      "scenarios": [
+        "考前冲刺"
+      ]
+    },
+    {
+      "name": "senior-geography",
+      "slug": "senior-geography",
+      "title": "高中地理 Skill",
+      "description": "高中地理 Skill用于同步巩固、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "geography",
+      "path": "skills/geography/senior-geography/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "地理"
+      ],
+      "abilities": [
+        "知识记忆",
+        "图表分析"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-history",
+      "slug": "senior-history",
+      "title": "高中历史 Skill",
+      "description": "高中历史 Skill用于同步巩固、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "history",
+      "path": "skills/history/senior-history/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "历史"
+      ],
+      "abilities": [
+        "知识记忆",
+        "材料分析"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-math-analytic-geometry",
+      "slug": "senior-math-analytic-geometry",
+      "title": "解析几何 Skill",
+      "description": "解析几何 Skill用于专项训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/senior-math-analytic-geometry/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "计算",
+        "建模"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-math-derivative",
+      "slug": "senior-math-derivative",
+      "title": "导数 Skill",
+      "description": "导数 Skill用于专项训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/senior-math-derivative/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "逻辑",
+        "计算"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-math-function",
+      "slug": "senior-math-function",
+      "title": "高中函数 Skill",
+      "description": "高中函数 Skill用于同步巩固、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/senior-math-function/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "函数"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-math-probability-statistics",
+      "slug": "senior-math-probability-statistics",
+      "title": "概率统计 Skill",
+      "description": "概率统计 Skill用于专项训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/senior-math-probability-statistics/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "统计",
+        "概率"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-math-sequence",
+      "slug": "senior-math-sequence",
+      "title": "数列 Skill",
+      "description": "数列 Skill用于专项训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/senior-math-sequence/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "逻辑",
+        "计算"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-math-solid-geometry",
+      "slug": "senior-math-solid-geometry",
+      "title": "立体几何 Skill",
+      "description": "立体几何 Skill用于专项训练、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "math",
+      "path": "skills/math/senior-math-solid-geometry/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "数学"
+      ],
+      "abilities": [
+        "空间想象"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "专项训练",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-physics",
+      "slug": "senior-physics",
+      "title": "高中物理 Skill",
+      "description": "高中物理 Skill用于同步巩固、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "physics",
+      "path": "skills/physics/senior-physics/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "物理"
+      ],
+      "abilities": [
+        "实验理解",
+        "知识记忆"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "高考复习"
+      ]
+    },
+    {
+      "name": "senior-politics",
+      "slug": "senior-politics",
+      "title": "高中政治 Skill",
+      "description": "高中政治 Skill用于同步巩固、高考复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。",
+      "version": "0.1.0",
+      "status": "published",
+      "category": "politics",
+      "path": "skills/politics/senior-politics/SKILL.md",
+      "stages": [
+        "senior"
+      ],
+      "grades": [
+        "高一",
+        "高二",
+        "高三"
+      ],
+      "subjects": [
+        "政治"
+      ],
+      "abilities": [
+        "知识记忆",
+        "材料分析"
+      ],
+      "roles": [
+        "学习者",
+        "老师"
+      ],
+      "scenarios": [
+        "同步巩固",
+        "高考复习"
+      ]
+    }
+  ]
+}

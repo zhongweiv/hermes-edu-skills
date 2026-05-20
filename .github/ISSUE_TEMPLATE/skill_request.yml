@@ -1,0 +1,51 @@
+name: Skill request / 新 Skill 需求
+description: Suggest a new education Skill or a scenario we should cover.
+title: "[Skill Request] "
+labels:
+  - skill-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你帮助 Hermes Edu Skills 覆盖更多真实教育场景。
+
+        请尽量描述清楚“谁会用、在什么场景用、希望 Agent 做什么”。中文提交完全可以。
+  - type: input
+    id: user-role
+    attributes:
+      label: 使用者角色 / User role
+      description: 例如学生、家长、老师、教研、学校管理员、机构运营、开发者。
+      placeholder: 小学数学老师
+    validations:
+      required: true
+  - type: input
+    id: stage-subject
+    attributes:
+      label: 学段与学科 / Stage and subject
+      placeholder: 小学三年级数学，人教版上册
+    validations:
+      required: true
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景 / Scenario
+      description: 这个 Skill 应该在什么情况下被 Hermes Agent 调用？
+      placeholder: 老师希望根据本周错题生成一组分层练习，并给家长一段简短反馈。
+    validations:
+      required: true
+  - type: textarea
+    id: expected-output
+    attributes:
+      label: 期望输出 / Expected output
+      description: 你希望 Agent 最终给出什么？
+      placeholder: 练习题、讲解步骤、学习计划、家长反馈、课堂活动方案等。
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: 示例表达 / Example prompts
+      description: 用户可能会怎样向 Agent 提出这个需求？
+      placeholder: |
+        帮我给三年级学生生成一份两位数乘法口算练习。
+        分析这次班级错题，找出主要薄弱点。

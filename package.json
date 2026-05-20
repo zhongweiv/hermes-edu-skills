@@ -1,0 +1,56 @@
+{
+  "name": "hermes-edu-skills",
+  "version": "0.1.0",
+  "private": false,
+  "description": "由长沙欣慰科技发起维护的 Hermes Agent Runtime 开源教育 Skill Pack，覆盖学习、教学、家庭教育、学校管理和教育 Agent 工作流。",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/zhongweiv/hermes-edu-skills#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhongweiv/hermes-edu-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhongweiv/hermes-edu-skills/issues"
+  },
+  "keywords": [
+    "hermes-agent",
+    "hermes",
+    "agent",
+    "ai-agent",
+    "skills",
+    "skill-pack",
+    "education",
+    "learning",
+    "teaching",
+    "teacher-tools",
+    "ai-education",
+    "k12",
+    "edtech",
+    "china-education",
+    "shineway",
+    "教育",
+    "学习",
+    "教学",
+    "智能体",
+    "教育智能体",
+    "ai教育",
+    "学习助手"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate.mjs"
+  },
+  "files": [
+    "skills",
+    "scripts",
+    "catalog.json",
+    ".well-known/skills/index.json",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "RELEASE.md",
+    "SECURITY.md"
+  ]
+}
