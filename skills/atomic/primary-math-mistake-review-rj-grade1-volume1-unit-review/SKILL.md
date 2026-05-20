@@ -15,11 +15,20 @@ metadata:
     subjects: ["数学"]
     abilities: ["错题订正", "复习计划"]
     scenarios: ["错题订正", "单元复习"]
+    quality_tier: "generated"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "mistake.query_recent", "mistake.cluster", "plan.generate", "memory.write"]
+    requires_data: ["年级", "教材版本", "单元或知识点", "用户当前题目/练习目标"]
 ---
 
 # 人教版一年级上册数学错题单元复习 Atomic Skill
 
 人教版一年级上册数学错题单元复习 Atomic Skill用于错题订正、单元复习，由 Hermes Agent Runtime 按独立 Agent Context 调用。
+
+## 成熟度说明 / Maturity Note
+
+这个 Skill 是 Generated Skill，适合 Hermes Agent 做路由、检索和场景定位。独立使用时，请补充年级、教材、单元、题目或学习目标等上下文；如果要达到精品体验，建议继续补充真实样例、边界条件和评测标准。
 
 ## 适用场景 / When To Use
 
@@ -53,6 +62,14 @@ metadata:
 - Stages: `primary`
 - Subjects: `数学`
 - Abilities: `错题订正`, `复习计划`
+- Quality Tier: `generated`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `mistake.query_recent`, `mistake.cluster`, `plan.generate`, `memory.write`
+- Requires Data: `年级`, `教材版本`, `单元或知识点`, `用户当前题目/练习目标`
+
+成熟度备注：
+- 由商业 Skill 规则生成，适合路由和检索；公开前需要按教材/场景继续人工打磨。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

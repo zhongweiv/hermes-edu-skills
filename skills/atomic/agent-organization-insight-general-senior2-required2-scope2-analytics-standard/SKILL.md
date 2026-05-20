@@ -15,11 +15,20 @@ metadata:
     subjects: ["机构运营"]
     abilities: ["运营分析"]
     scenarios: ["数据分析"]
+    quality_tier: "generated"
+    standalone_support: "requires_tools"
+    public_release: "needs_review"
+    requires_tools: ["organization.query_context"]
+    requires_data: ["组织、学校或机构数据", "班级/课程/校区范围", "统计周期"]
 ---
 
 # 通用方案高二必修二组织场景二数据分析标准组织洞察 Atomic Skill
 
 通用方案高二必修二组织场景二的数据分析组织洞察，适合 Hermes Agent Runtime 在具体教材、学习场景和独立 Agent Context 中精准调用。
+
+## 成熟度说明 / Maturity Note
+
+这个 Skill 是 Generated Skill，适合 Hermes Agent 做路由、检索和场景定位。独立使用时，请补充年级、教材、单元、题目或学习目标等上下文；如果要达到精品体验，建议继续补充真实样例、边界条件和评测标准。
 
 ## 适用场景 / When To Use
 
@@ -51,6 +60,15 @@ metadata:
 - Stages: `senior`
 - Subjects: `机构运营`
 - Abilities: `运营分析`
+- Quality Tier: `generated`
+- Standalone Support: `requires_tools`
+- Public Release: `needs_review`
+- Requires Tools: `organization.query_context`
+- Requires Data: `组织、学校或机构数据`, `班级/课程/校区范围`, `统计周期`
+
+成熟度备注：
+- 由商业 Skill 规则批量生成，适合作为教材/年级/单元级路由入口。
+- 该 Skill 依赖组织数据和平台工具，公开展示前需要进一步审查数据边界和独立使用说明。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

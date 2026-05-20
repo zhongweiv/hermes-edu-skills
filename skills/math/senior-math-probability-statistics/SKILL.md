@@ -15,6 +15,11 @@ metadata:
     subjects: ["数学"]
     abilities: ["统计", "概率"]
     scenarios: ["专项训练", "高考复习"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "memory.write"]
+    requires_data: ["学习者年级", "当前目标", "用户输入的题目或学习上下文"]
 ---
 
 # 概率统计 Skill
@@ -52,6 +57,14 @@ metadata:
 - Stages: `senior`
 - Subjects: `数学`
 - Abilities: `统计`, `概率`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `memory.write`
+- Requires Data: `学习者年级`, `当前目标`, `用户输入的题目或学习上下文`
+
+成熟度备注：
+- 已具备基础独立使用说明，后续可继续补充案例和评测。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

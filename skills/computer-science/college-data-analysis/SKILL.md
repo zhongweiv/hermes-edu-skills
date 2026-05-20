@@ -15,6 +15,11 @@ metadata:
     subjects: ["计算机"]
     abilities: ["数据分析"]
     scenarios: ["职业技能", "项目训练"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "report.aggregate_metrics", "memory.write"]
+    requires_data: ["学习者年级", "当前目标", "用户输入的题目或学习上下文"]
 ---
 
 # 数据分析 Skill
@@ -51,6 +56,14 @@ metadata:
 - Stages: `college`, `adult`
 - Subjects: `计算机`
 - Abilities: `数据分析`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `report.aggregate_metrics`, `memory.write`
+- Requires Data: `学习者年级`, `当前目标`, `用户输入的题目或学习上下文`
+
+成熟度备注：
+- 已具备基础独立使用说明，后续可继续补充案例和评测。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

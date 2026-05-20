@@ -15,6 +15,11 @@ metadata:
     subjects: ["学校管理"]
     abilities: ["运营分析"]
     scenarios: ["数据分析"]
+    quality_tier: "enhanced"
+    standalone_support: "requires_tools"
+    public_release: "needs_review"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "report.aggregate_metrics", "organization.query_context", "memory.write"]
+    requires_data: ["组织、学校或机构数据", "班级/课程/校区范围", "统计周期"]
 ---
 
 # 老师使用分析 Skill
@@ -49,6 +54,14 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `学校管理`
 - Abilities: `运营分析`
+- Quality Tier: `enhanced`
+- Standalone Support: `requires_tools`
+- Public Release: `needs_review`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `report.aggregate_metrics`, `organization.query_context`, `memory.write`
+- Requires Data: `组织、学校或机构数据`, `班级/课程/校区范围`, `统计周期`
+
+成熟度备注：
+- 依赖平台数据或工具链，公开发布前需要补充独立 Hermes 使用边界。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

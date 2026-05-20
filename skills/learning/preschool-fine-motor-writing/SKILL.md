@@ -15,6 +15,11 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["控笔", "书写准备"]
     scenarios: ["入学准备", "每日练习"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "memory.write"]
+    requires_data: ["孩子年级", "当前学习情况", "家庭陪伴目标"]
 ---
 
 # 控笔与书写准备 Skill
@@ -52,6 +57,14 @@ metadata:
 - Stages: `preschool`
 - Subjects: `学习能力`
 - Abilities: `控笔`, `书写准备`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `memory.write`
+- Requires Data: `孩子年级`, `当前学习情况`, `家庭陪伴目标`
+
+成熟度备注：
+- 已具备基础独立使用说明，后续可继续补充案例和评测。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

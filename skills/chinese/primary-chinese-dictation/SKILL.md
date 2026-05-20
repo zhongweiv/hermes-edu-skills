@@ -15,6 +15,11 @@ metadata:
     subjects: ["语文"]
     abilities: ["听写", "默写"]
     scenarios: ["听写默写", "课后作业"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "memory.write"]
+    requires_data: ["孩子年级", "当前学习情况", "家庭陪伴目标"]
 ---
 
 # 生字听写 Skill
@@ -53,6 +58,14 @@ metadata:
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `听写`, `默写`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `memory.write`
+- Requires Data: `孩子年级`, `当前学习情况`, `家庭陪伴目标`
+
+成熟度备注：
+- 已具备基础独立使用说明，后续可继续补充案例和评测。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

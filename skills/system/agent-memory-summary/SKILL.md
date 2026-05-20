@@ -15,6 +15,11 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["Memory 总结", "偏好沉淀"]
     scenarios: ["Agent 记忆"]
+    quality_tier: "enhanced"
+    standalone_support: "requires_honeykid_adapter"
+    public_release: "needs_review"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.schedule_review", "memory.write"]
+    requires_data: ["孩子年级", "当前学习情况", "家庭陪伴目标"]
 ---
 
 # 记忆总结 Skill
@@ -51,6 +56,14 @@ metadata:
 - Stages: `preschool`, `primary`, `junior`, `senior`, `college`, `adult`
 - Subjects: `学习能力`
 - Abilities: `Memory 总结`, `偏好沉淀`
+- Quality Tier: `enhanced`
+- Standalone Support: `requires_honeykid_adapter`
+- Public Release: `needs_review`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.schedule_review`, `memory.write`
+- Requires Data: `孩子年级`, `当前学习情况`, `家庭陪伴目标`
+
+成熟度备注：
+- 依赖平台数据或工具链，公开发布前需要补充独立 Hermes 使用边界。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

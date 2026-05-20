@@ -15,6 +15,11 @@ metadata:
     subjects: ["语言学习"]
     abilities: ["口语", "听力", "词汇"]
     scenarios: ["每日打卡", "专项训练"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "needs_review"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
+    requires_data: ["组织、学校或机构数据", "班级/课程/校区范围", "统计周期"]
 ---
 
 # 成人语言学习 Skill
@@ -52,6 +57,14 @@ metadata:
 - Stages: `adult`
 - Subjects: `语言学习`
 - Abilities: `口语`, `听力`, `词汇`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `needs_review`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
+- Requires Data: `组织、学校或机构数据`, `班级/课程/校区范围`, `统计周期`
+
+成熟度备注：
+- 依赖平台数据或工具链，公开发布前需要补充独立 Hermes 使用边界。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

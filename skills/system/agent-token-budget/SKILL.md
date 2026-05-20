@@ -15,6 +15,11 @@ metadata:
     subjects: ["成本管理"]
     abilities: ["Token 预算", "成本控制"]
     scenarios: ["Token 成本估算", "模型路由"]
+    quality_tier: "enhanced"
+    standalone_support: "requires_honeykid_adapter"
+    public_release: "needs_review"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
+    requires_data: ["孩子年级", "当前学习情况", "家庭陪伴目标"]
 ---
 
 # Token 预算 Skill
@@ -55,6 +60,14 @@ Token 预算 Skill用于Token 成本估算、模型路由，由 Hermes Agent Run
 - Stages: `preschool`, `primary`, `junior`, `senior`, `college`, `adult`
 - Subjects: `成本管理`
 - Abilities: `Token 预算`, `成本控制`
+- Quality Tier: `enhanced`
+- Standalone Support: `requires_honeykid_adapter`
+- Public Release: `needs_review`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
+- Requires Data: `孩子年级`, `当前学习情况`, `家庭陪伴目标`
+
+成熟度备注：
+- 依赖平台数据或工具链，公开发布前需要补充独立 Hermes 使用边界。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

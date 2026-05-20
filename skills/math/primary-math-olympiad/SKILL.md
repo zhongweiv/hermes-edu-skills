@@ -15,6 +15,11 @@ metadata:
     subjects: ["数学"]
     abilities: ["逻辑", "应用题"]
     scenarios: ["寒暑假提升", "拔高训练"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "needs_review"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "memory.write"]
+    requires_data: ["组织、学校或机构数据", "班级/课程/校区范围", "统计周期"]
 ---
 
 # 奥数拓展 Skill
@@ -53,6 +58,14 @@ metadata:
 - Stages: `primary`
 - Subjects: `数学`
 - Abilities: `逻辑`, `应用题`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `needs_review`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `memory.write`
+- Requires Data: `组织、学校或机构数据`, `班级/课程/校区范围`, `统计周期`
+
+成熟度备注：
+- 依赖平台数据或工具链，公开发布前需要补充独立 Hermes 使用边界。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

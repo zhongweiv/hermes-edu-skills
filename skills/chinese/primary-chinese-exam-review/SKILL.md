@@ -15,6 +15,11 @@ metadata:
     subjects: ["语文"]
     abilities: ["考试冲刺"]
     scenarios: ["期中期末复习", "考前冲刺"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "memory.write"]
+    requires_data: ["学习者年级", "当前目标", "用户输入的题目或学习上下文"]
 ---
 
 # 小学语文考试复习 Skill
@@ -52,6 +57,14 @@ metadata:
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `考试冲刺`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `memory.write`
+- Requires Data: `学习者年级`, `当前目标`, `用户输入的题目或学习上下文`
+
+成熟度备注：
+- 已具备基础独立使用说明，后续可继续补充案例和评测。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

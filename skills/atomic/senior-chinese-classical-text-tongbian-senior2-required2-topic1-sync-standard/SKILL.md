@@ -15,11 +15,20 @@ metadata:
     subjects: ["语文"]
     abilities: ["文言文", "翻译"]
     scenarios: ["同步巩固"]
+    quality_tier: "generated"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: []
+    requires_data: ["年级", "教材版本", "单元或知识点", "用户当前题目/练习目标"]
 ---
 
 # 统编版高二必修二专题一同步巩固标准高中文言文 Atomic Skill
 
 统编版高二必修二专题一的同步巩固高中文言文，适合 Hermes Agent Runtime 在具体教材、学习场景和独立 Agent Context 中精准调用。
+
+## 成熟度说明 / Maturity Note
+
+这个 Skill 是 Generated Skill，适合 Hermes Agent 做路由、检索和场景定位。独立使用时，请补充年级、教材、单元、题目或学习目标等上下文；如果要达到精品体验，建议继续补充真实样例、边界条件和评测标准。
 
 ## 适用场景 / When To Use
 
@@ -50,6 +59,15 @@ metadata:
 - Stages: `senior`
 - Subjects: `语文`
 - Abilities: `文言文`, `翻译`
+- Quality Tier: `generated`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: none
+- Requires Data: `年级`, `教材版本`, `单元或知识点`, `用户当前题目/练习目标`
+
+成熟度备注：
+- 由商业 Skill 规则批量生成，适合作为教材/年级/单元级路由入口。
+- 公开包中可独立安装，但要达到精品体验需要补充具体题例、边界和使用样例。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

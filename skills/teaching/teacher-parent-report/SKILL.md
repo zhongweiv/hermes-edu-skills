@@ -15,6 +15,11 @@ metadata:
     subjects: ["教学管理"]
     abilities: ["报告生成"]
     scenarios: ["家长沟通"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "report.aggregate_metrics", "memory.write"]
+    requires_data: ["班级学情", "年级学科", "教学目标或作业范围"]
 ---
 
 # 家长反馈报告 Skill
@@ -50,6 +55,14 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `教学管理`
 - Abilities: `报告生成`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `report.aggregate_metrics`, `memory.write`
+- Requires Data: `班级学情`, `年级学科`, `教学目标或作业范围`
+
+成熟度备注：
+- 已具备基础独立使用说明，后续可继续补充案例和评测。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

@@ -15,6 +15,11 @@ metadata:
     subjects: ["语文"]
     abilities: ["课文理解", "预习"]
     scenarios: ["课前预习", "课堂同步"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
+    requires_data: ["学习者年级", "当前目标", "用户输入的题目或学习上下文"]
 ---
 
 # 课文预习 Skill
@@ -52,6 +57,14 @@ metadata:
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `课文理解`, `预习`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
+- Requires Data: `学习者年级`, `当前目标`, `用户输入的题目或学习上下文`
+
+成熟度备注：
+- 已具备基础独立使用说明，后续可继续补充案例和评测。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

@@ -15,6 +15,11 @@ metadata:
     subjects: ["英语"]
     abilities: ["朗读", "背诵", "默写"]
     scenarios: ["课堂同步", "课后作业"]
+    quality_tier: "enhanced"
+    standalone_support: "needs_user_input"
+    public_release: "allowed"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "memory.schedule_review", "memory.write"]
+    requires_data: ["孩子年级", "当前学习情况", "家庭陪伴目标"]
 ---
 
 # 英语课文同步 Skill
@@ -52,6 +57,14 @@ metadata:
 - Stages: `primary`
 - Subjects: `英语`
 - Abilities: `朗读`, `背诵`, `默写`
+- Quality Tier: `enhanced`
+- Standalone Support: `needs_user_input`
+- Public Release: `allowed`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `memory.schedule_review`, `memory.write`
+- Requires Data: `孩子年级`, `当前学习情况`, `家庭陪伴目标`
+
+成熟度备注：
+- 已具备基础独立使用说明，后续可继续补充案例和评测。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 

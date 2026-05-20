@@ -15,6 +15,11 @@ metadata:
     subjects: ["学习能力"]
     abilities: ["Workflow 恢复", "任务续接"]
     scenarios: ["继续学习", "失败补偿"]
+    quality_tier: "enhanced"
+    standalone_support: "requires_honeykid_adapter"
+    public_release: "needs_review"
+    requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
+    requires_data: ["孩子年级", "当前学习情况", "家庭陪伴目标"]
 ---
 
 # Workflow 恢复 Skill
@@ -53,6 +58,14 @@ Workflow 恢复 Skill用于继续学习、失败补偿，由 Hermes Agent Runtim
 - Stages: `preschool`, `primary`, `junior`, `senior`, `college`, `adult`
 - Subjects: `学习能力`
 - Abilities: `Workflow 恢复`, `任务续接`
+- Quality Tier: `enhanced`
+- Standalone Support: `requires_honeykid_adapter`
+- Public Release: `needs_review`
+- Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
+- Requires Data: `孩子年级`, `当前学习情况`, `家庭陪伴目标`
+
+成熟度备注：
+- 依赖平台数据或工具链，公开发布前需要补充独立 Hermes 使用边界。
 
 ## 独立 Hermes 使用方式 / Standalone Hermes Usage
 
