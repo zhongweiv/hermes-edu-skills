@@ -1,7 +1,7 @@
 ---
 name: "senior-chinese-essay"
-description: "高中作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: senior_chinese_essay.run."
-version: "0.8.0"
+description: "高中作文提升帮助学生把作文辅导从“代写一篇”变成审题、立意、选材、结构、语言和修改的全过程指导，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。 Workflow: senior_chinese_essay.run."
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["语文"]
     abilities: ["写作"]
     scenarios: ["写作提升"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级/水平", "文本、题目或写作要求", "学生原答案/初稿", "想训练的目标", "可选：评分标准、字数要求、老师批注"]
 ---
 
 # 高中作文提升 Skill
 
-高中作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+高中作文提升帮助学生把作文辅导从“代写一篇”变成审题、立意、选材、结构、语言和修改的全过程指导，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。
+
+## 这个 Skill 解决什么问题 / Problem
+
+高中作文提升帮助学生把作文辅导从“代写一篇”变成审题、立意、选材、结构、语言和修改的全过程指导，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。
+
+## 最适合 / Best For
+
+- 作文或写作不知道怎么改
+- 审题、选材、结构或语言表达薄弱
+- 需要老师/家长给出可执行反馈
+- 独立 Hermes Agent 用户搭建写作教练
+
+## 不适合 / Not For
+
+- 替学生完整代写作文、论文或作业
+- 编造引用、数据、阅读原文或标准答案
+- 替学生完整代写作文，导致孩子不会自己构思和修改
+
+## 使用前请准备 / Inputs
+
+- 年级/水平
+- 文本、题目或写作要求
+- 学生原答案/初稿
+- 想训练的目标
+- 可选：评分标准、字数要求、老师批注
+
+## 推荐工作流 / Recommended Workflow
+
+- 先确认任务类型、年级水平和用户希望提升的点。
+- 先帮助学生审题和选材，再搭结构、写片段、给修改建议，保留学生自己的表达。
+- 反馈时先指出一个做得好的地方，再给 2-3 个最值得改的点。
+- 最后留下一个小练习，让用户自己完成下一步，而不是替用户完成全部内容。
+
+## 输出格式 / Output Format
+
+- 审题方向
+- 选材建议
+- 结构提纲
+- 精彩片段示范
+- 修改清单
+- 下一次练习
+
+## 质量检查 / Quality Checks
+
+- 保留学习者自己的表达
+- 修改建议必须具体到句子/段落/依据
+- 不能编造原文或引用
+- 每次只给少量可执行改进点
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有文本库时，让用户粘贴文章、题目或初稿。
+- 没有评分工具时，输出自查表和修改清单。
+
+## 示例提示 / Example Prompts
+
+- 孩子写作文流水账，请帮他围绕这道题做审题、选材和提纲。
+- 请按高中作文提升帮我先诊断，再给修改建议和下一步练习。
 
 ## 适用场景 / When To Use
 
@@ -58,16 +116,16 @@ metadata:
 - Stages: `senior`
 - Subjects: `语文`
 - Abilities: `写作`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级/水平`, `文本、题目或写作要求`, `学生原答案/初稿`, `想训练的目标`, `可选：评分标准、字数要求、老师批注`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

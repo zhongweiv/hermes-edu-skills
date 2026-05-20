@@ -1,7 +1,7 @@
 ---
 name: "primary-math-bs-textbook-sync"
 description: "把北师大版小学数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。 Workflow: primary_math_bs_textbook_sync.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

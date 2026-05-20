@@ -1,8 +1,8 @@
 # Hermes Edu Skills
 
-中文教育 Agent Skill Pack，Hermes Agent 可直接使用，也支持导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。
+面向中国教育场景的开源 Agent Skill Pack：教材同步、备考复习、拍照答疑、错题复盘、亲子陪学、阅读写作和教师工具，Hermes Agent 可直接使用，也可导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。
 
-China-focused education Agent Skill Pack for Hermes Agent, with exports for OpenClaw, Codex, Cursor, Claude Code, and other AI tools.
+A China-focused open education Agent Skill Pack for textbook sync, exam prep, photo Q&A, mistake review, family learning, reading/writing, and teacher workflows. Built for Hermes Agent, exportable to OpenClaw, Codex, Cursor, Claude Code, and other AI tools.
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -11,11 +11,11 @@ China-focused education Agent Skill Pack for Hermes Agent, with exports for Open
 
 [English](README.en.md) · [Skill Catalog](catalog.json) · [Discovery Index](.well-known/skills/index.json) · [Shineway](https://www.shineway.tech/)
 
-Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill Pack。当前包含 177 个 Hermes 兼容 Skill，其中 170 个可直接安装使用，7 个作为设计参考，重点面向中国用户真实高频的教育场景。
+Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent Skill Pack。它把教材同步、考试备考、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师备课和家校沟通，整理成 177 个可浏览、可安装、可二次开发的产品级 Skill。
 
-它不是一个泛泛的 Prompt 合集，而是一套围绕教育 Agent 产品化组织的 Skill 目录：每个 Skill 都有清晰的触发信号、适用角色、参数维度、成熟度标记和 Hermes 可读取的 `SKILL.md`。
+当前包含 170 个可直接安装使用的 Hermes Skill，另有 7 个设计参考。它不是泛泛的 Prompt 合集，而是一套围绕“真实教育任务”组织的 Agent 能力目录：每个 Skill 都有触发信号、适用角色、参数维度、成熟度标记、使用边界和 Hermes 可读取的 `SKILL.md`。
 
-如果你正在做教育 Agent、AI 学习助手、AI 老师、教研工具或 Hermes Skill 生态，这个仓库可以直接作为起点。觉得有帮助的话，欢迎 Star，它会帮助更多中文教育 AI 开发者更快找到这个项目。
+如果你正在做 AI 学习助手、AI 老师、教研工具、家长陪学产品、题库/错题产品，或想给 Hermes Agent 装上一套开箱即用的中文教育能力，这个仓库可以直接作为起点。觉得有帮助的话，欢迎 Star，它会帮助更多中文教育 AI 开发者更快找到这个项目。
 
 ## 导航
 
@@ -33,25 +33,26 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 
 | 问题 | 答案 |
 | --- | --- |
-| 这是什么？ | 一套面向 Hermes Agent Runtime 的中文教育 Skill Pack。 |
+| 这是什么？ | 一套面向 Hermes Agent Runtime 的中文教育 Agent Skill Pack。 |
 | 现在有多少？ | 177 个公开 Skill，170 个可安装，7 个设计参考。 |
-| 最核心的场景？ | 教材同步、学习计划、拍照答疑、错题复盘、每日练习、考试备考、教师备课、家庭陪伴。 |
+| 最核心的场景？ | 教材同步、备考复习、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师工具。 |
 | 为什么不是几千个文件？ | 年级、册别、单元、课时、知识点、难度都作为参数传入，避免把用户淹没在海量重复 Skill 中。 |
 | 谁适合用？ | Hermes Agent 用户、教育 AI 开发者、老师、教研人员、学校/机构团队。 |
 | 怎么开始？ | 默认安装到 Hermes Agent；需要其它工具时再使用 `agent:install -- --tool <tool>`。 |
 
 ## 为什么值得关注
 
-- 中国教育场景优先：教材版本、年级册别、单元课时、同步练习、备考复习都是一等公民。
-- 产品级分类：不按技术文件夹堆砌，而按用户真正要完成的任务组织。
+- 中国教育场景优先：教材版本、年级册别、单元课时、同步练习、错题巩固、备考复习、亲子陪学都是一等公民。
+- 产品级分类：不按技术文件夹堆砌，而按用户真正要完成的任务组织，拿来就能做教育 Agent 原型。
 - 兼容 Hermes Agent：每个 Skill 都是标准 `SKILL.md`，可被 Hermes 直接识别。
-- 可读、可改、可扩展：既能直接安装，也能作为教育 Agent Skill 设计参考。
+- 可读、可改、可扩展：既能直接安装，也能作为教育 Agent Skill 设计参考和商业产品能力清单。
+- 传播友好：每个精品 Skill 都写清“解决什么问题、适合谁、怎么用、输出什么、不能做什么”。
 - 公开友好：仓库只包含公开 Skill 文档、索引和校验工具，不包含用户数据、密钥或商业后端实现。
 
 ## 你可以用它做什么
 
-- 给本地 Hermes Agent 增加一套中文教育 Skill 库。
-- 快速搭建 AI 学习助手、AI 老师、AI 助教、拍照答疑、错题复盘等教育 Agent 原型。
+- 给本地 Hermes Agent 增加一套中文教育 Skill 库，让 Agent 会做教材同步、备考、阅读写作和陪学。
+- 快速搭建 AI 学习助手、AI 老师、AI 助教、拍照答疑、错题复盘、亲子阅读、作文批改等教育 Agent 原型。
 - 学习和复用教育 Skill 的目录结构、触发信号、适用场景和工作流命名方式。
 - 为学校、老师、家长、教培机构和成人学习场景设计自己的 Skill。
 - Fork 后可以继续扩展教材版本、知识点覆盖和独立 Hermes 工具适配。
@@ -75,7 +76,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 ## 项目亮点
 
 - 177 个可点击浏览的产品级 `SKILL.md`。
-- 分类围绕用户任务组织：教材同步、学习核心、每日练习、考试备考、教师工具、家庭教育。
+- 分类围绕用户任务组织：教材同步、学习核心、每日练习、考试备考、阅读写作、教师工具、家庭教育。
 - 每个 Skill 都包含 Hermes frontmatter、适用场景、调用信号和工作流名称。
 - 新增 Skill 成熟度和独立使用标记，方便判断哪些已精品打磨、哪些仍需工具或上下文。
 - 年级、册别、单元、课时、知识点和难度作为参数传入，不再拆成海量独立 Skill。
@@ -342,16 +343,16 @@ npm run export:agents
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [初中现代文阅读 Skill](skills/reading-writing/junior-chinese-modern-reading/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 中考复习 |
-| [初中英语写作 Skill](skills/reading-writing/junior-english-writing/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 中考复习 |
-| [初中作文提升 Skill](skills/reading-writing/junior-chinese-composition/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 写作提升 |
-| [高中英语写作 Skill](skills/reading-writing/senior-english-writing/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 高考复习 |
-| [高中语文阅读 Skill](skills/reading-writing/senior-chinese-reading/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 高考复习 |
-| [高中作文提升 Skill](skills/reading-writing/senior-chinese-essay/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 写作提升 |
-| [小学英语阅读 Skill](skills/reading-writing/primary-english-reading/SKILL.md) | 增强可用 | 需用户补充上下文 | primary | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 阅读训练 |
-| [小学语文阅读理解 Skill](skills/reading-writing/primary-chinese-reading/SKILL.md) | 增强可用 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 阅读训练 |
-| [小学作文提升 Skill](skills/reading-writing/primary-chinese-writing/SKILL.md) | 增强可用 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作、表达 | 写作提升 |
-| [学术写作 Skill](skills/reading-writing/college-academic-writing/SKILL.md) | 增强可用 | 需用户补充上下文 | college | 通识 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 论文训练 |
+| [初中现代文阅读 Skill](skills/reading-writing/junior-chinese-modern-reading/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 中考复习 |
+| [初中英语写作 Skill](skills/reading-writing/junior-english-writing/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 中考复习 |
+| [初中作文提升 Skill](skills/reading-writing/junior-chinese-composition/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 写作提升 |
+| [高中英语写作 Skill](skills/reading-writing/senior-english-writing/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 高考复习 |
+| [高中语文阅读 Skill](skills/reading-writing/senior-chinese-reading/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 高考复习 |
+| [高中作文提升 Skill](skills/reading-writing/senior-chinese-essay/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 写作提升 |
+| [小学英语阅读 Skill](skills/reading-writing/primary-english-reading/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 阅读训练 |
+| [小学语文阅读理解 Skill](skills/reading-writing/primary-chinese-reading/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 阅读训练 |
+| [小学作文提升 Skill](skills/reading-writing/primary-chinese-writing/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作、表达 | 写作提升 |
+| [学术写作 Skill](skills/reading-writing/college-academic-writing/SKILL.md) | 精品打磨 | 需用户补充上下文 | college | 通识 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作 | 论文训练 |
 
 ### <a id="exam-prep"></a>考试备考 Exam Prep
 
@@ -431,14 +432,14 @@ npm run export:agents
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [家庭作业习惯 Skill](skills/family-education/family-homework-routine/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 作业陪伴 |
-| [家校沟通准备 Skill](skills/family-education/family-school-communication/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 家长沟通 |
+| [家庭作业习惯 Skill](skills/family-education/family-homework-routine/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 作业陪伴 |
+| [家校沟通准备 Skill](skills/family-education/family-school-communication/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 家长沟通 |
 | [家长陪学 Skill](skills/family-education/agent-parent-companion/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议、目标管理 | 家长陪学 |
-| [假期家庭学习 Skill](skills/family-education/family-holiday-learning/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 寒暑假提升 |
-| [屏幕时间管理 Skill](skills/family-education/family-screen-time-balance/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 习惯培养 |
-| [亲子阅读陪伴 Skill](skills/family-education/family-reading-companion/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 亲子共读 |
-| [学习情绪支持 Skill](skills/family-education/family-emotion-support/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 亲子沟通 |
-| [幼小衔接家庭准备 Skill](skills/family-education/family-school-readiness/SKILL.md) | 增强可用 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 入学准备 |
+| [假期家庭学习 Skill](skills/family-education/family-holiday-learning/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 寒暑假提升 |
+| [屏幕时间管理 Skill](skills/family-education/family-screen-time-balance/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 习惯培养 |
+| [亲子阅读陪伴 Skill](skills/family-education/family-reading-companion/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 亲子共读 |
+| [学习情绪支持 Skill](skills/family-education/family-emotion-support/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 亲子沟通 |
+| [幼小衔接家庭准备 Skill](skills/family-education/family-school-readiness/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 入学准备 |
 
 ### <a id="language-learning"></a>语言学习 Language Learning
 
@@ -446,7 +447,7 @@ npm run export:agents
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [成人语言学习 Skill](skills/language-learning/adult-language-learning/SKILL.md) | 增强可用 | 需用户补充上下文 | adult | 语言学习 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 口语、听力、词汇 | 每日打卡 |
+| [成人语言学习 Skill](skills/language-learning/adult-language-learning/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 语言学习 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 口语、听力、词汇 | 每日打卡 |
 | [托福备考 Skill](skills/language-learning/toefl-prep/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 听力、口语、阅读理解、写作 | 出国考试 |
 | [雅思备考 Skill](skills/language-learning/ielts-prep/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 听力、口语、阅读理解、写作 | 出国考试 |
 
@@ -459,7 +460,7 @@ npm run export:agents
 | [数据分析 Skill](skills/career-learning/college-data-analysis/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 数据分析 | 职业技能 |
 | [数据结构 Skill](skills/career-learning/college-cs-data-structure/SKILL.md) | 增强可用 | 需用户补充上下文 | college | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 算法、编程 | 课程学习 |
 | [算法面试 Skill](skills/career-learning/college-cs-algorithm-interview/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 算法 | 面试准备 |
-| [职场写作 Skill](skills/career-learning/adult-workplace-writing/SKILL.md) | 增强可用 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作、表达 | 职业技能 |
+| [职场写作 Skill](skills/career-learning/adult-workplace-writing/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作、表达 | 职业技能 |
 | [职业证书备考 Skill](skills/career-learning/adult-vocational-certificate/SKILL.md) | 增强可用 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 知识记忆、考试冲刺 | 考证 |
 | [AI 基础 Skill](skills/career-learning/college-ai-foundation/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | AI 基础 | 兴趣学习 |
 | [Python 学习 Skill](skills/career-learning/college-cs-python/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 编程 | 职业技能 |

@@ -1,7 +1,7 @@
 ---
 name: "adult-vocational-certificate"
 description: "职业证书备考 Skill是面向考证的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: adult_vocational_certificate.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

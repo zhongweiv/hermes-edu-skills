@@ -1,7 +1,7 @@
 ---
 name: "senior-chinese-reading"
-description: "高中语文阅读 Skill是面向高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: senior_chinese_reading.run."
-version: "0.8.0"
+description: "高中语文阅读帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。 Workflow: senior_chinese_reading.run."
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["语文"]
     abilities: ["阅读理解"]
     scenarios: ["高考复习"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级/水平", "文本、题目或写作要求", "学生原答案/初稿", "想训练的目标", "可选：评分标准、字数要求、老师批注"]
 ---
 
 # 高中语文阅读 Skill
 
-高中语文阅读 Skill是面向高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+高中语文阅读帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。
+
+## 这个 Skill 解决什么问题 / Problem
+
+高中语文阅读帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。
+
+## 最适合 / Best For
+
+- 阅读理解答不到点
+- 答案缺少文本依据
+- 需要老师/家长给出可执行反馈
+- 独立 Hermes Agent 用户搭建阅读训练助手
+
+## 不适合 / Not For
+
+- 替学生完整代写作文、论文或作业
+- 编造引用、数据、阅读原文或标准答案
+- 脱离文本编答案，或把阅读讲成空泛技巧
+
+## 使用前请准备 / Inputs
+
+- 年级/水平
+- 文本、题目或写作要求
+- 学生原答案/初稿
+- 想训练的目标
+- 可选：评分标准、字数要求、老师批注
+
+## 推荐工作流 / Recommended Workflow
+
+- 先确认任务类型、年级水平和用户希望提升的点。
+- 先确认文本类型和题目目标，再做大意理解、证据定位、推断表达和错因讲解。
+- 反馈时先指出一个做得好的地方，再给 2-3 个最值得改的点。
+- 最后留下一个小练习，让用户自己完成下一步，而不是替用户完成全部内容。
+
+## 输出格式 / Output Format
+
+- 阅读目标
+- 文本线索
+- 问题拆解
+- 参考答案
+- 依据标注
+- 表达改进
+
+## 质量检查 / Quality Checks
+
+- 保留学习者自己的表达
+- 修改建议必须具体到句子/段落/依据
+- 不能编造原文或引用
+- 每次只给少量可执行改进点
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有文本库时，让用户粘贴文章、题目或初稿。
+- 没有评分工具时，输出自查表和修改清单。
+
+## 示例提示 / Example Prompts
+
+- 这篇现代文孩子总答不到点，请帮他找文本依据并改进答案表达。
+- 请按高中语文阅读帮我先诊断，再给修改建议和下一步练习。
 
 ## 适用场景 / When To Use
 
@@ -58,16 +116,16 @@ metadata:
 - Stages: `senior`
 - Subjects: `语文`
 - Abilities: `阅读理解`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级/水平`, `文本、题目或写作要求`, `学生原答案/初稿`, `想训练的目标`, `可选：评分标准、字数要求、老师批注`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

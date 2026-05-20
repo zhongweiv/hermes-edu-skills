@@ -1,7 +1,7 @@
 ---
 name: "teacher-math-unit-review"
 description: "帮助数学老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。 Workflow: teacher_math_unit_review.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

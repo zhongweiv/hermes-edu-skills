@@ -1,7 +1,7 @@
 ---
 name: "primary-english-vocabulary-daily"
 description: "让小学英语单词练习从“背拼写”升级为音、形、义、句一起掌握。 Workflow: primary_english_vocabulary_daily.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

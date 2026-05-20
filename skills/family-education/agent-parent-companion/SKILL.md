@@ -1,7 +1,7 @@
 ---
 name: "agent-parent-companion"
-description: "家长陪学 Skill是面向家长陪学的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: agent_parent_companion.run."
-version: "0.8.0"
+description: "家长陪学把家长的“我该怎么陪”变成少催促、可执行、能复盘的陪学脚本。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: agent_parent_companion.run."
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -21,12 +21,69 @@ metadata:
     export_mode: "installable"
     release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["孩子年龄/年级", "孩子今天的状态、任务难度、家长最容易起冲突的环节", "今晚可用时间", "家长希望改善的一个具体问题", "可选：老师反馈、作业内容、孩子最近表现"]
 ---
 
 # 家长陪学 Skill
 
-家长陪学 Skill是面向家长陪学的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+家长陪学把家长的“我该怎么陪”变成少催促、可执行、能复盘的陪学脚本。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。
+
+## 这个 Skill 解决什么问题 / Problem
+
+家长陪学把家长的“我该怎么陪”变成少催促、可执行、能复盘的陪学脚本。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。
+
+## 最适合 / Best For
+
+- 家长不知道今晚怎么陪学
+- 作业、阅读、情绪、屏幕时间或家校沟通容易起冲突
+- 需要把学习任务变得更温和、更可坚持
+- 独立 Hermes Agent 用户搭建家庭教育助手
+
+## 不适合 / Not For
+
+- 替代专业心理咨询、医学诊断或学校正式评估
+- 用惩罚、羞辱或威胁驱动学习
+- 把陪学变成监督和说教，让亲子关系更紧张
+
+## 使用前请准备 / Inputs
+
+- 孩子年龄/年级
+- 孩子今天的状态、任务难度、家长最容易起冲突的环节
+- 今晚可用时间
+- 家长希望改善的一个具体问题
+- 可选：老师反馈、作业内容、孩子最近表现
+
+## 推荐工作流 / Recommended Workflow
+
+- 先复述家长的真实困扰，判断这是任务问题、能力问题、情绪问题还是沟通问题。
+- 先判断是不会做、不愿做、太累还是任务太大，再给家长一句开场话、一个小任务和一个收尾反馈。
+- 给家长可直接说出口的话术，避免命令式和贴标签表达。
+- 把任务控制在一个晚上能完成的范围内，并留下第二天复盘点。
+
+## 输出格式 / Output Format
+
+- 陪学目标
+- 沟通话术
+- 10-20 分钟任务
+- 冲突降温方法
+- 明天继续方式
+
+## 质量检查 / Quality Checks
+
+- 语气要支持家长，但不把孩子问题简单归因为懒或不听话
+- 每次只解决一个家庭场景
+- 建议必须能在家里执行
+- 涉及明显心理/安全风险时提醒寻求专业帮助
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有家庭数据时，让家长描述一个最近发生的具体场景。
+- 没有学习记录时，用“今天任务、孩子反应、家长目标”生成陪伴脚本。
+
+## 示例提示 / Example Prompts
+
+- 孩子写作业拖拉，我不想一直催，请给我今晚 30 分钟的陪学安排。
+- 请按家长陪学给我今晚能直接照着做的步骤和话术。
 
 ## 适用场景 / When To Use
 
@@ -61,7 +118,7 @@ metadata:
 - Standalone Support: `needs_user_input`
 - Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `孩子年龄/年级`, `孩子今天的状态、任务难度、家长最容易起冲突的环节`, `今晚可用时间`, `家长希望改善的一个具体问题`, `可选：老师反馈、作业内容、孩子最近表现`
 - Export Mode: `installable`
 - Release Channel: `recommended`
 

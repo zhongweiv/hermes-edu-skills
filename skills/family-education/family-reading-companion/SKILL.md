@@ -1,7 +1,7 @@
 ---
 name: "family-reading-companion"
-description: "亲子阅读陪伴 Skill是面向亲子共读的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: family_reading_companion.run."
-version: "0.8.0"
+description: "亲子阅读陪伴让亲子阅读从“读完了吗”变成有互动、有表达、有下一本书方向的陪读过程。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: family_reading_companion.run."
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["家庭教育"]
     abilities: ["陪学建议"]
     scenarios: ["亲子共读"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["孩子年龄/年级", "孩子年龄、读物类型、阅读兴趣、家长想训练的表达或理解能力", "今晚可用时间", "家长希望改善的一个具体问题", "可选：老师反馈、作业内容、孩子最近表现"]
 ---
 
 # 亲子阅读陪伴 Skill
 
-亲子阅读陪伴 Skill是面向亲子共读的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+亲子阅读陪伴让亲子阅读从“读完了吗”变成有互动、有表达、有下一本书方向的陪读过程。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。
+
+## 这个 Skill 解决什么问题 / Problem
+
+亲子阅读陪伴让亲子阅读从“读完了吗”变成有互动、有表达、有下一本书方向的陪读过程。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。
+
+## 最适合 / Best For
+
+- 家长不知道今晚怎么陪学
+- 作业、阅读、情绪、屏幕时间或家校沟通容易起冲突
+- 需要把学习任务变得更温和、更可坚持
+- 独立 Hermes Agent 用户搭建家庭教育助手
+
+## 不适合 / Not For
+
+- 替代专业心理咨询、医学诊断或学校正式评估
+- 用惩罚、羞辱或威胁驱动学习
+- 把亲子阅读变成阅读理解考试，破坏孩子兴趣
+
+## 使用前请准备 / Inputs
+
+- 孩子年龄/年级
+- 孩子年龄、读物类型、阅读兴趣、家长想训练的表达或理解能力
+- 今晚可用时间
+- 家长希望改善的一个具体问题
+- 可选：老师反馈、作业内容、孩子最近表现
+
+## 推荐工作流 / Recommended Workflow
+
+- 先复述家长的真实困扰，判断这是任务问题、能力问题、情绪问题还是沟通问题。
+- 先用轻问题进入故事，再引导孩子找依据、说感受、复述亮点，最后留一个小表达任务。
+- 给家长可直接说出口的话术，避免命令式和贴标签表达。
+- 把任务控制在一个晚上能完成的范围内，并留下第二天复盘点。
+
+## 输出格式 / Output Format
+
+- 陪读目标
+- 提问脚本
+- 互动问题
+- 表达练习
+- 阅读记录
+- 下一本建议
+
+## 质量检查 / Quality Checks
+
+- 语气要支持家长，但不把孩子问题简单归因为懒或不听话
+- 每次只解决一个家庭场景
+- 建议必须能在家里执行
+- 涉及明显心理/安全风险时提醒寻求专业帮助
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有家庭数据时，让家长描述一个最近发生的具体场景。
+- 没有学习记录时，用“今天任务、孩子反应、家长目标”生成陪伴脚本。
+
+## 示例提示 / Example Prompts
+
+- 孩子二年级，读绘本总是读完就忘，帮我做 15 分钟亲子阅读脚本。
+- 请按亲子阅读陪伴给我今晚能直接照着做的步骤和话术。
 
 ## 适用场景 / When To Use
 
@@ -57,16 +115,16 @@ metadata:
 - Stages: `preschool`, `primary`, `junior`
 - Subjects: `家庭教育`
 - Abilities: `陪学建议`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `孩子年龄/年级`, `孩子年龄、读物类型、阅读兴趣、家长想训练的表达或理解能力`, `今晚可用时间`, `家长希望改善的一个具体问题`, `可选：老师反馈、作业内容、孩子最近表现`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

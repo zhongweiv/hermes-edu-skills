@@ -1,7 +1,7 @@
 ---
 name: "junior-physics-lk-textbook-sync"
 description: "把鲁科版初中物理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把物理教材同步变成现象-模型-证据-应用的清晰学习路径。 Workflow: junior_physics_lk_textbook_sync.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

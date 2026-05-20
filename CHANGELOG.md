@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0 - 2026-05-21
+
+- Curates the fifth Skill batch for family education, parent-child reading, reading comprehension, composition, English writing, academic writing, workplace writing, and adult language learning.
+- Improves the public project positioning and package description so visitors can quickly understand what Hermes Edu Skills can do and why it is useful.
+- Turns family and writing Skills into more human workflows: observe the learner, reduce parent-child friction, coach without replacing the child, revise with evidence, and leave one concrete next action.
+- Keeps total public export scope unchanged while upgrading selected family/reading/writing Skills to `curated`, `recommended`, and `0.9.0` content.
+
 ## 0.8.0 - 2026-05-21
 
 - Curates the fourth 20-Skill batch for exam prep, covering期末、中考、高考、四六级、考研英语、教资、公考 and subject exam-review scenarios.

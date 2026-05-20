@@ -1,7 +1,7 @@
 ---
 name: "college-academic-writing"
-description: "学术写作 Skill是面向论文训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: college_academic_writing.run."
-version: "0.8.0"
+description: "学术写作帮助成人学习者把学术写作从零散资料堆砌变成问题、论点、证据、结构和引用意识清晰的写作过程，输出结构更清楚、证据更扎实、符合学术诚信的写作修改方案，而不是替用户一次性完成任务。 Workflow: college_academic_writing.run."
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["通识"]
     abilities: ["写作"]
     scenarios: ["论文训练"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["论文/作业主题", "研究问题或写作要求", "初稿或提纲", "引用/资料现状", "可选：评分标准、导师反馈"]
 ---
 
 # 学术写作 Skill
 
-学术写作 Skill是面向论文训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+学术写作帮助成人学习者把学术写作从零散资料堆砌变成问题、论点、证据、结构和引用意识清晰的写作过程，输出结构更清楚、证据更扎实、符合学术诚信的写作修改方案，而不是替用户一次性完成任务。
+
+## 这个 Skill 解决什么问题 / Problem
+
+学术写作帮助成人学习者把学术写作从零散资料堆砌变成问题、论点、证据、结构和引用意识清晰的写作过程，输出结构更清楚、证据更扎实、符合学术诚信的写作修改方案，而不是替用户一次性完成任务。
+
+## 最适合 / Best For
+
+- 课程论文或研究写作结构松散
+- 论点、证据和引用意识需要梳理
+- 需要修改清单而不是代写
+- 独立 Hermes Agent 用户搭建学术写作助手
+
+## 不适合 / Not For
+
+- 代写论文、编造引用、伪造数据或规避学术诚信要求
+- 替代学校/导师的正式评价
+- 代写论文、编造引用或替代学术诚信要求
+
+## 使用前请准备 / Inputs
+
+- 论文/作业主题
+- 研究问题或写作要求
+- 初稿或提纲
+- 引用/资料现状
+- 可选：评分标准、导师反馈
+
+## 推荐工作流 / Recommended Workflow
+
+- 先确认写作要求、研究问题、初稿状态和学术诚信边界。
+- 先明确研究问题和读者，再整理论点结构、证据位置和修改清单。
+- 反馈时先指出一个做得好的地方，再给 2-3 个最值得改的点。
+- 最后留下一个小练习，让用户自己完成下一步，而不是替用户完成全部内容。
+
+## 输出格式 / Output Format
+
+- 写作目标
+- 论文结构
+- 论点链条
+- 证据缺口
+- 修改建议
+- 下一步资料任务
+
+## 质量检查 / Quality Checks
+
+- 必须保留作者观点和写作责任
+- 不能编造引用或数据
+- 建议要具体到结构/论点/证据
+- 指出资料缺口而不是替用户虚构
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有文本库时，让用户粘贴文章、题目或初稿。
+- 没有评分工具时，输出自查表和修改清单。
+
+## 示例提示 / Example Prompts
+
+- 我有一篇课程论文初稿，请帮我检查结构、论点和证据不足。
+- 请按学术写作帮我先诊断，再给修改建议和下一步练习。
 
 ## 适用场景 / When To Use
 
@@ -58,16 +116,16 @@ metadata:
 - Stages: `college`
 - Subjects: `通识`
 - Abilities: `写作`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `论文/作业主题`, `研究问题或写作要求`, `初稿或提纲`, `引用/资料现状`, `可选：评分标准、导师反馈`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

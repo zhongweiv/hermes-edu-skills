@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-recitation-daily"
 description: "把课文和古诗背诵拆成理解、分段、提取线索和复背检查，减少死记硬背。 Workflow: primary_chinese_recitation_daily.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

@@ -1,7 +1,7 @@
 ---
 name: "teacher-history-unit-review"
 description: "历史单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_history_unit_review.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

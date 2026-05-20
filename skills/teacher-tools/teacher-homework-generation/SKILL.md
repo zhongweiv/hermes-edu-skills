@@ -1,7 +1,7 @@
 ---
 name: "teacher-homework-generation"
 description: "帮助老师生成分层、可批改、不过量的作业，而不是堆题。 Workflow: teacher_homework_generation.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

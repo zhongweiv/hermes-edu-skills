@@ -1,7 +1,7 @@
 ---
 name: "teacher-chemistry-lesson-planning"
 description: "帮助化学老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕微观解释、实验现象、化学用语和反应规律。 Workflow: teacher_chemistry_lesson_planning.run."
-version: "0.8.0"
+version: "0.9.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

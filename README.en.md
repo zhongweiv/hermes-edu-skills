@@ -1,8 +1,8 @@
 # Hermes Edu Skills
 
-China-focused education Agent Skill Pack for Hermes Agent, with exports for OpenClaw, Codex, Cursor, Claude Code, and other AI tools.
+A China-focused open education Agent Skill Pack for textbook sync, exam prep, photo Q&A, mistake review, family learning, reading/writing, and teacher workflows. Built for Hermes Agent, exportable to OpenClaw, Codex, Cursor, Claude Code, and other AI tools.
 
-中文教育 Agent Skill Pack，Hermes Agent 可直接使用，也支持导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。
+面向中国教育场景的开源 Agent Skill Pack：教材同步、备考复习、拍照答疑、错题复盘、亲子陪学、阅读写作和教师工具，Hermes Agent 可直接使用，也可导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -11,11 +11,11 @@ China-focused education Agent Skill Pack for Hermes Agent, with exports for Open
 
 [中文文档](README.md) · [Skill Catalog](catalog.json) · [Discovery Index](.well-known/skills/index.json) · [Shineway](https://www.shineway.tech/)
 
-Hermes Edu Skills is an open education Skill Pack that can be recognized by Hermes Agent. It currently includes 177 public Hermes-compatible Skills: 170 installable Skills and 7 design-reference examples.
+Hermes Edu Skills is a Chinese education Agent Skill Pack that can be recognized by Hermes Agent. It turns textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, teacher planning, and school communication into 177 browsable, installable, and reusable product-level Skills.
 
-This is not a generic prompt collection. It is organized like an education-agent product catalog: every Skill has invocation signals, target roles, parameter dimensions, maturity labels, and a Hermes-readable `SKILL.md`.
+It currently includes 170 installable Hermes Skills and 7 design-reference examples. This is not a generic prompt collection; it is an Agent capability catalog organized around real education jobs, with invocation signals, target roles, parameter dimensions, maturity labels, usage boundaries, and Hermes-readable `SKILL.md` files.
 
-If you are building education agents, AI learning assistants, AI teachers, curriculum tooling, or the Hermes Skill ecosystem, this repository is designed to be a practical starting point. If it helps you, please give it a Star so more education AI developers can discover it.
+If you are building an AI learning assistant, AI teacher, curriculum tool, family-learning product, question-bank/mistake-review product, or simply want to give Hermes Agent a ready-to-use Chinese education capability set, this repository is designed to be a practical starting point. If it helps you, please give it a Star so more education AI developers can discover it.
 
 ## Navigation
 
@@ -33,25 +33,26 @@ If you are building education agents, AI learning assistants, AI teachers, curri
 
 | Question | Answer |
 | --- | --- |
-| What is this? | A China-focused education Skill Pack for Hermes Agent Runtime. |
+| What is this? | A China-focused education Agent Skill Pack for Hermes Agent Runtime. |
 | How many Skills? | 177 public Skills, including 170 installable Skills and 7 design examples. |
-| Core scenarios? | Textbook sync, study planning, photo Q&A, mistake review, daily practice, exam prep, teacher planning, and family learning. |
+| Core scenarios? | Textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, and teacher workflows. |
 | Why not thousands of files? | Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of repetitive Skills. |
 | Who is it for? | Hermes Agent users, education AI developers, teachers, curriculum researchers, schools, and institutions. |
 | How do I start? | Install into Hermes Agent by default; use `agent:install -- --tool <tool>` only when targeting other tools. |
 
 ## Why This Project Matters
 
-- China-first education scenarios: textbook editions, grades, semesters, units, lessons, sync practice, and exam review are first-class concerns.
-- Product-level taxonomy: Skills are organized by user jobs, not by raw technical folders.
+- China-first education scenarios: textbook editions, grades, semesters, units, sync practice, mistake review, exam prep, and family learning are first-class concerns.
+- Product-level taxonomy: Skills are organized by user jobs, not by raw technical folders, so they can be used as a real education Agent product blueprint.
 - Hermes-compatible: every Skill is a standard `SKILL.md` that Hermes can read.
-- Readable and extensible: install directly, adapt to your own Agent, or use as a Skill-design reference.
+- Readable and extensible: install directly, adapt to your own Agent, or use as a Skill-design reference and product capability map.
+- Easy to communicate: curated Skills explain the user problem, best-fit users, workflow, output, boundaries, and standalone fallback.
 - Public-safe: this repository contains public Skill documents, indexes, and validation tools only. It does not contain user data, secrets, or commercial backend implementation.
 
 ## What You Can Build
 
-- Add a Chinese education Skill library to a local Hermes Agent.
-- Prototype AI learning assistants, AI teachers, AI teaching assistants, photo Q&A, and mistake-review agents.
+- Add a Chinese education Skill library to a local Hermes Agent, covering textbook sync, exam prep, reading/writing, and family learning.
+- Prototype AI learning assistants, AI teachers, AI teaching assistants, photo Q&A, mistake-review agents, parent-child reading helpers, and writing coaches.
 - Learn and reuse education Skill structure, invocation signals, use cases, and workflow naming patterns.
 - Design your own Skills for schools, teachers, parents, education institutions, and adult learning scenarios.
 - Fork the repository and extend textbook versions, knowledge-point coverage, and standalone Hermes tool adapters.
@@ -75,7 +76,7 @@ We are open-sourcing reusable education Agent Skill design so developers, teache
 ## Project Highlights
 
 - 177 clickable product-level `SKILL.md` files.
-- User-task-oriented categories: textbook sync, learning core, daily practice, exam prep, teacher tools, and family education.
+- User-task-oriented categories: textbook sync, learning core, daily practice, exam prep, reading/writing, teacher tools, and family education.
 - Each Skill includes Hermes frontmatter, use cases, invocation signals, and workflow names.
 - Adds Skill maturity and standalone-support labels so users can see which Skills are curated and which need tools or additional context.
 - Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of separate Skills.
@@ -342,16 +343,16 @@ Chinese, English, academic, and workplace reading/writing capabilities.
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [初中现代文阅读 Skill](skills/reading-writing/junior-chinese-modern-reading/SKILL.md)<br><code>junior-chinese-modern-reading</code> | Enhanced | Needs user context | Junior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | High School Entrance Exam Review |
-| [初中英语写作 Skill](skills/reading-writing/junior-english-writing/SKILL.md)<br><code>junior-english-writing</code> | Enhanced | Needs user context | Junior High | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | High School Entrance Exam Review |
-| [初中作文提升 Skill](skills/reading-writing/junior-chinese-composition/SKILL.md)<br><code>junior-chinese-composition</code> | Enhanced | Needs user context | Junior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | Writing Improvement |
-| [高中英语写作 Skill](skills/reading-writing/senior-english-writing/SKILL.md)<br><code>senior-english-writing</code> | Enhanced | Needs user context | Senior High | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | Gaokao Review |
-| [高中语文阅读 Skill](skills/reading-writing/senior-chinese-reading/SKILL.md)<br><code>senior-chinese-reading</code> | Enhanced | Needs user context | Senior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | Gaokao Review |
-| [高中作文提升 Skill](skills/reading-writing/senior-chinese-essay/SKILL.md)<br><code>senior-chinese-essay</code> | Enhanced | Needs user context | Senior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | Writing Improvement |
-| [小学英语阅读 Skill](skills/reading-writing/primary-english-reading/SKILL.md)<br><code>primary-english-reading</code> | Enhanced | Needs user context | Primary | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | Reading Practice |
-| [小学语文阅读理解 Skill](skills/reading-writing/primary-chinese-reading/SKILL.md)<br><code>primary-chinese-reading</code> | Enhanced | Needs user context | Primary | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | Reading Practice |
-| [小学作文提升 Skill](skills/reading-writing/primary-chinese-writing/SKILL.md)<br><code>primary-chinese-writing</code> | Enhanced | Needs user context | Primary | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing, Expression | Writing Improvement |
-| [学术写作 Skill](skills/reading-writing/college-academic-writing/SKILL.md)<br><code>college-academic-writing</code> | Enhanced | Needs user context | College | General Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | Paper Writing Practice |
+| [初中现代文阅读 Skill](skills/reading-writing/junior-chinese-modern-reading/SKILL.md)<br><code>junior-chinese-modern-reading</code> | Curated | Needs user context | Junior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | High School Entrance Exam Review |
+| [初中英语写作 Skill](skills/reading-writing/junior-english-writing/SKILL.md)<br><code>junior-english-writing</code> | Curated | Needs user context | Junior High | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | High School Entrance Exam Review |
+| [初中作文提升 Skill](skills/reading-writing/junior-chinese-composition/SKILL.md)<br><code>junior-chinese-composition</code> | Curated | Needs user context | Junior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | Writing Improvement |
+| [高中英语写作 Skill](skills/reading-writing/senior-english-writing/SKILL.md)<br><code>senior-english-writing</code> | Curated | Needs user context | Senior High | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | Gaokao Review |
+| [高中语文阅读 Skill](skills/reading-writing/senior-chinese-reading/SKILL.md)<br><code>senior-chinese-reading</code> | Curated | Needs user context | Senior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | Gaokao Review |
+| [高中作文提升 Skill](skills/reading-writing/senior-chinese-essay/SKILL.md)<br><code>senior-chinese-essay</code> | Curated | Needs user context | Senior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | Writing Improvement |
+| [小学英语阅读 Skill](skills/reading-writing/primary-english-reading/SKILL.md)<br><code>primary-english-reading</code> | Curated | Needs user context | Primary | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | Reading Practice |
+| [小学语文阅读理解 Skill](skills/reading-writing/primary-chinese-reading/SKILL.md)<br><code>primary-chinese-reading</code> | Curated | Needs user context | Primary | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | Reading Practice |
+| [小学作文提升 Skill](skills/reading-writing/primary-chinese-writing/SKILL.md)<br><code>primary-chinese-writing</code> | Curated | Needs user context | Primary | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing, Expression | Writing Improvement |
+| [学术写作 Skill](skills/reading-writing/college-academic-writing/SKILL.md)<br><code>college-academic-writing</code> | Curated | Needs user context | College | General Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing | Paper Writing Practice |
 
 ### <a id="exam-prep"></a>Exam Prep
 
@@ -431,14 +432,14 @@ Parent companionship, parent-child reading, homework routines, and family commun
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [家庭作业习惯 Skill](skills/family-education/family-homework-routine/SKILL.md)<br><code>family-homework-routine</code> | Enhanced | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Homework Companion |
-| [家校沟通准备 Skill](skills/family-education/family-school-communication/SKILL.md)<br><code>family-school-communication</code> | Enhanced | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Parent Communication |
+| [家庭作业习惯 Skill](skills/family-education/family-homework-routine/SKILL.md)<br><code>family-homework-routine</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Homework Companion |
+| [家校沟通准备 Skill](skills/family-education/family-school-communication/SKILL.md)<br><code>family-school-communication</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Parent Communication |
 | [家长陪学 Skill](skills/family-education/agent-parent-companion/SKILL.md)<br><code>agent-parent-companion</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support, Goal Management | Parent Study Support |
-| [假期家庭学习 Skill](skills/family-education/family-holiday-learning/SKILL.md)<br><code>family-holiday-learning</code> | Enhanced | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Holiday Improvement |
-| [屏幕时间管理 Skill](skills/family-education/family-screen-time-balance/SKILL.md)<br><code>family-screen-time-balance</code> | Enhanced | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Habit Building |
-| [亲子阅读陪伴 Skill](skills/family-education/family-reading-companion/SKILL.md)<br><code>family-reading-companion</code> | Enhanced | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Parent-Child Reading |
-| [学习情绪支持 Skill](skills/family-education/family-emotion-support/SKILL.md)<br><code>family-emotion-support</code> | Enhanced | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Parent-Child Communication |
-| [幼小衔接家庭准备 Skill](skills/family-education/family-school-readiness/SKILL.md)<br><code>family-school-readiness</code> | Enhanced | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | School Readiness |
+| [假期家庭学习 Skill](skills/family-education/family-holiday-learning/SKILL.md)<br><code>family-holiday-learning</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Holiday Improvement |
+| [屏幕时间管理 Skill](skills/family-education/family-screen-time-balance/SKILL.md)<br><code>family-screen-time-balance</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Habit Building |
+| [亲子阅读陪伴 Skill](skills/family-education/family-reading-companion/SKILL.md)<br><code>family-reading-companion</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Parent-Child Reading |
+| [学习情绪支持 Skill](skills/family-education/family-emotion-support/SKILL.md)<br><code>family-emotion-support</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Parent-Child Communication |
+| [幼小衔接家庭准备 Skill](skills/family-education/family-school-readiness/SKILL.md)<br><code>family-school-readiness</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | School Readiness |
 
 ### <a id="language-learning"></a>Language Learning
 
@@ -446,7 +447,7 @@ Adult English, study-abroad exams, speaking, listening, and long-term language i
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [成人语言学习 Skill](skills/language-learning/adult-language-learning/SKILL.md)<br><code>adult-language-learning</code> | Enhanced | Needs user context | Adult | Language Learning | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Speaking, Listening, Vocabulary | Daily Check-in |
+| [成人语言学习 Skill](skills/language-learning/adult-language-learning/SKILL.md)<br><code>adult-language-learning</code> | Curated | Needs user context | Adult | Language Learning | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Speaking, Listening, Vocabulary | Daily Check-in |
 | [托福备考 Skill](skills/language-learning/toefl-prep/SKILL.md)<br><code>toefl-prep</code> | Enhanced | Needs user context | College, Adult | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
 | [雅思备考 Skill](skills/language-learning/ielts-prep/SKILL.md)<br><code>ielts-prep</code> | Enhanced | Needs user context | College, Adult | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
 
@@ -459,7 +460,7 @@ College, adult learning, career skills, and certification scenarios.
 | [数据分析 Skill](skills/career-learning/college-data-analysis/SKILL.md)<br><code>college-data-analysis</code> | Enhanced | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Data Analysis | Career Skills |
 | [数据结构 Skill](skills/career-learning/college-cs-data-structure/SKILL.md)<br><code>college-cs-data-structure</code> | Enhanced | Needs user context | College | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Algorithms, Programming | Course Learning |
 | [算法面试 Skill](skills/career-learning/college-cs-algorithm-interview/SKILL.md)<br><code>college-cs-algorithm-interview</code> | Enhanced | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Algorithms | Interview Preparation |
-| [职场写作 Skill](skills/career-learning/adult-workplace-writing/SKILL.md)<br><code>adult-workplace-writing</code> | Enhanced | Needs user context | Adult | Career Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing, Expression | Career Skills |
+| [职场写作 Skill](skills/career-learning/adult-workplace-writing/SKILL.md)<br><code>adult-workplace-writing</code> | Curated | Needs user context | Adult | Career Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing, Expression | Career Skills |
 | [职业证书备考 Skill](skills/career-learning/adult-vocational-certificate/SKILL.md)<br><code>adult-vocational-certificate</code> | Enhanced | Needs user context | Adult | Career Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Knowledge Memorization, Exam Sprint | Certification |
 | [AI 基础 Skill](skills/career-learning/college-ai-foundation/SKILL.md)<br><code>college-ai-foundation</code> | Enhanced | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | AI Foundations | Interest Learning |
 | [Python 学习 Skill](skills/career-learning/college-cs-python/SKILL.md)<br><code>college-cs-python</code> | Enhanced | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Programming | Career Skills |

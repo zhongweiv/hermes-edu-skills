@@ -1,17 +1,17 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.8.0",
-  "generatedAt": "2026-05-20T22:53:38.795Z",
+  "version": "0.9.0",
+  "generatedAt": "2026-05-20T23:07:53.446Z",
   "skills": [
     {
       "name": "adult-language-learning",
-      "description": "成人语言学习 Skill是面向每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "成人语言学习帮助成人学习者把成人语言学习从零散背单词变成场景输入、主动输出、复现复习和可坚持的口语/听力任务，输出可开口、可纠错、可复现的语言训练任务，而不是替用户一次性完成任务。",
       "path": "skills/language-learning/adult-language-learning/SKILL.md",
       "tags": [
         "adult",
         "语言学习",
         "每日打卡",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -29,13 +29,13 @@
     },
     {
       "name": "adult-workplace-writing",
-      "description": "职场写作 Skill是面向职业技能的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "职场写作帮助成人学习者把职场写作从“写得像公文”变成目标明确、对象清楚、行动可落地的沟通文本，输出目标清楚、对象明确、行动可落地的沟通文本，而不是替用户一次性完成任务。",
       "path": "skills/career-learning/adult-workplace-writing/SKILL.md",
       "tags": [
         "adult",
         "职业教育",
         "职业技能",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -79,13 +79,13 @@
     },
     {
       "name": "college-academic-writing",
-      "description": "学术写作 Skill是面向论文训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "学术写作帮助成人学习者把学术写作从零散资料堆砌变成问题、论点、证据、结构和引用意识清晰的写作过程，输出结构更清楚、证据更扎实、符合学术诚信的写作修改方案，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/college-academic-writing/SKILL.md",
       "tags": [
         "college",
         "通识",
         "论文训练",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -342,13 +342,13 @@
     },
     {
       "name": "junior-chinese-composition",
-      "description": "初中作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "初中作文提升帮助学生把作文辅导从“代写一篇”变成审题、立意、选材、结构、语言和修改的全过程指导，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/junior-chinese-composition/SKILL.md",
       "tags": [
         "junior",
         "语文",
         "写作提升",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -367,13 +367,13 @@
     },
     {
       "name": "junior-chinese-modern-reading",
-      "description": "初中现代文阅读 Skill是面向中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "初中现代文阅读帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/junior-chinese-modern-reading/SKILL.md",
       "tags": [
         "junior",
         "语文",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -467,13 +467,13 @@
     },
     {
       "name": "junior-english-writing",
-      "description": "初中英语写作 Skill是面向中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "初中英语写作帮助英语学习者把英语写作从套模板变成任务回应、结构清楚、句子准确和表达有亮点，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/junior-english-writing/SKILL.md",
       "tags": [
         "junior",
         "英语",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -873,7 +873,7 @@
     },
     {
       "name": "agent-parent-companion",
-      "description": "家长陪学 Skill是面向家长陪学的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "家长陪学把家长的“我该怎么陪”变成少催促、可执行、能复盘的陪学脚本。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
       "path": "skills/family-education/agent-parent-companion/SKILL.md",
       "tags": [
         "preschool",
@@ -887,7 +887,7 @@
     },
     {
       "name": "family-emotion-support",
-      "description": "学习情绪支持 Skill是面向亲子沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "学习情绪支持在学习受挫、厌学、亲子冲突时，给家长可说出口的安抚话术和下一步学习动作。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
       "path": "skills/family-education/family-emotion-support/SKILL.md",
       "tags": [
         "preschool",
@@ -895,13 +895,13 @@
         "junior",
         "家庭教育",
         "亲子沟通",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "family-holiday-learning",
-      "description": "假期家庭学习 Skill是面向寒暑假提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "假期家庭学习把寒暑假从“报很多课/放任玩”改成学习、阅读、运动和休息平衡的家庭节奏。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
       "path": "skills/family-education/family-holiday-learning/SKILL.md",
       "tags": [
         "preschool",
@@ -909,13 +909,13 @@
         "junior",
         "家庭教育",
         "寒暑假提升",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "family-homework-routine",
-      "description": "家庭作业习惯 Skill是面向作业陪伴的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "家庭作业习惯帮家庭建立固定、轻量、可坚持的作业流程，让孩子知道先做什么、做到什么算完成。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
       "path": "skills/family-education/family-homework-routine/SKILL.md",
       "tags": [
         "preschool",
@@ -923,13 +923,13 @@
         "junior",
         "家庭教育",
         "作业陪伴",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "family-reading-companion",
-      "description": "亲子阅读陪伴 Skill是面向亲子共读的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "亲子阅读陪伴让亲子阅读从“读完了吗”变成有互动、有表达、有下一本书方向的陪读过程。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
       "path": "skills/family-education/family-reading-companion/SKILL.md",
       "tags": [
         "preschool",
@@ -937,13 +937,13 @@
         "junior",
         "家庭教育",
         "亲子共读",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "family-school-communication",
-      "description": "家校沟通准备 Skill是面向家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "家校沟通准备帮家长把问题说清楚、语气放稳、目标对齐，提升和老师沟通的效率。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
       "path": "skills/family-education/family-school-communication/SKILL.md",
       "tags": [
         "preschool",
@@ -951,13 +951,13 @@
         "junior",
         "家庭教育",
         "家长沟通",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "family-school-readiness",
-      "description": "幼小衔接家庭准备 Skill是面向入学准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "幼小衔接家庭准备把幼小衔接从提前刷题改成生活习惯、表达、规则感和基础学习准备。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
       "path": "skills/family-education/family-school-readiness/SKILL.md",
       "tags": [
         "preschool",
@@ -965,13 +965,13 @@
         "junior",
         "家庭教育",
         "入学准备",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "family-screen-time-balance",
-      "description": "屏幕时间管理 Skill是面向习惯培养的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "屏幕时间管理把屏幕时间管理从对抗变成规则共创：什么时候用、用多久、用来做什么、超时怎么办。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
       "path": "skills/family-education/family-screen-time-balance/SKILL.md",
       "tags": [
         "preschool",
@@ -979,7 +979,7 @@
         "junior",
         "家庭教育",
         "习惯培养",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1017,13 +1017,13 @@
     },
     {
       "name": "primary-chinese-reading",
-      "description": "小学语文阅读理解 Skill是面向阅读训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "小学语文阅读理解帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/primary-chinese-reading/SKILL.md",
       "tags": [
         "primary",
         "语文",
         "阅读训练",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1059,13 +1059,13 @@
     },
     {
       "name": "primary-chinese-writing",
-      "description": "小学作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "小学作文提升帮助学生把作文辅导从“代写一篇”变成审题、立意、选材、结构、语言和修改的全过程指导，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/primary-chinese-writing/SKILL.md",
       "tags": [
         "primary",
         "语文",
         "写作提升",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1088,13 +1088,13 @@
     },
     {
       "name": "primary-english-reading",
-      "description": "小学英语阅读 Skill是面向阅读训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "小学英语阅读帮助英语学习者把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/primary-english-reading/SKILL.md",
       "tags": [
         "primary",
         "英语",
         "阅读训练",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2103,13 +2103,13 @@
     },
     {
       "name": "senior-chinese-essay",
-      "description": "高中作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "高中作文提升帮助学生把作文辅导从“代写一篇”变成审题、立意、选材、结构、语言和修改的全过程指导，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/senior-chinese-essay/SKILL.md",
       "tags": [
         "senior",
         "语文",
         "写作提升",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2141,13 +2141,13 @@
     },
     {
       "name": "senior-chinese-reading",
-      "description": "高中语文阅读 Skill是面向高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "高中语文阅读帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/senior-chinese-reading/SKILL.md",
       "tags": [
         "senior",
         "语文",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2228,13 +2228,13 @@
     },
     {
       "name": "senior-english-writing",
-      "description": "高中英语写作 Skill是面向高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "高中英语写作帮助英语学习者把英语写作从套模板变成任务回应、结构清楚、句子准确和表达有亮点，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。",
       "path": "skills/reading-writing/senior-english-writing/SKILL.md",
       "tags": [
         "senior",
         "英语",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
