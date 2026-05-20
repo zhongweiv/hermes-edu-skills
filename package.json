@@ -1,6 +1,6 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.6.0",
+  "version": "0.5.1",
   "private": false,
   "description": "中文教育 Agent Skill Pack，Hermes Agent 可直接使用，也支持导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。 China-focused education Agent Skill Pack for Hermes Agent and other AI tools.",
   "license": "MIT",

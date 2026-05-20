@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.6.0 - 2026-05-21
+## 0.5.1 - 2026-05-21
 
 - Adds `--skill <slug>` to `agent-pack` so users can install or export a single Skill instead of the full pack.
 - Supports single-Skill install/export for Hermes, OpenClaw, Codex, Claude Code, Cursor, and generic Agent targets.
