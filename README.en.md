@@ -2,32 +2,40 @@
 
 Open education Skill Pack for Hermes Agent Runtime.
 
+[![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/Hermes%20Skills-135-blue)](catalog.json)
+[![Validate](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml)
+
 [中文文档](README.md)
 
 Hermes Edu Skills is a set of Hermes-compatible education skills. It currently includes 135 Hermes-compatible Skills covering student learning, teacher workflows, family education, school management, institution operations, career education, and Agent system workflows.
 
-If you already use Hermes Agent locally, add the `skills/` directory from this repository to your Hermes config so the Agent can load these education skills directly.
+If you already use Hermes Agent locally, add the `skills/` directory from this repository to your Hermes config so the Agent can load these education skills directly. You can also use the `SKILL.md` files as reference templates for education agents, AI learning assistants, teacher tools, or curriculum prototypes.
 
 If this project helps you, please consider giving it a Star. Stars help more developers building education agents, AI learning assistants, and teacher tools discover the project.
 
-## Why Star This Project
+## Navigation
 
-- It is a China-first Hermes Skill Pack for real education scenarios, not just generic English examples.
-- It covers real workflows for students, teachers, parents, schools, and education institutions.
-- Every Skill is clickable and easy to inspect, adapt, and connect to your own Hermes Agent.
-- The catalog, discovery index, validation script, and release checklist are ready for reuse.
-- More textbook-version, grade-level, unit-level, and atomic Skills will be added over time.
+- [Quick Start](#quick-start)
+- [Skill Category Overview](#skill-category-overview)
+- [All Skills](#all-skills)
+- [Contributing](#contributing)
+- [Roadmap](#roadmap)
+
+## What You Can Build
+
+- Add a Chinese education Skill library to a local Hermes Agent.
+- Prototype AI learning assistants, AI teachers, AI teaching assistants, photo Q&A, and mistake-review agents.
+- Learn and reuse education Skill structure, invocation signals, use cases, and workflow naming patterns.
+- Design your own Skills for schools, teachers, parents, education institutions, and adult learning scenarios.
+- Fork the repository and extend Atomic Skills by textbook version, grade, and unit.
 
 ## Initiator And Maintainer
 
 This project is initiated and maintained by [Shineway](https://www.shineway.tech/).
 
-Shineway focuses on AI-powered education solutions, including after-school service products, mistake-book workflows, AI learning assistants, and education institution management. We are open-sourcing part of our education Agent Skill design so developers, teachers, researchers, schools, and education teams can explore reusable education-agent capabilities together.
-
-The public repository follows two principles:
-
-- Skills remain open, readable, forkable, and independently usable by Hermes Agent.
-- Commercial systems, user data, internal accounts, private services, and production credentials are not included in the public repository.
+We are open-sourcing reusable education Agent Skill design so developers, teachers, researchers, schools, and education teams can explore China-focused education-agent capabilities together. This repository contains public Skill documents, indexes, and validation tools only; it does not include user data or backend service implementations.
 
 ## Project Highlights
 
@@ -54,57 +62,6 @@ The public repository follows two principles:
 - Open an issue to request the grade, textbook version, subject, or teacher tool you need.
 - Open a pull request to contribute new Skills, improve instructions, or add examples.
 
-## Recommended GitHub Topics
-
-Use these GitHub topics for this repository. Chinese discovery terms are better placed in README keywords, while GitHub topics work best as lowercase English tags:
-
-```text
-hermes-agent
-agent
-ai-agent
-skills
-skill-pack
-education
-learning
-teaching
-teacher-tools
-ai-education
-k12
-edtech
-china-education
-open-source
-shineway
-```
-
-## Search Keywords
-
-If you found this project through search, these are the core terms:
-
-```text
-Hermes Agent education skills
-Hermes Agent Runtime skills
-education agent
-AI learning assistant
-AI teacher
-AI teaching assistant
-K12 AI education
-teacher AI tools
-family education AI
-open Skill Pack
-Shineway AI education
-China education AI
-```
-
-## Status
-
-```text
-135 Hermes-compatible Skills
-21 categories
-MIT license
-Loadable through Hermes skills.external_dirs
-Not yet a one-command public Skill Registry installation
-```
-
 ## Quick Start
 
 Clone the repository:
@@ -129,7 +86,7 @@ Verify in Hermes:
 hermes skills list
 ```
 
-You can also verify through Hermes internal skill tools:
+You can also verify through Hermes skill tools:
 
 ```python
 from tools.skills_tool import skills_list, skill_view
@@ -492,27 +449,20 @@ Validation checks:
 - `source: hermes-edu-skills`.
 - `author: zhongwei`.
 
-## Maintainers
+## Compatibility Notes
 
-Before publishing a new version, maintainers should update Skills, sync the README tables, run validation, and make sure no accounts, credentials, user data, or non-public system details are included in the repository.
-
-See `RELEASE.md` for the full release checklist.
-
-## Current Limitations
-
-- The current installation method is Hermes `skills.external_dirs`, not a one-command public Skill Registry installation.
-- Some workflow names, such as `primary_math_mental_arithmetic.run`, represent intended Agent workflows. Standalone Hermes users can load and inspect the Skills immediately, but full business execution requires compatible tools or platform integrations.
-- The current installation method targets local Hermes Agent usage; public Skill Registry support will be considered once the ecosystem conventions become stable.
+- The recommended installation method is Hermes `skills.external_dirs`.
+- Every Skill is a standalone readable `SKILL.md` file that you can inspect, adapt, or connect to your own Agent.
+- Workflow names inside some Skills are suggested interfaces; actual execution depends on your Hermes tools and runtime environment.
 
 ## Roadmap
 
-- Publish the standalone `hermes-edu-skills` repository.
 - Add an installer script that can update Hermes config automatically.
 - Add common Hermes Agent usage examples.
 - Add Skill quality levels and review status.
 - Add more Atomic Skills aligned with textbook and curriculum systems.
 - Add optional tool adapters so executable workflows can run end to end.
-- Explore public Skill Registry integration once Hermes registry conventions stabilize.
+- Explore easier installation once public Hermes Skill Registry conventions stabilize.
 
 ## Contributing
 

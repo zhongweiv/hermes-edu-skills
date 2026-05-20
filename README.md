@@ -2,32 +2,40 @@
 
 面向 Hermes Agent Runtime 的开源教育 Skill Pack。
 
+[![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/Hermes%20Skills-135-blue)](catalog.json)
+[![Validate](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml)
+
 [English version](README.en.md)
 
-Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的教育技能库，当前包含 135 个 Hermes 兼容 Skill，覆盖学生学习、教师教学、家庭教育、学校管理、机构运营、职业教育和 Agent 系统工作流等场景。
+Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的教育 Skill Pack，当前包含 135 个 Hermes 兼容 Skill，覆盖学生学习、教师教学、家庭教育、学校管理、机构运营、职业教育和 Agent 系统工作流等场景。
 
-如果你已经在本地安装了 Hermes Agent，可以把本仓库的 `skills/` 目录加入 Hermes 配置，让 Agent 直接加载这些教育技能。
+如果你已经在本地安装了 Hermes Agent，可以把本仓库的 `skills/` 目录加入 Hermes 配置，让 Agent 直接加载这些教育技能。也可以把这些 `SKILL.md` 作为教育 Agent、AI 学习助手、教师工具或教研原型的参考模板。
 
 如果这个项目对你有帮助，欢迎点一个 Star。Star 会帮助更多正在做教育 Agent、AI 学习助手和教师工具的开发者更快找到它。
 
-## 为什么值得 Star
+## 导航
 
-- 这是一个中国教育场景优先的 Hermes Skill Pack，不只是英文样例集合。
-- 覆盖学生、老师、家长、学校和教培机构的真实教育工作流。
-- 所有 Skill 都可以直接点击查看，方便学习、改造和接入自己的 Hermes Agent。
-- 目录、索引、校验脚本和发布清单都已准备好，适合直接 fork 后二次开发。
-- 后续会继续补充教材版本、年级、单元和更细粒度的 Atomic Skill。
+- [快速开始](#快速开始)
+- [技能分类总览](#技能分类总览)
+- [全部 Skill 列表](#全部-skill-列表)
+- [参与贡献](#参与贡献)
+- [路线图](#路线图)
+
+## 你可以用它做什么
+
+- 给本地 Hermes Agent 增加一套中文教育 Skill 库。
+- 快速搭建 AI 学习助手、AI 老师、AI 助教、拍照答疑、错题复盘等教育 Agent 原型。
+- 学习和复用教育 Skill 的目录结构、触发信号、适用场景和工作流命名方式。
+- 为学校、老师、家长、教培机构和成人学习场景设计自己的 Skill。
+- Fork 后按教材版本、年级、单元继续扩展 Atomic Skill。
 
 ## 发起与维护
 
 本项目由 [长沙欣慰科技](https://www.shineway.tech/) 发起并维护。
 
-欣慰科技专注于 AI 智能教育解决方案，长期建设面向课后服务、错题整理、AI 学习助手和教培机构管理的产品能力。我们把部分教育 Agent Skill 设计开源出来，希望和开发者、老师、教研人员、学校及教育机构一起探索更可复用的教育智能体能力。
-
-开源仓库坚持两点：
-
-- Skill 本身保持开放、可读、可 fork、可独立用于 Hermes Agent。
-- 商业系统、用户数据、内部账号、私有服务和生产密钥不会进入公开仓库。
+我们希望把可复用的教育 Agent Skill 设计开放出来，和开发者、老师、教研人员、学校及教育机构一起探索更适合中国教育场景的智能体能力。本仓库只包含公开 Skill 文档、索引和校验工具，不包含用户数据或后端服务实现。
 
 ## 项目亮点
 
@@ -54,56 +62,6 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的教育技能库，
 - 提 Issue：告诉我们你最需要的年级、教材版本、学科或教师工具。
 - 提 PR：贡献新的 Skill、优化中文指令、补充使用示例。
 
-## 推荐 GitHub Topics
-
-建议给仓库添加这些 GitHub topics。中文词更适合放在 README 搜索关键词里，topics 建议使用英文小写和连字符，便于 GitHub 聚合：
-
-```text
-hermes-agent
-agent
-ai-agent
-skills
-skill-pack
-education
-learning
-teaching
-teacher-tools
-ai-education
-k12
-edtech
-china-education
-open-source
-shineway
-```
-
-## 搜索关键词
-
-如果你是通过搜索找到这里，可以关注这些关键词：
-
-```text
-Hermes Agent 教育 Skill
-Hermes Agent Runtime skills
-教育 Agent
-教育智能体
-AI 学习助手
-AI 老师
-AI 助教
-K12 AI 教育
-教师 AI 工具
-家庭教育 AI
-开源 Skill Pack
-```
-
-## 当前状态
-
-```text
-135 个 Hermes 兼容 Skill
-21 个分类
-MIT 开源协议
-可通过 Hermes skills.external_dirs 加载
-暂未接入公共 Skill Registry 的一键安装
-```
-
 ## 快速开始
 
 克隆仓库：
@@ -128,7 +86,7 @@ skills:
 hermes skills list
 ```
 
-也可以用 Hermes 内部 Skill 工具验证：
+也可以用 Hermes 的 Skill 工具验证：
 
 ```python
 from tools.skills_tool import skills_list, skill_view
@@ -491,27 +449,20 @@ npm run validate
 - `source: hermes-edu-skills`。
 - `author: zhongwei`。
 
-## 给维护者
+## 兼容说明
 
-维护者发布新版前，应更新 Skill、同步 README 表格、运行校验，并确认没有账号、密钥、用户数据或非公开系统说明进入仓库。
-
-完整发布清单见 `RELEASE.md`。
-
-## 当前限制
-
-- 当前安装方式是 Hermes `skills.external_dirs`，还不是公共 Skill Registry 的一键安装。
-- 一些 workflow 名称，例如 `primary_math_mental_arithmetic.run`，代表预期 Agent 工作流。独立 Hermes 用户可以立即加载和查看 Skill，但完整业务执行需要配套工具或平台集成。
-- 当前安装方式面向本地 Hermes Agent；公共 Skill Registry 支持稳定后会继续跟进。
+- 当前推荐通过 Hermes `skills.external_dirs` 加载 `skills/` 目录。
+- 每个 Skill 都是独立可读的 `SKILL.md`，可以直接用于学习、改造或接入自己的 Agent。
+- 部分 Skill 中的 workflow 名称是建议接口，具体执行能力取决于你的 Hermes 工具集和运行环境。
 
 ## 路线图
 
-- 发布独立仓库 `hermes-edu-skills`。
 - 增加自动更新 Hermes config 的安装脚本。
 - 增加常见 Hermes Agent 使用示例。
 - 增加 Skill 质量等级和审核状态。
 - 增加更多贴合教材/课程体系的 Atomic Skill。
 - 增加可选工具适配器，让需要执行能力的 workflow 可以真正跑起来。
-- 在 Hermes 公开 Skill Registry 规范稳定后，探索对接公共安装方式。
+- 在 Hermes 公开 Skill Registry 规范稳定后，探索更便捷的安装方式。
 
 ## 参与贡献
 
