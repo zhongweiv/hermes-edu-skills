@@ -1,6 +1,6 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "description": "由长沙欣慰科技发起维护的 Hermes Agent Runtime 开源教育 Skill Pack，覆盖学习、教学、家庭教育、学校管理和教育 Agent 工作流。",
   "license": "MIT",
