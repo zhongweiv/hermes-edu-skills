@@ -1,7 +1,7 @@
 ---
 name: "junior-history-exam-review"
 description: "初中历史考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_history_exam_review.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -21,7 +21,7 @@ metadata:
     export_mode: "installable"
     release_channel: "public"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["考试目标和日期", "当前分数/正确率/水平", "薄弱模块或最近错题", "每天可用时间", "训练方式：诊断/专项/限时/整卷/错题复盘"]
 ---
 
 # 初中历史考试复习 Skill
@@ -64,7 +64,7 @@ metadata:
 - Standalone Support: `needs_user_input`
 - Public Release: `allowed`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `考试目标和日期`, `当前分数/正确率/水平`, `薄弱模块或最近错题`, `每天可用时间`, `训练方式：诊断/专项/限时/整卷/错题复盘`
 - Export Mode: `installable`
 - Release Channel: `public`
 

@@ -1,7 +1,7 @@
 ---
 name: "junior-chinese-modern-reading"
 description: "初中现代文阅读 Skill是面向中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_chinese_modern_reading.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

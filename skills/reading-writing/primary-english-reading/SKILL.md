@@ -1,7 +1,7 @@
 ---
 name: "primary-english-reading"
 description: "小学英语阅读 Skill是面向阅读训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: primary_english_reading.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

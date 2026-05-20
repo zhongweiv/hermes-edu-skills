@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0 - 2026-05-21
+
+- Curates the fourth 20-Skill batch for exam prep, covering期末、中考、高考、四六级、考研英语、教资、公考 and subject exam-review scenarios.
+- Turns exam-prep Skills into a practical复习闭环: diagnosis, score-growth priority, timed practice, mistake review, and follow-up retest.
+- Adds stronger guardrails against押题、包过、替考作弊 and copyrighted paper replication.
+- Keeps total public export scope unchanged while upgrading selected exam-prep Skills to `curated`, `recommended`, and `0.8.0` content.
+
 ## 0.7.0 - 2026-05-21
 
 - Curates the third 20-Skill batch for textbook sync, covering primary and junior Chinese, math, English, physics, chemistry, and biology.

@@ -1,7 +1,7 @@
 ---
 name: "agent-learning-report"
 description: "把零散练习记录整理成家长、老师和学生都能看懂的学情判断。 Workflow: agent_learning_report.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

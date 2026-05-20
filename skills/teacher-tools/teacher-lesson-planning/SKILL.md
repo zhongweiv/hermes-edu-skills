@@ -1,7 +1,7 @@
 ---
 name: "teacher-lesson-planning"
 description: "把备课从罗列知识点变成目标、活动、评价一致的课堂设计。 Workflow: teacher_lesson_planning.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

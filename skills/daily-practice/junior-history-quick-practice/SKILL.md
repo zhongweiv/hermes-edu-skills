@@ -1,7 +1,7 @@
 ---
 name: "junior-history-quick-practice"
 description: "初中历史快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_history_quick_practice.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

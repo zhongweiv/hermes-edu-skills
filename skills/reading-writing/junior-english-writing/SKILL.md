@@ -1,7 +1,7 @@
 ---
 name: "junior-english-writing"
 description: "初中英语写作 Skill是面向中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_english_writing.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

@@ -1,7 +1,7 @@
 ---
 name: "senior-english-vocabulary-daily"
 description: "高中英语词汇每日练 Skill是面向每日打卡、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: senior_english_vocabulary_daily.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

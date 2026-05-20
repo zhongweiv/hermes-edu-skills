@@ -1,7 +1,7 @@
 ---
 name: "ielts-prep"
 description: "雅思备考 Skill是面向出国考试的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: ielts_prep.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

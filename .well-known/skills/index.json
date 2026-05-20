@@ -1,7 +1,7 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.7.0",
-  "generatedAt": "2026-05-20T22:44:27.391Z",
+  "version": "0.8.0",
+  "generatedAt": "2026-05-20T22:53:38.795Z",
   "skills": [
     {
       "name": "adult-language-learning",
@@ -41,39 +41,39 @@
     },
     {
       "name": "civil-service-aptitude",
-      "description": "公务员行测 Skill是面向考证、专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把公务员行测备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/civil-service-aptitude/SKILL.md",
       "tags": [
         "adult",
         "职业教育",
         "考证",
         "专项训练",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "civil-service-essay",
-      "description": "公务员申论 Skill是面向考证、写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把公务员申论备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/civil-service-essay/SKILL.md",
       "tags": [
         "adult",
         "职业教育",
         "考证",
         "写作提升",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-certification-sprint",
-      "description": "教师资格证备考 Skill是面向考证的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把教师资格证备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/teacher-certification-sprint/SKILL.md",
       "tags": [
         "adult",
         "职业教育",
         "考证",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -91,25 +91,25 @@
     },
     {
       "name": "college-cet4-sprint",
-      "description": "大学英语四级备考 Skill是面向考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把大学英语四级备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/college-cet4-sprint/SKILL.md",
       "tags": [
         "college",
         "英语",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "college-cet6-sprint",
-      "description": "大学英语六级备考 Skill是面向考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把大学英语六级备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/college-cet6-sprint/SKILL.md",
       "tags": [
         "college",
         "英语",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -192,14 +192,14 @@
     },
     {
       "name": "postgraduate-english-sprint",
-      "description": "考研英语备考 Skill是面向考研复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把考研英语备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/postgraduate-english-sprint/SKILL.md",
       "tags": [
         "college",
         "adult",
         "英语",
         "考研复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -280,14 +280,14 @@
     },
     {
       "name": "junior-chemistry-exam-review",
-      "description": "初中化学考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中化学考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-chemistry-exam-review/SKILL.md",
       "tags": [
         "junior",
         "化学",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -354,14 +354,14 @@
     },
     {
       "name": "junior-chinese-exam-review",
-      "description": "初中语文考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中语文考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-chinese-exam-review/SKILL.md",
       "tags": [
         "junior",
         "语文",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -410,14 +410,14 @@
     },
     {
       "name": "junior-english-exam-review",
-      "description": "初中英语考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中英语考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-english-exam-review/SKILL.md",
       "tags": [
         "junior",
         "英语",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -652,14 +652,14 @@
     },
     {
       "name": "junior-math-exam-review",
-      "description": "初中数学考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中数学考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-math-exam-review/SKILL.md",
       "tags": [
         "junior",
         "数学",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -714,14 +714,14 @@
     },
     {
       "name": "junior-physics-exam-review",
-      "description": "初中物理考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中物理考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-physics-exam-review/SKILL.md",
       "tags": [
         "junior",
         "物理",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -820,14 +820,14 @@
     },
     {
       "name": "junior-zhongkao-sprint",
-      "description": "中考冲刺 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把中考备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-zhongkao-sprint/SKILL.md",
       "tags": [
         "junior",
         "综合",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1147,13 +1147,13 @@
     },
     {
       "name": "primary-final-review",
-      "description": "小学期末复习 Skill是面向期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把小学期末备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/primary-final-review/SKILL.md",
       "tags": [
         "primary",
         "综合",
         "期中期末复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1997,14 +1997,14 @@
     },
     {
       "name": "senior-biology-exam-review",
-      "description": "高中生物考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中生物考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-biology-exam-review/SKILL.md",
       "tags": [
         "senior",
         "生物",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2041,14 +2041,14 @@
     },
     {
       "name": "senior-chemistry-exam-review",
-      "description": "高中化学考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中化学考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-chemistry-exam-review/SKILL.md",
       "tags": [
         "senior",
         "化学",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2115,14 +2115,14 @@
     },
     {
       "name": "senior-chinese-exam-review",
-      "description": "高中语文考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中语文考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-chinese-exam-review/SKILL.md",
       "tags": [
         "senior",
         "语文",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2171,14 +2171,14 @@
     },
     {
       "name": "senior-english-exam-review",
-      "description": "高中英语考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中英语考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-english-exam-review/SKILL.md",
       "tags": [
         "senior",
         "英语",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2258,14 +2258,14 @@
     },
     {
       "name": "senior-gaokao-sprint",
-      "description": "高考冲刺 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高考备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-gaokao-sprint/SKILL.md",
       "tags": [
         "senior",
         "综合",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2395,14 +2395,14 @@
     },
     {
       "name": "senior-math-exam-review",
-      "description": "高中数学考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中数学考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-math-exam-review/SKILL.md",
       "tags": [
         "senior",
         "数学",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2457,14 +2457,14 @@
     },
     {
       "name": "senior-physics-exam-review",
-      "description": "高中物理考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中物理考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-physics-exam-review/SKILL.md",
       "tags": [
         "senior",
         "物理",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },

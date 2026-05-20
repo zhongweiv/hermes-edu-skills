@@ -1,7 +1,7 @@
 ---
 name: "teacher-chinese-lesson-planning"
 description: "帮助语文老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕阅读、表达、积累和思维品质。 Workflow: teacher_chinese_lesson_planning.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

@@ -1,7 +1,7 @@
 ---
 name: "college-cs-algorithm-interview"
 description: "算法面试 Skill是面向面试准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: college_cs_algorithm_interview.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

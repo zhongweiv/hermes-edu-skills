@@ -1,7 +1,7 @@
 ---
 name: "primary-reading-daily"
 description: "把小学阅读练成“读懂、找依据、会表达”的短训练，而不是泛泛问读后感。 Workflow: primary_reading_daily.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

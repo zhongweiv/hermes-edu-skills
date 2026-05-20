@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-writing"
 description: "小学作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: primary_chinese_writing.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

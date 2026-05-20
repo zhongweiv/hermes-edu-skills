@@ -360,32 +360,32 @@ npm run export:agents
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [初中地理考试复习 Skill](skills/exam-prep/junior-geography-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 地理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
-| [初中化学考试复习 Skill](skills/exam-prep/junior-chemistry-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 化学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
+| [初中化学考试复习 Skill](skills/exam-prep/junior-chemistry-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 化学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
 | [初中历史考试复习 Skill](skills/exam-prep/junior-history-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 历史 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
 | [初中生物考试复习 Skill](skills/exam-prep/junior-biology-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 生物 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
-| [初中数学考试复习 Skill](skills/exam-prep/junior-math-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
-| [初中物理考试复习 Skill](skills/exam-prep/junior-physics-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 物理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
-| [初中英语考试复习 Skill](skills/exam-prep/junior-english-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
-| [初中语文考试复习 Skill](skills/exam-prep/junior-chinese-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
+| [初中数学考试复习 Skill](skills/exam-prep/junior-math-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
+| [初中物理考试复习 Skill](skills/exam-prep/junior-physics-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 物理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
+| [初中英语考试复习 Skill](skills/exam-prep/junior-english-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
+| [初中语文考试复习 Skill](skills/exam-prep/junior-chinese-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
 | [初中政治考试复习 Skill](skills/exam-prep/junior-politics-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 政治 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 中考复习、考前冲刺 |
-| [大学英语六级备考 Skill](skills/exam-prep/college-cet6-sprint/SKILL.md) | 增强可用 | 需用户补充上下文 | college | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 词汇、听力、阅读理解、写作 | 考前冲刺 |
-| [大学英语四级备考 Skill](skills/exam-prep/college-cet4-sprint/SKILL.md) | 增强可用 | 需用户补充上下文 | college | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 词汇、听力、阅读理解、写作 | 考前冲刺 |
-| [高考冲刺 Skill](skills/exam-prep/senior-gaokao-sprint/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 综合 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试冲刺 | 高考复习、考前冲刺 |
+| [大学英语六级备考 Skill](skills/exam-prep/college-cet6-sprint/SKILL.md) | 精品打磨 | 需用户补充上下文 | college | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 词汇、听力、阅读理解、写作 | 考前冲刺 |
+| [大学英语四级备考 Skill](skills/exam-prep/college-cet4-sprint/SKILL.md) | 精品打磨 | 需用户补充上下文 | college | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 词汇、听力、阅读理解、写作 | 考前冲刺 |
+| [高考冲刺 Skill](skills/exam-prep/senior-gaokao-sprint/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 综合 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试冲刺 | 高考复习、考前冲刺 |
 | [高中地理考试复习 Skill](skills/exam-prep/senior-geography-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 地理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
-| [高中化学考试复习 Skill](skills/exam-prep/senior-chemistry-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 化学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
+| [高中化学考试复习 Skill](skills/exam-prep/senior-chemistry-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 化学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
 | [高中历史考试复习 Skill](skills/exam-prep/senior-history-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 历史 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
-| [高中生物考试复习 Skill](skills/exam-prep/senior-biology-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 生物 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
-| [高中数学考试复习 Skill](skills/exam-prep/senior-math-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
-| [高中物理考试复习 Skill](skills/exam-prep/senior-physics-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 物理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
-| [高中英语考试复习 Skill](skills/exam-prep/senior-english-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
-| [高中语文考试复习 Skill](skills/exam-prep/senior-chinese-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
+| [高中生物考试复习 Skill](skills/exam-prep/senior-biology-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 生物 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
+| [高中数学考试复习 Skill](skills/exam-prep/senior-math-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
+| [高中物理考试复习 Skill](skills/exam-prep/senior-physics-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 物理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
+| [高中英语考试复习 Skill](skills/exam-prep/senior-english-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
+| [高中语文考试复习 Skill](skills/exam-prep/senior-chinese-exam-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
 | [高中政治考试复习 Skill](skills/exam-prep/senior-politics-exam-review/SKILL.md) | 增强可用 | 需用户补充上下文 | senior | 政治 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习、查漏补缺 | 高考复习、考前冲刺 |
-| [公务员申论 Skill](skills/exam-prep/civil-service-essay/SKILL.md) | 增强可用 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 材料阅读、写作 | 考证、写作提升 |
-| [公务员行测 Skill](skills/exam-prep/civil-service-aptitude/SKILL.md) | 增强可用 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 逻辑、数据分析 | 考证、专项训练 |
-| [教师资格证备考 Skill](skills/exam-prep/teacher-certification-sprint/SKILL.md) | 增强可用 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试冲刺 | 考证 |
-| [考研英语备考 Skill](skills/exam-prep/postgraduate-english-sprint/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解、翻译、写作 | 考研复习 |
-| [小学期末复习 Skill](skills/exam-prep/primary-final-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary | 综合 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习 | 期中期末复习 |
-| [中考冲刺 Skill](skills/exam-prep/junior-zhongkao-sprint/SKILL.md) | 增强可用 | 需用户补充上下文 | junior | 综合 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试冲刺 | 中考复习、考前冲刺 |
+| [公务员申论 Skill](skills/exam-prep/civil-service-essay/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 材料阅读、写作 | 考证、写作提升 |
+| [公务员行测 Skill](skills/exam-prep/civil-service-aptitude/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 逻辑、数据分析 | 考证、专项训练 |
+| [教师资格证备考 Skill](skills/exam-prep/teacher-certification-sprint/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试冲刺 | 考证 |
+| [考研英语备考 Skill](skills/exam-prep/postgraduate-english-sprint/SKILL.md) | 精品打磨 | 需用户补充上下文 | college、adult | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解、翻译、写作 | 考研复习 |
+| [小学期末复习 Skill](skills/exam-prep/primary-final-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary | 综合 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试复习 | 期中期末复习 |
+| [中考冲刺 Skill](skills/exam-prep/junior-zhongkao-sprint/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 综合 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 考试冲刺 | 中考复习、考前冲刺 |
 
 ### <a id="teacher-tools"></a>老师工具 Teacher Tools
 

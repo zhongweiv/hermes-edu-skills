@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-reading"
 description: "小学语文阅读理解 Skill是面向阅读训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: primary_chinese_reading.run."
-version: "0.7.0"
+version: "0.8.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
