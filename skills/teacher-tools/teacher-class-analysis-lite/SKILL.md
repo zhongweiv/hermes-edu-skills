@@ -1,7 +1,7 @@
 ---
 name: "teacher-class-analysis-lite"
-description: "班级学情分析 Lite Skill是面向学情分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_class_analysis_lite.run."
-version: "0.5.0"
+description: "把班级练习、错题和课堂观察整理成老师能立刻调整教学的学情判断，而不是只给平均分。 Workflow: teacher_class_analysis_lite.run."
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,77 @@ metadata:
     subjects: ["教学管理"]
     abilities: ["学情分析"]
     scenarios: ["学情分析"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "report.aggregate_metrics", "organization.query_context", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 班级学情分析 Lite Skill
 
-班级学情分析 Lite Skill是面向学情分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把班级练习、错题和课堂观察整理成老师能立刻调整教学的学情判断，而不是只给平均分。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把班级练习、错题和课堂观察整理成老师能立刻调整教学的学情判断，而不是只给平均分。
+
+## 最适合 / Best For
+
+- 单元测后分析
+- 周练后找共性问题
+- 备课前了解班级起点
+- 向年级组汇报班级情况
+
+## 不适合 / Not For
+
+- 没有任何数据却生成排名结论
+- 用标签化语言评价学生
+- 替代正式教育评价或心理诊断
+
+## 使用前请准备 / Inputs
+
+- 班级范围
+- 测验或作业数据摘要
+- 高频错题/错因
+- 学生分层情况
+- 老师课堂观察
+
+## 推荐工作流 / Recommended Workflow
+
+- 区分事实数据和教师观察
+- 找出全班共性缺口和分层差异
+- 定位需要二次讲解的知识点
+- 生成下一节课调整建议
+- 给出个别关注名单的温和支持策略
+
+## 输出格式 / Output Format
+
+- 一句话班级判断
+- 共性问题
+- 分层表现
+- 教学调整
+- 个别支持
+- 下次验证指标
+
+## 质量检查 / Quality Checks
+
+- 不编造数据
+- 结论必须有证据
+- 避免给学生贴负面标签
+- 建议要能在下一节课执行
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有平台报表时，让老师粘贴分数段、错题类型和课堂观察。
+- 没有学生明细时，只输出班级层面建议。
+
+## 示例提示 / Example Prompts
+
+- 这是本次数学周练的错题分布，帮我分析下节课怎么补。
+- 八年级英语阅读错得多，帮我做班级学情分析和教学调整。
 
 ## 适用场景 / When To Use
 
@@ -57,16 +116,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `教学管理`
 - Abilities: `学情分析`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `report.aggregate_metrics`, `organization.query_context`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

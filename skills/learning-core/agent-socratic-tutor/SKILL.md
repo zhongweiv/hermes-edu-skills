@@ -1,7 +1,7 @@
 ---
 name: "agent-socratic-tutor"
 description: "用启发式追问帮助学生自己走到答案，而不是把标准答案一次性倒出来。 Workflow: agent_socratic_tutor.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

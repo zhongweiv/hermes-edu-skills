@@ -1,32 +1,92 @@
 ---
 name: "teacher-chinese-lesson-planning"
-description: "语文备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_chinese_lesson_planning.run."
-version: "0.5.0"
+description: "帮助语文老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕阅读、表达、积累和思维品质。 Workflow: teacher_chinese_lesson_planning.run."
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
 metadata:
   hermes:
-    tags: ["education", "primary", "junior", "senior", "教学管理", "教学设计", "老师备课"]
+    tags: ["education", "primary", "junior", "senior", "语文", "教学设计", "老师备课"]
     source: hermes-edu-skills
     workflow: "teacher_chinese_lesson_planning.run"
     category: "teacher-tools"
     stages: ["primary", "junior", "senior"]
-    subjects: ["教学管理"]
+    subjects: ["语文"]
     abilities: ["教学设计"]
     scenarios: ["老师备课"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "organization.query_context", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 语文备课 Skill
 
-语文备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+帮助语文老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕阅读、表达、积累和思维品质。
+
+## 这个 Skill 解决什么问题 / Problem
+
+帮助语文老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕阅读、表达、积累和思维品质。
+
+## 最适合 / Best For
+
+- 语文新课备课
+- 语文复习课初稿
+- 公开课或教研课打磨
+- 根据班级学情调整课堂活动
+
+## 不适合 / Not For
+
+- 直接替代校内审定教案
+- 不了解教材和学生起点却要求精确语文课件
+- 把语文课变成知识点罗列，忽略文本细读和表达训练
+
+## 使用前请准备 / Inputs
+
+- 年级和课题
+- 教材版本或单元
+- 课时长度
+- 学生基础和常见错误
+- 本节课希望达成的核心目标
+
+## 推荐工作流 / Recommended Workflow
+
+- 把课程目标改写成学生可观察的学习表现。
+- 围绕文本解读、关键问题和学生表达设计课堂
+- 设计导入、探究、讲解、练习和反馈的课堂节奏。
+- 准备 3-5 个能暴露理解的关键提问。
+- 安排出口检测和课后衔接任务。
+
+## 输出格式 / Output Format
+
+- 教学目标
+- 学情起点
+- 重难点
+- 课堂流程
+- 关键提问
+- 分层练习
+- 出口检测
+
+## 质量检查 / Quality Checks
+
+- 目标、活动和评价必须一致
+- 每个活动都要说明服务哪个目标
+- 关键提问要能暴露误解
+- 时间安排要留出反馈
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有班级数据时，让老师描述强/中/弱学生表现。
+- 没有教材库时，让老师粘贴课题、目录或教学要求。
+
+## 示例提示 / Example Prompts
+
+- 帮我设计一节八年级语文新课，学生基础一般，要有关键提问和出口检测。
+- 语文公开课初稿，帮我把活动和评价对齐。
 
 ## 适用场景 / When To Use
 
@@ -55,18 +115,18 @@ metadata:
 - Workflow: `teacher_chinese_lesson_planning.run`
 - Category: `teacher-tools`
 - Stages: `primary`, `junior`, `senior`
-- Subjects: `教学管理`
+- Subjects: `语文`
 - Abilities: `教学设计`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `organization.query_context`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

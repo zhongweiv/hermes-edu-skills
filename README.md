@@ -221,7 +221,7 @@ npm run export:agents
 | [每日练习 Daily Practice](#daily-practice) | 地理、化学、历史、生物、数学 | 28 |
 | [阅读写作 Reading & Writing](#reading-writing) | 语文、英语、通识 | 10 |
 | [考试备考 Exam Prep](#exam-prep) | 地理、化学、历史、生物、数学 | 27 |
-| [老师工具 Teacher Tools](#teacher-tools) | 教学管理 | 31 |
+| [老师工具 Teacher Tools](#teacher-tools) | 教学管理、地理、化学、历史、生物 | 31 |
 | [家庭教育 Family Education](#family-education) | 家庭教育 | 8 |
 | [语言学习 Language Learning](#language-learning) | 语言学习、英语 | 3 |
 | [成人与职业学习 Career Learning](#career-learning) | 计算机、职业教育 | 7 |
@@ -393,36 +393,36 @@ npm run export:agents
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [班级学情分析 Lite Skill](skills/teacher-tools/teacher-class-analysis-lite/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 学情分析 | 学情分析 |
-| [地理备课 Skill](skills/teacher-tools/teacher-geography-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [地理单元复习 Skill](skills/teacher-tools/teacher-geography-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [地理作业生成 Skill](skills/teacher-tools/teacher-geography-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
-| [化学备课 Skill](skills/teacher-tools/teacher-chemistry-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [化学单元复习 Skill](skills/teacher-tools/teacher-chemistry-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [化学作业生成 Skill](skills/teacher-tools/teacher-chemistry-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
-| [家长反馈报告 Lite Skill](skills/teacher-tools/teacher-parent-report-lite/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 报告生成 | 家长沟通 |
+| [班级学情分析 Lite Skill](skills/teacher-tools/teacher-class-analysis-lite/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 学情分析 | 学情分析 |
+| [地理备课 Skill](skills/teacher-tools/teacher-geography-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 地理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [地理单元复习 Skill](skills/teacher-tools/teacher-geography-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 地理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [地理作业生成 Skill](skills/teacher-tools/teacher-geography-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 地理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [化学备课 Skill](skills/teacher-tools/teacher-chemistry-lesson-planning/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 化学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [化学单元复习 Skill](skills/teacher-tools/teacher-chemistry-unit-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 化学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [化学作业生成 Skill](skills/teacher-tools/teacher-chemistry-homework-generation/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 化学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [家长反馈报告 Lite Skill](skills/teacher-tools/teacher-parent-report-lite/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 报告生成 | 家长沟通 |
 | [老师备课 Skill](skills/teacher-tools/teacher-lesson-planning/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计、学情分析 | 老师备课 |
-| [历史备课 Skill](skills/teacher-tools/teacher-history-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [历史单元复习 Skill](skills/teacher-tools/teacher-history-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [历史作业生成 Skill](skills/teacher-tools/teacher-history-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
-| [生物备课 Skill](skills/teacher-tools/teacher-biology-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [生物单元复习 Skill](skills/teacher-tools/teacher-biology-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [生物作业生成 Skill](skills/teacher-tools/teacher-biology-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
-| [数学备课 Skill](skills/teacher-tools/teacher-math-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [数学单元复习 Skill](skills/teacher-tools/teacher-math-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [数学作业生成 Skill](skills/teacher-tools/teacher-math-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
-| [物理备课 Skill](skills/teacher-tools/teacher-physics-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [物理单元复习 Skill](skills/teacher-tools/teacher-physics-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [物理作业生成 Skill](skills/teacher-tools/teacher-physics-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
-| [英语备课 Skill](skills/teacher-tools/teacher-english-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [英语单元复习 Skill](skills/teacher-tools/teacher-english-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [英语作业生成 Skill](skills/teacher-tools/teacher-english-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
-| [语文备课 Skill](skills/teacher-tools/teacher-chinese-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [语文单元复习 Skill](skills/teacher-tools/teacher-chinese-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [语文作业生成 Skill](skills/teacher-tools/teacher-chinese-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
-| [政治备课 Skill](skills/teacher-tools/teacher-politics-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
-| [政治单元复习 Skill](skills/teacher-tools/teacher-politics-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
-| [政治作业生成 Skill](skills/teacher-tools/teacher-politics-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [历史备课 Skill](skills/teacher-tools/teacher-history-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 历史 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [历史单元复习 Skill](skills/teacher-tools/teacher-history-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 历史 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [历史作业生成 Skill](skills/teacher-tools/teacher-history-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 历史 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [生物备课 Skill](skills/teacher-tools/teacher-biology-lesson-planning/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 生物 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [生物单元复习 Skill](skills/teacher-tools/teacher-biology-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 生物 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [生物作业生成 Skill](skills/teacher-tools/teacher-biology-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 生物 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [数学备课 Skill](skills/teacher-tools/teacher-math-lesson-planning/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [数学单元复习 Skill](skills/teacher-tools/teacher-math-unit-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [数学作业生成 Skill](skills/teacher-tools/teacher-math-homework-generation/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 数学 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [物理备课 Skill](skills/teacher-tools/teacher-physics-lesson-planning/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 物理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [物理单元复习 Skill](skills/teacher-tools/teacher-physics-unit-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 物理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [物理作业生成 Skill](skills/teacher-tools/teacher-physics-homework-generation/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 物理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [英语备课 Skill](skills/teacher-tools/teacher-english-lesson-planning/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [英语单元复习 Skill](skills/teacher-tools/teacher-english-unit-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [英语作业生成 Skill](skills/teacher-tools/teacher-english-homework-generation/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [语文备课 Skill](skills/teacher-tools/teacher-chinese-lesson-planning/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [语文单元复习 Skill](skills/teacher-tools/teacher-chinese-unit-review/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [语文作业生成 Skill](skills/teacher-tools/teacher-chinese-homework-generation/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
+| [政治备课 Skill](skills/teacher-tools/teacher-politics-lesson-planning/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 政治 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 教学设计 | 老师备课 |
+| [政治单元复习 Skill](skills/teacher-tools/teacher-politics-unit-review/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 政治 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 复习计划 | 单元复习 |
+| [政治作业生成 Skill](skills/teacher-tools/teacher-politics-homework-generation/SKILL.md) | 增强可用 | 需用户补充上下文 | primary、junior、senior | 政治 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成 | 班级作业 |
 | [作业生成 Skill](skills/teacher-tools/teacher-homework-generation/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 教学管理 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 作业生成、分层练习 | 班级作业 |
 
 ### <a id="family-education"></a>家庭教育 Family Education

@@ -1,7 +1,7 @@
 ---
 name: "postgraduate-english-sprint"
 description: "考研英语备考 Skill是面向考研复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: postgraduate_english_sprint.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

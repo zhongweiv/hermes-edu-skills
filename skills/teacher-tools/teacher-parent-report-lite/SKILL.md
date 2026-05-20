@@ -1,7 +1,7 @@
 ---
 name: "teacher-parent-report-lite"
-description: "家长反馈报告 Lite Skill是面向家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_parent_report_lite.run."
-version: "0.5.0"
+description: "帮助老师把学习表现转成家长听得懂、愿意配合、不过度焦虑的反馈报告。 Workflow: teacher_parent_report_lite.run."
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,77 @@ metadata:
     subjects: ["教学管理"]
     abilities: ["报告生成"]
     scenarios: ["家长沟通"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "report.aggregate_metrics", "organization.query_context", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 家长反馈报告 Lite Skill
 
-家长反馈报告 Lite Skill是面向家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+帮助老师把学习表现转成家长听得懂、愿意配合、不过度焦虑的反馈报告。
+
+## 这个 Skill 解决什么问题 / Problem
+
+帮助老师把学习表现转成家长听得懂、愿意配合、不过度焦虑的反馈报告。
+
+## 最适合 / Best For
+
+- 阶段性家长反馈
+- 家校沟通前准备
+- 课后服务反馈
+- 学生进步和问题并存的情况
+
+## 不适合 / Not For
+
+- 用排名刺激家长
+- 替老师承诺无法保证的提分结果
+- 暴露其他学生隐私
+
+## 使用前请准备 / Inputs
+
+- 学生近期表现
+- 作业/测验数据
+- 课堂观察
+- 需要家长配合的事项
+- 沟通语气偏好
+
+## 推荐工作流 / Recommended Workflow
+
+- 先写事实和进步
+- 再说明一个最关键问题
+- 给家长可执行的家庭配合动作
+- 提供老师下一步支持
+- 生成温和但明确的沟通话术
+
+## 输出格式 / Output Format
+
+- 学生近况
+- 进步亮点
+- 主要问题
+- 家庭配合建议
+- 老师后续安排
+- 可直接发送话术
+
+## 质量检查 / Quality Checks
+
+- 不夸大焦虑
+- 不比较其他学生
+- 建议必须具体可做
+- 语气尊重家长和学生
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有学生数据时，让老师输入 3 条事实观察。
+- 没有沟通模板时，输出短信/微信/面谈三种版本。
+
+## 示例提示 / Example Prompts
+
+- 根据这些课堂表现，帮我写一段给家长的反馈，语气温和但要明确。
+- 孩子最近作业退步了，帮我准备一次家校沟通话术。
 
 ## 适用场景 / When To Use
 
@@ -57,16 +116,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `教学管理`
 - Abilities: `报告生成`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `report.aggregate_metrics`, `organization.query_context`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

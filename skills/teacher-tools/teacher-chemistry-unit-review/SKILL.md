@@ -1,32 +1,91 @@
 ---
 name: "teacher-chemistry-unit-review"
-description: "化学单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_chemistry_unit_review.run."
-version: "0.5.0"
+description: "帮助化学老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。 Workflow: teacher_chemistry_unit_review.run."
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
 metadata:
   hermes:
-    tags: ["education", "primary", "junior", "senior", "教学管理", "复习计划", "单元复习"]
+    tags: ["education", "primary", "junior", "senior", "化学", "复习计划", "单元复习"]
     source: hermes-edu-skills
     workflow: "teacher_chemistry_unit_review.run"
     category: "teacher-tools"
     stages: ["primary", "junior", "senior"]
-    subjects: ["教学管理"]
+    subjects: ["化学"]
     abilities: ["复习计划"]
     scenarios: ["单元复习"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "organization.query_context", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 化学单元复习 Skill
 
-化学单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+帮助化学老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。
+
+## 这个 Skill 解决什么问题 / Problem
+
+帮助化学老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。
+
+## 最适合 / Best For
+
+- 化学单元复习
+- 期中期末前查漏补缺
+- 错题集中讲评
+- 班级分层复习
+
+## 不适合 / Not For
+
+- 临考押题承诺
+- 只列知识点不设计检测
+- 只记结论不理解现象、粒子和符号之间的关系
+
+## 使用前请准备 / Inputs
+
+- 单元范围
+- 最近测验或作业错因
+- 剩余复习课时
+- 学生分层情况
+- 重点题型或实验/文本/模型
+
+## 推荐工作流 / Recommended Workflow
+
+- 用 5-8 个问题做主动回忆热身。
+- 用物质转化、实验探究和易混概念构建复习链
+- 按概念、方法、应用或表达把错因分组。
+- 设计典型题讲评和变式练习。
+- 安排下一次间隔复习和复测指标。
+
+## 输出格式 / Output Format
+
+- 单元知识结构
+- 主动回忆问题
+- 错因聚类
+- 讲评顺序
+- 变式练习
+- 复测安排
+
+## 质量检查 / Quality Checks
+
+- 必须包含主动回忆
+- 复习顺序要基于错因证据
+- 讲评不能只报答案
+- 要有下一次复测指标
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有错题统计时，让老师粘贴 3-5 个高频错题。
+- 没有题库时，生成原创变式题并附答案。
+
+## 示例提示 / Example Prompts
+
+- 帮我做化学第二单元复习课，先用主动回忆，再按错因安排讲评。
+- 这次化学单元测错题集中在这些点，帮我设计一节复习课。
 
 ## 适用场景 / When To Use
 
@@ -55,18 +114,18 @@ metadata:
 - Workflow: `teacher_chemistry_unit_review.run`
 - Category: `teacher-tools`
 - Stages: `primary`, `junior`, `senior`
-- Subjects: `教学管理`
+- Subjects: `化学`
 - Abilities: `复习计划`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `organization.query_context`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

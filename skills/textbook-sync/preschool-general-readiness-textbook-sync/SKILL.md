@@ -1,7 +1,7 @@
 ---
 name: "preschool-general-readiness-textbook-sync"
 description: "幼小衔接通用学前综合同步 Skill是面向每日启蒙、亲子共学、入学准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: preschool_general_readiness_textbook_sync.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

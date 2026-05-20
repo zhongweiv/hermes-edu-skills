@@ -1,18 +1,18 @@
 ---
 name: "teacher-politics-unit-review"
 description: "政治单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_politics_unit_review.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
 metadata:
   hermes:
-    tags: ["education", "primary", "junior", "senior", "教学管理", "复习计划", "单元复习"]
+    tags: ["education", "primary", "junior", "senior", "政治", "复习计划", "单元复习"]
     source: hermes-edu-skills
     workflow: "teacher_politics_unit_review.run"
     category: "teacher-tools"
     stages: ["primary", "junior", "senior"]
-    subjects: ["教学管理"]
+    subjects: ["政治"]
     abilities: ["复习计划"]
     scenarios: ["单元复习"]
     quality_tier: "enhanced"
@@ -21,7 +21,7 @@ metadata:
     export_mode: "installable"
     release_channel: "public"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "plan.generate", "organization.query_context", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 政治单元复习 Skill
@@ -55,13 +55,13 @@ metadata:
 - Workflow: `teacher_politics_unit_review.run`
 - Category: `teacher-tools`
 - Stages: `primary`, `junior`, `senior`
-- Subjects: `教学管理`
+- Subjects: `政治`
 - Abilities: `复习计划`
 - Quality Tier: `enhanced`
 - Standalone Support: `needs_user_input`
 - Public Release: `allowed`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `plan.generate`, `organization.query_context`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
 - Release Channel: `public`
 

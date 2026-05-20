@@ -1,32 +1,92 @@
 ---
 name: "teacher-math-homework-generation"
-description: "数学作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_math_homework_generation.run."
-version: "0.5.0"
+description: "帮助数学老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。 Workflow: teacher_math_homework_generation.run."
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
 metadata:
   hermes:
-    tags: ["education", "primary", "junior", "senior", "教学管理", "作业生成", "班级作业"]
+    tags: ["education", "primary", "junior", "senior", "数学", "作业生成", "班级作业"]
     source: hermes-edu-skills
     workflow: "teacher_math_homework_generation.run"
     category: "teacher-tools"
     stages: ["primary", "junior", "senior"]
-    subjects: ["教学管理"]
+    subjects: ["数学"]
     abilities: ["作业生成"]
     scenarios: ["班级作业"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "organization.query_context", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 数学作业生成 Skill
 
-数学作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+帮助数学老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。
+
+## 这个 Skill 解决什么问题 / Problem
+
+帮助数学老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。
+
+## 最适合 / Best For
+
+- 数学课后巩固
+- 数学分层作业
+- 周末短练
+- 针对错题的补偿练习
+
+## 不适合 / Not For
+
+- 超纲题海
+- 无法批改或没有答案依据的开放任务
+- 只堆题不追问为什么，导致学生会套不会迁移
+
+## 使用前请准备 / Inputs
+
+- 年级和知识点
+- 预计完成时间
+- 基础/提高/挑战比例
+- 班级常见错误
+- 是否需要答案解析
+
+## 推荐工作流 / Recommended Workflow
+
+- 先确定作业目标和完成时长。
+- 按基础计算、方法迁移和应用题分层练习
+- 按基础、提高、挑战设计题目或任务。
+- 给出答案、解析和批改关注点。
+- 标注学生完成后的反馈和加练规则。
+
+## 输出格式 / Output Format
+
+- 作业目标
+- 预计时长
+- 基础题
+- 提高题
+- 挑战题
+- 答案解析
+- 批改关注点
+
+## 质量检查 / Quality Checks
+
+- 题量必须匹配时长
+- 分层差异要清楚
+- 答案或评价标准可核验
+- 作业目标不能超过本课核心目标
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有题库时，由 Agent 生成原创题并附答案。
+- 没有班级数据时，默认 60/30/10 分层。
+
+## 示例提示 / Example Prompts
+
+- 给七年级数学生成 20 分钟分层作业，要有答案和批改关注点。
+- 数学这一课学生错得多，帮我做一份补偿练习。
 
 ## 适用场景 / When To Use
 
@@ -55,18 +115,18 @@ metadata:
 - Workflow: `teacher_math_homework_generation.run`
 - Category: `teacher-tools`
 - Stages: `primary`, `junior`, `senior`
-- Subjects: `教学管理`
+- Subjects: `数学`
 - Abilities: `作业生成`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `organization.query_context`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

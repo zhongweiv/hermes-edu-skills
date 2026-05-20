@@ -1,7 +1,7 @@
 ---
 name: "agent-memory-method"
 description: "把需要背的内容变成可提取、可复述、可间隔复习的记忆任务，而不是反复机械朗读。 Workflow: agent_memory_method.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

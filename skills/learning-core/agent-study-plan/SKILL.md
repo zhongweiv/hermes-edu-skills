@@ -1,7 +1,7 @@
 ---
 name: "agent-study-plan"
 description: "把模糊目标拆成今天、这一周和下一轮可执行的学习安排。 Workflow: agent_study_plan.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

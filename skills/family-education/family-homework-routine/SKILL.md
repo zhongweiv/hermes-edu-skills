@@ -1,7 +1,7 @@
 ---
 name: "family-homework-routine"
 description: "家庭作业习惯 Skill是面向作业陪伴的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: family_homework_routine.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

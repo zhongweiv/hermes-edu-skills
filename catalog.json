@@ -1,8 +1,8 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "license": "MIT",
-  "generatedAt": "2026-05-20T22:07:36.948Z",
+  "generatedAt": "2026-05-20T22:30:09.128Z",
   "skillCount": 177,
   "skills": [
     {
@@ -10,7 +10,7 @@
       "slug": "adult-language-learning",
       "title": "成人语言学习 Skill",
       "description": "成人语言学习 Skill是面向每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "language-learning",
       "path": "skills/language-learning/adult-language-learning/SKILL.md",
@@ -77,7 +77,7 @@
       "slug": "adult-vocational-certificate",
       "title": "职业证书备考 Skill",
       "description": "职业证书备考 Skill是面向考证的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "career-learning",
       "path": "skills/career-learning/adult-vocational-certificate/SKILL.md",
@@ -141,7 +141,7 @@
       "slug": "adult-workplace-writing",
       "title": "职场写作 Skill",
       "description": "职场写作 Skill是面向职业技能的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "career-learning",
       "path": "skills/career-learning/adult-workplace-writing/SKILL.md",
@@ -205,7 +205,7 @@
       "slug": "civil-service-aptitude",
       "title": "公务员行测 Skill",
       "description": "公务员行测 Skill是面向考证、专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/civil-service-aptitude/SKILL.md",
@@ -272,7 +272,7 @@
       "slug": "civil-service-essay",
       "title": "公务员申论 Skill",
       "description": "公务员申论 Skill是面向考证、写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/civil-service-essay/SKILL.md",
@@ -338,7 +338,7 @@
       "slug": "teacher-certification-sprint",
       "title": "教师资格证备考 Skill",
       "description": "教师资格证备考 Skill是面向考证的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/teacher-certification-sprint/SKILL.md",
@@ -401,7 +401,7 @@
       "slug": "college-academic-writing",
       "title": "学术写作 Skill",
       "description": "学术写作 Skill是面向论文训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/college-academic-writing/SKILL.md",
@@ -467,7 +467,7 @@
       "slug": "college-cet4-sprint",
       "title": "大学英语四级备考 Skill",
       "description": "大学英语四级备考 Skill是面向考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/college-cet4-sprint/SKILL.md",
@@ -533,7 +533,7 @@
       "slug": "college-cet6-sprint",
       "title": "大学英语六级备考 Skill",
       "description": "大学英语六级备考 Skill是面向考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/college-cet6-sprint/SKILL.md",
@@ -599,7 +599,7 @@
       "slug": "college-cs-data-structure",
       "title": "数据结构 Skill",
       "description": "数据结构 Skill是面向课程学习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "career-learning",
       "path": "skills/career-learning/college-cs-data-structure/SKILL.md",
@@ -665,7 +665,7 @@
       "slug": "college-ai-foundation",
       "title": "AI 基础 Skill",
       "description": "AI 基础 Skill是面向兴趣学习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "career-learning",
       "path": "skills/career-learning/college-ai-foundation/SKILL.md",
@@ -732,7 +732,7 @@
       "slug": "college-cs-algorithm-interview",
       "title": "算法面试 Skill",
       "description": "算法面试 Skill是面向面试准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "career-learning",
       "path": "skills/career-learning/college-cs-algorithm-interview/SKILL.md",
@@ -799,7 +799,7 @@
       "slug": "college-cs-python",
       "title": "Python 学习 Skill",
       "description": "Python 学习 Skill是面向职业技能的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "career-learning",
       "path": "skills/career-learning/college-cs-python/SKILL.md",
@@ -866,7 +866,7 @@
       "slug": "college-data-analysis",
       "title": "数据分析 Skill",
       "description": "数据分析 Skill是面向职业技能的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "career-learning",
       "path": "skills/career-learning/college-data-analysis/SKILL.md",
@@ -934,7 +934,7 @@
       "slug": "ielts-prep",
       "title": "雅思备考 Skill",
       "description": "雅思备考 Skill是面向出国考试的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "language-learning",
       "path": "skills/language-learning/ielts-prep/SKILL.md",
@@ -1004,7 +1004,7 @@
       "slug": "postgraduate-english-sprint",
       "title": "考研英语备考 Skill",
       "description": "考研英语备考 Skill是面向考研复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/postgraduate-english-sprint/SKILL.md",
@@ -1072,7 +1072,7 @@
       "slug": "toefl-prep",
       "title": "托福备考 Skill",
       "description": "托福备考 Skill是面向出国考试的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "language-learning",
       "path": "skills/language-learning/toefl-prep/SKILL.md",
@@ -1142,7 +1142,7 @@
       "slug": "junior-biology-bs-textbook-sync",
       "title": "北师大版初中生物同步 Skill",
       "description": "北师大版初中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-biology-bs-textbook-sync/SKILL.md",
@@ -1234,7 +1234,7 @@
       "slug": "junior-biology-exam-review",
       "title": "初中生物考试复习 Skill",
       "description": "初中生物考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-biology-exam-review/SKILL.md",
@@ -1307,7 +1307,7 @@
       "slug": "junior-biology-quick-practice",
       "title": "初中生物快速巩固 Skill",
       "description": "初中生物快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-biology-quick-practice/SKILL.md",
@@ -1379,7 +1379,7 @@
       "slug": "junior-biology-rj-textbook-sync",
       "title": "人教版初中生物同步 Skill",
       "description": "人教版初中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-biology-rj-textbook-sync/SKILL.md",
@@ -1471,7 +1471,7 @@
       "slug": "junior-chemistry-exam-review",
       "title": "初中化学考试复习 Skill",
       "description": "初中化学考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-chemistry-exam-review/SKILL.md",
@@ -1544,7 +1544,7 @@
       "slug": "junior-chemistry-lk-textbook-sync",
       "title": "鲁科版初中化学同步 Skill",
       "description": "鲁科版初中化学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-chemistry-lk-textbook-sync/SKILL.md",
@@ -1636,7 +1636,7 @@
       "slug": "junior-chemistry-quick-practice",
       "title": "初中化学快速巩固 Skill",
       "description": "初中化学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-chemistry-quick-practice/SKILL.md",
@@ -1708,7 +1708,7 @@
       "slug": "junior-chemistry-rj-textbook-sync",
       "title": "人教版初中化学同步 Skill",
       "description": "人教版初中化学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-chemistry-rj-textbook-sync/SKILL.md",
@@ -1800,7 +1800,7 @@
       "slug": "junior-chinese-composition",
       "title": "初中作文提升 Skill",
       "description": "初中作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/junior-chinese-composition/SKILL.md",
@@ -1869,7 +1869,7 @@
       "slug": "junior-chinese-exam-review",
       "title": "初中语文考试复习 Skill",
       "description": "初中语文考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-chinese-exam-review/SKILL.md",
@@ -1942,7 +1942,7 @@
       "slug": "junior-chinese-modern-reading",
       "title": "初中现代文阅读 Skill",
       "description": "初中现代文阅读 Skill是面向中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/junior-chinese-modern-reading/SKILL.md",
@@ -2012,7 +2012,7 @@
       "slug": "junior-chinese-quick-practice",
       "title": "初中语文快速巩固 Skill",
       "description": "初中语文快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-chinese-quick-practice/SKILL.md",
@@ -2084,7 +2084,7 @@
       "slug": "junior-chinese-tongbian-textbook-sync",
       "title": "统编版初中语文同步 Skill",
       "description": "统编版初中语文同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-chinese-tongbian-textbook-sync/SKILL.md",
@@ -2177,7 +2177,7 @@
       "slug": "junior-english-exam-review",
       "title": "初中英语考试复习 Skill",
       "description": "初中英语考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-english-exam-review/SKILL.md",
@@ -2250,7 +2250,7 @@
       "slug": "junior-english-quick-practice",
       "title": "初中英语快速巩固 Skill",
       "description": "初中英语快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-english-quick-practice/SKILL.md",
@@ -2322,7 +2322,7 @@
       "slug": "junior-english-rj-textbook-sync",
       "title": "人教版初中英语同步 Skill",
       "description": "人教版初中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-english-rj-textbook-sync/SKILL.md",
@@ -2415,7 +2415,7 @@
       "slug": "junior-english-vocabulary-daily",
       "title": "初中英语词汇每日练 Skill",
       "description": "初中英语词汇每日练 Skill是面向每日打卡、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-english-vocabulary-daily/SKILL.md",
@@ -2487,7 +2487,7 @@
       "slug": "junior-english-writing",
       "title": "初中英语写作 Skill",
       "description": "初中英语写作 Skill是面向中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/junior-english-writing/SKILL.md",
@@ -2557,7 +2557,7 @@
       "slug": "junior-english-wy-textbook-sync",
       "title": "外研版初中英语同步 Skill",
       "description": "外研版初中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-english-wy-textbook-sync/SKILL.md",
@@ -2650,7 +2650,7 @@
       "slug": "junior-english-yl-textbook-sync",
       "title": "译林版初中英语同步 Skill",
       "description": "译林版初中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-english-yl-textbook-sync/SKILL.md",
@@ -2743,7 +2743,7 @@
       "slug": "junior-geography-exam-review",
       "title": "初中地理考试复习 Skill",
       "description": "初中地理考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-geography-exam-review/SKILL.md",
@@ -2816,7 +2816,7 @@
       "slug": "junior-geography-quick-practice",
       "title": "初中地理快速巩固 Skill",
       "description": "初中地理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-geography-quick-practice/SKILL.md",
@@ -2888,7 +2888,7 @@
       "slug": "junior-geography-rj-textbook-sync",
       "title": "人教版初中地理同步 Skill",
       "description": "人教版初中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-geography-rj-textbook-sync/SKILL.md",
@@ -2981,7 +2981,7 @@
       "slug": "junior-geography-xj-textbook-sync",
       "title": "湘教版初中地理同步 Skill",
       "description": "湘教版初中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-geography-xj-textbook-sync/SKILL.md",
@@ -3074,7 +3074,7 @@
       "slug": "junior-history-exam-review",
       "title": "初中历史考试复习 Skill",
       "description": "初中历史考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-history-exam-review/SKILL.md",
@@ -3147,7 +3147,7 @@
       "slug": "junior-history-quick-practice",
       "title": "初中历史快速巩固 Skill",
       "description": "初中历史快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-history-quick-practice/SKILL.md",
@@ -3219,7 +3219,7 @@
       "slug": "junior-history-tongbian-textbook-sync",
       "title": "统编版初中历史同步 Skill",
       "description": "统编版初中历史同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-history-tongbian-textbook-sync/SKILL.md",
@@ -3312,7 +3312,7 @@
       "slug": "junior-math-bs-textbook-sync",
       "title": "北师大版初中数学同步 Skill",
       "description": "北师大版初中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-math-bs-textbook-sync/SKILL.md",
@@ -3405,7 +3405,7 @@
       "slug": "junior-math-daily-practice",
       "title": "初中数学每日练 Skill",
       "description": "初中数学每日练 Skill是面向每日打卡、专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-math-daily-practice/SKILL.md",
@@ -3478,7 +3478,7 @@
       "slug": "junior-math-exam-review",
       "title": "初中数学考试复习 Skill",
       "description": "初中数学考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-math-exam-review/SKILL.md",
@@ -3551,7 +3551,7 @@
       "slug": "junior-math-quick-practice",
       "title": "初中数学快速巩固 Skill",
       "description": "初中数学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-math-quick-practice/SKILL.md",
@@ -3623,7 +3623,7 @@
       "slug": "junior-math-rj-textbook-sync",
       "title": "人教版初中数学同步 Skill",
       "description": "人教版初中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-math-rj-textbook-sync/SKILL.md",
@@ -3716,7 +3716,7 @@
       "slug": "junior-math-sj-textbook-sync",
       "title": "苏教版初中数学同步 Skill",
       "description": "苏教版初中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-math-sj-textbook-sync/SKILL.md",
@@ -3809,7 +3809,7 @@
       "slug": "junior-physics-exam-review",
       "title": "初中物理考试复习 Skill",
       "description": "初中物理考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-physics-exam-review/SKILL.md",
@@ -3882,7 +3882,7 @@
       "slug": "junior-physics-lk-textbook-sync",
       "title": "鲁科版初中物理同步 Skill",
       "description": "鲁科版初中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-physics-lk-textbook-sync/SKILL.md",
@@ -3974,7 +3974,7 @@
       "slug": "junior-physics-quick-practice",
       "title": "初中物理快速巩固 Skill",
       "description": "初中物理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-physics-quick-practice/SKILL.md",
@@ -4046,7 +4046,7 @@
       "slug": "junior-physics-rj-textbook-sync",
       "title": "人教版初中物理同步 Skill",
       "description": "人教版初中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-physics-rj-textbook-sync/SKILL.md",
@@ -4138,7 +4138,7 @@
       "slug": "junior-politics-exam-review",
       "title": "初中政治考试复习 Skill",
       "description": "初中政治考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-politics-exam-review/SKILL.md",
@@ -4211,7 +4211,7 @@
       "slug": "junior-politics-quick-practice",
       "title": "初中政治快速巩固 Skill",
       "description": "初中政治快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-politics-quick-practice/SKILL.md",
@@ -4283,7 +4283,7 @@
       "slug": "junior-politics-tongbian-textbook-sync",
       "title": "统编版初中政治同步 Skill",
       "description": "统编版初中政治同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/junior-politics-tongbian-textbook-sync/SKILL.md",
@@ -4376,7 +4376,7 @@
       "slug": "junior-zhongkao-sprint",
       "title": "中考冲刺 Skill",
       "description": "中考冲刺 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/junior-zhongkao-sprint/SKILL.md",
@@ -4445,7 +4445,7 @@
       "slug": "preschool-general-readiness-textbook-sync",
       "title": "幼小衔接通用学前综合同步 Skill",
       "description": "幼小衔接通用学前综合同步 Skill是面向每日启蒙、亲子共学、入学准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/preschool-general-readiness-textbook-sync/SKILL.md",
@@ -4524,7 +4524,7 @@
       "slug": "preschool-literacy-daily",
       "title": "学前识字每日练 Skill",
       "description": "学前识字每日练 Skill是面向每日启蒙、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/preschool-literacy-daily/SKILL.md",
@@ -4596,7 +4596,7 @@
       "slug": "preschool-number-sense-daily",
       "title": "学前数感每日练 Skill",
       "description": "学前数感每日练 Skill是面向数感游戏、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/preschool-number-sense-daily/SKILL.md",
@@ -4668,7 +4668,7 @@
       "slug": "agent-parent-companion",
       "title": "家长陪学 Skill",
       "description": "家长陪学 Skill是面向家长陪学的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "family-education",
       "path": "skills/family-education/agent-parent-companion/SKILL.md",
@@ -4762,7 +4762,7 @@
       "slug": "family-emotion-support",
       "title": "学习情绪支持 Skill",
       "description": "学习情绪支持 Skill是面向亲子沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "family-education",
       "path": "skills/family-education/family-emotion-support/SKILL.md",
@@ -4855,7 +4855,7 @@
       "slug": "family-holiday-learning",
       "title": "假期家庭学习 Skill",
       "description": "假期家庭学习 Skill是面向寒暑假提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "family-education",
       "path": "skills/family-education/family-holiday-learning/SKILL.md",
@@ -4948,7 +4948,7 @@
       "slug": "family-homework-routine",
       "title": "家庭作业习惯 Skill",
       "description": "家庭作业习惯 Skill是面向作业陪伴的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "family-education",
       "path": "skills/family-education/family-homework-routine/SKILL.md",
@@ -5043,7 +5043,7 @@
       "slug": "family-reading-companion",
       "title": "亲子阅读陪伴 Skill",
       "description": "亲子阅读陪伴 Skill是面向亲子共读的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "family-education",
       "path": "skills/family-education/family-reading-companion/SKILL.md",
@@ -5136,7 +5136,7 @@
       "slug": "family-school-communication",
       "title": "家校沟通准备 Skill",
       "description": "家校沟通准备 Skill是面向家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "family-education",
       "path": "skills/family-education/family-school-communication/SKILL.md",
@@ -5229,7 +5229,7 @@
       "slug": "family-school-readiness",
       "title": "幼小衔接家庭准备 Skill",
       "description": "幼小衔接家庭准备 Skill是面向入学准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "family-education",
       "path": "skills/family-education/family-school-readiness/SKILL.md",
@@ -5322,7 +5322,7 @@
       "slug": "family-screen-time-balance",
       "title": "屏幕时间管理 Skill",
       "description": "屏幕时间管理 Skill是面向习惯培养的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "family-education",
       "path": "skills/family-education/family-screen-time-balance/SKILL.md",
@@ -5415,7 +5415,7 @@
       "slug": "agent-study-plan",
       "title": "学习计划 Skill",
       "description": "把模糊目标拆成今天、这一周和下一轮可执行的学习安排。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-study-plan/SKILL.md",
@@ -5516,7 +5516,7 @@
       "slug": "primary-chinese-dictation-daily",
       "title": "小学语文字词听写 Skill",
       "description": "把生字词听写做成“会读、会写、会用、会订正”的每日小闭环。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/primary-chinese-dictation-daily/SKILL.md",
@@ -5597,7 +5597,7 @@
       "slug": "primary-chinese-reading",
       "title": "小学语文阅读理解 Skill",
       "description": "小学语文阅读理解 Skill是面向阅读训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/primary-chinese-reading/SKILL.md",
@@ -5672,7 +5672,7 @@
       "slug": "primary-chinese-recitation-daily",
       "title": "小学课文古诗背诵 Skill",
       "description": "把课文和古诗背诵拆成理解、分段、提取线索和复背检查，减少死记硬背。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/primary-chinese-recitation-daily/SKILL.md",
@@ -5750,7 +5750,7 @@
       "slug": "primary-chinese-tongbian-textbook-sync",
       "title": "统编版小学语文同步 Skill",
       "description": "统编版小学语文同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/primary-chinese-tongbian-textbook-sync/SKILL.md",
@@ -5847,7 +5847,7 @@
       "slug": "primary-chinese-writing",
       "title": "小学作文提升 Skill",
       "description": "小学作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/primary-chinese-writing/SKILL.md",
@@ -5923,7 +5923,7 @@
       "slug": "primary-english-pep-textbook-sync",
       "title": "人教PEP版小学英语同步 Skill",
       "description": "人教PEP版小学英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/primary-english-pep-textbook-sync/SKILL.md",
@@ -6020,7 +6020,7 @@
       "slug": "primary-english-reading",
       "title": "小学英语阅读 Skill",
       "description": "小学英语阅读 Skill是面向阅读训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/primary-english-reading/SKILL.md",
@@ -6095,7 +6095,7 @@
       "slug": "primary-english-vocabulary-daily",
       "title": "小学英语单词每日练 Skill",
       "description": "让小学英语单词练习从“背拼写”升级为音、形、义、句一起掌握。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/primary-english-vocabulary-daily/SKILL.md",
@@ -6175,7 +6175,7 @@
       "slug": "primary-english-wy-textbook-sync",
       "title": "外研版小学英语同步 Skill",
       "description": "外研版小学英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/primary-english-wy-textbook-sync/SKILL.md",
@@ -6272,7 +6272,7 @@
       "slug": "primary-english-yl-textbook-sync",
       "title": "译林版小学英语同步 Skill",
       "description": "译林版小学英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/primary-english-yl-textbook-sync/SKILL.md",
@@ -6369,7 +6369,7 @@
       "slug": "primary-final-review",
       "title": "小学期末复习 Skill",
       "description": "小学期末复习 Skill是面向期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/primary-final-review/SKILL.md",
@@ -6446,7 +6446,7 @@
       "slug": "primary-math-bs-textbook-sync",
       "title": "北师大版小学数学同步 Skill",
       "description": "北师大版小学数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、口算速练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/primary-math-bs-textbook-sync/SKILL.md",
@@ -6545,7 +6545,7 @@
       "slug": "primary-math-mental-arithmetic",
       "title": "小学口算速练 Skill",
       "description": "为小学生生成短、准、可批改的口算训练，让每天 5-10 分钟练出速度、准确率和数感。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/primary-math-mental-arithmetic/SKILL.md",
@@ -6626,7 +6626,7 @@
       "slug": "primary-math-rj-textbook-sync",
       "title": "人教版小学数学同步 Skill",
       "description": "围绕人教版小学数学教材，把年级、册别、单元和学习目标变成可执行的预习、练习、复习和错题巩固任务。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/primary-math-rj-textbook-sync/SKILL.md",
@@ -6725,7 +6725,7 @@
       "slug": "primary-math-sj-textbook-sync",
       "title": "苏教版小学数学同步 Skill",
       "description": "苏教版小学数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、口算速练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/primary-math-sj-textbook-sync/SKILL.md",
@@ -6824,7 +6824,7 @@
       "slug": "primary-reading-daily",
       "title": "小学阅读每日练 Skill",
       "description": "把小学阅读练成“读懂、找依据、会表达”的短训练，而不是泛泛问读后感。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/primary-reading-daily/SKILL.md",
@@ -6902,7 +6902,7 @@
       "slug": "agent-focus-training",
       "title": "专注力训练 Skill",
       "description": "把“孩子不专心”拆成可观察的学习环境、任务长度和反馈节奏，生成能立刻执行的专注训练方案。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-focus-training/SKILL.md",
@@ -6984,7 +6984,7 @@
       "slug": "agent-holiday-plan",
       "title": "寒暑假提升 Skill",
       "description": "把寒暑假从“报复性补课”改成有节奏的巩固、预习、阅读和休息计划。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-holiday-plan/SKILL.md",
@@ -7067,7 +7067,7 @@
       "slug": "agent-homework-companion",
       "title": "作业陪伴 Skill",
       "description": "陪学生完成作业全过程：先规划顺序，再在卡住时提示，不替写，最后做自查和订正。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-homework-companion/SKILL.md",
@@ -7151,7 +7151,7 @@
       "slug": "agent-learning-habit",
       "title": "学习习惯 Skill",
       "description": "把抽象的“养成学习习惯”落到固定触发、最小动作、即时反馈和家庭协作上。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-learning-habit/SKILL.md",
@@ -7233,7 +7233,7 @@
       "slug": "agent-learning-report",
       "title": "学情报告 Skill",
       "description": "把零散练习记录整理成家长、老师和学生都能看懂的学情判断。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-learning-report/SKILL.md",
@@ -7319,7 +7319,7 @@
       "slug": "agent-memory-method",
       "title": "记忆方法 Skill",
       "description": "把需要背的内容变成可提取、可复述、可间隔复习的记忆任务，而不是反复机械朗读。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-memory-method/SKILL.md",
@@ -7401,7 +7401,7 @@
       "slug": "agent-mistake-review",
       "title": "错题复盘 Skill",
       "description": "把错题从改正答案升级为找到错误模式并安排复习。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-mistake-review/SKILL.md",
@@ -7489,7 +7489,7 @@
       "slug": "agent-photo-question",
       "title": "拍照答疑 Skill",
       "description": "把拍照题目转成先识题、再讲思路、最后追问确认的学习过程，而不是只给答案。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-photo-question/SKILL.md",
@@ -7571,7 +7571,7 @@
       "slug": "agent-preview-assistant",
       "title": "课前预习 Skill",
       "description": "把预习从“提前看一遍”变成带问题进入课堂：先扫知识、再标疑问、最后准备课堂关注点。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-preview-assistant/SKILL.md",
@@ -7654,7 +7654,7 @@
       "slug": "agent-review-assistant",
       "title": "复习助手 Skill",
       "description": "把复习从重新看笔记变成检索、纠错、归纳和再练习的闭环。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-review-assistant/SKILL.md",
@@ -7737,7 +7737,7 @@
       "slug": "agent-socratic-tutor",
       "title": "启发式讲解 Skill",
       "description": "用启发式追问帮助学生自己走到答案，而不是把标准答案一次性倒出来。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-socratic-tutor/SKILL.md",
@@ -7819,7 +7819,7 @@
       "slug": "agent-weakness-boost",
       "title": "薄弱项提升 Skill",
       "description": "把“薄弱项”从模糊标签变成一个可诊断、可练习、可复测的小专题提升闭环。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-weakness-boost/SKILL.md",
@@ -7901,7 +7901,7 @@
       "slug": "agent-weekly-review",
       "title": "每周复盘 Skill",
       "description": "把一周学习从流水账整理成进步、问题、下周行动三件事，让学生和家长都知道下一步做什么。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-weekly-review/SKILL.md",
@@ -7984,7 +7984,7 @@
       "slug": "teacher-biology-homework-generation",
       "title": "生物作业生成 Skill",
       "description": "生物作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-biology-homework-generation/SKILL.md",
@@ -7995,7 +7995,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "生物"
       ],
       "abilities": [
         "作业生成"
@@ -8021,9 +8021,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8066,8 +8067,8 @@
       "name": "teacher-biology-lesson-planning",
       "slug": "teacher-biology-lesson-planning",
       "title": "生物备课 Skill",
-      "description": "生物备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助生物老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕生命现象、结构功能、实验探究和图表信息提取。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-biology-lesson-planning/SKILL.md",
@@ -8078,7 +8079,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "生物"
       ],
       "abilities": [
         "教学设计"
@@ -8089,11 +8090,11 @@
       "scenarios": [
         "老师备课"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8102,9 +8103,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8148,7 +8150,7 @@
       "slug": "teacher-biology-unit-review",
       "title": "生物单元复习 Skill",
       "description": "生物单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-biology-unit-review/SKILL.md",
@@ -8159,7 +8161,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "生物"
       ],
       "abilities": [
         "复习计划"
@@ -8184,9 +8186,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8229,8 +8232,8 @@
       "name": "teacher-chemistry-homework-generation",
       "slug": "teacher-chemistry-homework-generation",
       "title": "化学作业生成 Skill",
-      "description": "化学作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助化学老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-chemistry-homework-generation/SKILL.md",
@@ -8241,7 +8244,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "化学"
       ],
       "abilities": [
         "作业生成"
@@ -8252,11 +8255,11 @@
       "scenarios": [
         "班级作业"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8267,9 +8270,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8312,8 +8316,8 @@
       "name": "teacher-chemistry-lesson-planning",
       "slug": "teacher-chemistry-lesson-planning",
       "title": "化学备课 Skill",
-      "description": "化学备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助化学老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕微观解释、实验现象、化学用语和反应规律。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-chemistry-lesson-planning/SKILL.md",
@@ -8324,7 +8328,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "化学"
       ],
       "abilities": [
         "教学设计"
@@ -8335,11 +8339,11 @@
       "scenarios": [
         "老师备课"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8348,9 +8352,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8393,8 +8398,8 @@
       "name": "teacher-chemistry-unit-review",
       "slug": "teacher-chemistry-unit-review",
       "title": "化学单元复习 Skill",
-      "description": "化学单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助化学老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-chemistry-unit-review/SKILL.md",
@@ -8405,7 +8410,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "化学"
       ],
       "abilities": [
         "复习计划"
@@ -8416,11 +8421,11 @@
       "scenarios": [
         "单元复习"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8430,9 +8435,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8475,8 +8481,8 @@
       "name": "teacher-chinese-homework-generation",
       "slug": "teacher-chinese-homework-generation",
       "title": "语文作业生成 Skill",
-      "description": "语文作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助语文老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-chinese-homework-generation/SKILL.md",
@@ -8487,7 +8493,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "语文"
       ],
       "abilities": [
         "作业生成"
@@ -8498,11 +8504,11 @@
       "scenarios": [
         "班级作业"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8513,9 +8519,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8558,8 +8565,8 @@
       "name": "teacher-chinese-lesson-planning",
       "slug": "teacher-chinese-lesson-planning",
       "title": "语文备课 Skill",
-      "description": "语文备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助语文老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕阅读、表达、积累和思维品质。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-chinese-lesson-planning/SKILL.md",
@@ -8570,7 +8577,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "语文"
       ],
       "abilities": [
         "教学设计"
@@ -8581,11 +8588,11 @@
       "scenarios": [
         "老师备课"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8594,9 +8601,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8639,8 +8647,8 @@
       "name": "teacher-chinese-unit-review",
       "slug": "teacher-chinese-unit-review",
       "title": "语文单元复习 Skill",
-      "description": "语文单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助语文老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-chinese-unit-review/SKILL.md",
@@ -8651,7 +8659,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "语文"
       ],
       "abilities": [
         "复习计划"
@@ -8662,11 +8670,11 @@
       "scenarios": [
         "单元复习"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8676,9 +8684,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8721,8 +8730,8 @@
       "name": "teacher-class-analysis-lite",
       "slug": "teacher-class-analysis-lite",
       "title": "班级学情分析 Lite Skill",
-      "description": "班级学情分析 Lite Skill是面向学情分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "把班级练习、错题和课堂观察整理成老师能立刻调整教学的学情判断，而不是只给平均分。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-class-analysis-lite/SKILL.md",
@@ -8744,11 +8753,11 @@
       "scenarios": [
         "学情分析"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8758,9 +8767,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8803,8 +8813,8 @@
       "name": "teacher-english-homework-generation",
       "slug": "teacher-english-homework-generation",
       "title": "英语作业生成 Skill",
-      "description": "英语作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助英语老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-english-homework-generation/SKILL.md",
@@ -8815,7 +8825,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "英语"
       ],
       "abilities": [
         "作业生成"
@@ -8826,11 +8836,11 @@
       "scenarios": [
         "班级作业"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8841,9 +8851,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8886,8 +8897,8 @@
       "name": "teacher-english-lesson-planning",
       "slug": "teacher-english-lesson-planning",
       "title": "英语备课 Skill",
-      "description": "英语备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助英语老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕词汇、语篇、听说读写和真实语境使用。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-english-lesson-planning/SKILL.md",
@@ -8898,7 +8909,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "英语"
       ],
       "abilities": [
         "教学设计"
@@ -8909,11 +8920,11 @@
       "scenarios": [
         "老师备课"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -8922,9 +8933,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -8967,8 +8979,8 @@
       "name": "teacher-english-unit-review",
       "slug": "teacher-english-unit-review",
       "title": "英语单元复习 Skill",
-      "description": "英语单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助英语老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-english-unit-review/SKILL.md",
@@ -8979,7 +8991,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "英语"
       ],
       "abilities": [
         "复习计划"
@@ -8990,11 +9002,11 @@
       "scenarios": [
         "单元复习"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -9004,9 +9016,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9050,7 +9063,7 @@
       "slug": "teacher-geography-homework-generation",
       "title": "地理作业生成 Skill",
       "description": "地理作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-geography-homework-generation/SKILL.md",
@@ -9061,7 +9074,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "地理"
       ],
       "abilities": [
         "作业生成"
@@ -9087,9 +9100,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9133,7 +9147,7 @@
       "slug": "teacher-geography-lesson-planning",
       "title": "地理备课 Skill",
       "description": "地理备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-geography-lesson-planning/SKILL.md",
@@ -9144,7 +9158,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "地理"
       ],
       "abilities": [
         "教学设计"
@@ -9168,9 +9182,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9214,7 +9229,7 @@
       "slug": "teacher-geography-unit-review",
       "title": "地理单元复习 Skill",
       "description": "地理单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-geography-unit-review/SKILL.md",
@@ -9225,7 +9240,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "地理"
       ],
       "abilities": [
         "复习计划"
@@ -9250,9 +9265,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9296,7 +9312,7 @@
       "slug": "teacher-history-homework-generation",
       "title": "历史作业生成 Skill",
       "description": "历史作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-history-homework-generation/SKILL.md",
@@ -9307,7 +9323,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "历史"
       ],
       "abilities": [
         "作业生成"
@@ -9333,9 +9349,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9379,7 +9396,7 @@
       "slug": "teacher-history-lesson-planning",
       "title": "历史备课 Skill",
       "description": "历史备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-history-lesson-planning/SKILL.md",
@@ -9390,7 +9407,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "历史"
       ],
       "abilities": [
         "教学设计"
@@ -9414,9 +9431,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9460,7 +9478,7 @@
       "slug": "teacher-history-unit-review",
       "title": "历史单元复习 Skill",
       "description": "历史单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-history-unit-review/SKILL.md",
@@ -9471,7 +9489,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "历史"
       ],
       "abilities": [
         "复习计划"
@@ -9496,9 +9514,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9542,7 +9561,7 @@
       "slug": "teacher-homework-generation",
       "title": "作业生成 Skill",
       "description": "帮助老师生成分层、可批改、不过量的作业，而不是堆题。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-homework-generation/SKILL.md",
@@ -9580,9 +9599,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9626,7 +9646,7 @@
       "slug": "teacher-lesson-planning",
       "title": "老师备课 Skill",
       "description": "把备课从罗列知识点变成目标、活动、评价一致的课堂设计。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-lesson-planning/SKILL.md",
@@ -9663,9 +9683,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9708,8 +9729,8 @@
       "name": "teacher-math-homework-generation",
       "slug": "teacher-math-homework-generation",
       "title": "数学作业生成 Skill",
-      "description": "数学作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助数学老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-math-homework-generation/SKILL.md",
@@ -9720,7 +9741,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "数学"
       ],
       "abilities": [
         "作业生成"
@@ -9731,11 +9752,11 @@
       "scenarios": [
         "班级作业"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -9746,9 +9767,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9791,8 +9813,8 @@
       "name": "teacher-math-lesson-planning",
       "slug": "teacher-math-lesson-planning",
       "title": "数学备课 Skill",
-      "description": "数学备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助数学老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕概念理解、运算方法、建模和解题表达。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-math-lesson-planning/SKILL.md",
@@ -9803,7 +9825,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "数学"
       ],
       "abilities": [
         "教学设计"
@@ -9814,11 +9836,11 @@
       "scenarios": [
         "老师备课"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -9827,9 +9849,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9872,8 +9895,8 @@
       "name": "teacher-math-unit-review",
       "slug": "teacher-math-unit-review",
       "title": "数学单元复习 Skill",
-      "description": "数学单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助数学老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-math-unit-review/SKILL.md",
@@ -9884,7 +9907,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "数学"
       ],
       "abilities": [
         "复习计划"
@@ -9895,11 +9918,11 @@
       "scenarios": [
         "单元复习"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -9909,9 +9932,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -9954,8 +9978,8 @@
       "name": "teacher-parent-report-lite",
       "slug": "teacher-parent-report-lite",
       "title": "家长反馈报告 Lite Skill",
-      "description": "家长反馈报告 Lite Skill是面向家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助老师把学习表现转成家长听得懂、愿意配合、不过度焦虑的反馈报告。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-parent-report-lite/SKILL.md",
@@ -9977,11 +10001,11 @@
       "scenarios": [
         "家长沟通"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -9991,9 +10015,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -10036,8 +10061,8 @@
       "name": "teacher-physics-homework-generation",
       "slug": "teacher-physics-homework-generation",
       "title": "物理作业生成 Skill",
-      "description": "物理作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助物理老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-physics-homework-generation/SKILL.md",
@@ -10048,7 +10073,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "物理"
       ],
       "abilities": [
         "作业生成"
@@ -10059,11 +10084,11 @@
       "scenarios": [
         "班级作业"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -10074,9 +10099,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -10119,8 +10145,8 @@
       "name": "teacher-physics-lesson-planning",
       "slug": "teacher-physics-lesson-planning",
       "title": "物理备课 Skill",
-      "description": "物理备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助物理老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕概念模型、实验探究、图像分析和受力/电路等推理过程。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-physics-lesson-planning/SKILL.md",
@@ -10131,7 +10157,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "物理"
       ],
       "abilities": [
         "教学设计"
@@ -10142,11 +10168,11 @@
       "scenarios": [
         "老师备课"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -10155,9 +10181,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -10200,8 +10227,8 @@
       "name": "teacher-physics-unit-review",
       "slug": "teacher-physics-unit-review",
       "title": "物理单元复习 Skill",
-      "description": "物理单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "description": "帮助物理老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-physics-unit-review/SKILL.md",
@@ -10212,7 +10239,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "物理"
       ],
       "abilities": [
         "复习计划"
@@ -10223,11 +10250,11 @@
       "scenarios": [
         "单元复习"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -10237,9 +10264,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -10283,7 +10311,7 @@
       "slug": "teacher-politics-homework-generation",
       "title": "政治作业生成 Skill",
       "description": "政治作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-politics-homework-generation/SKILL.md",
@@ -10294,7 +10322,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "政治"
       ],
       "abilities": [
         "作业生成"
@@ -10320,9 +10348,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -10366,7 +10395,7 @@
       "slug": "teacher-politics-lesson-planning",
       "title": "政治备课 Skill",
       "description": "政治备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-politics-lesson-planning/SKILL.md",
@@ -10377,7 +10406,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "政治"
       ],
       "abilities": [
         "教学设计"
@@ -10401,9 +10430,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -10447,7 +10477,7 @@
       "slug": "teacher-politics-unit-review",
       "title": "政治单元复习 Skill",
       "description": "政治单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "teacher-tools",
       "path": "skills/teacher-tools/teacher-politics-unit-review/SKILL.md",
@@ -10458,7 +10488,7 @@
       ],
       "grades": [],
       "subjects": [
-        "教学管理"
+        "政治"
       ],
       "abilities": [
         "复习计划"
@@ -10483,9 +10513,10 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级和学科/课题",
+        "教材版本或单元",
+        "班级基础/错题/课堂观察",
+        "课时或作业时长"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -10529,7 +10560,7 @@
       "slug": "institution-campus-dashboard",
       "title": "校区经营看板 Skill",
       "description": "校区经营看板 Skill是面向经营分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "examples",
       "path": "skills/examples/institution-campus-dashboard/SKILL.md",
@@ -10616,7 +10647,7 @@
       "slug": "institution-course-package",
       "title": "机构课程包 Skill",
       "description": "机构课程包 Skill是面向机构课程的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "examples",
       "path": "skills/examples/institution-course-package/SKILL.md",
@@ -10703,7 +10734,7 @@
       "slug": "institution-renewal-insight",
       "title": "续费风险分析 Skill",
       "description": "续费风险分析 Skill是面向续费报告的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "examples",
       "path": "skills/examples/institution-renewal-insight/SKILL.md",
@@ -10790,7 +10821,7 @@
       "slug": "institution-teacher-efficiency",
       "title": "老师效率分析 Skill",
       "description": "老师效率分析 Skill是面向数据分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "examples",
       "path": "skills/examples/institution-teacher-efficiency/SKILL.md",
@@ -10877,7 +10908,7 @@
       "slug": "school-grade-insight",
       "title": "年级学情洞察 Skill",
       "description": "年级学情洞察 Skill是面向学校测评的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "examples",
       "path": "skills/examples/school-grade-insight/SKILL.md",
@@ -10964,7 +10995,7 @@
       "slug": "school-resource-planning",
       "title": "校本资源规划 Skill",
       "description": "校本资源规划 Skill是面向运营配置的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "examples",
       "path": "skills/examples/school-resource-planning/SKILL.md",
@@ -11051,7 +11082,7 @@
       "slug": "school-teacher-usage",
       "title": "老师使用分析 Skill",
       "description": "老师使用分析 Skill是面向数据分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "examples",
       "path": "skills/examples/school-teacher-usage/SKILL.md",
@@ -11138,7 +11169,7 @@
       "slug": "agent-question-explanation",
       "title": "AI 讲题 Skill",
       "description": "把一道题讲到学生真正会复述思路：先定位卡点，再用年级能听懂的语言拆解，最后用变式题确认理解。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "learning-core",
       "path": "skills/learning-core/agent-question-explanation/SKILL.md",
@@ -11229,7 +11260,7 @@
       "slug": "senior-biology-bs-textbook-sync",
       "title": "北师大版高中生物同步 Skill",
       "description": "北师大版高中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-biology-bs-textbook-sync/SKILL.md",
@@ -11322,7 +11353,7 @@
       "slug": "senior-biology-exam-review",
       "title": "高中生物考试复习 Skill",
       "description": "高中生物考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-biology-exam-review/SKILL.md",
@@ -11396,7 +11427,7 @@
       "slug": "senior-biology-quick-practice",
       "title": "高中生物快速巩固 Skill",
       "description": "高中生物快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-biology-quick-practice/SKILL.md",
@@ -11469,7 +11500,7 @@
       "slug": "senior-biology-rj-textbook-sync",
       "title": "人教版高中生物同步 Skill",
       "description": "人教版高中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-biology-rj-textbook-sync/SKILL.md",
@@ -11562,7 +11593,7 @@
       "slug": "senior-chemistry-exam-review",
       "title": "高中化学考试复习 Skill",
       "description": "高中化学考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-chemistry-exam-review/SKILL.md",
@@ -11636,7 +11667,7 @@
       "slug": "senior-chemistry-lk-textbook-sync",
       "title": "鲁科版高中化学同步 Skill",
       "description": "鲁科版高中化学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-chemistry-lk-textbook-sync/SKILL.md",
@@ -11729,7 +11760,7 @@
       "slug": "senior-chemistry-quick-practice",
       "title": "高中化学快速巩固 Skill",
       "description": "高中化学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-chemistry-quick-practice/SKILL.md",
@@ -11802,7 +11833,7 @@
       "slug": "senior-chemistry-rj-textbook-sync",
       "title": "人教版高中化学同步 Skill",
       "description": "人教版高中化学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-chemistry-rj-textbook-sync/SKILL.md",
@@ -11895,7 +11926,7 @@
       "slug": "senior-chinese-essay",
       "title": "高中作文提升 Skill",
       "description": "高中作文提升 Skill是面向写作提升的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/senior-chinese-essay/SKILL.md",
@@ -11965,7 +11996,7 @@
       "slug": "senior-chinese-exam-review",
       "title": "高中语文考试复习 Skill",
       "description": "高中语文考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-chinese-exam-review/SKILL.md",
@@ -12039,7 +12070,7 @@
       "slug": "senior-chinese-quick-practice",
       "title": "高中语文快速巩固 Skill",
       "description": "高中语文快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-chinese-quick-practice/SKILL.md",
@@ -12112,7 +12143,7 @@
       "slug": "senior-chinese-reading",
       "title": "高中语文阅读 Skill",
       "description": "高中语文阅读 Skill是面向高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/senior-chinese-reading/SKILL.md",
@@ -12183,7 +12214,7 @@
       "slug": "senior-chinese-tongbian-textbook-sync",
       "title": "统编版高中语文同步 Skill",
       "description": "统编版高中语文同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-chinese-tongbian-textbook-sync/SKILL.md",
@@ -12277,7 +12308,7 @@
       "slug": "senior-english-exam-review",
       "title": "高中英语考试复习 Skill",
       "description": "高中英语考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-english-exam-review/SKILL.md",
@@ -12351,7 +12382,7 @@
       "slug": "senior-english-quick-practice",
       "title": "高中英语快速巩固 Skill",
       "description": "高中英语快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-english-quick-practice/SKILL.md",
@@ -12424,7 +12455,7 @@
       "slug": "senior-english-rj-textbook-sync",
       "title": "人教版高中英语同步 Skill",
       "description": "人教版高中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-english-rj-textbook-sync/SKILL.md",
@@ -12518,7 +12549,7 @@
       "slug": "senior-english-vocabulary-daily",
       "title": "高中英语词汇每日练 Skill",
       "description": "高中英语词汇每日练 Skill是面向每日打卡、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-english-vocabulary-daily/SKILL.md",
@@ -12590,7 +12621,7 @@
       "slug": "senior-english-writing",
       "title": "高中英语写作 Skill",
       "description": "高中英语写作 Skill是面向高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "reading-writing",
       "path": "skills/reading-writing/senior-english-writing/SKILL.md",
@@ -12661,7 +12692,7 @@
       "slug": "senior-english-wy-textbook-sync",
       "title": "外研版高中英语同步 Skill",
       "description": "外研版高中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-english-wy-textbook-sync/SKILL.md",
@@ -12755,7 +12786,7 @@
       "slug": "senior-gaokao-sprint",
       "title": "高考冲刺 Skill",
       "description": "高考冲刺 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-gaokao-sprint/SKILL.md",
@@ -12825,7 +12856,7 @@
       "slug": "senior-geography-exam-review",
       "title": "高中地理考试复习 Skill",
       "description": "高中地理考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-geography-exam-review/SKILL.md",
@@ -12899,7 +12930,7 @@
       "slug": "senior-geography-quick-practice",
       "title": "高中地理快速巩固 Skill",
       "description": "高中地理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-geography-quick-practice/SKILL.md",
@@ -12972,7 +13003,7 @@
       "slug": "senior-geography-rj-textbook-sync",
       "title": "人教版高中地理同步 Skill",
       "description": "人教版高中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-geography-rj-textbook-sync/SKILL.md",
@@ -13066,7 +13097,7 @@
       "slug": "senior-geography-xj-textbook-sync",
       "title": "湘教版高中地理同步 Skill",
       "description": "湘教版高中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-geography-xj-textbook-sync/SKILL.md",
@@ -13160,7 +13191,7 @@
       "slug": "senior-history-exam-review",
       "title": "高中历史考试复习 Skill",
       "description": "高中历史考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-history-exam-review/SKILL.md",
@@ -13234,7 +13265,7 @@
       "slug": "senior-history-quick-practice",
       "title": "高中历史快速巩固 Skill",
       "description": "高中历史快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-history-quick-practice/SKILL.md",
@@ -13307,7 +13338,7 @@
       "slug": "senior-history-tongbian-textbook-sync",
       "title": "统编版高中历史同步 Skill",
       "description": "统编版高中历史同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-history-tongbian-textbook-sync/SKILL.md",
@@ -13401,7 +13432,7 @@
       "slug": "senior-math-bs-textbook-sync",
       "title": "北师大版高中数学同步 Skill",
       "description": "北师大版高中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-math-bs-textbook-sync/SKILL.md",
@@ -13495,7 +13526,7 @@
       "slug": "senior-math-exam-review",
       "title": "高中数学考试复习 Skill",
       "description": "高中数学考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-math-exam-review/SKILL.md",
@@ -13569,7 +13600,7 @@
       "slug": "senior-math-quick-practice",
       "title": "高中数学快速巩固 Skill",
       "description": "高中数学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-math-quick-practice/SKILL.md",
@@ -13642,7 +13673,7 @@
       "slug": "senior-math-rja-textbook-sync",
       "title": "人教A版高中数学同步 Skill",
       "description": "人教A版高中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-math-rja-textbook-sync/SKILL.md",
@@ -13736,7 +13767,7 @@
       "slug": "senior-math-rjb-textbook-sync",
       "title": "人教B版高中数学同步 Skill",
       "description": "人教B版高中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-math-rjb-textbook-sync/SKILL.md",
@@ -13830,7 +13861,7 @@
       "slug": "senior-physics-exam-review",
       "title": "高中物理考试复习 Skill",
       "description": "高中物理考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-physics-exam-review/SKILL.md",
@@ -13904,7 +13935,7 @@
       "slug": "senior-physics-lk-textbook-sync",
       "title": "鲁科版高中物理同步 Skill",
       "description": "鲁科版高中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-physics-lk-textbook-sync/SKILL.md",
@@ -13997,7 +14028,7 @@
       "slug": "senior-physics-quick-practice",
       "title": "高中物理快速巩固 Skill",
       "description": "高中物理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-physics-quick-practice/SKILL.md",
@@ -14070,7 +14101,7 @@
       "slug": "senior-physics-rj-textbook-sync",
       "title": "人教版高中物理同步 Skill",
       "description": "人教版高中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-physics-rj-textbook-sync/SKILL.md",
@@ -14163,7 +14194,7 @@
       "slug": "senior-politics-exam-review",
       "title": "高中政治考试复习 Skill",
       "description": "高中政治考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "exam-prep",
       "path": "skills/exam-prep/senior-politics-exam-review/SKILL.md",
@@ -14237,7 +14268,7 @@
       "slug": "senior-politics-quick-practice",
       "title": "高中政治快速巩固 Skill",
       "description": "高中政治快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-politics-quick-practice/SKILL.md",
@@ -14310,7 +14341,7 @@
       "slug": "senior-politics-tongbian-textbook-sync",
       "title": "统编版高中政治同步 Skill",
       "description": "统编版高中政治同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "status": "published",
       "category": "textbook-sync",
       "path": "skills/textbook-sync/senior-politics-tongbian-textbook-sync/SKILL.md",

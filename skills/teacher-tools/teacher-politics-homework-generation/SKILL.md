@@ -1,18 +1,18 @@
 ---
 name: "teacher-politics-homework-generation"
 description: "政治作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_politics_homework_generation.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
 metadata:
   hermes:
-    tags: ["education", "primary", "junior", "senior", "教学管理", "作业生成", "班级作业"]
+    tags: ["education", "primary", "junior", "senior", "政治", "作业生成", "班级作业"]
     source: hermes-edu-skills
     workflow: "teacher_politics_homework_generation.run"
     category: "teacher-tools"
     stages: ["primary", "junior", "senior"]
-    subjects: ["教学管理"]
+    subjects: ["政治"]
     abilities: ["作业生成"]
     scenarios: ["班级作业"]
     quality_tier: "enhanced"
@@ -21,7 +21,7 @@ metadata:
     export_mode: "installable"
     release_channel: "public"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "organization.query_context", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 政治作业生成 Skill
@@ -55,13 +55,13 @@ metadata:
 - Workflow: `teacher_politics_homework_generation.run`
 - Category: `teacher-tools`
 - Stages: `primary`, `junior`, `senior`
-- Subjects: `教学管理`
+- Subjects: `政治`
 - Abilities: `作业生成`
 - Quality Tier: `enhanced`
 - Standalone Support: `needs_user_input`
 - Public Release: `allowed`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `organization.query_context`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
 - Release Channel: `public`
 

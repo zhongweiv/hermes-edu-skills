@@ -1,7 +1,7 @@
 ---
 name: "agent-preview-assistant"
 description: "把预习从“提前看一遍”变成带问题进入课堂：先扫知识、再标疑问、最后准备课堂关注点。 Workflow: agent_preview_assistant.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

@@ -1,7 +1,7 @@
 ---
 name: "agent-homework-companion"
 description: "陪学生完成作业全过程：先规划顺序，再在卡住时提示，不替写，最后做自查和订正。 Workflow: agent_homework_companion.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

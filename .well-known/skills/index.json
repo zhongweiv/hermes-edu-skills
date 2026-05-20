@@ -1,7 +1,7 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.5.1",
-  "generatedAt": "2026-05-20T22:07:36.948Z",
+  "version": "0.6.0",
+  "generatedAt": "2026-05-20T22:30:09.128Z",
   "skills": [
     {
       "name": "adult-language-learning",
@@ -1430,7 +1430,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "生物",
         "班级作业",
         "enhanced",
         "needs_user_input"
@@ -1438,15 +1438,15 @@
     },
     {
       "name": "teacher-biology-lesson-planning",
-      "description": "生物备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助生物老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕生命现象、结构功能、实验探究和图表信息提取。",
       "path": "skills/teacher-tools/teacher-biology-lesson-planning/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "生物",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1458,7 +1458,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "生物",
         "单元复习",
         "enhanced",
         "needs_user_input"
@@ -1466,91 +1466,91 @@
     },
     {
       "name": "teacher-chemistry-homework-generation",
-      "description": "化学作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助化学老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-chemistry-homework-generation/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "化学",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-chemistry-lesson-planning",
-      "description": "化学备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助化学老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕微观解释、实验现象、化学用语和反应规律。",
       "path": "skills/teacher-tools/teacher-chemistry-lesson-planning/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "化学",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-chemistry-unit-review",
-      "description": "化学单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助化学老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-chemistry-unit-review/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "化学",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-chinese-homework-generation",
-      "description": "语文作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助语文老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-chinese-homework-generation/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "语文",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-chinese-lesson-planning",
-      "description": "语文备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助语文老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕阅读、表达、积累和思维品质。",
       "path": "skills/teacher-tools/teacher-chinese-lesson-planning/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "语文",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-chinese-unit-review",
-      "description": "语文单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助语文老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-chinese-unit-review/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "语文",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-class-analysis-lite",
-      "description": "班级学情分析 Lite Skill是面向学情分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把班级练习、错题和课堂观察整理成老师能立刻调整教学的学情判断，而不是只给平均分。",
       "path": "skills/teacher-tools/teacher-class-analysis-lite/SKILL.md",
       "tags": [
         "primary",
@@ -1558,49 +1558,49 @@
         "senior",
         "教学管理",
         "学情分析",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-english-homework-generation",
-      "description": "英语作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助英语老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-english-homework-generation/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "英语",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-english-lesson-planning",
-      "description": "英语备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助英语老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕词汇、语篇、听说读写和真实语境使用。",
       "path": "skills/teacher-tools/teacher-english-lesson-planning/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "英语",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-english-unit-review",
-      "description": "英语单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助英语老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-english-unit-review/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "英语",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1612,7 +1612,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "地理",
         "班级作业",
         "enhanced",
         "needs_user_input"
@@ -1626,7 +1626,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "地理",
         "老师备课",
         "enhanced",
         "needs_user_input"
@@ -1640,7 +1640,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "地理",
         "单元复习",
         "enhanced",
         "needs_user_input"
@@ -1654,7 +1654,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "历史",
         "班级作业",
         "enhanced",
         "needs_user_input"
@@ -1668,7 +1668,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "历史",
         "老师备课",
         "enhanced",
         "needs_user_input"
@@ -1682,7 +1682,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "历史",
         "单元复习",
         "enhanced",
         "needs_user_input"
@@ -1718,49 +1718,49 @@
     },
     {
       "name": "teacher-math-homework-generation",
-      "description": "数学作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助数学老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-math-homework-generation/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "数学",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-math-lesson-planning",
-      "description": "数学备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助数学老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕概念理解、运算方法、建模和解题表达。",
       "path": "skills/teacher-tools/teacher-math-lesson-planning/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "数学",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-math-unit-review",
-      "description": "数学单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助数学老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-math-unit-review/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "数学",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-parent-report-lite",
-      "description": "家长反馈报告 Lite Skill是面向家长沟通的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助老师把学习表现转成家长听得懂、愿意配合、不过度焦虑的反馈报告。",
       "path": "skills/teacher-tools/teacher-parent-report-lite/SKILL.md",
       "tags": [
         "primary",
@@ -1768,49 +1768,49 @@
         "senior",
         "教学管理",
         "家长沟通",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-physics-homework-generation",
-      "description": "物理作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助物理老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-physics-homework-generation/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "物理",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-physics-lesson-planning",
-      "description": "物理备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助物理老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕概念模型、实验探究、图像分析和受力/电路等推理过程。",
       "path": "skills/teacher-tools/teacher-physics-lesson-planning/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "物理",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-physics-unit-review",
-      "description": "物理单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助物理老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-physics-unit-review/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "物理",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1822,7 +1822,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "政治",
         "班级作业",
         "enhanced",
         "needs_user_input"
@@ -1836,7 +1836,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "政治",
         "老师备课",
         "enhanced",
         "needs_user_input"
@@ -1850,7 +1850,7 @@
         "primary",
         "junior",
         "senior",
-        "教学管理",
+        "政治",
         "单元复习",
         "enhanced",
         "needs_user_input"

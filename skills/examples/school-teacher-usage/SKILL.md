@@ -1,7 +1,7 @@
 ---
 name: "school-teacher-usage"
 description: "老师使用分析 Skill是面向数据分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: school_teacher_usage.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

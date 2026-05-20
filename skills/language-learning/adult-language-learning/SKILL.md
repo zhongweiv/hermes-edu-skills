@@ -1,7 +1,7 @@
 ---
 name: "adult-language-learning"
 description: "成人语言学习 Skill是面向每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: adult_language_learning.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

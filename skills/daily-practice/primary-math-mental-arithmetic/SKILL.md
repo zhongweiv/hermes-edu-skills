@@ -1,7 +1,7 @@
 ---
 name: "primary-math-mental-arithmetic"
 description: "为小学生生成短、准、可批改的口算训练，让每天 5-10 分钟练出速度、准确率和数感。 Workflow: primary_math_mental_arithmetic.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

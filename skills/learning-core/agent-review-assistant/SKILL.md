@@ -1,7 +1,7 @@
 ---
 name: "agent-review-assistant"
 description: "把复习从重新看笔记变成检索、纠错、归纳和再练习的闭环。 Workflow: agent_review_assistant.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

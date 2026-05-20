@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0 - 2026-05-21
+
+- Curates the second 20-Skill batch for teacher tools, covering lesson planning, homework generation, unit review, class analysis, and parent communication.
+- Adds subject-specific teacher workflows for Chinese, math, English, physics, chemistry, and biology so teacher Skills feel closer to real classroom work.
+- Upgrades selected teacher Skills to `curated`, `recommended`, and `0.6.0` public Skill content.
+- Keeps total public export scope unchanged.
+
 ## 0.5.1 - 2026-05-21
 
 - Adds `--skill <slug>` to `agent-pack` so users can install or export a single Skill instead of the full pack.

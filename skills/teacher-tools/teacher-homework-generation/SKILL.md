@@ -1,7 +1,7 @@
 ---
 name: "teacher-homework-generation"
 description: "帮助老师生成分层、可批改、不过量的作业，而不是堆题。 Workflow: teacher_homework_generation.run."
-version: "0.5.0"
+version: "0.6.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -21,7 +21,7 @@ metadata:
     export_mode: "installable"
     release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "organization.query_context", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 作业生成 Skill
@@ -117,7 +117,7 @@ metadata:
 - Standalone Support: `needs_user_input`
 - Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `organization.query_context`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
 - Release Channel: `recommended`
 
