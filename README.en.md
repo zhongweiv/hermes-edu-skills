@@ -1,6 +1,8 @@
 # Hermes Edu Skills
 
-China-focused education Skill Pack for Hermes Agent Runtime. It helps education agents quickly gain reusable capabilities for textbook sync, daily practice, exam prep, teacher tools, and family learning.
+China-focused education Agent Skill Pack for Hermes Agent, with exports for OpenClaw, Codex, Cursor, Claude Code, and other AI tools.
+
+中文教育 Agent Skill Pack，Hermes Agent 可直接使用，也支持导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -18,7 +20,8 @@ If you are building education agents, AI learning assistants, AI teachers, curri
 ## Navigation
 
 - [Understand In 30 Seconds](#understand-in-30-seconds)
-- [Quick Start](#quick-start)
+- [Default: Hermes Agent](#defaulthermes-agent)
+- [Export To Other AI Tools Or Agents](#export-to-other-ai-tools-or-agents)
 - [Choose By Role](#choose-by-role)
 - [Skill Category Overview](#skill-category-overview)
 - [All Skills](#all-skills)
@@ -34,7 +37,7 @@ If you are building education agents, AI learning assistants, AI teachers, curri
 | Core scenarios? | Textbook sync, study planning, photo Q&A, mistake review, daily practice, exam prep, teacher planning, and family learning. |
 | Why not thousands of files? | Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of repetitive Skills. |
 | Who is it for? | Hermes Agent users, education AI developers, teachers, curriculum researchers, schools, and institutions. |
-| How do I start? | Clone the repo, then run `npm run agent:install -- --tool hermes` or `npm run agent:install -- --tool openclaw`. |
+| How do I start? | Install into Hermes Agent by default; use `agent:install -- --tool <tool>` only when targeting other tools. |
 
 ## Why This Project Matters
 
@@ -56,7 +59,7 @@ If you are building education agents, AI learning assistants, AI teachers, curri
 
 | Who you are | Start here | What you get |
 | --- | --- | --- |
-| Hermes Agent user | [Quick Start](#quick-start), [Learning Core](#learning-core) | Add Chinese education Skills to your local Agent. |
+| Hermes Agent user | [Default: Hermes Agent](#defaulthermes-agent), [Learning Core](#learning-core) | Add Chinese education Skills to your local Agent. |
 | Education AI developer | [Project Structure](#project-structure), [Compatibility Notes](#compatibility-notes) | Reuse Skill structure, parameter design, and workflow naming. |
 | Teacher / curriculum researcher | [Teacher Tools](#teacher-tools), [Textbook Sync](#textbook-sync) | Study lesson planning, homework generation, unit review, and sync teaching patterns. |
 | Parent / family-learning product builder | [Family Education](#family-education), [Daily Practice](#daily-practice) | Build companionship, reading, habits, and daily practice scenarios. |
@@ -87,7 +90,9 @@ We are open-sourcing reusable education Agent Skill design so developers, teache
 - Open an issue to request the grade, textbook version, subject, or teacher tool you need.
 - Open a pull request to contribute new Skills, improve instructions, or add examples.
 
-## Quick Start
+## Default: Hermes Agent
+
+Hermes Agent is the default target for Hermes Edu Skills. The repository's `skills/` directory is the canonical Skill source and does not need conversion before Hermes loads it.
 
 Clone the repository:
 
@@ -97,7 +102,7 @@ cd hermes-edu-skills
 npm run validate
 ```
 
-Install into Hermes Agent:
+Install the Skill Pack into Hermes Agent:
 
 ```bash
 npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
@@ -109,32 +114,7 @@ Print the Hermes config snippet without writing a file:
 npm run agent:install -- --tool hermes
 ```
 
-Install into an OpenClaw-style Agent Skill directory:
-
-```bash
-npm run agent:install -- --tool openclaw
-```
-
-Install into Codex / Claude Code style `SKILL.md` directories:
-
-```bash
-npm run agent:install -- --tool codex
-npm run agent:install -- --tool claude-code
-```
-
-Install into Cursor project rules:
-
-```bash
-npm run agent:install -- --tool cursor --workspace /path/to/project
-```
-
-Export a generic Agent Skill Pack:
-
-```bash
-npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
-```
-
-Then verify in the target Agent, for example Hermes:
+Then verify in Hermes:
 
 ```bash
 hermes skills list
@@ -147,6 +127,45 @@ from tools.skills_tool import skills_list, skill_view
 
 skills_list()
 skill_view("primary-math-mental-arithmetic")
+```
+
+## Export To Other AI Tools Or Agents
+
+If you are not using Hermes Agent, you can convert this Skill Pack into layouts that other AI tools can read more easily. The source `skills/` directory remains Hermes-native; `agent-pack` handles copying, flattening, and target-tool rule generation.
+
+| Target Tool | Command | Output / Install Location |
+| --- | --- | --- |
+| OpenClaw | `npm run agent:install -- --tool openclaw` | `~/.openclaw/skills/<skill-name>/SKILL.md` |
+| Codex | `npm run agent:install -- --tool codex` | `$CODEX_HOME/skills` or `~/.codex/skills` |
+| Claude Code | `npm run agent:install -- --tool claude-code` | `~/.claude/skills/<skill-name>/SKILL.md` |
+| Claude Code project scope | `npm run agent:install -- --tool claude-code --workspace .` | `.claude/skills/<skill-name>/SKILL.md` |
+| Cursor | `npm run agent:install -- --tool cursor --workspace /path/to/project` | `.cursor/rules/*.mdc` plus `.cursor/hermes-edu-skills` |
+| Generic Agent | `npm run agent:convert -- --tool generic-agent --target ./dist/agent-skills` | `AGENT_SKILL_PACK.json` plus `<skill-name>/SKILL.md` |
+
+Convert to OpenClaw format without installing into the default location:
+
+```bash
+npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
+```
+
+Export only one category, for example textbook sync:
+
+```bash
+npm run agent:convert -- --tool openclaw --category textbook-sync --target ./dist/textbook-sync-skills
+```
+
+Include doc-only design examples:
+
+```bash
+npm run agent:convert -- --tool generic-agent --target ./dist/all-agent-skills --include-examples
+```
+
+Legacy commands remain available for compatibility:
+
+```bash
+npm run install:hermes
+npm run install:openclaw
+npm run export:agents
 ```
 
 ## Skill Category Overview

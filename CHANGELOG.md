@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.1 - 2026-05-21
+
+- Improves Chinese and English README structure with a dedicated Hermes default usage section.
+- Adds a dedicated section for exporting Skills to OpenClaw, Codex, Cursor, Claude Code, and generic Agent tools.
+- Updates package and GitHub-facing description to bilingual Chinese/English positioning.
+- Keeps Skill files, catalog shape, and installer behavior compatible with 0.4.0.
+
 ## 0.4.0 - 2026-05-21
 
 - Adds a unified `agent-pack` command model inspired by multi-tool Agent pack projects.

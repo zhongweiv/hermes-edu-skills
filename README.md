@@ -1,6 +1,8 @@
 # Hermes Edu Skills
 
-面向 Hermes Agent Runtime 的中文教育 Skill Pack，让教育 Agent 更快拥有“教材同步、练习、备考、教师工具、家庭陪伴”等可复用能力。
+中文教育 Agent Skill Pack，Hermes Agent 可直接使用，也支持导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。
+
+China-focused education Agent Skill Pack for Hermes Agent, with exports for OpenClaw, Codex, Cursor, Claude Code, and other AI tools.
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -18,7 +20,8 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 ## 导航
 
 - [30 秒理解](#30-秒理解)
-- [快速开始](#快速开始)
+- [默认使用：Hermes Agent](#默认使用hermes-agent)
+- [导出给其它 AI 工具或 Agent](#导出给其它-ai-工具或-agent)
 - [按角色选择](#按角色选择)
 - [技能分类总览](#技能分类总览)
 - [全部 Skill 列表](#全部-skill-列表)
@@ -34,7 +37,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 | 最核心的场景？ | 教材同步、学习计划、拍照答疑、错题复盘、每日练习、考试备考、教师备课、家庭陪伴。 |
 | 为什么不是几千个文件？ | 年级、册别、单元、课时、知识点、难度都作为参数传入，避免把用户淹没在海量重复 Skill 中。 |
 | 谁适合用？ | Hermes Agent 用户、教育 AI 开发者、老师、教研人员、学校/机构团队。 |
-| 怎么开始？ | 克隆仓库，运行 `npm run agent:install -- --tool hermes` 或 `npm run agent:install -- --tool openclaw`。 |
+| 怎么开始？ | 默认安装到 Hermes Agent；需要其它工具时再使用 `agent:install -- --tool <tool>`。 |
 
 ## 为什么值得关注
 
@@ -56,7 +59,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 
 | 你是谁 | 推荐先看 | 可以得到什么 |
 | --- | --- | --- |
-| Hermes Agent 用户 | [快速开始](#快速开始)、[学习核心能力](#learning-core) | 直接把中文教育 Skill 加到本地 Agent。 |
+| Hermes Agent 用户 | [默认使用：Hermes Agent](#默认使用hermes-agent)、[学习核心能力](#learning-core) | 直接把中文教育 Skill 加到本地 Agent。 |
 | 教育 AI 开发者 | [项目结构](#项目结构)、[兼容说明](#兼容说明) | 复用 Skill 结构、参数设计和工作流命名。 |
 | 老师 / 教研人员 | [老师工具](#teacher-tools)、[教材同步](#textbook-sync) | 参考备课、作业生成、单元复习和同步教学设计。 |
 | 家长 / 家庭教育产品 | [家庭教育](#family-education)、[每日练习](#daily-practice) | 构建陪伴、阅读、习惯和每日训练场景。 |
@@ -87,7 +90,9 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 - 提 Issue：告诉我们你最需要的年级、教材版本、学科或教师工具。
 - 提 PR：贡献新的 Skill、优化中文指令、补充使用示例。
 
-## 快速开始
+## 默认使用：Hermes Agent
+
+Hermes Edu Skills 的默认目标是 Hermes Agent。仓库中的 `skills/` 目录就是标准 Skill 源目录，不需要先转换格式。
 
 克隆仓库：
 
@@ -97,7 +102,7 @@ cd hermes-edu-skills
 npm run validate
 ```
 
-安装到 Hermes Agent：
+把 Skill Pack 安装到 Hermes Agent：
 
 ```bash
 npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
@@ -109,32 +114,7 @@ npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
 npm run agent:install -- --tool hermes
 ```
 
-安装到 OpenClaw 风格的 Agent Skill 目录：
-
-```bash
-npm run agent:install -- --tool openclaw
-```
-
-安装到 Codex / Claude Code 这类 `SKILL.md` 风格目录：
-
-```bash
-npm run agent:install -- --tool codex
-npm run agent:install -- --tool claude-code
-```
-
-安装到 Cursor 项目规则：
-
-```bash
-npm run agent:install -- --tool cursor --workspace /path/to/project
-```
-
-导出成通用 Agent Skill Pack：
-
-```bash
-npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
-```
-
-然后在对应 Agent 中验证，例如 Hermes：
+然后在 Hermes 中验证：
 
 ```bash
 hermes skills list
@@ -147,6 +127,45 @@ from tools.skills_tool import skills_list, skill_view
 
 skills_list()
 skill_view("primary-math-mental-arithmetic")
+```
+
+## 导出给其它 AI 工具或 Agent
+
+如果你使用的不是 Hermes Agent，也可以把这套 Skill Pack 转成其它工具更容易识别的目录结构。核心原则是：`skills/` 保持 Hermes 原生格式，`agent-pack` 负责复制、扁平化或生成目标工具规则。
+
+| 目标工具 | 命令 | 输出/安装位置 |
+| --- | --- | --- |
+| OpenClaw | `npm run agent:install -- --tool openclaw` | `~/.openclaw/skills/<skill-name>/SKILL.md` |
+| Codex | `npm run agent:install -- --tool codex` | `$CODEX_HOME/skills` 或 `~/.codex/skills` |
+| Claude Code | `npm run agent:install -- --tool claude-code` | `~/.claude/skills/<skill-name>/SKILL.md` |
+| Claude Code 项目级 | `npm run agent:install -- --tool claude-code --workspace .` | `.claude/skills/<skill-name>/SKILL.md` |
+| Cursor | `npm run agent:install -- --tool cursor --workspace /path/to/project` | `.cursor/rules/*.mdc` + `.cursor/hermes-edu-skills` |
+| 通用 Agent | `npm run agent:convert -- --tool generic-agent --target ./dist/agent-skills` | `AGENT_SKILL_PACK.json` + `<skill-name>/SKILL.md` |
+
+只转换 OpenClaw 格式，不安装到默认目录：
+
+```bash
+npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
+```
+
+只导出某一个分类，例如教材同步：
+
+```bash
+npm run agent:convert -- --tool openclaw --category textbook-sync --target ./dist/textbook-sync-skills
+```
+
+包含设计参考类 examples：
+
+```bash
+npm run agent:convert -- --tool generic-agent --target ./dist/all-agent-skills --include-examples
+```
+
+旧命令仍可使用，兼容早期文档：
+
+```bash
+npm run install:hermes
+npm run install:openclaw
+npm run export:agents
 ```
 
 ## 技能分类总览
