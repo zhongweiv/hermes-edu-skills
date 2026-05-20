@@ -1,8 +1,8 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
-  "description": "由长沙欣慰科技发起维护的 Hermes Agent Runtime 开源教育 Skill Pack，覆盖学习、教学、家庭教育、学校管理和教育 Agent 工作流。",
+  "description": "China-focused education Skill Pack for Hermes Agent Runtime, with installer and OpenClaw-style Agent Skill export tools.",
   "license": "MIT",
   "type": "module",
   "homepage": "https://github.com/zhongweiv/hermes-edu-skills#readme",
@@ -20,6 +20,8 @@
     "ai-agent",
     "skills",
     "skill-pack",
+    "agent-skills",
+    "openclaw",
     "education",
     "learning",
     "teaching",
@@ -38,6 +40,9 @@
     "学习助手"
   ],
   "scripts": {
+    "export:agents": "node scripts/agent-pack.mjs export",
+    "install:hermes": "node scripts/agent-pack.mjs install-hermes",
+    "install:openclaw": "node scripts/agent-pack.mjs install-openclaw",
     "validate": "node scripts/validate.mjs"
   },
   "files": [

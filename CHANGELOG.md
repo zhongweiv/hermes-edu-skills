@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 - 2026-05-21
+
+- Adds `scripts/agent-pack.mjs` for easier installation and cross-agent export.
+- Adds `npm run install:hermes` to update or print Hermes `skills.external_dirs` configuration.
+- Adds `npm run install:openclaw` to export a flat `SKILL.md` directory layout suitable for OpenClaw-style Agent Skill roots.
+- Adds `npm run export:agents` for generic Agent Skill Pack export with `AGENT_SKILL_PACK.json`.
+- Keeps the public Skill catalog backward-compatible with the 177 product-level Skills introduced in 0.2.0.
+
 ## 0.2.0 - 2026-05-21
 
 - Shrinks the public Skill Pack from 20,551 generated entries to 177 product-level Skills.

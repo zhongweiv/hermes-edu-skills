@@ -34,7 +34,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 | 最核心的场景？ | 教材同步、学习计划、拍照答疑、错题复盘、每日练习、考试备考、教师备课、家庭陪伴。 |
 | 为什么不是几千个文件？ | 年级、册别、单元、课时、知识点、难度都作为参数传入，避免把用户淹没在海量重复 Skill 中。 |
 | 谁适合用？ | Hermes Agent 用户、教育 AI 开发者、老师、教研人员、学校/机构团队。 |
-| 怎么开始？ | 克隆仓库，把 `skills/` 加入 Hermes `external_dirs`。 |
+| 怎么开始？ | 克隆仓库，运行 `npm run install:hermes` 或 `npm run install:openclaw`。 |
 
 ## 为什么值得关注
 
@@ -97,15 +97,31 @@ cd hermes-edu-skills
 npm run validate
 ```
 
-把 `skills/` 目录加入 Hermes 的 `config.yaml`：
+安装到 Hermes Agent：
 
-```yaml
-skills:
-  external_dirs:
-    - /absolute/path/to/hermes-edu-skills/skills
+```bash
+npm run install:hermes -- --config ~/.hermes/config.yaml
 ```
 
-然后在 Hermes 中验证：
+如果你只想先查看需要写入的 Hermes 配置：
+
+```bash
+npm run install:hermes
+```
+
+安装到 OpenClaw 风格的 Agent Skill 目录：
+
+```bash
+npm run install:openclaw
+```
+
+导出成通用 Agent Skill Pack：
+
+```bash
+npm run export:agents -- --format openclaw --target ./dist/openclaw-skills
+```
+
+然后在对应 Agent 中验证，例如 Hermes：
 
 ```bash
 hermes skills list
@@ -418,6 +434,7 @@ hermes-edu-skills/
 │  ├─ family-education/
 │  └─ ...
 ├─ scripts/validate.mjs
+├─ scripts/agent-pack.mjs
 ├─ catalog.json
 ├─ CHANGELOG.md
 ├─ CONTRIBUTING.md
@@ -447,14 +464,16 @@ npm run validate
 
 ## 兼容说明
 
-- 当前推荐通过 Hermes `skills.external_dirs` 加载 `skills/` 目录。
+- Hermes Agent：推荐使用 `npm run install:hermes -- --config ~/.hermes/config.yaml` 写入 `skills.external_dirs`。
+- OpenClaw 风格 Agent：推荐使用 `npm run install:openclaw` 导出扁平目录，每个 Skill 都是 `<skill-name>/SKILL.md`。
+- 其它 Agent：推荐使用 `npm run export:agents -- --target <dir>`，再把导出的目录接入目标 Agent 的 Skill / prompt / tool registry。
 - 每个 Skill 都是独立可读的 `SKILL.md`，可以直接用于学习、改造或接入自己的 Agent。
 - 部分 Skill 中的 workflow 名称是建议接口，具体执行能力取决于你的 Hermes 工具集和运行环境。
 
 ## 路线图
 
-- 增加自动更新 Hermes config 的安装脚本。
-- 增加常见 Hermes Agent 使用示例。
+- 增加更多 Agent Runtime 的导出适配器。
+- 增加常见 Hermes / OpenClaw / Codex Agent 使用示例。
 - 持续提升 Skill 质量等级和公开审核状态。
 - 增加更多贴合教材/课程体系的知识点覆盖和参数示例。
 - 增加可选工具适配器，让需要执行能力的 workflow 可以真正跑起来。

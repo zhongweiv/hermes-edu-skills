@@ -34,7 +34,7 @@ If you are building education agents, AI learning assistants, AI teachers, curri
 | Core scenarios? | Textbook sync, study planning, photo Q&A, mistake review, daily practice, exam prep, teacher planning, and family learning. |
 | Why not thousands of files? | Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of repetitive Skills. |
 | Who is it for? | Hermes Agent users, education AI developers, teachers, curriculum researchers, schools, and institutions. |
-| How do I start? | Clone the repo and add `skills/` to Hermes `external_dirs`. |
+| How do I start? | Clone the repo, then run `npm run install:hermes` or `npm run install:openclaw`. |
 
 ## Why This Project Matters
 
@@ -97,15 +97,31 @@ cd hermes-edu-skills
 npm run validate
 ```
 
-Add the `skills/` directory to your Hermes `config.yaml`:
+Install into Hermes Agent:
 
-```yaml
-skills:
-  external_dirs:
-    - /absolute/path/to/hermes-edu-skills/skills
+```bash
+npm run install:hermes -- --config ~/.hermes/config.yaml
 ```
 
-Verify in Hermes:
+Print the Hermes config snippet without writing a file:
+
+```bash
+npm run install:hermes
+```
+
+Install into an OpenClaw-style Agent Skill directory:
+
+```bash
+npm run install:openclaw
+```
+
+Export a generic Agent Skill Pack:
+
+```bash
+npm run export:agents -- --format openclaw --target ./dist/openclaw-skills
+```
+
+Then verify in the target Agent, for example Hermes:
 
 ```bash
 hermes skills list
@@ -418,6 +434,7 @@ hermes-edu-skills/
 │  ├─ family-education/
 │  └─ ...
 ├─ scripts/validate.mjs
+├─ scripts/agent-pack.mjs
 ├─ catalog.json
 ├─ CHANGELOG.md
 ├─ CONTRIBUTING.md
@@ -447,14 +464,16 @@ Validation checks:
 
 ## Compatibility Notes
 
-- The recommended installation method is Hermes `skills.external_dirs`.
+- Hermes Agent: use `npm run install:hermes -- --config ~/.hermes/config.yaml` to update `skills.external_dirs`.
+- OpenClaw-style agents: use `npm run install:openclaw` to export a flat directory where every Skill is `<skill-name>/SKILL.md`.
+- Other agents: use `npm run export:agents -- --target <dir>`, then connect the exported directory to the target Agent's Skill / prompt / tool registry.
 - Every Skill is a standalone readable `SKILL.md` file that you can inspect, adapt, or connect to your own Agent.
 - Workflow names inside some Skills are suggested interfaces; actual execution depends on your Hermes tools and runtime environment.
 
 ## Roadmap
 
-- Add an installer script that can update Hermes config automatically.
-- Add common Hermes Agent usage examples.
+- Add more Agent Runtime export adapters.
+- Add common Hermes / OpenClaw / Codex Agent usage examples.
 - Keep improving Skill quality levels and public review status.
 - Add more textbook and knowledge-point coverage plus parameter examples.
 - Add optional tool adapters so executable workflows can run end to end.
