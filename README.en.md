@@ -448,8 +448,8 @@ Adult English, study-abroad exams, speaking, listening, and long-term language i
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [成人语言学习 Skill](skills/language-learning/adult-language-learning/SKILL.md)<br><code>adult-language-learning</code> | Curated | Needs user context | Adult | Language Learning | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Speaking, Listening, Vocabulary | Daily Check-in |
-| [托福备考 Skill](skills/language-learning/toefl-prep/SKILL.md)<br><code>toefl-prep</code> | Enhanced | Needs user context | College, Adult | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
-| [雅思备考 Skill](skills/language-learning/ielts-prep/SKILL.md)<br><code>ielts-prep</code> | Enhanced | Needs user context | College, Adult | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
+| [托福备考 Skill](skills/language-learning/toefl-prep/SKILL.md)<br><code>toefl-prep</code> | Curated | Needs user context | College, Adult | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
+| [雅思备考 Skill](skills/language-learning/ielts-prep/SKILL.md)<br><code>ielts-prep</code> | Curated | Needs user context | College, Adult | English | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
 
 ### <a id="career-learning"></a>Career Learning
 
@@ -457,13 +457,13 @@ College, adult learning, career skills, and certification scenarios.
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [数据分析 Skill](skills/career-learning/college-data-analysis/SKILL.md)<br><code>college-data-analysis</code> | Enhanced | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Data Analysis | Career Skills |
-| [数据结构 Skill](skills/career-learning/college-cs-data-structure/SKILL.md)<br><code>college-cs-data-structure</code> | Enhanced | Needs user context | College | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Algorithms, Programming | Course Learning |
-| [算法面试 Skill](skills/career-learning/college-cs-algorithm-interview/SKILL.md)<br><code>college-cs-algorithm-interview</code> | Enhanced | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Algorithms | Interview Preparation |
+| [数据分析 Skill](skills/career-learning/college-data-analysis/SKILL.md)<br><code>college-data-analysis</code> | Curated | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Data Analysis | Career Skills |
+| [数据结构 Skill](skills/career-learning/college-cs-data-structure/SKILL.md)<br><code>college-cs-data-structure</code> | Curated | Needs user context | College | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Algorithms, Programming | Course Learning |
+| [算法面试 Skill](skills/career-learning/college-cs-algorithm-interview/SKILL.md)<br><code>college-cs-algorithm-interview</code> | Curated | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Algorithms | Interview Preparation |
 | [职场写作 Skill](skills/career-learning/adult-workplace-writing/SKILL.md)<br><code>adult-workplace-writing</code> | Curated | Needs user context | Adult | Career Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Writing, Expression | Career Skills |
-| [职业证书备考 Skill](skills/career-learning/adult-vocational-certificate/SKILL.md)<br><code>adult-vocational-certificate</code> | Enhanced | Needs user context | Adult | Career Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Knowledge Memorization, Exam Sprint | Certification |
-| [AI 基础 Skill](skills/career-learning/college-ai-foundation/SKILL.md)<br><code>college-ai-foundation</code> | Enhanced | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | AI Foundations | Interest Learning |
-| [Python 学习 Skill](skills/career-learning/college-cs-python/SKILL.md)<br><code>college-cs-python</code> | Enhanced | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Programming | Career Skills |
+| [职业证书备考 Skill](skills/career-learning/adult-vocational-certificate/SKILL.md)<br><code>adult-vocational-certificate</code> | Curated | Needs user context | Adult | Career Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Knowledge Memorization, Exam Sprint | Certification |
+| [AI 基础 Skill](skills/career-learning/college-ai-foundation/SKILL.md)<br><code>college-ai-foundation</code> | Curated | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | AI Foundations | Interest Learning |
+| [Python 学习 Skill](skills/career-learning/college-cs-python/SKILL.md)<br><code>college-cs-python</code> | Curated | Needs user context | College, Adult | Computer Science | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Programming | Career Skills |
 
 ### <a id="examples"></a>Design Examples
 

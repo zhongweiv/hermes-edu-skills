@@ -1,7 +1,7 @@
 ---
 name: "family-school-readiness"
 description: "幼小衔接家庭准备把幼小衔接从提前刷题改成生活习惯、表达、规则感和基础学习准备。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: family_school_readiness.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

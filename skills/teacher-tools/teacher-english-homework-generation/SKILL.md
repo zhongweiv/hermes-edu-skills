@@ -1,7 +1,7 @@
 ---
 name: "teacher-english-homework-generation"
 description: "帮助英语老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。 Workflow: teacher_english_homework_generation.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

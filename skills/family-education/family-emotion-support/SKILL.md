@@ -1,7 +1,7 @@
 ---
 name: "family-emotion-support"
 description: "学习情绪支持在学习受挫、厌学、亲子冲突时，给家长可说出口的安抚话术和下一步学习动作。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: family_emotion_support.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

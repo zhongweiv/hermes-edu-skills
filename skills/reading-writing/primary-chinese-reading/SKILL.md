@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-reading"
 description: "小学语文阅读理解帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。 Workflow: primary_chinese_reading.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

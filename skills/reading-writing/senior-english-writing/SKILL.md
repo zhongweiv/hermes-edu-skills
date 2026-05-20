@@ -1,7 +1,7 @@
 ---
 name: "senior-english-writing"
 description: "高中英语写作帮助英语学习者把英语写作从套模板变成任务回应、结构清楚、句子准确和表达有亮点，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。 Workflow: senior_english_writing.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

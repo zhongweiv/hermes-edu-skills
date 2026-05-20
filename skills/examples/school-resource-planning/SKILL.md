@@ -1,7 +1,7 @@
 ---
 name: "school-resource-planning"
 description: "校本资源规划 Skill是面向运营配置的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: school_resource_planning.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

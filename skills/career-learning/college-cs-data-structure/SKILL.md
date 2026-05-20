@@ -1,7 +1,7 @@
 ---
 name: "college-cs-data-structure"
-description: "数据结构 Skill是面向课程学习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: college_cs_data_structure.run."
-version: "0.9.0"
+description: "把数据结构从抽象概念变成图示理解、手写过程、代码实现和题目迁移。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。 Workflow: college_cs_data_structure.run."
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["计算机"]
     abilities: ["算法", "编程"]
     scenarios: ["课程学习"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["当前章节或结构", "语言偏好", "卡住的概念/题目", "是否需要代码实现", "可用学习时间"]
 ---
 
 # 数据结构 Skill
 
-数据结构 Skill是面向课程学习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把数据结构从抽象概念变成图示理解、手写过程、代码实现和题目迁移。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把数据结构从抽象概念变成图示理解、手写过程、代码实现和题目迁移。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。
+
+## 最适合 / Best For
+
+- 大学数据结构课程
+- 算法基础薄弱
+- 准备技术面试前补基础
+- 需要把概念和代码连起来
+
+## 不适合 / Not For
+
+- 直接提交课程作业答案
+- 只背复杂度结论不理解过程
+- 跳过实现直接刷难题
+
+## 使用前请准备 / Inputs
+
+- 当前章节或结构
+- 语言偏好
+- 卡住的概念/题目
+- 是否需要代码实现
+- 可用学习时间
+
+## 推荐工作流 / Recommended Workflow
+
+- 先用生活例子解释结构。
+- 画出插入、删除、查询或遍历过程。
+- 写最小可运行实现。
+- 用一道迁移题检查是否真正理解。
+
+## 输出格式 / Output Format
+
+- 概念解释
+- 操作过程
+- 复杂度判断
+- 代码框架
+- 练习题
+- 易错点
+
+## 质量检查 / Quality Checks
+
+- 必须解释为什么是这个复杂度
+- 代码要小而清楚
+- 要有迁移题
+- 不能只贴定义
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有 IDE 时输出手算过程和伪代码。
+- 没有题目时给一个典型原创练习。
+
+## 示例提示 / Example Prompts
+
+- 帮我用 JavaScript 讲清楚栈和队列，并给一个小练习。
+- 链表删除节点总写错，请带我画过程再写代码。
 
 ## 适用场景 / When To Use
 
@@ -57,16 +115,16 @@ metadata:
 - Stages: `college`
 - Subjects: `计算机`
 - Abilities: `算法`, `编程`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `当前章节或结构`, `语言偏好`, `卡住的概念/题目`, `是否需要代码实现`, `可用学习时间`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

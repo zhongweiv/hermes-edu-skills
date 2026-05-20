@@ -1,11 +1,11 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.9.0",
-  "generatedAt": "2026-05-20T23:07:53.446Z",
+  "version": "0.10.0",
+  "generatedAt": "2026-05-20T23:21:04.010Z",
   "skills": [
     {
       "name": "adult-language-learning",
-      "description": "成人语言学习帮助成人学习者把成人语言学习从零散背单词变成场景输入、主动输出、复现复习和可坚持的口语/听力任务，输出可开口、可纠错、可复现的语言训练任务，而不是替用户一次性完成任务。",
+      "description": "把成人语言学习从收藏资料变成真实场景输入、主动输出、纠错和复现。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/language-learning/adult-language-learning/SKILL.md",
       "tags": [
         "adult",
@@ -17,19 +17,19 @@
     },
     {
       "name": "adult-vocational-certificate",
-      "description": "职业证书备考 Skill是面向考证的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把职业证书备考从买课和刷题变成考纲拆解、知识框架、练习、错题和复测计划。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/career-learning/adult-vocational-certificate/SKILL.md",
       "tags": [
         "adult",
         "职业教育",
         "考证",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "adult-workplace-writing",
-      "description": "职场写作帮助成人学习者把职场写作从“写得像公文”变成目标明确、对象清楚、行动可落地的沟通文本，输出目标清楚、对象明确、行动可落地的沟通文本，而不是替用户一次性完成任务。",
+      "description": "把职场写作从漂亮话变成目标明确、对象清楚、行动可落地的沟通文本。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/career-learning/adult-workplace-writing/SKILL.md",
       "tags": [
         "adult",
@@ -115,78 +115,78 @@
     },
     {
       "name": "college-cs-data-structure",
-      "description": "数据结构 Skill是面向课程学习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把数据结构从抽象概念变成图示理解、手写过程、代码实现和题目迁移。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/career-learning/college-cs-data-structure/SKILL.md",
       "tags": [
         "college",
         "计算机",
         "课程学习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "college-ai-foundation",
-      "description": "AI 基础 Skill是面向兴趣学习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把 AI 基础学习从热词堆砌变成概念地图、可运行小实验、产品场景和伦理边界。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/career-learning/college-ai-foundation/SKILL.md",
       "tags": [
         "college",
         "adult",
         "计算机",
         "兴趣学习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "college-cs-algorithm-interview",
-      "description": "算法面试 Skill是面向面试准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把算法面试准备从盲目刷题变成题型识别、思路表达、复杂度分析和复盘沉淀。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/career-learning/college-cs-algorithm-interview/SKILL.md",
       "tags": [
         "college",
         "adult",
         "计算机",
         "面试准备",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "college-cs-python",
-      "description": "Python 学习 Skill是面向职业技能的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把 Python 学习从“看完教程就忘”变成语法理解、小项目、调试反馈和作品沉淀。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/career-learning/college-cs-python/SKILL.md",
       "tags": [
         "college",
         "adult",
         "计算机",
         "职业技能",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "college-data-analysis",
-      "description": "数据分析 Skill是面向职业技能的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把数据分析学习从工具教程变成业务问题、数据清洗、可视化、结论和报告表达。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/career-learning/college-data-analysis/SKILL.md",
       "tags": [
         "college",
         "adult",
         "计算机",
         "职业技能",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "ielts-prep",
-      "description": "雅思备考 Skill是面向出国考试的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把雅思备考从背资料变成听说读写诊断、分项训练、输出反馈和复测节奏。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/language-learning/ielts-prep/SKILL.md",
       "tags": [
         "college",
         "adult",
         "英语",
         "出国考试",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -205,14 +205,14 @@
     },
     {
       "name": "toefl-prep",
-      "description": "托福备考 Skill是面向出国考试的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把托福备考从材料堆积变成听说读写任务链、学术场景输入和可复测的输出反馈。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
       "path": "skills/language-learning/toefl-prep/SKILL.md",
       "tags": [
         "college",
         "adult",
         "英语",
         "出国考试",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },

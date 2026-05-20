@@ -1,7 +1,7 @@
 ---
 name: "junior-chemistry-rj-textbook-sync"
 description: "把人教版初中化学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让化学同步学习不止记结论，而是能解释现象、写对符号、看懂实验。 Workflow: junior_chemistry_rj_textbook_sync.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

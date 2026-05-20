@@ -1,7 +1,7 @@
 ---
 name: "family-screen-time-balance"
 description: "屏幕时间管理把屏幕时间管理从对抗变成规则共创：什么时候用、用多久、用来做什么、超时怎么办。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: family_screen_time_balance.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

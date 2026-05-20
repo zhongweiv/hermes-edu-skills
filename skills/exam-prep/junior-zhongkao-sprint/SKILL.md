@@ -1,7 +1,7 @@
 ---
 name: "junior-zhongkao-sprint"
 description: "把中考备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。 Workflow: junior_zhongkao_sprint.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

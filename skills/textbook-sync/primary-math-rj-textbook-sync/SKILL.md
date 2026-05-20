@@ -1,7 +1,7 @@
 ---
 name: "primary-math-rj-textbook-sync"
 description: "围绕人教版小学数学教材，把年级、册别、单元和学习目标变成可执行的预习、练习、复习和错题巩固任务。 Workflow: primary_math_rj_textbook_sync.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

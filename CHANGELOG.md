@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.0 - 2026-05-21
+
+- Curates a focused 10-Skill batch for career learning, language learning, programming, data analysis, AI foundations, interview preparation, and certification scenarios.
+- Turns career-learning Skills into project/practice/review loops with visible outcomes such as portfolios, interview readiness, certificate plans, workplace artifacts, or daily language output.
+- Adds stronger boundaries against fake certificates, interview cheating, fabricated credentials, passive course collection, and unrealistic score or job promises.
+- Keeps total public export scope unchanged while upgrading selected career/language Skills to `curated`, `recommended`, and `0.10.0` content.
+
 ## 0.9.0 - 2026-05-21
 
 - Curates the fifth Skill batch for family education, parent-child reading, reading comprehension, composition, English writing, academic writing, workplace writing, and adult language learning.

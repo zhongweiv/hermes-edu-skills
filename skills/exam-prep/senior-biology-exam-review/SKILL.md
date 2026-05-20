@@ -1,7 +1,7 @@
 ---
 name: "senior-biology-exam-review"
 description: "把高中生物考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。 Workflow: senior_biology_exam_review.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

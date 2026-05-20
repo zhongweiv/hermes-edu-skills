@@ -1,7 +1,7 @@
 ---
 name: "family-holiday-learning"
 description: "假期家庭学习把寒暑假从“报很多课/放任玩”改成学习、阅读、运动和休息平衡的家庭节奏。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: family_holiday_learning.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

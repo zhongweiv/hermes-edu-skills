@@ -1,7 +1,7 @@
 ---
 name: "teacher-geography-lesson-planning"
 description: "地理备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_geography_lesson_planning.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

@@ -1,7 +1,7 @@
 ---
 name: "teacher-parent-report-lite"
 description: "帮助老师把学习表现转成家长听得懂、愿意配合、不过度焦虑的反馈报告。 Workflow: teacher_parent_report_lite.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

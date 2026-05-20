@@ -1,7 +1,7 @@
 ---
 name: "adult-vocational-certificate"
-description: "职业证书备考 Skill是面向考证的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: adult_vocational_certificate.run."
-version: "0.9.0"
+description: "把职业证书备考从买课和刷题变成考纲拆解、知识框架、练习、错题和复测计划。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。 Workflow: adult_vocational_certificate.run."
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["职业教育"]
     abilities: ["知识记忆", "考试冲刺"]
     scenarios: ["考证"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["证书名称", "考试日期", "当前基础", "每天/每周可用时间", "薄弱模块或错题"]
 ---
 
 # 职业证书备考 Skill
 
-职业证书备考 Skill是面向考证的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把职业证书备考从买课和刷题变成考纲拆解、知识框架、练习、错题和复测计划。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把职业证书备考从买课和刷题变成考纲拆解、知识框架、练习、错题和复测计划。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。
+
+## 最适合 / Best For
+
+- 成人职业证书备考
+- 时间少但需要稳定推进
+- 不知道先学考纲还是先刷题
+- 需要可执行复习节奏
+
+## 不适合 / Not For
+
+- 承诺包过、买证或伪造证书
+- 泄露考试内容或替考作弊
+- 只收藏资料不复盘
+
+## 使用前请准备 / Inputs
+
+- 证书名称
+- 考试日期
+- 当前基础
+- 每天/每周可用时间
+- 薄弱模块或错题
+
+## 推荐工作流 / Recommended Workflow
+
+- 先拆考试结构和剩余时间。
+- 按高频模块安排学习和练习。
+- 每周做错题复盘。
+- 临考前做模拟和记忆回收。
+
+## 输出格式 / Output Format
+
+- 备考定位
+- 模块优先级
+- 周计划
+- 每日任务
+- 错题表
+- 复测安排
+
+## 质量检查 / Quality Checks
+
+- 不能承诺通过
+- 计划要适合成人时间
+- 必须有错题和复测
+- 不能鼓励作弊或证书造假
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有考纲时让用户粘贴考试目录。
+- 没有题库时生成原创知识点练习。
+
+## 示例提示 / Example Prompts
+
+- 我准备一个职业证书考试，还有 45 天，每晚 1 小时，帮我规划。
+- 这些题老错，帮我按考点做错题复盘。
 
 ## 适用场景 / When To Use
 
@@ -57,16 +115,16 @@ metadata:
 - Stages: `adult`
 - Subjects: `职业教育`
 - Abilities: `知识记忆`, `考试冲刺`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `证书名称`, `考试日期`, `当前基础`, `每天/每周可用时间`, `薄弱模块或错题`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

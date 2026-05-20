@@ -1,7 +1,7 @@
 ---
 name: "teacher-chinese-homework-generation"
 description: "帮助语文老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。 Workflow: teacher_chinese_homework_generation.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

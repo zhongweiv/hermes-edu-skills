@@ -1,7 +1,7 @@
 ---
 name: "toefl-prep"
-description: "托福备考 Skill是面向出国考试的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: toefl_prep.run."
-version: "0.9.0"
+description: "把托福备考从材料堆积变成听说读写任务链、学术场景输入和可复测的输出反馈。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。 Workflow: toefl_prep.run."
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["英语"]
     abilities: ["听力", "口语", "阅读理解", "写作"]
     scenarios: ["出国考试"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["目标分数", "考试日期", "当前分项水平", "薄弱题型", "每天可用时间"]
 ---
 
 # 托福备考 Skill
 
-托福备考 Skill是面向出国考试的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把托福备考从材料堆积变成听说读写任务链、学术场景输入和可复测的输出反馈。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把托福备考从材料堆积变成听说读写任务链、学术场景输入和可复测的输出反馈。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。
+
+## 最适合 / Best For
+
+- 托福备考入门或冲刺
+- 听力笔记和口语综合题薄弱
+- 阅读长难句和写作结构不稳
+- 需要分项提分计划
+
+## 不适合 / Not For
+
+- 承诺保分或泄露考试内容
+- 替用户完成考试回答
+- 只背模板不做计时输出
+
+## 使用前请准备 / Inputs
+
+- 目标分数
+- 考试日期
+- 当前分项水平
+- 薄弱题型
+- 每天可用时间
+
+## 推荐工作流 / Recommended Workflow
+
+- 先诊断四项和题型弱点。
+- 围绕学术听读输入设计笔记和输出。
+- 安排限时口语/写作任务。
+- 复盘错误并安排下一次复测。
+
+## 输出格式 / Output Format
+
+- 分项诊断
+- 题型优先级
+- 限时训练
+- 口语/写作反馈
+- 笔记模板
+- 复测安排
+
+## 质量检查 / Quality Checks
+
+- 不能承诺分数
+- 必须包含计时输出
+- 听力/阅读要回到证据
+- 反馈要能进入下一轮练习
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有真题时生成原创学术场景练习。
+- 没有录音工具时用文字稿模拟口语回答。
+
+## 示例提示 / Example Prompts
+
+- 托福口语综合题总说不完，帮我做 7 天训练。
+- 托福阅读长难句卡住，帮我设计每天 30 分钟练习。
 
 ## 适用场景 / When To Use
 
@@ -57,16 +115,16 @@ metadata:
 - Stages: `college`, `adult`
 - Subjects: `英语`
 - Abilities: `听力`, `口语`, `阅读理解`, `写作`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `目标分数`, `考试日期`, `当前分项水平`, `薄弱题型`, `每天可用时间`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

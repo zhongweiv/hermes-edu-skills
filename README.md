@@ -448,8 +448,8 @@ npm run export:agents
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [成人语言学习 Skill](skills/language-learning/adult-language-learning/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 语言学习 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 口语、听力、词汇 | 每日打卡 |
-| [托福备考 Skill](skills/language-learning/toefl-prep/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 听力、口语、阅读理解、写作 | 出国考试 |
-| [雅思备考 Skill](skills/language-learning/ielts-prep/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 听力、口语、阅读理解、写作 | 出国考试 |
+| [托福备考 Skill](skills/language-learning/toefl-prep/SKILL.md) | 精品打磨 | 需用户补充上下文 | college、adult | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 听力、口语、阅读理解、写作 | 出国考试 |
+| [雅思备考 Skill](skills/language-learning/ielts-prep/SKILL.md) | 精品打磨 | 需用户补充上下文 | college、adult | 英语 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 听力、口语、阅读理解、写作 | 出国考试 |
 
 ### <a id="career-learning"></a>成人与职业学习 Career Learning
 
@@ -457,13 +457,13 @@ npm run export:agents
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [数据分析 Skill](skills/career-learning/college-data-analysis/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 数据分析 | 职业技能 |
-| [数据结构 Skill](skills/career-learning/college-cs-data-structure/SKILL.md) | 增强可用 | 需用户补充上下文 | college | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 算法、编程 | 课程学习 |
-| [算法面试 Skill](skills/career-learning/college-cs-algorithm-interview/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 算法 | 面试准备 |
+| [数据分析 Skill](skills/career-learning/college-data-analysis/SKILL.md) | 精品打磨 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 数据分析 | 职业技能 |
+| [数据结构 Skill](skills/career-learning/college-cs-data-structure/SKILL.md) | 精品打磨 | 需用户补充上下文 | college | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 算法、编程 | 课程学习 |
+| [算法面试 Skill](skills/career-learning/college-cs-algorithm-interview/SKILL.md) | 精品打磨 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 算法 | 面试准备 |
 | [职场写作 Skill](skills/career-learning/adult-workplace-writing/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 写作、表达 | 职业技能 |
-| [职业证书备考 Skill](skills/career-learning/adult-vocational-certificate/SKILL.md) | 增强可用 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 知识记忆、考试冲刺 | 考证 |
-| [AI 基础 Skill](skills/career-learning/college-ai-foundation/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | AI 基础 | 兴趣学习 |
-| [Python 学习 Skill](skills/career-learning/college-cs-python/SKILL.md) | 增强可用 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 编程 | 职业技能 |
+| [职业证书备考 Skill](skills/career-learning/adult-vocational-certificate/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 职业教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 知识记忆、考试冲刺 | 考证 |
+| [AI 基础 Skill](skills/career-learning/college-ai-foundation/SKILL.md) | 精品打磨 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | AI 基础 | 兴趣学习 |
+| [Python 学习 Skill](skills/career-learning/college-cs-python/SKILL.md) | 精品打磨 | 需用户补充上下文 | college、adult | 计算机 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 编程 | 职业技能 |
 
 ### <a id="examples"></a>设计参考 Examples
 

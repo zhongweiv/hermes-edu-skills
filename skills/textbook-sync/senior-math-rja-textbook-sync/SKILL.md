@@ -1,7 +1,7 @@
 ---
 name: "senior-math-rja-textbook-sync"
 description: "人教A版高中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: senior_math_rja_textbook_sync.run."
-version: "0.9.0"
+version: "0.10.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
