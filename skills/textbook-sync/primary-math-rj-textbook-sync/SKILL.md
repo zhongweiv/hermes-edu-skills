@@ -1,7 +1,7 @@
 ---
 name: "primary-math-rj-textbook-sync"
 description: "围绕人教版小学数学教材，把年级、册别、单元和学习目标变成可执行的预习、练习、复习和错题巩固任务。 Workflow: primary_math_rj_textbook_sync.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -21,7 +21,7 @@ metadata:
     export_mode: "installable"
     release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "mistake.query_recent", "mistake.cluster", "plan.generate", "curriculum.resolve", "memory.write"]
-    requires_data: ["年级", "册别", "单元或知识点", "学习场景"]
+    requires_data: ["教材版本", "年级", "册别/学期", "单元或知识点", "学习场景", "可选：错题/薄弱点/可用时间"]
 ---
 
 # 人教版小学数学同步 Skill
@@ -130,7 +130,7 @@ metadata:
 - Standalone Support: `needs_user_input`
 - Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `mistake.query_recent`, `mistake.cluster`, `plan.generate`, `curriculum.resolve`, `memory.write`
-- Requires Data: `年级`, `册别`, `单元或知识点`, `学习场景`
+- Requires Data: `教材版本`, `年级`, `册别/学期`, `单元或知识点`, `学习场景`, `可选：错题/薄弱点/可用时间`
 - Export Mode: `installable`
 - Release Channel: `recommended`
 

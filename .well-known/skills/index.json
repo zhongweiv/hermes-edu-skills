@@ -1,7 +1,7 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.6.0",
-  "generatedAt": "2026-05-20T22:30:09.128Z",
+  "version": "0.7.0",
+  "generatedAt": "2026-05-20T22:44:27.391Z",
   "skills": [
     {
       "name": "adult-language-learning",
@@ -218,7 +218,7 @@
     },
     {
       "name": "junior-biology-bs-textbook-sync",
-      "description": "北师大版初中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把北师大版初中生物的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把生物教材同步做成能看图、会解释、能用证据表达的学习过程。",
       "path": "skills/textbook-sync/junior-biology-bs-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -230,7 +230,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -262,7 +262,7 @@
     },
     {
       "name": "junior-biology-rj-textbook-sync",
-      "description": "人教版初中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版初中生物的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把生物教材同步做成能看图、会解释、能用证据表达的学习过程。",
       "path": "skills/textbook-sync/junior-biology-rj-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -274,7 +274,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -293,7 +293,7 @@
     },
     {
       "name": "junior-chemistry-lk-textbook-sync",
-      "description": "鲁科版初中化学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把鲁科版初中化学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让化学同步学习不止记结论，而是能解释现象、写对符号、看懂实验。",
       "path": "skills/textbook-sync/junior-chemistry-lk-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -305,7 +305,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -324,7 +324,7 @@
     },
     {
       "name": "junior-chemistry-rj-textbook-sync",
-      "description": "人教版初中化学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版初中化学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让化学同步学习不止记结论，而是能解释现象、写对符号、看懂实验。",
       "path": "skills/textbook-sync/junior-chemistry-rj-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -336,7 +336,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -392,7 +392,7 @@
     },
     {
       "name": "junior-chinese-tongbian-textbook-sync",
-      "description": "统编版初中语文同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把统编版初中语文的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让家长和学生知道今天这篇课文到底要学会什么、怎么练才不空泛。",
       "path": "skills/textbook-sync/junior-chinese-tongbian-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -404,7 +404,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -436,7 +436,7 @@
     },
     {
       "name": "junior-english-rj-textbook-sync",
-      "description": "人教版初中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版初中英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。",
       "path": "skills/textbook-sync/junior-english-rj-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -448,7 +448,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -479,7 +479,7 @@
     },
     {
       "name": "junior-english-wy-textbook-sync",
-      "description": "外研版初中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把外研版初中英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。",
       "path": "skills/textbook-sync/junior-english-wy-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -491,13 +491,13 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "junior-english-yl-textbook-sync",
-      "description": "译林版初中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把译林版初中英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。",
       "path": "skills/textbook-sync/junior-english-yl-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -509,7 +509,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -621,7 +621,7 @@
     },
     {
       "name": "junior-math-bs-textbook-sync",
-      "description": "北师大版初中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把北师大版初中数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。",
       "path": "skills/textbook-sync/junior-math-bs-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -633,7 +633,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -678,7 +678,7 @@
     },
     {
       "name": "junior-math-rj-textbook-sync",
-      "description": "人教版初中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版初中数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。",
       "path": "skills/textbook-sync/junior-math-rj-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -690,13 +690,13 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "junior-math-sj-textbook-sync",
-      "description": "苏教版初中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把苏教版初中数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。",
       "path": "skills/textbook-sync/junior-math-sj-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -708,7 +708,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -727,7 +727,7 @@
     },
     {
       "name": "junior-physics-lk-textbook-sync",
-      "description": "鲁科版初中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把鲁科版初中物理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把物理教材同步变成现象-模型-证据-应用的清晰学习路径。",
       "path": "skills/textbook-sync/junior-physics-lk-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -739,7 +739,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -758,7 +758,7 @@
     },
     {
       "name": "junior-physics-rj-textbook-sync",
-      "description": "人教版初中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版初中物理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把物理教材同步变成现象-模型-证据-应用的清晰学习路径。",
       "path": "skills/textbook-sync/junior-physics-rj-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -770,7 +770,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1042,7 +1042,7 @@
     },
     {
       "name": "primary-chinese-tongbian-textbook-sync",
-      "description": "统编版小学语文同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把统编版小学语文的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让家长和学生知道今天这篇课文到底要学会什么、怎么练才不空泛。",
       "path": "skills/textbook-sync/primary-chinese-tongbian-textbook-sync/SKILL.md",
       "tags": [
         "primary",
@@ -1053,7 +1053,7 @@
         "单元复习",
         "错题巩固",
         "期中期末复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1071,7 +1071,7 @@
     },
     {
       "name": "primary-english-pep-textbook-sync",
-      "description": "人教PEP版小学英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教PEP版小学英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。",
       "path": "skills/textbook-sync/primary-english-pep-textbook-sync/SKILL.md",
       "tags": [
         "primary",
@@ -1082,7 +1082,7 @@
         "单元复习",
         "错题巩固",
         "期中期末复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1113,7 +1113,7 @@
     },
     {
       "name": "primary-english-wy-textbook-sync",
-      "description": "外研版小学英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把外研版小学英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。",
       "path": "skills/textbook-sync/primary-english-wy-textbook-sync/SKILL.md",
       "tags": [
         "primary",
@@ -1124,13 +1124,13 @@
         "单元复习",
         "错题巩固",
         "期中期末复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "primary-english-yl-textbook-sync",
-      "description": "译林版小学英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把译林版小学英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。",
       "path": "skills/textbook-sync/primary-english-yl-textbook-sync/SKILL.md",
       "tags": [
         "primary",
@@ -1141,7 +1141,7 @@
         "单元复习",
         "错题巩固",
         "期中期末复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1159,7 +1159,7 @@
     },
     {
       "name": "primary-math-bs-textbook-sync",
-      "description": "北师大版小学数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、口算速练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把北师大版小学数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。",
       "path": "skills/textbook-sync/primary-math-bs-textbook-sync/SKILL.md",
       "tags": [
         "primary",
@@ -1171,7 +1171,7 @@
         "错题巩固",
         "期中期末复习",
         "口算速练",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1208,7 +1208,7 @@
     },
     {
       "name": "primary-math-sj-textbook-sync",
-      "description": "苏教版小学数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、口算速练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把苏教版小学数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。",
       "path": "skills/textbook-sync/primary-math-sj-textbook-sync/SKILL.md",
       "tags": [
         "primary",
@@ -1220,7 +1220,7 @@
         "错题巩固",
         "期中期末复习",
         "口算速练",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },

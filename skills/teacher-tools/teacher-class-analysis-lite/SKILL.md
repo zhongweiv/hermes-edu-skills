@@ -1,7 +1,7 @@
 ---
 name: "teacher-class-analysis-lite"
 description: "把班级练习、错题和课堂观察整理成老师能立刻调整教学的学情判断，而不是只给平均分。 Workflow: teacher_class_analysis_lite.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

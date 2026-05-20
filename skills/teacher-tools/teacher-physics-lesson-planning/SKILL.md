@@ -1,7 +1,7 @@
 ---
 name: "teacher-physics-lesson-planning"
 description: "帮助物理老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕概念模型、实验探究、图像分析和受力/电路等推理过程。 Workflow: teacher_physics_lesson_planning.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

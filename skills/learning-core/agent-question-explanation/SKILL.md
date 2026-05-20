@@ -1,7 +1,7 @@
 ---
 name: "agent-question-explanation"
 description: "把一道题讲到学生真正会复述思路：先定位卡点，再用年级能听懂的语言拆解，最后用变式题确认理解。 Workflow: agent_question_explanation.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

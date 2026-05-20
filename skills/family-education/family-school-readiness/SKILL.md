@@ -1,7 +1,7 @@
 ---
 name: "family-school-readiness"
 description: "幼小衔接家庭准备 Skill是面向入学准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: family_school_readiness.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

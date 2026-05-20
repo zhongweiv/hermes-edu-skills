@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-dictation-daily"
 description: "把生字词听写做成“会读、会写、会用、会订正”的每日小闭环。 Workflow: primary_chinese_dictation_daily.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

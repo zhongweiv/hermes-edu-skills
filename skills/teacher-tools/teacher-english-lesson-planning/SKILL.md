@@ -1,7 +1,7 @@
 ---
 name: "teacher-english-lesson-planning"
 description: "帮助英语老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕词汇、语篇、听说读写和真实语境使用。 Workflow: teacher_english_lesson_planning.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

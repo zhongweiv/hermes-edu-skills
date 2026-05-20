@@ -1,7 +1,7 @@
 ---
 name: "agent-focus-training"
 description: "把“孩子不专心”拆成可观察的学习环境、任务长度和反馈节奏，生成能立刻执行的专注训练方案。 Workflow: agent_focus_training.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

@@ -1,7 +1,7 @@
 ---
 name: "agent-weakness-boost"
 description: "把“薄弱项”从模糊标签变成一个可诊断、可练习、可复测的小专题提升闭环。 Workflow: agent_weakness_boost.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

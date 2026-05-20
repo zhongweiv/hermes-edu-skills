@@ -1,7 +1,7 @@
 ---
 name: "senior-biology-rj-textbook-sync"
 description: "人教版高中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: senior_biology_rj_textbook_sync.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -21,7 +21,7 @@ metadata:
     export_mode: "installable"
     release_channel: "public"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "mistake.query_recent", "mistake.cluster", "plan.generate", "curriculum.resolve", "memory.write"]
-    requires_data: ["年级", "册别", "单元或知识点", "学习场景"]
+    requires_data: ["教材版本", "年级", "册别/学期", "单元或知识点", "学习场景", "可选：错题/薄弱点/可用时间"]
 ---
 
 # 人教版高中生物同步 Skill
@@ -75,7 +75,7 @@ metadata:
 - Standalone Support: `needs_user_input`
 - Public Release: `allowed`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `mistake.query_recent`, `mistake.cluster`, `plan.generate`, `curriculum.resolve`, `memory.write`
-- Requires Data: `年级`, `册别`, `单元或知识点`, `学习场景`
+- Requires Data: `教材版本`, `年级`, `册别/学期`, `单元或知识点`, `学习场景`, `可选：错题/薄弱点/可用时间`
 - Export Mode: `installable`
 - Release Channel: `public`
 

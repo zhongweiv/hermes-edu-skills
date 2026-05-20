@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0 - 2026-05-21
+
+- Curates the third 20-Skill batch for textbook sync, covering primary and junior Chinese, math, English, physics, chemistry, and biology.
+- Turns教材同步 Skills into parameterized learning entrances: textbook version, grade, semester, unit, knowledge point, learning scenario, weak points, and available time.
+- Adds stronger guardrails around教材版权、原创练习、缺失参数追问、错题追练、单元复习 and standalone Hermes usage.
+- Keeps total public export scope unchanged while upgrading selected textbook-sync Skills to `curated`, `recommended`, and `0.7.0` content.
+
 ## 0.6.0 - 2026-05-21
 
 - Curates the second 20-Skill batch for teacher tools, covering lesson planning, homework generation, unit review, class analysis, and parent communication.

@@ -1,7 +1,7 @@
 ---
 name: "civil-service-aptitude"
 description: "公务员行测 Skill是面向考证、专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: civil_service_aptitude.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

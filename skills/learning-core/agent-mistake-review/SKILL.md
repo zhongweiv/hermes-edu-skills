@@ -1,7 +1,7 @@
 ---
 name: "agent-mistake-review"
 description: "把错题从改正答案升级为找到错误模式并安排复习。 Workflow: agent_mistake_review.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

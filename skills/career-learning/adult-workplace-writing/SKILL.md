@@ -1,7 +1,7 @@
 ---
 name: "adult-workplace-writing"
 description: "职场写作 Skill是面向职业技能的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: adult_workplace_writing.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

@@ -1,7 +1,7 @@
 ---
 name: "agent-holiday-plan"
 description: "把寒暑假从“报复性补课”改成有节奏的巩固、预习、阅读和休息计划。 Workflow: agent_holiday_plan.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]

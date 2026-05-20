@@ -1,7 +1,7 @@
 ---
 name: "institution-campus-dashboard"
 description: "校区经营看板 Skill是面向经营分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: institution_campus_dashboard.run."
-version: "0.6.0"
+version: "0.7.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
