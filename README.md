@@ -34,7 +34,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的开源教育 Skill
 | 最核心的场景？ | 教材同步、学习计划、拍照答疑、错题复盘、每日练习、考试备考、教师备课、家庭陪伴。 |
 | 为什么不是几千个文件？ | 年级、册别、单元、课时、知识点、难度都作为参数传入，避免把用户淹没在海量重复 Skill 中。 |
 | 谁适合用？ | Hermes Agent 用户、教育 AI 开发者、老师、教研人员、学校/机构团队。 |
-| 怎么开始？ | 克隆仓库，运行 `npm run install:hermes` 或 `npm run install:openclaw`。 |
+| 怎么开始？ | 克隆仓库，运行 `npm run agent:install -- --tool hermes` 或 `npm run agent:install -- --tool openclaw`。 |
 
 ## 为什么值得关注
 
@@ -100,25 +100,38 @@ npm run validate
 安装到 Hermes Agent：
 
 ```bash
-npm run install:hermes -- --config ~/.hermes/config.yaml
+npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
 ```
 
 如果你只想先查看需要写入的 Hermes 配置：
 
 ```bash
-npm run install:hermes
+npm run agent:install -- --tool hermes
 ```
 
 安装到 OpenClaw 风格的 Agent Skill 目录：
 
 ```bash
-npm run install:openclaw
+npm run agent:install -- --tool openclaw
+```
+
+安装到 Codex / Claude Code 这类 `SKILL.md` 风格目录：
+
+```bash
+npm run agent:install -- --tool codex
+npm run agent:install -- --tool claude-code
+```
+
+安装到 Cursor 项目规则：
+
+```bash
+npm run agent:install -- --tool cursor --workspace /path/to/project
 ```
 
 导出成通用 Agent Skill Pack：
 
 ```bash
-npm run export:agents -- --format openclaw --target ./dist/openclaw-skills
+npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
 ```
 
 然后在对应 Agent 中验证，例如 Hermes：
@@ -464,9 +477,10 @@ npm run validate
 
 ## 兼容说明
 
-- Hermes Agent：推荐使用 `npm run install:hermes -- --config ~/.hermes/config.yaml` 写入 `skills.external_dirs`。
-- OpenClaw 风格 Agent：推荐使用 `npm run install:openclaw` 导出扁平目录，每个 Skill 都是 `<skill-name>/SKILL.md`。
-- 其它 Agent：推荐使用 `npm run export:agents -- --target <dir>`，再把导出的目录接入目标 Agent 的 Skill / prompt / tool registry。
+- Hermes Agent：推荐使用 `npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml` 写入 `skills.external_dirs`。
+- OpenClaw / Codex / Claude Code：推荐使用 `npm run agent:install -- --tool <tool>` 导出扁平目录，每个 Skill 都是 `<skill-name>/SKILL.md`。
+- Cursor：推荐使用 `npm run agent:install -- --tool cursor --workspace <project>` 生成 `.cursor/rules/*.mdc` 和本地 Skill Pack。
+- 其它 Agent：推荐使用 `npm run agent:convert -- --tool generic-agent --target <dir>`，再把导出的目录接入目标 Agent 的 Skill / prompt / tool registry。
 - 每个 Skill 都是独立可读的 `SKILL.md`，可以直接用于学习、改造或接入自己的 Agent。
 - 部分 Skill 中的 workflow 名称是建议接口，具体执行能力取决于你的 Hermes 工具集和运行环境。
 

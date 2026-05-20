@@ -1,8 +1,8 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
-  "description": "China-focused education Skill Pack for Hermes Agent Runtime, with installer and OpenClaw-style Agent Skill export tools.",
+  "description": "China-focused education Skill Pack for Hermes Agent Runtime, with unified installer and conversion tools for Hermes, OpenClaw, Codex, Cursor, and Claude Code.",
   "license": "MIT",
   "type": "module",
   "homepage": "https://github.com/zhongweiv/hermes-edu-skills#readme",
@@ -40,6 +40,9 @@
     "学习助手"
   ],
   "scripts": {
+    "agent": "node scripts/agent-pack.mjs",
+    "agent:convert": "node scripts/agent-pack.mjs convert",
+    "agent:install": "node scripts/agent-pack.mjs install",
     "export:agents": "node scripts/agent-pack.mjs export",
     "install:hermes": "node scripts/agent-pack.mjs install-hermes",
     "install:openclaw": "node scripts/agent-pack.mjs install-openclaw",

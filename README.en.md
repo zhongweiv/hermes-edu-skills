@@ -34,7 +34,7 @@ If you are building education agents, AI learning assistants, AI teachers, curri
 | Core scenarios? | Textbook sync, study planning, photo Q&A, mistake review, daily practice, exam prep, teacher planning, and family learning. |
 | Why not thousands of files? | Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of repetitive Skills. |
 | Who is it for? | Hermes Agent users, education AI developers, teachers, curriculum researchers, schools, and institutions. |
-| How do I start? | Clone the repo, then run `npm run install:hermes` or `npm run install:openclaw`. |
+| How do I start? | Clone the repo, then run `npm run agent:install -- --tool hermes` or `npm run agent:install -- --tool openclaw`. |
 
 ## Why This Project Matters
 
@@ -100,25 +100,38 @@ npm run validate
 Install into Hermes Agent:
 
 ```bash
-npm run install:hermes -- --config ~/.hermes/config.yaml
+npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
 ```
 
 Print the Hermes config snippet without writing a file:
 
 ```bash
-npm run install:hermes
+npm run agent:install -- --tool hermes
 ```
 
 Install into an OpenClaw-style Agent Skill directory:
 
 ```bash
-npm run install:openclaw
+npm run agent:install -- --tool openclaw
+```
+
+Install into Codex / Claude Code style `SKILL.md` directories:
+
+```bash
+npm run agent:install -- --tool codex
+npm run agent:install -- --tool claude-code
+```
+
+Install into Cursor project rules:
+
+```bash
+npm run agent:install -- --tool cursor --workspace /path/to/project
 ```
 
 Export a generic Agent Skill Pack:
 
 ```bash
-npm run export:agents -- --format openclaw --target ./dist/openclaw-skills
+npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
 ```
 
 Then verify in the target Agent, for example Hermes:
@@ -464,9 +477,10 @@ Validation checks:
 
 ## Compatibility Notes
 
-- Hermes Agent: use `npm run install:hermes -- --config ~/.hermes/config.yaml` to update `skills.external_dirs`.
-- OpenClaw-style agents: use `npm run install:openclaw` to export a flat directory where every Skill is `<skill-name>/SKILL.md`.
-- Other agents: use `npm run export:agents -- --target <dir>`, then connect the exported directory to the target Agent's Skill / prompt / tool registry.
+- Hermes Agent: use `npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml` to update `skills.external_dirs`.
+- OpenClaw / Codex / Claude Code: use `npm run agent:install -- --tool <tool>` to export a flat directory where every Skill is `<skill-name>/SKILL.md`.
+- Cursor: use `npm run agent:install -- --tool cursor --workspace <project>` to generate `.cursor/rules/*.mdc` plus a local Skill Pack copy.
+- Other agents: use `npm run agent:convert -- --tool generic-agent --target <dir>`, then connect the exported directory to the target Agent's Skill / prompt / tool registry.
 - Every Skill is a standalone readable `SKILL.md` file that you can inspect, adapt, or connect to your own Agent.
 - Workflow names inside some Skills are suggested interfaces; actual execution depends on your Hermes tools and runtime environment.
 

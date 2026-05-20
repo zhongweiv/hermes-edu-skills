@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 - 2026-05-21
+
+- Adds a unified `agent-pack` command model inspired by multi-tool Agent pack projects.
+- Adds `npm run agent:install -- --tool <tool>` for Hermes, OpenClaw, Codex, Cursor, Claude Code, and generic Agent Skill roots.
+- Adds `npm run agent:convert -- --tool <tool> --target <path>` for conversion-only workflows.
+- Adds Cursor `.cursor/rules/*.mdc` generation plus a local `.cursor/hermes-edu-skills` Skill Pack copy.
+- Keeps the older `install:hermes`, `install:openclaw`, and `export:agents` commands as compatibility aliases.
+
 ## 0.3.0 - 2026-05-21
 
 - Adds `scripts/agent-pack.mjs` for easier installation and cross-agent export.

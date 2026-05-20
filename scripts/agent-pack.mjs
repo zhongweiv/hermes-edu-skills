@@ -1,27 +1,53 @@
 import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const catalogPath = join(root, 'catalog.json');
 const skillsRoot = join(root, 'skills');
 
+const flatSkillTools = new Set(['openclaw', 'codex', 'claude-code', 'generic-agent']);
+const supportedTools = new Set(['hermes', 'openclaw', 'codex', 'claude-code', 'cursor', 'generic-agent']);
+
+const categoryLabels = {
+  'career-learning': 'Career Learning',
+  'daily-practice': 'Daily Practice',
+  examples: 'Design Examples',
+  'exam-prep': 'Exam Prep',
+  'family-education': 'Family Education',
+  'language-learning': 'Language Learning',
+  'learning-core': 'Learning Core',
+  'reading-writing': 'Reading & Writing',
+  'teacher-tools': 'Teacher Tools',
+  'textbook-sync': 'Textbook Sync',
+};
+
 function usage() {
   console.log(`Hermes Edu Skills Agent Pack
 
 Usage:
+  node scripts/agent-pack.mjs install --tool <hermes|openclaw|codex|claude-code|cursor|generic-agent> [options]
+  node scripts/agent-pack.mjs convert --tool <openclaw|codex|claude-code|cursor|generic-agent> --target <path> [options]
+
+Compatibility aliases:
   node scripts/agent-pack.mjs install-hermes --config <path> [--dry-run]
-  node scripts/agent-pack.mjs install-openclaw [--target <path> | --workspace <path>] [--category <name>] [--include-examples] [--dry-run]
-  node scripts/agent-pack.mjs export --target <path> [--format agent-skills|openclaw|flat] [--category <name>] [--include-examples] [--dry-run]
+  node scripts/agent-pack.mjs install-openclaw [--target <path> | --workspace <path>] [--dry-run]
+  node scripts/agent-pack.mjs export --target <path> [--format agent-skills|openclaw|codex|claude-code|cursor|flat] [--dry-run]
 
 Examples:
-  npm run install:hermes -- --config ~/.hermes/config.yaml
-  npm run install:openclaw
-  npm run export:agents -- --format openclaw --target ./dist/openclaw-skills
+  npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
+  npm run agent:install -- --tool openclaw
+  npm run agent:install -- --tool codex
+  npm run agent:install -- --tool claude-code --workspace .
+  npm run agent:install -- --tool cursor --workspace /path/to/project
+  npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
 
 Options:
   --category <name>       Export only one category. Can be used multiple times or comma-separated.
+  --config <path>         Hermes config path.
   --include-examples      Include doc_only example Skills.
+  --target <path>         Destination directory.
+  --workspace <path>      Project/workspace directory for project-scoped installs.
   --dry-run               Print actions without writing files.
 `);
 }
@@ -33,9 +59,10 @@ function parseArgs(argv) {
     categories: [],
     config: '',
     dryRun: false,
-    format: 'agent-skills',
+    format: '',
     includeExamples: false,
     target: '',
+    tool: '',
     workspace: '',
   };
 
@@ -68,6 +95,10 @@ function parseArgs(argv) {
       args.target = readValue();
     } else if (arg.startsWith('--target=')) {
       args.target = arg.slice('--target='.length);
+    } else if (arg === '--tool') {
+      args.tool = readValue();
+    } else if (arg.startsWith('--tool=')) {
+      args.tool = arg.slice('--tool='.length);
     } else if (arg === '--workspace') {
       args.workspace = readValue();
     } else if (arg.startsWith('--workspace=')) {
@@ -82,17 +113,25 @@ function parseArgs(argv) {
   return args;
 }
 
+function homeDir() {
+  const home = process.env.HOME || process.env.USERPROFILE;
+  if (!home) throw new Error('Cannot resolve home directory. Pass --target explicitly.');
+  return home;
+}
+
 function expandHome(path) {
   if (!path.startsWith('~')) return path;
-  const home = process.env.HOME || process.env.USERPROFILE;
-  if (!home) throw new Error(`Cannot expand home path: ${path}`);
-  if (path === '~') return home;
-  if (path.startsWith('~/') || path.startsWith('~\\')) return join(home, path.slice(2));
+  if (path === '~') return homeDir();
+  if (path.startsWith('~/') || path.startsWith('~\\')) return join(homeDir(), path.slice(2));
   return path;
 }
 
 function normalizePathForConfig(path) {
   return resolve(expandHome(path)).replace(/\\/g, '/');
+}
+
+function normalizeRelativePath(path) {
+  return path.replace(/\\/g, '/');
 }
 
 function readCatalog() {
@@ -109,10 +148,31 @@ function selectedSkills(args) {
   });
 }
 
-function defaultOpenClawTarget() {
-  const home = process.env.HOME || process.env.USERPROFILE;
-  if (!home) throw new Error('Cannot resolve home directory. Pass --target explicitly.');
-  return join(home, '.openclaw', 'skills');
+function ensureTool(tool) {
+  if (!tool) throw new Error('Missing --tool. Supported tools: hermes, openclaw, codex, claude-code, cursor, generic-agent.');
+  if (!supportedTools.has(tool)) throw new Error(`Unsupported tool: ${tool}`);
+  return tool;
+}
+
+function defaultFlatTarget(tool, args) {
+  if (args.target) return args.target;
+  if (args.workspace) {
+    const workspace = resolve(expandHome(args.workspace));
+    if (tool === 'claude-code') return join(workspace, '.claude', 'skills');
+    return join(workspace, 'skills');
+  }
+  if (tool === 'openclaw') return join(homeDir(), '.openclaw', 'skills');
+  if (tool === 'codex') return join(process.env.CODEX_HOME || join(homeDir(), '.codex'), 'skills');
+  if (tool === 'claude-code') return join(homeDir(), '.claude', 'skills');
+  if (tool === 'generic-agent') return join(process.cwd(), 'dist', 'agent-skills');
+  throw new Error(`No default flat target for ${tool}`);
+}
+
+function cursorTargets(args) {
+  const workspace = resolve(expandHome(args.workspace || process.cwd()));
+  const ruleRoot = args.target ? resolve(expandHome(args.target)) : join(workspace, '.cursor', 'rules');
+  const packRoot = join(dirname(ruleRoot), 'hermes-edu-skills');
+  return { packRoot, ruleRoot, workspace };
 }
 
 function ensureSafeTarget(target) {
@@ -122,8 +182,27 @@ function ensureSafeTarget(target) {
   return resolved;
 }
 
-function copyFlatSkills(target, skills, args) {
+function writeJson(path, value, dryRun) {
+  if (dryRun) {
+    console.log(`[dry-run] write ${path}`);
+    return;
+  }
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
+}
+
+function copySkillFile(source, destination, dryRun) {
+  if (dryRun) {
+    console.log(`[dry-run] copy ${source} -> ${destination}`);
+    return;
+  }
+  mkdirSync(dirname(destination), { recursive: true });
+  cpSync(source, destination, { force: true });
+}
+
+function copyFlatSkills(target, tool, skills, args) {
   const resolvedTarget = ensureSafeTarget(target);
+  const catalog = readCatalog();
   const entries = [];
 
   for (const skill of skills) {
@@ -137,33 +216,92 @@ function copyFlatSkills(target, skills, args) {
       sourcePath: skill.path,
       title: skill.title,
     });
+    copySkillFile(source, destination, args.dryRun);
+  }
 
+  writeJson(
+    join(resolvedTarget, 'AGENT_SKILL_PACK.json'),
+    {
+      name: 'hermes-edu-skills',
+      version: catalog.version,
+      format: tool,
+      generatedAt: new Date().toISOString(),
+      skillCount: entries.length,
+      skills: entries,
+    },
+    args.dryRun,
+  );
+
+  console.log(`[hermes-edu-skills] ${args.dryRun ? 'prepared' : 'exported'} ${entries.length} ${tool} skills -> ${resolvedTarget}`);
+}
+
+function copyCursorPack(args) {
+  const { packRoot, ruleRoot, workspace } = cursorTargets(args);
+  const resolvedPackRoot = ensureSafeTarget(packRoot);
+  const skills = selectedSkills(args);
+  const catalog = readCatalog();
+  const entries = [];
+  const skillsByCategory = new Map();
+
+  for (const skill of skills) {
+    const source = join(root, skill.path);
+    const destination = join(resolvedPackRoot, skill.path);
+    const relativePath = normalizeRelativePath(relative(workspace, destination));
+    entries.push({
+      category: skill.category,
+      name: skill.name,
+      path: relativePath,
+      sourcePath: skill.path,
+      title: skill.title,
+    });
+    if (!skillsByCategory.has(skill.category)) skillsByCategory.set(skill.category, []);
+    skillsByCategory.get(skill.category).push({ ...skill, cursorPath: relativePath });
+    copySkillFile(source, destination, args.dryRun);
+  }
+
+  writeJson(
+    join(resolvedPackRoot, 'AGENT_SKILL_PACK.json'),
+    {
+      name: 'hermes-edu-skills',
+      version: catalog.version,
+      format: 'cursor',
+      generatedAt: new Date().toISOString(),
+      skillCount: entries.length,
+      skills: entries,
+    },
+    args.dryRun,
+  );
+
+  for (const [category, categorySkills] of skillsByCategory.entries()) {
+    const label = categoryLabels[category] || category;
+    const lines = [
+      '---',
+      `description: Use Hermes Edu Skills for ${label} education-agent tasks.`,
+      'globs: **/*',
+      'alwaysApply: false',
+      '---',
+      '',
+      `# Hermes Edu Skills: ${label}`,
+      '',
+      'Use this rule when the user asks for China-focused education-agent help in this category.',
+      'Before answering, inspect the relevant `SKILL.md` file below and follow its workflow, invocation signals, parameters, and safety notes.',
+      '',
+      'Available Skills:',
+      ...categorySkills.map((skill) => `- ${skill.title || skill.name}: \`${skill.cursorPath}\``),
+      '',
+      'If a request needs grade, semester, unit, lesson, knowledge point, scenario, or difficulty, ask for it or infer it from context.',
+    ];
+    const rulePath = join(ruleRoot, `hermes-edu-${category}.mdc`);
     if (args.dryRun) {
-      console.log(`[dry-run] copy ${source} -> ${destination}`);
-      continue;
+      console.log(`[dry-run] write ${rulePath}`);
+    } else {
+      mkdirSync(dirname(rulePath), { recursive: true });
+      writeFileSync(rulePath, `${lines.join('\n')}\n`, 'utf8');
     }
-
-    mkdirSync(skillDir, { recursive: true });
-    cpSync(source, destination, { force: true });
   }
 
-  const manifest = {
-    name: 'hermes-edu-skills',
-    version: readCatalog().version,
-    format: args.format,
-    generatedAt: new Date().toISOString(),
-    skillCount: entries.length,
-    skills: entries,
-  };
-
-  const manifestPath = join(resolvedTarget, 'AGENT_SKILL_PACK.json');
-  if (args.dryRun) {
-    console.log(`[dry-run] write ${manifestPath}`);
-  } else {
-    writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
-  }
-
-  console.log(`[hermes-edu-skills] ${args.dryRun ? 'prepared' : 'exported'} ${entries.length} skills -> ${resolvedTarget}`);
+  console.log(`[hermes-edu-skills] ${args.dryRun ? 'prepared' : 'exported'} ${entries.length} Cursor skills -> ${resolvedPackRoot}`);
+  console.log(`[hermes-edu-skills] Cursor rules -> ${resolve(ruleRoot)}`);
 }
 
 function installHermes(args) {
@@ -209,33 +347,47 @@ function installHermes(args) {
   console.log(`[hermes-edu-skills] skills external dir: ${skillsDir}`);
 }
 
-function installOpenClaw(args) {
-  const target = args.target
-    ? args.target
-    : args.workspace
-      ? join(resolve(expandHome(args.workspace)), 'skills')
-      : defaultOpenClawTarget();
-  copyFlatSkills(target, selectedSkills(args), { ...args, format: 'openclaw' });
+function installTool(args) {
+  const tool = ensureTool(args.tool);
+  if (tool === 'hermes') {
+    installHermes(args);
+  } else if (tool === 'cursor') {
+    copyCursorPack(args);
+  } else if (flatSkillTools.has(tool)) {
+    copyFlatSkills(defaultFlatTarget(tool, args), tool, selectedSkills(args), args);
+  } else {
+    throw new Error(`Install is not implemented for ${tool}`);
+  }
 }
 
-function exportAgentPack(args) {
-  if (!['agent-skills', 'openclaw', 'flat'].includes(args.format)) {
-    throw new Error(`Unsupported format: ${args.format}`);
+function convertTool(args) {
+  const tool = ensureTool(args.tool || args.format);
+  if (tool === 'hermes') throw new Error('Hermes does not need conversion. Use install --tool hermes.');
+  if (tool === 'cursor') {
+    if (!args.target && !args.workspace) throw new Error('Cursor conversion requires --target <rules-dir> or --workspace <project-dir>.');
+    copyCursorPack(args);
+  } else if (flatSkillTools.has(tool)) {
+    if (!args.target) throw new Error('convert requires --target <path>.');
+    copyFlatSkills(args.target, tool, selectedSkills(args), args);
+  } else {
+    throw new Error(`Convert is not implemented for ${tool}`);
   }
-  if (!args.target) throw new Error('export requires --target <path>.');
-  copyFlatSkills(args.target, selectedSkills(args), args);
 }
 
 try {
   const args = parseArgs(process.argv.slice(2));
   if (!args.command || args.command === 'help') {
     usage();
+  } else if (args.command === 'install') {
+    installTool(args);
+  } else if (args.command === 'convert') {
+    convertTool(args);
   } else if (args.command === 'install-hermes') {
     installHermes(args);
   } else if (args.command === 'install-openclaw') {
-    installOpenClaw(args);
+    installTool({ ...args, tool: 'openclaw' });
   } else if (args.command === 'export') {
-    exportAgentPack(args);
+    convertTool({ ...args, tool: args.format || 'generic-agent' });
   } else {
     throw new Error(`Unknown command: ${args.command}`);
   }
