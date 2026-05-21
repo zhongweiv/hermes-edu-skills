@@ -176,11 +176,25 @@ npm run agent:install -- --tool openclaw --skill agent-study-plan,agent-mistake-
 npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
 ```
 
-只导出某一个分类，例如教材同步：
+只导出某一个分类，例如教材同步。分类名旁边会标出命令行参数；也可以直接传入中文别名，例如 `--category 教材同步`：
 
 ```bash
 npm run agent:convert -- --tool openclaw --category textbook-sync --target ./dist/textbook-sync-skills
 ```
+
+常用分类命令参数：
+
+| 想导出的内容 | 命令参数 |
+| --- | --- |
+| 教材同步 | `--category textbook-sync` |
+| 学习核心能力 | `--category learning-core` |
+| 每日练习 | `--category daily-practice` |
+| 阅读写作 | `--category reading-writing` |
+| 考试备考 | `--category exam-prep` |
+| 老师工具 | `--category teacher-tools` |
+| 家庭教育 | `--category family-education` |
+| 语言学习 | `--category language-learning` |
+| 成人与职业学习 | `--category career-learning` |
 
 包含设计参考类 examples：
 
@@ -200,33 +214,33 @@ npm run export:agents
 
 先从这些一级分类进入。每个分类下面仍保留完整可点击 Skill 表格，方便浏览、检索和二次集成。
 
-| 分类 | 适用场景 | 数量 |
-| --- | --- | ---: |
-| [教材同步 Textbook Sync](#textbook-sync) | 面向中国教材版本、年级、册别、单元、课时和知识点的同步学习能力。年级、册别、单元和难度作为参数传入，不再拆成大量独立 Skill。 | 41 |
-| [学习核心能力 Learning Core](#learning-core) | 学习计划、拍照答疑、错题复盘、学情报告等通用学习闭环能力。 | 15 |
-| [每日练习 Daily Practice](#daily-practice) | 面向每天短时高频训练，例如口算、听写、背诵、词汇、快速巩固。 | 28 |
-| [阅读写作 Reading & Writing](#reading-writing) | 面向语文、英语、学术和职场表达的阅读与写作能力。 | 10 |
-| [考试备考 Exam Prep](#exam-prep) | 面向期末、中考、高考、考研、四六级、考证和公务员等备考场景。 | 27 |
-| [老师工具 Teacher Tools](#teacher-tools) | 面向老师备课、作业生成、班级分析和家校沟通。 | 31 |
-| [家庭教育 Family Education](#family-education) | 面向家长陪伴、亲子阅读、作业习惯和家庭沟通。 | 8 |
-| [语言学习 Language Learning](#language-learning) | 面向成人英语、出国考试、口语、听力和长期语言能力提升。 | 3 |
-| [成人与职业学习 Career Learning](#career-learning) | 面向大学、成人学习、职业技能和考证场景。 | 7 |
-| [设计参考 Examples](#examples) | 需要商业系统数据、组织报表或工具适配层的 Skill 设计参考，不作为默认推荐安装入口。 | 7 |
+| 分类 | 命令参数 | 适用场景 | 数量 |
+| --- | --- | --- | ---: |
+| [教材同步 Textbook Sync](#textbook-sync) | <code>--category textbook-sync</code> | 面向中国教材版本、年级、册别、单元、课时和知识点的同步学习能力。年级、册别、单元和难度作为参数传入，不再拆成大量独立 Skill。 | 41 |
+| [学习核心能力 Learning Core](#learning-core) | <code>--category learning-core</code> | 学习计划、拍照答疑、错题复盘、学情报告等通用学习闭环能力。 | 15 |
+| [每日练习 Daily Practice](#daily-practice) | <code>--category daily-practice</code> | 面向每天短时高频训练，例如口算、听写、背诵、词汇、快速巩固。 | 28 |
+| [阅读写作 Reading & Writing](#reading-writing) | <code>--category reading-writing</code> | 面向语文、英语、学术和职场表达的阅读与写作能力。 | 10 |
+| [考试备考 Exam Prep](#exam-prep) | <code>--category exam-prep</code> | 面向期末、中考、高考、考研、四六级、考证和公务员等备考场景。 | 27 |
+| [老师工具 Teacher Tools](#teacher-tools) | <code>--category teacher-tools</code> | 面向老师备课、作业生成、班级分析和家校沟通。 | 31 |
+| [家庭教育 Family Education](#family-education) | <code>--category family-education</code> | 面向家长陪伴、亲子阅读、作业习惯和家庭沟通。 | 8 |
+| [语言学习 Language Learning](#language-learning) | <code>--category language-learning</code> | 面向成人英语、出国考试、口语、听力和长期语言能力提升。 | 3 |
+| [成人与职业学习 Career Learning](#career-learning) | <code>--category career-learning</code> | 面向大学、成人学习、职业技能和考证场景。 | 7 |
+| [设计参考 Examples](#examples) | <code>--category examples</code> | 需要商业系统数据、组织报表或工具适配层的 Skill 设计参考，不作为默认推荐安装入口。 | 7 |
 
 ## 覆盖范围
 
-| 分类 | 主要领域 | 数量 |
-| --- | --- | ---: |
-| [教材同步 Textbook Sync](#textbook-sync) | 生物、数学、化学、物理、地理 | 41 |
-| [学习核心能力 Learning Core](#learning-core) | 学习能力、综合 | 15 |
-| [每日练习 Daily Practice](#daily-practice) | 地理、化学、历史、生物、数学 | 28 |
-| [阅读写作 Reading & Writing](#reading-writing) | 语文、英语、通识 | 10 |
-| [考试备考 Exam Prep](#exam-prep) | 地理、化学、历史、生物、数学 | 27 |
-| [老师工具 Teacher Tools](#teacher-tools) | 教学管理、地理、化学、历史、生物 | 31 |
-| [家庭教育 Family Education](#family-education) | 家庭教育 | 8 |
-| [语言学习 Language Learning](#language-learning) | 语言学习、英语 | 3 |
-| [成人与职业学习 Career Learning](#career-learning) | 计算机、职业教育 | 7 |
-| [设计参考 Examples](#examples) | 机构运营、学校管理 | 7 |
+| 分类 | 命令参数 | 主要领域 | 数量 |
+| --- | --- | --- | ---: |
+| [教材同步 Textbook Sync](#textbook-sync) | <code>--category textbook-sync</code> | 生物、数学、化学、物理、地理 | 41 |
+| [学习核心能力 Learning Core](#learning-core) | <code>--category learning-core</code> | 学习能力、综合 | 15 |
+| [每日练习 Daily Practice](#daily-practice) | <code>--category daily-practice</code> | 地理、化学、历史、生物、数学 | 28 |
+| [阅读写作 Reading & Writing](#reading-writing) | <code>--category reading-writing</code> | 语文、英语、通识 | 10 |
+| [考试备考 Exam Prep](#exam-prep) | <code>--category exam-prep</code> | 地理、化学、历史、生物、数学 | 27 |
+| [老师工具 Teacher Tools](#teacher-tools) | <code>--category teacher-tools</code> | 教学管理、地理、化学、历史、生物 | 31 |
+| [家庭教育 Family Education](#family-education) | <code>--category family-education</code> | 家庭教育 | 8 |
+| [语言学习 Language Learning](#language-learning) | <code>--category language-learning</code> | 语言学习、英语 | 3 |
+| [成人与职业学习 Career Learning](#career-learning) | <code>--category career-learning</code> | 计算机、职业教育 | 7 |
+| [设计参考 Examples](#examples) | <code>--category examples</code> | 机构运营、学校管理 | 7 |
 
 ## 全部 Skill 列表
 
@@ -235,6 +249,8 @@ npm run export:agents
 ### <a id="textbook-sync"></a>教材同步 Textbook Sync
 
 面向中国教材版本、年级、册别、单元、课时和知识点的同步学习能力。年级、册别、单元和难度作为参数传入，不再拆成大量独立 Skill。
+
+命令参数：<code>--category textbook-sync</code>
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -284,6 +300,8 @@ npm run export:agents
 
 学习计划、拍照答疑、错题复盘、学情报告等通用学习闭环能力。
 
+命令参数：<code>--category learning-core</code>
+
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [薄弱项提升 Skill](skills/learning-core/agent-weakness-boost/SKILL.md) | 精品打磨 | 需用户补充上下文 | primary、junior、senior | 学习能力 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 查漏补缺 | 专项训练 |
@@ -305,6 +323,8 @@ npm run export:agents
 ### <a id="daily-practice"></a>每日练习 Daily Practice
 
 面向每天短时高频训练，例如口算、听写、背诵、词汇、快速巩固。
+
+命令参数：<code>--category daily-practice</code>
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -341,6 +361,8 @@ npm run export:agents
 
 面向语文、英语、学术和职场表达的阅读与写作能力。
 
+命令参数：<code>--category reading-writing</code>
+
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [初中现代文阅读 Skill](skills/reading-writing/junior-chinese-modern-reading/SKILL.md) | 精品打磨 | 需用户补充上下文 | junior | 语文 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 阅读理解 | 中考复习 |
@@ -357,6 +379,8 @@ npm run export:agents
 ### <a id="exam-prep"></a>考试备考 Exam Prep
 
 面向期末、中考、高考、考研、四六级、考证和公务员等备考场景。
+
+命令参数：<code>--category exam-prep</code>
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -391,6 +415,8 @@ npm run export:agents
 ### <a id="teacher-tools"></a>老师工具 Teacher Tools
 
 面向老师备课、作业生成、班级分析和家校沟通。
+
+命令参数：<code>--category teacher-tools</code>
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -430,6 +456,8 @@ npm run export:agents
 
 面向家长陪伴、亲子阅读、作业习惯和家庭沟通。
 
+命令参数：<code>--category family-education</code>
+
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [家庭作业习惯 Skill](skills/family-education/family-homework-routine/SKILL.md) | 精品打磨 | 需用户补充上下文 | preschool、primary、junior | 家庭教育 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 陪学建议 | 作业陪伴 |
@@ -445,6 +473,8 @@ npm run export:agents
 
 面向成人英语、出国考试、口语、听力和长期语言能力提升。
 
+命令参数：<code>--category language-learning</code>
+
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [成人语言学习 Skill](skills/language-learning/adult-language-learning/SKILL.md) | 精品打磨 | 需用户补充上下文 | adult | 语言学习 | - | grade、semester、unit、lesson、knowledgePointCodes、scenario、difficulty | 口语、听力、词汇 | 每日打卡 |
@@ -454,6 +484,8 @@ npm run export:agents
 ### <a id="career-learning"></a>成人与职业学习 Career Learning
 
 面向大学、成人学习、职业技能和考证场景。
+
+命令参数：<code>--category career-learning</code>
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -468,6 +500,8 @@ npm run export:agents
 ### <a id="examples"></a>设计参考 Examples
 
 需要商业系统数据、组织报表或工具适配层的 Skill 设计参考，不作为默认推荐安装入口。
+
+命令参数：<code>--category examples</code>
 
 | Skill | 成熟度 | 独立使用 | 阶段 | 学科/领域 | 教材 | 参数 | 能力 | 场景 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.1 - 2026-05-21
+
+- Improves category install/export usability by showing the exact `--category <slug>` argument beside every README category.
+- Adds a category command quick-reference table for Chinese and English readers.
+- Allows common Chinese category aliases such as `--category 教材同步` in `agent-pack`.
+- Improves unknown-category errors with the valid category slug list.
+
 ## 0.10.0 - 2026-05-21
 
 - Curates a focused 10-Skill batch for career learning, language learning, programming, data analysis, AI foundations, interview preparation, and certification scenarios.

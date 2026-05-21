@@ -22,6 +22,61 @@ const categoryLabels = {
   'textbook-sync': 'Textbook Sync',
 };
 
+const categoryAliases = {
+  career: 'career-learning',
+  'career-education': 'career-learning',
+  'career-learning': 'career-learning',
+  'adult-learning': 'career-learning',
+  '成人与职业学习': 'career-learning',
+  '成人学习': 'career-learning',
+  '职业学习': 'career-learning',
+  '职业教育': 'career-learning',
+  daily: 'daily-practice',
+  'daily-practice': 'daily-practice',
+  practice: 'daily-practice',
+  '每日练习': 'daily-practice',
+  '每日训练': 'daily-practice',
+  examples: 'examples',
+  example: 'examples',
+  'design-examples': 'examples',
+  '设计参考': 'examples',
+  'exam-prep': 'exam-prep',
+  exam: 'exam-prep',
+  exams: 'exam-prep',
+  '考试备考': 'exam-prep',
+  '备考复习': 'exam-prep',
+  'family-education': 'family-education',
+  family: 'family-education',
+  '家庭教育': 'family-education',
+  '亲子陪学': 'family-education',
+  'language-learning': 'language-learning',
+  language: 'language-learning',
+  '语言学习': 'language-learning',
+  '英语学习': 'language-learning',
+  'learning-core': 'learning-core',
+  core: 'learning-core',
+  learning: 'learning-core',
+  '学习核心能力': 'learning-core',
+  '学习核心': 'learning-core',
+  '通用学习': 'learning-core',
+  'reading-writing': 'reading-writing',
+  writing: 'reading-writing',
+  reading: 'reading-writing',
+  '阅读写作': 'reading-writing',
+  '读写表达': 'reading-writing',
+  'teacher-tools': 'teacher-tools',
+  teaching: 'teacher-tools',
+  teacher: 'teacher-tools',
+  '老师工具': 'teacher-tools',
+  '教师工具': 'teacher-tools',
+  '教师教学': 'teacher-tools',
+  'textbook-sync': 'textbook-sync',
+  textbook: 'textbook-sync',
+  'textbook-syncing': 'textbook-sync',
+  '教材同步': 'textbook-sync',
+  '同步教材': 'textbook-sync',
+};
+
 function usage() {
   console.log(`Hermes Edu Skills Agent Pack
 
@@ -44,15 +99,21 @@ Examples:
   npm run agent:install -- --tool cursor --workspace /path/to/project
   npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
   npm run agent:convert -- --tool generic-agent --skill agent-study-plan --target ./dist/one-skill
+  npm run agent:convert -- --tool openclaw --category textbook-sync --target ./dist/textbook-sync-skills
+  npm run agent:convert -- --tool openclaw --category 教材同步 --target ./dist/textbook-sync-skills
 
 Options:
-  --category <name>       Export only one category. Can be used multiple times or comma-separated.
+  --category <name>       Export only one category slug or alias. Can be used multiple times or comma-separated.
   --config <path>         Hermes config path.
   --include-examples      Include doc_only example Skills.
   --skill <slug>          Export/install only selected Skill slug/name. Can be used multiple times or comma-separated.
   --target <path>         Destination directory.
   --workspace <path>      Project/workspace directory for project-scoped installs.
   --dry-run               Print actions without writing files.
+
+Category slugs:
+  textbook-sync, learning-core, daily-practice, reading-writing, exam-prep,
+  teacher-tools, family-education, language-learning, career-learning, examples.
 `);
 }
 
@@ -147,10 +208,26 @@ function readCatalog() {
   return JSON.parse(readFileSync(catalogPath, 'utf8'));
 }
 
+function normalizeCategory(value) {
+  const key = value.trim();
+  const lower = key.toLowerCase();
+  return categoryAliases[key] || categoryAliases[lower] || lower;
+}
+
 function selectedSkills(args) {
   const catalog = readCatalog();
-  const categories = new Set(args.categories);
+  const availableCategories = new Set(catalog.skills.map((skill) => skill.category));
+  const categories = new Set(args.categories.map(normalizeCategory));
   const requestedSkills = new Set(args.skills);
+
+  if (categories.size > 0) {
+    const unknown = [...categories].filter((category) => !availableCategories.has(category));
+    if (unknown.length) {
+      const valid = [...availableCategories].sort().join(', ');
+      throw new Error(`Unknown category: ${unknown.join(', ')}. Valid category slugs: ${valid}`);
+    }
+  }
+
   const selected = catalog.skills.filter((skill) => {
     if (!args.includeExamples && skill.exportMode === 'doc_only') return false;
     if (categories.size > 0 && !categories.has(skill.category)) return false;

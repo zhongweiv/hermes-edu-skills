@@ -176,11 +176,25 @@ Convert to OpenClaw format without installing into the default location:
 npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
 ```
 
-Export only one category, for example textbook sync:
+Export only one category, for example textbook sync. Each category name shows the command-line argument. Chinese aliases such as `--category 教材同步` are also accepted:
 
 ```bash
 npm run agent:convert -- --tool openclaw --category textbook-sync --target ./dist/textbook-sync-skills
 ```
+
+Common category arguments:
+
+| What To Export | Argument |
+| --- | --- |
+| Textbook Sync | `--category textbook-sync` |
+| Learning Core | `--category learning-core` |
+| Daily Practice | `--category daily-practice` |
+| Reading & Writing | `--category reading-writing` |
+| Exam Prep | `--category exam-prep` |
+| Teacher Tools | `--category teacher-tools` |
+| Family Education | `--category family-education` |
+| Language Learning | `--category language-learning` |
+| Career Learning | `--category career-learning` |
 
 Include doc-only design examples:
 
@@ -200,33 +214,33 @@ npm run export:agents
 
 Start from these top-level categories. Each category still keeps a full clickable Skill table for browsing, search, and secondary integration.
 
-| Category | Use Case | Count |
-| --- | --- | ---: |
-| [Textbook Sync](#textbook-sync) | China-focused textbook synchronization by version, grade, semester, unit, lesson, and knowledge point. Grade, semester, unit, and difficulty are parameters, not thousands of separate Skills. | 41 |
-| [Learning Core](#learning-core) | General learning-loop capabilities such as study plans, photo Q&A, mistake review, and learning reports. | 15 |
-| [Daily Practice](#daily-practice) | Short high-frequency practice such as arithmetic, dictation, recitation, vocabulary, and quick reinforcement. | 28 |
-| [Reading & Writing](#reading-writing) | Chinese, English, academic, and workplace reading/writing capabilities. | 10 |
-| [Exam Prep](#exam-prep) | Final exams, Zhongkao, Gaokao, postgraduate exams, CET, certification, and civil-service prep. | 27 |
-| [Teacher Tools](#teacher-tools) | Teacher workflows such as lesson planning, homework generation, class analysis, and parent communication. | 31 |
-| [Family Education](#family-education) | Parent companionship, parent-child reading, homework routines, and family communication. | 8 |
-| [Language Learning](#language-learning) | Adult English, study-abroad exams, speaking, listening, and long-term language improvement. | 3 |
-| [Career Learning](#career-learning) | College, adult learning, career skills, and certification scenarios. | 7 |
-| [Design Examples](#examples) | Design references that usually require commercial data, organization reports, or tool adapters; not recommended as default installable entries. | 7 |
+| Category | Command Argument | Use Case | Count |
+| --- | --- | --- | ---: |
+| [Textbook Sync](#textbook-sync) | <code>--category textbook-sync</code> | China-focused textbook synchronization by version, grade, semester, unit, lesson, and knowledge point. Grade, semester, unit, and difficulty are parameters, not thousands of separate Skills. | 41 |
+| [Learning Core](#learning-core) | <code>--category learning-core</code> | General learning-loop capabilities such as study plans, photo Q&A, mistake review, and learning reports. | 15 |
+| [Daily Practice](#daily-practice) | <code>--category daily-practice</code> | Short high-frequency practice such as arithmetic, dictation, recitation, vocabulary, and quick reinforcement. | 28 |
+| [Reading & Writing](#reading-writing) | <code>--category reading-writing</code> | Chinese, English, academic, and workplace reading/writing capabilities. | 10 |
+| [Exam Prep](#exam-prep) | <code>--category exam-prep</code> | Final exams, Zhongkao, Gaokao, postgraduate exams, CET, certification, and civil-service prep. | 27 |
+| [Teacher Tools](#teacher-tools) | <code>--category teacher-tools</code> | Teacher workflows such as lesson planning, homework generation, class analysis, and parent communication. | 31 |
+| [Family Education](#family-education) | <code>--category family-education</code> | Parent companionship, parent-child reading, homework routines, and family communication. | 8 |
+| [Language Learning](#language-learning) | <code>--category language-learning</code> | Adult English, study-abroad exams, speaking, listening, and long-term language improvement. | 3 |
+| [Career Learning](#career-learning) | <code>--category career-learning</code> | College, adult learning, career skills, and certification scenarios. | 7 |
+| [Design Examples](#examples) | <code>--category examples</code> | Design references that usually require commercial data, organization reports, or tool adapters; not recommended as default installable entries. | 7 |
 
 ## Coverage
 
-| Category | Main Areas | Count |
-| --- | --- | ---: |
-| [Textbook Sync](#textbook-sync) | Biology, Math, Chemistry, Physics, Geography | 41 |
-| [Learning Core](#learning-core) | Learning Skills, General | 15 |
-| [Daily Practice](#daily-practice) | Geography, Chemistry, History, Biology, Math | 28 |
-| [Reading & Writing](#reading-writing) | Chinese, English, General Education | 10 |
-| [Exam Prep](#exam-prep) | Geography, Chemistry, History, Biology, Math | 27 |
-| [Teacher Tools](#teacher-tools) | Teaching Management, Geography, Chemistry, History, Biology | 31 |
-| [Family Education](#family-education) | Family Education | 8 |
-| [Language Learning](#language-learning) | Language Learning, English | 3 |
-| [Career Learning](#career-learning) | Computer Science, Career Education | 7 |
-| [Design Examples](#examples) | Institution Operations, School Management | 7 |
+| Category | Command Argument | Main Areas | Count |
+| --- | --- | --- | ---: |
+| [Textbook Sync](#textbook-sync) | <code>--category textbook-sync</code> | Biology, Math, Chemistry, Physics, Geography | 41 |
+| [Learning Core](#learning-core) | <code>--category learning-core</code> | Learning Skills, General | 15 |
+| [Daily Practice](#daily-practice) | <code>--category daily-practice</code> | Geography, Chemistry, History, Biology, Math | 28 |
+| [Reading & Writing](#reading-writing) | <code>--category reading-writing</code> | Chinese, English, General Education | 10 |
+| [Exam Prep](#exam-prep) | <code>--category exam-prep</code> | Geography, Chemistry, History, Biology, Math | 27 |
+| [Teacher Tools](#teacher-tools) | <code>--category teacher-tools</code> | Teaching Management, Geography, Chemistry, History, Biology | 31 |
+| [Family Education](#family-education) | <code>--category family-education</code> | Family Education | 8 |
+| [Language Learning](#language-learning) | <code>--category language-learning</code> | Language Learning, English | 3 |
+| [Career Learning](#career-learning) | <code>--category career-learning</code> | Computer Science, Career Education | 7 |
+| [Design Examples](#examples) | <code>--category examples</code> | Institution Operations, School Management | 7 |
 
 ## All Skills
 
@@ -235,6 +249,8 @@ The table below lists all 177 public Skills. Click a Skill name to open the corr
 ### <a id="textbook-sync"></a>Textbook Sync
 
 China-focused textbook synchronization by version, grade, semester, unit, lesson, and knowledge point. Grade, semester, unit, and difficulty are parameters, not thousands of separate Skills.
+
+Category argument: <code>--category textbook-sync</code>
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -284,6 +300,8 @@ China-focused textbook synchronization by version, grade, semester, unit, lesson
 
 General learning-loop capabilities such as study plans, photo Q&A, mistake review, and learning reports.
 
+Category argument: <code>--category learning-core</code>
+
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [薄弱项提升 Skill](skills/learning-core/agent-weakness-boost/SKILL.md)<br><code>agent-weakness-boost</code> | Curated | Needs user context | Primary, Junior High, Senior High | Learning Skills | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Gap Diagnosis | Targeted Practice |
@@ -305,6 +323,8 @@ General learning-loop capabilities such as study plans, photo Q&A, mistake revie
 ### <a id="daily-practice"></a>Daily Practice
 
 Short high-frequency practice such as arithmetic, dictation, recitation, vocabulary, and quick reinforcement.
+
+Category argument: <code>--category daily-practice</code>
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -341,6 +361,8 @@ Short high-frequency practice such as arithmetic, dictation, recitation, vocabul
 
 Chinese, English, academic, and workplace reading/writing capabilities.
 
+Category argument: <code>--category reading-writing</code>
+
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [初中现代文阅读 Skill](skills/reading-writing/junior-chinese-modern-reading/SKILL.md)<br><code>junior-chinese-modern-reading</code> | Curated | Needs user context | Junior High | Chinese | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Reading Comprehension | High School Entrance Exam Review |
@@ -357,6 +379,8 @@ Chinese, English, academic, and workplace reading/writing capabilities.
 ### <a id="exam-prep"></a>Exam Prep
 
 Final exams, Zhongkao, Gaokao, postgraduate exams, CET, certification, and civil-service prep.
+
+Category argument: <code>--category exam-prep</code>
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -391,6 +415,8 @@ Final exams, Zhongkao, Gaokao, postgraduate exams, CET, certification, and civil
 ### <a id="teacher-tools"></a>Teacher Tools
 
 Teacher workflows such as lesson planning, homework generation, class analysis, and parent communication.
+
+Category argument: <code>--category teacher-tools</code>
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -430,6 +456,8 @@ Teacher workflows such as lesson planning, homework generation, class analysis, 
 
 Parent companionship, parent-child reading, homework routines, and family communication.
 
+Category argument: <code>--category family-education</code>
+
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [家庭作业习惯 Skill](skills/family-education/family-homework-routine/SKILL.md)<br><code>family-homework-routine</code> | Curated | Needs user context | Preschool, Primary, Junior High | Family Education | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Parent Study Support | Homework Companion |
@@ -445,6 +473,8 @@ Parent companionship, parent-child reading, homework routines, and family commun
 
 Adult English, study-abroad exams, speaking, listening, and long-term language improvement.
 
+Category argument: <code>--category language-learning</code>
+
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [成人语言学习 Skill](skills/language-learning/adult-language-learning/SKILL.md)<br><code>adult-language-learning</code> | Curated | Needs user context | Adult | Language Learning | - | grade, semester, unit, lesson, knowledgePointCodes, scenario, difficulty | Speaking, Listening, Vocabulary | Daily Check-in |
@@ -454,6 +484,8 @@ Adult English, study-abroad exams, speaking, listening, and long-term language i
 ### <a id="career-learning"></a>Career Learning
 
 College, adult learning, career skills, and certification scenarios.
+
+Category argument: <code>--category career-learning</code>
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -468,6 +500,8 @@ College, adult learning, career skills, and certification scenarios.
 ### <a id="examples"></a>Design Examples
 
 Design references that usually require commercial data, organization reports, or tool adapters; not recommended as default installable entries.
+
+Category argument: <code>--category examples</code>
 
 | Skill | Maturity | Standalone | Stage | Subject / Area | Textbook | Parameters | Ability | Scenario |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
