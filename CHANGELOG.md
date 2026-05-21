@@ -3,6 +3,8 @@
 ## Unreleased
 
 - Defines a release strategy so documentation-only and maintenance changes can be committed without creating a new version every time.
+- Clarifies the two installation methods in README: first-class `npx hermes-edu-skills` usage and source-mode `npm run ... -- --category/--skill` usage.
+- Renames public README command-argument columns to install selectors and shows both selector styles for categories and Skills.
 
 ## 0.11.0 - 2026-05-21
 
