@@ -57,6 +57,9 @@ npx hermes-edu-skills info agent-mistake-review
 
 # Ask naturally: show the matched Skill, then invoke Hermes
 npx hermes-edu-skills ask "Create 5 grade-8 physics mechanics questions with answers"
+
+# Diagnose install count, versions, config, and Hermes visibility
+npx hermes-edu-skills doctor
 ```
 
 Export to other Agent tools:
@@ -194,6 +197,14 @@ Then verify in Hermes:
 ```bash
 hermes skills list
 ```
+
+If Hermes shows a different count than the README or catalog, run:
+
+```bash
+npx hermes-edu-skills doctor
+```
+
+`doctor` checks the package version, catalog count, `~/.hermes/skills/hermes-edu-skills` file count, `AGENT_SKILL_PACK.json`, whether `~/.hermes/config.yaml` links the pack, disabled Skills, and the actual visible count from `hermes skills list --source local`.
 
 You can also verify through Hermes skill tools:
 

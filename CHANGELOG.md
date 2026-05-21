@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.16.1 - 2026-05-21
+
+- Adds `hermes-edu-skills doctor` to diagnose local Hermes Skill Pack installation.
+- Reports package/catalog versions, install target, `AGENT_SKILL_PACK.json`, Hermes config linkage, disabled Skills, local file count, and Hermes-visible Skill count.
+- Highlights missing local files and local files that are not visible in `hermes skills list --source local`.
+
 ## 0.16.0 - 2026-05-21
 
 - Adds a lightweight Skill Router for natural-language education questions.

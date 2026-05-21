@@ -57,6 +57,9 @@ npx hermes-edu-skills info agent-mistake-review
 
 # 像普通 Agent 一样直接提问：先显示匹配到的 Skill，再调用 Hermes
 npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
+
+# 诊断安装数量、版本、配置和 Hermes 可见性
+npx hermes-edu-skills doctor
 ```
 
 导出给其它 Agent 或 AI 工具：
@@ -194,6 +197,14 @@ npx hermes-edu-skills install hermes
 ```bash
 hermes skills list
 ```
+
+如果 Hermes 显示的数量和 README / catalog 不一致，先运行诊断：
+
+```bash
+npx hermes-edu-skills doctor
+```
+
+`doctor` 会检查本地包版本、catalog 数量、`~/.hermes/skills/hermes-edu-skills` 文件数量、`AGENT_SKILL_PACK.json`、`~/.hermes/config.yaml` 是否接入、是否有 Skill 被禁用，以及 `hermes skills list --source local` 实际可见数量。
 
 也可以用 Hermes 的 Skill 工具验证：
 

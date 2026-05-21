@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,6 +17,7 @@ const commandAliases = {
   add: 'install',
   ask: 'ask',
   convert: 'convert',
+  doctor: 'doctor',
   export: 'export',
   help: 'help',
   i: 'install',
@@ -146,6 +147,7 @@ Usage:
   hermes-edu-skills info <skill>
   hermes-edu-skills match <question>
   hermes-edu-skills ask <question>
+  hermes-edu-skills doctor
 
 Source-mode usage:
   node scripts/agent-pack.mjs install --tool <hermes|openclaw|codex|claude-code|cursor|generic-agent> [options]
@@ -170,6 +172,7 @@ Examples:
   npx hermes-edu-skills info agent-mistake-review
   npx hermes-edu-skills match "八年级下册物理力学题"
   npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
+  npx hermes-edu-skills doctor
 
 Short npm commands:
   npm run install:hermes
@@ -184,7 +187,7 @@ Options:
   --category <name>       Export only one category slug or alias. Can be used multiple times or comma-separated.
   --config <path>         Hermes config path.
   --include-examples      Include doc_only example Skills.
-  --hermes-bin <command>  Hermes executable for ask. Default: hermes.
+  --hermes-bin <command>  Hermes executable for ask/doctor. Default: hermes.
   --skill <slug>          Export/install only selected Skill slug/name. Can be used multiple times or comma-separated.
   --target <path>         Destination directory.
   --top <number>          Number of router matches to print. Default: 5 for match, 1 for ask.
@@ -344,6 +347,10 @@ function normalizeRelativePath(path) {
 
 function readCatalog() {
   return JSON.parse(readFileSync(catalogPath, 'utf8'));
+}
+
+function readPackageJson() {
+  return JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
 }
 
 function normalizeCategory(value) {
@@ -557,6 +564,34 @@ function hermesChatCommand(skillName, query, args) {
   return { command: args.hermesBin || 'hermes', hermesArgs };
 }
 
+function commandCandidates(command) {
+  const candidates = [command];
+  if (process.platform === 'win32' && !/\.(exe|cmd|bat)$/i.test(command)) {
+    candidates.push(`${command}.cmd`, `${command}.exe`);
+  }
+  return candidates;
+}
+
+function spawnCommand(command, args, options = {}) {
+  let lastResult = null;
+  for (const candidate of commandCandidates(command)) {
+    const result = spawnSync(candidate, args, { shell: false, ...options });
+    if (!result.error) return result;
+    if (!['ENOENT', 'EINVAL'].includes(result.error.code)) return result;
+    lastResult = result;
+  }
+
+  if (process.platform === 'win32') {
+    const quote = (value) => (/^[A-Za-z0-9_./:=@\\-]+$/.test(value) ? value : `"${String(value).replace(/"/g, '\\"')}"`);
+    const commandLine = [quote(command), ...args.map(quote)].join(' ');
+    const result = spawnSync(commandLine, { shell: true, ...options });
+    if (!result.error) return result;
+    lastResult = result;
+  }
+
+  return lastResult;
+}
+
 function printableCommand(command, hermesArgs) {
   const printableArg = (arg) => (/^[A-Za-z0-9_./:=@-]+$/.test(arg) ? arg : `"${arg.replace(/"/g, '\\"')}"`);
   return [command, ...hermesArgs.map(printableArg)].join(' ');
@@ -606,9 +641,8 @@ function askCommand(args) {
     return;
   }
 
-  const result = spawnSync(command, hermesArgs, {
+  const result = spawnCommand(command, hermesArgs, {
     stdio: 'inherit',
-    shell: process.platform === 'win32',
   });
 
   if (result.error) {
@@ -701,6 +735,247 @@ function infoCommand(args) {
   console.log('');
   console.log(`Install: hermes-edu-skills install hermes ${skill.name}`);
   console.log(`Export:  hermes-edu-skills export openclaw ${skill.name}`);
+}
+
+function walkSkillMarkdownFiles(dir) {
+  const files = [];
+  if (!existsSync(dir)) return files;
+  const entries = readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.name.startsWith('.')) continue;
+    const fullPath = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...walkSkillMarkdownFiles(fullPath));
+    } else if (entry.isFile() && entry.name === 'SKILL.md') {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+function readSkillNameFromFile(filePath) {
+  try {
+    const content = readFileSync(filePath, 'utf8').slice(0, 1200);
+    const match = content.match(/^name:\s*["']?([^"'\r\n]+)["']?\s*$/m);
+    return match ? match[1].trim() : '';
+  } catch {
+    return '';
+  }
+}
+
+function readInstalledPack(target) {
+  const packPath = join(target, 'AGENT_SKILL_PACK.json');
+  if (!existsSync(packPath)) return null;
+  try {
+    return JSON.parse(readFileSync(packPath, 'utf8'));
+  } catch {
+    return { parseError: true };
+  }
+}
+
+function defaultHermesConfigPath(args) {
+  if (args.config) return resolve(expandHome(args.config));
+  return join(homeDir(), '.hermes', 'config.yaml');
+}
+
+function extractYamlListBlock(content, blockPath) {
+  const parts = blockPath.split('.');
+  const lines = content.split(/\r?\n/);
+  let startIndex = -1;
+  let indent = 0;
+
+  for (let partIndex = 0; partIndex < parts.length; partIndex += 1) {
+    const part = parts[partIndex];
+    const pattern = new RegExp(`^(\\s*)${part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:\\s*(?:#.*)?$`);
+    startIndex = -1;
+    for (let index = partIndex === 0 ? 0 : startIndex + 1; index < lines.length; index += 1) {
+      const match = lines[index].match(pattern);
+      if (!match) continue;
+      if (partIndex > 0 && match[1].length <= indent) continue;
+      startIndex = index;
+      indent = match[1].length;
+      break;
+    }
+    if (startIndex < 0) return [];
+  }
+
+  const values = [];
+  for (let index = startIndex + 1; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (!line.trim() || line.trim().startsWith('#')) continue;
+    const currentIndent = line.match(/^(\s*)/)?.[1].length || 0;
+    if (currentIndent <= indent) break;
+    const item = line.match(/^\s*-\s*(.+?)\s*(?:#.*)?$/);
+    if (item) values.push(item[1].trim().replace(/^["']|["']$/g, ''));
+  }
+  return values;
+}
+
+function extractDisabledSkills(content) {
+  const disabled = new Set(extractYamlListBlock(content, 'skills.disabled'));
+  const lines = content.split(/\r?\n/);
+  const platformDisabledIndex = lines.findIndex((line) => /^(\s*)platform_disabled:\s*$/.test(line));
+  if (platformDisabledIndex >= 0) {
+    const baseIndent = lines[platformDisabledIndex].match(/^(\s*)/)?.[1].length || 0;
+    for (let index = platformDisabledIndex + 1; index < lines.length; index += 1) {
+      const line = lines[index];
+      if (!line.trim() || line.trim().startsWith('#')) continue;
+      const currentIndent = line.match(/^(\s*)/)?.[1].length || 0;
+      if (currentIndent <= baseIndent) break;
+      const platformMatch = line.match(/^\s*([A-Za-z0-9_-]+):\s*$/);
+      if (!platformMatch) continue;
+      for (let itemIndex = index + 1; itemIndex < lines.length; itemIndex += 1) {
+        const itemLine = lines[itemIndex];
+        if (!itemLine.trim() || itemLine.trim().startsWith('#')) continue;
+        const itemIndent = itemLine.match(/^(\s*)/)?.[1].length || 0;
+        if (itemIndent <= currentIndent) break;
+        const item = itemLine.match(/^\s*-\s*(.+?)\s*(?:#.*)?$/);
+        if (item) disabled.add(item[1].trim().replace(/^["']|["']$/g, ''));
+      }
+    }
+  }
+  return [...disabled].sort();
+}
+
+function parseHermesSkillListNames(output) {
+  const names = new Set();
+  for (const line of output.split(/\r?\n/)) {
+    const boxMatch = line.match(/^│\s*([^│]+?)\s*│/);
+    if (boxMatch) {
+      const name = boxMatch[1].trim();
+      if (name && name !== 'Name') names.add(name);
+      continue;
+    }
+    const plainMatch = line.match(/^\s*[-*]?\s*([a-z0-9][a-z0-9-]+)\s{2,}/i);
+    if (plainMatch) names.add(plainMatch[1].trim());
+  }
+  return [...names].sort();
+}
+
+function runHermesSkillsList(args) {
+  const result = spawnCommand(args.hermesBin || 'hermes', ['skills', 'list', '--source', 'local'], {
+    encoding: 'utf8',
+  });
+
+  return {
+    error: result.error ? result.error.message : '',
+    output: `${result.stdout || ''}${result.stderr || ''}`,
+    status: result.status,
+  };
+}
+
+function doctorCommand(args) {
+  const catalog = readCatalog();
+  const packageJson = readPackageJson();
+  const expectedNames = catalog.skills
+    .filter((skill) => args.includeExamples || skill.exportMode !== 'doc_only')
+    .map((skill) => skill.name)
+    .sort();
+  const expectedSet = new Set(expectedNames);
+  const target = resolve(expandHome(defaultHermesSelectedTarget(args)));
+  const configPath = defaultHermesConfigPath(args);
+  const installedPack = readInstalledPack(target);
+  const localSkillFiles = walkSkillMarkdownFiles(target);
+  const localNames = localSkillFiles.map(readSkillNameFromFile).filter(Boolean).sort();
+  const localSet = new Set(localNames);
+  const missingLocal = expectedNames.filter((name) => !localSet.has(name));
+  const extraLocal = localNames.filter((name) => !expectedSet.has(name));
+
+  let configContent = '';
+  let externalDirs = [];
+  let disabledSkills = [];
+  if (existsSync(configPath)) {
+    configContent = readFileSync(configPath, 'utf8');
+    externalDirs = extractYamlListBlock(configContent, 'skills.external_dirs');
+    disabledSkills = extractDisabledSkills(configContent);
+  }
+
+  const targetForConfig = normalizePathForConfig(target);
+  const configContainsTarget = externalDirs
+    .map((dir) => normalizePathForConfig(dir))
+    .includes(targetForConfig);
+
+  const hermes = runHermesSkillsList(args);
+  const visibleNames = hermes.status === 0 ? parseHermesSkillListNames(hermes.output) : [];
+  const visibleSet = new Set(visibleNames);
+  const missingVisible = hermes.status === 0 ? expectedNames.filter((name) => localSet.has(name) && !visibleSet.has(name)) : [];
+  const disabledMissingVisible = missingVisible.filter((name) => disabledSkills.includes(name));
+
+  console.log('Hermes Edu Skills Doctor');
+  console.log('');
+  console.log(`Package:          ${packageJson.name}@${packageJson.version}`);
+  console.log(`Catalog:          ${catalog.name}@${catalog.version}`);
+  console.log(`Expected Skills:  ${expectedNames.length}`);
+  console.log(`Install target:   ${target}`);
+  console.log(`Local files:      ${localNames.length}`);
+  console.log(`Pack manifest:    ${installedPack ? `${installedPack.name || 'unknown'}@${installedPack.version || 'unknown'} (${installedPack.skillCount ?? 'unknown'} skills)` : 'missing'}`);
+  console.log(`Hermes config:    ${existsSync(configPath) ? configPath : `missing (${configPath})`}`);
+  console.log(`Config linked:    ${configContainsTarget ? 'yes' : 'no'}`);
+  console.log(`Disabled Skills:  ${disabledSkills.length}`);
+  if (hermes.status === 0) {
+    console.log(`Hermes visible:   ${visibleNames.length}`);
+  } else {
+    console.log(`Hermes visible:   unavailable (${hermes.error || `exit ${hermes.status}`})`);
+  }
+
+  const problems = [];
+  if (!existsSync(target)) problems.push(`Install target does not exist: ${target}`);
+  if (!installedPack) problems.push('AGENT_SKILL_PACK.json is missing. Reinstall the pack.');
+  if (installedPack?.version && installedPack.version !== catalog.version) problems.push(`Installed pack version ${installedPack.version} differs from catalog ${catalog.version}.`);
+  if (missingLocal.length) problems.push(`${missingLocal.length} catalog Skills are missing from local files.`);
+  if (extraLocal.length) problems.push(`${extraLocal.length} local Skills are not in the catalog.`);
+  if (!existsSync(configPath)) problems.push(`Hermes config file is missing: ${configPath}`);
+  if (existsSync(configPath) && !configContainsTarget) problems.push('Hermes config does not include this Skill Pack in skills.external_dirs.');
+  if (hermes.status !== 0) problems.push(`Could not run Hermes skills list. Install Hermes Agent or pass --hermes-bin <path>.`);
+  if (missingVisible.length) problems.push(`${missingVisible.length} local Skills are not visible in Hermes list.`);
+
+  if (missingLocal.length) {
+    console.log('');
+    console.log('Missing local files:');
+    for (const name of missingLocal.slice(0, 50)) console.log(`  - ${name}`);
+    if (missingLocal.length > 50) console.log(`  ... ${missingLocal.length - 50} more`);
+  }
+
+  if (missingVisible.length) {
+    console.log('');
+    console.log('Local files not visible in Hermes:');
+    for (const name of missingVisible.slice(0, 50)) {
+      const disabledNote = disabledSkills.includes(name) ? ' (disabled in config)' : '';
+      console.log(`  - ${name}${disabledNote}`);
+    }
+    if (missingVisible.length > 50) console.log(`  ... ${missingVisible.length - 50} more`);
+  }
+
+  if (disabledMissingVisible.length) {
+    console.log('');
+    console.log('Likely cause: these missing-visible Skills are disabled in Hermes config.');
+    console.log(`Edit ${configPath} or run: hermes skills config`);
+  }
+
+  if (problems.length) {
+    console.log('');
+    console.log('Findings:');
+    for (const problem of problems) console.log(`  - ${problem}`);
+    console.log('');
+    console.log('Suggested fix:');
+    const suggestions = new Set();
+    if (missingLocal.length || !installedPack || installedPack?.version !== catalog.version) {
+      suggestions.add(`npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
+    }
+    if (existsSync(configPath) && !configContainsTarget) {
+      suggestions.add(`Add ${targetForConfig} to skills.external_dirs in ${configPath}`);
+    }
+    if (!existsSync(configPath) && suggestions.size === 0) {
+      suggestions.add(`Create/update Hermes config by running: npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
+    }
+    if (disabledMissingVisible.length) {
+      suggestions.add('Remove the disabled Skill names from skills.disabled / platform_disabled.');
+    }
+    for (const suggestion of suggestions) console.log(`  ${suggestion}`);
+  } else {
+    console.log('');
+    console.log('Result: ok. Local files, pack manifest, Hermes config, and Hermes visible list look consistent.');
+  }
 }
 
 function ensureTool(tool) {
@@ -962,6 +1237,8 @@ try {
     matchCommand(args);
   } else if (args.command === 'ask') {
     askCommand(args);
+  } else if (args.command === 'doctor') {
+    doctorCommand(args);
   } else if (args.command === 'install-hermes') {
     installHermes(args);
   } else if (args.command === 'install-openclaw') {
