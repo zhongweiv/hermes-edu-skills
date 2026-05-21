@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.16.9 - 2026-05-22
+
+- Replaces the README GIF embed with a lightweight poster image linked to the original MP4 demo.
+- Removes the generated GIF from the public package because the MP4 is smaller and renders more reliably in Markdown.
+- Keeps the Chinese and English README first screen compact and stable on GitHub.
+
 ## 0.16.8 - 2026-05-22
 
 - Replaces the old README demo asset with a lighter `assets/demo/preview-small.gif` optimized for GitHub first-screen loading.
