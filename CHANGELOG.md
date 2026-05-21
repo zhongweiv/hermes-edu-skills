@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.16.6 - 2026-05-21
+
+- Makes Hermes single-Skill and category installs generate scoped activation prompts by default.
+- Single-Skill prompts now tell Hermes to load the installed Skill directly when the request is in scope.
+- Category prompts now list only the installed category's Skills, reducing prompt noise and improving matching clarity.
+- Documents the scoped prompt behavior in Chinese and English README files.
+
 ## 0.16.5 - 2026-05-21
 
 - Makes `install hermes` generate the Hermes Edu activation prompt by default so new users get Skill discovery guidance without adding `--with-prompt`.

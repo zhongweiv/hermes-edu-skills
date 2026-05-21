@@ -367,30 +367,85 @@ function normalizeRelativePath(path) {
   return path.replace(/\\/g, '/');
 }
 
-function hermesEduActivationPrompt() {
+function formatSkillLine(skill) {
+  const parts = [
+    skill.title,
+    skill.category,
+    (skill.subjects || []).join('/'),
+    (skill.stages || []).join('/'),
+    skill.description,
+  ].filter(Boolean);
+  return `- ${skill.slug}: ${parts.join(' | ')}`;
+}
+
+function scopedRoutingExamples(skills) {
+  return skills
+    .slice(0, 10)
+    .map((skill) => {
+      const signal = skill.title || skill.description || skill.slug;
+      return `- Requests matching "${signal}" -> ${skill.slug}`;
+    })
+    .join('\n');
+}
+
+function hermesEduActivationPrompt(scopedSkills = null) {
   const catalog = readCatalog();
-  const installableSkills = catalog.skills.filter((skill) => skill.exportMode !== 'doc_only');
+  const allInstallableSkills = catalog.skills.filter((skill) => skill.exportMode !== 'doc_only');
+  const installableSkills = scopedSkills && scopedSkills.length ? scopedSkills : allInstallableSkills;
+  const isScoped = installableSkills.length < allInstallableSkills.length;
+  const isSingleSkill = installableSkills.length === 1;
   const categories = [...new Set(installableSkills.map((skill) => skill.category))]
     .sort()
     .map((category) => `- ${category}: ${categoryLabels[category] || category}`)
     .join('\n');
+  const selectedSkillList = isScoped
+    ? `\n\nInstalled Hermes Edu Skills in this project:\n\n${installableSkills.map(formatSkillLine).join('\n')}\n`
+    : '';
+  const scopeInstruction = isSingleSkill
+    ? `You installed one Hermes Edu Skill in this project: \`${installableSkills[0].slug}\`. When the user's request matches this Skill's topic, load \`${installableSkills[0].slug}\` directly with \`skill_view("${installableSkills[0].slug}")\` before answering.`
+    : isScoped
+      ? `You installed a scoped subset of \`hermes-edu-skills\` in this project. Search and choose from these ${installableSkills.length} installed Skills before considering any broader answer.`
+      : `You have installed the \`hermes-edu-skills\` Skill Pack. It contains ${installableSkills.length} installable education Skills. Treat this pack as the primary capability source for Chinese education tasks.`;
+  const selectionInstruction = isSingleSkill
+    ? `Load \`${installableSkills[0].slug}\` with \`skill_view("${installableSkills[0].slug}")\` when the request is in scope.`
+    : `Select the most relevant Skill from the ${installableSkills.length} installed Hermes Edu Skills by comparing the user's intent with Skill names, descriptions, categories, stages, subjects, and invocation signals.`;
+  const routingExamples = isScoped
+    ? scopedRoutingExamples(installableSkills)
+    : `- "帮我出5道口算练习" -> primary-math-mental-arithmetic
+- "八年级下册物理力学题" -> junior-physics-rj-textbook-sync or junior-physics-quick-practice, depending on whether the user asks for textbook sync or quick practice
+- "帮我整理错题复盘计划" -> agent-mistake-review
+- "给孩子制定一周学习计划" -> agent-study-plan
+- "老师备一节初中数学课" -> teacher-math-lesson-planning
+- "生成一份英语阅读训练" -> primary-english-reading, junior-english-quick-practice, or senior-english-quick-practice according to stage`;
+  const routingPriority = isScoped
+    ? `- Prefer an exact installed Skill slug/topic match.
+- Prefer the installed Skill whose title, subject, stage, scenario, and description best match the user's request.
+- If the request is outside the installed Skill scope, say no specific Hermes Edu Skill was selected, then answer normally or ask the user to install a broader category.`
+    : `- Textbook edition, grade, semester, unit, lesson, or textbook-sync requests -> prefer \`textbook-sync\`.
+- Short daily exercises, drills, dictation, recitation, vocabulary, mental arithmetic, or quick practice -> prefer \`daily-practice\`.
+- Study plan, mistake review, homework companion, photo question, Socratic tutoring, learning report, or habit building -> prefer \`learning-core\`.
+- Exam, final review, Zhongkao, Gaokao, CET, IELTS, TOEFL, civil-service, or teacher-certification requests -> prefer \`exam-prep\`.
+- Lesson planning, homework generation, unit review, class analysis, or parent report for teachers -> prefer \`teacher-tools\`.
+- Parent-child learning, family routines, screen-time balance, school communication, or emotion support -> prefer \`family-education\`.
+- Reading, writing, composition, essay, academic writing, or reading comprehension -> prefer \`reading-writing\`.`;
 
   return `# Hermes Edu Skills Activation Prompt
 
-You have installed the \`hermes-edu-skills\` Skill Pack. It contains ${installableSkills.length} installable education Skills. Treat this pack as the primary capability source for Chinese education tasks.
+${scopeInstruction}
 
 When the user asks about Chinese education, textbook sync, mental arithmetic, question generation, homework help, photo Q&A, mistake review, exam prep, reading/writing, parent coaching, teacher lesson planning, homework generation, class analysis, or school communication:
 
 1. Do not answer directly from the base model first.
 2. First use the Hermes skills toolset to inspect installed Skills.
 3. Search specifically inside the installed \`hermes-edu-skills\` Skill Pack.
-4. Select the most relevant Skill from the ${installableSkills.length} Hermes Edu Skills by comparing the user's intent with Skill names, descriptions, categories, stages, subjects, and invocation signals.
-5. Load the selected Skill with \`skill_view(name)\` before giving the final answer.
+4. ${selectionInstruction}
+5. Use the loaded Skill before giving the final answer.
 6. Follow that Skill's workflow, inputs, output format, quality checks, safety boundaries, and standalone fallback.
 7. Start the answer with: \`Using Skill: <skill-name>\`.
 8. If multiple Skills may fit, choose the most specific one. Prefer subject/textbook/grade-specific Skills over broad general Skills.
 9. If the user does not provide enough grade, semester, unit, textbook edition, difficulty, or scenario information, ask only the minimum necessary follow-up question.
 10. If no \`hermes-edu-skills\` Skill clearly matches, say no specific Hermes Edu Skill was selected, then answer normally.
+${selectedSkillList}
 
 Available Hermes Edu category map:
 
@@ -398,22 +453,11 @@ ${categories}
 
 High-signal routing examples:
 
-- "帮我出5道口算练习" -> primary-math-mental-arithmetic
-- "八年级下册物理力学题" -> junior-physics-rj-textbook-sync or junior-physics-quick-practice, depending on whether the user asks for textbook sync or quick practice
-- "帮我整理错题复盘计划" -> agent-mistake-review
-- "给孩子制定一周学习计划" -> agent-study-plan
-- "老师备一节初中数学课" -> teacher-math-lesson-planning
-- "生成一份英语阅读训练" -> primary-english-reading, junior-english-quick-practice, or senior-english-quick-practice according to stage
+${routingExamples}
 
 Routing priority:
 
-- Textbook edition, grade, semester, unit, lesson, or textbook-sync requests -> prefer \`textbook-sync\`.
-- Short daily exercises, drills, dictation, recitation, vocabulary, mental arithmetic, or quick practice -> prefer \`daily-practice\`.
-- Study plan, mistake review, homework companion, photo question, Socratic tutoring, learning report, or habit building -> prefer \`learning-core\`.
-- Exam, final review, Zhongkao, Gaokao, CET, IELTS, TOEFL, civil-service, or teacher-certification requests -> prefer \`exam-prep\`.
-- Lesson planning, homework generation, unit review, class analysis, or parent report for teachers -> prefer \`teacher-tools\`.
-- Parent-child learning, family routines, screen-time balance, school communication, or emotion support -> prefer \`family-education\`.
-- Reading, writing, composition, essay, academic writing, or reading comprehension -> prefer \`reading-writing\`.
+${routingPriority}
 
 If the Hermes skills toolset is not available in the current session, tell the user to start Hermes with skills enabled, for example:
 
@@ -428,9 +472,9 @@ function promptCommand() {
   console.log(hermesEduActivationPrompt());
 }
 
-function writeActivationPrompt(args) {
+function writeActivationPrompt(args, skills = null) {
   const target = resolve(expandHome(args.promptTarget || 'HERMES.md'));
-  const prompt = `${hermesEduActivationPrompt()}\n`;
+  const prompt = `${hermesEduActivationPrompt(skills)}\n`;
 
   if (args.dryRun) {
     console.log(`[dry-run] write Hermes Edu activation prompt -> ${target}`);
@@ -1253,7 +1297,8 @@ function copyCursorPack(args) {
 
 function installHermes(args) {
   const selectedRoot = ensureSafeTarget(defaultHermesSelectedTarget(args));
-  copyFlatSkills(selectedRoot, 'hermes', selectedSkills(args), args);
+  const skills = selectedSkills(args);
+  copyFlatSkills(selectedRoot, 'hermes', skills, args);
   const shouldWritePrompt = !args.skipPrompt;
 
   const skillsDir = normalizePathForConfig(selectedRoot);
@@ -1264,7 +1309,7 @@ function installHermes(args) {
     console.log('skills:');
     console.log('  external_dirs:');
     console.log(`    - ${skillsDir}`);
-    if (shouldWritePrompt) writeActivationPrompt(args);
+    if (shouldWritePrompt) writeActivationPrompt(args, skills);
     return;
   }
 
@@ -1273,7 +1318,7 @@ function installHermes(args) {
 
   if (content.includes(skillsDir)) {
     console.log(`[hermes-edu-skills] Hermes config already contains ${skillsDir}`);
-    if (shouldWritePrompt) writeActivationPrompt(args);
+    if (shouldWritePrompt) writeActivationPrompt(args, skills);
     return;
   }
 
@@ -1291,7 +1336,7 @@ function installHermes(args) {
     console.log(`[dry-run] update ${configPath}`);
     console.log('');
     console.log(content);
-    if (shouldWritePrompt) writeActivationPrompt(args);
+    if (shouldWritePrompt) writeActivationPrompt(args, skills);
     return;
   }
 
@@ -1299,7 +1344,7 @@ function installHermes(args) {
   writeFileSync(configPath, content, 'utf8');
   console.log(`[hermes-edu-skills] updated Hermes config: ${configPath}`);
   console.log(`[hermes-edu-skills] skills external dir: ${skillsDir}`);
-  if (shouldWritePrompt) writeActivationPrompt(args);
+  if (shouldWritePrompt) writeActivationPrompt(args, skills);
 }
 
 function installTool(args) {

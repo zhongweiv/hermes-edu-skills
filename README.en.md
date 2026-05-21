@@ -151,6 +151,8 @@ This command does two things:
 - Installs 170 available Skills and updates Hermes `skills.external_dirs`.
 - Generates `HERMES.md` in the current directory by default, so Hermes searches the `hermes-edu-skills` Skill Pack before answering education questions directly.
 
+When you install only one category or one Skill, the installer generates a scoped prompt by default: category installs list only Skills from that category, and single-Skill installs explicitly tell Hermes to load that Skill first when the request is in scope.
+
 To skip prompt generation:
 
 ```bash
@@ -171,6 +173,8 @@ Install one Skill into Hermes Agent:
 ```bash
 npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
 ```
+
+This also generates a `HERMES.md` scoped to `agent-study-plan`, so Hermes prioritizes that Skill for study-planning requests. Existing `HERMES.md` files are not overwritten; use `--prompt-target` to write elsewhere.
 
 Browse and search before installing:
 
@@ -328,6 +332,8 @@ Install multiple Skills at once:
 ```bash
 npx hermes-edu-skills install openclaw agent-study-plan,agent-mistake-review
 ```
+
+For the Hermes target, single-Skill and multi-Skill installs generate a scoped `HERMES.md` by default. The prompt lists only the installed Skills and tells Hermes to match within that smaller set first. Add `--no-prompt` to skip it.
 
 If you are unsure about the slug, search first:
 

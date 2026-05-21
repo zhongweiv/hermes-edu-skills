@@ -151,6 +151,8 @@ npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 - 安装 170 个可用 Skill，并写入 Hermes `skills.external_dirs`。
 - 默认在当前目录生成 `HERMES.md` 启动 Prompt，让 Hermes 在教育问题里先去 `hermes-edu-skills` 这套 Skill Pack 里找，而不是直接普通回答。
 
+如果你只安装某个分类或单个 Skill，安装器也会默认生成“范围收缩版” Prompt：分类安装会只列出该分类内的 Skill，单个 Skill 安装会明确要求 Hermes 在相关问题里优先加载这个具体 Skill。
+
 如果不想生成 Prompt：
 
 ```bash
@@ -171,6 +173,8 @@ npx hermes-edu-skills install hermes 教材同步 --config ~/.hermes/config.yaml
 ```bash
 npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
 ```
+
+这也会默认生成只面向 `agent-study-plan` 的 `HERMES.md`，让 Hermes 在学习计划相关问题里优先调用这个 Skill。已有 `HERMES.md` 不会被覆盖；需要合并时可以运行 `npx hermes-edu-skills prompt` 查看全量提示，或重新安装时指定 `--prompt-target`。
 
 先浏览和搜索：
 
@@ -328,6 +332,8 @@ npx hermes-edu-skills doctor
 ```bash
 npx hermes-edu-skills install openclaw agent-study-plan,agent-mistake-review
 ```
+
+Hermes 目标下，单个或多个 Skill 安装会默认生成精准版 `HERMES.md`：只列出本次安装的 Skill，并要求 Hermes 先在这些 Skill 中匹配。要关闭这个行为，加 `--no-prompt`。
 
 如果不确定 slug，可以先搜索：
 
