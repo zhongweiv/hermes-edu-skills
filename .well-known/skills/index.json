@@ -1,7 +1,7 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.11.0",
-  "generatedAt": "2026-05-21T02:18:04.999Z",
+  "version": "0.12.0",
+  "generatedAt": "2026-05-21T02:57:00.541Z",
   "skills": [
     {
       "name": "adult-language-learning",
@@ -249,14 +249,14 @@
     },
     {
       "name": "junior-biology-quick-practice",
-      "description": "初中生物快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中生物每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕结构功能、生命过程、图表信息和实验变量形成当天闭环。",
       "path": "skills/daily-practice/junior-biology-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "生物",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -311,14 +311,14 @@
     },
     {
       "name": "junior-chemistry-quick-practice",
-      "description": "初中化学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中化学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、实验现象、化学用语和反应规律形成当天闭环。",
       "path": "skills/daily-practice/junior-chemistry-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "化学",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -379,14 +379,14 @@
     },
     {
       "name": "junior-chinese-quick-practice",
-      "description": "初中语文快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中语文每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕字词积累、阅读依据、表达完整度和错字订正形成当天闭环。",
       "path": "skills/daily-practice/junior-chinese-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "语文",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -423,14 +423,14 @@
     },
     {
       "name": "junior-english-quick-practice",
-      "description": "初中英语快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中英语每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕词汇复现、语境理解、拼写准确和句子输出形成当天闭环。",
       "path": "skills/daily-practice/junior-english-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "英语",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -454,14 +454,14 @@
     },
     {
       "name": "junior-english-vocabulary-daily",
-      "description": "初中英语词汇每日练 Skill是面向每日打卡、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中英语每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕词汇复现、语境理解、拼写准确和句子输出形成当天闭环。",
       "path": "skills/daily-practice/junior-english-vocabulary-daily/SKILL.md",
       "tags": [
         "junior",
         "英语",
         "每日打卡",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -528,14 +528,14 @@
     },
     {
       "name": "junior-geography-quick-practice",
-      "description": "初中地理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中地理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕地图判读、区域特征、成因解释和图表信息形成当天闭环。",
       "path": "skills/daily-practice/junior-geography-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "地理",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -590,14 +590,14 @@
     },
     {
       "name": "junior-history-quick-practice",
-      "description": "初中历史快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中历史每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕时间线、事件因果、材料信息和观点表达形成当天闭环。",
       "path": "skills/daily-practice/junior-history-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "历史",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -639,14 +639,14 @@
     },
     {
       "name": "junior-math-daily-practice",
-      "description": "初中数学每日练 Skill是面向每日打卡、专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中数学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕计算准确率、方法选择、解题步骤和错因复盘形成当天闭环。",
       "path": "skills/daily-practice/junior-math-daily-practice/SKILL.md",
       "tags": [
         "junior",
         "数学",
         "每日打卡",
         "专项训练",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -665,14 +665,14 @@
     },
     {
       "name": "junior-math-quick-practice",
-      "description": "初中数学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中数学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕计算准确率、方法选择、解题步骤和错因复盘形成当天闭环。",
       "path": "skills/daily-practice/junior-math-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "数学",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -745,14 +745,14 @@
     },
     {
       "name": "junior-physics-quick-practice",
-      "description": "初中物理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中物理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、模型条件、图像/实验信息和推理步骤形成当天闭环。",
       "path": "skills/daily-practice/junior-physics-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "物理",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -789,14 +789,14 @@
     },
     {
       "name": "junior-politics-quick-practice",
-      "description": "初中政治快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中政治每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念理解、材料提取、观点组织和规范表达形成当天闭环。",
       "path": "skills/daily-practice/junior-politics-quick-practice/SKILL.md",
       "tags": [
         "junior",
         "政治",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -847,27 +847,27 @@
     },
     {
       "name": "preschool-literacy-daily",
-      "description": "学前识字每日练 Skill是面向每日启蒙、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把学前识字做成“看见、读出、理解、会用”的轻量游戏，不让孩子在机械认字里失去兴趣。",
       "path": "skills/daily-practice/preschool-literacy-daily/SKILL.md",
       "tags": [
         "preschool",
         "语文",
         "每日启蒙",
         "每日打卡",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "preschool-number-sense-daily",
-      "description": "学前数感每日练 Skill是面向数感游戏、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把学前数感训练变成可触摸、可比较、可说出来的日常小游戏，而不是提前刷小学题。",
       "path": "skills/daily-practice/preschool-number-sense-daily/SKILL.md",
       "tags": [
         "preschool",
         "数学",
         "数感游戏",
         "每日打卡",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2010,14 +2010,14 @@
     },
     {
       "name": "senior-biology-quick-practice",
-      "description": "高中生物快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中生物每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕结构功能、生命过程、图表信息和实验变量形成当天闭环。",
       "path": "skills/daily-practice/senior-biology-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "生物",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2072,14 +2072,14 @@
     },
     {
       "name": "senior-chemistry-quick-practice",
-      "description": "高中化学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中化学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、实验现象、化学用语和反应规律形成当天闭环。",
       "path": "skills/daily-practice/senior-chemistry-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "化学",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2128,14 +2128,14 @@
     },
     {
       "name": "senior-chinese-quick-practice",
-      "description": "高中语文快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中语文每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕字词积累、阅读依据、表达完整度和错字订正形成当天闭环。",
       "path": "skills/daily-practice/senior-chinese-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "语文",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2184,14 +2184,14 @@
     },
     {
       "name": "senior-english-quick-practice",
-      "description": "高中英语快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中英语每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕词汇复现、语境理解、拼写准确和句子输出形成当天闭环。",
       "path": "skills/daily-practice/senior-english-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "英语",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2215,14 +2215,14 @@
     },
     {
       "name": "senior-english-vocabulary-daily",
-      "description": "高中英语词汇每日练 Skill是面向每日打卡、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中英语每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕词汇复现、语境理解、拼写准确和句子输出形成当天闭环。",
       "path": "skills/daily-practice/senior-english-vocabulary-daily/SKILL.md",
       "tags": [
         "senior",
         "英语",
         "每日打卡",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2408,14 +2408,14 @@
     },
     {
       "name": "senior-math-quick-practice",
-      "description": "高中数学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中数学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕计算准确率、方法选择、解题步骤和错因复盘形成当天闭环。",
       "path": "skills/daily-practice/senior-math-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "数学",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2488,14 +2488,14 @@
     },
     {
       "name": "senior-physics-quick-practice",
-      "description": "高中物理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中物理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、模型条件、图像/实验信息和推理步骤形成当天闭环。",
       "path": "skills/daily-practice/senior-physics-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "物理",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },

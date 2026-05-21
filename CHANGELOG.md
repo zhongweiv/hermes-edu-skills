@@ -2,9 +2,15 @@
 
 ## Unreleased
 
+## 0.12.0 - 2026-05-21
+
 - Defines a release strategy so documentation-only and maintenance changes can be committed without creating a new version every time.
 - Clarifies the two installation methods in README: first-class `npx hermes-edu-skills` usage and source-mode `npm run ... -- --category/--skill` usage.
 - Renames public README command-argument columns to install selectors and shows both selector styles for categories and Skills.
+- Curates the seventh 20-Skill batch for daily practice, covering preschool literacy/number sense, junior daily practice, senior English vocabulary, and junior/senior quick-practice workflows.
+- Turns daily-practice Skills into short active-recall loops with immediate feedback, mistake tags, and next-review actions instead of generic worksheet generation.
+- Adds stronger parent/teacher/student use guidance for 10-15 minute China-first daily learning scenarios.
+- Keeps total public export scope unchanged while upgrading selected daily-practice Skills to `curated`, `recommended`, and `0.12.0` content.
 
 ## 0.11.0 - 2026-05-21
 

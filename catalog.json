@@ -1,8 +1,8 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "license": "MIT",
-  "generatedAt": "2026-05-21T02:18:04.999Z",
+  "generatedAt": "2026-05-21T02:57:00.541Z",
   "skillCount": 177,
   "skills": [
     {
@@ -1344,8 +1344,8 @@
       "name": "junior-biology-quick-practice",
       "slug": "junior-biology-quick-practice",
       "title": "初中生物快速巩固 Skill",
-      "description": "初中生物快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中生物每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕结构功能、生命过程、图表信息和实验变量形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-biology-quick-practice/SKILL.md",
@@ -1372,11 +1372,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -1384,9 +1384,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -1679,8 +1681,8 @@
       "name": "junior-chemistry-quick-practice",
       "slug": "junior-chemistry-quick-practice",
       "title": "初中化学快速巩固 Skill",
-      "description": "初中化学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中化学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、实验现象、化学用语和反应规律形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-chemistry-quick-practice/SKILL.md",
@@ -1707,11 +1709,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -1719,9 +1721,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -2063,8 +2067,8 @@
       "name": "junior-chinese-quick-practice",
       "slug": "junior-chinese-quick-practice",
       "title": "初中语文快速巩固 Skill",
-      "description": "初中语文快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中语文每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕字词积累、阅读依据、表达完整度和错字订正形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-chinese-quick-practice/SKILL.md",
@@ -2091,11 +2095,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -2103,9 +2107,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -2305,8 +2311,8 @@
       "name": "junior-english-quick-practice",
       "slug": "junior-english-quick-practice",
       "title": "初中英语快速巩固 Skill",
-      "description": "初中英语快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中英语每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕词汇复现、语境理解、拼写准确和句子输出形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-english-quick-practice/SKILL.md",
@@ -2333,11 +2339,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -2345,9 +2351,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -2472,8 +2480,8 @@
       "name": "junior-english-vocabulary-daily",
       "slug": "junior-english-vocabulary-daily",
       "title": "初中英语词汇每日练 Skill",
-      "description": "初中英语词汇每日练 Skill是面向每日打卡、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中英语每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕词汇复现、语境理解、拼写准确和句子输出形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-english-vocabulary-daily/SKILL.md",
@@ -2499,11 +2507,11 @@
         "每日打卡",
         "中考复习"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -2512,9 +2520,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -2881,8 +2891,8 @@
       "name": "junior-geography-quick-practice",
       "slug": "junior-geography-quick-practice",
       "title": "初中地理快速巩固 Skill",
-      "description": "初中地理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中地理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕地图判读、区域特征、成因解释和图表信息形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-geography-quick-practice/SKILL.md",
@@ -2909,11 +2919,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -2921,9 +2931,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -3218,8 +3230,8 @@
       "name": "junior-history-quick-practice",
       "slug": "junior-history-quick-practice",
       "title": "初中历史快速巩固 Skill",
-      "description": "初中历史快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中历史每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕时间线、事件因果、材料信息和观点表达形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-history-quick-practice/SKILL.md",
@@ -3246,11 +3258,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -3258,9 +3270,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -3480,8 +3494,8 @@
       "name": "junior-math-daily-practice",
       "slug": "junior-math-daily-practice",
       "title": "初中数学每日练 Skill",
-      "description": "初中数学每日练 Skill是面向每日打卡、专项训练的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中数学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕计算准确率、方法选择、解题步骤和错因复盘形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-math-daily-practice/SKILL.md",
@@ -3509,11 +3523,11 @@
         "每日打卡",
         "专项训练"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -3521,9 +3535,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -3628,8 +3644,8 @@
       "name": "junior-math-quick-practice",
       "slug": "junior-math-quick-practice",
       "title": "初中数学快速巩固 Skill",
-      "description": "初中数学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中数学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕计算准确率、方法选择、解题步骤和错因复盘形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-math-quick-practice/SKILL.md",
@@ -3656,11 +3672,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -3668,9 +3684,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -4059,8 +4077,8 @@
       "name": "junior-physics-quick-practice",
       "slug": "junior-physics-quick-practice",
       "title": "初中物理快速巩固 Skill",
-      "description": "初中物理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中物理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、模型条件、图像/实验信息和推理步骤形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-physics-quick-practice/SKILL.md",
@@ -4087,11 +4105,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -4099,9 +4117,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -4300,8 +4320,8 @@
       "name": "junior-politics-quick-practice",
       "slug": "junior-politics-quick-practice",
       "title": "初中政治快速巩固 Skill",
-      "description": "初中政治快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把初中政治每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念理解、材料提取、观点组织和规范表达形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/junior-politics-quick-practice/SKILL.md",
@@ -4328,11 +4348,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -4340,9 +4360,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -4619,8 +4641,8 @@
       "name": "preschool-literacy-daily",
       "slug": "preschool-literacy-daily",
       "title": "学前识字每日练 Skill",
-      "description": "学前识字每日练 Skill是面向每日启蒙、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把学前识字做成“看见、读出、理解、会用”的轻量游戏，不让孩子在机械认字里失去兴趣。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/preschool-literacy-daily/SKILL.md",
@@ -4647,11 +4669,11 @@
         "每日启蒙",
         "每日打卡"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -4659,9 +4681,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -4691,8 +4715,8 @@
       "name": "preschool-number-sense-daily",
       "slug": "preschool-number-sense-daily",
       "title": "学前数感每日练 Skill",
-      "description": "学前数感每日练 Skill是面向数感游戏、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把学前数感训练变成可触摸、可比较、可说出来的日常小游戏，而不是提前刷小学题。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/preschool-number-sense-daily/SKILL.md",
@@ -4719,11 +4743,11 @@
         "数感游戏",
         "每日打卡"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -4731,9 +4755,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -5673,9 +5699,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -5828,9 +5856,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -6261,9 +6291,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -6720,9 +6752,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -7000,9 +7034,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -11564,8 +11600,8 @@
       "name": "senior-biology-quick-practice",
       "slug": "senior-biology-quick-practice",
       "title": "高中生物快速巩固 Skill",
-      "description": "高中生物快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把高中生物每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕结构功能、生命过程、图表信息和实验变量形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-biology-quick-practice/SKILL.md",
@@ -11592,11 +11628,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -11604,9 +11640,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -11903,8 +11941,8 @@
       "name": "senior-chemistry-quick-practice",
       "slug": "senior-chemistry-quick-practice",
       "title": "高中化学快速巩固 Skill",
-      "description": "高中化学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把高中化学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、实验现象、化学用语和反应规律形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-chemistry-quick-practice/SKILL.md",
@@ -11931,11 +11969,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -11943,9 +11981,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -12219,8 +12259,8 @@
       "name": "senior-chinese-quick-practice",
       "slug": "senior-chinese-quick-practice",
       "title": "高中语文快速巩固 Skill",
-      "description": "高中语文快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把高中语文每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕字词积累、阅读依据、表达完整度和错字订正形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-chinese-quick-practice/SKILL.md",
@@ -12247,11 +12287,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -12259,9 +12299,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -12537,8 +12579,8 @@
       "name": "senior-english-quick-practice",
       "slug": "senior-english-quick-practice",
       "title": "高中英语快速巩固 Skill",
-      "description": "高中英语快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把高中英语每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕词汇复现、语境理解、拼写准确和句子输出形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-english-quick-practice/SKILL.md",
@@ -12565,11 +12607,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -12577,9 +12619,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -12706,8 +12750,8 @@
       "name": "senior-english-vocabulary-daily",
       "slug": "senior-english-vocabulary-daily",
       "title": "高中英语词汇每日练 Skill",
-      "description": "高中英语词汇每日练 Skill是面向每日打卡、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把高中英语每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕词汇复现、语境理解、拼写准确和句子输出形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-english-vocabulary-daily/SKILL.md",
@@ -12732,11 +12776,11 @@
         "每日打卡",
         "高考复习"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -12745,9 +12789,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -13135,9 +13181,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -13476,9 +13524,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -13777,8 +13827,8 @@
       "name": "senior-math-quick-practice",
       "slug": "senior-math-quick-practice",
       "title": "高中数学快速巩固 Skill",
-      "description": "高中数学快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把高中数学每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕计算准确率、方法选择、解题步骤和错因复盘形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-math-quick-practice/SKILL.md",
@@ -13805,11 +13855,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -13817,9 +13867,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -14213,8 +14265,8 @@
       "name": "senior-physics-quick-practice",
       "slug": "senior-physics-quick-practice",
       "title": "高中物理快速巩固 Skill",
-      "description": "高中物理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "version": "0.10.0",
+      "description": "把高中物理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、模型条件、图像/实验信息和推理步骤形成当天闭环。",
+      "version": "0.12.0",
       "status": "published",
       "category": "daily-practice",
       "path": "skills/daily-practice/senior-physics-quick-practice/SKILL.md",
@@ -14241,11 +14293,11 @@
         "每日打卡",
         "同步巩固"
       ],
-      "qualityTier": "enhanced",
+      "qualityTier": "curated",
       "standaloneSupport": "needs_user_input",
-      "publicRelease": "allowed",
+      "publicRelease": "recommended",
       "exportMode": "installable",
-      "releaseChannel": "public",
+      "releaseChannel": "recommended",
       "requiresTools": [
         "context.load",
         "entitlement.check",
@@ -14253,9 +14305,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [
@@ -14497,9 +14551,11 @@
         "memory.write"
       ],
       "requiresData": [
-        "学习目标",
-        "年级或水平",
-        "用户输入的题目/记录/上下文"
+        "年级/水平",
+        "今日知识点或单元",
+        "可用时间",
+        "最近错题或薄弱点",
+        "使用场景：学生自练/家长陪练/老师布置"
       ],
       "textbookVersions": [],
       "supportedGrades": [

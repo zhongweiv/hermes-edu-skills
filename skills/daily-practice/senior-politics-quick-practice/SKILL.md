@@ -21,7 +21,7 @@ metadata:
     export_mode: "installable"
     release_channel: "public"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级/水平", "今日知识点或单元", "可用时间", "最近错题或薄弱点", "使用场景：学生自练/家长陪练/老师布置"]
 ---
 
 # 高中政治快速巩固 Skill
@@ -64,7 +64,7 @@ metadata:
 - Standalone Support: `needs_user_input`
 - Public Release: `allowed`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级/水平`, `今日知识点或单元`, `可用时间`, `最近错题或薄弱点`, `使用场景：学生自练/家长陪练/老师布置`
 - Export Mode: `installable`
 - Release Channel: `public`
 

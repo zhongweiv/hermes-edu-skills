@@ -1,7 +1,7 @@
 ---
 name: "preschool-number-sense-daily"
-description: "学前数感每日练 Skill是面向数感游戏、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: preschool_number_sense_daily.run."
-version: "0.10.0"
+description: "把学前数感训练变成可触摸、可比较、可说出来的日常小游戏，而不是提前刷小学题。 Workflow: preschool_number_sense_daily.run."
+version: "0.12.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,76 @@ metadata:
     subjects: ["数学"]
     abilities: ["数感"]
     scenarios: ["数感游戏", "每日打卡"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级/水平", "今日知识点或单元", "可用时间", "最近错题或薄弱点", "使用场景：学生自练/家长陪练/老师布置"]
 ---
 
 # 学前数感每日练 Skill
 
-学前数感每日练 Skill是面向数感游戏、每日打卡的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把学前数感训练变成可触摸、可比较、可说出来的日常小游戏，而不是提前刷小学题。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把学前数感训练变成可触摸、可比较、可说出来的日常小游戏，而不是提前刷小学题。
+
+## 最适合 / Best For
+
+- 幼小衔接数感启蒙
+- 数量比较
+- 简单分合
+- 亲子数学游戏
+
+## 不适合 / Not For
+
+- 提前拔高到小学计算题海
+- 用速度和分数压孩子
+- 没有实物参与的抽象讲解
+
+## 使用前请准备 / Inputs
+
+- 孩子年龄
+- 当前数感目标
+- 可用物品
+- 可用时间
+- 孩子容易卡住的点
+
+## 推荐工作流 / Recommended Workflow
+
+- 用家里实物建立数量情境。
+- 让孩子先估一估、摆一摆、说一说。
+- 安排 3 轮数量、比较或分合小游戏。
+- 用一个生活问题检查迁移。
+- 记录下一次要复现的数感动作。
+
+## 输出格式 / Output Format
+
+- 今日目标
+- 材料准备
+- 游戏流程
+- 家长提问
+- 下次复现
+
+## 质量检查 / Quality Checks
+
+- 必须从实物和语言出发
+- 不提前题海化
+- 任务时间要短
+- 家长话术要鼓励而非催促
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有教具时，使用积木、筷子、水果等家庭物品。
+- 没有历史记录时，从 1-10 数量比较开始。
+
+## 示例提示 / Example Prompts
+
+- 6 岁孩子数到 20 但不会比较多少，帮我设计数感游戏。
+- 今晚用家里的积木做 10 分钟数学启蒙。
 
 ## 适用场景 / When To Use
 
@@ -60,16 +118,16 @@ metadata:
 - Stages: `preschool`
 - Subjects: `数学`
 - Abilities: `数感`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级/水平`, `今日知识点或单元`, `可用时间`, `最近错题或薄弱点`, `使用场景：学生自练/家长陪练/老师布置`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

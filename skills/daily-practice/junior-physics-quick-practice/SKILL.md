@@ -1,7 +1,7 @@
 ---
 name: "junior-physics-quick-practice"
-description: "初中物理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_physics_quick_practice.run."
-version: "0.10.0"
+description: "把初中物理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、模型条件、图像/实验信息和推理步骤形成当天闭环。 Workflow: junior_physics_quick_practice.run."
+version: "0.12.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,80 @@ metadata:
     subjects: ["物理"]
     abilities: ["同步巩固", "专项训练"]
     scenarios: ["每日打卡", "同步巩固"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "memory.write"]
-    requires_data: ["学习目标", "年级或水平", "用户输入的题目/记录/上下文"]
+    requires_data: ["年级/水平", "今日知识点或单元", "可用时间", "最近错题或薄弱点", "使用场景：学生自练/家长陪练/老师布置"]
 ---
 
 # 初中物理快速巩固 Skill
 
-初中物理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把初中物理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、模型条件、图像/实验信息和推理步骤形成当天闭环。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把初中物理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念辨析、模型条件、图像/实验信息和推理步骤形成当天闭环。
+
+## 最适合 / Best For
+
+- 初中物理每日打卡
+- 物理同步巩固
+- 课后短练
+- 错题后的同类回练
+- 适合初高中物理课后 15 分钟模型巩固
+
+## 不适合 / Not For
+
+- 一次性刷大量题目
+- 只给答案不记录错因
+- 替代系统课程学习
+- 直接套公式，忽略条件、图像和实验语境
+
+## 使用前请准备 / Inputs
+
+- 年级/水平
+- 今天要练的单元或知识点
+- 可用时间
+- 最近错题或薄弱点
+- 使用场景：学生自练、家长陪练或老师布置
+
+## 推荐工作流 / Recommended Workflow
+
+- 先确认今日目标、时间和难度，只练一个小目标。
+- 先让学生说出现象、条件和要判断的物理量
+- 用概念判断、模型选择、图像读取和一题一模型短练组成训练
+- 反馈要指出公式适用条件和物理意义
+- 把错题对应模型写成一张复习卡，下次换情境再测
+
+## 输出格式 / Output Format
+
+- 今日目标
+- 热身回想
+- 短练题组
+- 答案与讲解
+- 错因标签
+- 下次复习
+
+## 质量检查 / Quality Checks
+
+- 题量必须匹配 10-15 分钟
+- 先让学生尝试再讲解
+- 反馈必须包含错因
+- 必须留下下一次复习动作
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有题库时，由 Agent 生成原创短练并附答案。
+- 没有学习记录时，用用户提供的错题或薄弱点开始。
+- 没有计时工具时，输出可手动执行的三轮练习表。
+
+## 示例提示 / Example Prompts
+
+- 初中物理今天练同步巩固，只有 15 分钟，帮我安排。
+- 孩子物理最近错在同步巩固，先诊断再做 5 道短练。
 
 ## 适用场景 / When To Use
 
@@ -60,16 +122,16 @@ metadata:
 - Stages: `junior`
 - Subjects: `物理`
 - Abilities: `同步巩固`, `专项训练`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `memory.write`
-- Requires Data: `学习目标`, `年级或水平`, `用户输入的题目/记录/上下文`
+- Requires Data: `年级/水平`, `今日知识点或单元`, `可用时间`, `最近错题或薄弱点`, `使用场景：学生自练/家长陪练/老师布置`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 
