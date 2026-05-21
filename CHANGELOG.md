@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.16.2 - 2026-05-21
+
+- Promotes Skill Router into a standalone product-level README section for natural questions, visible Skill selection, and Hermes invocation.
+- Promotes `doctor` into a standalone diagnostics and troubleshooting section with clearer checks and common readings.
+- Keeps Chinese and English README structures synchronized for public onboarding.
+
 ## 0.16.1 - 2026-05-21
 
 - Adds `hermes-edu-skills doctor` to diagnose local Hermes Skill Pack installation.

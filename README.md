@@ -29,7 +29,8 @@ Hermes Edu Skills 是一套面向中国教育场景的开源 Agent Skill Pack。
 - [谁适合用](#谁适合用)
 - [分类总览](#分类总览)
 - [默认使用：Hermes Agent](#默认使用hermes-agent)
-- [自动匹配并运行 Skill](#自动匹配并运行-skill)
+- [自然提问与 Skill 路由](#自然提问与-skill-路由)
+- [诊断与排障](#诊断与排障)
 - [只安装单个 Skill](#只安装单个-skill)
 - [导出给其它 AI 工具或 Agent](#导出给其它-ai-工具或-agent)
 - [覆盖范围](#覆盖范围)
@@ -163,7 +164,7 @@ npx hermes-edu-skills search 错题
 npx hermes-edu-skills info agent-mistake-review
 ```
 
-安装后，如果你希望“问相关题目时自动看到正在使用哪个 Skill”，可以使用内置 Skill Router：
+安装后，你有两种使用方式：熟悉 Skill 名时直接用 Hermes 的 `-s` 手动指定；不知道该选哪个 Skill 时，用内置 Skill Router 自然提问，并让它先显示本次匹配到的 Skill。
 
 ```bash
 # 只查看匹配结果，不调用 Hermes
@@ -173,7 +174,7 @@ npx hermes-edu-skills match "八年级下册物理力学题"
 npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
 ```
 
-`ask` 会先打印类似 `Using Skill: junior-physics-rj-textbook-sync` 的信息，再执行 `hermes chat -s <skill> -q <question>`。如果你需要查看 Hermes 详细输出，可以加 `--verbose`；如果你的 Hermes 命令不叫 `hermes`，可以加 `--hermes-bin <path>`。
+更完整的使用场景见 [自然提问与 Skill 路由](#自然提问与-skill-路由)。
 
 方法二：源码模式安装（从 GitHub clone 后使用）
 
@@ -204,7 +205,7 @@ hermes skills list
 npx hermes-edu-skills doctor
 ```
 
-`doctor` 会检查本地包版本、catalog 数量、`~/.hermes/skills/hermes-edu-skills` 文件数量、`AGENT_SKILL_PACK.json`、`~/.hermes/config.yaml` 是否接入、是否有 Skill 被禁用，以及 `hermes skills list --source local` 实际可见数量。
+详细排查路径见 [诊断与排障](#诊断与排障)。
 
 也可以用 Hermes 的 Skill 工具验证：
 
@@ -215,19 +216,55 @@ skills_list()
 skill_view("primary-math-mental-arithmetic")
 ```
 
-## 自动匹配并运行 Skill
+## 自然提问与 Skill 路由
 
-官方 Hermes Agent 支持通过 `-s` 手动预加载 Skill，但不一定会在回答里自动显示“正在使用哪个 Skill”。Hermes Edu Skills 在 CLI 里额外提供了一个轻量路由层，让用户可以自然提问，并明确看到本次匹配到的 Skill。
+官方 Hermes Agent 支持通过 `-s` 手动预加载 Skill，但真实用户往往不会记住 `primary-math-mental-arithmetic`、`junior-physics-rj-textbook-sync` 这类英文 slug。Hermes Edu Skills 增加了一层轻量 Skill Router：用户像平时一样提问，CLI 先把问题匹配到最合适的 Skill，再把“本次正在使用什么 Skill”明确打印出来。
+
+这让项目更像一个可用产品，而不是一组需要背命令的文件：学生可以说“帮我出5道口算练习”，老师可以说“做一份初中物理力学小测”，开发者也能用 `match` 调试召回效果。
 
 | 你想做什么 | 命令 |
 | --- | --- |
 | 查看自然语言问题会匹配哪些 Skill | `npx hermes-edu-skills match "八年级下册物理力学题"` |
 | 直接让 Hermes 使用匹配到的 Skill 回答 | `npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"` |
+| 试一类更口语的问题 | `npx hermes-edu-skills match "帮我出5道口算练习"` |
 | 查看更多候选 Skill | `npx hermes-edu-skills match "错题复盘计划" --top 10` |
 | 传递 Hermes 详细输出 | `npx hermes-edu-skills ask "制定一周学习计划" --verbose` |
 | 使用自定义 Hermes 命令路径 | `npx hermes-edu-skills ask "初中英语阅读训练" --hermes-bin /path/to/hermes` |
 
 `match` 适合调试和选择，`ask` 适合日常使用。它们不会替代 Hermes Agent，而是自动完成“匹配 Skill -> 显示 Skill -> 调用 `hermes chat -s`”这一步。
+
+| 使用建议 | 说明 |
+| --- | --- |
+| 面向普通用户 | 用 `ask`，让用户自然提问，并看到 `Using Skill: ...`。 |
+| 面向产品调试 | 用 `match --top 10`，观察候选 Skill 是否符合预期。 |
+| 面向高级用户 | 仍然可以直接使用官方 Hermes 的 `hermes chat -s <skill>`。 |
+| 当前边界 | 路由层是轻量规则匹配，会持续增强中文教育意图、教材版本、年级册别和题型识别。 |
+
+## 诊断与排障
+
+Skill Pack 安装成功不等于 Hermes 一定全部可见。不同机器的 Hermes 配置、禁用列表、安装目录、包版本缓存都可能导致“文件已经存在，但 `hermes skills list` 数量不对”。`doctor` 就是为这个场景准备的体检命令。
+
+```bash
+npx hermes-edu-skills doctor
+```
+
+| 检查项 | doctor 会看什么 |
+| --- | --- |
+| 包版本 | 当前 CLI package 版本和 catalog 版本。 |
+| 本地文件 | `~/.hermes/skills/hermes-edu-skills` 下实际有多少个 `SKILL.md`。 |
+| 安装清单 | `AGENT_SKILL_PACK.json` 的版本、skillCount 和安装时间。 |
+| Hermes 配置 | `~/.hermes/config.yaml` 是否通过 `skills.external_dirs` 指向 Skill Pack。 |
+| 禁用状态 | `skills.disabled` / `platform_disabled` 是否屏蔽了某些 Skill。 |
+| Hermes 可见性 | `hermes skills list --source local` 实际能看到多少个 Skill。 |
+
+常见判断：
+
+| 现象 | 优先检查 |
+| --- | --- |
+| 本地文件数量正常，但 Hermes 可见数量偏少 | 是否有 Skill 被 Hermes 配置禁用，或 Hermes 对同名 Skill 做了过滤。 |
+| 本地文件是 0 | 还没有安装到 Hermes 默认目录，或当前用户目录和运行 Hermes 的用户不一致。 |
+| Config linked = no | Hermes 配置没有接入 `skills.external_dirs`，重新执行安装命令并带上 `--config ~/.hermes/config.yaml`。 |
+| npm 已发布但 npx 还是旧版本 | 使用 `npx --yes hermes-edu-skills@latest doctor`，或等待 npm 缓存刷新。 |
 
 ## 只安装单个 Skill
 

@@ -29,7 +29,8 @@ If you are building an AI learning assistant, AI teacher, curriculum tool, famil
 - [Who It Is For](#who-it-is-for)
 - [Category Overview](#category-overview)
 - [Default: Hermes Agent](#defaulthermes-agent)
-- [Auto-match And Run A Skill](#auto-match-and-run-a-skill)
+- [Natural Questions And Skill Routing](#natural-questions-and-skill-routing)
+- [Diagnostics And Troubleshooting](#diagnostics-and-troubleshooting)
 - [Install A Single Skill](#install-a-single-skill)
 - [Export To Other AI Tools Or Agents](#export-to-other-ai-tools-or-agents)
 - [Coverage](#coverage)
@@ -163,7 +164,7 @@ npx hermes-edu-skills search mistake
 npx hermes-edu-skills info agent-mistake-review
 ```
 
-After installation, if you want natural questions to clearly show which Skill is being used, use the built-in Skill Router:
+After installation, you have two usage modes: use Hermes `-s` when you already know the Skill slug, or use the built-in Skill Router when you want to ask naturally and see which Skill is selected.
 
 ```bash
 # Show matching results only; do not call Hermes
@@ -173,7 +174,7 @@ npx hermes-edu-skills match "grade 8 physics mechanics practice"
 npx hermes-edu-skills ask "Create 5 grade-8 physics mechanics questions with answers"
 ```
 
-`ask` prints a line such as `Using Skill: junior-physics-rj-textbook-sync`, then runs `hermes chat -s <skill> -q <question>`. Add `--verbose` for verbose Hermes output, or `--hermes-bin <path>` if your Hermes executable uses a custom path.
+See [Natural Questions And Skill Routing](#natural-questions-and-skill-routing) for the full workflow.
 
 Method 2: Source-mode install (after cloning from GitHub)
 
@@ -204,7 +205,7 @@ If Hermes shows a different count than the README or catalog, run:
 npx hermes-edu-skills doctor
 ```
 
-`doctor` checks the package version, catalog count, `~/.hermes/skills/hermes-edu-skills` file count, `AGENT_SKILL_PACK.json`, whether `~/.hermes/config.yaml` links the pack, disabled Skills, and the actual visible count from `hermes skills list --source local`.
+See [Diagnostics And Troubleshooting](#diagnostics-and-troubleshooting) for the detailed checklist.
 
 You can also verify through Hermes skill tools:
 
@@ -215,19 +216,55 @@ skills_list()
 skill_view("primary-math-mental-arithmetic")
 ```
 
-## Auto-match And Run A Skill
+## Natural Questions And Skill Routing
 
-Official Hermes Agent can preload a Skill with `-s`, but it may not always display "which Skill is being used" in the chat response. Hermes Edu Skills adds a small CLI router so users can ask naturally, see the matched Skill, and then run Hermes with that Skill preloaded.
+Official Hermes Agent can preload a Skill with `-s`, but real users do not always know slugs such as `primary-math-mental-arithmetic` or `junior-physics-rj-textbook-sync`. Hermes Edu Skills adds a lightweight Skill Router: users ask naturally, the CLI selects the most likely Skill, and it prints which Skill is being used before invoking Hermes.
+
+That makes the pack feel like a usable product rather than a folder of commands. A student can ask for "5 mental arithmetic questions", a teacher can ask for a junior physics mechanics quiz, and developers can use `match` to inspect retrieval quality.
 
 | Goal | Command |
 | --- | --- |
 | See which Skills match a natural-language question | `npx hermes-edu-skills match "grade 8 physics mechanics practice"` |
 | Let Hermes answer with the matched Skill | `npx hermes-edu-skills ask "Create 5 grade-8 physics mechanics questions with answers"` |
+| Try a more casual question | `npx hermes-edu-skills match "Create 5 mental arithmetic questions"` |
 | Show more candidate Skills | `npx hermes-edu-skills match "mistake review plan" --top 10` |
 | Pass verbose output to Hermes | `npx hermes-edu-skills ask "make a one-week study plan" --verbose` |
 | Use a custom Hermes executable | `npx hermes-edu-skills ask "junior English reading practice" --hermes-bin /path/to/hermes` |
 
 `match` is for debugging and selection. `ask` is for daily use. It does not replace Hermes Agent; it automates "match Skill -> show Skill -> call `hermes chat -s`".
+
+| Usage Pattern | Notes |
+| --- | --- |
+| For everyday users | Use `ask` so users can ask naturally and see `Using Skill: ...`. |
+| For product debugging | Use `match --top 10` to check whether candidates match the intent. |
+| For advanced Hermes users | You can still call official Hermes directly with `hermes chat -s <skill>`. |
+| Current boundary | The router is lightweight rule-based matching. Chinese education intent, textbook edition, grade/semester, and question-type recognition will continue to improve. |
+
+## Diagnostics And Troubleshooting
+
+A successful file install does not always mean every Skill is visible to Hermes. Different machines can have different Hermes config files, disabled lists, install directories, or npm cache states. `doctor` is the health check for that situation.
+
+```bash
+npx hermes-edu-skills doctor
+```
+
+| Check | What doctor inspects |
+| --- | --- |
+| Package version | Current CLI package version and catalog version. |
+| Local files | How many `SKILL.md` files exist under `~/.hermes/skills/hermes-edu-skills`. |
+| Install manifest | `AGENT_SKILL_PACK.json` version, skillCount, and install time. |
+| Hermes config | Whether `~/.hermes/config.yaml` links the pack through `skills.external_dirs`. |
+| Disabled Skills | Whether `skills.disabled` / `platform_disabled` hides any Skills. |
+| Hermes visibility | How many Skills `hermes skills list --source local` actually sees. |
+
+Common readings:
+
+| Symptom | Check first |
+| --- | --- |
+| Local file count is correct, but Hermes visible count is lower | Check whether Hermes config disables or filters some Skills. |
+| Local file count is 0 | The pack was not installed into the Hermes default directory, or Hermes runs under a different user. |
+| Config linked = no | Hermes config does not include `skills.external_dirs`; rerun install with `--config ~/.hermes/config.yaml`. |
+| npm is published but npx still uses an older version | Run `npx --yes hermes-edu-skills@latest doctor`, or wait for npm cache propagation. |
 
 ## Install A Single Skill
 
