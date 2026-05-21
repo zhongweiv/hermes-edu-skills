@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.16.8 - 2026-05-22
+
+- Replaces the old README demo asset with a lighter `assets/demo/preview-small.gif` optimized for GitHub first-screen loading.
+- Adds `assets/demo/preview.mp4` as an HD demo link from both Chinese and English READMEs.
+- Keeps README generation aligned with the new demo asset paths.
+
 ## 0.16.7 - 2026-05-21
 
 - Adds commercial-first `interactionPolicy` metadata to every Skill so required dimensions are recognized, lightly asked, and safely defaulted when users skip answers.

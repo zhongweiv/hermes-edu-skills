@@ -1,6 +1,6 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.16.7",
+  "version": "0.16.8",
   "private": false,
   "description": "让 Hermes Agent 和主流 AI 工具拥有中国教育场景能力的开源 Agent Skill Pack：教材同步、备考复习、错题复盘、每日练习、亲子陪学、阅读写作和教师工作流。 Open Agent Skill Pack for Hermes Agent and mainstream AI tools.",
   "license": "MIT",
