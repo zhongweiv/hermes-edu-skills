@@ -102,6 +102,15 @@ Examples:
   npm run agent:convert -- --tool openclaw --category textbook-sync --target ./dist/textbook-sync-skills
   npm run agent:convert -- --tool openclaw --category 教材同步 --target ./dist/textbook-sync-skills
 
+Short npm commands:
+  npm run install:hermes
+  npm run install:openclaw
+  npm run install:codex
+  npm run install:claude
+  npm run install:cursor -- --workspace .
+  npm run export:openclaw -- --category 教材同步
+  npm run export:generic -- --category exam-prep
+
 Options:
   --category <name>       Export only one category slug or alias. Can be used multiple times or comma-separated.
   --config <path>         Hermes config path.
@@ -274,6 +283,13 @@ function defaultFlatTarget(tool, args) {
 function defaultHermesSelectedTarget(args) {
   if (args.target) return args.target;
   return join(homeDir(), '.hermes', 'skills', 'hermes-edu-skills');
+}
+
+function defaultExportTarget(tool, args) {
+  if (args.target) return args.target;
+  if (tool === 'generic-agent') return join(process.cwd(), 'dist', 'agent-skills');
+  if (tool === 'claude-code') return join(process.cwd(), 'dist', 'claude-code-skills');
+  return join(process.cwd(), 'dist', `${tool}-skills`);
 }
 
 function cursorTargets(args) {
@@ -482,8 +498,7 @@ function convertTool(args) {
     if (!args.target && !args.workspace) throw new Error('Cursor conversion requires --target <rules-dir> or --workspace <project-dir>.');
     copyCursorPack(args);
   } else if (flatSkillTools.has(tool)) {
-    if (!args.target) throw new Error('convert requires --target <path>.');
-    copyFlatSkills(args.target, tool, selectedSkills(args), args);
+    copyFlatSkills(defaultExportTarget(tool, args), tool, selectedSkills(args), args);
   } else {
     throw new Error(`Convert is not implemented for ${tool}`);
   }

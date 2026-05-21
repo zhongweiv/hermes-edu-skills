@@ -1,6 +1,6 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "private": false,
   "description": "面向中国教育场景的开源 Agent Skill Pack：教材同步、备考复习、拍照答疑、错题复盘、亲子陪学、阅读写作和教师工具，Hermes Agent 可直接使用，也可导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。 China-focused education Agent Skill Pack for Hermes Agent and other AI tools.",
   "license": "MIT",
@@ -44,6 +44,15 @@
     "agent:convert": "node scripts/agent-pack.mjs convert",
     "agent:install": "node scripts/agent-pack.mjs install",
     "export:agents": "node scripts/agent-pack.mjs export",
+    "export:claude": "node scripts/agent-pack.mjs convert --tool claude-code",
+    "export:codex": "node scripts/agent-pack.mjs convert --tool codex",
+    "export:cursor": "node scripts/agent-pack.mjs convert --tool cursor --target ./dist/cursor-rules",
+    "export:generic": "node scripts/agent-pack.mjs convert --tool generic-agent",
+    "export:openclaw": "node scripts/agent-pack.mjs convert --tool openclaw",
+    "install:claude": "node scripts/agent-pack.mjs install --tool claude-code",
+    "install:codex": "node scripts/agent-pack.mjs install --tool codex",
+    "install:cursor": "node scripts/agent-pack.mjs install --tool cursor",
+    "install:generic": "node scripts/agent-pack.mjs install --tool generic-agent",
     "install:hermes": "node scripts/agent-pack.mjs install-hermes",
     "install:openclaw": "node scripts/agent-pack.mjs install-openclaw",
     "validate": "node scripts/validate.mjs"

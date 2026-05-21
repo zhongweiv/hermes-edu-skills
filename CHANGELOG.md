@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.2 - 2026-05-21
+
+- Adds short install/export npm commands for Codex, Claude Code, Cursor, OpenClaw, Hermes, and generic Agent targets.
+- Makes category export simpler by providing safe default `dist/...` output directories when `--target` is omitted.
+- Keeps advanced `agent:install` / `agent:convert` commands documented for integrations that need full control.
+- Separates Chinese and English Skill list display: Chinese README shows Chinese names with English labels; English README shows English labels with original Chinese names.
+
 ## 0.10.1 - 2026-05-21
 
 - Improves category install/export usability by showing the exact `--category <slug>` argument beside every README category.
