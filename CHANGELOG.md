@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.4 - 2026-05-21
+
+- Polishes README Skill tables for easier scanning and copying.
+- Removes maturity and parameter columns from the public Skill list.
+- Adds a command-argument column next to every Skill.
+- Uses compact standalone availability marks and line-separated stage values.
+- Updates Chinese and English Skill cells to show installable names with localized explanations.
+
 ## 0.10.3 - 2026-05-21
 
 - Adjusts README category display to two-line bilingual names.
