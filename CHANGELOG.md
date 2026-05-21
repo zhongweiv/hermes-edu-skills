@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.13.0 - 2026-05-21
+
+- Curates the eighth public tail batch for daily-practice, exam-prep, and teacher-tools Skills.
+- Upgrades remaining geography, history, politics, and biology public workflows around evidence reading, formative feedback, source/material analysis, and next teaching or review actions.
+- Completes curated coverage for public daily-practice, exam-prep, and teacher-tools installable Skills.
+
 ## 0.12.0 - 2026-05-21
 
 - Defines a release strategy so documentation-only and maintenance changes can be committed without creating a new version every time.

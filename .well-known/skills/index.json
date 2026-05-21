@@ -1,7 +1,7 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.12.0",
-  "generatedAt": "2026-05-21T02:57:00.541Z",
+  "version": "0.13.0",
+  "generatedAt": "2026-05-21T03:06:41.907Z",
   "skills": [
     {
       "name": "adult-language-learning",
@@ -236,14 +236,14 @@
     },
     {
       "name": "junior-biology-exam-review",
-      "description": "初中生物考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中生物考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-biology-exam-review/SKILL.md",
       "tags": [
         "junior",
         "生物",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -515,14 +515,14 @@
     },
     {
       "name": "junior-geography-exam-review",
-      "description": "初中地理考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中地理考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-geography-exam-review/SKILL.md",
       "tags": [
         "junior",
         "地理",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -577,14 +577,14 @@
     },
     {
       "name": "junior-history-exam-review",
-      "description": "初中历史考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中历史考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-history-exam-review/SKILL.md",
       "tags": [
         "junior",
         "历史",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -776,14 +776,14 @@
     },
     {
       "name": "junior-politics-exam-review",
-      "description": "初中政治考试复习 Skill是面向中考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把初中政治考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/junior-politics-exam-review/SKILL.md",
       "tags": [
         "junior",
         "政治",
         "中考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1424,7 +1424,7 @@
     },
     {
       "name": "teacher-biology-homework-generation",
-      "description": "生物作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助生物老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-biology-homework-generation/SKILL.md",
       "tags": [
         "primary",
@@ -1432,7 +1432,7 @@
         "senior",
         "生物",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1452,7 +1452,7 @@
     },
     {
       "name": "teacher-biology-unit-review",
-      "description": "生物单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助生物老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-biology-unit-review/SKILL.md",
       "tags": [
         "primary",
@@ -1460,7 +1460,7 @@
         "senior",
         "生物",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1606,7 +1606,7 @@
     },
     {
       "name": "teacher-geography-homework-generation",
-      "description": "地理作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助地理老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-geography-homework-generation/SKILL.md",
       "tags": [
         "primary",
@@ -1614,13 +1614,13 @@
         "senior",
         "地理",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-geography-lesson-planning",
-      "description": "地理备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助地理老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕区域认知、地图判读、综合思维、地理实践力和人地协调观。",
       "path": "skills/teacher-tools/teacher-geography-lesson-planning/SKILL.md",
       "tags": [
         "primary",
@@ -1628,13 +1628,13 @@
         "senior",
         "地理",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-geography-unit-review",
-      "description": "地理单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助地理老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-geography-unit-review/SKILL.md",
       "tags": [
         "primary",
@@ -1642,13 +1642,13 @@
         "senior",
         "地理",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-history-homework-generation",
-      "description": "历史作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助历史老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-history-homework-generation/SKILL.md",
       "tags": [
         "primary",
@@ -1656,13 +1656,13 @@
         "senior",
         "历史",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-history-lesson-planning",
-      "description": "历史备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助历史老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕时空观念、史料实证、历史解释、因果关系和观点表达。",
       "path": "skills/teacher-tools/teacher-history-lesson-planning/SKILL.md",
       "tags": [
         "primary",
@@ -1670,13 +1670,13 @@
         "senior",
         "历史",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-history-unit-review",
-      "description": "历史单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助历史老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-history-unit-review/SKILL.md",
       "tags": [
         "primary",
@@ -1684,7 +1684,7 @@
         "senior",
         "历史",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1816,7 +1816,7 @@
     },
     {
       "name": "teacher-politics-homework-generation",
-      "description": "政治作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助政治老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。",
       "path": "skills/teacher-tools/teacher-politics-homework-generation/SKILL.md",
       "tags": [
         "primary",
@@ -1824,13 +1824,13 @@
         "senior",
         "政治",
         "班级作业",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-politics-lesson-planning",
-      "description": "政治备课 Skill是面向老师备课的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助政治老师把“这节课讲什么”升级为目标、活动、提问、练习和评价一致的课堂设计，重点围绕概念理解、材料分析、价值判断、现实情境和规范表达。",
       "path": "skills/teacher-tools/teacher-politics-lesson-planning/SKILL.md",
       "tags": [
         "primary",
@@ -1838,13 +1838,13 @@
         "senior",
         "政治",
         "老师备课",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "teacher-politics-unit-review",
-      "description": "政治单元复习 Skill是面向单元复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "帮助政治老师把一个单元复习成知识结构、典型错因、主动回忆和再练习的闭环，而不是重新讲一遍。",
       "path": "skills/teacher-tools/teacher-politics-unit-review/SKILL.md",
       "tags": [
         "primary",
@@ -1852,7 +1852,7 @@
         "senior",
         "政治",
         "单元复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2271,27 +2271,27 @@
     },
     {
       "name": "senior-geography-exam-review",
-      "description": "高中地理考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中地理考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-geography-exam-review/SKILL.md",
       "tags": [
         "senior",
         "地理",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "senior-geography-quick-practice",
-      "description": "高中地理快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中地理每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕地图判读、区域特征、成因解释和图表信息形成当天闭环。",
       "path": "skills/daily-practice/senior-geography-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "地理",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2333,27 +2333,27 @@
     },
     {
       "name": "senior-history-exam-review",
-      "description": "高中历史考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中历史考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-history-exam-review/SKILL.md",
       "tags": [
         "senior",
         "历史",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "senior-history-quick-practice",
-      "description": "高中历史快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中历史每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕时间线、事件因果、材料信息和观点表达形成当天闭环。",
       "path": "skills/daily-practice/senior-history-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "历史",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2519,27 +2519,27 @@
     },
     {
       "name": "senior-politics-exam-review",
-      "description": "高中政治考试复习 Skill是面向高考复习、考前冲刺的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中政治考试备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。",
       "path": "skills/exam-prep/senior-politics-exam-review/SKILL.md",
       "tags": [
         "senior",
         "政治",
         "高考复习",
         "考前冲刺",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "senior-politics-quick-practice",
-      "description": "高中政治快速巩固 Skill是面向每日打卡、同步巩固的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把高中政治每日打卡做成 10-15 分钟可坚持、可反馈、可复现的短训练。重点不是多刷题，而是围绕概念理解、材料提取、观点组织和规范表达形成当天闭环。",
       "path": "skills/daily-practice/senior-politics-quick-practice/SKILL.md",
       "tags": [
         "senior",
         "政治",
         "每日打卡",
         "同步巩固",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },

@@ -1,7 +1,7 @@
 ---
 name: "teacher-biology-homework-generation"
-description: "生物作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: teacher_biology_homework_generation.run."
-version: "0.10.0"
+description: "帮助生物老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。 Workflow: teacher_biology_homework_generation.run."
+version: "0.13.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,78 @@ metadata:
     subjects: ["生物"]
     abilities: ["作业生成"]
     scenarios: ["班级作业"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "organization.query_context", "memory.write"]
     requires_data: ["年级和学科/课题", "教材版本或单元", "班级基础/错题/课堂观察", "课时或作业时长"]
 ---
 
 # 生物作业生成 Skill
 
-生物作业生成 Skill是面向班级作业的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+帮助生物老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。
+
+## 这个 Skill 解决什么问题 / Problem
+
+帮助生物老师生成少而准、可批改、能反映真实掌握情况的分层作业，避免把作业变成题量堆叠。
+
+## 最适合 / Best For
+
+- 生物课后巩固
+- 生物分层作业
+- 周末短练
+- 针对错题的补偿练习
+
+## 不适合 / Not For
+
+- 超纲题海
+- 无法批改或没有答案依据的开放任务
+- 背名词多、解释少，学生不会用证据说明生命现象
+
+## 使用前请准备 / Inputs
+
+- 年级和知识点
+- 预计完成时间
+- 基础/提高/挑战比例
+- 班级常见错误
+- 是否需要答案解析
+
+## 推荐工作流 / Recommended Workflow
+
+- 先确定作业目标和完成时长。
+- 按概念辨析、图表分析、实验设计和生活应用分层
+- 按基础、提高、挑战设计题目或任务。
+- 给出答案、解析和批改关注点。
+- 标注学生完成后的反馈和加练规则。
+
+## 输出格式 / Output Format
+
+- 作业目标
+- 预计时长
+- 基础题
+- 提高题
+- 挑战题
+- 答案解析
+- 批改关注点
+
+## 质量检查 / Quality Checks
+
+- 题量必须匹配时长
+- 分层差异要清楚
+- 答案或评价标准可核验
+- 作业目标不能超过本课核心目标
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有题库时，由 Agent 生成原创题并附答案。
+- 没有班级数据时，默认 60/30/10 分层。
+
+## 示例提示 / Example Prompts
+
+- 给七年级生物生成 20 分钟分层作业，要有答案和批改关注点。
+- 生物这一课学生错得多，帮我做一份补偿练习。
 
 ## 适用场景 / When To Use
 
@@ -57,16 +117,16 @@ metadata:
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `生物`
 - Abilities: `作业生成`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `organization.query_context`, `memory.write`
 - Requires Data: `年级和学科/课题`, `教材版本或单元`, `班级基础/错题/课堂观察`, `课时或作业时长`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 
