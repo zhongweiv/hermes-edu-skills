@@ -1,7 +1,7 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.13.0",
-  "generatedAt": "2026-05-21T03:06:41.907Z",
+  "version": "0.14.0",
+  "generatedAt": "2026-05-21T03:15:28.653Z",
   "skills": [
     {
       "name": "adult-language-learning",
@@ -541,7 +541,7 @@
     },
     {
       "name": "junior-geography-rj-textbook-sync",
-      "description": "人教版初中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版初中地理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让地理同步学习从背区域结论变成会读图、找证据、解释为什么。",
       "path": "skills/textbook-sync/junior-geography-rj-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -553,13 +553,13 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "junior-geography-xj-textbook-sync",
-      "description": "湘教版初中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把湘教版初中地理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让地理同步学习从背区域结论变成会读图、找证据、解释为什么。",
       "path": "skills/textbook-sync/junior-geography-xj-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -571,7 +571,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -603,7 +603,7 @@
     },
     {
       "name": "junior-history-tongbian-textbook-sync",
-      "description": "统编版初中历史同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把统编版初中历史的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让历史同步学习从背年代结论变成会用材料说明因果和观点。",
       "path": "skills/textbook-sync/junior-history-tongbian-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -615,7 +615,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -802,7 +802,7 @@
     },
     {
       "name": "junior-politics-tongbian-textbook-sync",
-      "description": "统编版初中政治同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把统编版初中政治的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让道法/政治同步学习从背模板变成会读材料、会表达观点。",
       "path": "skills/textbook-sync/junior-politics-tongbian-textbook-sync/SKILL.md",
       "tags": [
         "junior",
@@ -814,7 +814,7 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -833,7 +833,7 @@
     },
     {
       "name": "preschool-general-readiness-textbook-sync",
-      "description": "幼小衔接通用学前综合同步 Skill是面向每日启蒙、亲子共学、入学准备的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把幼小衔接通用学前综合的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把零散陪学变成清楚、有节奏、孩子愿意参与的小任务。",
       "path": "skills/textbook-sync/preschool-general-readiness-textbook-sync/SKILL.md",
       "tags": [
         "preschool",
@@ -841,7 +841,7 @@
         "每日启蒙",
         "亲子共学",
         "入学准备",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -1979,7 +1979,7 @@
     },
     {
       "name": "senior-biology-bs-textbook-sync",
-      "description": "北师大版高中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把北师大版高中生物的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把生物教材同步做成能看图、会解释、能用证据表达的学习过程。",
       "path": "skills/textbook-sync/senior-biology-bs-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -1991,7 +1991,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2023,7 +2023,7 @@
     },
     {
       "name": "senior-biology-rj-textbook-sync",
-      "description": "人教版高中生物同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版高中生物的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把生物教材同步做成能看图、会解释、能用证据表达的学习过程。",
       "path": "skills/textbook-sync/senior-biology-rj-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2035,7 +2035,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2054,7 +2054,7 @@
     },
     {
       "name": "senior-chemistry-lk-textbook-sync",
-      "description": "鲁科版高中化学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把鲁科版高中化学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让化学同步学习不止记结论，而是能解释现象、写对符号、看懂实验。",
       "path": "skills/textbook-sync/senior-chemistry-lk-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2066,7 +2066,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2085,7 +2085,7 @@
     },
     {
       "name": "senior-chemistry-rj-textbook-sync",
-      "description": "人教版高中化学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版高中化学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让化学同步学习不止记结论，而是能解释现象、写对符号、看懂实验。",
       "path": "skills/textbook-sync/senior-chemistry-rj-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2097,7 +2097,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2153,7 +2153,7 @@
     },
     {
       "name": "senior-chinese-tongbian-textbook-sync",
-      "description": "统编版高中语文同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把统编版高中语文的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让家长和学生知道今天这篇课文到底要学会什么、怎么练才不空泛。",
       "path": "skills/textbook-sync/senior-chinese-tongbian-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2165,7 +2165,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2197,7 +2197,7 @@
     },
     {
       "name": "senior-english-rj-textbook-sync",
-      "description": "人教版高中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版高中英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。",
       "path": "skills/textbook-sync/senior-english-rj-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2209,7 +2209,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2240,7 +2240,7 @@
     },
     {
       "name": "senior-english-wy-textbook-sync",
-      "description": "外研版高中英语同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把外研版高中英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。",
       "path": "skills/textbook-sync/senior-english-wy-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2252,7 +2252,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2297,7 +2297,7 @@
     },
     {
       "name": "senior-geography-rj-textbook-sync",
-      "description": "人教版高中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版高中地理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让地理同步学习从背区域结论变成会读图、找证据、解释为什么。",
       "path": "skills/textbook-sync/senior-geography-rj-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2309,13 +2309,13 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "senior-geography-xj-textbook-sync",
-      "description": "湘教版高中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把湘教版高中地理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让地理同步学习从背区域结论变成会读图、找证据、解释为什么。",
       "path": "skills/textbook-sync/senior-geography-xj-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2327,7 +2327,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2359,7 +2359,7 @@
     },
     {
       "name": "senior-history-tongbian-textbook-sync",
-      "description": "统编版高中历史同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把统编版高中历史的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让历史同步学习从背年代结论变成会用材料说明因果和观点。",
       "path": "skills/textbook-sync/senior-history-tongbian-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2371,13 +2371,13 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "senior-math-bs-textbook-sync",
-      "description": "北师大版高中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把北师大版高中数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。",
       "path": "skills/textbook-sync/senior-math-bs-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2389,7 +2389,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2421,7 +2421,7 @@
     },
     {
       "name": "senior-math-rja-textbook-sync",
-      "description": "人教A版高中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教A版高中数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。",
       "path": "skills/textbook-sync/senior-math-rja-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2433,13 +2433,13 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
     {
       "name": "senior-math-rjb-textbook-sync",
-      "description": "人教B版高中数学同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教B版高中数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。",
       "path": "skills/textbook-sync/senior-math-rjb-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2451,7 +2451,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2470,7 +2470,7 @@
     },
     {
       "name": "senior-physics-lk-textbook-sync",
-      "description": "鲁科版高中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把鲁科版高中物理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把物理教材同步变成现象-模型-证据-应用的清晰学习路径。",
       "path": "skills/textbook-sync/senior-physics-lk-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2482,7 +2482,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2501,7 +2501,7 @@
     },
     {
       "name": "senior-physics-rj-textbook-sync",
-      "description": "人教版高中物理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把人教版高中物理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把物理教材同步变成现象-模型-证据-应用的清晰学习路径。",
       "path": "skills/textbook-sync/senior-physics-rj-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2513,7 +2513,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     },
@@ -2545,7 +2545,7 @@
     },
     {
       "name": "senior-politics-tongbian-textbook-sync",
-      "description": "统编版高中政治同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
+      "description": "把统编版高中政治的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让道法/政治同步学习从背模板变成会读材料、会表达观点。",
       "path": "skills/textbook-sync/senior-politics-tongbian-textbook-sync/SKILL.md",
       "tags": [
         "senior",
@@ -2557,7 +2557,7 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
-        "enhanced",
+        "curated",
         "needs_user_input"
       ]
     }

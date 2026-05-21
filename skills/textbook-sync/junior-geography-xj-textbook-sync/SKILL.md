@@ -1,7 +1,7 @@
 ---
 name: "junior-geography-xj-textbook-sync"
-description: "湘教版初中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。 Workflow: junior_geography_xj_textbook_sync.run."
-version: "0.10.0"
+description: "把湘教版初中地理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让地理同步学习从背区域结论变成会读图、找证据、解释为什么。 Workflow: junior_geography_xj_textbook_sync.run."
+version: "0.14.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -15,18 +15,84 @@ metadata:
     subjects: ["地理"]
     abilities: ["教材同步", "图表分析"]
     scenarios: ["课前预习", "课后作业", "同步巩固", "单元复习", "错题巩固", "期中期末复习", "中考复习"]
-    quality_tier: "enhanced"
+    quality_tier: "curated"
     standalone_support: "needs_user_input"
-    public_release: "allowed"
+    public_release: "recommended"
     export_mode: "installable"
-    release_channel: "public"
+    release_channel: "recommended"
     requires_tools: ["context.load", "entitlement.check", "workflow.create", "practice.generate_items", "practice.grade_answers", "mistake.query_recent", "mistake.cluster", "report.aggregate_metrics", "plan.generate", "curriculum.resolve", "memory.write"]
     requires_data: ["教材版本", "年级", "册别/学期", "单元或知识点", "学习场景", "可选：错题/薄弱点/可用时间"]
 ---
 
 # 湘教版初中地理同步 Skill
 
-湘教版初中地理同步 Skill是面向课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。
+把湘教版初中地理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让地理同步学习从背区域结论变成会读图、找证据、解释为什么。
+
+## 这个 Skill 解决什么问题 / Problem
+
+把湘教版初中地理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让地理同步学习从背区域结论变成会读图、找证据、解释为什么。
+
+## 最适合 / Best For
+
+- 学生按湘教版初中地理做同步学习
+- 家长不知道怎么陪孩子预习、写作业或订正错题
+- 老师围绕教材单元快速生成课堂补充练习和复习任务
+- 独立 Hermes Agent 用户搭建教材同步学习助手
+
+## 不适合 / Not For
+
+- 逐字复刻教材正文、课后原题或受版权保护的教辅内容
+- 缺少年级、册别、单元或课题，却要求精准匹配教材进度
+- 考试作弊、代写作业或承诺押题命中
+- 只背地图和区域特征，不会读图表、比较和解释成因
+
+## 使用前请准备 / Inputs
+
+- 教材版本
+- 年级
+- 册别/学期
+- 单元、课题或知识点
+- 学习场景：课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习
+- 可选：学生薄弱点、最近错题、可用时间、希望题量或难度
+
+## 推荐工作流 / Recommended Workflow
+
+- 先确认教材版本、年级、册别、单元和使用场景；信息缺失时只追问关键项。
+- 定位本次学习目标和前置基础，重点关注地图判读、区域认知、图表材料、成因链和人地关系表达。
+- 如果是课前预习，先看地图、区域材料或地理现象，再让学生说出位置、特征和证据。
+- 如果是作业或巩固，把读图定位、材料提取、区域比较、成因解释和迁移应用组合成短任务。
+- 如果是单元/期末复习，用地图类型、区域特征、成因链和人地协调问题串起单元；如果是错题巩固，区分定位错误、图例/数据漏读、区域特征混淆和因果链不完整。
+- 最后给出一个轻量反馈问题，并根据回答推荐下一步学习动作。
+
+## 输出格式 / Output Format
+
+- 教材定位
+- 本次目标
+- 核心知识点
+- 易错点提醒
+- 学习任务/练习题
+- 答案与自查标准
+- 下一步建议
+
+## 质量检查 / Quality Checks
+
+- 不能声称拥有完整教材原文；无法确认时请用户提供目录、课题、照片或题目文本。
+- 练习题必须为原创或基于用户提供内容改写，并明确标注答案或自查标准。
+- 任务量要适合年级和可用时间，小学生尤其避免一次给太多题。
+- 输出必须可直接执行，不只给抽象建议。
+- 凡是根据常见教材进度推断的内容，都要说明“请以老师课堂进度或用户提供目录为准”。
+
+## 没有平台工具时 / Standalone Fallback
+
+- 没有教材库时，让用户输入目录、单元标题、课文标题、知识点或拍照转写后的题干。
+- 没有题库时，由 Agent 生成原创练习，并附答案、解析和难度标注。
+- 没有学情数据时，先按基础/标准/提高三档给任务，再根据学生反馈调整。
+
+## 示例提示 / Example Prompts
+
+- 湘教版初中地理，七年级上册第一单元，帮我做 15 分钟课前预习。
+- 湘教版初中地理同步，七年级上册第一单元，孩子最近地图题容易定位错，综合题成因链写不完整，生成一组错题追练。
+- 按湘教版初中地理做单元复习，年级是七年级，册别是上册，请给我知识点、易错点和原创练习。
 
 ## 适用场景 / When To Use
 
@@ -71,16 +137,16 @@ metadata:
 - Stages: `junior`
 - Subjects: `地理`
 - Abilities: `教材同步`, `图表分析`
-- Quality Tier: `enhanced`
+- Quality Tier: `curated`
 - Standalone Support: `needs_user_input`
-- Public Release: `allowed`
+- Public Release: `recommended`
 - Requires Tools: `context.load`, `entitlement.check`, `workflow.create`, `practice.generate_items`, `practice.grade_answers`, `mistake.query_recent`, `mistake.cluster`, `report.aggregate_metrics`, `plan.generate`, `curriculum.resolve`, `memory.write`
 - Requires Data: `教材版本`, `年级`, `册别/学期`, `单元或知识点`, `学习场景`, `可选：错题/薄弱点/可用时间`
 - Export Mode: `installable`
-- Release Channel: `public`
+- Release Channel: `recommended`
 
 成熟度备注：
-- 已收缩为产品级能力包，年级、册别、单元、知识点和难度通过参数传入。
+- 已按精品 Skill 标准补充边界、输入、工作流、输出格式和示例。
 
 ## 参数化使用 / Parameters
 

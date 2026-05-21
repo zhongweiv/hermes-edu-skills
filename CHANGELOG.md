@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.14.0 - 2026-05-21
+
+- Curates the remaining 21 public textbook-sync Skills.
+- Adds stronger geography, history, and politics textbook-sync workflows around maps, source/material evidence, causality, concept use, and structured expression.
+- Upgrades senior textbook-sync Skills so同步学习、单元复习、错题巩固 and exam-oriented consolidation stay unit-aligned and independently usable.
+- Completes curated coverage for all public installable textbook-sync Skills.
+
 ## 0.13.0 - 2026-05-21
 
 - Curates the eighth public tail batch for daily-practice, exam-prep, and teacher-tools Skills.
