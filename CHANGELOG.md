@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.16.4 - 2026-05-21
+
+- Strengthens the Hermes Edu activation prompt to explicitly search the installed `hermes-edu-skills` Skill Pack before answering education-related requests.
+- Adds dynamic installable Skill count and category map to the generated activation prompt.
+- Documents that the prompt now asks Hermes to select from `hermes-edu-skills` first, instead of checking Skills generically.
+
 ## 0.16.3 - 2026-05-21
 
 - Adds `hermes-edu-skills prompt` to print a project-level Hermes Edu Skills activation prompt.

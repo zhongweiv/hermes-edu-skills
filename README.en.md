@@ -146,13 +146,13 @@ Method 1: First-class CLI install (recommended)
 npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 ```
 
-To help Hermes inspect education Skills more proactively, generate a project-level activation prompt during install:
+To make Hermes search the `hermes-edu-skills` Skill Pack before answering education questions directly, generate a project-level activation prompt during install:
 
 ```bash
 npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --with-prompt
 ```
 
-By default, this writes `HERMES.md` in the current directory. If the file already exists, the installer will not overwrite it. Run `npx hermes-edu-skills prompt` to inspect the prompt and merge it into your existing project instructions.
+By default, this writes `HERMES.md` in the current directory. If the file already exists, the installer will not overwrite it. Run `npx hermes-edu-skills prompt` to inspect the prompt and merge it into your existing project instructions. The prompt includes the current installable Skill count and category map, and explicitly tells Hermes to search `hermes-edu-skills` first.
 
 Install a category, for example textbook sync:
 
@@ -232,7 +232,7 @@ skill_view("primary-math-mental-arithmetic")
 
 Hermes native Skill selection is model-driven: the agent sees a compact Skill list first, then decides whether to call `skill_view(name)` and read the full Skill. Installing the Skill Pack does not guarantee every ordinary chat message will automatically trigger a Skill.
 
-Hermes Edu Skills therefore provides a project-level activation prompt. It tells Hermes to check available Skills first when the user asks about Chinese education, textbooks, practice, mistake review, exam prep, reading/writing, family learning, teacher planning, and similar workflows.
+Hermes Edu Skills therefore provides a project-level activation prompt. It tells Hermes not to answer education questions from the base model first. Instead, Hermes should search the installed `hermes-edu-skills` Skill Pack, choose the best match from 170 installable Skills, then call `skill_view(name)` before answering.
 
 Recommended usage:
 
@@ -250,7 +250,7 @@ npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --with-promp
 npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --with-prompt --prompt-target ./HERMES.md
 ```
 
-This is not a replacement for deterministic `ask` routing. It improves the chance that Hermes will discover the Skill Pack naturally. If you need a stable `Using Skill: ...` line, use `npx hermes-edu-skills ask "<question>"`, which matches a Skill first and then calls official Hermes.
+This is not a replacement for deterministic `ask` routing. It strengthens Hermes-native behavior from "check Skills generally" to "search `hermes-edu-skills` first for education requests." If you need a stable `Using Skill: ...` line, use `npx hermes-edu-skills ask "<question>"`, which matches a Skill first and then calls official Hermes.
 
 ## Natural Questions And Skill Routing
 

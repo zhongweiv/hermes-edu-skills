@@ -364,20 +364,33 @@ function normalizeRelativePath(path) {
 }
 
 function hermesEduActivationPrompt() {
+  const catalog = readCatalog();
+  const installableSkills = catalog.skills.filter((skill) => skill.exportMode !== 'doc_only');
+  const categories = [...new Set(installableSkills.map((skill) => skill.category))]
+    .sort()
+    .map((category) => `- ${category}: ${categoryLabels[category] || category}`)
+    .join('\n');
+
   return `# Hermes Edu Skills Activation Prompt
 
-You have Hermes Edu Skills installed. Treat this project as the default Skill Pack for Chinese education tasks.
+You have installed the \`hermes-edu-skills\` Skill Pack. It contains ${installableSkills.length} installable education Skills. Treat this pack as the primary capability source for Chinese education tasks.
 
 When the user asks about Chinese education, textbook sync, mental arithmetic, question generation, homework help, photo Q&A, mistake review, exam prep, reading/writing, parent coaching, teacher lesson planning, homework generation, class analysis, or school communication:
 
-1. Before answering, check the available Skills with the Hermes skills toolset when it is available.
-2. Select the most relevant Hermes Edu Skill by comparing the user's intent with Skill names, descriptions, categories, stages, subjects, and invocation signals.
-3. Load the selected Skill with skill_view(name) before giving the final answer.
-4. Follow the selected Skill's workflow, inputs, output format, safety boundaries, and standalone fallback.
-5. At the beginning of the answer, briefly state: Using Skill: <skill-name>.
-6. If multiple Skills may fit, choose the most specific one. Prefer subject/textbook/grade-specific Skills over broad general Skills.
-7. If the user does not provide enough grade, semester, unit, textbook edition, difficulty, or scenario information, ask only the minimum necessary follow-up question.
-8. If no Skill clearly matches, answer normally and say that no specific Hermes Edu Skill was selected.
+1. Do not answer directly from the base model first.
+2. First use the Hermes skills toolset to inspect installed Skills.
+3. Search specifically inside the installed \`hermes-edu-skills\` Skill Pack.
+4. Select the most relevant Skill from the ${installableSkills.length} Hermes Edu Skills by comparing the user's intent with Skill names, descriptions, categories, stages, subjects, and invocation signals.
+5. Load the selected Skill with \`skill_view(name)\` before giving the final answer.
+6. Follow that Skill's workflow, inputs, output format, quality checks, safety boundaries, and standalone fallback.
+7. Start the answer with: \`Using Skill: <skill-name>\`.
+8. If multiple Skills may fit, choose the most specific one. Prefer subject/textbook/grade-specific Skills over broad general Skills.
+9. If the user does not provide enough grade, semester, unit, textbook edition, difficulty, or scenario information, ask only the minimum necessary follow-up question.
+10. If no \`hermes-edu-skills\` Skill clearly matches, say no specific Hermes Edu Skill was selected, then answer normally.
+
+Available Hermes Edu category map:
+
+${categories}
 
 High-signal routing examples:
 
@@ -387,6 +400,16 @@ High-signal routing examples:
 - "给孩子制定一周学习计划" -> agent-study-plan
 - "老师备一节初中数学课" -> teacher-math-lesson-planning
 - "生成一份英语阅读训练" -> primary-english-reading, junior-english-quick-practice, or senior-english-quick-practice according to stage
+
+Routing priority:
+
+- Textbook edition, grade, semester, unit, lesson, or textbook-sync requests -> prefer \`textbook-sync\`.
+- Short daily exercises, drills, dictation, recitation, vocabulary, mental arithmetic, or quick practice -> prefer \`daily-practice\`.
+- Study plan, mistake review, homework companion, photo question, Socratic tutoring, learning report, or habit building -> prefer \`learning-core\`.
+- Exam, final review, Zhongkao, Gaokao, CET, IELTS, TOEFL, civil-service, or teacher-certification requests -> prefer \`exam-prep\`.
+- Lesson planning, homework generation, unit review, class analysis, or parent report for teachers -> prefer \`teacher-tools\`.
+- Parent-child learning, family routines, screen-time balance, school communication, or emotion support -> prefer \`family-education\`.
+- Reading, writing, composition, essay, academic writing, or reading comprehension -> prefer \`reading-writing\`.
 
 If the Hermes skills toolset is not available in the current session, tell the user to start Hermes with skills enabled, for example:
 
