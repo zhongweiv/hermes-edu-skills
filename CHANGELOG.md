@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Defines a release strategy so documentation-only and maintenance changes can be committed without creating a new version every time.
+
 ## 0.11.0 - 2026-05-21
 
 - Adds first-class CLI binaries: `hermes-edu-skills` and `hermes-edu`.
