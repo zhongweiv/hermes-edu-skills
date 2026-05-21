@@ -38,7 +38,7 @@ If you are building an AI learning assistant, AI teacher, curriculum tool, famil
 | Core scenarios? | Textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, and teacher workflows. |
 | Why not thousands of files? | Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of repetitive Skills. |
 | Who is it for? | Hermes Agent users, education AI developers, teachers, curriculum researchers, schools, and institutions. |
-| How do I start? | Install into Hermes Agent by default; use `agent:install -- --tool <tool>` only when targeting other tools. |
+| How do I start? | Use `npx hermes-edu-skills install hermes` by default; source mode still supports `npm run install:hermes`. |
 
 ## Why This Project Matters
 
@@ -94,32 +94,44 @@ We are open-sourcing reusable education Agent Skill design so developers, teache
 
 ## Default: Hermes Agent
 
-Hermes Agent is the default target for Hermes Edu Skills. The repository's `skills/` directory is the canonical Skill source and does not need conversion before Hermes loads it.
+Hermes Agent is the default target for Hermes Edu Skills. The repository's `skills/` directory is the canonical Skill source and does not need conversion before Hermes loads it. Prefer the first-class CLI for everyday use; source-mode commands remain available when running from a cloned GitHub repository.
 
-Clone the repository:
+If your environment cannot resolve the package through `npx` yet, use the source-mode commands below.
 
-```bash
-git clone https://github.com/zhongweiv/hermes-edu-skills.git
-cd hermes-edu-skills
-npm run validate
-```
-
-Install the Skill Pack into Hermes Agent:
+Fast install:
 
 ```bash
-npm run install:hermes -- --config ~/.hermes/config.yaml
+npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 ```
 
 Install one Skill into Hermes Agent:
 
 ```bash
-npm run install:hermes -- --skill agent-study-plan --config ~/.hermes/config.yaml
+npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
+```
+
+Browse and search before installing:
+
+```bash
+npx hermes-edu-skills list
+npx hermes-edu-skills list textbook-sync
+npx hermes-edu-skills search mistake
+npx hermes-edu-skills info agent-mistake-review
+```
+
+Source mode:
+
+```bash
+git clone https://github.com/zhongweiv/hermes-edu-skills.git
+cd hermes-edu-skills
+npm run validate
+npm run install:hermes -- --config ~/.hermes/config.yaml
 ```
 
 Print the Hermes config snippet without writing a file:
 
 ```bash
-npm run install:hermes
+npx hermes-edu-skills install hermes
 ```
 
 Then verify in Hermes:
@@ -139,24 +151,29 @@ skill_view("primary-math-mental-arithmetic")
 
 ## Install A Single Skill
 
-Many users only want to try one capability first instead of installing the full Skill Pack. Every install/export command supports `--skill <slug>`. You can pass it multiple times or use a comma-separated list.
+Many users only want to try one capability first instead of installing the full Skill Pack. The first-class CLI lets you place the Skill name directly after the tool name; advanced mode still supports `--skill <slug>`, repeated flags, and comma-separated lists.
 
 | Target | Command |
 | --- | --- |
-| Hermes single Skill | `npm run install:hermes -- --skill agent-study-plan --config ~/.hermes/config.yaml` |
-| OpenClaw single Skill | `npm run install:openclaw -- --skill primary-math-mental-arithmetic` |
-| Codex single Skill | `npm run install:codex -- --skill agent-socratic-tutor` |
-| Claude Code single Skill | `npm run install:claude -- --skill agent-study-plan` |
-| Cursor single Skill | `npm run install:cursor -- --workspace /path/to/project --skill agent-study-plan` |
-| Generic Agent single Skill | `npm run export:generic -- --skill agent-study-plan --target ./dist/one-skill` |
+| Hermes single Skill | `npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml` |
+| OpenClaw single Skill | `npx hermes-edu-skills install openclaw primary-math-mental-arithmetic` |
+| Codex single Skill | `npx hermes-edu-skills install codex agent-socratic-tutor` |
+| Claude Code single Skill | `npx hermes-edu-skills install claude agent-study-plan` |
+| Cursor single Skill | `npx hermes-edu-skills install cursor agent-study-plan --workspace /path/to/project` |
+| Generic Agent single Skill | `npx hermes-edu-skills export generic agent-study-plan --target ./dist/one-skill` |
 
 Install multiple Skills at once:
 
 ```bash
-npm run install:openclaw -- --skill agent-study-plan,agent-mistake-review
+npx hermes-edu-skills install openclaw agent-study-plan,agent-mistake-review
 ```
 
-If you are unsure about the slug, open the Skill table in this README or search `slug` in `catalog.json`.
+If you are unsure about the slug, search first:
+
+```bash
+npx hermes-edu-skills search study-plan
+npx hermes-edu-skills info agent-study-plan
+```
 
 ## Export To Other AI Tools Or Agents
 
@@ -164,23 +181,24 @@ If you are not using Hermes Agent, you can convert this Skill Pack into layouts 
 
 | Target Tool | Command | Output / Install Location |
 | --- | --- | --- |
-| OpenClaw | `npm run install:openclaw` | `~/.openclaw/skills/<skill-name>/SKILL.md` |
-| Codex | `npm run install:codex` | `$CODEX_HOME/skills` or `~/.codex/skills` |
-| Claude Code | `npm run install:claude` | `~/.claude/skills/<skill-name>/SKILL.md` |
-| Claude Code project scope | `npm run install:claude -- --workspace .` | `.claude/skills/<skill-name>/SKILL.md` |
-| Cursor | `npm run install:cursor -- --workspace /path/to/project` | `.cursor/rules/*.mdc` plus `.cursor/hermes-edu-skills` |
-| Generic Agent | `npm run export:generic` | `AGENT_SKILL_PACK.json` plus `<skill-name>/SKILL.md` |
+| OpenClaw | `npx hermes-edu-skills install openclaw` | `~/.openclaw/skills/<skill-name>/SKILL.md` |
+| Codex | `npx hermes-edu-skills install codex` | `$CODEX_HOME/skills` or `~/.codex/skills` |
+| Claude Code | `npx hermes-edu-skills install claude` | `~/.claude/skills/<skill-name>/SKILL.md` |
+| Claude Code project scope | `npx hermes-edu-skills install claude --workspace .` | `.claude/skills/<skill-name>/SKILL.md` |
+| Cursor | `npx hermes-edu-skills install cursor --workspace /path/to/project` | `.cursor/rules/*.mdc` plus `.cursor/hermes-edu-skills` |
+| Generic Agent | `npx hermes-edu-skills export generic` | `AGENT_SKILL_PACK.json` plus `<skill-name>/SKILL.md` |
 
 Convert to OpenClaw format without installing into the default location:
 
 ```bash
-npm run export:openclaw
+npx hermes-edu-skills export openclaw
 ```
 
-Export only one category, for example textbook sync. Each category name shows the command-line argument. Chinese aliases such as `--category 教材同步` are also accepted:
+Export only one category, for example textbook sync. Each category name shows the command-line argument. Chinese aliases such as `教材同步` are also accepted:
 
 ```bash
-npm run export:openclaw -- --category textbook-sync
+npx hermes-edu-skills export openclaw textbook-sync
+npx hermes-edu-skills export openclaw 教材同步
 ```
 
 Common category arguments:
@@ -200,10 +218,10 @@ Common category arguments:
 Include doc-only design examples:
 
 ```bash
-npm run export:generic -- --include-examples
+npx hermes-edu-skills export generic --include-examples
 ```
 
-Advanced command form remains available for integrations that need dynamic tool or target selection:
+Source mode and advanced command form remain available for integrations that need dynamic tool or target selection:
 
 ```bash
 npm run agent:install -- --tool hermes --skill agent-study-plan --config ~/.hermes/config.yaml
@@ -566,10 +584,10 @@ Validation checks:
 
 ## Compatibility Notes
 
-- Hermes Agent: use `npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml` to update `skills.external_dirs`.
-- OpenClaw / Codex / Claude Code: use `npm run agent:install -- --tool <tool>` to export a flat directory where every Skill is `<skill-name>/SKILL.md`.
-- Cursor: use `npm run agent:install -- --tool cursor --workspace <project>` to generate `.cursor/rules/*.mdc` plus a local Skill Pack copy.
-- Other agents: use `npm run agent:convert -- --tool generic-agent --target <dir>`, then connect the exported directory to the target Agent's Skill / prompt / tool registry.
+- Hermes Agent: use `npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml` to update `skills.external_dirs`.
+- OpenClaw / Codex / Claude Code: use `npx hermes-edu-skills install <tool>` to export a flat directory where every Skill is `<skill-name>/SKILL.md`.
+- Cursor: use `npx hermes-edu-skills install cursor --workspace <project>` to generate `.cursor/rules/*.mdc` plus a local Skill Pack copy.
+- Other agents: use `npx hermes-edu-skills export generic --target <dir>`, then connect the exported directory to the target Agent's Skill / prompt / tool registry.
 - Every Skill is a standalone readable `SKILL.md` file that you can inspect, adapt, or connect to your own Agent.
 - Workflow names inside some Skills are suggested interfaces; actual execution depends on your Hermes tools and runtime environment.
 

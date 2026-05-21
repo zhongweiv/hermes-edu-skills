@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.0 - 2026-05-21
+
+- Adds first-class CLI binaries: `hermes-edu-skills` and `hermes-edu`.
+- Adds short positional commands such as `install hermes agent-study-plan` and `export openclaw textbook-sync`.
+- Adds discovery commands: `list`, `search`, and `info`.
+- Keeps existing npm script commands for source-mode and backward compatibility.
+
 ## 0.10.6 - 2026-05-21
 
 - Updates the English README so category table cells prioritize exact English command category names.

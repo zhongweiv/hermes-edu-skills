@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,6 +10,29 @@ const skillsRoot = join(root, 'skills');
 
 const flatSkillTools = new Set(['openclaw', 'codex', 'claude-code', 'generic-agent']);
 const supportedTools = new Set(['hermes', 'openclaw', 'codex', 'claude-code', 'cursor', 'generic-agent']);
+const commandAliases = {
+  add: 'install',
+  convert: 'convert',
+  export: 'export',
+  help: 'help',
+  i: 'install',
+  info: 'info',
+  install: 'install',
+  list: 'list',
+  ls: 'list',
+  search: 'search',
+};
+
+const toolAliases = {
+  claude: 'claude-code',
+  'claude-code': 'claude-code',
+  codex: 'codex',
+  cursor: 'cursor',
+  generic: 'generic-agent',
+  'generic-agent': 'generic-agent',
+  hermes: 'hermes',
+  openclaw: 'openclaw',
+};
 
 const categoryLabels = {
   'career-learning': 'Career Learning',
@@ -81,6 +106,13 @@ function usage() {
   console.log(`Hermes Edu Skills Agent Pack
 
 Usage:
+  hermes-edu-skills install <hermes|openclaw|codex|claude|cursor|generic> [skill-or-category] [options]
+  hermes-edu-skills export <openclaw|codex|claude|cursor|generic> [skill-or-category] [options]
+  hermes-edu-skills list [category]
+  hermes-edu-skills search <keyword>
+  hermes-edu-skills info <skill>
+
+Source-mode usage:
   node scripts/agent-pack.mjs install --tool <hermes|openclaw|codex|claude-code|cursor|generic-agent> [options]
   node scripts/agent-pack.mjs convert --tool <openclaw|codex|claude-code|cursor|generic-agent> --target <path> [options]
 
@@ -90,17 +122,17 @@ Compatibility aliases:
   node scripts/agent-pack.mjs export --target <path> [--format agent-skills|openclaw|codex|claude-code|cursor|flat] [--dry-run]
 
 Examples:
-  npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml
-  npm run agent:install -- --tool hermes --skill agent-study-plan --config ~/.hermes/config.yaml
-  npm run agent:install -- --tool openclaw
-  npm run agent:install -- --tool openclaw --skill primary-math-mental-arithmetic
-  npm run agent:install -- --tool codex
-  npm run agent:install -- --tool claude-code --workspace .
-  npm run agent:install -- --tool cursor --workspace /path/to/project
-  npm run agent:convert -- --tool openclaw --target ./dist/openclaw-skills
-  npm run agent:convert -- --tool generic-agent --skill agent-study-plan --target ./dist/one-skill
-  npm run agent:convert -- --tool openclaw --category textbook-sync --target ./dist/textbook-sync-skills
-  npm run agent:convert -- --tool openclaw --category 教材同步 --target ./dist/textbook-sync-skills
+  npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
+  npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
+  npx hermes-edu-skills install openclaw textbook-sync
+  npx hermes-edu-skills install codex agent-socratic-tutor
+  npx hermes-edu-skills install claude --workspace .
+  npx hermes-edu-skills install cursor --workspace /path/to/project
+  npx hermes-edu-skills export openclaw textbook-sync --target ./dist/textbook-sync-skills
+  npx hermes-edu-skills export generic agent-study-plan --target ./dist/one-skill
+  npx hermes-edu-skills list textbook-sync
+  npx hermes-edu-skills search 错题
+  npx hermes-edu-skills info agent-mistake-review
 
 Short npm commands:
   npm run install:hermes
@@ -127,7 +159,8 @@ Category slugs:
 }
 
 function parseArgs(argv) {
-  const [command, ...rest] = argv;
+  const [rawCommand, ...rest] = argv;
+  const command = rawCommand ? commandAliases[rawCommand] || rawCommand : '';
   const args = {
     command,
     categories: [],
@@ -138,6 +171,7 @@ function parseArgs(argv) {
     skills: [],
     target: '',
     tool: '',
+    positionals: [],
     workspace: '',
   };
 
@@ -184,11 +218,53 @@ function parseArgs(argv) {
       args.workspace = arg.slice('--workspace='.length);
     } else if (arg === '--help' || arg === '-h') {
       args.command = 'help';
+    } else if (!arg.startsWith('-')) {
+      args.positionals.push(arg);
     } else {
       throw new Error(`Unknown argument: ${arg}`);
     }
   }
 
+  return applyPositionalArgs(args);
+}
+
+function normalizeTool(value) {
+  return toolAliases[value] || toolAliases[value.toLowerCase()] || value.toLowerCase();
+}
+
+function isCategorySelector(value) {
+  const normalized = normalizeCategory(value);
+  return Object.prototype.hasOwnProperty.call(categoryLabels, normalized);
+}
+
+function addSelector(args, value) {
+  const selectors = value.split(',').map((item) => item.trim()).filter(Boolean);
+  for (const selector of selectors) {
+    if (isCategorySelector(selector)) {
+      args.categories.push(selector);
+    } else {
+      args.skills.push(selector);
+    }
+  }
+}
+
+function applyPositionalArgs(args) {
+  const positionals = [...args.positionals];
+  if (['install', 'convert', 'export'].includes(args.command)) {
+    if (positionals.length > 0 && !args.tool) {
+      const maybeTool = normalizeTool(positionals[0]);
+      if (supportedTools.has(maybeTool)) {
+        args.tool = maybeTool;
+        positionals.shift();
+      }
+    }
+
+    for (const positional of positionals) {
+      addSelector(args, positional);
+    }
+  }
+
+  args.positionals = positionals;
   return args;
 }
 
@@ -260,10 +336,110 @@ function selectedSkills(args) {
   return selected;
 }
 
+function skillSearchText(skill) {
+  return [
+    skill.name,
+    skill.slug,
+    skill.title,
+    skill.category,
+    ...(skill.subjects || []),
+    ...(skill.abilities || []),
+    ...(skill.scenarios || []),
+    ...(skill.textbookVersions || []),
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+}
+
+function skillLine(skill) {
+  return `${skill.name}  ${skill.title || ''}  [${skill.category}]`;
+}
+
+function listCommand(args) {
+  const catalog = readCatalog();
+  const selector = args.positionals[0] || args.categories[0] || '';
+
+  if (!selector) {
+    const counts = new Map();
+    for (const skill of catalog.skills) {
+      if (!args.includeExamples && skill.exportMode === 'doc_only') continue;
+      counts.set(skill.category, (counts.get(skill.category) || 0) + 1);
+    }
+
+    console.log('Categories:');
+    for (const [category, label] of Object.entries(categoryLabels)) {
+      const count = counts.get(category) || 0;
+      if (count > 0) console.log(`  ${category.padEnd(18)} ${String(count).padStart(3)}  ${label}`);
+    }
+    console.log('');
+    console.log('Try: hermes-edu-skills list textbook-sync');
+    return;
+  }
+
+  const category = normalizeCategory(selector);
+  if (!Object.prototype.hasOwnProperty.call(categoryLabels, category)) {
+    throw new Error(`Unknown category: ${selector}`);
+  }
+
+  const skills = catalog.skills.filter((skill) => {
+    if (!args.includeExamples && skill.exportMode === 'doc_only') return false;
+    return skill.category === category;
+  });
+
+  console.log(`${category} - ${categoryLabels[category]} (${skills.length})`);
+  for (const skill of skills) console.log(`  ${skillLine(skill)}`);
+}
+
+function searchCommand(args) {
+  const query = args.positionals.join(' ').trim();
+  if (!query) throw new Error('Missing search keyword. Example: hermes-edu-skills search 错题');
+  const catalog = readCatalog();
+  const lowerQuery = query.toLowerCase();
+  const matches = catalog.skills
+    .filter((skill) => (args.includeExamples || skill.exportMode !== 'doc_only') && skillSearchText(skill).includes(lowerQuery))
+    .slice(0, 30);
+
+  if (!matches.length) {
+    console.log(`No Skills found for: ${query}`);
+    return;
+  }
+
+  console.log(`Search results for "${query}" (${matches.length}${matches.length === 30 ? '+' : ''}):`);
+  for (const skill of matches) console.log(`  ${skillLine(skill)}`);
+}
+
+function infoCommand(args) {
+  const selector = args.positionals[0] || args.skills[0] || '';
+  if (!selector) throw new Error('Missing Skill name. Example: hermes-edu-skills info agent-mistake-review');
+  const catalog = readCatalog();
+  const skill = catalog.skills.find((item) => item.name === selector || item.slug === selector);
+
+  if (!skill) {
+    const similar = catalog.skills
+      .filter((item) => skillSearchText(item).includes(selector.toLowerCase()))
+      .slice(0, 8)
+      .map((item) => item.name);
+    throw new Error(`Skill not found: ${selector}${similar.length ? `. Similar: ${similar.join(', ')}` : ''}`);
+  }
+
+  console.log(skill.name);
+  console.log(`  Title: ${skill.title || '-'}`);
+  console.log(`  Category: ${skill.category} (${categoryLabels[skill.category] || skill.category})`);
+  console.log(`  Stage: ${(skill.stages || []).join(', ') || '-'}`);
+  console.log(`  Subject: ${(skill.subjects || []).join(', ') || '-'}`);
+  console.log(`  Ability: ${(skill.abilities || []).join(', ') || '-'}`);
+  console.log(`  Path: ${skill.path}`);
+  console.log('');
+  console.log(`Install: hermes-edu-skills install hermes ${skill.name}`);
+  console.log(`Export:  hermes-edu-skills export openclaw ${skill.name}`);
+}
+
 function ensureTool(tool) {
-  if (!tool) throw new Error('Missing --tool. Supported tools: hermes, openclaw, codex, claude-code, cursor, generic-agent.');
-  if (!supportedTools.has(tool)) throw new Error(`Unsupported tool: ${tool}`);
-  return tool;
+  if (!tool) throw new Error('Missing tool. Supported tools: hermes, openclaw, codex, claude-code, cursor, generic-agent.');
+  const normalized = normalizeTool(tool);
+  if (!supportedTools.has(normalized)) throw new Error(`Unsupported tool: ${tool}`);
+  return normalized;
 }
 
 function defaultFlatTarget(tool, args) {
@@ -512,12 +688,18 @@ try {
     installTool(args);
   } else if (args.command === 'convert') {
     convertTool(args);
+  } else if (args.command === 'list') {
+    listCommand(args);
+  } else if (args.command === 'search') {
+    searchCommand(args);
+  } else if (args.command === 'info') {
+    infoCommand(args);
   } else if (args.command === 'install-hermes') {
     installHermes(args);
   } else if (args.command === 'install-openclaw') {
     installTool({ ...args, tool: 'openclaw' });
   } else if (args.command === 'export') {
-    convertTool({ ...args, tool: args.format || 'generic-agent' });
+    convertTool({ ...args, tool: args.tool || args.format || 'generic-agent' });
   } else {
     throw new Error(`Unknown command: ${args.command}`);
   }

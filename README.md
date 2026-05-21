@@ -38,7 +38,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent
 | 最核心的场景？ | 教材同步、备考复习、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师工具。 |
 | 为什么不是几千个文件？ | 年级、册别、单元、课时、知识点、难度都作为参数传入，避免把用户淹没在海量重复 Skill 中。 |
 | 谁适合用？ | Hermes Agent 用户、教育 AI 开发者、老师、教研人员、学校/机构团队。 |
-| 怎么开始？ | 默认安装到 Hermes Agent；需要其它工具时再使用 `agent:install -- --tool <tool>`。 |
+| 怎么开始？ | 默认使用 `npx hermes-edu-skills install hermes`；源码模式仍可使用 `npm run install:hermes`。 |
 
 ## 为什么值得关注
 
@@ -94,32 +94,44 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent
 
 ## 默认使用：Hermes Agent
 
-Hermes Edu Skills 的默认目标是 Hermes Agent。仓库中的 `skills/` 目录就是标准 Skill 源目录，不需要先转换格式。
+Hermes Edu Skills 的默认目标是 Hermes Agent。仓库中的 `skills/` 目录就是标准 Skill 源目录，不需要先转换格式。推荐优先使用正式 CLI；如果你是从 GitHub 源码运行，也可以继续使用下方源码模式命令。
 
-克隆仓库：
+如果你的环境暂时无法通过 `npx` 获取包，请直接使用后面的源码模式。
 
-```bash
-git clone https://github.com/zhongweiv/hermes-edu-skills.git
-cd hermes-edu-skills
-npm run validate
-```
-
-把 Skill Pack 安装到 Hermes Agent：
+最快安装：
 
 ```bash
-npm run install:hermes -- --config ~/.hermes/config.yaml
+npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 ```
 
 只安装一个 Skill 到 Hermes Agent：
 
 ```bash
-npm run install:hermes -- --skill agent-study-plan --config ~/.hermes/config.yaml
+npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
+```
+
+先浏览和搜索：
+
+```bash
+npx hermes-edu-skills list
+npx hermes-edu-skills list textbook-sync
+npx hermes-edu-skills search 错题
+npx hermes-edu-skills info agent-mistake-review
+```
+
+源码模式：
+
+```bash
+git clone https://github.com/zhongweiv/hermes-edu-skills.git
+cd hermes-edu-skills
+npm run validate
+npm run install:hermes -- --config ~/.hermes/config.yaml
 ```
 
 如果你只想先查看需要写入的 Hermes 配置：
 
 ```bash
-npm run install:hermes
+npx hermes-edu-skills install hermes
 ```
 
 然后在 Hermes 中验证：
@@ -139,24 +151,29 @@ skill_view("primary-math-mental-arithmetic")
 
 ## 只安装单个 Skill
 
-很多用户第一次只想试一个能力，不需要把完整 Skill Pack 全部安装。所有安装/导出命令都支持 `--skill <slug>`，可以多次传入，也可以用逗号分隔。
+很多用户第一次只想试一个能力，不需要把完整 Skill Pack 全部安装。正式 CLI 支持把 Skill 名直接放在工具名后面；高级模式仍支持 `--skill <slug>`，可以多次传入，也可以用逗号分隔。
 
 | 目标 | 命令 |
 | --- | --- |
-| Hermes 单个 Skill | `npm run install:hermes -- --skill agent-study-plan --config ~/.hermes/config.yaml` |
-| OpenClaw 单个 Skill | `npm run install:openclaw -- --skill primary-math-mental-arithmetic` |
-| Codex 单个 Skill | `npm run install:codex -- --skill agent-socratic-tutor` |
-| Claude Code 单个 Skill | `npm run install:claude -- --skill agent-study-plan` |
-| Cursor 单个 Skill | `npm run install:cursor -- --workspace /path/to/project --skill agent-study-plan` |
-| 通用 Agent 单个 Skill | `npm run export:generic -- --skill agent-study-plan --target ./dist/one-skill` |
+| Hermes 单个 Skill | `npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml` |
+| OpenClaw 单个 Skill | `npx hermes-edu-skills install openclaw primary-math-mental-arithmetic` |
+| Codex 单个 Skill | `npx hermes-edu-skills install codex agent-socratic-tutor` |
+| Claude Code 单个 Skill | `npx hermes-edu-skills install claude agent-study-plan` |
+| Cursor 单个 Skill | `npx hermes-edu-skills install cursor agent-study-plan --workspace /path/to/project` |
+| 通用 Agent 单个 Skill | `npx hermes-edu-skills export generic agent-study-plan --target ./dist/one-skill` |
 
 一次安装多个 Skill：
 
 ```bash
-npm run install:openclaw -- --skill agent-study-plan,agent-mistake-review
+npx hermes-edu-skills install openclaw agent-study-plan,agent-mistake-review
 ```
 
-如果不确定 slug，可以先在 README 的 Skill 表格中点击查看，或在 `catalog.json` 中搜索 `slug`。
+如果不确定 slug，可以先搜索：
+
+```bash
+npx hermes-edu-skills search 学习计划
+npx hermes-edu-skills info agent-study-plan
+```
 
 ## 导出给其它 AI 工具或 Agent
 
@@ -164,23 +181,24 @@ npm run install:openclaw -- --skill agent-study-plan,agent-mistake-review
 
 | 目标工具 | 命令 | 输出/安装位置 |
 | --- | --- | --- |
-| OpenClaw | `npm run install:openclaw` | `~/.openclaw/skills/<skill-name>/SKILL.md` |
-| Codex | `npm run install:codex` | `$CODEX_HOME/skills` 或 `~/.codex/skills` |
-| Claude Code | `npm run install:claude` | `~/.claude/skills/<skill-name>/SKILL.md` |
-| Claude Code 项目级 | `npm run install:claude -- --workspace .` | `.claude/skills/<skill-name>/SKILL.md` |
-| Cursor | `npm run install:cursor -- --workspace /path/to/project` | `.cursor/rules/*.mdc` + `.cursor/hermes-edu-skills` |
-| 通用 Agent | `npm run export:generic` | `AGENT_SKILL_PACK.json` + `<skill-name>/SKILL.md` |
+| OpenClaw | `npx hermes-edu-skills install openclaw` | `~/.openclaw/skills/<skill-name>/SKILL.md` |
+| Codex | `npx hermes-edu-skills install codex` | `$CODEX_HOME/skills` 或 `~/.codex/skills` |
+| Claude Code | `npx hermes-edu-skills install claude` | `~/.claude/skills/<skill-name>/SKILL.md` |
+| Claude Code 项目级 | `npx hermes-edu-skills install claude --workspace .` | `.claude/skills/<skill-name>/SKILL.md` |
+| Cursor | `npx hermes-edu-skills install cursor --workspace /path/to/project` | `.cursor/rules/*.mdc` + `.cursor/hermes-edu-skills` |
+| 通用 Agent | `npx hermes-edu-skills export generic` | `AGENT_SKILL_PACK.json` + `<skill-name>/SKILL.md` |
 
 只转换 OpenClaw 格式，不安装到默认目录：
 
 ```bash
-npm run export:openclaw
+npx hermes-edu-skills export openclaw
 ```
 
-只导出某一个分类，例如教材同步。分类名旁边会标出命令行参数；也可以直接传入中文别名，例如 `--category 教材同步`：
+只导出某一个分类，例如教材同步。分类名旁边会标出命令行参数；也可以直接传入中文别名，例如 `教材同步`：
 
 ```bash
-npm run export:openclaw -- --category textbook-sync
+npx hermes-edu-skills export openclaw textbook-sync
+npx hermes-edu-skills export openclaw 教材同步
 ```
 
 常用分类命令参数：
@@ -200,10 +218,10 @@ npm run export:openclaw -- --category textbook-sync
 包含设计参考类 examples：
 
 ```bash
-npm run export:generic -- --include-examples
+npx hermes-edu-skills export generic --include-examples
 ```
 
-高级写法仍然可用，适合需要动态指定工具或目标目录的集成场景：
+源码模式和高级写法仍然可用，适合需要动态指定工具或目标目录的集成场景：
 
 ```bash
 npm run agent:install -- --tool hermes --skill agent-study-plan --config ~/.hermes/config.yaml
@@ -566,10 +584,10 @@ npm run validate
 
 ## 兼容说明
 
-- Hermes Agent：推荐使用 `npm run agent:install -- --tool hermes --config ~/.hermes/config.yaml` 写入 `skills.external_dirs`。
-- OpenClaw / Codex / Claude Code：推荐使用 `npm run agent:install -- --tool <tool>` 导出扁平目录，每个 Skill 都是 `<skill-name>/SKILL.md`。
-- Cursor：推荐使用 `npm run agent:install -- --tool cursor --workspace <project>` 生成 `.cursor/rules/*.mdc` 和本地 Skill Pack。
-- 其它 Agent：推荐使用 `npm run agent:convert -- --tool generic-agent --target <dir>`，再把导出的目录接入目标 Agent 的 Skill / prompt / tool registry。
+- Hermes Agent：推荐使用 `npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml` 写入 `skills.external_dirs`。
+- OpenClaw / Codex / Claude Code：推荐使用 `npx hermes-edu-skills install <tool>` 导出扁平目录，每个 Skill 都是 `<skill-name>/SKILL.md`。
+- Cursor：推荐使用 `npx hermes-edu-skills install cursor --workspace <project>` 生成 `.cursor/rules/*.mdc` 和本地 Skill Pack。
+- 其它 Agent：推荐使用 `npx hermes-edu-skills export generic --target <dir>`，再把导出的目录接入目标 Agent 的 Skill / prompt / tool registry。
 - 每个 Skill 都是独立可读的 `SKILL.md`，可以直接用于学习、改造或接入自己的 Agent。
 - 部分 Skill 中的 workflow 名称是建议接口，具体执行能力取决于你的 Hermes 工具集和运行环境。
 
