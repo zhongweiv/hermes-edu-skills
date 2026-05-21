@@ -6,14 +6,14 @@ A China-focused open education Agent Skill Pack for textbook sync, exam prep, ph
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/Hermes%20Skills-177-blue)](catalog.json)
+[![Skills](https://img.shields.io/badge/Hermes%20Skills-170-blue)](catalog.json)
 [![Validate](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml)
 
 [中文文档](README.md) · [Skill Catalog](catalog.json) · [Discovery Index](.well-known/skills/index.json) · [Shineway](https://www.shineway.tech/)
 
-Hermes Edu Skills is a Chinese education Agent Skill Pack that can be recognized by Hermes Agent. It turns textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, teacher planning, and school communication into 177 browsable, installable, and reusable product-level Skills.
+Hermes Edu Skills is a Chinese education Agent Skill Pack that can be recognized by Hermes Agent. It turns textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, teacher planning, and school communication into 170 browsable, installable, and reusable product-level Skills.
 
-It currently includes 170 installable Hermes Skills and 7 design-reference examples. This is not a generic prompt collection; it is an Agent capability catalog organized around real education jobs, with invocation signals, target roles, parameter dimensions, usage boundaries, and Hermes-readable `SKILL.md` files.
+It currently includes 170 installable Hermes Skills. This is not a generic prompt collection; it is an Agent capability catalog organized around real education jobs, with invocation signals, target roles, parameter dimensions, usage boundaries, and Hermes-readable `SKILL.md` files.
 
 If you are building an AI learning assistant, AI teacher, curriculum tool, family-learning product, question-bank/mistake-review product, or simply want to give Hermes Agent a ready-to-use Chinese education capability set, this repository is designed to be a practical starting point. If it helps you, please give it a Star so more education AI developers can discover it.
 
@@ -34,7 +34,7 @@ If you are building an AI learning assistant, AI teacher, curriculum tool, famil
 | Question | Answer |
 | --- | --- |
 | What is this? | A China-focused education Agent Skill Pack for Hermes Agent Runtime. |
-| How many Skills? | 177 public Skills, including 170 installable Skills and 7 design examples. |
+| How many Skills? | 170 public Skills, all installable Hermes-compatible Skills. |
 | Core scenarios? | Textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, and teacher workflows. |
 | Why not thousands of files? | Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of repetitive Skills. |
 | Who is it for? | Hermes Agent users, education AI developers, teachers, curriculum researchers, schools, and institutions. |
@@ -65,7 +65,7 @@ If you are building an AI learning assistant, AI teacher, curriculum tool, famil
 | Education AI developer | [Project Structure](#project-structure), [Compatibility Notes](#compatibility-notes) | Reuse Skill structure, parameter design, and workflow naming. |
 | Teacher / curriculum researcher | [Teacher Tools](#teacher-tools), [Textbook Sync](#textbook-sync) | Study lesson planning, homework generation, unit review, and sync teaching patterns. |
 | Parent / family-learning product builder | [Family Education](#family-education), [Daily Practice](#daily-practice) | Build companionship, reading, habits, and daily practice scenarios. |
-| School / institution team | [Design Examples](#examples), [Exam Prep](#exam-prep) | Explore organization reports, class analysis, course packages, and review workflows. |
+| School / institution team | [Teacher Tools](#teacher-tools), [Exam Prep](#exam-prep) | Explore lesson planning, homework, class analysis, review, and teaching-support workflows. |
 
 ## Initiator And Maintainer
 
@@ -75,7 +75,7 @@ We are open-sourcing reusable education Agent Skill design so developers, teache
 
 ## Project Highlights
 
-- 177 clickable product-level `SKILL.md` files.
+- 170 clickable product-level `SKILL.md` files.
 - User-task-oriented categories: textbook sync, learning core, daily practice, exam prep, reading/writing, teacher tools, and family education.
 - Each Skill includes Hermes frontmatter, use cases, invocation signals, and workflow names.
 - Adds standalone availability marks and install-selector columns so users can see both the first-class CLI selector and the source-mode npm flag.
@@ -224,12 +224,6 @@ Common category install selectors:
 | Language Learning | `CLI: language-learning`<br>`source: --category language-learning` |
 | Career Learning | `CLI: career-learning`<br>`source: --category career-learning` |
 
-Include doc-only design examples:
-
-```bash
-npx hermes-edu-skills export generic --include-examples
-```
-
 Source mode and advanced command form remain available for integrations that need dynamic tool or target selection:
 
 ```bash
@@ -260,7 +254,6 @@ Start from these top-level categories. Each category still keeps a full clickabl
 | <a href="#family-education"><code>family-education</code></a><br>Family Education | <code>CLI: family-education</code><br><code>source: --category family-education</code> | Parent companionship, parent-child reading, homework routines, and family communication. | 8 |
 | <a href="#language-learning"><code>language-learning</code></a><br>Language Learning | <code>CLI: language-learning</code><br><code>source: --category language-learning</code> | Adult English, study-abroad exams, speaking, listening, and long-term language improvement. | 3 |
 | <a href="#career-learning"><code>career-learning</code></a><br>Career Learning | <code>CLI: career-learning</code><br><code>source: --category career-learning</code> | College, adult learning, career skills, and certification scenarios. | 7 |
-| <a href="#examples"><code>examples</code></a><br>Design Examples | <code>CLI: examples</code><br><code>source: --category examples</code> | Design references that usually require commercial data, organization reports, or tool adapters; not recommended as default installable entries. | 7 |
 
 ## Coverage
 
@@ -275,11 +268,10 @@ Start from these top-level categories. Each category still keeps a full clickabl
 | <a href="#family-education"><code>family-education</code></a><br>Family Education | <code>CLI: family-education</code><br><code>source: --category family-education</code> | Family Education | 8 |
 | <a href="#language-learning"><code>language-learning</code></a><br>Language Learning | <code>CLI: language-learning</code><br><code>source: --category language-learning</code> | Language Learning, English | 3 |
 | <a href="#career-learning"><code>career-learning</code></a><br>Career Learning | <code>CLI: career-learning</code><br><code>source: --category career-learning</code> | Computer Science, Career Education | 7 |
-| <a href="#examples"><code>examples</code></a><br>Design Examples | <code>CLI: examples</code><br><code>source: --category examples</code> | Institution Operations, School Management | 7 |
 
 ## All Skills
 
-The table below lists all 177 public Skills. The Category and Skill columns start with the exact English selector, followed by an English explanation; the Install Selector column shows both the first-class CLI selector and the source-mode npm flag.
+The table below lists all 170 public Skills. The Category and Skill columns start with the exact English selector, followed by an English explanation; the Install Selector column shows both the first-class CLI selector and the source-mode npm flag.
 
 ### <a id="textbook-sync"></a>Textbook Sync<br>教材同步
 
@@ -531,22 +523,6 @@ Install selector: <code>CLI: career-learning</code><br><code>source: --category 
 | <a href="skills/career-learning/adult-vocational-certificate/SKILL.md"><code>adult-vocational-certificate</code></a><br>Career Education workflow for Certification. Focus: Knowledge Memorization, Exam Sprint. | <code>CLI: adult-vocational-certificate</code><br><code>source: --skill adult-vocational-certificate</code> | ✓ | Adult | Career Education | - | Knowledge Memorization, Exam Sprint | Certification |
 | <a href="skills/career-learning/college-ai-foundation/SKILL.md"><code>college-ai-foundation</code></a><br>Computer Science workflow for Interest Learning. Focus: AI Foundations. | <code>CLI: college-ai-foundation</code><br><code>source: --skill college-ai-foundation</code> | ✓ | College<br>Adult | Computer Science | - | AI Foundations | Interest Learning |
 | <a href="skills/career-learning/college-cs-python/SKILL.md"><code>college-cs-python</code></a><br>Computer Science workflow for Career Skills. Focus: Programming. | <code>CLI: college-cs-python</code><br><code>source: --skill college-cs-python</code> | ✓ | College<br>Adult | Computer Science | - | Programming | Career Skills |
-
-### <a id="examples"></a>Design Examples<br>设计参考
-
-Design references that usually require commercial data, organization reports, or tool adapters; not recommended as default installable entries.
-
-Install selector: <code>CLI: examples</code><br><code>source: --category examples</code>
-
-| Skill | Install Selector | Standalone | Stage | Subject / Area | Textbook | Ability | Scenario |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/examples/institution-course-package/SKILL.md"><code>institution-course-package</code></a><br>Institution Operations workflow for Institution Course. Focus: Operations Analysis. | <code>CLI: institution-course-package</code><br><code>source: --skill institution-course-package</code><br><code>+ --include-examples</code> | - | Primary<br>Junior High<br>Senior High<br>Adult | Institution Operations | - | Operations Analysis | Institution Course |
-| <a href="skills/examples/school-teacher-usage/SKILL.md"><code>school-teacher-usage</code></a><br>School Management workflow for Data Analysis. Focus: Operations Analysis. | <code>CLI: school-teacher-usage</code><br><code>source: --skill school-teacher-usage</code><br><code>+ --include-examples</code> | - | Primary<br>Junior High<br>Senior High<br>Adult | School Management | - | Operations Analysis | Data Analysis |
-| <a href="skills/examples/institution-teacher-efficiency/SKILL.md"><code>institution-teacher-efficiency</code></a><br>Institution Operations workflow for Data Analysis. Focus: Operations Analysis. | <code>CLI: institution-teacher-efficiency</code><br><code>source: --skill institution-teacher-efficiency</code><br><code>+ --include-examples</code> | - | Primary<br>Junior High<br>Senior High<br>Adult | Institution Operations | - | Operations Analysis | Data Analysis |
-| <a href="skills/examples/school-grade-insight/SKILL.md"><code>school-grade-insight</code></a><br>School Management workflow for School Assessment. Focus: Operations Analysis. | <code>CLI: school-grade-insight</code><br><code>source: --skill school-grade-insight</code><br><code>+ --include-examples</code> | - | Primary<br>Junior High<br>Senior High<br>Adult | School Management | - | Operations Analysis | School Assessment |
-| <a href="skills/examples/school-resource-planning/SKILL.md"><code>school-resource-planning</code></a><br>School Management workflow for Operations Configuration. Focus: Operations Analysis. | <code>CLI: school-resource-planning</code><br><code>source: --skill school-resource-planning</code><br><code>+ --include-examples</code> | - | Primary<br>Junior High<br>Senior High<br>Adult | School Management | - | Operations Analysis | Operations Configuration |
-| <a href="skills/examples/institution-campus-dashboard/SKILL.md"><code>institution-campus-dashboard</code></a><br>Institution Operations workflow for Business Analysis. Focus: Operations Analysis. | <code>CLI: institution-campus-dashboard</code><br><code>source: --skill institution-campus-dashboard</code><br><code>+ --include-examples</code> | - | Primary<br>Junior High<br>Senior High<br>Adult | Institution Operations | - | Operations Analysis | Business Analysis |
-| <a href="skills/examples/institution-renewal-insight/SKILL.md"><code>institution-renewal-insight</code></a><br>Institution Operations workflow for Renewal Report. Focus: Operations Analysis. | <code>CLI: institution-renewal-insight</code><br><code>source: --skill institution-renewal-insight</code><br><code>+ --include-examples</code> | - | Primary<br>Junior High<br>Senior High<br>Adult | Institution Operations | - | Operations Analysis | Renewal Report |
 
 ## Project Structure
 

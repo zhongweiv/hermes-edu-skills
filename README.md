@@ -6,14 +6,14 @@ A China-focused open education Agent Skill Pack for textbook sync, exam prep, ph
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/Hermes%20Skills-177-blue)](catalog.json)
+[![Skills](https://img.shields.io/badge/Hermes%20Skills-170-blue)](catalog.json)
 [![Validate](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml)
 
 [English](README.en.md) · [Skill Catalog](catalog.json) · [Discovery Index](.well-known/skills/index.json) · [Shineway](https://www.shineway.tech/)
 
-Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent Skill Pack。它把教材同步、考试备考、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师备课和家校沟通，整理成 177 个可浏览、可安装、可二次开发的产品级 Skill。
+Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent Skill Pack。它把教材同步、考试备考、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师备课和家校沟通，整理成 170 个可浏览、可安装、可二次开发的产品级 Skill。
 
-当前包含 170 个可直接安装使用的 Hermes Skill，另有 7 个设计参考。它不是泛泛的 Prompt 合集，而是一套围绕“真实教育任务”组织的 Agent 能力目录：每个 Skill 都有触发信号、适用角色、参数维度、使用边界和 Hermes 可读取的 `SKILL.md`。
+当前包含 170 个可直接安装使用的 Hermes Skill。它不是泛泛的 Prompt 合集，而是一套围绕“真实教育任务”组织的 Agent 能力目录：每个 Skill 都有触发信号、适用角色、参数维度、使用边界和 Hermes 可读取的 `SKILL.md`。
 
 如果你正在做 AI 学习助手、AI 老师、教研工具、家长陪学产品、题库/错题产品，或想给 Hermes Agent 装上一套开箱即用的中文教育能力，这个仓库可以直接作为起点。觉得有帮助的话，欢迎 Star，它会帮助更多中文教育 AI 开发者更快找到这个项目。
 
@@ -34,7 +34,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent
 | 问题 | 答案 |
 | --- | --- |
 | 这是什么？ | 一套面向 Hermes Agent Runtime 的中文教育 Agent Skill Pack。 |
-| 现在有多少？ | 177 个公开 Skill，170 个可安装，7 个设计参考。 |
+| 现在有多少？ | 170 个公开 Skill，全部是可安装的 Hermes 兼容 Skill。 |
 | 最核心的场景？ | 教材同步、备考复习、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师工具。 |
 | 为什么不是几千个文件？ | 年级、册别、单元、课时、知识点、难度都作为参数传入，避免把用户淹没在海量重复 Skill 中。 |
 | 谁适合用？ | Hermes Agent 用户、教育 AI 开发者、老师、教研人员、学校/机构团队。 |
@@ -65,7 +65,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent
 | 教育 AI 开发者 | [项目结构](#项目结构)、[兼容说明](#兼容说明) | 复用 Skill 结构、参数设计和工作流命名。 |
 | 老师 / 教研人员 | [老师工具](#teacher-tools)、[教材同步](#textbook-sync) | 参考备课、作业生成、单元复习和同步教学设计。 |
 | 家长 / 家庭教育产品 | [家庭教育](#family-education)、[每日练习](#daily-practice) | 构建陪伴、阅读、习惯和每日训练场景。 |
-| 学校 / 教培机构 | [设计参考](#examples)、[考试备考](#exam-prep) | 了解组织报表、班级分析、课程包和复习产品形态。 |
+| 学校 / 教培机构 | [老师工具](#teacher-tools)、[考试备考](#exam-prep) | 了解备课、作业、班级分析、复习和教学支持产品形态。 |
 
 ## 发起与维护
 
@@ -75,7 +75,7 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent
 
 ## 项目亮点
 
-- 177 个可点击浏览的产品级 `SKILL.md`。
+- 170 个可点击浏览的产品级 `SKILL.md`。
 - 分类围绕用户任务组织：教材同步、学习核心、每日练习、考试备考、阅读写作、教师工具、家庭教育。
 - 每个 Skill 都包含 Hermes frontmatter、适用场景、调用信号和工作流名称。
 - 新增 Skill 独立使用标记和安装选择器列，同时标出正式 CLI 与源码模式应该复制的名字。
@@ -224,12 +224,6 @@ npx hermes-edu-skills export openclaw 教材同步
 | 语言学习 | `npx: language-learning`<br>`npm: --category language-learning` |
 | 成人与职业学习 | `npx: career-learning`<br>`npm: --category career-learning` |
 
-包含设计参考类 examples：
-
-```bash
-npx hermes-edu-skills export generic --include-examples
-```
-
 源码模式和高级写法仍然可用，适合需要动态指定工具或目标目录的集成场景：
 
 ```bash
@@ -260,7 +254,6 @@ npm run export:agents
 | <a href="#family-education"><code>family-education</code></a><br>家庭教育 | <code>npx: family-education</code><br><code>npm: --category family-education</code> | 面向家长陪伴、亲子阅读、作业习惯和家庭沟通。 | 8 |
 | <a href="#language-learning"><code>language-learning</code></a><br>语言学习 | <code>npx: language-learning</code><br><code>npm: --category language-learning</code> | 面向成人英语、出国考试、口语、听力和长期语言能力提升。 | 3 |
 | <a href="#career-learning"><code>career-learning</code></a><br>成人与职业学习 | <code>npx: career-learning</code><br><code>npm: --category career-learning</code> | 面向大学、成人学习、职业技能和考证场景。 | 7 |
-| <a href="#examples"><code>examples</code></a><br>设计参考 | <code>npx: examples</code><br><code>npm: --category examples</code> | 需要商业系统数据、组织报表或工具适配层的 Skill 设计参考，不作为默认推荐安装入口。 | 7 |
 
 ## 覆盖范围
 
@@ -275,11 +268,10 @@ npm run export:agents
 | <a href="#family-education"><code>family-education</code></a><br>家庭教育 | <code>npx: family-education</code><br><code>npm: --category family-education</code> | 家庭教育 | 8 |
 | <a href="#language-learning"><code>language-learning</code></a><br>语言学习 | <code>npx: language-learning</code><br><code>npm: --category language-learning</code> | 语言学习、英语 | 3 |
 | <a href="#career-learning"><code>career-learning</code></a><br>成人与职业学习 | <code>npx: career-learning</code><br><code>npm: --category career-learning</code> | 计算机、职业教育 | 7 |
-| <a href="#examples"><code>examples</code></a><br>设计参考 | <code>npx: examples</code><br><code>npm: --category examples</code> | 机构运营、学校管理 | 7 |
 
 ## 全部 Skill 列表
 
-下面的表格列出了当前全部 177 个公开 Skill。中文 README 的分类列和 Skill 列都优先展示可复制的英文选择器，下一行保留中文名称；旁边的“安装选择器”列同时标出正式 CLI 与源码模式该复制的参数。
+下面的表格列出了当前全部 170 个公开 Skill。中文 README 的分类列和 Skill 列都优先展示可复制的英文选择器，下一行保留中文名称；旁边的“安装选择器”列同时标出正式 CLI 与源码模式该复制的参数。
 
 ### <a id="textbook-sync"></a>教材同步<br>Textbook Sync
 
@@ -531,22 +523,6 @@ npm run export:agents
 | <a href="skills/career-learning/adult-vocational-certificate/SKILL.md"><code>adult-vocational-certificate</code></a><br>职业证书备考 Skill | <code>npx: adult-vocational-certificate</code><br><code>npm: --skill adult-vocational-certificate</code> | ✓ | adult | 职业教育 | - | 知识记忆、考试冲刺 | 考证 |
 | <a href="skills/career-learning/college-ai-foundation/SKILL.md"><code>college-ai-foundation</code></a><br>AI 基础 Skill | <code>npx: college-ai-foundation</code><br><code>npm: --skill college-ai-foundation</code> | ✓ | college<br>adult | 计算机 | - | AI 基础 | 兴趣学习 |
 | <a href="skills/career-learning/college-cs-python/SKILL.md"><code>college-cs-python</code></a><br>Python 学习 Skill | <code>npx: college-cs-python</code><br><code>npm: --skill college-cs-python</code> | ✓ | college<br>adult | 计算机 | - | 编程 | 职业技能 |
-
-### <a id="examples"></a>设计参考<br>Design Examples
-
-需要商业系统数据、组织报表或工具适配层的 Skill 设计参考，不作为默认推荐安装入口。
-
-安装选择器：<code>npx: examples</code><br><code>npm: --category examples</code>
-
-| Skill | 安装选择器 | 独立使用 | 阶段 | 学科/领域 | 教材 | 能力 | 场景 |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/examples/institution-course-package/SKILL.md"><code>institution-course-package</code></a><br>机构课程包 Skill | <code>npx: institution-course-package</code><br><code>npm: --skill institution-course-package</code><br><code>+ --include-examples</code> | - | primary<br>junior<br>senior<br>adult | 机构运营 | - | 运营分析 | 机构课程 |
-| <a href="skills/examples/school-teacher-usage/SKILL.md"><code>school-teacher-usage</code></a><br>老师使用分析 Skill | <code>npx: school-teacher-usage</code><br><code>npm: --skill school-teacher-usage</code><br><code>+ --include-examples</code> | - | primary<br>junior<br>senior<br>adult | 学校管理 | - | 运营分析 | 数据分析 |
-| <a href="skills/examples/institution-teacher-efficiency/SKILL.md"><code>institution-teacher-efficiency</code></a><br>老师效率分析 Skill | <code>npx: institution-teacher-efficiency</code><br><code>npm: --skill institution-teacher-efficiency</code><br><code>+ --include-examples</code> | - | primary<br>junior<br>senior<br>adult | 机构运营 | - | 运营分析 | 数据分析 |
-| <a href="skills/examples/school-grade-insight/SKILL.md"><code>school-grade-insight</code></a><br>年级学情洞察 Skill | <code>npx: school-grade-insight</code><br><code>npm: --skill school-grade-insight</code><br><code>+ --include-examples</code> | - | primary<br>junior<br>senior<br>adult | 学校管理 | - | 运营分析 | 学校测评 |
-| <a href="skills/examples/school-resource-planning/SKILL.md"><code>school-resource-planning</code></a><br>校本资源规划 Skill | <code>npx: school-resource-planning</code><br><code>npm: --skill school-resource-planning</code><br><code>+ --include-examples</code> | - | primary<br>junior<br>senior<br>adult | 学校管理 | - | 运营分析 | 运营配置 |
-| <a href="skills/examples/institution-campus-dashboard/SKILL.md"><code>institution-campus-dashboard</code></a><br>校区经营看板 Skill | <code>npx: institution-campus-dashboard</code><br><code>npm: --skill institution-campus-dashboard</code><br><code>+ --include-examples</code> | - | primary<br>junior<br>senior<br>adult | 机构运营 | - | 运营分析 | 经营分析 |
-| <a href="skills/examples/institution-renewal-insight/SKILL.md"><code>institution-renewal-insight</code></a><br>续费风险分析 Skill | <code>npx: institution-renewal-insight</code><br><code>npm: --skill institution-renewal-insight</code><br><code>+ --include-examples</code> | - | primary<br>junior<br>senior<br>adult | 机构运营 | - | 运营分析 | 续费报告 |
 
 ## 项目结构
 

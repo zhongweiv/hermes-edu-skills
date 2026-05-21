@@ -1,7 +1,7 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.14.0",
-  "generatedAt": "2026-05-21T03:15:28.653Z",
+  "version": "0.15.0",
+  "generatedAt": "2026-05-21T03:25:30.776Z",
   "skills": [
     {
       "name": "adult-language-learning",
@@ -1854,111 +1854,6 @@
         "单元复习",
         "curated",
         "needs_user_input"
-      ]
-    },
-    {
-      "name": "institution-campus-dashboard",
-      "description": "校区经营看板 Skill是面向经营分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "path": "skills/examples/institution-campus-dashboard/SKILL.md",
-      "tags": [
-        "primary",
-        "junior",
-        "senior",
-        "adult",
-        "机构运营",
-        "经营分析",
-        "enhanced",
-        "requires_tools"
-      ]
-    },
-    {
-      "name": "institution-course-package",
-      "description": "机构课程包 Skill是面向机构课程的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "path": "skills/examples/institution-course-package/SKILL.md",
-      "tags": [
-        "primary",
-        "junior",
-        "senior",
-        "adult",
-        "机构运营",
-        "机构课程",
-        "enhanced",
-        "requires_tools"
-      ]
-    },
-    {
-      "name": "institution-renewal-insight",
-      "description": "续费风险分析 Skill是面向续费报告的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "path": "skills/examples/institution-renewal-insight/SKILL.md",
-      "tags": [
-        "primary",
-        "junior",
-        "senior",
-        "adult",
-        "机构运营",
-        "续费报告",
-        "enhanced",
-        "requires_tools"
-      ]
-    },
-    {
-      "name": "institution-teacher-efficiency",
-      "description": "老师效率分析 Skill是面向数据分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "path": "skills/examples/institution-teacher-efficiency/SKILL.md",
-      "tags": [
-        "primary",
-        "junior",
-        "senior",
-        "adult",
-        "机构运营",
-        "数据分析",
-        "enhanced",
-        "requires_tools"
-      ]
-    },
-    {
-      "name": "school-grade-insight",
-      "description": "年级学情洞察 Skill是面向学校测评的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "path": "skills/examples/school-grade-insight/SKILL.md",
-      "tags": [
-        "primary",
-        "junior",
-        "senior",
-        "adult",
-        "学校管理",
-        "学校测评",
-        "enhanced",
-        "requires_tools"
-      ]
-    },
-    {
-      "name": "school-resource-planning",
-      "description": "校本资源规划 Skill是面向运营配置的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "path": "skills/examples/school-resource-planning/SKILL.md",
-      "tags": [
-        "primary",
-        "junior",
-        "senior",
-        "adult",
-        "学校管理",
-        "运营配置",
-        "enhanced",
-        "requires_tools"
-      ]
-    },
-    {
-      "name": "school-teacher-usage",
-      "description": "老师使用分析 Skill是面向数据分析的产品级 Hermes Skill，年级、册别、单元、知识点和难度通过参数传入。",
-      "path": "skills/examples/school-teacher-usage/SKILL.md",
-      "tags": [
-        "primary",
-        "junior",
-        "senior",
-        "adult",
-        "学校管理",
-        "数据分析",
-        "enhanced",
-        "requires_tools"
       ]
     },
     {

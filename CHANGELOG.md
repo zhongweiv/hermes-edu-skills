@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.15.0 - 2026-05-21
+
+- Removes 7 organization/institution design-reference examples from the public open-skills export.
+- Keeps those organization workflows in the commercial project as internal/commercial Skills because they require private organization data, dashboards, or HoneyKid tool adapters.
+- Makes the public repository focus on directly installable, standalone-friendly Hermes Skills.
+
 ## 0.14.0 - 2026-05-21
 
 - Curates the remaining 21 public textbook-sync Skills.
