@@ -16,7 +16,7 @@ An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-f
     <img src="assets/demo/poster.png" alt="Hermes Edu Skills demo preview" width="420">
   </a>
   <br>
-  <a href="assets/demo/preview.mp4">Watch the MP4 demo, about 800KB</a>
+  <strong><a href="assets/demo/preview.mp4">Click the cover to watch the 30-second demo, about 800KB</a></strong>
 </p>
 
 Hermes Edu Skills is an open Agent Skill Pack for Chinese education scenarios. It turns textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, teacher planning, and school communication into 170 browsable, installable, and reusable product-level Skills.
