@@ -175,7 +175,7 @@ Examples:
   npx hermes-edu-skills match "八年级下册物理力学题"
   npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
   npx hermes-edu-skills prompt > HERMES.md
-  npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --with-prompt
+  npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --no-prompt
   npx hermes-edu-skills doctor
 
 Short npm commands:
@@ -192,9 +192,10 @@ Options:
   --config <path>         Hermes config path.
   --include-examples      Include doc_only example Skills.
   --hermes-bin <command>  Hermes executable for ask/doctor. Default: hermes.
-  --with-prompt           Write a project HERMES.md activation prompt during Hermes install.
-  --prompt-target <path>  Prompt file path for --with-prompt. Default: ./HERMES.md.
-  --overwrite-prompt      Allow --with-prompt to overwrite the prompt target.
+  --with-prompt           Compatibility flag. Hermes install writes the activation prompt by default.
+  --no-prompt             Do not write the project HERMES.md activation prompt during Hermes install.
+  --prompt-target <path>  Prompt file path for Hermes install. Default: ./HERMES.md.
+  --overwrite-prompt      Allow Hermes install to overwrite the prompt target.
   --skill <slug>          Export/install only selected Skill slug/name. Can be used multiple times or comma-separated.
   --target <path>         Destination directory.
   --top <number>          Number of router matches to print. Default: 5 for match, 1 for ask.
@@ -221,6 +222,7 @@ function parseArgs(argv) {
     includeExamples: false,
     overwritePrompt: false,
     promptTarget: '',
+    skipPrompt: false,
     skills: [],
     target: '',
     tool: '',
@@ -262,6 +264,8 @@ function parseArgs(argv) {
       args.hermesBin = arg.slice('--hermes-bin='.length);
     } else if (arg === '--with-prompt') {
       args.withPrompt = true;
+    } else if (arg === '--no-prompt') {
+      args.skipPrompt = true;
     } else if (arg === '--prompt-target') {
       args.promptTarget = readValue();
     } else if (arg.startsWith('--prompt-target=')) {
@@ -1250,6 +1254,7 @@ function copyCursorPack(args) {
 function installHermes(args) {
   const selectedRoot = ensureSafeTarget(defaultHermesSelectedTarget(args));
   copyFlatSkills(selectedRoot, 'hermes', selectedSkills(args), args);
+  const shouldWritePrompt = !args.skipPrompt;
 
   const skillsDir = normalizePathForConfig(selectedRoot);
 
@@ -1259,7 +1264,7 @@ function installHermes(args) {
     console.log('skills:');
     console.log('  external_dirs:');
     console.log(`    - ${skillsDir}`);
-    if (args.withPrompt) writeActivationPrompt(args);
+    if (shouldWritePrompt) writeActivationPrompt(args);
     return;
   }
 
@@ -1268,7 +1273,7 @@ function installHermes(args) {
 
   if (content.includes(skillsDir)) {
     console.log(`[hermes-edu-skills] Hermes config already contains ${skillsDir}`);
-    if (args.withPrompt) writeActivationPrompt(args);
+    if (shouldWritePrompt) writeActivationPrompt(args);
     return;
   }
 
@@ -1286,6 +1291,7 @@ function installHermes(args) {
     console.log(`[dry-run] update ${configPath}`);
     console.log('');
     console.log(content);
+    if (shouldWritePrompt) writeActivationPrompt(args);
     return;
   }
 
@@ -1293,7 +1299,7 @@ function installHermes(args) {
   writeFileSync(configPath, content, 'utf8');
   console.log(`[hermes-edu-skills] updated Hermes config: ${configPath}`);
   console.log(`[hermes-edu-skills] skills external dir: ${skillsDir}`);
-  if (args.withPrompt) writeActivationPrompt(args);
+  if (shouldWritePrompt) writeActivationPrompt(args);
 }
 
 function installTool(args) {

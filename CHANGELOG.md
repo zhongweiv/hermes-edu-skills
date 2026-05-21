@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.16.5 - 2026-05-21
+
+- Makes `install hermes` generate the Hermes Edu activation prompt by default so new users get Skill discovery guidance without adding `--with-prompt`.
+- Adds `--no-prompt` as an opt-out for users who only want to install Skill files and update Hermes config.
+- Keeps existing `HERMES.md` files protected from overwrite unless `--overwrite-prompt` is passed.
+
 ## 0.16.4 - 2026-05-21
 
 - Strengthens the Hermes Edu activation prompt to explicitly search the installed `hermes-edu-skills` Skill Pack before answering education-related requests.

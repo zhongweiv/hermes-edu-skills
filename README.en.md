@@ -60,7 +60,7 @@ npx hermes-edu-skills info agent-mistake-review
 # Ask naturally: show the matched Skill, then invoke Hermes
 npx hermes-edu-skills ask "Create 5 grade-8 physics mechanics questions with answers"
 
-# Generate a project-level Hermes Edu Skills activation prompt
+# Inspect or manually generate the project-level Hermes Edu Skills activation prompt
 npx hermes-edu-skills prompt > HERMES.md
 
 # Diagnose install count, versions, config, and Hermes visibility
@@ -146,13 +146,18 @@ Method 1: First-class CLI install (recommended)
 npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 ```
 
-To make Hermes search the `hermes-edu-skills` Skill Pack before answering education questions directly, generate a project-level activation prompt during install:
+This command does two things:
+
+- Installs 170 available Skills and updates Hermes `skills.external_dirs`.
+- Generates `HERMES.md` in the current directory by default, so Hermes searches the `hermes-edu-skills` Skill Pack before answering education questions directly.
+
+To skip prompt generation:
 
 ```bash
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --with-prompt
+npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --no-prompt
 ```
 
-By default, this writes `HERMES.md` in the current directory. If the file already exists, the installer will not overwrite it. Run `npx hermes-edu-skills prompt` to inspect the prompt and merge it into your existing project instructions. The prompt includes the current installable Skill count and category map, and explicitly tells Hermes to search `hermes-edu-skills` first.
+If `HERMES.md` already exists, the installer will not overwrite it. Run `npx hermes-edu-skills prompt` to inspect the prompt and merge it into your existing project instructions. The prompt includes the current installable Skill count and category map, and explicitly tells Hermes to search `hermes-edu-skills` first. Add `--overwrite-prompt` only when you really want to replace the file.
 
 Install a category, for example textbook sync:
 
@@ -244,10 +249,13 @@ npx hermes-edu-skills prompt
 npx hermes-edu-skills prompt > HERMES.md
 
 # Install the Skill Pack and generate HERMES.md
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --with-prompt
+npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 
 # Choose the prompt target
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --with-prompt --prompt-target ./HERMES.md
+npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --prompt-target ./HERMES.md
+
+# Skip HERMES.md generation
+npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --no-prompt
 ```
 
 This is not a replacement for deterministic `ask` routing. It strengthens Hermes-native behavior from "check Skills generally" to "search `hermes-edu-skills` first for education requests." If you need a stable `Using Skill: ...` line, use `npx hermes-edu-skills ask "<question>"`, which matches a Skill first and then calls official Hermes.
