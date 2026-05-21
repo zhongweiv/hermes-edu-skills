@@ -2,6 +2,39 @@
 
 ## Unreleased
 
+## 0.16.0 - 2026-05-21
+
+- Adds a lightweight Skill Router for natural-language education questions.
+- Adds `hermes-edu-skills match "<question>"` to show the most relevant Skills, matched signals, and copyable `hermes chat -s ...` commands.
+- Adds `hermes-edu-skills ask "<question>"` to print the selected Skill and then invoke official Hermes Agent with that Skill preloaded.
+- Keeps Hermes Agent as the runtime while making Skill usage visible for users who expect automatic Skill activation.
+
+## 0.15.5 - 2026-05-21
+
+- Fixes default Hermes installation so `npx hermes-edu-skills install hermes` copies all installable Skills into a stable flat Hermes Skill directory before updating `skills.external_dirs`.
+- Avoids pointing Hermes at npm package internals, which can be nested or temporary and may not be discovered by `hermes skills list`.
+
+## 0.15.4 - 2026-05-21
+
+- Adds top-level `--help` and `-h` aliases so `npx hermes-edu-skills --help` works for first-time users.
+
+## 0.15.3 - 2026-05-21
+
+- Upgrades the README demo GIF into a Screenity-style generated recording with browser chrome, typewriter terminal input, full 170-Skill installation, Hermes Agent loading, Skill matching, and Agent export flow.
+- Normalizes npm bin paths so `npx hermes-edu-skills` can expose the CLI correctly after publish.
+
+## 0.15.2 - 2026-05-21
+
+- Adds a public demo GIF showing category installation, Hermes Agent usage, Skill matching, and multi-Agent export.
+- Places the demo near the top of the Chinese and English README first screen.
+- Includes `assets/` in the public package files list.
+
+## 0.15.1 - 2026-05-21
+
+- Refreshes Chinese and English README positioning into a stronger public landing page.
+- Adds clearer quick-start, What/Why/How framing, prompt-collection comparison, role guidance, and category overview near the top of the README.
+- Updates public package description to better explain the China-focused education Agent Skill Pack value.
+
 ## 0.15.0 - 2026-05-21
 
 - Removes 7 organization/institution design-reference examples from the public open-skills export.

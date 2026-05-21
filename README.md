@@ -1,8 +1,8 @@
 # Hermes Edu Skills
 
-面向中国教育场景的开源 Agent Skill Pack：教材同步、备考复习、拍照答疑、错题复盘、亲子陪学、阅读写作和教师工具，Hermes Agent 可直接使用，也可导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。
+让 Hermes Agent 和主流 AI 工具拥有中国教育场景能力的开源 Agent Skill Pack：教材同步、备考复习、错题复盘、每日练习、亲子陪学、阅读写作和教师工作流。
 
-A China-focused open education Agent Skill Pack for textbook sync, exam prep, photo Q&A, mistake review, family learning, reading/writing, and teacher workflows. Built for Hermes Agent, exportable to OpenClaw, Codex, Cursor, Claude Code, and other AI tools.
+An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-focused education capabilities: textbook sync, exam prep, mistake review, daily practice, family learning, reading/writing, and teacher workflows.
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -11,53 +11,88 @@ A China-focused open education Agent Skill Pack for textbook sync, exam prep, ph
 
 [English](README.en.md) · [Skill Catalog](catalog.json) · [Discovery Index](.well-known/skills/index.json) · [Shineway](https://www.shineway.tech/)
 
-Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent Skill Pack。它把教材同步、考试备考、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师备课和家校沟通，整理成 170 个可浏览、可安装、可二次开发的产品级 Skill。
+<p align="center">
+  <img src="assets/demo.gif" alt="Hermes Edu Skills demo: install education skills and use them in Hermes Agent" width="860">
+</p>
 
-当前包含 170 个可直接安装使用的 Hermes Skill。它不是泛泛的 Prompt 合集，而是一套围绕“真实教育任务”组织的 Agent 能力目录：每个 Skill 都有触发信号、适用角色、参数维度、使用边界和 Hermes 可读取的 `SKILL.md`。
+Hermes Edu Skills 是一套面向中国教育场景的开源 Agent Skill Pack。它把教材同步、考试备考、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师备课和家校沟通，整理成 170 个可浏览、可安装、可二次开发的产品级 Skill。
 
-如果你正在做 AI 学习助手、AI 老师、教研工具、家长陪学产品、题库/错题产品，或想给 Hermes Agent 装上一套开箱即用的中文教育能力，这个仓库可以直接作为起点。觉得有帮助的话，欢迎 Star，它会帮助更多中文教育 AI 开发者更快找到这个项目。
+它不是 Prompt 合集，而是可被 Hermes Agent 识别的结构化能力库：每个 Skill 都有触发信号、适用角色、参数维度、使用边界和标准 `SKILL.md`。你可以直接装进 Hermes Agent，也可以导出给 OpenClaw、Codex、Cursor、Claude Code 或其它 Agent 工具。
+
+如果你正在做 AI 学习助手、AI 老师、教研工具、家长陪学产品、题库/错题产品，或者只是想让自己的本地 Agent 更懂中国教材和学习场景，这个仓库可以直接作为起点。觉得有帮助的话，欢迎 Star，它会帮助更多中文教育 AI 开发者更快发现这个项目。
 
 ## 导航
 
-- [30 秒理解](#30-秒理解)
+- [5 分钟上手](#5-分钟上手)
+- [这是什么](#这是什么)
+- [为什么不是 Prompt 集合](#为什么不是-prompt-集合)
+- [谁适合用](#谁适合用)
+- [分类总览](#分类总览)
 - [默认使用：Hermes Agent](#默认使用hermes-agent)
+- [自动匹配并运行 Skill](#自动匹配并运行-skill)
 - [只安装单个 Skill](#只安装单个-skill)
 - [导出给其它 AI 工具或 Agent](#导出给其它-ai-工具或-agent)
-- [按角色选择](#按角色选择)
-- [技能分类总览](#技能分类总览)
+- [覆盖范围](#覆盖范围)
 - [全部 Skill 列表](#全部-skill-列表)
 - [参与贡献](#参与贡献)
 - [路线图](#路线图)
 
-## 30 秒理解
+## 5 分钟上手
+
+默认目标是 Hermes Agent。第一次试用建议先安装一个分类或一个 Skill，确认效果后再安装全部。
+
+```bash
+# 安装全部 170 个可用 Skill 到 Hermes Agent
+npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
+
+# 只安装教材同步分类
+npx hermes-edu-skills install hermes textbook-sync --config ~/.hermes/config.yaml
+
+# 只安装一个 Skill
+npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
+
+# 搜索你需要的能力
+npx hermes-edu-skills search 错题
+npx hermes-edu-skills info agent-mistake-review
+
+# 像普通 Agent 一样直接提问：先显示匹配到的 Skill，再调用 Hermes
+npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
+```
+
+导出给其它 Agent 或 AI 工具：
+
+```bash
+npx hermes-edu-skills install openclaw
+npx hermes-edu-skills install codex
+npx hermes-edu-skills install claude
+npx hermes-edu-skills install cursor --workspace /path/to/project
+npx hermes-edu-skills export generic --target ./dist/agent-skills
+```
+
+## 这是什么
 
 | 问题 | 答案 |
 | --- | --- |
-| 这是什么？ | 一套面向 Hermes Agent Runtime 的中文教育 Agent Skill Pack。 |
-| 现在有多少？ | 170 个公开 Skill，全部是可安装的 Hermes 兼容 Skill。 |
-| 最核心的场景？ | 教材同步、备考复习、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师工具。 |
-| 为什么不是几千个文件？ | 年级、册别、单元、课时、知识点、难度都作为参数传入，避免把用户淹没在海量重复 Skill 中。 |
-| 谁适合用？ | Hermes Agent 用户、教育 AI 开发者、老师、教研人员、学校/机构团队。 |
-| 怎么开始？ | 默认使用 `npx hermes-edu-skills install hermes`；源码模式仍可使用 `npm run install:hermes`。 |
+| 这是什么 | 面向中国教育场景的开源 Agent Skill Pack。 |
+| 为什么需要 | 通用 Agent 通常不理解中国教材版本、年级册别、单元节奏、考试体系和家庭/教师真实工作流。 |
+| 怎么实现 | 用 170 个结构化 `SKILL.md` 把教育任务封装成 Agent 可发现、可调用、可安装的能力。 |
+| 默认平台 | Hermes Agent。 |
+| 可导出平台 | OpenClaw、Codex、Cursor、Claude Code、Generic Agent。 |
+| 开源内容 | 公开 Skill 文档、索引、校验工具和导出工具；不包含用户数据、密钥或商业后端实现。 |
 
-## 为什么值得关注
+## 为什么不是 Prompt 集合
 
-- 中国教育场景优先：教材版本、年级册别、单元课时、同步练习、错题巩固、备考复习、亲子陪学都是一等公民。
-- 产品级分类：不按技术文件夹堆砌，而按用户真正要完成的任务组织，拿来就能做教育 Agent 原型。
-- 兼容 Hermes Agent：每个 Skill 都是标准 `SKILL.md`，可被 Hermes 直接识别。
-- 可读、可改、可扩展：既能直接安装，也能作为教育 Agent Skill 设计参考和商业产品能力清单。
-- 传播友好：每个精品 Skill 都写清“解决什么问题、适合谁、怎么用、输出什么、不能做什么”。
-- 公开友好：仓库只包含公开 Skill 文档、索引和校验工具，不包含用户数据、密钥或商业后端实现。
+| 能力 | Prompt 集合 | 通用 Agent Skills | Hermes Edu Skills |
+| --- | :---: | :---: | :---: |
+| 中国教材版本对齐 | - | 通常不支持 | 支持人教、统编、北师大、苏教、鲁科等教育场景 |
+| 年级/册别/单元/难度 | 靠手写提示词 | 部分支持 | 作为 Skill 参数和工作流约束 |
+| 真实教育任务 | 松散模板 | 通用能力 | 教材同步、错题复盘、备考复习、每日练习、教师工具 |
+| Hermes 原生识别 | - | 不一定 | 标准 `SKILL.md` |
+| 多 Agent 复用 | - | 不一定 | 可导出到 OpenClaw、Codex、Cursor、Claude Code |
+| 中文教育表达 | 不稳定 | 不稳定 | 围绕中国学生、家长、老师和教研场景编写 |
+| 二次开发 | 低 | 中 | 有目录、索引、校验和安装工具 |
 
-## 你可以用它做什么
-
-- 给本地 Hermes Agent 增加一套中文教育 Skill 库，让 Agent 会做教材同步、备考、阅读写作和陪学。
-- 快速搭建 AI 学习助手、AI 老师、AI 助教、拍照答疑、错题复盘、亲子阅读、作文批改等教育 Agent 原型。
-- 学习和复用教育 Skill 的目录结构、触发信号、适用场景和工作流命名方式。
-- 为学校、老师、家长、教培机构和成人学习场景设计自己的 Skill。
-- Fork 后可以继续扩展教材版本、知识点覆盖和独立 Hermes 工具适配。
-
-## 按角色选择
+## 谁适合用
 
 | 你是谁 | 推荐先看 | 可以得到什么 |
 | --- | --- | --- |
@@ -67,30 +102,29 @@ Hermes Edu Skills 是一套可直接被 Hermes Agent 识别的中文教育 Agent
 | 家长 / 家庭教育产品 | [家庭教育](#family-education)、[每日练习](#daily-practice) | 构建陪伴、阅读、习惯和每日训练场景。 |
 | 学校 / 教培机构 | [老师工具](#teacher-tools)、[考试备考](#exam-prep) | 了解备课、作业、班级分析、复习和教学支持产品形态。 |
 
+## 分类总览
+
+当前包含 170 个可安装 Skill，覆盖 9 个产品级分类。年级、册别、单元、课时、知识点和难度作为参数传入，不再拆成海量重复 Skill。
+
+| 分类 | 安装选择器 | 适用场景 | 数量 |
+| --- | --- | --- | ---: |
+| <a href="#textbook-sync"><code>textbook-sync</code></a><br>教材同步 | <code>npx: textbook-sync</code><br><code>npm: --category textbook-sync</code> | 面向中国教材版本、年级、册别、单元、课时和知识点的同步学习能力。年级、册别、单元和难度作为参数传入，不再拆成大量独立 Skill。 | 41 |
+| <a href="#learning-core"><code>learning-core</code></a><br>学习核心能力 | <code>npx: learning-core</code><br><code>npm: --category learning-core</code> | 学习计划、拍照答疑、错题复盘、学情报告等通用学习闭环能力。 | 15 |
+| <a href="#daily-practice"><code>daily-practice</code></a><br>每日练习 | <code>npx: daily-practice</code><br><code>npm: --category daily-practice</code> | 面向每天短时高频训练，例如口算、听写、背诵、词汇、快速巩固。 | 28 |
+| <a href="#reading-writing"><code>reading-writing</code></a><br>阅读写作 | <code>npx: reading-writing</code><br><code>npm: --category reading-writing</code> | 面向语文、英语、学术和职场表达的阅读与写作能力。 | 10 |
+| <a href="#exam-prep"><code>exam-prep</code></a><br>考试备考 | <code>npx: exam-prep</code><br><code>npm: --category exam-prep</code> | 面向期末、中考、高考、考研、四六级、考证和公务员等备考场景。 | 27 |
+| <a href="#teacher-tools"><code>teacher-tools</code></a><br>老师工具 | <code>npx: teacher-tools</code><br><code>npm: --category teacher-tools</code> | 面向老师备课、作业生成、班级分析和家校沟通。 | 31 |
+| <a href="#family-education"><code>family-education</code></a><br>家庭教育 | <code>npx: family-education</code><br><code>npm: --category family-education</code> | 面向家长陪伴、亲子阅读、作业习惯和家庭沟通。 | 8 |
+| <a href="#language-learning"><code>language-learning</code></a><br>语言学习 | <code>npx: language-learning</code><br><code>npm: --category language-learning</code> | 面向成人英语、出国考试、口语、听力和长期语言能力提升。 | 3 |
+| <a href="#career-learning"><code>career-learning</code></a><br>成人与职业学习 | <code>npx: career-learning</code><br><code>npm: --category career-learning</code> | 面向大学、成人学习、职业技能和考证场景。 | 7 |
+
 ## 发起与维护
 
 本项目由 [长沙欣慰科技](https://www.shineway.tech/) 发起并维护。
 
-我们希望把可复用的教育 Agent Skill 设计开放出来，和开发者、老师、教研人员、学校及教育机构一起探索更适合中国教育场景的智能体能力。本仓库只包含公开 Skill 文档、索引和校验工具，不包含用户数据或后端服务实现。
+我们希望把可复用的教育 Agent Skill 设计开放出来，和开发者、老师、教研人员、学校及教育机构一起探索更适合中国教育场景的智能体能力。本仓库只包含公开 Skill 文档、索引、校验和导出工具，不包含用户数据或后端服务实现。
 
-## 项目亮点
-
-- 170 个可点击浏览的产品级 `SKILL.md`。
-- 分类围绕用户任务组织：教材同步、学习核心、每日练习、考试备考、阅读写作、教师工具、家庭教育。
-- 每个 Skill 都包含 Hermes frontmatter、适用场景、调用信号和工作流名称。
-- 新增 Skill 独立使用标记和安装选择器列，同时标出正式 CLI 与源码模式应该复制的名字。
-- 年级、册别、单元、课时、知识点和难度作为参数传入，不再拆成海量独立 Skill。
-- 自带 `catalog.json` 和 `.well-known/skills/index.json`，方便工具读取和二次集成。
-- 自带校验脚本，确保目录、索引和 Skill 文件一致。
-- MIT 协议，适合个人学习、二次开发和教育 Agent 原型建设。
-
-## 如何支持这个项目
-
-- 点 Star：帮助更多人发现这个教育 Skill Pack。
-- Watch：关注后续新增 Skill、安装方式和 Hermes 适配更新。
-- Fork：把 `skills/` 接入你自己的 Hermes Agent 或教育 Agent 项目。
-- 提 Issue：告诉我们你最需要的年级、教材版本、学科或教师工具。
-- 提 PR：贡献新的 Skill、优化中文指令、补充使用示例。
+如果这个项目对你有帮助，欢迎给一个 Star；这会让更多中文教育 AI 开发者、老师和 Agent 用户更快找到它。
 
 ## 默认使用：Hermes Agent
 
@@ -126,6 +160,18 @@ npx hermes-edu-skills search 错题
 npx hermes-edu-skills info agent-mistake-review
 ```
 
+安装后，如果你希望“问相关题目时自动看到正在使用哪个 Skill”，可以使用内置 Skill Router：
+
+```bash
+# 只查看匹配结果，不调用 Hermes
+npx hermes-edu-skills match "八年级下册物理力学题"
+
+# 自动匹配 Skill，并调用官方 Hermes Agent
+npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
+```
+
+`ask` 会先打印类似 `Using Skill: junior-physics-rj-textbook-sync` 的信息，再执行 `hermes chat -s <skill> -q <question>`。如果你需要查看 Hermes 详细输出，可以加 `--verbose`；如果你的 Hermes 命令不叫 `hermes`，可以加 `--hermes-bin <path>`。
+
 方法二：源码模式安装（从 GitHub clone 后使用）
 
 ```bash
@@ -157,6 +203,20 @@ from tools.skills_tool import skills_list, skill_view
 skills_list()
 skill_view("primary-math-mental-arithmetic")
 ```
+
+## 自动匹配并运行 Skill
+
+官方 Hermes Agent 支持通过 `-s` 手动预加载 Skill，但不一定会在回答里自动显示“正在使用哪个 Skill”。Hermes Edu Skills 在 CLI 里额外提供了一个轻量路由层，让用户可以自然提问，并明确看到本次匹配到的 Skill。
+
+| 你想做什么 | 命令 |
+| --- | --- |
+| 查看自然语言问题会匹配哪些 Skill | `npx hermes-edu-skills match "八年级下册物理力学题"` |
+| 直接让 Hermes 使用匹配到的 Skill 回答 | `npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"` |
+| 查看更多候选 Skill | `npx hermes-edu-skills match "错题复盘计划" --top 10` |
+| 传递 Hermes 详细输出 | `npx hermes-edu-skills ask "制定一周学习计划" --verbose` |
+| 使用自定义 Hermes 命令路径 | `npx hermes-edu-skills ask "初中英语阅读训练" --hermes-bin /path/to/hermes` |
+
+`match` 适合调试和选择，`ask` 适合日常使用。它们不会替代 Hermes Agent，而是自动完成“匹配 Skill -> 显示 Skill -> 调用 `hermes chat -s`”这一步。
 
 ## 只安装单个 Skill
 
@@ -239,23 +299,9 @@ npm run install:openclaw
 npm run export:agents
 ```
 
-## 技能分类总览
-
-先从这些一级分类进入。每个分类下面仍保留完整可点击 Skill 表格，方便浏览、检索和二次集成。
-
-| 分类 | 安装选择器 | 适用场景 | 数量 |
-| --- | --- | --- | ---: |
-| <a href="#textbook-sync"><code>textbook-sync</code></a><br>教材同步 | <code>npx: textbook-sync</code><br><code>npm: --category textbook-sync</code> | 面向中国教材版本、年级、册别、单元、课时和知识点的同步学习能力。年级、册别、单元和难度作为参数传入，不再拆成大量独立 Skill。 | 41 |
-| <a href="#learning-core"><code>learning-core</code></a><br>学习核心能力 | <code>npx: learning-core</code><br><code>npm: --category learning-core</code> | 学习计划、拍照答疑、错题复盘、学情报告等通用学习闭环能力。 | 15 |
-| <a href="#daily-practice"><code>daily-practice</code></a><br>每日练习 | <code>npx: daily-practice</code><br><code>npm: --category daily-practice</code> | 面向每天短时高频训练，例如口算、听写、背诵、词汇、快速巩固。 | 28 |
-| <a href="#reading-writing"><code>reading-writing</code></a><br>阅读写作 | <code>npx: reading-writing</code><br><code>npm: --category reading-writing</code> | 面向语文、英语、学术和职场表达的阅读与写作能力。 | 10 |
-| <a href="#exam-prep"><code>exam-prep</code></a><br>考试备考 | <code>npx: exam-prep</code><br><code>npm: --category exam-prep</code> | 面向期末、中考、高考、考研、四六级、考证和公务员等备考场景。 | 27 |
-| <a href="#teacher-tools"><code>teacher-tools</code></a><br>老师工具 | <code>npx: teacher-tools</code><br><code>npm: --category teacher-tools</code> | 面向老师备课、作业生成、班级分析和家校沟通。 | 31 |
-| <a href="#family-education"><code>family-education</code></a><br>家庭教育 | <code>npx: family-education</code><br><code>npm: --category family-education</code> | 面向家长陪伴、亲子阅读、作业习惯和家庭沟通。 | 8 |
-| <a href="#language-learning"><code>language-learning</code></a><br>语言学习 | <code>npx: language-learning</code><br><code>npm: --category language-learning</code> | 面向成人英语、出国考试、口语、听力和长期语言能力提升。 | 3 |
-| <a href="#career-learning"><code>career-learning</code></a><br>成人与职业学习 | <code>npx: career-learning</code><br><code>npm: --category career-learning</code> | 面向大学、成人学习、职业技能和考证场景。 | 7 |
-
 ## 覆盖范围
+
+下面按分类展示主要领域。完整可点击 Skill 表格在下一节，分类名和 Skill 名都可以直接作为安装选择器使用。
 
 | 分类 | 安装选择器 | 主要领域 | 数量 |
 | --- | --- | --- | ---: |

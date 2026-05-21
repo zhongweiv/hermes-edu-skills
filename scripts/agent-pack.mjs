@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -11,7 +12,10 @@ const skillsRoot = join(root, 'skills');
 const flatSkillTools = new Set(['openclaw', 'codex', 'claude-code', 'generic-agent']);
 const supportedTools = new Set(['hermes', 'openclaw', 'codex', 'claude-code', 'cursor', 'generic-agent']);
 const commandAliases = {
+  '--help': 'help',
+  '-h': 'help',
   add: 'install',
+  ask: 'ask',
   convert: 'convert',
   export: 'export',
   help: 'help',
@@ -20,6 +24,9 @@ const commandAliases = {
   install: 'install',
   list: 'list',
   ls: 'list',
+  match: 'match',
+  route: 'match',
+  run: 'ask',
   search: 'search',
 };
 
@@ -33,6 +40,32 @@ const toolAliases = {
   hermes: 'hermes',
   openclaw: 'openclaw',
 };
+
+const promptStopwords = new Set([
+  '一个',
+  '一些',
+  '一下',
+  '什么',
+  '怎么',
+  '如何',
+  '帮我',
+  '需要',
+  '生成',
+  '设计',
+  '学习',
+  '练习',
+  '题目',
+  '问题',
+  'the',
+  'and',
+  'for',
+  'with',
+  'from',
+  'please',
+  'help',
+  'make',
+  'create',
+]);
 
 const categoryLabels = {
   'career-learning': 'Career Learning',
@@ -111,6 +144,8 @@ Usage:
   hermes-edu-skills list [category]
   hermes-edu-skills search <keyword>
   hermes-edu-skills info <skill>
+  hermes-edu-skills match <question>
+  hermes-edu-skills ask <question>
 
 Source-mode usage:
   node scripts/agent-pack.mjs install --tool <hermes|openclaw|codex|claude-code|cursor|generic-agent> [options]
@@ -133,6 +168,8 @@ Examples:
   npx hermes-edu-skills list textbook-sync
   npx hermes-edu-skills search 错题
   npx hermes-edu-skills info agent-mistake-review
+  npx hermes-edu-skills match "八年级下册物理力学题"
+  npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
 
 Short npm commands:
   npm run install:hermes
@@ -147,8 +184,11 @@ Options:
   --category <name>       Export only one category slug or alias. Can be used multiple times or comma-separated.
   --config <path>         Hermes config path.
   --include-examples      Include doc_only example Skills.
+  --hermes-bin <command>  Hermes executable for ask. Default: hermes.
   --skill <slug>          Export/install only selected Skill slug/name. Can be used multiple times or comma-separated.
   --target <path>         Destination directory.
+  --top <number>          Number of router matches to print. Default: 5 for match, 1 for ask.
+  --verbose               Pass -v to hermes chat when using ask.
   --workspace <path>      Project/workspace directory for project-scoped installs.
   --dry-run               Print actions without writing files.
 
@@ -167,11 +207,14 @@ function parseArgs(argv) {
     config: '',
     dryRun: false,
     format: '',
+    hermesBin: 'hermes',
     includeExamples: false,
     skills: [],
     target: '',
     tool: '',
+    top: 0,
     positionals: [],
+    verbose: false,
     workspace: '',
   };
 
@@ -200,6 +243,10 @@ function parseArgs(argv) {
       args.format = arg.slice('--format='.length);
     } else if (arg === '--include-examples') {
       args.includeExamples = true;
+    } else if (arg === '--hermes-bin') {
+      args.hermesBin = readValue();
+    } else if (arg.startsWith('--hermes-bin=')) {
+      args.hermesBin = arg.slice('--hermes-bin='.length);
     } else if (arg === '--skill') {
       args.skills.push(...readValue().split(',').map((item) => item.trim()).filter(Boolean));
     } else if (arg.startsWith('--skill=')) {
@@ -212,6 +259,12 @@ function parseArgs(argv) {
       args.tool = readValue();
     } else if (arg.startsWith('--tool=')) {
       args.tool = arg.slice('--tool='.length);
+    } else if (arg === '--top') {
+      args.top = Number.parseInt(readValue(), 10);
+    } else if (arg.startsWith('--top=')) {
+      args.top = Number.parseInt(arg.slice('--top='.length), 10);
+    } else if (arg === '--verbose' || arg === '-v') {
+      args.verbose = true;
     } else if (arg === '--workspace') {
       args.workspace = readValue();
     } else if (arg.startsWith('--workspace=')) {
@@ -346,10 +399,225 @@ function skillSearchText(skill) {
     ...(skill.abilities || []),
     ...(skill.scenarios || []),
     ...(skill.textbookVersions || []),
+    skill.description,
   ]
     .filter(Boolean)
     .join(' ')
     .toLowerCase();
+}
+
+function normalizeText(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[，。！？、；："'“”‘’（）()【】[\]{}<>]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function uniqueValues(values) {
+  return [...new Set(values.filter(Boolean).map((value) => String(value).trim()).filter(Boolean))];
+}
+
+function promptTokens(query) {
+  const normalized = normalizeText(query);
+  const latinTokens = normalized.match(/[a-z0-9][a-z0-9-]{1,}/g) || [];
+  const chineseChunks = normalized.match(/[\u4e00-\u9fff]{2,}/g) || [];
+  const tokens = [];
+
+  for (const token of [...latinTokens, ...chineseChunks]) {
+    if (!promptStopwords.has(token)) tokens.push(token);
+  }
+
+  return uniqueValues(tokens);
+}
+
+function skillTerms(skill) {
+  const categoryCn = Object.entries(categoryAliases)
+    .filter(([, category]) => category === skill.category)
+    .map(([alias]) => alias);
+
+  return [
+    { weight: 90, values: [skill.name, skill.slug] },
+    { weight: 65, values: [skill.title] },
+    { weight: 45, values: [skill.category, categoryLabels[skill.category], ...categoryCn] },
+    { weight: 40, values: skill.textbookVersions || [] },
+    { weight: 38, values: skill.subjects || [] },
+    { weight: 30, values: skill.abilities || [] },
+    { weight: 26, values: skill.scenarios || [] },
+    { weight: 18, values: skill.grades || [] },
+    { weight: 16, values: skill.stages || [] },
+    { weight: 14, values: skill.roles || [] },
+  ];
+}
+
+function scoreSkill(skill, query) {
+  const normalizedQuery = normalizeText(query);
+  const queryTokens = promptTokens(query);
+  const haystack = skillSearchText(skill);
+  const matched = new Set();
+  let score = 0;
+
+  for (const group of skillTerms(skill)) {
+    for (const rawTerm of uniqueValues(group.values)) {
+      const term = normalizeText(rawTerm);
+      if (!term || term.length < 2) continue;
+      if (normalizedQuery.includes(term)) {
+        score += group.weight;
+        matched.add(rawTerm);
+      } else if (term.includes(normalizedQuery) && normalizedQuery.length >= 3) {
+        score += Math.ceil(group.weight * 0.45);
+        matched.add(rawTerm);
+      }
+    }
+  }
+
+  for (const token of queryTokens) {
+    if (haystack.includes(token)) {
+      score += Math.min(24, Math.max(8, token.length * 3));
+      matched.add(token);
+    }
+  }
+
+  if (normalizedQuery.includes('教材') || normalizedQuery.includes('课本') || normalizedQuery.includes('同步')) {
+    if (skill.category === 'textbook-sync') {
+      score += 42;
+      matched.add('教材同步');
+    }
+  }
+
+  if (/(一年级|二年级|三年级|四年级|五年级|六年级|七年级|八年级|九年级|高一|高二|高三|上册|下册|必修|选择性必修|第.+单元|课文|课时|知识点)/.test(normalizedQuery)) {
+    if (skill.category === 'textbook-sync') {
+      score += 36;
+      matched.add('年级/册别/单元');
+    }
+  }
+
+  if (skill.category === 'textbook-sync') {
+    const hasTextbookVersion = /(人教|统编|鲁科|鲁教|北师|苏教|外研|译林|沪教)/.test(normalizedQuery);
+    if (/(人教|人教版)/.test(normalizedQuery) && skill.name.includes('-rj-')) {
+      score += 48;
+      matched.add('人教版');
+    } else if (/(鲁科|鲁科版|鲁教)/.test(normalizedQuery) && skill.name.includes('-lk-')) {
+      score += 48;
+      matched.add('鲁科版');
+    } else if (!hasTextbookVersion && skill.name.includes('-rj-')) {
+      score += 6;
+      matched.add('默认人教版');
+    }
+  }
+
+  if (/(每日|每天|打卡|口算|听写|背诵|默写|速练|快速|巩固|刷题|[0-9一二三四五六七八九十]+道)/.test(normalizedQuery)) {
+    if (skill.category === 'daily-practice') {
+      score += 28;
+      matched.add('每日练习');
+    }
+  }
+
+  if (normalizedQuery.includes('错题') && skill.name.includes('mistake')) {
+    score += 35;
+    matched.add('错题');
+  }
+
+  if ((normalizedQuery.includes('老师') || normalizedQuery.includes('教师') || normalizedQuery.includes('备课') || normalizedQuery.includes('作业')) && skill.category === 'teacher-tools') {
+    score += 34;
+    matched.add('教师工具');
+  }
+
+  if ((normalizedQuery.includes('家长') || normalizedQuery.includes('亲子') || normalizedQuery.includes('陪学')) && skill.category === 'family-education') {
+    score += 34;
+    matched.add('家庭教育');
+  }
+
+  if ((normalizedQuery.includes('考试') || normalizedQuery.includes('备考') || normalizedQuery.includes('冲刺') || normalizedQuery.includes('中考') || normalizedQuery.includes('高考') || normalizedQuery.includes('期末')) && skill.category === 'exam-prep') {
+    score += 34;
+    matched.add('考试备考');
+  }
+
+  return { matched: [...matched].slice(0, 8), score };
+}
+
+function queryFromArgs(args, commandName) {
+  const query = args.positionals.join(' ').trim();
+  if (!query) throw new Error(`Missing question. Example: hermes-edu-skills ${commandName} "帮我出5道八年级下册物理力学题"`);
+  return query;
+}
+
+function rankedSkills(args, query) {
+  const catalog = readCatalog();
+  return catalog.skills
+    .filter((skill) => args.includeExamples || skill.exportMode !== 'doc_only')
+    .map((skill) => ({ skill, ...scoreSkill(skill, query) }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.skill.name.localeCompare(b.skill.name));
+}
+
+function hermesChatCommand(skillName, query, args) {
+  const hermesArgs = ['chat', '-s', skillName, '-q', query];
+  if (args.verbose) hermesArgs.push('-v');
+  return { command: args.hermesBin || 'hermes', hermesArgs };
+}
+
+function printableCommand(command, hermesArgs) {
+  const printableArg = (arg) => (/^[A-Za-z0-9_./:=@-]+$/.test(arg) ? arg : `"${arg.replace(/"/g, '\\"')}"`);
+  return [command, ...hermesArgs.map(printableArg)].join(' ');
+}
+
+function matchCommand(args) {
+  const query = queryFromArgs(args, 'match');
+  const matches = rankedSkills(args, query).slice(0, Number.isFinite(args.top) && args.top > 0 ? args.top : 5);
+
+  if (!matches.length) {
+    console.log(`[hermes-edu-skills] No Skill matched: ${query}`);
+    console.log('Try: hermes-edu-skills search <keyword>');
+    return;
+  }
+
+  console.log(`[hermes-edu-skills] Skill Router matched ${matches.length} result${matches.length > 1 ? 's' : ''} for: ${query}`);
+  for (const [index, item] of matches.entries()) {
+    const { command, hermesArgs } = hermesChatCommand(item.skill.name, query, args);
+    console.log('');
+    console.log(`${index + 1}. ${item.skill.name}  score=${item.score}`);
+    console.log(`   Title: ${item.skill.title || '-'}`);
+    console.log(`   Category: ${item.skill.category} (${categoryLabels[item.skill.category] || item.skill.category})`);
+    console.log(`   Matched: ${item.matched.join(', ') || '-'}`);
+    console.log(`   Run: ${printableCommand(command, hermesArgs)}`);
+  }
+}
+
+function askCommand(args) {
+  const query = queryFromArgs(args, 'ask');
+  const matches = rankedSkills(args, query);
+  const topMatch = matches[0];
+
+  if (!topMatch) {
+    console.log(`[hermes-edu-skills] No Skill matched: ${query}`);
+    console.log('Try: hermes-edu-skills search <keyword>, then run hermes chat -s <skill> -q "<question>"');
+    return;
+  }
+
+  const { command, hermesArgs } = hermesChatCommand(topMatch.skill.name, query, args);
+  console.log(`[hermes-edu-skills] Using Skill: ${topMatch.skill.name}`);
+  console.log(`[hermes-edu-skills] ${topMatch.skill.title || topMatch.skill.description || ''}`);
+  console.log(`[hermes-edu-skills] Matched: ${topMatch.matched.join(', ') || '-'} | score=${topMatch.score}`);
+  console.log('');
+
+  if (args.dryRun) {
+    console.log(`[dry-run] ${printableCommand(command, hermesArgs)}`);
+    return;
+  }
+
+  const result = spawnSync(command, hermesArgs, {
+    stdio: 'inherit',
+    shell: process.platform === 'win32',
+  });
+
+  if (result.error) {
+    throw new Error(`Failed to run Hermes command "${command}". Install Hermes Agent or pass --hermes-bin <path>. ${result.error.message}`);
+  }
+
+  if (typeof result.status === 'number' && result.status !== 0) {
+    process.exitCode = result.status;
+  }
 }
 
 function skillLine(skill) {
@@ -605,12 +873,8 @@ function copyCursorPack(args) {
 }
 
 function installHermes(args) {
-  const hasSelection = args.skills.length > 0 || args.categories.length > 0 || args.includeExamples;
-  const selectedRoot = hasSelection ? ensureSafeTarget(defaultHermesSelectedTarget(args)) : skillsRoot;
-
-  if (hasSelection) {
-    copyFlatSkills(selectedRoot, 'hermes', selectedSkills(args), args);
-  }
+  const selectedRoot = ensureSafeTarget(defaultHermesSelectedTarget(args));
+  copyFlatSkills(selectedRoot, 'hermes', selectedSkills(args), args);
 
   const skillsDir = normalizePathForConfig(selectedRoot);
 
@@ -694,6 +958,10 @@ try {
     searchCommand(args);
   } else if (args.command === 'info') {
     infoCommand(args);
+  } else if (args.command === 'match') {
+    matchCommand(args);
+  } else if (args.command === 'ask') {
+    askCommand(args);
   } else if (args.command === 'install-hermes') {
     installHermes(args);
   } else if (args.command === 'install-openclaw') {

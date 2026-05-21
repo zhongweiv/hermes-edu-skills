@@ -1,8 +1,8 @@
 # Hermes Edu Skills
 
-A China-focused open education Agent Skill Pack for textbook sync, exam prep, photo Q&A, mistake review, family learning, reading/writing, and teacher workflows. Built for Hermes Agent, exportable to OpenClaw, Codex, Cursor, Claude Code, and other AI tools.
+An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-focused education capabilities: textbook sync, exam prep, mistake review, daily practice, family learning, reading/writing, and teacher workflows.
 
-面向中国教育场景的开源 Agent Skill Pack：教材同步、备考复习、拍照答疑、错题复盘、亲子陪学、阅读写作和教师工具，Hermes Agent 可直接使用，也可导出到 OpenClaw、Codex、Cursor、Claude Code 等 AI 工具。
+让 Hermes Agent 和主流 AI 工具拥有中国教育场景能力的开源 Agent Skill Pack：教材同步、备考复习、错题复盘、每日练习、亲子陪学、阅读写作和教师工作流。
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -11,53 +11,88 @@ A China-focused open education Agent Skill Pack for textbook sync, exam prep, ph
 
 [中文文档](README.md) · [Skill Catalog](catalog.json) · [Discovery Index](.well-known/skills/index.json) · [Shineway](https://www.shineway.tech/)
 
-Hermes Edu Skills is a Chinese education Agent Skill Pack that can be recognized by Hermes Agent. It turns textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, teacher planning, and school communication into 170 browsable, installable, and reusable product-level Skills.
+<p align="center">
+  <img src="assets/demo.gif" alt="Hermes Edu Skills demo: install education skills and use them in Hermes Agent" width="860">
+</p>
 
-It currently includes 170 installable Hermes Skills. This is not a generic prompt collection; it is an Agent capability catalog organized around real education jobs, with invocation signals, target roles, parameter dimensions, usage boundaries, and Hermes-readable `SKILL.md` files.
+Hermes Edu Skills is an open Agent Skill Pack for Chinese education scenarios. It turns textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, teacher planning, and school communication into 170 browsable, installable, and reusable product-level Skills.
 
-If you are building an AI learning assistant, AI teacher, curriculum tool, family-learning product, question-bank/mistake-review product, or simply want to give Hermes Agent a ready-to-use Chinese education capability set, this repository is designed to be a practical starting point. If it helps you, please give it a Star so more education AI developers can discover it.
+It is not a generic prompt collection. It is a structured capability library that Hermes Agent can discover and load: every Skill has invocation signals, target roles, parameter dimensions, usage boundaries, and a standard `SKILL.md`. You can use it directly with Hermes Agent or export it to OpenClaw, Codex, Cursor, Claude Code, and other Agent tools.
+
+If you are building an AI learning assistant, AI teacher, curriculum tool, family-learning product, question-bank/mistake-review product, or simply want your local Agent to understand Chinese textbooks and learning workflows better, this repository is designed to be a practical starting point. If it helps, please give it a Star so more education AI builders can discover it.
 
 ## Navigation
 
-- [Understand In 30 Seconds](#understand-in-30-seconds)
+- [Quick Start](#quick-start)
+- [What It Is](#what-it-is)
+- [Why This Is Not A Prompt Collection](#why-this-is-not-a-prompt-collection)
+- [Who It Is For](#who-it-is-for)
+- [Category Overview](#category-overview)
 - [Default: Hermes Agent](#defaulthermes-agent)
+- [Auto-match And Run A Skill](#auto-match-and-run-a-skill)
 - [Install A Single Skill](#install-a-single-skill)
 - [Export To Other AI Tools Or Agents](#export-to-other-ai-tools-or-agents)
-- [Choose By Role](#choose-by-role)
-- [Skill Category Overview](#skill-category-overview)
+- [Coverage](#coverage)
 - [All Skills](#all-skills)
 - [Contributing](#contributing)
 - [Roadmap](#roadmap)
 
-## Understand In 30 Seconds
+## Quick Start
+
+Hermes Agent is the default target. For first-time use, install one category or one Skill first, then install the full pack once you confirm the workflow.
+
+```bash
+# Install all 170 installable Skills into Hermes Agent
+npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
+
+# Install only the textbook-sync category
+npx hermes-edu-skills install hermes textbook-sync --config ~/.hermes/config.yaml
+
+# Install one Skill
+npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
+
+# Search before installing
+npx hermes-edu-skills search mistake
+npx hermes-edu-skills info agent-mistake-review
+
+# Ask naturally: show the matched Skill, then invoke Hermes
+npx hermes-edu-skills ask "Create 5 grade-8 physics mechanics questions with answers"
+```
+
+Export to other Agent tools:
+
+```bash
+npx hermes-edu-skills install openclaw
+npx hermes-edu-skills install codex
+npx hermes-edu-skills install claude
+npx hermes-edu-skills install cursor --workspace /path/to/project
+npx hermes-edu-skills export generic --target ./dist/agent-skills
+```
+
+## What It Is
 
 | Question | Answer |
 | --- | --- |
-| What is this? | A China-focused education Agent Skill Pack for Hermes Agent Runtime. |
-| How many Skills? | 170 public Skills, all installable Hermes-compatible Skills. |
-| Core scenarios? | Textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, and teacher workflows. |
-| Why not thousands of files? | Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of repetitive Skills. |
-| Who is it for? | Hermes Agent users, education AI developers, teachers, curriculum researchers, schools, and institutions. |
-| How do I start? | Use `npx hermes-edu-skills install hermes` by default; source mode still supports `npm run install:hermes`. |
+| What | An open Agent Skill Pack for Chinese education scenarios. |
+| Why | General-purpose Agents usually do not understand Chinese textbook editions, grade/semester structures, unit pacing, exam systems, or real parent/teacher workflows. |
+| How | 170 structured `SKILL.md` files package education jobs into discoverable, installable, Agent-readable capabilities. |
+| Default platform | Hermes Agent. |
+| Export targets | OpenClaw, Codex, Cursor, Claude Code, and Generic Agent. |
+| Public scope | Public Skill docs, indexes, validation, and export tooling only; no user data, secrets, or commercial backend implementation. |
 
-## Why This Project Matters
+## Why This Is Not A Prompt Collection
 
-- China-first education scenarios: textbook editions, grades, semesters, units, sync practice, mistake review, exam prep, and family learning are first-class concerns.
-- Product-level taxonomy: Skills are organized by user jobs, not by raw technical folders, so they can be used as a real education Agent product blueprint.
-- Hermes-compatible: every Skill is a standard `SKILL.md` that Hermes can read.
-- Readable and extensible: install directly, adapt to your own Agent, or use as a Skill-design reference and product capability map.
-- Easy to communicate: Skills explain the user problem, best-fit users, workflow, output, boundaries, and standalone fallback.
-- Public-safe: this repository contains public Skill documents, indexes, and validation tools only. It does not contain user data, secrets, or commercial backend implementation.
+| Capability | Prompt Collection | Generic Agent Skills | Hermes Edu Skills |
+| --- | :---: | :---: | :---: |
+| Chinese textbook alignment | - | Usually no | Supports RJ, Tongbian, BS, SJ, LK, and other China-focused education scenarios |
+| Grade / semester / unit / difficulty | Manual prompting | Partial | Skill parameters and workflow constraints |
+| Real education jobs | Loose templates | General capabilities | Textbook sync, mistake review, exam prep, daily practice, and teacher workflows |
+| Hermes-native discovery | - | Not guaranteed | Standard `SKILL.md` |
+| Multi-Agent reuse | - | Not guaranteed | Exportable to OpenClaw, Codex, Cursor, and Claude Code |
+| Chinese education language | Inconsistent | Inconsistent | Written around Chinese students, parents, teachers, and curriculum work |
+| Secondary development | Low | Medium | Includes structure, indexes, validation, and installer tooling |
 
-## What You Can Build
-
-- Add a Chinese education Skill library to a local Hermes Agent, covering textbook sync, exam prep, reading/writing, and family learning.
-- Prototype AI learning assistants, AI teachers, AI teaching assistants, photo Q&A, mistake-review agents, parent-child reading helpers, and writing coaches.
-- Learn and reuse education Skill structure, invocation signals, use cases, and workflow naming patterns.
-- Design your own Skills for schools, teachers, parents, education institutions, and adult learning scenarios.
-- Fork the repository and extend textbook versions, knowledge-point coverage, and standalone Hermes tool adapters.
-
-## Choose By Role
+## Who It Is For
 
 | Who you are | Start here | What you get |
 | --- | --- | --- |
@@ -67,30 +102,29 @@ If you are building an AI learning assistant, AI teacher, curriculum tool, famil
 | Parent / family-learning product builder | [Family Education](#family-education), [Daily Practice](#daily-practice) | Build companionship, reading, habits, and daily practice scenarios. |
 | School / institution team | [Teacher Tools](#teacher-tools), [Exam Prep](#exam-prep) | Explore lesson planning, homework, class analysis, review, and teaching-support workflows. |
 
+## Category Overview
+
+The pack currently includes 170 installable Skills across 9 product-level categories. Grade, semester, unit, lesson, knowledge point, and difficulty are parameters, not thousands of repetitive Skill files.
+
+| Category | Install Selector | Use Case | Count |
+| --- | --- | --- | ---: |
+| <a href="#textbook-sync"><code>textbook-sync</code></a><br>Textbook Sync | <code>CLI: textbook-sync</code><br><code>source: --category textbook-sync</code> | China-focused textbook synchronization by version, grade, semester, unit, lesson, and knowledge point. Grade, semester, unit, and difficulty are parameters, not thousands of separate Skills. | 41 |
+| <a href="#learning-core"><code>learning-core</code></a><br>Learning Core | <code>CLI: learning-core</code><br><code>source: --category learning-core</code> | General learning-loop capabilities such as study plans, photo Q&A, mistake review, and learning reports. | 15 |
+| <a href="#daily-practice"><code>daily-practice</code></a><br>Daily Practice | <code>CLI: daily-practice</code><br><code>source: --category daily-practice</code> | Short high-frequency practice such as arithmetic, dictation, recitation, vocabulary, and quick reinforcement. | 28 |
+| <a href="#reading-writing"><code>reading-writing</code></a><br>Reading & Writing | <code>CLI: reading-writing</code><br><code>source: --category reading-writing</code> | Chinese, English, academic, and workplace reading/writing capabilities. | 10 |
+| <a href="#exam-prep"><code>exam-prep</code></a><br>Exam Prep | <code>CLI: exam-prep</code><br><code>source: --category exam-prep</code> | Final exams, Zhongkao, Gaokao, postgraduate exams, CET, certification, and civil-service prep. | 27 |
+| <a href="#teacher-tools"><code>teacher-tools</code></a><br>Teacher Tools | <code>CLI: teacher-tools</code><br><code>source: --category teacher-tools</code> | Teacher workflows such as lesson planning, homework generation, class analysis, and parent communication. | 31 |
+| <a href="#family-education"><code>family-education</code></a><br>Family Education | <code>CLI: family-education</code><br><code>source: --category family-education</code> | Parent companionship, parent-child reading, homework routines, and family communication. | 8 |
+| <a href="#language-learning"><code>language-learning</code></a><br>Language Learning | <code>CLI: language-learning</code><br><code>source: --category language-learning</code> | Adult English, study-abroad exams, speaking, listening, and long-term language improvement. | 3 |
+| <a href="#career-learning"><code>career-learning</code></a><br>Career Learning | <code>CLI: career-learning</code><br><code>source: --category career-learning</code> | College, adult learning, career skills, and certification scenarios. | 7 |
+
 ## Initiator And Maintainer
 
 This project is initiated and maintained by [Shineway](https://www.shineway.tech/).
 
-We are open-sourcing reusable education Agent Skill design so developers, teachers, researchers, schools, and education teams can explore China-focused education-agent capabilities together. This repository contains public Skill documents, indexes, and validation tools only; it does not include user data or backend service implementations.
+We are open-sourcing reusable education Agent Skill design so developers, teachers, researchers, schools, and education teams can explore China-focused education-agent capabilities together. This repository contains public Skill documents, indexes, validation, and export tooling only; it does not include user data or backend service implementations.
 
-## Project Highlights
-
-- 170 clickable product-level `SKILL.md` files.
-- User-task-oriented categories: textbook sync, learning core, daily practice, exam prep, reading/writing, teacher tools, and family education.
-- Each Skill includes Hermes frontmatter, use cases, invocation signals, and workflow names.
-- Adds standalone availability marks and install-selector columns so users can see both the first-class CLI selector and the source-mode npm flag.
-- Grade, semester, unit, lesson, knowledge point, and difficulty are parameters instead of thousands of separate Skills.
-- Includes `catalog.json` and `.well-known/skills/index.json` for tool discovery and secondary integration.
-- Includes a validation script to keep directories, indexes, and Skill files aligned.
-- MIT licensed for personal learning, secondary development, and education Agent prototyping.
-
-## How To Support
-
-- Star this repository so more people can discover this education Skill Pack.
-- Watch releases for new Skills, installation improvements, and Hermes updates.
-- Fork the `skills/` directory into your own Hermes Agent or education-agent project.
-- Open an issue to request the grade, textbook version, subject, or teacher tool you need.
-- Open a pull request to contribute new Skills, improve instructions, or add examples.
+If this project is useful to you, please give it a Star. It helps more Chinese education AI builders, teachers, and Agent users discover the project.
 
 ## Default: Hermes Agent
 
@@ -126,6 +160,18 @@ npx hermes-edu-skills search mistake
 npx hermes-edu-skills info agent-mistake-review
 ```
 
+After installation, if you want natural questions to clearly show which Skill is being used, use the built-in Skill Router:
+
+```bash
+# Show matching results only; do not call Hermes
+npx hermes-edu-skills match "grade 8 physics mechanics practice"
+
+# Auto-match a Skill and call official Hermes Agent
+npx hermes-edu-skills ask "Create 5 grade-8 physics mechanics questions with answers"
+```
+
+`ask` prints a line such as `Using Skill: junior-physics-rj-textbook-sync`, then runs `hermes chat -s <skill> -q <question>`. Add `--verbose` for verbose Hermes output, or `--hermes-bin <path>` if your Hermes executable uses a custom path.
+
 Method 2: Source-mode install (after cloning from GitHub)
 
 ```bash
@@ -157,6 +203,20 @@ from tools.skills_tool import skills_list, skill_view
 skills_list()
 skill_view("primary-math-mental-arithmetic")
 ```
+
+## Auto-match And Run A Skill
+
+Official Hermes Agent can preload a Skill with `-s`, but it may not always display "which Skill is being used" in the chat response. Hermes Edu Skills adds a small CLI router so users can ask naturally, see the matched Skill, and then run Hermes with that Skill preloaded.
+
+| Goal | Command |
+| --- | --- |
+| See which Skills match a natural-language question | `npx hermes-edu-skills match "grade 8 physics mechanics practice"` |
+| Let Hermes answer with the matched Skill | `npx hermes-edu-skills ask "Create 5 grade-8 physics mechanics questions with answers"` |
+| Show more candidate Skills | `npx hermes-edu-skills match "mistake review plan" --top 10` |
+| Pass verbose output to Hermes | `npx hermes-edu-skills ask "make a one-week study plan" --verbose` |
+| Use a custom Hermes executable | `npx hermes-edu-skills ask "junior English reading practice" --hermes-bin /path/to/hermes` |
+
+`match` is for debugging and selection. `ask` is for daily use. It does not replace Hermes Agent; it automates "match Skill -> show Skill -> call `hermes chat -s`".
 
 ## Install A Single Skill
 
@@ -239,23 +299,9 @@ npm run install:openclaw
 npm run export:agents
 ```
 
-## Skill Category Overview
-
-Start from these top-level categories. Each category still keeps a full clickable Skill table for browsing, search, and secondary integration.
-
-| Category | Install Selector | Use Case | Count |
-| --- | --- | --- | ---: |
-| <a href="#textbook-sync"><code>textbook-sync</code></a><br>Textbook Sync | <code>CLI: textbook-sync</code><br><code>source: --category textbook-sync</code> | China-focused textbook synchronization by version, grade, semester, unit, lesson, and knowledge point. Grade, semester, unit, and difficulty are parameters, not thousands of separate Skills. | 41 |
-| <a href="#learning-core"><code>learning-core</code></a><br>Learning Core | <code>CLI: learning-core</code><br><code>source: --category learning-core</code> | General learning-loop capabilities such as study plans, photo Q&A, mistake review, and learning reports. | 15 |
-| <a href="#daily-practice"><code>daily-practice</code></a><br>Daily Practice | <code>CLI: daily-practice</code><br><code>source: --category daily-practice</code> | Short high-frequency practice such as arithmetic, dictation, recitation, vocabulary, and quick reinforcement. | 28 |
-| <a href="#reading-writing"><code>reading-writing</code></a><br>Reading & Writing | <code>CLI: reading-writing</code><br><code>source: --category reading-writing</code> | Chinese, English, academic, and workplace reading/writing capabilities. | 10 |
-| <a href="#exam-prep"><code>exam-prep</code></a><br>Exam Prep | <code>CLI: exam-prep</code><br><code>source: --category exam-prep</code> | Final exams, Zhongkao, Gaokao, postgraduate exams, CET, certification, and civil-service prep. | 27 |
-| <a href="#teacher-tools"><code>teacher-tools</code></a><br>Teacher Tools | <code>CLI: teacher-tools</code><br><code>source: --category teacher-tools</code> | Teacher workflows such as lesson planning, homework generation, class analysis, and parent communication. | 31 |
-| <a href="#family-education"><code>family-education</code></a><br>Family Education | <code>CLI: family-education</code><br><code>source: --category family-education</code> | Parent companionship, parent-child reading, homework routines, and family communication. | 8 |
-| <a href="#language-learning"><code>language-learning</code></a><br>Language Learning | <code>CLI: language-learning</code><br><code>source: --category language-learning</code> | Adult English, study-abroad exams, speaking, listening, and long-term language improvement. | 3 |
-| <a href="#career-learning"><code>career-learning</code></a><br>Career Learning | <code>CLI: career-learning</code><br><code>source: --category career-learning</code> | College, adult learning, career skills, and certification scenarios. | 7 |
-
 ## Coverage
+
+The table below shows the main subject areas by category. The next section keeps the full clickable Skill catalog; category names and Skill names can both be used as install selectors.
 
 | Category | Install Selector | Main Areas | Count |
 | --- | --- | --- | ---: |
