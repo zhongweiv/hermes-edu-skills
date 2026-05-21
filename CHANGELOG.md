@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.16.3 - 2026-05-21
+
+- Adds `hermes-edu-skills prompt` to print a project-level Hermes Edu Skills activation prompt.
+- Adds `install hermes --with-prompt` to generate `HERMES.md` during Hermes installation without overwriting existing project instructions by default.
+- Documents how the activation prompt improves Hermes-native Skill discovery while keeping deterministic `ask` routing available.
+
 ## 0.16.2 - 2026-05-21
 
 - Promotes Skill Router into a standalone product-level README section for natural questions, visible Skill selection, and Hermes invocation.

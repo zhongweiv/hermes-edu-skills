@@ -26,6 +26,7 @@ const commandAliases = {
   list: 'list',
   ls: 'list',
   match: 'match',
+  prompt: 'prompt',
   route: 'match',
   run: 'ask',
   search: 'search',
@@ -147,6 +148,7 @@ Usage:
   hermes-edu-skills info <skill>
   hermes-edu-skills match <question>
   hermes-edu-skills ask <question>
+  hermes-edu-skills prompt
   hermes-edu-skills doctor
 
 Source-mode usage:
@@ -172,6 +174,8 @@ Examples:
   npx hermes-edu-skills info agent-mistake-review
   npx hermes-edu-skills match "八年级下册物理力学题"
   npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
+  npx hermes-edu-skills prompt > HERMES.md
+  npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --with-prompt
   npx hermes-edu-skills doctor
 
 Short npm commands:
@@ -188,6 +192,9 @@ Options:
   --config <path>         Hermes config path.
   --include-examples      Include doc_only example Skills.
   --hermes-bin <command>  Hermes executable for ask/doctor. Default: hermes.
+  --with-prompt           Write a project HERMES.md activation prompt during Hermes install.
+  --prompt-target <path>  Prompt file path for --with-prompt. Default: ./HERMES.md.
+  --overwrite-prompt      Allow --with-prompt to overwrite the prompt target.
   --skill <slug>          Export/install only selected Skill slug/name. Can be used multiple times or comma-separated.
   --target <path>         Destination directory.
   --top <number>          Number of router matches to print. Default: 5 for match, 1 for ask.
@@ -212,12 +219,15 @@ function parseArgs(argv) {
     format: '',
     hermesBin: 'hermes',
     includeExamples: false,
+    overwritePrompt: false,
+    promptTarget: '',
     skills: [],
     target: '',
     tool: '',
     top: 0,
     positionals: [],
     verbose: false,
+    withPrompt: false,
     workspace: '',
   };
 
@@ -250,6 +260,14 @@ function parseArgs(argv) {
       args.hermesBin = readValue();
     } else if (arg.startsWith('--hermes-bin=')) {
       args.hermesBin = arg.slice('--hermes-bin='.length);
+    } else if (arg === '--with-prompt') {
+      args.withPrompt = true;
+    } else if (arg === '--prompt-target') {
+      args.promptTarget = readValue();
+    } else if (arg.startsWith('--prompt-target=')) {
+      args.promptTarget = arg.slice('--prompt-target='.length);
+    } else if (arg === '--overwrite-prompt') {
+      args.overwritePrompt = true;
     } else if (arg === '--skill') {
       args.skills.push(...readValue().split(',').map((item) => item.trim()).filter(Boolean));
     } else if (arg.startsWith('--skill=')) {
@@ -343,6 +361,65 @@ function normalizePathForConfig(path) {
 
 function normalizeRelativePath(path) {
   return path.replace(/\\/g, '/');
+}
+
+function hermesEduActivationPrompt() {
+  return `# Hermes Edu Skills Activation Prompt
+
+You have Hermes Edu Skills installed. Treat this project as the default Skill Pack for Chinese education tasks.
+
+When the user asks about Chinese education, textbook sync, mental arithmetic, question generation, homework help, photo Q&A, mistake review, exam prep, reading/writing, parent coaching, teacher lesson planning, homework generation, class analysis, or school communication:
+
+1. Before answering, check the available Skills with the Hermes skills toolset when it is available.
+2. Select the most relevant Hermes Edu Skill by comparing the user's intent with Skill names, descriptions, categories, stages, subjects, and invocation signals.
+3. Load the selected Skill with skill_view(name) before giving the final answer.
+4. Follow the selected Skill's workflow, inputs, output format, safety boundaries, and standalone fallback.
+5. At the beginning of the answer, briefly state: Using Skill: <skill-name>.
+6. If multiple Skills may fit, choose the most specific one. Prefer subject/textbook/grade-specific Skills over broad general Skills.
+7. If the user does not provide enough grade, semester, unit, textbook edition, difficulty, or scenario information, ask only the minimum necessary follow-up question.
+8. If no Skill clearly matches, answer normally and say that no specific Hermes Edu Skill was selected.
+
+High-signal routing examples:
+
+- "帮我出5道口算练习" -> primary-math-mental-arithmetic
+- "八年级下册物理力学题" -> junior-physics-rj-textbook-sync or junior-physics-quick-practice, depending on whether the user asks for textbook sync or quick practice
+- "帮我整理错题复盘计划" -> agent-mistake-review
+- "给孩子制定一周学习计划" -> agent-study-plan
+- "老师备一节初中数学课" -> teacher-math-lesson-planning
+- "生成一份英语阅读训练" -> primary-english-reading, junior-english-quick-practice, or senior-english-quick-practice according to stage
+
+If the Hermes skills toolset is not available in the current session, tell the user to start Hermes with skills enabled, for example:
+
+\`\`\`bash
+hermes chat --toolsets skills
+\`\`\`
+
+You may still answer with general reasoning, but do not pretend that a Skill was loaded when skill_view(name) was not available.`;
+}
+
+function promptCommand() {
+  console.log(hermesEduActivationPrompt());
+}
+
+function writeActivationPrompt(args) {
+  const target = resolve(expandHome(args.promptTarget || 'HERMES.md'));
+  const prompt = `${hermesEduActivationPrompt()}\n`;
+
+  if (args.dryRun) {
+    console.log(`[dry-run] write Hermes Edu activation prompt -> ${target}`);
+    return;
+  }
+
+  if (existsSync(target) && !args.overwritePrompt) {
+    console.log(`[hermes-edu-skills] prompt target already exists: ${target}`);
+    console.log('[hermes-edu-skills] Not overwriting. To inspect the prompt, run: npx hermes-edu-skills prompt');
+    console.log('[hermes-edu-skills] To write anyway, pass --overwrite-prompt or choose --prompt-target <path>.');
+    return;
+  }
+
+  mkdirSync(dirname(target), { recursive: true });
+  writeFileSync(target, prompt, 'utf8');
+  console.log(`[hermes-edu-skills] wrote Hermes Edu activation prompt: ${target}`);
 }
 
 function readCatalog() {
@@ -1159,6 +1236,7 @@ function installHermes(args) {
     console.log('skills:');
     console.log('  external_dirs:');
     console.log(`    - ${skillsDir}`);
+    if (args.withPrompt) writeActivationPrompt(args);
     return;
   }
 
@@ -1167,6 +1245,7 @@ function installHermes(args) {
 
   if (content.includes(skillsDir)) {
     console.log(`[hermes-edu-skills] Hermes config already contains ${skillsDir}`);
+    if (args.withPrompt) writeActivationPrompt(args);
     return;
   }
 
@@ -1191,6 +1270,7 @@ function installHermes(args) {
   writeFileSync(configPath, content, 'utf8');
   console.log(`[hermes-edu-skills] updated Hermes config: ${configPath}`);
   console.log(`[hermes-edu-skills] skills external dir: ${skillsDir}`);
+  if (args.withPrompt) writeActivationPrompt(args);
 }
 
 function installTool(args) {
@@ -1237,6 +1317,8 @@ try {
     matchCommand(args);
   } else if (args.command === 'ask') {
     askCommand(args);
+  } else if (args.command === 'prompt') {
+    promptCommand(args);
   } else if (args.command === 'doctor') {
     doctorCommand(args);
   } else if (args.command === 'install-hermes') {
