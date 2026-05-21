@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.5 - 2026-05-21
+
+- Updates the Chinese README so category table cells prioritize English command category names.
+- Updates the Chinese README so Skill table cells prioritize installable English Skill names.
+- Keeps Chinese labels on the next line for readability while making command names easier to copy.
+
 ## 0.10.4 - 2026-05-21
 
 - Polishes README Skill tables for easier scanning and copying.
