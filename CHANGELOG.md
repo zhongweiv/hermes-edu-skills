@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.3 - 2026-05-21
+
+- Adjusts README category display to two-line bilingual names.
+- Adjusts README Skill display to two-line bilingual names plus a copyable slug.
+- Keeps Chinese README Chinese-first and English README English-first while preserving both languages in each row.
+
 ## 0.10.2 - 2026-05-21
 
 - Adds short install/export npm commands for Codex, Claude Code, Cursor, OpenClaw, Hermes, and generic Agent targets.
