@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.16.7 - 2026-05-21
+
+- Adds commercial-first `interactionPolicy` metadata to every Skill so required dimensions are recognized, lightly asked, and safely defaulted when users skip answers.
+- Regenerates all 170 public Hermes Skills with `Required Dimensions` and `Default Policy When Missing` sections.
+- Defaults missing grade, semester, difficulty, quantity, time, scenario, role, learning history, and answer explanation behavior by Skill category.
+- Keeps default handling aligned with standalone Hermes usage: ask once, continue with assumptions, disclose defaults briefly, and let users refine later.
+
 ## 0.16.6 - 2026-05-21
 
 - Makes Hermes single-Skill and category installs generate scoped activation prompts by default.
