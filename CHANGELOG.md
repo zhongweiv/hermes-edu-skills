@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.18.5 - 2026-05-22
+
+- Improves `doctor` visibility reporting by separating Hermes' total local Skill count from the `hermes-edu-skills` Pack visibility count.
+- Runs `hermes skills list --source local` with a wider, no-color environment to reduce Rich table truncation.
+- Detects likely truncated long Skill names and reports them as likely visible instead of false missing items.
+
 ## 0.18.4 - 2026-05-22
 
 - Fixes Hermes config repair when `skills.external_dirs` appears more than once in `config.yaml`; the installer now consolidates duplicate blocks instead of leaving a later empty list that overrides the Skill Pack path.

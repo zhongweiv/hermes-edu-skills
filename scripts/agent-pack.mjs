@@ -1274,7 +1274,7 @@ function parseHermesSkillListNames(output) {
   for (const line of output.split(/\r?\n/)) {
     const boxMatch = line.match(/^│\s*([^│]+?)\s*│/);
     if (boxMatch) {
-      const name = boxMatch[1].trim();
+      const name = boxMatch[1].trim().replace(/\s+/g, ' ');
       if (name && name !== 'Name') names.add(name);
       continue;
     }
@@ -1287,6 +1287,12 @@ function parseHermesSkillListNames(output) {
 function runHermesSkillsList(args) {
   const result = spawnCommand(args.hermesBin || 'hermes', ['skills', 'list', '--source', 'local'], {
     encoding: 'utf8',
+    env: {
+      ...process.env,
+      COLUMNS: process.env.COLUMNS && Number(process.env.COLUMNS) > 240 ? process.env.COLUMNS : '240',
+      NO_COLOR: process.env.NO_COLOR || '1',
+      FORCE_COLOR: '0',
+    },
   });
 
   return {
@@ -1294,6 +1300,15 @@ function runHermesSkillsList(args) {
     output: `${result.stdout || ''}${result.stderr || ''}`,
     status: result.status,
   };
+}
+
+function visibleNameCouldBeTruncated(visibleName, expectedName) {
+  const clean = visibleName
+    .replace(/[.…]+$/g, '')
+    .replace(/\s+/g, '')
+    .trim();
+  if (!clean || clean === visibleName) return false;
+  return expectedName.startsWith(clean) && clean.length >= 24;
 }
 
 function doctorCommand(args) {
@@ -1340,8 +1355,14 @@ function doctorCommand(args) {
   const hermes = runHermesSkillsList(args);
   const visibleNames = hermes.status === 0 ? parseHermesSkillListNames(hermes.output) : [];
   const visibleSet = new Set(visibleNames);
-  const missingVisible = hermes.status === 0 ? expectedNames.filter((name) => localSet.has(name) && !visibleSet.has(name)) : [];
+  const missingVisibleExact = hermes.status === 0 ? expectedNames.filter((name) => localSet.has(name) && !visibleSet.has(name)) : [];
+  const likelyTruncatedVisible = missingVisibleExact.filter((name) => visibleNames.some((visibleName) => visibleNameCouldBeTruncated(visibleName, name)));
+  const likelyTruncatedSet = new Set(likelyTruncatedVisible);
+  const missingVisible = missingVisibleExact.filter((name) => !likelyTruncatedSet.has(name));
   const disabledMissingVisible = missingVisible.filter((name) => disabledSkills.includes(name));
+  const packVisibleExact = expectedNames.filter((name) => visibleSet.has(name)).length;
+  const packVisibleLikely = packVisibleExact + likelyTruncatedVisible.length;
+  const extraVisible = visibleNames.filter((name) => !expectedSet.has(name) && !expectedNames.some((expectedName) => visibleNameCouldBeTruncated(name, expectedName)));
 
   console.log('Hermes Edu Skills Doctor');
   console.log('');
@@ -1358,9 +1379,11 @@ function doctorCommand(args) {
   console.log(`Global prompt:    ${hasGlobalPrompt ? 'enabled' : `missing (${globalPromptPath})`}`);
   console.log(`Disabled Skills:  ${disabledSkills.length}`);
   if (hermes.status === 0) {
-    console.log(`Hermes visible:   ${visibleNames.length}`);
+    console.log(`Hermes local visible: ${visibleNames.length}`);
+    console.log(`Pack visible:     ${packVisibleLikely}/${expectedNames.length}${likelyTruncatedVisible.length ? ` (${packVisibleExact} exact + ${likelyTruncatedVisible.length} likely truncated)` : ''}`);
+    if (extraVisible.length) console.log(`Extra local visible: ${extraVisible.length}`);
   } else {
-    console.log(`Hermes visible:   unavailable (${hermes.error || `exit ${hermes.status}`})`);
+    console.log(`Hermes local visible: unavailable (${hermes.error || `exit ${hermes.status}`})`);
   }
 
   const problems = [];
@@ -1392,6 +1415,13 @@ function doctorCommand(args) {
       console.log(`  - ${name}${disabledNote}`);
     }
     if (missingVisible.length > 50) console.log(`  ... ${missingVisible.length - 50} more`);
+  }
+
+  if (likelyTruncatedVisible.length) {
+    console.log('');
+    console.log('Likely visible but truncated by Hermes table output:');
+    for (const name of likelyTruncatedVisible.slice(0, 50)) console.log(`  - ${name}`);
+    if (likelyTruncatedVisible.length > 50) console.log(`  ... ${likelyTruncatedVisible.length - 50} more`);
   }
 
   if (disabledMissingVisible.length) {
