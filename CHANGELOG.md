@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.18.1 - 2026-05-22
+
+- Adds install success version output and `hermes-edu-skills version` / `--version` / `-v`.
+- Adds global Hermes activation addendum support by writing a marked `hermes-edu-skills` block into the current Hermes Home `SOUL.md` without overwriting existing user content.
+- Extends `doctor`, `repair`, and `uninstall` to check, restore, and remove the global activation addendum.
+- Improves default Hermes config discovery by using `hermes config path` when available, then falling back to `~/.hermes/config.yaml`.
+
 ## 0.18.0 - 2026-05-22
 
 - Makes the default public path `npx --yes hermes-edu-skills install`, which installs and enables the full Hermes Skill Pack using the default Hermes config path.

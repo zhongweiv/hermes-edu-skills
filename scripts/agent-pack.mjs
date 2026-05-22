@@ -33,6 +33,10 @@ const commandAliases = {
   search: 'search',
   uninstall: 'uninstall',
   update: 'update',
+  version: 'version',
+  '--version': 'version',
+  '-v': 'version',
+  '-V': 'version',
   verify: 'verify',
 };
 
@@ -150,6 +154,10 @@ const categoryAliases = {
   '同步教材': 'textbook-sync',
 };
 
+const globalPromptStart = '<!-- hermes-edu-skills:activation:start -->';
+const globalPromptEnd = '<!-- hermes-edu-skills:activation:end -->';
+let detectedHermesConfigPath = '';
+
 function usage() {
   console.log(`Hermes Edu Skills Agent Pack
 
@@ -164,6 +172,7 @@ Usage:
   hermes-edu-skills ask <question>
   hermes-edu-skills chat
   hermes-edu-skills prompt
+  hermes-edu-skills version
   hermes-edu-skills doctor
   hermes-edu-skills verify
   hermes-edu-skills repair
@@ -197,6 +206,7 @@ Examples:
   npx hermes-edu-skills match "八年级下册物理力学题"
   npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
   npx hermes-edu-skills prompt > HERMES.md
+  npx hermes-edu-skills version
   npx hermes-edu-skills doctor
   npx hermes-edu-skills repair
   npx hermes-edu-skills uninstall
@@ -218,8 +228,11 @@ Options:
   --no-enable-skills-toolset
                          Do not update Hermes platform_toolsets.cli during install.
   --with-prompt           Compatibility flag. Hermes install writes the activation prompt by default.
-  --no-prompt             Do not write the project HERMES.md activation prompt during Hermes install.
+  --no-prompt             Do not write project/global activation prompts during Hermes install.
   --prompt-target <path>  Prompt file path for Hermes install. Default: ./HERMES.md.
+  --global-prompt-target <path>
+                         Global Hermes activation file. Default: SOUL.md next to Hermes config.
+  --no-global-prompt      Do not write the global Hermes SOUL.md activation addendum.
   --overwrite-prompt      Allow Hermes install to overwrite the prompt target.
   --skill <slug>          Export/install only selected Skill slug/name. Can be used multiple times or comma-separated.
   --target <path>         Destination directory.
@@ -243,11 +256,13 @@ function parseArgs(argv) {
     config: '',
     dryRun: false,
     format: '',
+    globalPromptTarget: '',
     hermesBin: 'hermes',
     includeExamples: false,
     enableSkillsToolset: true,
     overwritePrompt: false,
     promptTarget: '',
+    skipGlobalPrompt: false,
     skipPrompt: false,
     skills: [],
     target: '',
@@ -294,10 +309,17 @@ function parseArgs(argv) {
       args.withPrompt = true;
     } else if (arg === '--no-prompt') {
       args.skipPrompt = true;
+      args.skipGlobalPrompt = true;
     } else if (arg === '--prompt-target') {
       args.promptTarget = readValue();
     } else if (arg.startsWith('--prompt-target=')) {
       args.promptTarget = arg.slice('--prompt-target='.length);
+    } else if (arg === '--global-prompt-target') {
+      args.globalPromptTarget = readValue();
+    } else if (arg.startsWith('--global-prompt-target=')) {
+      args.globalPromptTarget = arg.slice('--global-prompt-target='.length);
+    } else if (arg === '--no-global-prompt') {
+      args.skipGlobalPrompt = true;
     } else if (arg === '--overwrite-prompt') {
       args.overwritePrompt = true;
     } else if (arg === '--skill') {
@@ -524,6 +546,54 @@ function writeActivationPrompt(args, skills = null) {
   mkdirSync(dirname(target), { recursive: true });
   writeFileSync(target, prompt, 'utf8');
   console.log(`[hermes-edu-skills] wrote Hermes Edu activation prompt: ${target}`);
+}
+
+function defaultGlobalPromptTarget(args) {
+  if (args.globalPromptTarget) return resolve(expandHome(args.globalPromptTarget));
+  return join(dirname(defaultHermesConfigPath(args)), 'SOUL.md');
+}
+
+function writeGlobalActivationPrompt(args, skills = null) {
+  const target = defaultGlobalPromptTarget(args);
+  const addendum = [
+    globalPromptStart,
+    '',
+    '## Hermes Edu Skills Global Activation',
+    '',
+    'The following addendum was installed by `hermes-edu-skills`. Keep it if you want normal `hermes` sessions to automatically consider the education Skill Pack.',
+    '',
+    hermesEduActivationPrompt(skills),
+    '',
+    globalPromptEnd,
+    '',
+  ].join('\n');
+
+  if (args.dryRun) {
+    console.log(`[dry-run] write Hermes Edu global activation addendum -> ${target}`);
+    return;
+  }
+
+  const before = existsSync(target) ? readFileSync(target, 'utf8') : '';
+  const pattern = new RegExp(`${globalPromptStart.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${globalPromptEnd.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\n?`, 'm');
+  const after = pattern.test(before)
+    ? before.replace(pattern, addendum)
+    : `${before.trimEnd()}${before.trim() ? '\n\n' : ''}${addendum}`;
+
+  mkdirSync(dirname(target), { recursive: true });
+  writeFileSync(target, after, 'utf8');
+  console.log(`[hermes-edu-skills] wrote Hermes Edu global activation addendum: ${target}`);
+}
+
+function removeGlobalActivationPrompt(args) {
+  const target = defaultGlobalPromptTarget(args);
+  if (!existsSync(target)) return;
+  const before = readFileSync(target, 'utf8');
+  const pattern = new RegExp(`\\n?${globalPromptStart.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${globalPromptEnd.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\n?`, 'm');
+  const after = before.replace(pattern, '\n').trimEnd();
+  if (after !== before) {
+    writeFileSync(target, `${after}${after ? '\n' : ''}`, 'utf8');
+    console.log(`[hermes-edu-skills] removed Hermes Edu global activation addendum: ${target}`);
+  }
 }
 
 function readCatalog() {
@@ -1031,6 +1101,17 @@ function readInstalledPack(target) {
 
 function defaultHermesConfigPath(args) {
   if (args.config) return resolve(expandHome(args.config));
+  if (detectedHermesConfigPath) return detectedHermesConfigPath;
+  const detected = spawnCommand(args.hermesBin || 'hermes', ['config', 'path'], {
+    encoding: 'utf8',
+  });
+  const line = detected.status === 0
+    ? String(detected.stdout || '').split(/\r?\n/).map((item) => item.trim()).find(Boolean)
+    : '';
+  if (line) {
+    detectedHermesConfigPath = resolve(expandHome(line));
+    return detectedHermesConfigPath;
+  }
   return join(homeDir(), '.hermes', 'config.yaml');
 }
 
@@ -1130,6 +1211,7 @@ function doctorCommand(args) {
   const expectedSet = new Set(expectedNames);
   const target = resolve(expandHome(defaultHermesSelectedTarget(args)));
   const configPath = defaultHermesConfigPath(args);
+  const globalPromptPath = defaultGlobalPromptTarget(args);
   const installedPack = readInstalledPack(target);
   const localSkillFiles = walkSkillMarkdownFiles(target);
   const localNames = localSkillFiles.map(readSkillNameFromFile).filter(Boolean).sort();
@@ -1141,12 +1223,17 @@ function doctorCommand(args) {
   let externalDirs = [];
   let cliToolsets = [];
   let disabledSkills = [];
+  let globalPromptContent = '';
   if (existsSync(configPath)) {
     configContent = readFileSync(configPath, 'utf8');
     externalDirs = extractYamlListBlock(configContent, 'skills.external_dirs');
     cliToolsets = extractYamlListBlock(configContent, 'platform_toolsets.cli');
     disabledSkills = extractDisabledSkills(configContent);
   }
+  if (existsSync(globalPromptPath)) {
+    globalPromptContent = readFileSync(globalPromptPath, 'utf8');
+  }
+  const hasGlobalPrompt = globalPromptContent.includes(globalPromptStart) && globalPromptContent.includes(globalPromptEnd);
 
   const targetForConfig = normalizePathForConfig(target);
   const configContainsTarget = externalDirs
@@ -1170,6 +1257,7 @@ function doctorCommand(args) {
   console.log(`Hermes config:    ${existsSync(configPath) ? configPath : `missing (${configPath})`}`);
   console.log(`Config linked:    ${configContainsTarget ? 'yes' : 'no'}`);
   console.log(`CLI skills tools: ${cliToolsets.includes('skills') || cliToolsets.includes('hermes-cli') ? 'enabled' : 'not explicit'}`);
+  console.log(`Global prompt:    ${hasGlobalPrompt ? 'enabled' : `missing (${globalPromptPath})`}`);
   console.log(`Disabled Skills:  ${disabledSkills.length}`);
   if (hermes.status === 0) {
     console.log(`Hermes visible:   ${visibleNames.length}`);
@@ -1186,6 +1274,7 @@ function doctorCommand(args) {
   if (!existsSync(configPath)) problems.push(`Hermes config file is missing: ${configPath}`);
   if (existsSync(configPath) && !configContainsTarget) problems.push('Hermes config does not include this Skill Pack in skills.external_dirs.');
   if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) problems.push('Hermes CLI platform_toolsets.cli does not explicitly enable skills.');
+  if (!args.skipPrompt && !hasGlobalPrompt) problems.push('Hermes global SOUL.md activation addendum is missing, so plain `hermes` sessions outside the install directory may not auto-route to this Skill Pack.');
   if (hermes.status !== 0) problems.push(`Could not run Hermes skills list. Install Hermes Agent or pass --hermes-bin <path>.`);
   if (missingVisible.length) problems.push(`${missingVisible.length} local Skills are not visible in Hermes list.`);
 
@@ -1228,6 +1317,9 @@ function doctorCommand(args) {
     if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) {
       suggestions.add(`npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
       suggestions.add('After repair, start a fresh Hermes session with: hermes');
+    }
+    if (!args.skipPrompt && !hasGlobalPrompt) {
+      suggestions.add(`npx --yes hermes-edu-skills@latest repair --config ${configPath}`);
     }
     if (!existsSync(configPath) && suggestions.size === 0) {
       suggestions.add(`Create/update Hermes config by running: npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
@@ -1507,6 +1599,8 @@ function installHermes(args) {
   const skills = selectedSkills(args);
   copyFlatSkills(selectedRoot, 'hermes', skills, args);
   const shouldWritePrompt = !args.skipPrompt;
+  const catalog = readCatalog();
+  const packageJson = readPackageJson();
 
   const skillsDir = normalizePathForConfig(selectedRoot);
   const configPath = defaultHermesConfigPath(args);
@@ -1533,7 +1627,10 @@ function installHermes(args) {
     console.log(`[dry-run] update ${configPath}`);
     console.log('');
     console.log(content);
-    if (shouldWritePrompt) writeActivationPrompt(args, skills);
+    if (shouldWritePrompt) {
+      writeActivationPrompt(args, skills);
+      if (!args.skipGlobalPrompt) writeGlobalActivationPrompt(args, skills);
+    }
     return;
   }
 
@@ -1545,10 +1642,26 @@ function installHermes(args) {
     console.log(`[hermes-edu-skills] Hermes config already contains ${skillsDir} and skills toolset`);
   }
   console.log(`[hermes-edu-skills] skills external dir: ${skillsDir}`);
+  console.log(`[hermes-edu-skills] package version: ${packageJson.version}`);
+  console.log(`[hermes-edu-skills] catalog version: ${catalog.version}`);
   if (args.enableSkillsToolset) console.log('[hermes-edu-skills] Hermes CLI skills toolset: enabled');
   console.log('[hermes-edu-skills] Start a fresh Hermes session with: hermes');
   console.log('[hermes-edu-skills] If your Hermes build ignores config toolsets, use: npx hermes-edu-skills chat');
-  if (shouldWritePrompt) writeActivationPrompt(args, skills);
+  if (shouldWritePrompt) {
+    writeActivationPrompt(args, skills);
+    if (!args.skipGlobalPrompt) writeGlobalActivationPrompt(args, skills);
+  }
+}
+
+function versionCommand(args) {
+  const catalog = readCatalog();
+  const packageJson = readPackageJson();
+  const target = resolve(expandHome(defaultHermesSelectedTarget(args)));
+  const installedPack = readInstalledPack(target);
+  console.log(`${packageJson.name}@${packageJson.version}`);
+  console.log(`Catalog:   ${catalog.name}@${catalog.version}`);
+  console.log(`Installed: ${installedPack ? `${installedPack.name || 'unknown'}@${installedPack.version || 'unknown'} (${installedPack.skillCount ?? 'unknown'} skills)` : 'missing'}`);
+  console.log(`Target:    ${target}`);
 }
 
 function verifyCommand(args) {
@@ -1586,6 +1699,7 @@ function uninstallCommand(args) {
   if (args.dryRun) {
     console.log(`[dry-run] remove ${selectedRoot}`);
     if (existsSync(configPath)) console.log(`[dry-run] remove ${skillsDir} from ${configPath}`);
+    console.log(`[dry-run] remove Hermes Edu global activation addendum from ${defaultGlobalPromptTarget(args)}`);
     return;
   }
 
@@ -1600,6 +1714,8 @@ function uninstallCommand(args) {
       console.log(`[hermes-edu-skills] removed Skill Pack external dir from Hermes config: ${configPath}`);
     }
   }
+
+  removeGlobalActivationPrompt(args);
 
   console.log('[hermes-edu-skills] uninstall complete. Existing HERMES.md files are left untouched.');
 }
@@ -1652,6 +1768,8 @@ try {
     chatCommand(args);
   } else if (args.command === 'prompt') {
     promptCommand(args);
+  } else if (args.command === 'version') {
+    versionCommand(args);
   } else if (args.command === 'doctor') {
     doctorCommand(args);
   } else if (args.command === 'verify') {

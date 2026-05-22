@@ -163,8 +163,8 @@ This command does four things:
 
 - Installs 188 available Skills and updates Hermes `skills.external_dirs`.
 - Merges `skills` into Hermes CLI `platform_toolsets.cli`, so ordinary `hermes chat` sessions can access Skill tools more reliably.
-- Generates `HERMES.md` in the current directory by default, so Hermes searches the `hermes-edu-skills` Skill Pack before answering education questions directly.
-- Uses the default Hermes config path `~/.hermes/config.yaml`. After installation, users can keep starting Hermes with `hermes` or `hermes chat`.
+- Generates project-level `HERMES.md` in the current directory and writes a marked global activation addendum into the current Hermes Home `SOUL.md`, so direct `hermes` sessions from other directories also know to inspect `hermes-edu-skills`.
+- Auto-discovers `hermes config path`; if Hermes is unavailable, falls back to `~/.hermes/config.yaml`. After installation, users can keep starting Hermes with `hermes` or `hermes chat`.
 
 After installation, start a fresh Hermes session:
 
@@ -186,7 +186,7 @@ To skip prompt generation:
 npx --yes hermes-edu-skills install --no-prompt
 ```
 
-If `HERMES.md` already exists, the installer will not overwrite it. Run `npx hermes-edu-skills prompt` to inspect the prompt and merge it into your existing project instructions. The prompt includes the current installable Skill count and category map, and explicitly tells Hermes to search `hermes-edu-skills` first. Add `--overwrite-prompt` only when you really want to replace the file.
+If `HERMES.md` already exists, the installer will not overwrite it. Run `npx hermes-edu-skills prompt` to inspect the prompt and merge it into your existing project instructions. The global `SOUL.md` addendum is maintained only inside a marked `hermes-edu-skills` block and will not overwrite your existing content. Add `--overwrite-prompt` only when you really want to replace the project-level file.
 
 Install a category, for example textbook sync:
 
@@ -210,6 +210,7 @@ npx hermes-edu-skills list
 npx hermes-edu-skills list textbook-sync
 npx hermes-edu-skills search mistake
 npx hermes-edu-skills info agent-mistake-review
+npx hermes-edu-skills version
 ```
 
 After installation, you have two usage modes: use Hermes `-s` when you already know the Skill slug, or use the built-in Skill Router when you want to ask naturally and see which Skill is selected.
@@ -334,6 +335,7 @@ User-facing reliability commands:
 | Goal | Command |
 | --- | --- |
 | Diagnose install count, version, config, and Hermes visibility | `npx --yes hermes-edu-skills doctor` |
+| Show npm package, catalog, and installed Pack versions | `npx --yes hermes-edu-skills version` |
 | Repair missing files, config links, and CLI skills toolset | `npx --yes hermes-edu-skills repair` |
 | Update to npm latest and re-enable | `npx --yes hermes-edu-skills@latest update` |
 | Script/CI health check with non-zero failure exit | `npx --yes hermes-edu-skills verify` |
@@ -346,6 +348,7 @@ User-facing reliability commands:
 | Install manifest | `AGENT_SKILL_PACK.json` version, skillCount, and install time. |
 | Hermes config | Whether `~/.hermes/config.yaml` links the pack through `skills.external_dirs`. |
 | CLI Toolset | Whether `platform_toolsets.cli` enables `skills`; otherwise plain `hermes chat` may not expose Skill tools. |
+| Global Prompt | Whether the current Hermes Home `SOUL.md` contains the `hermes-edu-skills` global activation block. |
 | Disabled Skills | Whether `skills.disabled` / `platform_disabled` hides any Skills. |
 | Hermes visibility | How many Skills `hermes skills list --source local` actually sees. |
 
@@ -356,7 +359,7 @@ Common readings:
 | Local file count is correct, but Hermes visible count is lower | Check whether Hermes config disables or filters some Skills. |
 | Local file count is 0 | The pack was not installed into the Hermes default directory, or Hermes runs under a different user. |
 | Config linked = no | Hermes config does not include `skills.external_dirs`; rerun install with `--config ~/.hermes/config.yaml`. |
-| Chat says the Skill Pack is not installed | Run `npx --yes hermes-edu-skills repair`, then open a fresh `hermes` session; for temporary debugging, use `npx hermes-edu-skills chat`. |
+| Chat says the Skill Pack is not installed | Run `npx --yes hermes-edu-skills doctor` and inspect Global Prompt / Hermes visible, then run `npx --yes hermes-edu-skills repair` and open a fresh `hermes` session; for temporary debugging, use `npx hermes-edu-skills chat`. |
 | npm is published but npx still uses an older version | Run `npx --yes hermes-edu-skills@latest doctor`, or wait for npm cache propagation. |
 
 ## Install A Single Skill

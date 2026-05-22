@@ -163,8 +163,8 @@ npx --yes hermes-edu-skills install
 
 - 安装 188 个可用 Skill，并写入 Hermes `skills.external_dirs`。
 - 自动把 Hermes CLI 的 `platform_toolsets.cli` 合并为启用 `skills`，避免普通 `hermes chat` 无法访问 Skill 工具。
-- 默认在当前目录生成 `HERMES.md` 启动 Prompt，让 Hermes 在教育问题里先去 `hermes-edu-skills` 这套 Skill Pack 里找，而不是直接普通回答。
-- 使用 Hermes 默认配置文件 `~/.hermes/config.yaml`。安装完成后，用户继续使用 `hermes` 或 `hermes chat` 即可。
+- 默认在当前目录生成项目级 `HERMES.md` 启动 Prompt，并在当前 Hermes Home 的 `SOUL.md` 中写入带标记的全局激活区块，让用户从其它目录直接运行 `hermes` 时也会优先检索 `hermes-edu-skills`。
+- 自动发现 `hermes config path`；如果 Hermes 暂不可用，再使用 `~/.hermes/config.yaml`。安装完成后，用户继续使用 `hermes` 或 `hermes chat` 即可。
 
 安装后推荐重新打开一个 Hermes 会话：
 
@@ -186,7 +186,7 @@ npx --yes hermes-edu-skills install --config /path/to/config.yaml
 npx --yes hermes-edu-skills install --no-prompt
 ```
 
-如果 `HERMES.md` 已存在，安装器不会覆盖；你可以运行 `npx hermes-edu-skills prompt` 查看内容，手动合并到已有项目指令中。Prompt 会动态写入当前可安装 Skill 数量和分类，并明确要求教育相关请求先搜索 `hermes-edu-skills`。如果确实要覆盖，请加 `--overwrite-prompt`。
+如果 `HERMES.md` 已存在，安装器不会覆盖；你可以运行 `npx hermes-edu-skills prompt` 查看内容，手动合并到已有项目指令中。全局 `SOUL.md` 只会维护 `hermes-edu-skills` 标记区块，不会覆盖用户原有内容。如果确实要覆盖项目级 `HERMES.md`，请加 `--overwrite-prompt`。
 
 安装某个分类，例如教材同步：
 
@@ -210,6 +210,7 @@ npx hermes-edu-skills list
 npx hermes-edu-skills list textbook-sync
 npx hermes-edu-skills search 错题
 npx hermes-edu-skills info agent-mistake-review
+npx hermes-edu-skills version
 ```
 
 安装后，你有两种使用方式：熟悉 Skill 名时直接用 Hermes 的 `-s` 手动指定；不知道该选哪个 Skill 时，用内置 Skill Router 自然提问，并让它先显示本次匹配到的 Skill。
@@ -334,6 +335,7 @@ npx --yes hermes-edu-skills doctor
 | 目标 | 命令 |
 | --- | --- |
 | 诊断安装、版本、配置和 Hermes 可见性 | `npx --yes hermes-edu-skills doctor` |
+| 查看 npm 包、catalog 和已安装 Pack 版本 | `npx --yes hermes-edu-skills version` |
 | 自动修复缺失目录、config 链接和 CLI skills toolset | `npx --yes hermes-edu-skills repair` |
 | 更新到当前 npm latest 并重新启用 | `npx --yes hermes-edu-skills@latest update` |
 | 用于脚本/CI 的健康检查，失败时返回非 0 | `npx --yes hermes-edu-skills verify` |
@@ -346,6 +348,7 @@ npx --yes hermes-edu-skills doctor
 | 安装清单 | `AGENT_SKILL_PACK.json` 的版本、skillCount 和安装时间。 |
 | Hermes 配置 | `~/.hermes/config.yaml` 是否通过 `skills.external_dirs` 指向 Skill Pack。 |
 | CLI Toolset | `platform_toolsets.cli` 是否启用了 `skills`，否则普通 `hermes chat` 可能看不到 Skill 工具。 |
+| Global Prompt | 当前 Hermes Home 的 `SOUL.md` 是否包含 `hermes-edu-skills` 全局激活区块。 |
 | 禁用状态 | `skills.disabled` / `platform_disabled` 是否屏蔽了某些 Skill。 |
 | Hermes 可见性 | `hermes skills list --source local` 实际能看到多少个 Skill。 |
 
@@ -356,7 +359,7 @@ npx --yes hermes-edu-skills doctor
 | 本地文件数量正常，但 Hermes 可见数量偏少 | 是否有 Skill 被 Hermes 配置禁用，或 Hermes 对同名 Skill 做了过滤。 |
 | 本地文件是 0 | 还没有安装到 Hermes 默认目录，或当前用户目录和运行 Hermes 的用户不一致。 |
 | Config linked = no | Hermes 配置没有接入 `skills.external_dirs`，重新执行安装命令并带上 `--config ~/.hermes/config.yaml`。 |
-| 提问时提示 Skill Pack 未安装 | 先运行 `npx --yes hermes-edu-skills repair`，然后重新打开 `hermes` 会话；临时调试可用 `npx hermes-edu-skills chat`。 |
+| 提问时提示 Skill Pack 未安装 | 先运行 `npx --yes hermes-edu-skills doctor` 看 Global Prompt / Hermes visible，再运行 `npx --yes hermes-edu-skills repair` 并重新打开 `hermes` 会话；临时调试可用 `npx hermes-edu-skills chat`。 |
 | npm 已发布但 npx 还是旧版本 | 使用 `npx --yes hermes-edu-skills@latest doctor`，或等待 npm 缓存刷新。 |
 
 ## 只安装单个 Skill

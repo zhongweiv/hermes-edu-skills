@@ -1,6 +1,6 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "license": "MIT",
   "runtimeActivationPolicy": {
     "targetRuntime": "hermes-agent",
@@ -16,6 +16,8 @@
     ],
     "activationScope": "global_pack",
     "promptStrategy": "pack_router_first",
+    "projectPromptTarget": "./HERMES.md",
+    "globalPromptTarget": "~/.hermes/SOUL.md",
     "supportsPlainHermesCommand": true,
     "restartRequired": true,
     "healthCommands": [
@@ -23,10 +25,11 @@
       "verify",
       "repair",
       "update",
-      "uninstall"
+      "uninstall",
+      "version"
     ]
   },
-  "generatedAt": "2026-05-22T14:19:29.751Z",
+  "generatedAt": "2026-05-22T14:58:03.109Z",
   "skillCount": 188,
   "skills": [
     {
