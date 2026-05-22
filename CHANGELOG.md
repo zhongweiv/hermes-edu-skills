@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.18.2 - 2026-05-22
+
+- Fixes Hermes config YAML merging when an existing `platform_toolsets.cli` list uses YAML indentless sequence style, for example `cli:\n- hermes-cli`.
+- Improves `doctor` list parsing for Hermes config lists that use the same indentless YAML style.
+- Prevents `install` / `repair` from creating mixed-indentation `platform_toolsets.cli` blocks that make Hermes ignore the user config.
+
 ## 0.18.1 - 2026-05-22
 
 - Adds install success version output and `hermes-edu-skills version` / `--version` / `-v`.

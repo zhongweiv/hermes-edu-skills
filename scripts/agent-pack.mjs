@@ -1141,9 +1141,12 @@ function extractYamlListBlock(content, blockPath) {
     const line = lines[index];
     if (!line.trim() || line.trim().startsWith('#')) continue;
     const currentIndent = line.match(/^(\s*)/)?.[1].length || 0;
-    if (currentIndent <= indent) break;
     const item = line.match(/^\s*-\s*(.+?)\s*(?:#.*)?$/);
-    if (item) values.push(item[1].trim().replace(/^["']|["']$/g, ''));
+    if (item && currentIndent >= indent) {
+      values.push(item[1].trim().replace(/^["']|["']$/g, ''));
+      continue;
+    }
+    if (currentIndent <= indent) break;
   }
   return values;
 }
@@ -1421,16 +1424,26 @@ function ensureHermesCliSkillsToolset(content) {
   const cliIndent = lineIndent(cliLine);
   let insertIndex = sectionEnd;
   let hasSkills = false;
+  let listIndent = cliIndent + 2;
   for (let index = cliIndex + 1; index < sectionEnd; index += 1) {
-    if (lines[index].trim() && lineIndent(lines[index]) <= cliIndent) {
+    const line = lines[index];
+    if (!line.trim() || line.trim().startsWith('#')) continue;
+    const currentIndent = lineIndent(line);
+    const item = line.match(/^\s*-\s*(.+?)\s*(?:#.*)?$/);
+    if (item && currentIndent >= cliIndent) {
+      if (insertIndex === sectionEnd) listIndent = currentIndent;
+      if (currentIndent === listIndent && item[1].trim().replace(/^["']|["']$/g, '') === 'skills') hasSkills = true;
+      if (currentIndent === listIndent) insertIndex = index + 1;
+      continue;
+    }
+    if (currentIndent <= cliIndent) {
       insertIndex = index;
       break;
     }
-    if (/^\s*-\s*skills\s*(?:#.*)?$/.test(lines[index])) hasSkills = true;
   }
 
   if (hasSkills) return content;
-  lines.splice(insertIndex, 0, `${' '.repeat(cliIndent + 2)}- skills`);
+  lines.splice(insertIndex, 0, `${' '.repeat(listIndent)}- skills`);
   return `${lines.join('\n').trimEnd()}\n`;
 }
 
