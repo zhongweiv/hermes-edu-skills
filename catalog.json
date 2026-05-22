@@ -1,6 +1,6 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.18.3",
+  "version": "0.18.4",
   "license": "MIT",
   "runtimeActivationPolicy": {
     "targetRuntime": "hermes-agent",
@@ -29,7 +29,7 @@
       "version"
     ]
   },
-  "generatedAt": "2026-05-22T15:21:00.624Z",
+  "generatedAt": "2026-05-22T15:36:59.573Z",
   "skillCount": 188,
   "skills": [
     {

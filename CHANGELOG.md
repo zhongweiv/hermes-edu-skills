@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.18.4 - 2026-05-22
+
+- Fixes Hermes config repair when `skills.external_dirs` appears more than once in `config.yaml`; the installer now consolidates duplicate blocks instead of leaving a later empty list that overrides the Skill Pack path.
+- Updates `doctor` to treat duplicate YAML keys the same way Hermes/PyYAML does, so it no longer reports `Config linked: yes` when a later duplicate key makes the effective value empty.
+- Adds clearer findings for duplicate `skills.external_dirs` blocks.
+
 ## 0.18.3 - 2026-05-22
 
 - Fixes Hermes CLI visibility by exporting every public Skill with `cli` in frontmatter `platforms`.

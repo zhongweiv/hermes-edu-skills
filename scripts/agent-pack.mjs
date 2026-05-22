@@ -1116,39 +1116,131 @@ function defaultHermesConfigPath(args) {
 }
 
 function extractYamlListBlock(content, blockPath) {
+  const blocks = extractYamlListBlocks(content, blockPath);
+  return blocks.length ? blocks[blocks.length - 1] : [];
+}
+
+function extractYamlListBlocks(content, blockPath) {
   const parts = blockPath.split('.');
   const lines = content.split(/\r?\n/);
-  let startIndex = -1;
-  let indent = 0;
+  const blocks = [];
+  const [topKey, childKey] = parts;
+  if (!topKey || !childKey || parts.length !== 2) return blocks;
 
-  for (let partIndex = 0; partIndex < parts.length; partIndex += 1) {
-    const part = parts[partIndex];
-    const pattern = new RegExp(`^(\\s*)${part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:\\s*(?:#.*)?$`);
-    startIndex = -1;
-    for (let index = partIndex === 0 ? 0 : startIndex + 1; index < lines.length; index += 1) {
-      const match = lines[index].match(pattern);
-      if (!match) continue;
-      if (partIndex > 0 && match[1].length <= indent) continue;
-      startIndex = index;
-      indent = match[1].length;
+  for (let index = 0; index < lines.length; index += 1) {
+    const topMatch = lines[index].match(new RegExp(`^(\\s*)${topKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:\\s*(?:#.*)?$`));
+    if (!topMatch) continue;
+    const topIndent = topMatch[1].length;
+    let sectionEnd = lines.length;
+    for (let endIndex = index + 1; endIndex < lines.length; endIndex += 1) {
+      if (lines[endIndex].trim() && lineIndent(lines[endIndex]) <= topIndent) {
+        sectionEnd = endIndex;
+        break;
+      }
+    }
+
+    for (let childIndex = index + 1; childIndex < sectionEnd; childIndex += 1) {
+      const line = lines[childIndex];
+      const childMatch = line.match(new RegExp(`^(\\s*)${childKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:\\s*(.*?)(?:\\s+#.*)?$`));
+      if (!childMatch || childMatch[1].length <= topIndent) continue;
+      const childIndent = childMatch[1].length;
+      const inline = childMatch[2].trim();
+      const values = [];
+      if (inline === '[]') {
+        blocks.push(values);
+        continue;
+      }
+      if (/^\[.*\]$/.test(inline)) {
+        values.push(
+          ...inline
+            .slice(1, -1)
+            .split(',')
+            .map((item) => item.trim().replace(/^["']|["']$/g, ''))
+            .filter(Boolean),
+        );
+        blocks.push(values);
+        continue;
+      }
+
+      for (let itemIndex = childIndex + 1; itemIndex < sectionEnd; itemIndex += 1) {
+        const itemLine = lines[itemIndex];
+        if (!itemLine.trim() || itemLine.trim().startsWith('#')) continue;
+        const itemIndent = lineIndent(itemLine);
+        if (itemIndent < childIndent) break;
+        if (itemIndent === childIndent && /^\s*[A-Za-z0-9_-]+:\s*/.test(itemLine)) break;
+        const item = itemLine.match(/^\s*-\s*(.+?)\s*(?:#.*)?$/);
+        if (item) values.push(item[1].trim().replace(/^["']|["']$/g, ''));
+      }
+      blocks.push(values);
+    }
+    index = sectionEnd - 1;
+  }
+
+  return blocks;
+}
+
+function ensureHermesExternalDir(content, skillsDir) {
+  const normalizedSkillsDir = normalizePathForConfig(skillsDir);
+  if (!content.trim()) {
+    return `skills:\n  external_dirs:\n    - ${normalizedSkillsDir}\n`;
+  }
+
+  const lines = content.split(/\r?\n/);
+  const skillsIndex = lines.findIndex((line) => /^(\s*)skills:\s*(?:#.*)?$/.test(line));
+  if (skillsIndex === -1) {
+    return `${content.trimEnd()}\n\nskills:\n  external_dirs:\n    - ${normalizedSkillsDir}\n`;
+  }
+
+  const skillsIndent = lineIndent(lines[skillsIndex]);
+  let sectionEnd = lines.length;
+  for (let index = skillsIndex + 1; index < lines.length; index += 1) {
+    if (lines[index].trim() && lineIndent(lines[index]) <= skillsIndent) {
+      sectionEnd = index;
       break;
     }
-    if (startIndex < 0) return [];
   }
 
-  const values = [];
-  for (let index = startIndex + 1; index < lines.length; index += 1) {
+  const before = lines.slice(0, skillsIndex + 1);
+  const after = lines.slice(sectionEnd);
+  const preserved = [];
+  const dirs = new Set();
+
+  for (let index = skillsIndex + 1; index < sectionEnd; index += 1) {
     const line = lines[index];
-    if (!line.trim() || line.trim().startsWith('#')) continue;
-    const currentIndent = line.match(/^(\s*)/)?.[1].length || 0;
-    const item = line.match(/^\s*-\s*(.+?)\s*(?:#.*)?$/);
-    if (item && currentIndent >= indent) {
-      values.push(item[1].trim().replace(/^["']|["']$/g, ''));
+    const externalMatch = line.match(/^(\s*)external_dirs:\s*(.*?)(?:\s+#.*)?$/);
+    if (!externalMatch || externalMatch[1].length <= skillsIndent) {
+      preserved.push(line);
       continue;
     }
-    if (currentIndent <= indent) break;
+
+    const externalIndent = externalMatch[1].length;
+    const inline = externalMatch[2].trim();
+    if (/^\[.*\]$/.test(inline) && inline !== '[]') {
+      for (const value of inline.slice(1, -1).split(',')) {
+        const cleaned = value.trim().replace(/^["']|["']$/g, '');
+        if (cleaned) dirs.add(normalizePathForConfig(cleaned));
+      }
+    }
+
+    for (let itemIndex = index + 1; itemIndex < sectionEnd; itemIndex += 1) {
+      const itemLine = lines[itemIndex];
+      if (!itemLine.trim() || itemLine.trim().startsWith('#')) continue;
+      const itemIndent = lineIndent(itemLine);
+      if (itemIndent < externalIndent) break;
+      if (itemIndent === externalIndent && /^\s*[A-Za-z0-9_-]+:\s*/.test(itemLine)) break;
+      const item = itemLine.match(/^\s*-\s*(.+?)\s*(?:#.*)?$/);
+      if (item) dirs.add(normalizePathForConfig(item[1].trim().replace(/^["']|["']$/g, '')));
+      index = itemIndex;
+    }
   }
-  return values;
+
+  dirs.add(normalizedSkillsDir);
+  const externalBlock = [
+    `${' '.repeat(skillsIndent + 2)}external_dirs:`,
+    ...[...dirs].map((dir) => `${' '.repeat(skillsIndent + 4)}- ${dir}`),
+  ];
+
+  return [...before, ...externalBlock, ...preserved, ...after].join('\n').trimEnd() + '\n';
 }
 
 function extractDisabledSkills(content) {
@@ -1226,9 +1318,11 @@ function doctorCommand(args) {
   let externalDirs = [];
   let cliToolsets = [];
   let disabledSkills = [];
+  let duplicateExternalDirs = 0;
   let globalPromptContent = '';
   if (existsSync(configPath)) {
     configContent = readFileSync(configPath, 'utf8');
+    duplicateExternalDirs = Math.max(0, extractYamlListBlocks(configContent, 'skills.external_dirs').length - 1);
     externalDirs = extractYamlListBlock(configContent, 'skills.external_dirs');
     cliToolsets = extractYamlListBlock(configContent, 'platform_toolsets.cli');
     disabledSkills = extractDisabledSkills(configContent);
@@ -1259,6 +1353,7 @@ function doctorCommand(args) {
   console.log(`Pack manifest:    ${installedPack ? `${installedPack.name || 'unknown'}@${installedPack.version || 'unknown'} (${installedPack.skillCount ?? 'unknown'} skills)` : 'missing'}`);
   console.log(`Hermes config:    ${existsSync(configPath) ? configPath : `missing (${configPath})`}`);
   console.log(`Config linked:    ${configContainsTarget ? 'yes' : 'no'}`);
+  if (duplicateExternalDirs) console.log(`Config warning:   duplicate skills.external_dirs blocks (${duplicateExternalDirs + 1})`);
   console.log(`CLI skills tools: ${cliToolsets.includes('skills') || cliToolsets.includes('hermes-cli') ? 'enabled' : 'not explicit'}`);
   console.log(`Global prompt:    ${hasGlobalPrompt ? 'enabled' : `missing (${globalPromptPath})`}`);
   console.log(`Disabled Skills:  ${disabledSkills.length}`);
@@ -1275,6 +1370,7 @@ function doctorCommand(args) {
   if (missingLocal.length) problems.push(`${missingLocal.length} catalog Skills are missing from local files.`);
   if (extraLocal.length) problems.push(`${extraLocal.length} local Skills are not in the catalog.`);
   if (!existsSync(configPath)) problems.push(`Hermes config file is missing: ${configPath}`);
+  if (duplicateExternalDirs) problems.push('Hermes config contains duplicate skills.external_dirs blocks; YAML keeps the last one, so earlier Skill Pack paths may be ignored.');
   if (existsSync(configPath) && !configContainsTarget) problems.push('Hermes config does not include this Skill Pack in skills.external_dirs.');
   if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) problems.push('Hermes CLI platform_toolsets.cli does not explicitly enable skills.');
   if (!args.skipPrompt && !hasGlobalPrompt) problems.push('Hermes global SOUL.md activation addendum is missing, so plain `hermes` sessions outside the install directory may not auto-route to this Skill Pack.');
@@ -1315,8 +1411,9 @@ function doctorCommand(args) {
       suggestions.add(`npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
     }
     if (existsSync(configPath) && !configContainsTarget) {
-      suggestions.add(`Add ${targetForConfig} to skills.external_dirs in ${configPath}`);
+      suggestions.add(`Run: npx --yes hermes-edu-skills@latest repair --config ${configPath}`);
     }
+    if (duplicateExternalDirs) suggestions.add(`Run: npx --yes hermes-edu-skills@latest repair --config ${configPath}`);
     if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) {
       suggestions.add(`npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
       suggestions.add('After repair, start a fresh Hermes session with: hermes');
@@ -1620,17 +1717,7 @@ function installHermes(args) {
   let content = existsSync(configPath) ? readFileSync(configPath, 'utf8') : '';
   const before = content;
 
-  if (!content.includes(skillsDir)) {
-    if (!content.trim()) {
-      content = `skills:\n  external_dirs:\n    - ${skillsDir}\n`;
-    } else if (/^skills:\s*$/m.test(content) && !/^\s*external_dirs:\s*$/m.test(content)) {
-      content = content.replace(/^skills:\s*$/m, `skills:\n  external_dirs:\n    - ${skillsDir}`);
-    } else if (/^\s*external_dirs:\s*$/m.test(content)) {
-      content = content.replace(/^(\s*)external_dirs:\s*$/m, `$1external_dirs:\n$1  - ${skillsDir}`);
-    } else {
-      content = `${content.trimEnd()}\n\nskills:\n  external_dirs:\n    - ${skillsDir}\n`;
-    }
-  }
+  content = ensureHermesExternalDir(content, skillsDir);
 
   if (args.enableSkillsToolset) {
     content = ensureHermesCliSkillsToolset(content);
