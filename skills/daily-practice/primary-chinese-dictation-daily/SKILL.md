@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-dictation-daily"
 description: "把生字词听写做成“会读、会写、会用、会订正”的每日小闭环。 Workflow: primary_chinese_dictation_daily.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "primary_chinese_dictation_daily.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["primary-chinese-dictation-daily"]
     stages: ["primary"]
     subjects: ["语文"]
     abilities: ["听写", "默写"]
@@ -115,6 +118,8 @@ metadata:
 
 - Workflow: `primary_chinese_dictation_daily.run`
 - Category: `daily-practice`
+
+- Install Aliases: `primary-chinese-dictation-daily`
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `听写`, `默写`

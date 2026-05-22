@@ -1,7 +1,7 @@
 ---
 name: "junior-math-rj-textbook-sync"
 description: "把人教版初中数学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把教材单元变成今天能做、明天能复盘、错了能追练的学习闭环。 Workflow: junior_math_rj_textbook_sync.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_math_rj_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["junior-math-rj-textbook-sync"]
     stages: ["junior"]
     subjects: ["数学"]
     abilities: ["教材同步", "函数", "几何"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `junior_math_rj_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `junior-math-rj-textbook-sync`
 - Stages: `junior`
 - Subjects: `数学`
 - Abilities: `教材同步`, `函数`, `几何`

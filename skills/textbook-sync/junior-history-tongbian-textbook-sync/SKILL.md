@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_history_tongbian_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["junior-history-tongbian-textbook-sync"]
     stages: ["junior"]
     subjects: ["历史"]
     abilities: ["教材同步", "材料分析"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `junior_history_tongbian_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `junior-history-tongbian-textbook-sync`
 - Stages: `junior`
 - Subjects: `历史`
 - Abilities: `教材同步`, `材料分析`

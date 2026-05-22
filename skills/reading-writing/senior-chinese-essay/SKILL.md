@@ -1,7 +1,7 @@
 ---
 name: "senior-chinese-essay"
 description: "高中作文提升帮助学生把作文辅导从“代写一篇”变成审题、立意、选材、结构、语言和修改的全过程指导，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。 Workflow: senior_chinese_essay.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_chinese_essay.run"
     category: "reading-writing"
+    category_aliases: ["阅读写作", "读写表达", "reading", "writing", "reading-writing"]
+    legacy_slugs: []
+    install_aliases: ["senior-chinese-essay"]
     stages: ["senior"]
     subjects: ["语文"]
     abilities: ["写作"]
@@ -113,6 +116,8 @@ metadata:
 
 - Workflow: `senior_chinese_essay.run`
 - Category: `reading-writing`
+
+- Install Aliases: `senior-chinese-essay`
 - Stages: `senior`
 - Subjects: `语文`
 - Abilities: `写作`

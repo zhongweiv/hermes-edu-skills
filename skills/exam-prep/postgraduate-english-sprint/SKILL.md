@@ -1,7 +1,7 @@
 ---
 name: "postgraduate-english-sprint"
 description: "把考研英语备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。 Workflow: postgraduate_english_sprint.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "postgraduate_english_sprint.run"
     category: "exam-prep"
+    category_aliases: ["考试备考", "备考复习", "exam", "exam-prep"]
+    legacy_slugs: []
+    install_aliases: ["postgraduate-english-sprint"]
     stages: ["college", "adult"]
     subjects: ["英语"]
     abilities: ["阅读理解", "翻译", "写作"]
@@ -120,6 +123,8 @@ metadata:
 
 - Workflow: `postgraduate_english_sprint.run`
 - Category: `exam-prep`
+
+- Install Aliases: `postgraduate-english-sprint`
 - Stages: `college`, `adult`
 - Subjects: `英语`
 - Abilities: `阅读理解`, `翻译`, `写作`

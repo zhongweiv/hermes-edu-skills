@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_english_vocabulary_daily.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["junior-english-vocabulary-daily"]
     stages: ["junior"]
     subjects: ["英语"]
     abilities: ["词汇"]
@@ -119,6 +122,8 @@ metadata:
 
 - Workflow: `junior_english_vocabulary_daily.run`
 - Category: `daily-practice`
+
+- Install Aliases: `junior-english-vocabulary-daily`
 - Stages: `junior`
 - Subjects: `英语`
 - Abilities: `词汇`

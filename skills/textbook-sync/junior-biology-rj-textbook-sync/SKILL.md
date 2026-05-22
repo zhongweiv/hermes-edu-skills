@@ -1,7 +1,7 @@
 ---
 name: "junior-biology-rj-textbook-sync"
 description: "把人教版初中生物的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把生物教材同步做成能看图、会解释、能用证据表达的学习过程。 Workflow: junior_biology_rj_textbook_sync.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_biology_rj_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["junior-biology-rj-textbook-sync"]
     stages: ["junior"]
     subjects: ["生物"]
     abilities: ["教材同步", "知识记忆"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `junior_biology_rj_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `junior-biology-rj-textbook-sync`
 - Stages: `junior`
 - Subjects: `生物`
 - Abilities: `教材同步`, `知识记忆`

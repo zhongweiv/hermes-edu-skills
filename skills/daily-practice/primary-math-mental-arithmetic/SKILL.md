@@ -1,7 +1,7 @@
 ---
 name: "primary-math-mental-arithmetic"
 description: "为小学生生成短、准、可批改的口算训练，让每天 5-10 分钟练出速度、准确率和数感。 Workflow: primary_math_mental_arithmetic.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "primary_math_mental_arithmetic.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["primary-math-mental-arithmetic"]
     stages: ["primary"]
     subjects: ["数学"]
     abilities: ["计算", "数感"]
@@ -116,6 +119,8 @@ metadata:
 
 - Workflow: `primary_math_mental_arithmetic.run`
 - Category: `daily-practice`
+
+- Install Aliases: `primary-math-mental-arithmetic`
 - Stages: `primary`
 - Subjects: `数学`
 - Abilities: `计算`, `数感`

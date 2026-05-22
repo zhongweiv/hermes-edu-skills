@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_politics_exam_review.run"
     category: "exam-prep"
+    category_aliases: ["考试备考", "备考复习", "exam", "exam-prep"]
+    legacy_slugs: []
+    install_aliases: ["junior-politics-exam-review"]
     stages: ["junior"]
     subjects: ["政治"]
     abilities: ["考试复习", "查漏补缺"]
@@ -123,6 +126,8 @@ metadata:
 
 - Workflow: `junior_politics_exam_review.run`
 - Category: `exam-prep`
+
+- Install Aliases: `junior-politics-exam-review`
 - Stages: `junior`
 - Subjects: `政治`
 - Abilities: `考试复习`, `查漏补缺`

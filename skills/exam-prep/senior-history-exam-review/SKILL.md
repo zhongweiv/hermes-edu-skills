@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_history_exam_review.run"
     category: "exam-prep"
+    category_aliases: ["考试备考", "备考复习", "exam", "exam-prep"]
+    legacy_slugs: []
+    install_aliases: ["senior-history-exam-review"]
     stages: ["senior"]
     subjects: ["历史"]
     abilities: ["考试复习", "查漏补缺"]
@@ -123,6 +126,8 @@ metadata:
 
 - Workflow: `senior_history_exam_review.run`
 - Category: `exam-prep`
+
+- Install Aliases: `senior-history-exam-review`
 - Stages: `senior`
 - Subjects: `历史`
 - Abilities: `考试复习`, `查漏补缺`

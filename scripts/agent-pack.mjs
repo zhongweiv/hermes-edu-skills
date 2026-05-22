@@ -70,27 +70,26 @@ const promptStopwords = new Set([
 ]);
 
 const categoryLabels = {
-  'career-learning': 'Career Learning',
   'daily-practice': 'Daily Practice',
   examples: 'Design Examples',
   'exam-prep': 'Exam Prep',
   'family-education': 'Family Education',
-  'language-learning': 'Language Learning',
-  'learning-core': 'Learning Core',
+  'learning-assistant': 'Learning Assistant',
+  preschool: 'Preschool',
   'reading-writing': 'Reading & Writing',
   'teacher-tools': 'Teacher Tools',
   'textbook-sync': 'Textbook Sync',
 };
 
 const categoryAliases = {
-  career: 'career-learning',
-  'career-education': 'career-learning',
-  'career-learning': 'career-learning',
-  'adult-learning': 'career-learning',
-  '成人与职业学习': 'career-learning',
-  '成人学习': 'career-learning',
-  '职业学习': 'career-learning',
-  '职业教育': 'career-learning',
+  career: 'exam-prep',
+  'career-education': 'exam-prep',
+  'career-learning': 'exam-prep',
+  'adult-learning': 'learning-assistant',
+  '成人与职业学习': 'learning-assistant',
+  '成人学习': 'learning-assistant',
+  '职业学习': 'learning-assistant',
+  '职业教育': 'exam-prep',
   daily: 'daily-practice',
   'daily-practice': 'daily-practice',
   practice: 'daily-practice',
@@ -109,16 +108,26 @@ const categoryAliases = {
   family: 'family-education',
   '家庭教育': 'family-education',
   '亲子陪学': 'family-education',
-  'language-learning': 'language-learning',
-  language: 'language-learning',
-  '语言学习': 'language-learning',
-  '英语学习': 'language-learning',
-  'learning-core': 'learning-core',
-  core: 'learning-core',
-  learning: 'learning-core',
-  '学习核心能力': 'learning-core',
-  '学习核心': 'learning-core',
-  '通用学习': 'learning-core',
+  'language-learning': 'learning-assistant',
+  language: 'learning-assistant',
+  '语言学习': 'learning-assistant',
+  '英语学习': 'learning-assistant',
+  'learning-core': 'learning-assistant',
+  'learning-assistant': 'learning-assistant',
+  assistant: 'learning-assistant',
+  core: 'learning-assistant',
+  learning: 'learning-assistant',
+  '学习助手': 'learning-assistant',
+  '学习方法': 'learning-assistant',
+  '学习核心能力': 'learning-assistant',
+  '学习核心': 'learning-assistant',
+  '通用学习': 'learning-assistant',
+  preschool: 'preschool',
+  'pre-school': 'preschool',
+  kindergarten: 'preschool',
+  '学前启蒙': 'preschool',
+  '学龄前': 'preschool',
+  '幼小衔接': 'preschool',
   'reading-writing': 'reading-writing',
   writing: 'reading-writing',
   reading: 'reading-writing',
@@ -204,8 +213,8 @@ Options:
   --dry-run               Print actions without writing files.
 
 Category slugs:
-  textbook-sync, learning-core, daily-practice, reading-writing, exam-prep,
-  teacher-tools, family-education, language-learning, career-learning, examples.
+  preschool, textbook-sync, daily-practice, reading-writing, exam-prep,
+  learning-assistant, family-education, teacher-tools, examples.
 `);
 }
 
@@ -421,9 +430,10 @@ function hermesEduActivationPrompt(scopedSkills = null) {
     ? `- Prefer an exact installed Skill slug/topic match.
 - Prefer the installed Skill whose title, subject, stage, scenario, and description best match the user's request.
 - If the request is outside the installed Skill scope, say no specific Hermes Edu Skill was selected, then answer normally or ask the user to install a broader category.`
-    : `- Textbook edition, grade, semester, unit, lesson, or textbook-sync requests -> prefer \`textbook-sync\`.
+    : `- Preschool, kindergarten, school readiness, picture-book, early literacy, number sense, attention, fine-motor, or parent-child play requests -> prefer \`preschool\`.
+- Textbook edition, grade, semester, unit, lesson, or textbook-sync requests -> prefer \`textbook-sync\`.
 - Short daily exercises, drills, dictation, recitation, vocabulary, mental arithmetic, or quick practice -> prefer \`daily-practice\`.
-- Study plan, mistake review, homework companion, photo question, Socratic tutoring, learning report, or habit building -> prefer \`learning-core\`.
+- Study plan, mistake review, homework companion, photo question, Socratic tutoring, learning report, or habit building -> prefer \`learning-assistant\`.
 - Exam, final review, Zhongkao, Gaokao, CET, IELTS, TOEFL, civil-service, or teacher-certification requests -> prefer \`exam-prep\`.
 - Lesson planning, homework generation, unit review, class analysis, or parent report for teachers -> prefer \`teacher-tools\`.
 - Parent-child learning, family routines, screen-time balance, school communication, or emotion support -> prefer \`family-education\`.
@@ -433,7 +443,7 @@ function hermesEduActivationPrompt(scopedSkills = null) {
 
 ${scopeInstruction}
 
-When the user asks about Chinese education, textbook sync, mental arithmetic, question generation, homework help, photo Q&A, mistake review, exam prep, reading/writing, parent coaching, teacher lesson planning, homework generation, class analysis, or school communication:
+When the user asks about Chinese education, preschool enlightenment, school readiness, textbook sync, mental arithmetic, question generation, homework help, photo Q&A, mistake review, exam prep, reading/writing, parent coaching, teacher lesson planning, homework generation, class analysis, or school communication:
 
 1. Do not answer directly from the base model first.
 2. First use the Hermes skills toolset to inspect installed Skills.
@@ -524,16 +534,17 @@ function selectedSkills(args) {
   const selected = catalog.skills.filter((skill) => {
     if (!args.includeExamples && skill.exportMode === 'doc_only') return false;
     if (categories.size > 0 && !categories.has(skill.category)) return false;
-    if (requestedSkills.size > 0 && !requestedSkills.has(skill.slug) && !requestedSkills.has(skill.name)) return false;
+    const skillSelectors = new Set([skill.slug, skill.name, ...(skill.legacySlugs || []), ...(skill.installAliases || [])]);
+    if (requestedSkills.size > 0 && ![...requestedSkills].some((name) => skillSelectors.has(name))) return false;
     return true;
   });
 
   if (requestedSkills.size > 0) {
-    const matched = new Set(selected.flatMap((skill) => [skill.slug, skill.name]));
+    const matched = new Set(selected.flatMap((skill) => [skill.slug, skill.name, ...(skill.legacySlugs || []), ...(skill.installAliases || [])]));
     const missing = [...requestedSkills].filter((name) => !matched.has(name));
     if (missing.length) {
       const examples = catalog.skills
-        .filter((skill) => skill.slug.includes(missing[0]) || skill.name.includes(missing[0]))
+        .filter((skill) => skillSearchText(skill).includes(missing[0].toLowerCase()))
         .slice(0, 5)
         .map((skill) => skill.slug);
       throw new Error(`Skill not found or filtered out: ${missing.join(', ')}${examples.length ? `. Similar: ${examples.join(', ')}` : ''}`);
@@ -548,8 +559,11 @@ function skillSearchText(skill) {
   return [
     skill.name,
     skill.slug,
+    ...(skill.legacySlugs || []),
+    ...(skill.installAliases || []),
     skill.title,
     skill.category,
+    ...(skill.categoryAliases || []),
     ...(skill.subjects || []),
     ...(skill.abilities || []),
     ...(skill.scenarios || []),
@@ -593,8 +607,9 @@ function skillTerms(skill) {
 
   return [
     { weight: 90, values: [skill.name, skill.slug] },
+    { weight: 86, values: [...(skill.legacySlugs || []), ...(skill.installAliases || [])] },
     { weight: 65, values: [skill.title] },
-    { weight: 45, values: [skill.category, categoryLabels[skill.category], ...categoryCn] },
+    { weight: 45, values: [skill.category, categoryLabels[skill.category], ...categoryCn, ...(skill.categoryAliases || [])] },
     { weight: 40, values: skill.textbookVersions || [] },
     { weight: 38, values: skill.subjects || [] },
     { weight: 30, values: skill.abilities || [] },
@@ -665,6 +680,42 @@ function scoreSkill(skill, query) {
     if (skill.category === 'daily-practice') {
       score += 28;
       matched.add('每日练习');
+    }
+  }
+
+  if (/(学前|学龄前|幼儿园|幼小衔接|小班|中班|大班|启蒙|绘本|亲子|控笔|数感|识字)/.test(normalizedQuery)) {
+    if (skill.category === 'preschool') {
+      score += 44;
+      matched.add('学前启蒙');
+    }
+  }
+
+  if (skill.category === 'preschool') {
+    if (normalizedQuery.includes('绘本') && skill.name.includes('picture-book')) {
+      score += 64;
+      matched.add('绘本');
+    }
+    if ((normalizedQuery.includes('表达') || normalizedQuery.includes('说话')) && (skill.name.includes('language-expression') || skill.name.includes('story-retelling'))) {
+      score += 46;
+      matched.add('语言表达');
+    }
+    if (normalizedQuery.includes('数感') && skill.name.includes('number-sense')) {
+      score += 58;
+      matched.add('数感');
+    }
+    if (normalizedQuery.includes('识字') && skill.name.includes('literacy')) {
+      score += 58;
+      matched.add('识字');
+    }
+    if (normalizedQuery.includes('控笔') && skill.name.includes('fine-motor')) {
+      score += 58;
+      matched.add('控笔');
+    }
+    if (normalizedQuery.includes('入学') || normalizedQuery.includes('幼小衔接')) {
+      if (skill.name.includes('readiness')) {
+        score += 38;
+        matched.add('入学准备');
+      }
     }
   }
 
@@ -863,7 +914,10 @@ function infoCommand(args) {
   const selector = args.positionals[0] || args.skills[0] || '';
   if (!selector) throw new Error('Missing Skill name. Example: hermes-edu-skills info agent-mistake-review');
   const catalog = readCatalog();
-  const skill = catalog.skills.find((item) => item.name === selector || item.slug === selector);
+  const skill = catalog.skills.find((item) => {
+    const selectors = new Set([item.name, item.slug, ...(item.legacySlugs || []), ...(item.installAliases || [])]);
+    return selectors.has(selector);
+  });
 
   if (!skill) {
     const similar = catalog.skills

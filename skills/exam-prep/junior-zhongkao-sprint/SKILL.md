@@ -1,7 +1,7 @@
 ---
 name: "junior-zhongkao-sprint"
 description: "把中考备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。 Workflow: junior_zhongkao_sprint.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_zhongkao_sprint.run"
     category: "exam-prep"
+    category_aliases: ["考试备考", "备考复习", "exam", "exam-prep"]
+    legacy_slugs: []
+    install_aliases: ["junior-zhongkao-sprint"]
     stages: ["junior"]
     subjects: ["综合"]
     abilities: ["考试冲刺"]
@@ -124,6 +127,8 @@ metadata:
 
 - Workflow: `junior_zhongkao_sprint.run`
 - Category: `exam-prep`
+
+- Install Aliases: `junior-zhongkao-sprint`
 - Stages: `junior`
 - Subjects: `综合`
 - Abilities: `考试冲刺`

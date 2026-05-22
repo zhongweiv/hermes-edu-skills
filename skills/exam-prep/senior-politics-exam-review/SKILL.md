@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_politics_exam_review.run"
     category: "exam-prep"
+    category_aliases: ["考试备考", "备考复习", "exam", "exam-prep"]
+    legacy_slugs: []
+    install_aliases: ["senior-politics-exam-review"]
     stages: ["senior"]
     subjects: ["政治"]
     abilities: ["考试复习", "查漏补缺"]
@@ -123,6 +126,8 @@ metadata:
 
 - Workflow: `senior_politics_exam_review.run`
 - Category: `exam-prep`
+
+- Install Aliases: `senior-politics-exam-review`
 - Stages: `senior`
 - Subjects: `政治`
 - Abilities: `考试复习`, `查漏补缺`

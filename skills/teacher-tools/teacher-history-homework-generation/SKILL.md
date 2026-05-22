@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "teacher_history_homework_generation.run"
     category: "teacher-tools"
+    category_aliases: ["教师与机构", "老师工具", "教师工具", "teacher-tools", "teaching"]
+    legacy_slugs: []
+    install_aliases: ["teacher-history-homework-generation"]
     stages: ["primary", "junior", "senior"]
     subjects: ["历史"]
     abilities: ["作业生成"]
@@ -102,7 +105,7 @@ metadata:
 
 意图：
 - `teacher_history_homework_generation`
-- `teacher_tools`
+- `teacher_institution`
 - `班级作业`
 
 示例表达：
@@ -114,6 +117,8 @@ metadata:
 
 - Workflow: `teacher_history_homework_generation.run`
 - Category: `teacher-tools`
+
+- Install Aliases: `teacher-history-homework-generation`
 - Stages: `primary`, `junior`, `senior`
 - Subjects: `历史`
 - Abilities: `作业生成`
@@ -171,8 +176,8 @@ metadata:
 - 教材版本未指定：若 Skill 已绑定教材版本则使用绑定版本；通用 Skill 默认不绑定教材，按通用课程目标处理。
 - 单元/知识点未指定：默认选择该 Skill 场景下的高频基础知识点或通用核心能力，不假装知道用户学校进度。
 - 难度未指定：默认按班级普通水平；默认基础 60% + 提高 30% + 挑战 10%。
-- 未指定题量时默认一份 15-20 分钟可批改任务
-- 未指定课时/作业时长时默认 40-45 分钟课时或 20 分钟作业
+- 未指定题量时默认生成一个短任务
+- 未指定时间时默认短任务
 - 使用场景未指定：默认“班级作业”。
 - 用户角色未指定：默认面向学生直接使用；出现“孩子/家长/陪练”切换到家长视角，出现“班级/布置/教案/课堂”切换到教师视角。
 - 学情/错题未指定：默认普通水平起步，并在输出中加入做完后如何判断下一步的反馈机制。

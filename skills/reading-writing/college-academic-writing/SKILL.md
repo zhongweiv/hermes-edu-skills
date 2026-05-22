@@ -1,7 +1,7 @@
 ---
 name: "college-academic-writing"
 description: "学术写作帮助成人学习者把学术写作从零散资料堆砌变成问题、论点、证据、结构和引用意识清晰的写作过程，输出结构更清楚、证据更扎实、符合学术诚信的写作修改方案，而不是替用户一次性完成任务。 Workflow: college_academic_writing.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "college_academic_writing.run"
     category: "reading-writing"
+    category_aliases: ["阅读写作", "读写表达", "reading", "writing", "reading-writing"]
+    legacy_slugs: []
+    install_aliases: ["college-academic-writing"]
     stages: ["college"]
     subjects: ["通识"]
     abilities: ["写作"]
@@ -113,6 +116,8 @@ metadata:
 
 - Workflow: `college_academic_writing.run`
 - Category: `reading-writing`
+
+- Install Aliases: `college-academic-writing`
 - Stages: `college`
 - Subjects: `通识`
 - Abilities: `写作`

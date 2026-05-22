@@ -1,7 +1,7 @@
 ---
 name: "junior-chinese-tongbian-textbook-sync"
 description: "把统编版初中语文的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让家长和学生知道今天这篇课文到底要学会什么、怎么练才不空泛。 Workflow: junior_chinese_tongbian_textbook_sync.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_chinese_tongbian_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["junior-chinese-tongbian-textbook-sync"]
     stages: ["junior"]
     subjects: ["语文"]
     abilities: ["教材同步", "阅读理解", "写作表达"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `junior_chinese_tongbian_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `junior-chinese-tongbian-textbook-sync`
 - Stages: `junior`
 - Subjects: `语文`
 - Abilities: `教材同步`, `阅读理解`, `写作表达`

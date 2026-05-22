@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_chinese_tongbian_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["senior-chinese-tongbian-textbook-sync"]
     stages: ["senior"]
     subjects: ["语文"]
     abilities: ["教材同步", "文言文", "写作"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `senior_chinese_tongbian_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `senior-chinese-tongbian-textbook-sync`
 - Stages: `senior`
 - Subjects: `语文`
 - Abilities: `教材同步`, `文言文`, `写作`

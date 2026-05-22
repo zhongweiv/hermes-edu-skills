@@ -1,7 +1,7 @@
 ---
 name: "agent-parent-companion"
 description: "家长陪学把家长的“我该怎么陪”变成少催促、可执行、能复盘的陪学脚本。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: agent_parent_companion.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "agent_parent_companion.run"
     category: "family-education"
+    category_aliases: ["家庭教育", "亲子陪学", "family", "family-education"]
+    legacy_slugs: []
+    install_aliases: ["agent-parent-companion"]
     stages: ["preschool", "primary", "junior"]
     subjects: ["家庭教育"]
     abilities: ["陪学建议", "目标管理"]
@@ -111,6 +114,8 @@ metadata:
 
 - Workflow: `agent_parent_companion.run`
 - Category: `family-education`
+
+- Install Aliases: `agent-parent-companion`
 - Stages: `preschool`, `primary`, `junior`
 - Subjects: `家庭教育`
 - Abilities: `陪学建议`, `目标管理`

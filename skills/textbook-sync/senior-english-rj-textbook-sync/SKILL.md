@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_english_rj_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["senior-english-rj-textbook-sync"]
     stages: ["senior"]
     subjects: ["英语"]
     abilities: ["教材同步", "阅读理解", "写作"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `senior_english_rj_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `senior-english-rj-textbook-sync`
 - Stages: `senior`
 - Subjects: `英语`
 - Abilities: `教材同步`, `阅读理解`, `写作`

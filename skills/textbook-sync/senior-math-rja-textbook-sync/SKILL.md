@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_math_rja_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["senior-math-rja-textbook-sync"]
     stages: ["senior"]
     subjects: ["数学"]
     abilities: ["教材同步", "函数", "建模"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `senior_math_rja_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `senior-math-rja-textbook-sync`
 - Stages: `senior`
 - Subjects: `数学`
 - Abilities: `教材同步`, `函数`, `建模`

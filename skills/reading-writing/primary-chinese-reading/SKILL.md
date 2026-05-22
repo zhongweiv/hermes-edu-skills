@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-reading"
 description: "小学语文阅读理解帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。 Workflow: primary_chinese_reading.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "primary_chinese_reading.run"
     category: "reading-writing"
+    category_aliases: ["阅读写作", "读写表达", "reading", "writing", "reading-writing"]
+    legacy_slugs: []
+    install_aliases: ["primary-chinese-reading"]
     stages: ["primary"]
     subjects: ["语文"]
     abilities: ["阅读理解"]
@@ -113,6 +116,8 @@ metadata:
 
 - Workflow: `primary_chinese_reading.run`
 - Category: `reading-writing`
+
+- Install Aliases: `primary-chinese-reading`
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `阅读理解`

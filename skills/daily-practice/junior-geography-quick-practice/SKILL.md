@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_geography_quick_practice.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["junior-geography-quick-practice"]
     stages: ["junior"]
     subjects: ["地理"]
     abilities: ["同步巩固", "专项训练"]
@@ -119,6 +122,8 @@ metadata:
 
 - Workflow: `junior_geography_quick_practice.run`
 - Category: `daily-practice`
+
+- Install Aliases: `junior-geography-quick-practice`
 - Stages: `junior`
 - Subjects: `地理`
 - Abilities: `同步巩固`, `专项训练`

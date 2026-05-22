@@ -1,7 +1,7 @@
 ---
 name: "teacher-certification-sprint"
 description: "把教师资格证备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。 Workflow: teacher_certification_sprint.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "teacher_certification_sprint.run"
     category: "exam-prep"
+    category_aliases: ["考试备考", "备考复习", "exam", "exam-prep"]
+    legacy_slugs: []
+    install_aliases: ["teacher-certification-sprint"]
     stages: ["adult"]
     subjects: ["职业教育"]
     abilities: ["考试冲刺"]
@@ -120,6 +123,8 @@ metadata:
 
 - Workflow: `teacher_certification_sprint.run`
 - Category: `exam-prep`
+
+- Install Aliases: `teacher-certification-sprint`
 - Stages: `adult`
 - Subjects: `职业教育`
 - Abilities: `考试冲刺`

@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.17.0 - 2026-05-22
+
+- Adds a first-class `preschool` category for ages 3-6, school readiness, picture-book reading, early literacy, pinyin, number sense, attention, fine-motor writing, habits, emotion expression, and parent-child play.
+- Regenerates the public catalog from the commercial Skill system with 188 installable Skills across 8 product-level categories.
+- Renames selected preschool Skills to more durable product slugs, for example `preschool-literacy-foundation`, `preschool-number-sense-foundation`, and `preschool-school-readiness`.
+- Keeps legacy slug aliases such as `preschool-literacy-daily`, `preschool-number-sense-daily`, `preschool-general-readiness-textbook-sync`, and `family-school-readiness` for CLI lookup and migration guidance.
+- Reorganizes public directories around the new category model: `preschool`, `textbook-sync`, `daily-practice`, `reading-writing`, `exam-prep`, `learning-assistant`, `family-education`, and `teacher-tools`.
+- Keeps old category selectors such as `learning-core`, `language-learning`, and `career-learning` as CLI aliases while presenting the cleaner category model in README.
+- Updates the Skill Router to recognize preschool requests such as 幼小衔接、绘本、数感、识字、控笔、专注力 and route them to the new preschool Skills.
+
 ## 0.16.9 - 2026-05-22
 
 - Replaces the README GIF embed with a lightweight poster image linked to the original MP4 demo.

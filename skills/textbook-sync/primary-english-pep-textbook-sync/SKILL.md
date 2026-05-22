@@ -1,7 +1,7 @@
 ---
 name: "primary-english-pep-textbook-sync"
 description: "把人教PEP版小学英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。 Workflow: primary_english_pep_textbook_sync.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "primary_english_pep_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["primary-english-pep-textbook-sync"]
     stages: ["primary"]
     subjects: ["英语"]
     abilities: ["教材同步", "词汇", "听说读写"]
@@ -132,6 +135,8 @@ metadata:
 
 - Workflow: `primary_english_pep_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `primary-english-pep-textbook-sync`
 - Stages: `primary`
 - Subjects: `英语`
 - Abilities: `教材同步`, `词汇`, `听说读写`

@@ -1,12 +1,12 @@
 # Hermes Edu Skills
 
-让 Hermes Agent 和主流 AI 工具拥有中国教育场景能力的开源 Agent Skill Pack：教材同步、备考复习、错题复盘、每日练习、亲子陪学、阅读写作和教师工作流。
+让 Hermes Agent 和主流 AI 工具拥有中国教育场景能力的开源 Agent Skill Pack：学前启蒙、教材同步、备考复习、错题复盘、每日练习、亲子陪学、阅读写作和教师工作流。
 
-An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-focused education capabilities: textbook sync, exam prep, mistake review, daily practice, family learning, reading/writing, and teacher workflows.
+An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-focused education capabilities: preschool learning, textbook sync, exam prep, mistake review, daily practice, family learning, reading/writing, and teacher workflows.
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/Hermes%20Skills-170-blue)](catalog.json)
+[![Skills](https://img.shields.io/badge/Hermes%20Skills-188-blue)](catalog.json)
 [![Validate](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml)
 
 [English](README.en.md) · [Skill Catalog](catalog.json) · [Discovery Index](.well-known/skills/index.json) · [Shineway](https://www.shineway.tech/)
@@ -19,7 +19,7 @@ An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-f
   <strong><a href="https://zhongweiv.github.io/hermes-edu-skills/demo/">点击封面观看 30 秒演示视频，约 800KB</a></strong>
 </p>
 
-Hermes Edu Skills 是一套面向中国教育场景的开源 Agent Skill Pack。它把教材同步、考试备考、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师备课和家校沟通，整理成 170 个可浏览、可安装、可二次开发的产品级 Skill。
+Hermes Edu Skills 是一套面向中国教育场景的开源 Agent Skill Pack。它把学前启蒙、教材同步、考试备考、拍照答疑、错题复盘、每日练习、阅读写作、亲子陪学、教师备课和家校沟通，整理成 188 个可浏览、可安装、可二次开发的产品级 Skill。
 
 它不是 Prompt 合集，而是可被 Hermes Agent 识别的结构化能力库：每个 Skill 都有触发信号、适用角色、参数维度、使用边界和标准 `SKILL.md`。你可以直接装进 Hermes Agent，也可以导出给 OpenClaw、Codex、Cursor、Claude Code 或其它 Agent 工具。
 
@@ -48,7 +48,7 @@ Hermes Edu Skills 是一套面向中国教育场景的开源 Agent Skill Pack。
 默认目标是 Hermes Agent。第一次试用建议先安装一个分类或一个 Skill，确认效果后再安装全部。
 
 ```bash
-# 安装全部 170 个可用 Skill 到 Hermes Agent
+# 安装全部 188 个可用 Skill 到 Hermes Agent
 npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 
 # 只安装教材同步分类
@@ -87,7 +87,7 @@ npx hermes-edu-skills export generic --target ./dist/agent-skills
 | --- | --- |
 | 这是什么 | 面向中国教育场景的开源 Agent Skill Pack。 |
 | 为什么需要 | 通用 Agent 通常不理解中国教材版本、年级册别、单元节奏、考试体系和家庭/教师真实工作流。 |
-| 怎么实现 | 用 170 个结构化 `SKILL.md` 把教育任务封装成 Agent 可发现、可调用、可安装的能力。 |
+| 怎么实现 | 用 188 个结构化 `SKILL.md` 把教育任务封装成 Agent 可发现、可调用、可安装的能力。 |
 | 默认平台 | Hermes Agent。 |
 | 可导出平台 | OpenClaw、Codex、Cursor、Claude Code、Generic Agent。 |
 | 开源内容 | 公开 Skill 文档、索引、校验工具和导出工具；不包含用户数据、密钥或商业后端实现。 |
@@ -108,7 +108,8 @@ npx hermes-edu-skills export generic --target ./dist/agent-skills
 
 | 你是谁 | 推荐先看 | 可以得到什么 |
 | --- | --- | --- |
-| Hermes Agent 用户 | [默认使用：Hermes Agent](#默认使用hermes-agent)、[学习核心能力](#learning-core) | 直接把中文教育 Skill 加到本地 Agent。 |
+| Hermes Agent 用户 | [默认使用：Hermes Agent](#默认使用hermes-agent)、[学习助手](#learning-assistant) | 直接把中文教育 Skill 加到本地 Agent。 |
+| 学前儿童家长 | [学前启蒙](#preschool)、[家庭教育](#family-education) | 用 10 分钟亲子任务做识字、数感、绘本、表达、专注、控笔和幼小衔接。 |
 | 教育 AI 开发者 | [项目结构](#项目结构)、[兼容说明](#兼容说明) | 复用 Skill 结构、参数设计和工作流命名。 |
 | 老师 / 教研人员 | [老师工具](#teacher-tools)、[教材同步](#textbook-sync) | 参考备课、作业生成、单元复习和同步教学设计。 |
 | 家长 / 家庭教育产品 | [家庭教育](#family-education)、[每日练习](#daily-practice) | 构建陪伴、阅读、习惯和每日训练场景。 |
@@ -116,19 +117,18 @@ npx hermes-edu-skills export generic --target ./dist/agent-skills
 
 ## 分类总览
 
-当前包含 170 个可安装 Skill，覆盖 9 个产品级分类。年级、册别、单元、课时、知识点和难度作为参数传入，不再拆成海量重复 Skill。
+当前包含 188 个可安装 Skill，覆盖 8 个产品级分类。年级、册别、单元、课时、知识点和难度作为参数传入，不再拆成海量重复 Skill。
 
 | 分类 | 安装选择器 | 适用场景 | 数量 |
 | --- | --- | --- | ---: |
-| <a href="#textbook-sync"><code>textbook-sync</code></a><br>教材同步 | <code>npx: textbook-sync</code><br><code>npm: --category textbook-sync</code> | 面向中国教材版本、年级、册别、单元、课时和知识点的同步学习能力。年级、册别、单元和难度作为参数传入，不再拆成大量独立 Skill。 | 41 |
-| <a href="#learning-core"><code>learning-core</code></a><br>学习核心能力 | <code>npx: learning-core</code><br><code>npm: --category learning-core</code> | 学习计划、拍照答疑、错题复盘、学情报告等通用学习闭环能力。 | 15 |
-| <a href="#daily-practice"><code>daily-practice</code></a><br>每日练习 | <code>npx: daily-practice</code><br><code>npm: --category daily-practice</code> | 面向每天短时高频训练，例如口算、听写、背诵、词汇、快速巩固。 | 28 |
-| <a href="#reading-writing"><code>reading-writing</code></a><br>阅读写作 | <code>npx: reading-writing</code><br><code>npm: --category reading-writing</code> | 面向语文、英语、学术和职场表达的阅读与写作能力。 | 10 |
-| <a href="#exam-prep"><code>exam-prep</code></a><br>考试备考 | <code>npx: exam-prep</code><br><code>npm: --category exam-prep</code> | 面向期末、中考、高考、考研、四六级、考证和公务员等备考场景。 | 27 |
+| <a href="#preschool"><code>preschool</code></a><br>学前启蒙 | <code>npx: preschool</code><br><code>npm: --category preschool</code> | 面向 3-6 岁、幼小衔接和亲子启蒙：识字、拼音、数感、绘本、表达、专注、控笔、生活习惯和入学准备。 | 22 |
+| <a href="#textbook-sync"><code>textbook-sync</code></a><br>教材同步 | <code>npx: textbook-sync</code><br><code>npm: --category textbook-sync</code> | 面向中国教材版本、年级、册别、单元、课时和知识点的同步学习能力。年级、册别、单元和难度作为参数传入，不再拆成大量独立 Skill。 | 40 |
+| <a href="#daily-practice"><code>daily-practice</code></a><br>每日练习 | <code>npx: daily-practice</code><br><code>npm: --category daily-practice</code> | 面向每天短时高频训练，例如口算、听写、背诵、词汇、快速巩固。 | 26 |
+| <a href="#reading-writing"><code>reading-writing</code></a><br>阅读写作 | <code>npx: reading-writing</code><br><code>npm: --category reading-writing</code> | 面向语文、英语、学术和职场表达的阅读与写作能力。 | 11 |
+| <a href="#exam-prep"><code>exam-prep</code></a><br>考试备考 | <code>npx: exam-prep</code><br><code>npm: --category exam-prep</code> | 面向期末、中考、高考、考研、四六级、考证和公务员等备考场景。 | 30 |
+| <a href="#learning-assistant"><code>learning-assistant</code></a><br>学习助手 | <code>npx: learning-assistant</code><br><code>npm: --category learning-assistant</code> | 学习计划、拍照答疑、错题复盘、学情报告、专注训练、成人学习等通用学习闭环能力。 | 21 |
+| <a href="#family-education"><code>family-education</code></a><br>家庭教育 | <code>npx: family-education</code><br><code>npm: --category family-education</code> | 面向家长陪伴、亲子阅读、作业习惯和家庭沟通。 | 7 |
 | <a href="#teacher-tools"><code>teacher-tools</code></a><br>老师工具 | <code>npx: teacher-tools</code><br><code>npm: --category teacher-tools</code> | 面向老师备课、作业生成、班级分析和家校沟通。 | 31 |
-| <a href="#family-education"><code>family-education</code></a><br>家庭教育 | <code>npx: family-education</code><br><code>npm: --category family-education</code> | 面向家长陪伴、亲子阅读、作业习惯和家庭沟通。 | 8 |
-| <a href="#language-learning"><code>language-learning</code></a><br>语言学习 | <code>npx: language-learning</code><br><code>npm: --category language-learning</code> | 面向成人英语、出国考试、口语、听力和长期语言能力提升。 | 3 |
-| <a href="#career-learning"><code>career-learning</code></a><br>成人与职业学习 | <code>npx: career-learning</code><br><code>npm: --category career-learning</code> | 面向大学、成人学习、职业技能和考证场景。 | 7 |
 
 ## 发起与维护
 
@@ -152,7 +152,7 @@ npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 
 这条命令会同时完成两件事：
 
-- 安装 170 个可用 Skill，并写入 Hermes `skills.external_dirs`。
+- 安装 188 个可用 Skill，并写入 Hermes `skills.external_dirs`。
 - 默认在当前目录生成 `HERMES.md` 启动 Prompt，让 Hermes 在教育问题里先去 `hermes-edu-skills` 这套 Skill Pack 里找，而不是直接普通回答。
 
 如果你只安装某个分类或单个 Skill，安装器也会默认生成“范围收缩版” Prompt：分类安装会只列出该分类内的 Skill，单个 Skill 安装会明确要求 Hermes 在相关问题里优先加载这个具体 Skill。
@@ -245,7 +245,7 @@ skill_view("primary-math-mental-arithmetic")
 
 Hermes 原生的 Skill 选择是模型驱动的：它会先看到紧凑的 Skill 列表，再决定是否调用 `skill_view(name)` 读取完整 Skill。只安装 Skill Pack 并不等于每个普通提问都会自动触发 Skill。
 
-因此 Hermes Edu Skills 提供了一个项目级启动 Prompt，用来明确告诉 Hermes：遇到中文教育、教材、练习、错题、备考、阅读写作、亲子陪学、教师备课等请求时，不要先直接回答，而是先在已安装的 `hermes-edu-skills` Skill Pack 中搜索，从 170 个可安装 Skill 里选择最匹配的一个，再调用 `skill_view(name)` 加载。
+因此 Hermes Edu Skills 提供了一个项目级启动 Prompt，用来明确告诉 Hermes：遇到中文教育、教材、练习、错题、备考、阅读写作、亲子陪学、教师备课等请求时，不要先直接回答，而是先在已安装的 `hermes-edu-skills` Skill Pack 中搜索，从 188 个可安装 Skill 里选择最匹配的一个，再调用 `skill_view(name)` 加载。
 
 推荐用法：
 
@@ -376,15 +376,14 @@ npx hermes-edu-skills export openclaw 教材同步
 
 | 想导出的内容 | 安装选择器 |
 | --- | --- |
+| 学前启蒙 | `npx: preschool`<br>`npm: --category preschool` |
 | 教材同步 | `npx: textbook-sync`<br>`npm: --category textbook-sync` |
-| 学习核心能力 | `npx: learning-core`<br>`npm: --category learning-core` |
+| 学习助手 | `npx: learning-assistant`<br>`npm: --category learning-assistant` |
 | 每日练习 | `npx: daily-practice`<br>`npm: --category daily-practice` |
 | 阅读写作 | `npx: reading-writing`<br>`npm: --category reading-writing` |
 | 考试备考 | `npx: exam-prep`<br>`npm: --category exam-prep` |
 | 老师工具 | `npx: teacher-tools`<br>`npm: --category teacher-tools` |
 | 家庭教育 | `npx: family-education`<br>`npm: --category family-education` |
-| 语言学习 | `npx: language-learning`<br>`npm: --category language-learning` |
-| 成人与职业学习 | `npx: career-learning`<br>`npm: --category career-learning` |
 
 源码模式和高级写法仍然可用，适合需要动态指定工具或目标目录的集成场景：
 
@@ -407,19 +406,49 @@ npm run export:agents
 
 | 分类 | 安装选择器 | 主要领域 | 数量 |
 | --- | --- | --- | ---: |
-| <a href="#textbook-sync"><code>textbook-sync</code></a><br>教材同步 | <code>npx: textbook-sync</code><br><code>npm: --category textbook-sync</code> | 生物、数学、化学、物理、地理 | 41 |
-| <a href="#learning-core"><code>learning-core</code></a><br>学习核心能力 | <code>npx: learning-core</code><br><code>npm: --category learning-core</code> | 学习能力、综合 | 15 |
-| <a href="#daily-practice"><code>daily-practice</code></a><br>每日练习 | <code>npx: daily-practice</code><br><code>npm: --category daily-practice</code> | 地理、化学、历史、生物、数学 | 28 |
-| <a href="#reading-writing"><code>reading-writing</code></a><br>阅读写作 | <code>npx: reading-writing</code><br><code>npm: --category reading-writing</code> | 语文、英语、通识 | 10 |
-| <a href="#exam-prep"><code>exam-prep</code></a><br>考试备考 | <code>npx: exam-prep</code><br><code>npm: --category exam-prep</code> | 地理、化学、历史、生物、数学 | 27 |
+| <a href="#preschool"><code>preschool</code></a><br>学前启蒙 | <code>npx: preschool</code><br><code>npm: --category preschool</code> | 家庭教育、语文、学习能力、综合、数学 | 22 |
+| <a href="#textbook-sync"><code>textbook-sync</code></a><br>教材同步 | <code>npx: textbook-sync</code><br><code>npm: --category textbook-sync</code> | 生物、数学、化学、物理、地理 | 40 |
+| <a href="#daily-practice"><code>daily-practice</code></a><br>每日练习 | <code>npx: daily-practice</code><br><code>npm: --category daily-practice</code> | 地理、化学、历史、生物、数学 | 26 |
+| <a href="#reading-writing"><code>reading-writing</code></a><br>阅读写作 | <code>npx: reading-writing</code><br><code>npm: --category reading-writing</code> | 语文、英语、通识、职业教育 | 11 |
+| <a href="#exam-prep"><code>exam-prep</code></a><br>考试备考 | <code>npx: exam-prep</code><br><code>npm: --category exam-prep</code> | 地理、化学、历史、生物、数学 | 30 |
+| <a href="#learning-assistant"><code>learning-assistant</code></a><br>学习助手 | <code>npx: learning-assistant</code><br><code>npm: --category learning-assistant</code> | 学习能力、语言学习、综合、计算机 | 21 |
+| <a href="#family-education"><code>family-education</code></a><br>家庭教育 | <code>npx: family-education</code><br><code>npm: --category family-education</code> | 家庭教育 | 7 |
 | <a href="#teacher-tools"><code>teacher-tools</code></a><br>老师工具 | <code>npx: teacher-tools</code><br><code>npm: --category teacher-tools</code> | 教学管理、地理、化学、历史、生物 | 31 |
-| <a href="#family-education"><code>family-education</code></a><br>家庭教育 | <code>npx: family-education</code><br><code>npm: --category family-education</code> | 家庭教育 | 8 |
-| <a href="#language-learning"><code>language-learning</code></a><br>语言学习 | <code>npx: language-learning</code><br><code>npm: --category language-learning</code> | 语言学习、英语 | 3 |
-| <a href="#career-learning"><code>career-learning</code></a><br>成人与职业学习 | <code>npx: career-learning</code><br><code>npm: --category career-learning</code> | 计算机、职业教育 | 7 |
 
 ## 全部 Skill 列表
 
-下面的表格列出了当前全部 170 个公开 Skill。中文 README 的分类列和 Skill 列都优先展示可复制的英文选择器，下一行保留中文名称；旁边的“安装选择器”列同时标出正式 CLI 与源码模式该复制的参数。
+下面的表格列出了当前全部 188 个公开 Skill。中文 README 的分类列和 Skill 列都优先展示可复制的英文选择器，下一行保留中文名称；旁边的“安装选择器”列同时标出正式 CLI 与源码模式该复制的参数。
+
+### <a id="preschool"></a>学前启蒙<br>Preschool
+
+面向 3-6 岁、幼小衔接和亲子启蒙：识字、拼音、数感、绘本、表达、专注、控笔、生活习惯和入学准备。
+
+安装选择器：<code>npx: preschool</code><br><code>npm: --category preschool</code>
+
+| Skill | 安装选择器 | 独立使用 | 阶段 | 学科/领域 | 教材 | 能力 | 场景 |
+| --- | --- | :---: | --- | --- | --- | --- | --- |
+| <a href="skills/preschool/preschool-parent-daily-play/SKILL.md"><code>preschool-parent-daily-play</code></a><br>亲子每日启蒙 Skill | <code>npx: preschool-parent-daily-play</code><br><code>npm: --skill preschool-parent-daily-play</code> | ✓ | preschool | 家庭教育 | - | 亲子陪伴、每日启蒙 | 每日启蒙、亲子共学 |
+| <a href="skills/preschool/preschool-growth-report/SKILL.md"><code>preschool-growth-report</code></a><br>学前成长观察报告 Skill | <code>npx: preschool-growth-report</code><br><code>npm: --skill preschool-growth-report</code> | ✓ | preschool | 家庭教育 | - | 成长观察、家庭反馈 | 成长报告、家园沟通 |
+| <a href="skills/preschool/preschool-story-retelling/SKILL.md"><code>preschool-story-retelling</code></a><br>学前故事复述 Skill | <code>npx: preschool-story-retelling</code><br><code>npm: --skill preschool-story-retelling</code> | ✓ | preschool | 语文 | - | 故事复述 | 绘本复述、睡前表达 |
+| <a href="skills/preschool/preschool-memory-observation/SKILL.md"><code>preschool-memory-observation</code></a><br>学前观察记忆 Skill | <code>npx: preschool-memory-observation</code><br><code>npm: --skill preschool-memory-observation</code> | ✓ | preschool | 学习能力 | - | 观察力、记忆力 | 观察游戏、亲子共学 |
+| <a href="skills/preschool/preschool-picture-book-reading/SKILL.md"><code>preschool-picture-book-reading</code></a><br>学前绘本共读 Skill | <code>npx: preschool-picture-book-reading</code><br><code>npm: --skill preschool-picture-book-reading</code> | ✓ | preschool | 语文 | - | 绘本阅读、理解表达 | 亲子共读、睡前阅读 |
+| <a href="skills/preschool/preschool-classroom-rules/SKILL.md"><code>preschool-classroom-rules</code></a><br>学前课堂规则准备 Skill | <code>npx: preschool-classroom-rules</code><br><code>npm: --skill preschool-classroom-rules</code> | ✓ | preschool | 综合 | - | 规则感、课堂准备 | 入学准备、亲子演练 |
+| <a href="skills/preschool/preschool-fine-motor-writing/SKILL.md"><code>preschool-fine-motor-writing</code></a><br>学前控笔与书写准备 Skill | <code>npx: preschool-fine-motor-writing</code><br><code>npm: --skill preschool-fine-motor-writing</code> | ✓ | preschool | 学习能力 | - | 控笔、书写准备 | 入学准备、每日练习 |
+| <a href="skills/preschool/preschool-logic-thinking/SKILL.md"><code>preschool-logic-thinking</code></a><br>学前逻辑规律 Skill | <code>npx: preschool-logic-thinking</code><br><code>npm: --skill preschool-logic-thinking</code> | ✓ | preschool | 数学 | - | 分类排序、规律发现 | 逻辑游戏、亲子共学 |
+| <a href="skills/preschool/preschool-pinyin-foundation/SKILL.md"><code>preschool-pinyin-foundation</code></a><br>学前拼音启蒙 Skill | <code>npx: preschool-pinyin-foundation</code><br><code>npm: --skill preschool-pinyin-foundation</code> | ✓ | preschool | 语文 | - | 拼音启蒙 | 入学准备、每日启蒙 |
+| <a href="skills/preschool/preschool-emotion-expression/SKILL.md"><code>preschool-emotion-expression</code></a><br>学前情绪表达 Skill | <code>npx: preschool-emotion-expression</code><br><code>npm: --skill preschool-emotion-expression</code> | ✓ | preschool | 家庭教育 | - | 情绪表达 | 亲子沟通、情绪支持 |
+| <a href="skills/preschool/preschool-task-awareness/SKILL.md"><code>preschool-task-awareness</code></a><br>学前任务意识 Skill | <code>npx: preschool-task-awareness</code><br><code>npm: --skill preschool-task-awareness</code> | ✓ | preschool | 学习能力 | - | 任务意识 | 习惯培养、入学准备 |
+| <a href="skills/preschool/preschool-social-skills/SKILL.md"><code>preschool-social-skills</code></a><br>学前社交规则 Skill | <code>npx: preschool-social-skills</code><br><code>npm: --skill preschool-social-skills</code> | ✓ | preschool | 家庭教育 | - | 同伴交往、规则感 | 社交练习、幼儿园适应 |
+| <a href="skills/preschool/preschool-life-habits/SKILL.md"><code>preschool-life-habits</code></a><br>学前生活习惯 Skill | <code>npx: preschool-life-habits</code><br><code>npm: --skill preschool-life-habits</code> | ✓ | preschool | 家庭教育 | - | 生活习惯 | 家庭陪伴、习惯培养 |
+| <a href="skills/preschool/preschool-literacy-foundation/SKILL.md"><code>preschool-literacy-foundation</code></a><br>学前识字启蒙 Skill | <code>npx: preschool-literacy-foundation</code><br><code>npm: --skill preschool-literacy-foundation</code> | ✓ | preschool | 语文 | - | 识字启蒙 | 每日启蒙、亲子共学 |
+| <a href="skills/preschool/preschool-number-sense-foundation/SKILL.md"><code>preschool-number-sense-foundation</code></a><br>学前数感启蒙 Skill | <code>npx: preschool-number-sense-foundation</code><br><code>npm: --skill preschool-number-sense-foundation</code> | ✓ | preschool | 数学 | - | 数感启蒙 | 数感游戏、每日启蒙 |
+| <a href="skills/preschool/preschool-shape-space/SKILL.md"><code>preschool-shape-space</code></a><br>学前图形空间 Skill | <code>npx: preschool-shape-space</code><br><code>npm: --skill preschool-shape-space</code> | ✓ | preschool | 数学 | - | 图形空间 | 图形游戏、亲子共学 |
+| <a href="skills/preschool/preschool-color-shape/SKILL.md"><code>preschool-color-shape</code></a><br>学前颜色形状 Skill | <code>npx: preschool-color-shape</code><br><code>npm: --skill preschool-color-shape</code> | ✓ | preschool | 综合 | - | 颜色形状 | 每日启蒙、亲子共学 |
+| <a href="skills/preschool/preschool-language-expression/SKILL.md"><code>preschool-language-expression</code></a><br>学前语言表达 Skill | <code>npx: preschool-language-expression</code><br><code>npm: --skill preschool-language-expression</code> | ✓ | preschool | 语文 | - | 语言表达 | 表达训练、亲子互动 |
+| <a href="skills/preschool/preschool-attention-training/SKILL.md"><code>preschool-attention-training</code></a><br>学前专注力训练 Skill | <code>npx: preschool-attention-training</code><br><code>npm: --skill preschool-attention-training</code> | ✓ | preschool | 学习能力 | - | 专注力 | 专注游戏、每日打卡 |
+| <a href="skills/preschool/preschool-self-care/SKILL.md"><code>preschool-self-care</code></a><br>学前自理能力 Skill | <code>npx: preschool-self-care</code><br><code>npm: --skill preschool-self-care</code> | ✓ | preschool | 家庭教育 | - | 自理能力 | 家庭陪伴、入学准备 |
+| <a href="skills/preschool/preschool-family-readiness/SKILL.md"><code>preschool-family-readiness</code></a><br>幼小衔接家庭准备 Skill | <code>npx: preschool-family-readiness</code><br><code>npm: --skill preschool-family-readiness</code> | ✓ | preschool | 家庭教育 | - | 陪学建议、入学准备 | 入学准备、家长陪学 |
+| <a href="skills/preschool/preschool-school-readiness/SKILL.md"><code>preschool-school-readiness</code></a><br>幼小衔接综合 Skill | <code>npx: preschool-school-readiness</code><br><code>npm: --skill preschool-school-readiness</code> | ✓ | preschool | 综合 | - | 入学准备、习惯培养 | 入学准备、暑假提升 |
 
 ### <a id="textbook-sync"></a>教材同步<br>Textbook Sync
 
@@ -469,31 +498,6 @@ npm run export:agents
 | <a href="skills/textbook-sync/senior-geography-xj-textbook-sync/SKILL.md"><code>senior-geography-xj-textbook-sync</code></a><br>湘教版高中地理同步 Skill | <code>npx: senior-geography-xj-textbook-sync</code><br><code>npm: --skill senior-geography-xj-textbook-sync</code> | ✓ | senior | 地理 | 湘教版 | 教材同步、图表分析 | 课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、高考复习 |
 | <a href="skills/textbook-sync/junior-english-yl-textbook-sync/SKILL.md"><code>junior-english-yl-textbook-sync</code></a><br>译林版初中英语同步 Skill | <code>npx: junior-english-yl-textbook-sync</code><br><code>npm: --skill junior-english-yl-textbook-sync</code> | ✓ | junior | 英语 | 译林版 | 教材同步、词汇、语法 | 课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习、中考复习 |
 | <a href="skills/textbook-sync/primary-english-yl-textbook-sync/SKILL.md"><code>primary-english-yl-textbook-sync</code></a><br>译林版小学英语同步 Skill | <code>npx: primary-english-yl-textbook-sync</code><br><code>npm: --skill primary-english-yl-textbook-sync</code> | ✓ | primary | 英语 | 译林版 | 教材同步、词汇、听说读写 | 课前预习、课后作业、同步巩固、单元复习、错题巩固、期中期末复习 |
-| <a href="skills/textbook-sync/preschool-general-readiness-textbook-sync/SKILL.md"><code>preschool-general-readiness-textbook-sync</code></a><br>幼小衔接通用学前综合同步 Skill | <code>npx: preschool-general-readiness-textbook-sync</code><br><code>npm: --skill preschool-general-readiness-textbook-sync</code> | ✓ | preschool | 综合 | 幼小衔接通用 | 启蒙学习、习惯培养 | 每日启蒙、亲子共学、入学准备 |
-
-### <a id="learning-core"></a>学习核心能力<br>Learning Core
-
-学习计划、拍照答疑、错题复盘、学情报告等通用学习闭环能力。
-
-安装选择器：<code>npx: learning-core</code><br><code>npm: --category learning-core</code>
-
-| Skill | 安装选择器 | 独立使用 | 阶段 | 学科/领域 | 教材 | 能力 | 场景 |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/learning-core/agent-weakness-boost/SKILL.md"><code>agent-weakness-boost</code></a><br>薄弱项提升 Skill | <code>npx: agent-weakness-boost</code><br><code>npm: --skill agent-weakness-boost</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 查漏补缺 | 专项训练 |
-| <a href="skills/learning-core/agent-mistake-review/SKILL.md"><code>agent-mistake-review</code></a><br>错题复盘 Skill | <code>npx: agent-mistake-review</code><br><code>npm: --skill agent-mistake-review</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 错题订正、复习计划 | 错题订正、单元复习 |
-| <a href="skills/learning-core/agent-review-assistant/SKILL.md"><code>agent-review-assistant</code></a><br>复习助手 Skill | <code>npx: agent-review-assistant</code><br><code>npm: --skill agent-review-assistant</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 复习计划 | 单元复习 |
-| <a href="skills/learning-core/agent-holiday-plan/SKILL.md"><code>agent-holiday-plan</code></a><br>寒暑假提升 Skill | <code>npx: agent-holiday-plan</code><br><code>npm: --skill agent-holiday-plan</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 假期计划 | 寒暑假提升 |
-| <a href="skills/learning-core/agent-memory-method/SKILL.md"><code>agent-memory-method</code></a><br>记忆方法 Skill | <code>npx: agent-memory-method</code><br><code>npm: --skill agent-memory-method</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 记忆 | 背诵记忆 |
-| <a href="skills/learning-core/agent-preview-assistant/SKILL.md"><code>agent-preview-assistant</code></a><br>课前预习 Skill | <code>npx: agent-preview-assistant</code><br><code>npm: --skill agent-preview-assistant</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 预习 | 课前预习 |
-| <a href="skills/learning-core/agent-weekly-review/SKILL.md"><code>agent-weekly-review</code></a><br>每周复盘 Skill | <code>npx: agent-weekly-review</code><br><code>npm: --skill agent-weekly-review</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 阶段复盘 | 学习报告 |
-| <a href="skills/learning-core/agent-photo-question/SKILL.md"><code>agent-photo-question</code></a><br>拍照答疑 Skill | <code>npx: agent-photo-question</code><br><code>npm: --skill agent-photo-question</code> | - | primary<br>junior<br>senior | 综合 | - | AI 讲题、图片识题 | 拍照答疑、课后作业 |
-| <a href="skills/learning-core/agent-socratic-tutor/SKILL.md"><code>agent-socratic-tutor</code></a><br>启发式讲解 Skill | <code>npx: agent-socratic-tutor</code><br><code>npm: --skill agent-socratic-tutor</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 启发提问 | AI 讲题 |
-| <a href="skills/learning-core/agent-learning-report/SKILL.md"><code>agent-learning-report</code></a><br>学情报告 Skill | <code>npx: agent-learning-report</code><br><code>npm: --skill agent-learning-report</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 学情报告、学习建议 | 学习报告、家长沟通 |
-| <a href="skills/learning-core/agent-study-plan/SKILL.md"><code>agent-study-plan</code></a><br>学习计划 Skill | <code>npx: agent-study-plan</code><br><code>npm: --skill agent-study-plan</code> | ✓ | preschool<br>primary<br>junior<br>senior<br>college<br>adult | 学习能力 | - | 学习计划、目标管理 | 今日学习、寒暑假提升、考前规划 |
-| <a href="skills/learning-core/agent-learning-habit/SKILL.md"><code>agent-learning-habit</code></a><br>学习习惯 Skill | <code>npx: agent-learning-habit</code><br><code>npm: --skill agent-learning-habit</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 习惯培养 | 每日打卡 |
-| <a href="skills/learning-core/agent-focus-training/SKILL.md"><code>agent-focus-training</code></a><br>专注力训练 Skill | <code>npx: agent-focus-training</code><br><code>npm: --skill agent-focus-training</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 专注 | 每日打卡 |
-| <a href="skills/learning-core/agent-homework-companion/SKILL.md"><code>agent-homework-companion</code></a><br>作业陪伴 Skill | <code>npx: agent-homework-companion</code><br><code>npm: --skill agent-homework-companion</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 作业陪伴 | 课后作业 |
-| <a href="skills/learning-core/agent-question-explanation/SKILL.md"><code>agent-question-explanation</code></a><br>AI 讲题 Skill | <code>npx: agent-question-explanation</code><br><code>npm: --skill agent-question-explanation</code> | ✓ | primary<br>junior<br>senior<br>college | 学习能力 | - | AI 讲题、举一反三 | 课后作业、同步巩固 |
 
 ### <a id="daily-practice"></a>每日练习<br>Daily Practice
 
@@ -529,8 +533,6 @@ npm run export:agents
 | <a href="skills/daily-practice/primary-english-vocabulary-daily/SKILL.md"><code>primary-english-vocabulary-daily</code></a><br>小学英语单词每日练 Skill | <code>npx: primary-english-vocabulary-daily</code><br><code>npm: --skill primary-english-vocabulary-daily</code> | ✓ | primary | 英语 | - | 词汇、默写 | 每日打卡、听写默写 |
 | <a href="skills/daily-practice/primary-chinese-dictation-daily/SKILL.md"><code>primary-chinese-dictation-daily</code></a><br>小学语文字词听写 Skill | <code>npx: primary-chinese-dictation-daily</code><br><code>npm: --skill primary-chinese-dictation-daily</code> | ✓ | primary | 语文 | - | 听写、默写 | 听写默写、每日打卡 |
 | <a href="skills/daily-practice/primary-reading-daily/SKILL.md"><code>primary-reading-daily</code></a><br>小学阅读每日练 Skill | <code>npx: primary-reading-daily</code><br><code>npm: --skill primary-reading-daily</code> | ✓ | primary | 语文 | - | 阅读理解 | 阅读训练、每日打卡 |
-| <a href="skills/daily-practice/preschool-literacy-daily/SKILL.md"><code>preschool-literacy-daily</code></a><br>学前识字每日练 Skill | <code>npx: preschool-literacy-daily</code><br><code>npm: --skill preschool-literacy-daily</code> | ✓ | preschool | 语文 | - | 识字 | 每日启蒙、每日打卡 |
-| <a href="skills/daily-practice/preschool-number-sense-daily/SKILL.md"><code>preschool-number-sense-daily</code></a><br>学前数感每日练 Skill | <code>npx: preschool-number-sense-daily</code><br><code>npm: --skill preschool-number-sense-daily</code> | ✓ | preschool | 数学 | - | 数感 | 数感游戏、每日打卡 |
 
 ### <a id="reading-writing"></a>阅读写作<br>Reading & Writing
 
@@ -550,6 +552,7 @@ npm run export:agents
 | <a href="skills/reading-writing/primary-chinese-reading/SKILL.md"><code>primary-chinese-reading</code></a><br>小学语文阅读理解 Skill | <code>npx: primary-chinese-reading</code><br><code>npm: --skill primary-chinese-reading</code> | ✓ | primary | 语文 | - | 阅读理解 | 阅读训练 |
 | <a href="skills/reading-writing/primary-chinese-writing/SKILL.md"><code>primary-chinese-writing</code></a><br>小学作文提升 Skill | <code>npx: primary-chinese-writing</code><br><code>npm: --skill primary-chinese-writing</code> | ✓ | primary | 语文 | - | 写作、表达 | 写作提升 |
 | <a href="skills/reading-writing/college-academic-writing/SKILL.md"><code>college-academic-writing</code></a><br>学术写作 Skill | <code>npx: college-academic-writing</code><br><code>npm: --skill college-academic-writing</code> | ✓ | college | 通识 | - | 写作 | 论文训练 |
+| <a href="skills/reading-writing/adult-workplace-writing/SKILL.md"><code>adult-workplace-writing</code></a><br>职场写作 Skill | <code>npx: adult-workplace-writing</code><br><code>npm: --skill adult-workplace-writing</code> | ✓ | adult | 职业教育 | - | 写作、表达 | 职业技能 |
 
 ### <a id="exam-prep"></a>考试备考<br>Exam Prep
 
@@ -584,8 +587,57 @@ npm run export:agents
 | <a href="skills/exam-prep/civil-service-aptitude/SKILL.md"><code>civil-service-aptitude</code></a><br>公务员行测 Skill | <code>npx: civil-service-aptitude</code><br><code>npm: --skill civil-service-aptitude</code> | ✓ | adult | 职业教育 | - | 逻辑、数据分析 | 考证、专项训练 |
 | <a href="skills/exam-prep/teacher-certification-sprint/SKILL.md"><code>teacher-certification-sprint</code></a><br>教师资格证备考 Skill | <code>npx: teacher-certification-sprint</code><br><code>npm: --skill teacher-certification-sprint</code> | ✓ | adult | 职业教育 | - | 考试冲刺 | 考证 |
 | <a href="skills/exam-prep/postgraduate-english-sprint/SKILL.md"><code>postgraduate-english-sprint</code></a><br>考研英语备考 Skill | <code>npx: postgraduate-english-sprint</code><br><code>npm: --skill postgraduate-english-sprint</code> | ✓ | college<br>adult | 英语 | - | 阅读理解、翻译、写作 | 考研复习 |
+| <a href="skills/exam-prep/toefl-prep/SKILL.md"><code>toefl-prep</code></a><br>托福备考 Skill | <code>npx: toefl-prep</code><br><code>npm: --skill toefl-prep</code> | ✓ | college<br>adult | 英语 | - | 听力、口语、阅读理解、写作 | 出国考试 |
 | <a href="skills/exam-prep/primary-final-review/SKILL.md"><code>primary-final-review</code></a><br>小学期末复习 Skill | <code>npx: primary-final-review</code><br><code>npm: --skill primary-final-review</code> | ✓ | primary | 综合 | - | 考试复习 | 期中期末复习 |
+| <a href="skills/exam-prep/ielts-prep/SKILL.md"><code>ielts-prep</code></a><br>雅思备考 Skill | <code>npx: ielts-prep</code><br><code>npm: --skill ielts-prep</code> | ✓ | college<br>adult | 英语 | - | 听力、口语、阅读理解、写作 | 出国考试 |
+| <a href="skills/exam-prep/adult-vocational-certificate/SKILL.md"><code>adult-vocational-certificate</code></a><br>职业证书备考 Skill | <code>npx: adult-vocational-certificate</code><br><code>npm: --skill adult-vocational-certificate</code> | ✓ | adult | 职业教育 | - | 知识记忆、考试冲刺 | 考证 |
 | <a href="skills/exam-prep/junior-zhongkao-sprint/SKILL.md"><code>junior-zhongkao-sprint</code></a><br>中考冲刺 Skill | <code>npx: junior-zhongkao-sprint</code><br><code>npm: --skill junior-zhongkao-sprint</code> | ✓ | junior | 综合 | - | 考试冲刺 | 中考复习、考前冲刺 |
+
+### <a id="learning-assistant"></a>学习助手<br>Learning Assistant
+
+学习计划、拍照答疑、错题复盘、学情报告、专注训练、成人学习等通用学习闭环能力。
+
+安装选择器：<code>npx: learning-assistant</code><br><code>npm: --category learning-assistant</code>
+
+| Skill | 安装选择器 | 独立使用 | 阶段 | 学科/领域 | 教材 | 能力 | 场景 |
+| --- | --- | :---: | --- | --- | --- | --- | --- |
+| <a href="skills/learning-assistant/agent-weakness-boost/SKILL.md"><code>agent-weakness-boost</code></a><br>薄弱项提升 Skill | <code>npx: agent-weakness-boost</code><br><code>npm: --skill agent-weakness-boost</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 查漏补缺 | 专项训练 |
+| <a href="skills/learning-assistant/adult-language-learning/SKILL.md"><code>adult-language-learning</code></a><br>成人语言学习 Skill | <code>npx: adult-language-learning</code><br><code>npm: --skill adult-language-learning</code> | ✓ | adult | 语言学习 | - | 口语、听力、词汇 | 每日打卡 |
+| <a href="skills/learning-assistant/agent-mistake-review/SKILL.md"><code>agent-mistake-review</code></a><br>错题复盘 Skill | <code>npx: agent-mistake-review</code><br><code>npm: --skill agent-mistake-review</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 错题订正、复习计划 | 错题订正、单元复习 |
+| <a href="skills/learning-assistant/agent-review-assistant/SKILL.md"><code>agent-review-assistant</code></a><br>复习助手 Skill | <code>npx: agent-review-assistant</code><br><code>npm: --skill agent-review-assistant</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 复习计划 | 单元复习 |
+| <a href="skills/learning-assistant/agent-holiday-plan/SKILL.md"><code>agent-holiday-plan</code></a><br>寒暑假提升 Skill | <code>npx: agent-holiday-plan</code><br><code>npm: --skill agent-holiday-plan</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 假期计划 | 寒暑假提升 |
+| <a href="skills/learning-assistant/agent-memory-method/SKILL.md"><code>agent-memory-method</code></a><br>记忆方法 Skill | <code>npx: agent-memory-method</code><br><code>npm: --skill agent-memory-method</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 记忆 | 背诵记忆 |
+| <a href="skills/learning-assistant/agent-preview-assistant/SKILL.md"><code>agent-preview-assistant</code></a><br>课前预习 Skill | <code>npx: agent-preview-assistant</code><br><code>npm: --skill agent-preview-assistant</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 预习 | 课前预习 |
+| <a href="skills/learning-assistant/agent-weekly-review/SKILL.md"><code>agent-weekly-review</code></a><br>每周复盘 Skill | <code>npx: agent-weekly-review</code><br><code>npm: --skill agent-weekly-review</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 阶段复盘 | 学习报告 |
+| <a href="skills/learning-assistant/agent-photo-question/SKILL.md"><code>agent-photo-question</code></a><br>拍照答疑 Skill | <code>npx: agent-photo-question</code><br><code>npm: --skill agent-photo-question</code> | - | primary<br>junior<br>senior | 综合 | - | AI 讲题、图片识题 | 拍照答疑、课后作业 |
+| <a href="skills/learning-assistant/agent-socratic-tutor/SKILL.md"><code>agent-socratic-tutor</code></a><br>启发式讲解 Skill | <code>npx: agent-socratic-tutor</code><br><code>npm: --skill agent-socratic-tutor</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 启发提问 | AI 讲题 |
+| <a href="skills/learning-assistant/college-data-analysis/SKILL.md"><code>college-data-analysis</code></a><br>数据分析 Skill | <code>npx: college-data-analysis</code><br><code>npm: --skill college-data-analysis</code> | ✓ | college<br>adult | 计算机 | - | 数据分析 | 职业技能 |
+| <a href="skills/learning-assistant/college-cs-data-structure/SKILL.md"><code>college-cs-data-structure</code></a><br>数据结构 Skill | <code>npx: college-cs-data-structure</code><br><code>npm: --skill college-cs-data-structure</code> | ✓ | college | 计算机 | - | 算法、编程 | 课程学习 |
+| <a href="skills/learning-assistant/college-cs-algorithm-interview/SKILL.md"><code>college-cs-algorithm-interview</code></a><br>算法面试 Skill | <code>npx: college-cs-algorithm-interview</code><br><code>npm: --skill college-cs-algorithm-interview</code> | ✓ | college<br>adult | 计算机 | - | 算法 | 面试准备 |
+| <a href="skills/learning-assistant/agent-learning-report/SKILL.md"><code>agent-learning-report</code></a><br>学情报告 Skill | <code>npx: agent-learning-report</code><br><code>npm: --skill agent-learning-report</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 学情报告、学习建议 | 学习报告、家长沟通 |
+| <a href="skills/learning-assistant/agent-study-plan/SKILL.md"><code>agent-study-plan</code></a><br>学习计划 Skill | <code>npx: agent-study-plan</code><br><code>npm: --skill agent-study-plan</code> | ✓ | preschool<br>primary<br>junior<br>senior<br>college<br>adult | 学习能力 | - | 学习计划、目标管理 | 今日学习、寒暑假提升、考前规划 |
+| <a href="skills/learning-assistant/agent-learning-habit/SKILL.md"><code>agent-learning-habit</code></a><br>学习习惯 Skill | <code>npx: agent-learning-habit</code><br><code>npm: --skill agent-learning-habit</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 习惯培养 | 每日打卡 |
+| <a href="skills/learning-assistant/agent-focus-training/SKILL.md"><code>agent-focus-training</code></a><br>专注力训练 Skill | <code>npx: agent-focus-training</code><br><code>npm: --skill agent-focus-training</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 专注 | 每日打卡 |
+| <a href="skills/learning-assistant/agent-homework-companion/SKILL.md"><code>agent-homework-companion</code></a><br>作业陪伴 Skill | <code>npx: agent-homework-companion</code><br><code>npm: --skill agent-homework-companion</code> | ✓ | primary<br>junior<br>senior | 学习能力 | - | 作业陪伴 | 课后作业 |
+| <a href="skills/learning-assistant/college-ai-foundation/SKILL.md"><code>college-ai-foundation</code></a><br>AI 基础 Skill | <code>npx: college-ai-foundation</code><br><code>npm: --skill college-ai-foundation</code> | ✓ | college<br>adult | 计算机 | - | AI 基础 | 兴趣学习 |
+| <a href="skills/learning-assistant/agent-question-explanation/SKILL.md"><code>agent-question-explanation</code></a><br>AI 讲题 Skill | <code>npx: agent-question-explanation</code><br><code>npm: --skill agent-question-explanation</code> | ✓ | primary<br>junior<br>senior<br>college | 学习能力 | - | AI 讲题、举一反三 | 课后作业、同步巩固 |
+| <a href="skills/learning-assistant/college-cs-python/SKILL.md"><code>college-cs-python</code></a><br>Python 学习 Skill | <code>npx: college-cs-python</code><br><code>npm: --skill college-cs-python</code> | ✓ | college<br>adult | 计算机 | - | 编程 | 职业技能 |
+
+### <a id="family-education"></a>家庭教育<br>Family Education
+
+面向家长陪伴、亲子阅读、作业习惯和家庭沟通。
+
+安装选择器：<code>npx: family-education</code><br><code>npm: --category family-education</code>
+
+| Skill | 安装选择器 | 独立使用 | 阶段 | 学科/领域 | 教材 | 能力 | 场景 |
+| --- | --- | :---: | --- | --- | --- | --- | --- |
+| <a href="skills/family-education/family-homework-routine/SKILL.md"><code>family-homework-routine</code></a><br>家庭作业习惯 Skill | <code>npx: family-homework-routine</code><br><code>npm: --skill family-homework-routine</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 作业陪伴 |
+| <a href="skills/family-education/family-school-communication/SKILL.md"><code>family-school-communication</code></a><br>家校沟通准备 Skill | <code>npx: family-school-communication</code><br><code>npm: --skill family-school-communication</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 家长沟通 |
+| <a href="skills/family-education/agent-parent-companion/SKILL.md"><code>agent-parent-companion</code></a><br>家长陪学 Skill | <code>npx: agent-parent-companion</code><br><code>npm: --skill agent-parent-companion</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议、目标管理 | 家长陪学 |
+| <a href="skills/family-education/family-holiday-learning/SKILL.md"><code>family-holiday-learning</code></a><br>假期家庭学习 Skill | <code>npx: family-holiday-learning</code><br><code>npm: --skill family-holiday-learning</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 寒暑假提升 |
+| <a href="skills/family-education/family-screen-time-balance/SKILL.md"><code>family-screen-time-balance</code></a><br>屏幕时间管理 Skill | <code>npx: family-screen-time-balance</code><br><code>npm: --skill family-screen-time-balance</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 习惯培养 |
+| <a href="skills/family-education/family-reading-companion/SKILL.md"><code>family-reading-companion</code></a><br>亲子阅读陪伴 Skill | <code>npx: family-reading-companion</code><br><code>npm: --skill family-reading-companion</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 亲子共读 |
+| <a href="skills/family-education/family-emotion-support/SKILL.md"><code>family-emotion-support</code></a><br>学习情绪支持 Skill | <code>npx: family-emotion-support</code><br><code>npm: --skill family-emotion-support</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 亲子沟通 |
 
 ### <a id="teacher-tools"></a>老师工具<br>Teacher Tools
 
@@ -627,51 +679,6 @@ npm run export:agents
 | <a href="skills/teacher-tools/teacher-politics-homework-generation/SKILL.md"><code>teacher-politics-homework-generation</code></a><br>政治作业生成 Skill | <code>npx: teacher-politics-homework-generation</code><br><code>npm: --skill teacher-politics-homework-generation</code> | ✓ | primary<br>junior<br>senior | 政治 | - | 作业生成 | 班级作业 |
 | <a href="skills/teacher-tools/teacher-homework-generation/SKILL.md"><code>teacher-homework-generation</code></a><br>作业生成 Skill | <code>npx: teacher-homework-generation</code><br><code>npm: --skill teacher-homework-generation</code> | ✓ | primary<br>junior<br>senior | 教学管理 | - | 作业生成、分层练习 | 班级作业 |
 
-### <a id="family-education"></a>家庭教育<br>Family Education
-
-面向家长陪伴、亲子阅读、作业习惯和家庭沟通。
-
-安装选择器：<code>npx: family-education</code><br><code>npm: --category family-education</code>
-
-| Skill | 安装选择器 | 独立使用 | 阶段 | 学科/领域 | 教材 | 能力 | 场景 |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/family-education/family-homework-routine/SKILL.md"><code>family-homework-routine</code></a><br>家庭作业习惯 Skill | <code>npx: family-homework-routine</code><br><code>npm: --skill family-homework-routine</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 作业陪伴 |
-| <a href="skills/family-education/family-school-communication/SKILL.md"><code>family-school-communication</code></a><br>家校沟通准备 Skill | <code>npx: family-school-communication</code><br><code>npm: --skill family-school-communication</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 家长沟通 |
-| <a href="skills/family-education/agent-parent-companion/SKILL.md"><code>agent-parent-companion</code></a><br>家长陪学 Skill | <code>npx: agent-parent-companion</code><br><code>npm: --skill agent-parent-companion</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议、目标管理 | 家长陪学 |
-| <a href="skills/family-education/family-holiday-learning/SKILL.md"><code>family-holiday-learning</code></a><br>假期家庭学习 Skill | <code>npx: family-holiday-learning</code><br><code>npm: --skill family-holiday-learning</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 寒暑假提升 |
-| <a href="skills/family-education/family-screen-time-balance/SKILL.md"><code>family-screen-time-balance</code></a><br>屏幕时间管理 Skill | <code>npx: family-screen-time-balance</code><br><code>npm: --skill family-screen-time-balance</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 习惯培养 |
-| <a href="skills/family-education/family-reading-companion/SKILL.md"><code>family-reading-companion</code></a><br>亲子阅读陪伴 Skill | <code>npx: family-reading-companion</code><br><code>npm: --skill family-reading-companion</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 亲子共读 |
-| <a href="skills/family-education/family-emotion-support/SKILL.md"><code>family-emotion-support</code></a><br>学习情绪支持 Skill | <code>npx: family-emotion-support</code><br><code>npm: --skill family-emotion-support</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 亲子沟通 |
-| <a href="skills/family-education/family-school-readiness/SKILL.md"><code>family-school-readiness</code></a><br>幼小衔接家庭准备 Skill | <code>npx: family-school-readiness</code><br><code>npm: --skill family-school-readiness</code> | ✓ | preschool<br>primary<br>junior | 家庭教育 | - | 陪学建议 | 入学准备 |
-
-### <a id="language-learning"></a>语言学习<br>Language Learning
-
-面向成人英语、出国考试、口语、听力和长期语言能力提升。
-
-安装选择器：<code>npx: language-learning</code><br><code>npm: --category language-learning</code>
-
-| Skill | 安装选择器 | 独立使用 | 阶段 | 学科/领域 | 教材 | 能力 | 场景 |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/language-learning/adult-language-learning/SKILL.md"><code>adult-language-learning</code></a><br>成人语言学习 Skill | <code>npx: adult-language-learning</code><br><code>npm: --skill adult-language-learning</code> | ✓ | adult | 语言学习 | - | 口语、听力、词汇 | 每日打卡 |
-| <a href="skills/language-learning/toefl-prep/SKILL.md"><code>toefl-prep</code></a><br>托福备考 Skill | <code>npx: toefl-prep</code><br><code>npm: --skill toefl-prep</code> | ✓ | college<br>adult | 英语 | - | 听力、口语、阅读理解、写作 | 出国考试 |
-| <a href="skills/language-learning/ielts-prep/SKILL.md"><code>ielts-prep</code></a><br>雅思备考 Skill | <code>npx: ielts-prep</code><br><code>npm: --skill ielts-prep</code> | ✓ | college<br>adult | 英语 | - | 听力、口语、阅读理解、写作 | 出国考试 |
-
-### <a id="career-learning"></a>成人与职业学习<br>Career Learning
-
-面向大学、成人学习、职业技能和考证场景。
-
-安装选择器：<code>npx: career-learning</code><br><code>npm: --category career-learning</code>
-
-| Skill | 安装选择器 | 独立使用 | 阶段 | 学科/领域 | 教材 | 能力 | 场景 |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/career-learning/college-data-analysis/SKILL.md"><code>college-data-analysis</code></a><br>数据分析 Skill | <code>npx: college-data-analysis</code><br><code>npm: --skill college-data-analysis</code> | ✓ | college<br>adult | 计算机 | - | 数据分析 | 职业技能 |
-| <a href="skills/career-learning/college-cs-data-structure/SKILL.md"><code>college-cs-data-structure</code></a><br>数据结构 Skill | <code>npx: college-cs-data-structure</code><br><code>npm: --skill college-cs-data-structure</code> | ✓ | college | 计算机 | - | 算法、编程 | 课程学习 |
-| <a href="skills/career-learning/college-cs-algorithm-interview/SKILL.md"><code>college-cs-algorithm-interview</code></a><br>算法面试 Skill | <code>npx: college-cs-algorithm-interview</code><br><code>npm: --skill college-cs-algorithm-interview</code> | ✓ | college<br>adult | 计算机 | - | 算法 | 面试准备 |
-| <a href="skills/career-learning/adult-workplace-writing/SKILL.md"><code>adult-workplace-writing</code></a><br>职场写作 Skill | <code>npx: adult-workplace-writing</code><br><code>npm: --skill adult-workplace-writing</code> | ✓ | adult | 职业教育 | - | 写作、表达 | 职业技能 |
-| <a href="skills/career-learning/adult-vocational-certificate/SKILL.md"><code>adult-vocational-certificate</code></a><br>职业证书备考 Skill | <code>npx: adult-vocational-certificate</code><br><code>npm: --skill adult-vocational-certificate</code> | ✓ | adult | 职业教育 | - | 知识记忆、考试冲刺 | 考证 |
-| <a href="skills/career-learning/college-ai-foundation/SKILL.md"><code>college-ai-foundation</code></a><br>AI 基础 Skill | <code>npx: college-ai-foundation</code><br><code>npm: --skill college-ai-foundation</code> | ✓ | college<br>adult | 计算机 | - | AI 基础 | 兴趣学习 |
-| <a href="skills/career-learning/college-cs-python/SKILL.md"><code>college-cs-python</code></a><br>Python 学习 Skill | <code>npx: college-cs-python</code><br><code>npm: --skill college-cs-python</code> | ✓ | college<br>adult | 计算机 | - | 编程 | 职业技能 |
-
 ## 项目结构
 
 ```text
@@ -680,7 +687,8 @@ hermes-edu-skills/
 ├─ .well-known/skills/index.json
 ├─ skills/
 │  ├─ textbook-sync/
-│  ├─ learning-core/
+│  ├─ preschool/
+│  ├─ learning-assistant/
 │  ├─ daily-practice/
 │  ├─ exam-prep/
 │  ├─ teacher-tools/

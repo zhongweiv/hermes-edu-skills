@@ -1,7 +1,7 @@
 ---
 name: "junior-chinese-modern-reading"
 description: "初中现代文阅读帮助学生把阅读训练从“做题对答案”升级为读懂文本、找到依据、组织表达和迁移方法，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。 Workflow: junior_chinese_modern_reading.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_chinese_modern_reading.run"
     category: "reading-writing"
+    category_aliases: ["阅读写作", "读写表达", "reading", "writing", "reading-writing"]
+    legacy_slugs: []
+    install_aliases: ["junior-chinese-modern-reading"]
     stages: ["junior"]
     subjects: ["语文"]
     abilities: ["阅读理解"]
@@ -113,6 +116,8 @@ metadata:
 
 - Workflow: `junior_chinese_modern_reading.run`
 - Category: `reading-writing`
+
+- Install Aliases: `junior-chinese-modern-reading`
 - Stages: `junior`
 - Subjects: `语文`
 - Abilities: `阅读理解`

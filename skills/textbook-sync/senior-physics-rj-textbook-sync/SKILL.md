@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_physics_rj_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["senior-physics-rj-textbook-sync"]
     stages: ["senior"]
     subjects: ["物理"]
     abilities: ["教材同步", "实验理解"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `senior_physics_rj_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `senior-physics-rj-textbook-sync`
 - Stages: `senior`
 - Subjects: `物理`
 - Abilities: `教材同步`, `实验理解`

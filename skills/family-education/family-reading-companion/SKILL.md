@@ -1,7 +1,7 @@
 ---
 name: "family-reading-companion"
 description: "亲子阅读陪伴让亲子阅读从“读完了吗”变成有互动、有表达、有下一本书方向的陪读过程。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: family_reading_companion.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "family_reading_companion.run"
     category: "family-education"
+    category_aliases: ["家庭教育", "亲子陪学", "family", "family-education"]
+    legacy_slugs: []
+    install_aliases: ["family-reading-companion"]
     stages: ["preschool", "primary", "junior"]
     subjects: ["家庭教育"]
     abilities: ["陪学建议"]
@@ -112,6 +115,8 @@ metadata:
 
 - Workflow: `family_reading_companion.run`
 - Category: `family-education`
+
+- Install Aliases: `family-reading-companion`
 - Stages: `preschool`, `primary`, `junior`
 - Subjects: `家庭教育`
 - Abilities: `陪学建议`

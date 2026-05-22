@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_english_quick_practice.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["junior-english-quick-practice"]
     stages: ["junior"]
     subjects: ["英语"]
     abilities: ["同步巩固", "专项训练"]
@@ -119,6 +122,8 @@ metadata:
 
 - Workflow: `junior_english_quick_practice.run`
 - Category: `daily-practice`
+
+- Install Aliases: `junior-english-quick-practice`
 - Stages: `junior`
 - Subjects: `英语`
 - Abilities: `同步巩固`, `专项训练`

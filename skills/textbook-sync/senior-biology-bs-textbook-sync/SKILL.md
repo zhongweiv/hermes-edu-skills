@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_biology_bs_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["senior-biology-bs-textbook-sync"]
     stages: ["senior"]
     subjects: ["生物"]
     abilities: ["教材同步", "知识记忆"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `senior_biology_bs_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `senior-biology-bs-textbook-sync`
 - Stages: `senior`
 - Subjects: `生物`
 - Abilities: `教材同步`, `知识记忆`

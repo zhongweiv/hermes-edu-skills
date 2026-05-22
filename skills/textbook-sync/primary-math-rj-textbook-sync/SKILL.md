@@ -1,7 +1,7 @@
 ---
 name: "primary-math-rj-textbook-sync"
 description: "围绕人教版小学数学教材，把年级、册别、单元和学习目标变成可执行的预习、练习、复习和错题巩固任务。 Workflow: primary_math_rj_textbook_sync.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "primary_math_rj_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["primary-math-rj-textbook-sync"]
     stages: ["primary"]
     subjects: ["数学"]
     abilities: ["教材同步", "计算", "应用题"]
@@ -123,6 +126,8 @@ metadata:
 
 - Workflow: `primary_math_rj_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `primary-math-rj-textbook-sync`
 - Stages: `primary`
 - Subjects: `数学`
 - Abilities: `教材同步`, `计算`, `应用题`

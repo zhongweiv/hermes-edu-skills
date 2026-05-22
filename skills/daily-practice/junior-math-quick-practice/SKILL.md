@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_math_quick_practice.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["junior-math-quick-practice"]
     stages: ["junior"]
     subjects: ["数学"]
     abilities: ["同步巩固", "专项训练"]
@@ -119,6 +122,8 @@ metadata:
 
 - Workflow: `junior_math_quick_practice.run`
 - Category: `daily-practice`
+
+- Install Aliases: `junior-math-quick-practice`
 - Stages: `junior`
 - Subjects: `数学`
 - Abilities: `同步巩固`, `专项训练`

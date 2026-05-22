@@ -1,7 +1,7 @@
 ---
 name: "civil-service-essay"
 description: "把公务员申论备考从“泛泛刷题”变成诊断、提分优先级、限时训练、错题复盘和下次复测的闭环，帮助用户知道现在最该抓什么、每天怎么练、怎么判断有没有进步。 Workflow: civil_service_essay.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "civil_service_essay.run"
     category: "exam-prep"
+    category_aliases: ["考试备考", "备考复习", "exam", "exam-prep"]
+    legacy_slugs: []
+    install_aliases: ["civil-service-essay"]
     stages: ["adult"]
     subjects: ["职业教育"]
     abilities: ["材料阅读", "写作"]
@@ -122,6 +125,8 @@ metadata:
 
 - Workflow: `civil_service_essay.run`
 - Category: `exam-prep`
+
+- Install Aliases: `civil-service-essay`
 - Stages: `adult`
 - Subjects: `职业教育`
 - Abilities: `材料阅读`, `写作`

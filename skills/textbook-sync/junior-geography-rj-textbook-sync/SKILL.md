@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_geography_rj_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["junior-geography-rj-textbook-sync"]
     stages: ["junior"]
     subjects: ["地理"]
     abilities: ["教材同步", "图表分析"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `junior_geography_rj_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `junior-geography-rj-textbook-sync`
 - Stages: `junior`
 - Subjects: `地理`
 - Abilities: `教材同步`, `图表分析`

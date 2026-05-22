@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_chemistry_lk_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["senior-chemistry-lk-textbook-sync"]
     stages: ["senior"]
     subjects: ["化学"]
     abilities: ["教材同步", "实验理解"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `senior_chemistry_lk_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `senior-chemistry-lk-textbook-sync`
 - Stages: `senior`
 - Subjects: `化学`
 - Abilities: `教材同步`, `实验理解`

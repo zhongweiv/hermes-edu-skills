@@ -1,7 +1,7 @@
 ---
 name: "primary-chinese-recitation-daily"
 description: "把课文和古诗背诵拆成理解、分段、提取线索和复背检查，减少死记硬背。 Workflow: primary_chinese_recitation_daily.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "primary_chinese_recitation_daily.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["primary-chinese-recitation-daily"]
     stages: ["primary"]
     subjects: ["语文"]
     abilities: ["背诵", "朗读"]
@@ -114,6 +117,8 @@ metadata:
 
 - Workflow: `primary_chinese_recitation_daily.run`
 - Category: `daily-practice`
+
+- Install Aliases: `primary-chinese-recitation-daily`
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `背诵`, `朗读`

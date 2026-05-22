@@ -1,12 +1,12 @@
 # Hermes Edu Skills
 
-An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-focused education capabilities: textbook sync, exam prep, mistake review, daily practice, family learning, reading/writing, and teacher workflows.
+An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-focused education capabilities: preschool learning, textbook sync, exam prep, mistake review, daily practice, family learning, reading/writing, and teacher workflows.
 
-让 Hermes Agent 和主流 AI 工具拥有中国教育场景能力的开源 Agent Skill Pack：教材同步、备考复习、错题复盘、每日练习、亲子陪学、阅读写作和教师工作流。
+让 Hermes Agent 和主流 AI 工具拥有中国教育场景能力的开源 Agent Skill Pack：学前启蒙、教材同步、备考复习、错题复盘、每日练习、亲子陪学、阅读写作和教师工作流。
 
 [![Release](https://img.shields.io/github/v/release/zhongweiv/hermes-edu-skills?label=release)](https://github.com/zhongweiv/hermes-edu-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/Hermes%20Skills-170-blue)](catalog.json)
+[![Skills](https://img.shields.io/badge/Hermes%20Skills-188-blue)](catalog.json)
 [![Validate](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/zhongweiv/hermes-edu-skills/actions/workflows/validate.yml)
 
 [中文文档](README.md) · [Skill Catalog](catalog.json) · [Discovery Index](.well-known/skills/index.json) · [Shineway](https://www.shineway.tech/)
@@ -19,7 +19,7 @@ An open Agent Skill Pack that gives Hermes Agent and mainstream AI tools China-f
   <strong><a href="https://zhongweiv.github.io/hermes-edu-skills/demo/">Click the cover to watch the 30-second demo, about 800KB</a></strong>
 </p>
 
-Hermes Edu Skills is an open Agent Skill Pack for Chinese education scenarios. It turns textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, teacher planning, and school communication into 170 browsable, installable, and reusable product-level Skills.
+Hermes Edu Skills is an open Agent Skill Pack for Chinese education scenarios. It turns textbook sync, exam prep, photo Q&A, mistake review, daily practice, reading/writing, family learning, teacher planning, and school communication into 188 browsable, installable, and reusable product-level Skills.
 
 It is not a generic prompt collection. It is a structured capability library that Hermes Agent can discover and load: every Skill has invocation signals, target roles, parameter dimensions, usage boundaries, and a standard `SKILL.md`. You can use it directly with Hermes Agent or export it to OpenClaw, Codex, Cursor, Claude Code, and other Agent tools.
 
@@ -48,7 +48,7 @@ If you are building an AI learning assistant, AI teacher, curriculum tool, famil
 Hermes Agent is the default target. For first-time use, install one category or one Skill first, then install the full pack once you confirm the workflow.
 
 ```bash
-# Install all 170 installable Skills into Hermes Agent
+# Install all 188 installable Skills into Hermes Agent
 npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 
 # Install only the textbook-sync category
@@ -87,7 +87,7 @@ npx hermes-edu-skills export generic --target ./dist/agent-skills
 | --- | --- |
 | What | An open Agent Skill Pack for Chinese education scenarios. |
 | Why | General-purpose Agents usually do not understand Chinese textbook editions, grade/semester structures, unit pacing, exam systems, or real parent/teacher workflows. |
-| How | 170 structured `SKILL.md` files package education jobs into discoverable, installable, Agent-readable capabilities. |
+| How | 188 structured `SKILL.md` files package education jobs into discoverable, installable, Agent-readable capabilities. |
 | Default platform | Hermes Agent. |
 | Export targets | OpenClaw, Codex, Cursor, Claude Code, and Generic Agent. |
 | Public scope | Public Skill docs, indexes, validation, and export tooling only; no user data, secrets, or commercial backend implementation. |
@@ -108,7 +108,8 @@ npx hermes-edu-skills export generic --target ./dist/agent-skills
 
 | Who you are | Start here | What you get |
 | --- | --- | --- |
-| Hermes Agent user | [Default: Hermes Agent](#defaulthermes-agent), [Learning Core](#learning-core) | Add Chinese education Skills to your local Agent. |
+| Hermes Agent user | [Default: Hermes Agent](#defaulthermes-agent), [Learning Assistant](#learning-assistant) | Add Chinese education Skills to your local Agent. |
+| Preschool parent | [Preschool](#preschool), [Family Education](#family-education) | Use 10-minute parent-child tasks for early literacy, number sense, picture books, expression, attention, fine-motor writing, and school readiness. |
 | Education AI developer | [Project Structure](#project-structure), [Compatibility Notes](#compatibility-notes) | Reuse Skill structure, parameter design, and workflow naming. |
 | Teacher / curriculum researcher | [Teacher Tools](#teacher-tools), [Textbook Sync](#textbook-sync) | Study lesson planning, homework generation, unit review, and sync teaching patterns. |
 | Parent / family-learning product builder | [Family Education](#family-education), [Daily Practice](#daily-practice) | Build companionship, reading, habits, and daily practice scenarios. |
@@ -116,19 +117,18 @@ npx hermes-edu-skills export generic --target ./dist/agent-skills
 
 ## Category Overview
 
-The pack currently includes 170 installable Skills across 9 product-level categories. Grade, semester, unit, lesson, knowledge point, and difficulty are parameters, not thousands of repetitive Skill files.
+The pack currently includes 188 installable Skills across 8 product-level categories. Grade, semester, unit, lesson, knowledge point, and difficulty are parameters, not thousands of repetitive Skill files.
 
 | Category | Install Selector | Use Case | Count |
 | --- | --- | --- | ---: |
-| <a href="#textbook-sync"><code>textbook-sync</code></a><br>Textbook Sync | <code>CLI: textbook-sync</code><br><code>source: --category textbook-sync</code> | China-focused textbook synchronization by version, grade, semester, unit, lesson, and knowledge point. Grade, semester, unit, and difficulty are parameters, not thousands of separate Skills. | 41 |
-| <a href="#learning-core"><code>learning-core</code></a><br>Learning Core | <code>CLI: learning-core</code><br><code>source: --category learning-core</code> | General learning-loop capabilities such as study plans, photo Q&A, mistake review, and learning reports. | 15 |
-| <a href="#daily-practice"><code>daily-practice</code></a><br>Daily Practice | <code>CLI: daily-practice</code><br><code>source: --category daily-practice</code> | Short high-frequency practice such as arithmetic, dictation, recitation, vocabulary, and quick reinforcement. | 28 |
-| <a href="#reading-writing"><code>reading-writing</code></a><br>Reading & Writing | <code>CLI: reading-writing</code><br><code>source: --category reading-writing</code> | Chinese, English, academic, and workplace reading/writing capabilities. | 10 |
-| <a href="#exam-prep"><code>exam-prep</code></a><br>Exam Prep | <code>CLI: exam-prep</code><br><code>source: --category exam-prep</code> | Final exams, Zhongkao, Gaokao, postgraduate exams, CET, certification, and civil-service prep. | 27 |
+| <a href="#preschool"><code>preschool</code></a><br>Preschool | <code>CLI: preschool</code><br><code>source: --category preschool</code> | Early learning for ages 3-6 and school readiness: literacy, pinyin, number sense, picture books, expression, attention, fine-motor writing, habits, and parent-child play. | 22 |
+| <a href="#textbook-sync"><code>textbook-sync</code></a><br>Textbook Sync | <code>CLI: textbook-sync</code><br><code>source: --category textbook-sync</code> | China-focused textbook synchronization by version, grade, semester, unit, lesson, and knowledge point. Grade, semester, unit, and difficulty are parameters, not thousands of separate Skills. | 40 |
+| <a href="#daily-practice"><code>daily-practice</code></a><br>Daily Practice | <code>CLI: daily-practice</code><br><code>source: --category daily-practice</code> | Short high-frequency practice such as arithmetic, dictation, recitation, vocabulary, and quick reinforcement. | 26 |
+| <a href="#reading-writing"><code>reading-writing</code></a><br>Reading & Writing | <code>CLI: reading-writing</code><br><code>source: --category reading-writing</code> | Chinese, English, academic, and workplace reading/writing capabilities. | 11 |
+| <a href="#exam-prep"><code>exam-prep</code></a><br>Exam Prep | <code>CLI: exam-prep</code><br><code>source: --category exam-prep</code> | Final exams, Zhongkao, Gaokao, postgraduate exams, CET, certification, and civil-service prep. | 30 |
+| <a href="#learning-assistant"><code>learning-assistant</code></a><br>Learning Assistant | <code>CLI: learning-assistant</code><br><code>source: --category learning-assistant</code> | General learning-loop capabilities such as study plans, photo Q&A, mistake review, learning reports, attention training, and adult learning. | 21 |
+| <a href="#family-education"><code>family-education</code></a><br>Family Education | <code>CLI: family-education</code><br><code>source: --category family-education</code> | Parent companionship, parent-child reading, homework routines, and family communication. | 7 |
 | <a href="#teacher-tools"><code>teacher-tools</code></a><br>Teacher Tools | <code>CLI: teacher-tools</code><br><code>source: --category teacher-tools</code> | Teacher workflows such as lesson planning, homework generation, class analysis, and parent communication. | 31 |
-| <a href="#family-education"><code>family-education</code></a><br>Family Education | <code>CLI: family-education</code><br><code>source: --category family-education</code> | Parent companionship, parent-child reading, homework routines, and family communication. | 8 |
-| <a href="#language-learning"><code>language-learning</code></a><br>Language Learning | <code>CLI: language-learning</code><br><code>source: --category language-learning</code> | Adult English, study-abroad exams, speaking, listening, and long-term language improvement. | 3 |
-| <a href="#career-learning"><code>career-learning</code></a><br>Career Learning | <code>CLI: career-learning</code><br><code>source: --category career-learning</code> | College, adult learning, career skills, and certification scenarios. | 7 |
 
 ## Initiator And Maintainer
 
@@ -152,7 +152,7 @@ npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 
 This command does two things:
 
-- Installs 170 available Skills and updates Hermes `skills.external_dirs`.
+- Installs 188 available Skills and updates Hermes `skills.external_dirs`.
 - Generates `HERMES.md` in the current directory by default, so Hermes searches the `hermes-edu-skills` Skill Pack before answering education questions directly.
 
 When you install only one category or one Skill, the installer generates a scoped prompt by default: category installs list only Skills from that category, and single-Skill installs explicitly tell Hermes to load that Skill first when the request is in scope.
@@ -245,7 +245,7 @@ skill_view("primary-math-mental-arithmetic")
 
 Hermes native Skill selection is model-driven: the agent sees a compact Skill list first, then decides whether to call `skill_view(name)` and read the full Skill. Installing the Skill Pack does not guarantee every ordinary chat message will automatically trigger a Skill.
 
-Hermes Edu Skills therefore provides a project-level activation prompt. It tells Hermes not to answer education questions from the base model first. Instead, Hermes should search the installed `hermes-edu-skills` Skill Pack, choose the best match from 170 installable Skills, then call `skill_view(name)` before answering.
+Hermes Edu Skills therefore provides a project-level activation prompt. It tells Hermes not to answer education questions from the base model first. Instead, Hermes should search the installed `hermes-edu-skills` Skill Pack, choose the best match from 188 installable Skills, then call `skill_view(name)` before answering.
 
 Recommended usage:
 
@@ -376,15 +376,14 @@ Common category install selectors:
 
 | What To Export | Install Selector |
 | --- | --- |
+| Preschool | `CLI: preschool`<br>`source: --category preschool` |
 | Textbook Sync | `CLI: textbook-sync`<br>`source: --category textbook-sync` |
-| Learning Core | `CLI: learning-core`<br>`source: --category learning-core` |
+| Learning Assistant | `CLI: learning-assistant`<br>`source: --category learning-assistant` |
 | Daily Practice | `CLI: daily-practice`<br>`source: --category daily-practice` |
 | Reading & Writing | `CLI: reading-writing`<br>`source: --category reading-writing` |
 | Exam Prep | `CLI: exam-prep`<br>`source: --category exam-prep` |
 | Teacher Tools | `CLI: teacher-tools`<br>`source: --category teacher-tools` |
 | Family Education | `CLI: family-education`<br>`source: --category family-education` |
-| Language Learning | `CLI: language-learning`<br>`source: --category language-learning` |
-| Career Learning | `CLI: career-learning`<br>`source: --category career-learning` |
 
 Source mode and advanced command form remain available for integrations that need dynamic tool or target selection:
 
@@ -407,19 +406,49 @@ The table below shows the main subject areas by category. The next section keeps
 
 | Category | Install Selector | Main Areas | Count |
 | --- | --- | --- | ---: |
-| <a href="#textbook-sync"><code>textbook-sync</code></a><br>Textbook Sync | <code>CLI: textbook-sync</code><br><code>source: --category textbook-sync</code> | Biology, Math, Chemistry, Physics, Geography | 41 |
-| <a href="#learning-core"><code>learning-core</code></a><br>Learning Core | <code>CLI: learning-core</code><br><code>source: --category learning-core</code> | Learning Skills, General | 15 |
-| <a href="#daily-practice"><code>daily-practice</code></a><br>Daily Practice | <code>CLI: daily-practice</code><br><code>source: --category daily-practice</code> | Geography, Chemistry, History, Biology, Math | 28 |
-| <a href="#reading-writing"><code>reading-writing</code></a><br>Reading & Writing | <code>CLI: reading-writing</code><br><code>source: --category reading-writing</code> | Chinese, English, General Education | 10 |
-| <a href="#exam-prep"><code>exam-prep</code></a><br>Exam Prep | <code>CLI: exam-prep</code><br><code>source: --category exam-prep</code> | Geography, Chemistry, History, Biology, Math | 27 |
+| <a href="#preschool"><code>preschool</code></a><br>Preschool | <code>CLI: preschool</code><br><code>source: --category preschool</code> | Family Education, Chinese, Learning Skills, General, Math | 22 |
+| <a href="#textbook-sync"><code>textbook-sync</code></a><br>Textbook Sync | <code>CLI: textbook-sync</code><br><code>source: --category textbook-sync</code> | Biology, Math, Chemistry, Physics, Geography | 40 |
+| <a href="#daily-practice"><code>daily-practice</code></a><br>Daily Practice | <code>CLI: daily-practice</code><br><code>source: --category daily-practice</code> | Geography, Chemistry, History, Biology, Math | 26 |
+| <a href="#reading-writing"><code>reading-writing</code></a><br>Reading & Writing | <code>CLI: reading-writing</code><br><code>source: --category reading-writing</code> | Chinese, English, General Education, Career Education | 11 |
+| <a href="#exam-prep"><code>exam-prep</code></a><br>Exam Prep | <code>CLI: exam-prep</code><br><code>source: --category exam-prep</code> | Geography, Chemistry, History, Biology, Math | 30 |
+| <a href="#learning-assistant"><code>learning-assistant</code></a><br>Learning Assistant | <code>CLI: learning-assistant</code><br><code>source: --category learning-assistant</code> | Learning Skills, Language Learning, General, Computer Science | 21 |
+| <a href="#family-education"><code>family-education</code></a><br>Family Education | <code>CLI: family-education</code><br><code>source: --category family-education</code> | Family Education | 7 |
 | <a href="#teacher-tools"><code>teacher-tools</code></a><br>Teacher Tools | <code>CLI: teacher-tools</code><br><code>source: --category teacher-tools</code> | Teaching Management, Geography, Chemistry, History, Biology | 31 |
-| <a href="#family-education"><code>family-education</code></a><br>Family Education | <code>CLI: family-education</code><br><code>source: --category family-education</code> | Family Education | 8 |
-| <a href="#language-learning"><code>language-learning</code></a><br>Language Learning | <code>CLI: language-learning</code><br><code>source: --category language-learning</code> | Language Learning, English | 3 |
-| <a href="#career-learning"><code>career-learning</code></a><br>Career Learning | <code>CLI: career-learning</code><br><code>source: --category career-learning</code> | Computer Science, Career Education | 7 |
 
 ## All Skills
 
-The table below lists all 170 public Skills. The Category and Skill columns start with the exact English selector, followed by an English explanation; the Install Selector column shows both the first-class CLI selector and the source-mode npm flag.
+The table below lists all 188 public Skills. The Category and Skill columns start with the exact English selector, followed by an English explanation; the Install Selector column shows both the first-class CLI selector and the source-mode npm flag.
+
+### <a id="preschool"></a>Preschool<br>学前启蒙
+
+Early learning for ages 3-6 and school readiness: literacy, pinyin, number sense, picture books, expression, attention, fine-motor writing, habits, and parent-child play.
+
+Install selector: <code>CLI: preschool</code><br><code>source: --category preschool</code>
+
+| Skill | Install Selector | Standalone | Stage | Subject / Area | Textbook | Ability | Scenario |
+| --- | --- | :---: | --- | --- | --- | --- | --- |
+| <a href="skills/preschool/preschool-parent-daily-play/SKILL.md"><code>preschool-parent-daily-play</code></a><br>Family Education workflow for Daily Early Learning, Parent-Child Learning. Focus: 亲子陪伴, Daily Early Learning. | <code>CLI: preschool-parent-daily-play</code><br><code>source: --skill preschool-parent-daily-play</code> | ✓ | Preschool | Family Education | - | 亲子陪伴, Daily Early Learning | Daily Early Learning, Parent-Child Learning |
+| <a href="skills/preschool/preschool-growth-report/SKILL.md"><code>preschool-growth-report</code></a><br>Family Education workflow for 成长报告, 家园沟通. Focus: 成长观察, 家庭反馈. | <code>CLI: preschool-growth-report</code><br><code>source: --skill preschool-growth-report</code> | ✓ | Preschool | Family Education | - | 成长观察, 家庭反馈 | 成长报告, 家园沟通 |
+| <a href="skills/preschool/preschool-story-retelling/SKILL.md"><code>preschool-story-retelling</code></a><br>Chinese workflow for 绘本复述, 睡前表达. Focus: 故事复述. | <code>CLI: preschool-story-retelling</code><br><code>source: --skill preschool-story-retelling</code> | ✓ | Preschool | Chinese | - | 故事复述 | 绘本复述, 睡前表达 |
+| <a href="skills/preschool/preschool-memory-observation/SKILL.md"><code>preschool-memory-observation</code></a><br>Learning Skills workflow for 观察游戏, Parent-Child Learning. Focus: 观察力, 记忆力. | <code>CLI: preschool-memory-observation</code><br><code>source: --skill preschool-memory-observation</code> | ✓ | Preschool | Learning Skills | - | 观察力, 记忆力 | 观察游戏, Parent-Child Learning |
+| <a href="skills/preschool/preschool-picture-book-reading/SKILL.md"><code>preschool-picture-book-reading</code></a><br>Chinese workflow for Parent-Child Reading, 睡前阅读. Focus: 绘本阅读, 理解表达. | <code>CLI: preschool-picture-book-reading</code><br><code>source: --skill preschool-picture-book-reading</code> | ✓ | Preschool | Chinese | - | 绘本阅读, 理解表达 | Parent-Child Reading, 睡前阅读 |
+| <a href="skills/preschool/preschool-classroom-rules/SKILL.md"><code>preschool-classroom-rules</code></a><br>General workflow for School Readiness, 亲子演练. Focus: 规则感, 课堂准备. | <code>CLI: preschool-classroom-rules</code><br><code>source: --skill preschool-classroom-rules</code> | ✓ | Preschool | General | - | 规则感, 课堂准备 | School Readiness, 亲子演练 |
+| <a href="skills/preschool/preschool-fine-motor-writing/SKILL.md"><code>preschool-fine-motor-writing</code></a><br>Learning Skills workflow for School Readiness, Daily Practice. Focus: Fine Motor Writing, Writing Readiness. | <code>CLI: preschool-fine-motor-writing</code><br><code>source: --skill preschool-fine-motor-writing</code> | ✓ | Preschool | Learning Skills | - | Fine Motor Writing, Writing Readiness | School Readiness, Daily Practice |
+| <a href="skills/preschool/preschool-logic-thinking/SKILL.md"><code>preschool-logic-thinking</code></a><br>Math workflow for 逻辑游戏, Parent-Child Learning. Focus: 分类排序, 规律发现. | <code>CLI: preschool-logic-thinking</code><br><code>source: --skill preschool-logic-thinking</code> | ✓ | Preschool | Math | - | 分类排序, 规律发现 | 逻辑游戏, Parent-Child Learning |
+| <a href="skills/preschool/preschool-pinyin-foundation/SKILL.md"><code>preschool-pinyin-foundation</code></a><br>Chinese workflow for School Readiness, Daily Early Learning. Focus: 拼音启蒙. | <code>CLI: preschool-pinyin-foundation</code><br><code>source: --skill preschool-pinyin-foundation</code> | ✓ | Preschool | Chinese | - | 拼音启蒙 | School Readiness, Daily Early Learning |
+| <a href="skills/preschool/preschool-emotion-expression/SKILL.md"><code>preschool-emotion-expression</code></a><br>Family Education workflow for Parent-Child Communication, 情绪支持. Focus: 情绪表达. | <code>CLI: preschool-emotion-expression</code><br><code>source: --skill preschool-emotion-expression</code> | ✓ | Preschool | Family Education | - | 情绪表达 | Parent-Child Communication, 情绪支持 |
+| <a href="skills/preschool/preschool-task-awareness/SKILL.md"><code>preschool-task-awareness</code></a><br>Learning Skills workflow for Habit Building, School Readiness. Focus: 任务意识. | <code>CLI: preschool-task-awareness</code><br><code>source: --skill preschool-task-awareness</code> | ✓ | Preschool | Learning Skills | - | 任务意识 | Habit Building, School Readiness |
+| <a href="skills/preschool/preschool-social-skills/SKILL.md"><code>preschool-social-skills</code></a><br>Family Education workflow for 社交练习, 幼儿园适应. Focus: 同伴交往, 规则感. | <code>CLI: preschool-social-skills</code><br><code>source: --skill preschool-social-skills</code> | ✓ | Preschool | Family Education | - | 同伴交往, 规则感 | 社交练习, 幼儿园适应 |
+| <a href="skills/preschool/preschool-life-habits/SKILL.md"><code>preschool-life-habits</code></a><br>Family Education workflow for 家庭陪伴, Habit Building. Focus: 生活习惯. | <code>CLI: preschool-life-habits</code><br><code>source: --skill preschool-life-habits</code> | ✓ | Preschool | Family Education | - | 生活习惯 | 家庭陪伴, Habit Building |
+| <a href="skills/preschool/preschool-literacy-foundation/SKILL.md"><code>preschool-literacy-foundation</code></a><br>Chinese workflow for Daily Early Learning, Parent-Child Learning. Focus: 识字启蒙. | <code>CLI: preschool-literacy-foundation</code><br><code>source: --skill preschool-literacy-foundation</code> | ✓ | Preschool | Chinese | - | 识字启蒙 | Daily Early Learning, Parent-Child Learning |
+| <a href="skills/preschool/preschool-number-sense-foundation/SKILL.md"><code>preschool-number-sense-foundation</code></a><br>Math workflow for Number Sense Games, Daily Early Learning. Focus: 数感启蒙. | <code>CLI: preschool-number-sense-foundation</code><br><code>source: --skill preschool-number-sense-foundation</code> | ✓ | Preschool | Math | - | 数感启蒙 | Number Sense Games, Daily Early Learning |
+| <a href="skills/preschool/preschool-shape-space/SKILL.md"><code>preschool-shape-space</code></a><br>Math workflow for Shape Games, Parent-Child Learning. Focus: 图形空间. | <code>CLI: preschool-shape-space</code><br><code>source: --skill preschool-shape-space</code> | ✓ | Preschool | Math | - | 图形空间 | Shape Games, Parent-Child Learning |
+| <a href="skills/preschool/preschool-color-shape/SKILL.md"><code>preschool-color-shape</code></a><br>General workflow for Daily Early Learning, Parent-Child Learning. Focus: 颜色形状. | <code>CLI: preschool-color-shape</code><br><code>source: --skill preschool-color-shape</code> | ✓ | Preschool | General | - | 颜色形状 | Daily Early Learning, Parent-Child Learning |
+| <a href="skills/preschool/preschool-language-expression/SKILL.md"><code>preschool-language-expression</code></a><br>Chinese workflow for Expression Practice, Parent-Child Interaction. Focus: 语言表达. | <code>CLI: preschool-language-expression</code><br><code>source: --skill preschool-language-expression</code> | ✓ | Preschool | Chinese | - | 语言表达 | Expression Practice, Parent-Child Interaction |
+| <a href="skills/preschool/preschool-attention-training/SKILL.md"><code>preschool-attention-training</code></a><br>Learning Skills workflow for 专注游戏, Daily Check-in. Focus: 专注力. | <code>CLI: preschool-attention-training</code><br><code>source: --skill preschool-attention-training</code> | ✓ | Preschool | Learning Skills | - | 专注力 | 专注游戏, Daily Check-in |
+| <a href="skills/preschool/preschool-self-care/SKILL.md"><code>preschool-self-care</code></a><br>Family Education workflow for 家庭陪伴, School Readiness. Focus: 自理能力. | <code>CLI: preschool-self-care</code><br><code>source: --skill preschool-self-care</code> | ✓ | Preschool | Family Education | - | 自理能力 | 家庭陪伴, School Readiness |
+| <a href="skills/preschool/preschool-family-readiness/SKILL.md"><code>preschool-family-readiness</code></a><br>Family Education workflow for School Readiness, Parent Study Support. Focus: Parent Study Support, School Readiness. | <code>CLI: preschool-family-readiness</code><br><code>source: --skill preschool-family-readiness</code> | ✓ | Preschool | Family Education | - | Parent Study Support, School Readiness | School Readiness, Parent Study Support |
+| <a href="skills/preschool/preschool-school-readiness/SKILL.md"><code>preschool-school-readiness</code></a><br>General workflow for School Readiness, Summer Improvement. Focus: School Readiness, Habit Building. | <code>CLI: preschool-school-readiness</code><br><code>source: --skill preschool-school-readiness</code> | ✓ | Preschool | General | - | School Readiness, Habit Building | School Readiness, Summer Improvement |
 
 ### <a id="textbook-sync"></a>Textbook Sync<br>教材同步
 
@@ -469,31 +498,6 @@ Install selector: <code>CLI: textbook-sync</code><br><code>source: --category te
 | <a href="skills/textbook-sync/senior-geography-xj-textbook-sync/SKILL.md"><code>senior-geography-xj-textbook-sync</code></a><br>Geography workflow for Pre-Class Preview, Homework, Synchronized Reinforcement. Focus: Textbook Sync, Chart Analysis. | <code>CLI: senior-geography-xj-textbook-sync</code><br><code>source: --skill senior-geography-xj-textbook-sync</code> | ✓ | Senior High | Geography | XJ Edition | Textbook Sync, Chart Analysis | Pre-Class Preview, Homework, Synchronized Reinforcement, Unit Review, Mistake Reinforcement, Midterm and Final Review, Gaokao Review |
 | <a href="skills/textbook-sync/junior-english-yl-textbook-sync/SKILL.md"><code>junior-english-yl-textbook-sync</code></a><br>English workflow for Pre-Class Preview, Homework, Synchronized Reinforcement. Focus: Textbook Sync, Vocabulary, Grammar. | <code>CLI: junior-english-yl-textbook-sync</code><br><code>source: --skill junior-english-yl-textbook-sync</code> | ✓ | Junior High | English | YL Edition | Textbook Sync, Vocabulary, Grammar | Pre-Class Preview, Homework, Synchronized Reinforcement, Unit Review, Mistake Reinforcement, Midterm and Final Review, High School Entrance Exam Review |
 | <a href="skills/textbook-sync/primary-english-yl-textbook-sync/SKILL.md"><code>primary-english-yl-textbook-sync</code></a><br>English workflow for Pre-Class Preview, Homework, Synchronized Reinforcement. Focus: Textbook Sync, Vocabulary, Listening, Speaking, Reading, and Writing. | <code>CLI: primary-english-yl-textbook-sync</code><br><code>source: --skill primary-english-yl-textbook-sync</code> | ✓ | Primary | English | YL Edition | Textbook Sync, Vocabulary, Listening, Speaking, Reading, and Writing | Pre-Class Preview, Homework, Synchronized Reinforcement, Unit Review, Mistake Reinforcement, Midterm and Final Review |
-| <a href="skills/textbook-sync/preschool-general-readiness-textbook-sync/SKILL.md"><code>preschool-general-readiness-textbook-sync</code></a><br>General workflow for Daily Early Learning, Parent-Child Learning, School Readiness. Focus: Early Learning, Habit Building. | <code>CLI: preschool-general-readiness-textbook-sync</code><br><code>source: --skill preschool-general-readiness-textbook-sync</code> | ✓ | Preschool | General | School Readiness General | Early Learning, Habit Building | Daily Early Learning, Parent-Child Learning, School Readiness |
-
-### <a id="learning-core"></a>Learning Core<br>学习核心能力
-
-General learning-loop capabilities such as study plans, photo Q&A, mistake review, and learning reports.
-
-Install selector: <code>CLI: learning-core</code><br><code>source: --category learning-core</code>
-
-| Skill | Install Selector | Standalone | Stage | Subject / Area | Textbook | Ability | Scenario |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/learning-core/agent-weakness-boost/SKILL.md"><code>agent-weakness-boost</code></a><br>Learning Skills workflow for Targeted Practice. Focus: Gap Diagnosis. | <code>CLI: agent-weakness-boost</code><br><code>source: --skill agent-weakness-boost</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Gap Diagnosis | Targeted Practice |
-| <a href="skills/learning-core/agent-mistake-review/SKILL.md"><code>agent-mistake-review</code></a><br>Learning Skills workflow for Mistake Correction, Unit Review. Focus: Mistake Correction, Review Planning. | <code>CLI: agent-mistake-review</code><br><code>source: --skill agent-mistake-review</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Mistake Correction, Review Planning | Mistake Correction, Unit Review |
-| <a href="skills/learning-core/agent-review-assistant/SKILL.md"><code>agent-review-assistant</code></a><br>Learning Skills workflow for Unit Review. Focus: Review Planning. | <code>CLI: agent-review-assistant</code><br><code>source: --skill agent-review-assistant</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Review Planning | Unit Review |
-| <a href="skills/learning-core/agent-holiday-plan/SKILL.md"><code>agent-holiday-plan</code></a><br>Learning Skills workflow for Holiday Improvement. Focus: Holiday Planning. | <code>CLI: agent-holiday-plan</code><br><code>source: --skill agent-holiday-plan</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Holiday Planning | Holiday Improvement |
-| <a href="skills/learning-core/agent-memory-method/SKILL.md"><code>agent-memory-method</code></a><br>Learning Skills workflow for Recitation and Memory. Focus: Memory. | <code>CLI: agent-memory-method</code><br><code>source: --skill agent-memory-method</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Memory | Recitation and Memory |
-| <a href="skills/learning-core/agent-preview-assistant/SKILL.md"><code>agent-preview-assistant</code></a><br>Learning Skills workflow for Pre-Class Preview. Focus: Preview. | <code>CLI: agent-preview-assistant</code><br><code>source: --skill agent-preview-assistant</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Preview | Pre-Class Preview |
-| <a href="skills/learning-core/agent-weekly-review/SKILL.md"><code>agent-weekly-review</code></a><br>Learning Skills workflow for Learning Report. Focus: Stage Review. | <code>CLI: agent-weekly-review</code><br><code>source: --skill agent-weekly-review</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Stage Review | Learning Report |
-| <a href="skills/learning-core/agent-photo-question/SKILL.md"><code>agent-photo-question</code></a><br>General workflow for Photo Q&A, Homework. Focus: AI Question Explanation, Image Question Recognition. | <code>CLI: agent-photo-question</code><br><code>source: --skill agent-photo-question</code> | - | Primary<br>Junior High<br>Senior High | General | - | AI Question Explanation, Image Question Recognition | Photo Q&A, Homework |
-| <a href="skills/learning-core/agent-socratic-tutor/SKILL.md"><code>agent-socratic-tutor</code></a><br>Learning Skills workflow for AI Question Explanation. Focus: Socratic Questioning. | <code>CLI: agent-socratic-tutor</code><br><code>source: --skill agent-socratic-tutor</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Socratic Questioning | AI Question Explanation |
-| <a href="skills/learning-core/agent-learning-report/SKILL.md"><code>agent-learning-report</code></a><br>Learning Skills workflow for Learning Report, Parent Communication. Focus: Learning Report, Learning Advice. | <code>CLI: agent-learning-report</code><br><code>source: --skill agent-learning-report</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Learning Report, Learning Advice | Learning Report, Parent Communication |
-| <a href="skills/learning-core/agent-study-plan/SKILL.md"><code>agent-study-plan</code></a><br>Learning Skills workflow for Daily Study, Holiday Improvement, Pre-Exam Planning. Focus: Study Planning, Goal Management. | <code>CLI: agent-study-plan</code><br><code>source: --skill agent-study-plan</code> | ✓ | Preschool<br>Primary<br>Junior High<br>Senior High<br>College<br>Adult | Learning Skills | - | Study Planning, Goal Management | Daily Study, Holiday Improvement, Pre-Exam Planning |
-| <a href="skills/learning-core/agent-learning-habit/SKILL.md"><code>agent-learning-habit</code></a><br>Learning Skills workflow for Daily Check-in. Focus: Habit Building. | <code>CLI: agent-learning-habit</code><br><code>source: --skill agent-learning-habit</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Habit Building | Daily Check-in |
-| <a href="skills/learning-core/agent-focus-training/SKILL.md"><code>agent-focus-training</code></a><br>Learning Skills workflow for Daily Check-in. Focus: Attention. | <code>CLI: agent-focus-training</code><br><code>source: --skill agent-focus-training</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Attention | Daily Check-in |
-| <a href="skills/learning-core/agent-homework-companion/SKILL.md"><code>agent-homework-companion</code></a><br>Learning Skills workflow for Homework. Focus: Homework Companion. | <code>CLI: agent-homework-companion</code><br><code>source: --skill agent-homework-companion</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Homework Companion | Homework |
-| <a href="skills/learning-core/agent-question-explanation/SKILL.md"><code>agent-question-explanation</code></a><br>Learning Skills workflow for Homework, Synchronized Reinforcement. Focus: AI Question Explanation, Transfer Practice. | <code>CLI: agent-question-explanation</code><br><code>source: --skill agent-question-explanation</code> | ✓ | Primary<br>Junior High<br>Senior High<br>College | Learning Skills | - | AI Question Explanation, Transfer Practice | Homework, Synchronized Reinforcement |
 
 ### <a id="daily-practice"></a>Daily Practice<br>每日练习
 
@@ -529,8 +533,6 @@ Install selector: <code>CLI: daily-practice</code><br><code>source: --category d
 | <a href="skills/daily-practice/primary-english-vocabulary-daily/SKILL.md"><code>primary-english-vocabulary-daily</code></a><br>English workflow for Daily Check-in, Dictation Practice. Focus: Vocabulary, Silent Dictation. | <code>CLI: primary-english-vocabulary-daily</code><br><code>source: --skill primary-english-vocabulary-daily</code> | ✓ | Primary | English | - | Vocabulary, Silent Dictation | Daily Check-in, Dictation Practice |
 | <a href="skills/daily-practice/primary-chinese-dictation-daily/SKILL.md"><code>primary-chinese-dictation-daily</code></a><br>Chinese workflow for Dictation Practice, Daily Check-in. Focus: Dictation, Silent Dictation. | <code>CLI: primary-chinese-dictation-daily</code><br><code>source: --skill primary-chinese-dictation-daily</code> | ✓ | Primary | Chinese | - | Dictation, Silent Dictation | Dictation Practice, Daily Check-in |
 | <a href="skills/daily-practice/primary-reading-daily/SKILL.md"><code>primary-reading-daily</code></a><br>Chinese workflow for Reading Practice, Daily Check-in. Focus: Reading Comprehension. | <code>CLI: primary-reading-daily</code><br><code>source: --skill primary-reading-daily</code> | ✓ | Primary | Chinese | - | Reading Comprehension | Reading Practice, Daily Check-in |
-| <a href="skills/daily-practice/preschool-literacy-daily/SKILL.md"><code>preschool-literacy-daily</code></a><br>Chinese workflow for Daily Early Learning, Daily Check-in. Focus: Literacy. | <code>CLI: preschool-literacy-daily</code><br><code>source: --skill preschool-literacy-daily</code> | ✓ | Preschool | Chinese | - | Literacy | Daily Early Learning, Daily Check-in |
-| <a href="skills/daily-practice/preschool-number-sense-daily/SKILL.md"><code>preschool-number-sense-daily</code></a><br>Math workflow for Number Sense Games, Daily Check-in. Focus: Number Sense. | <code>CLI: preschool-number-sense-daily</code><br><code>source: --skill preschool-number-sense-daily</code> | ✓ | Preschool | Math | - | Number Sense | Number Sense Games, Daily Check-in |
 
 ### <a id="reading-writing"></a>Reading & Writing<br>阅读写作
 
@@ -550,6 +552,7 @@ Install selector: <code>CLI: reading-writing</code><br><code>source: --category 
 | <a href="skills/reading-writing/primary-chinese-reading/SKILL.md"><code>primary-chinese-reading</code></a><br>Chinese workflow for Reading Practice. Focus: Reading Comprehension. | <code>CLI: primary-chinese-reading</code><br><code>source: --skill primary-chinese-reading</code> | ✓ | Primary | Chinese | - | Reading Comprehension | Reading Practice |
 | <a href="skills/reading-writing/primary-chinese-writing/SKILL.md"><code>primary-chinese-writing</code></a><br>Chinese workflow for Writing Improvement. Focus: Writing, Expression. | <code>CLI: primary-chinese-writing</code><br><code>source: --skill primary-chinese-writing</code> | ✓ | Primary | Chinese | - | Writing, Expression | Writing Improvement |
 | <a href="skills/reading-writing/college-academic-writing/SKILL.md"><code>college-academic-writing</code></a><br>General Education workflow for Paper Writing Practice. Focus: Writing. | <code>CLI: college-academic-writing</code><br><code>source: --skill college-academic-writing</code> | ✓ | College | General Education | - | Writing | Paper Writing Practice |
+| <a href="skills/reading-writing/adult-workplace-writing/SKILL.md"><code>adult-workplace-writing</code></a><br>Career Education workflow for Career Skills. Focus: Writing, Expression. | <code>CLI: adult-workplace-writing</code><br><code>source: --skill adult-workplace-writing</code> | ✓ | Adult | Career Education | - | Writing, Expression | Career Skills |
 
 ### <a id="exam-prep"></a>Exam Prep<br>考试备考
 
@@ -584,8 +587,57 @@ Install selector: <code>CLI: exam-prep</code><br><code>source: --category exam-p
 | <a href="skills/exam-prep/civil-service-aptitude/SKILL.md"><code>civil-service-aptitude</code></a><br>Career Education workflow for Certification, Targeted Practice. Focus: Logic, Data Analysis. | <code>CLI: civil-service-aptitude</code><br><code>source: --skill civil-service-aptitude</code> | ✓ | Adult | Career Education | - | Logic, Data Analysis | Certification, Targeted Practice |
 | <a href="skills/exam-prep/teacher-certification-sprint/SKILL.md"><code>teacher-certification-sprint</code></a><br>Career Education workflow for Certification. Focus: Exam Sprint. | <code>CLI: teacher-certification-sprint</code><br><code>source: --skill teacher-certification-sprint</code> | ✓ | Adult | Career Education | - | Exam Sprint | Certification |
 | <a href="skills/exam-prep/postgraduate-english-sprint/SKILL.md"><code>postgraduate-english-sprint</code></a><br>English workflow for Postgraduate Exam Review. Focus: Reading Comprehension, Translation, Writing. | <code>CLI: postgraduate-english-sprint</code><br><code>source: --skill postgraduate-english-sprint</code> | ✓ | College<br>Adult | English | - | Reading Comprehension, Translation, Writing | Postgraduate Exam Review |
+| <a href="skills/exam-prep/toefl-prep/SKILL.md"><code>toefl-prep</code></a><br>English workflow for Study-Abroad Exams. Focus: Listening, Speaking, Reading Comprehension, Writing. | <code>CLI: toefl-prep</code><br><code>source: --skill toefl-prep</code> | ✓ | College<br>Adult | English | - | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
 | <a href="skills/exam-prep/primary-final-review/SKILL.md"><code>primary-final-review</code></a><br>General workflow for Midterm and Final Review. Focus: Exam Review. | <code>CLI: primary-final-review</code><br><code>source: --skill primary-final-review</code> | ✓ | Primary | General | - | Exam Review | Midterm and Final Review |
+| <a href="skills/exam-prep/ielts-prep/SKILL.md"><code>ielts-prep</code></a><br>English workflow for Study-Abroad Exams. Focus: Listening, Speaking, Reading Comprehension, Writing. | <code>CLI: ielts-prep</code><br><code>source: --skill ielts-prep</code> | ✓ | College<br>Adult | English | - | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
+| <a href="skills/exam-prep/adult-vocational-certificate/SKILL.md"><code>adult-vocational-certificate</code></a><br>Career Education workflow for Certification. Focus: Knowledge Memorization, Exam Sprint. | <code>CLI: adult-vocational-certificate</code><br><code>source: --skill adult-vocational-certificate</code> | ✓ | Adult | Career Education | - | Knowledge Memorization, Exam Sprint | Certification |
 | <a href="skills/exam-prep/junior-zhongkao-sprint/SKILL.md"><code>junior-zhongkao-sprint</code></a><br>General workflow for High School Entrance Exam Review, Pre-Exam Sprint. Focus: Exam Sprint. | <code>CLI: junior-zhongkao-sprint</code><br><code>source: --skill junior-zhongkao-sprint</code> | ✓ | Junior High | General | - | Exam Sprint | High School Entrance Exam Review, Pre-Exam Sprint |
+
+### <a id="learning-assistant"></a>Learning Assistant<br>学习助手
+
+General learning-loop capabilities such as study plans, photo Q&A, mistake review, learning reports, attention training, and adult learning.
+
+Install selector: <code>CLI: learning-assistant</code><br><code>source: --category learning-assistant</code>
+
+| Skill | Install Selector | Standalone | Stage | Subject / Area | Textbook | Ability | Scenario |
+| --- | --- | :---: | --- | --- | --- | --- | --- |
+| <a href="skills/learning-assistant/agent-weakness-boost/SKILL.md"><code>agent-weakness-boost</code></a><br>Learning Skills workflow for Targeted Practice. Focus: Gap Diagnosis. | <code>CLI: agent-weakness-boost</code><br><code>source: --skill agent-weakness-boost</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Gap Diagnosis | Targeted Practice |
+| <a href="skills/learning-assistant/adult-language-learning/SKILL.md"><code>adult-language-learning</code></a><br>Language Learning workflow for Daily Check-in. Focus: Speaking, Listening, Vocabulary. | <code>CLI: adult-language-learning</code><br><code>source: --skill adult-language-learning</code> | ✓ | Adult | Language Learning | - | Speaking, Listening, Vocabulary | Daily Check-in |
+| <a href="skills/learning-assistant/agent-mistake-review/SKILL.md"><code>agent-mistake-review</code></a><br>Learning Skills workflow for Mistake Correction, Unit Review. Focus: Mistake Correction, Review Planning. | <code>CLI: agent-mistake-review</code><br><code>source: --skill agent-mistake-review</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Mistake Correction, Review Planning | Mistake Correction, Unit Review |
+| <a href="skills/learning-assistant/agent-review-assistant/SKILL.md"><code>agent-review-assistant</code></a><br>Learning Skills workflow for Unit Review. Focus: Review Planning. | <code>CLI: agent-review-assistant</code><br><code>source: --skill agent-review-assistant</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Review Planning | Unit Review |
+| <a href="skills/learning-assistant/agent-holiday-plan/SKILL.md"><code>agent-holiday-plan</code></a><br>Learning Skills workflow for Holiday Improvement. Focus: Holiday Planning. | <code>CLI: agent-holiday-plan</code><br><code>source: --skill agent-holiday-plan</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Holiday Planning | Holiday Improvement |
+| <a href="skills/learning-assistant/agent-memory-method/SKILL.md"><code>agent-memory-method</code></a><br>Learning Skills workflow for Recitation and Memory. Focus: Memory. | <code>CLI: agent-memory-method</code><br><code>source: --skill agent-memory-method</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Memory | Recitation and Memory |
+| <a href="skills/learning-assistant/agent-preview-assistant/SKILL.md"><code>agent-preview-assistant</code></a><br>Learning Skills workflow for Pre-Class Preview. Focus: Preview. | <code>CLI: agent-preview-assistant</code><br><code>source: --skill agent-preview-assistant</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Preview | Pre-Class Preview |
+| <a href="skills/learning-assistant/agent-weekly-review/SKILL.md"><code>agent-weekly-review</code></a><br>Learning Skills workflow for Learning Report. Focus: Stage Review. | <code>CLI: agent-weekly-review</code><br><code>source: --skill agent-weekly-review</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Stage Review | Learning Report |
+| <a href="skills/learning-assistant/agent-photo-question/SKILL.md"><code>agent-photo-question</code></a><br>General workflow for Photo Q&A, Homework. Focus: AI Question Explanation, Image Question Recognition. | <code>CLI: agent-photo-question</code><br><code>source: --skill agent-photo-question</code> | - | Primary<br>Junior High<br>Senior High | General | - | AI Question Explanation, Image Question Recognition | Photo Q&A, Homework |
+| <a href="skills/learning-assistant/agent-socratic-tutor/SKILL.md"><code>agent-socratic-tutor</code></a><br>Learning Skills workflow for AI Question Explanation. Focus: Socratic Questioning. | <code>CLI: agent-socratic-tutor</code><br><code>source: --skill agent-socratic-tutor</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Socratic Questioning | AI Question Explanation |
+| <a href="skills/learning-assistant/college-data-analysis/SKILL.md"><code>college-data-analysis</code></a><br>Computer Science workflow for Career Skills. Focus: Data Analysis. | <code>CLI: college-data-analysis</code><br><code>source: --skill college-data-analysis</code> | ✓ | College<br>Adult | Computer Science | - | Data Analysis | Career Skills |
+| <a href="skills/learning-assistant/college-cs-data-structure/SKILL.md"><code>college-cs-data-structure</code></a><br>Computer Science workflow for Course Learning. Focus: Algorithms, Programming. | <code>CLI: college-cs-data-structure</code><br><code>source: --skill college-cs-data-structure</code> | ✓ | College | Computer Science | - | Algorithms, Programming | Course Learning |
+| <a href="skills/learning-assistant/college-cs-algorithm-interview/SKILL.md"><code>college-cs-algorithm-interview</code></a><br>Computer Science workflow for Interview Preparation. Focus: Algorithms. | <code>CLI: college-cs-algorithm-interview</code><br><code>source: --skill college-cs-algorithm-interview</code> | ✓ | College<br>Adult | Computer Science | - | Algorithms | Interview Preparation |
+| <a href="skills/learning-assistant/agent-learning-report/SKILL.md"><code>agent-learning-report</code></a><br>Learning Skills workflow for Learning Report, Parent Communication. Focus: Learning Report, Learning Advice. | <code>CLI: agent-learning-report</code><br><code>source: --skill agent-learning-report</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Learning Report, Learning Advice | Learning Report, Parent Communication |
+| <a href="skills/learning-assistant/agent-study-plan/SKILL.md"><code>agent-study-plan</code></a><br>Learning Skills workflow for Daily Study, Holiday Improvement, Pre-Exam Planning. Focus: Study Planning, Goal Management. | <code>CLI: agent-study-plan</code><br><code>source: --skill agent-study-plan</code> | ✓ | Preschool<br>Primary<br>Junior High<br>Senior High<br>College<br>Adult | Learning Skills | - | Study Planning, Goal Management | Daily Study, Holiday Improvement, Pre-Exam Planning |
+| <a href="skills/learning-assistant/agent-learning-habit/SKILL.md"><code>agent-learning-habit</code></a><br>Learning Skills workflow for Daily Check-in. Focus: Habit Building. | <code>CLI: agent-learning-habit</code><br><code>source: --skill agent-learning-habit</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Habit Building | Daily Check-in |
+| <a href="skills/learning-assistant/agent-focus-training/SKILL.md"><code>agent-focus-training</code></a><br>Learning Skills workflow for Daily Check-in. Focus: Attention. | <code>CLI: agent-focus-training</code><br><code>source: --skill agent-focus-training</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Attention | Daily Check-in |
+| <a href="skills/learning-assistant/agent-homework-companion/SKILL.md"><code>agent-homework-companion</code></a><br>Learning Skills workflow for Homework. Focus: Homework Companion. | <code>CLI: agent-homework-companion</code><br><code>source: --skill agent-homework-companion</code> | ✓ | Primary<br>Junior High<br>Senior High | Learning Skills | - | Homework Companion | Homework |
+| <a href="skills/learning-assistant/college-ai-foundation/SKILL.md"><code>college-ai-foundation</code></a><br>Computer Science workflow for Interest Learning. Focus: AI Foundations. | <code>CLI: college-ai-foundation</code><br><code>source: --skill college-ai-foundation</code> | ✓ | College<br>Adult | Computer Science | - | AI Foundations | Interest Learning |
+| <a href="skills/learning-assistant/agent-question-explanation/SKILL.md"><code>agent-question-explanation</code></a><br>Learning Skills workflow for Homework, Synchronized Reinforcement. Focus: AI Question Explanation, Transfer Practice. | <code>CLI: agent-question-explanation</code><br><code>source: --skill agent-question-explanation</code> | ✓ | Primary<br>Junior High<br>Senior High<br>College | Learning Skills | - | AI Question Explanation, Transfer Practice | Homework, Synchronized Reinforcement |
+| <a href="skills/learning-assistant/college-cs-python/SKILL.md"><code>college-cs-python</code></a><br>Computer Science workflow for Career Skills. Focus: Programming. | <code>CLI: college-cs-python</code><br><code>source: --skill college-cs-python</code> | ✓ | College<br>Adult | Computer Science | - | Programming | Career Skills |
+
+### <a id="family-education"></a>Family Education<br>家庭教育
+
+Parent companionship, parent-child reading, homework routines, and family communication.
+
+Install selector: <code>CLI: family-education</code><br><code>source: --category family-education</code>
+
+| Skill | Install Selector | Standalone | Stage | Subject / Area | Textbook | Ability | Scenario |
+| --- | --- | :---: | --- | --- | --- | --- | --- |
+| <a href="skills/family-education/family-homework-routine/SKILL.md"><code>family-homework-routine</code></a><br>Family Education workflow for Homework Companion. Focus: Parent Study Support. | <code>CLI: family-homework-routine</code><br><code>source: --skill family-homework-routine</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Homework Companion |
+| <a href="skills/family-education/family-school-communication/SKILL.md"><code>family-school-communication</code></a><br>Family Education workflow for Parent Communication. Focus: Parent Study Support. | <code>CLI: family-school-communication</code><br><code>source: --skill family-school-communication</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Parent Communication |
+| <a href="skills/family-education/agent-parent-companion/SKILL.md"><code>agent-parent-companion</code></a><br>Family Education workflow for Parent Study Support. Focus: Parent Study Support, Goal Management. | <code>CLI: agent-parent-companion</code><br><code>source: --skill agent-parent-companion</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support, Goal Management | Parent Study Support |
+| <a href="skills/family-education/family-holiday-learning/SKILL.md"><code>family-holiday-learning</code></a><br>Family Education workflow for Holiday Improvement. Focus: Parent Study Support. | <code>CLI: family-holiday-learning</code><br><code>source: --skill family-holiday-learning</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Holiday Improvement |
+| <a href="skills/family-education/family-screen-time-balance/SKILL.md"><code>family-screen-time-balance</code></a><br>Family Education workflow for Habit Building. Focus: Parent Study Support. | <code>CLI: family-screen-time-balance</code><br><code>source: --skill family-screen-time-balance</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Habit Building |
+| <a href="skills/family-education/family-reading-companion/SKILL.md"><code>family-reading-companion</code></a><br>Family Education workflow for Parent-Child Reading. Focus: Parent Study Support. | <code>CLI: family-reading-companion</code><br><code>source: --skill family-reading-companion</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Parent-Child Reading |
+| <a href="skills/family-education/family-emotion-support/SKILL.md"><code>family-emotion-support</code></a><br>Family Education workflow for Parent-Child Communication. Focus: Parent Study Support. | <code>CLI: family-emotion-support</code><br><code>source: --skill family-emotion-support</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Parent-Child Communication |
 
 ### <a id="teacher-tools"></a>Teacher Tools<br>老师工具
 
@@ -627,51 +679,6 @@ Install selector: <code>CLI: teacher-tools</code><br><code>source: --category te
 | <a href="skills/teacher-tools/teacher-politics-homework-generation/SKILL.md"><code>teacher-politics-homework-generation</code></a><br>Politics workflow for Class Homework. Focus: Homework Generation. | <code>CLI: teacher-politics-homework-generation</code><br><code>source: --skill teacher-politics-homework-generation</code> | ✓ | Primary<br>Junior High<br>Senior High | Politics | - | Homework Generation | Class Homework |
 | <a href="skills/teacher-tools/teacher-homework-generation/SKILL.md"><code>teacher-homework-generation</code></a><br>Teaching Management workflow for Class Homework. Focus: Homework Generation, Tiered Practice. | <code>CLI: teacher-homework-generation</code><br><code>source: --skill teacher-homework-generation</code> | ✓ | Primary<br>Junior High<br>Senior High | Teaching Management | - | Homework Generation, Tiered Practice | Class Homework |
 
-### <a id="family-education"></a>Family Education<br>家庭教育
-
-Parent companionship, parent-child reading, homework routines, and family communication.
-
-Install selector: <code>CLI: family-education</code><br><code>source: --category family-education</code>
-
-| Skill | Install Selector | Standalone | Stage | Subject / Area | Textbook | Ability | Scenario |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/family-education/family-homework-routine/SKILL.md"><code>family-homework-routine</code></a><br>Family Education workflow for Homework Companion. Focus: Parent Study Support. | <code>CLI: family-homework-routine</code><br><code>source: --skill family-homework-routine</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Homework Companion |
-| <a href="skills/family-education/family-school-communication/SKILL.md"><code>family-school-communication</code></a><br>Family Education workflow for Parent Communication. Focus: Parent Study Support. | <code>CLI: family-school-communication</code><br><code>source: --skill family-school-communication</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Parent Communication |
-| <a href="skills/family-education/agent-parent-companion/SKILL.md"><code>agent-parent-companion</code></a><br>Family Education workflow for Parent Study Support. Focus: Parent Study Support, Goal Management. | <code>CLI: agent-parent-companion</code><br><code>source: --skill agent-parent-companion</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support, Goal Management | Parent Study Support |
-| <a href="skills/family-education/family-holiday-learning/SKILL.md"><code>family-holiday-learning</code></a><br>Family Education workflow for Holiday Improvement. Focus: Parent Study Support. | <code>CLI: family-holiday-learning</code><br><code>source: --skill family-holiday-learning</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Holiday Improvement |
-| <a href="skills/family-education/family-screen-time-balance/SKILL.md"><code>family-screen-time-balance</code></a><br>Family Education workflow for Habit Building. Focus: Parent Study Support. | <code>CLI: family-screen-time-balance</code><br><code>source: --skill family-screen-time-balance</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Habit Building |
-| <a href="skills/family-education/family-reading-companion/SKILL.md"><code>family-reading-companion</code></a><br>Family Education workflow for Parent-Child Reading. Focus: Parent Study Support. | <code>CLI: family-reading-companion</code><br><code>source: --skill family-reading-companion</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Parent-Child Reading |
-| <a href="skills/family-education/family-emotion-support/SKILL.md"><code>family-emotion-support</code></a><br>Family Education workflow for Parent-Child Communication. Focus: Parent Study Support. | <code>CLI: family-emotion-support</code><br><code>source: --skill family-emotion-support</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | Parent-Child Communication |
-| <a href="skills/family-education/family-school-readiness/SKILL.md"><code>family-school-readiness</code></a><br>Family Education workflow for School Readiness. Focus: Parent Study Support. | <code>CLI: family-school-readiness</code><br><code>source: --skill family-school-readiness</code> | ✓ | Preschool<br>Primary<br>Junior High | Family Education | - | Parent Study Support | School Readiness |
-
-### <a id="language-learning"></a>Language Learning<br>语言学习
-
-Adult English, study-abroad exams, speaking, listening, and long-term language improvement.
-
-Install selector: <code>CLI: language-learning</code><br><code>source: --category language-learning</code>
-
-| Skill | Install Selector | Standalone | Stage | Subject / Area | Textbook | Ability | Scenario |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/language-learning/adult-language-learning/SKILL.md"><code>adult-language-learning</code></a><br>Language Learning workflow for Daily Check-in. Focus: Speaking, Listening, Vocabulary. | <code>CLI: adult-language-learning</code><br><code>source: --skill adult-language-learning</code> | ✓ | Adult | Language Learning | - | Speaking, Listening, Vocabulary | Daily Check-in |
-| <a href="skills/language-learning/toefl-prep/SKILL.md"><code>toefl-prep</code></a><br>English workflow for Study-Abroad Exams. Focus: Listening, Speaking, Reading Comprehension, Writing. | <code>CLI: toefl-prep</code><br><code>source: --skill toefl-prep</code> | ✓ | College<br>Adult | English | - | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
-| <a href="skills/language-learning/ielts-prep/SKILL.md"><code>ielts-prep</code></a><br>English workflow for Study-Abroad Exams. Focus: Listening, Speaking, Reading Comprehension, Writing. | <code>CLI: ielts-prep</code><br><code>source: --skill ielts-prep</code> | ✓ | College<br>Adult | English | - | Listening, Speaking, Reading Comprehension, Writing | Study-Abroad Exams |
-
-### <a id="career-learning"></a>Career Learning<br>成人与职业学习
-
-College, adult learning, career skills, and certification scenarios.
-
-Install selector: <code>CLI: career-learning</code><br><code>source: --category career-learning</code>
-
-| Skill | Install Selector | Standalone | Stage | Subject / Area | Textbook | Ability | Scenario |
-| --- | --- | :---: | --- | --- | --- | --- | --- |
-| <a href="skills/career-learning/college-data-analysis/SKILL.md"><code>college-data-analysis</code></a><br>Computer Science workflow for Career Skills. Focus: Data Analysis. | <code>CLI: college-data-analysis</code><br><code>source: --skill college-data-analysis</code> | ✓ | College<br>Adult | Computer Science | - | Data Analysis | Career Skills |
-| <a href="skills/career-learning/college-cs-data-structure/SKILL.md"><code>college-cs-data-structure</code></a><br>Computer Science workflow for Course Learning. Focus: Algorithms, Programming. | <code>CLI: college-cs-data-structure</code><br><code>source: --skill college-cs-data-structure</code> | ✓ | College | Computer Science | - | Algorithms, Programming | Course Learning |
-| <a href="skills/career-learning/college-cs-algorithm-interview/SKILL.md"><code>college-cs-algorithm-interview</code></a><br>Computer Science workflow for Interview Preparation. Focus: Algorithms. | <code>CLI: college-cs-algorithm-interview</code><br><code>source: --skill college-cs-algorithm-interview</code> | ✓ | College<br>Adult | Computer Science | - | Algorithms | Interview Preparation |
-| <a href="skills/career-learning/adult-workplace-writing/SKILL.md"><code>adult-workplace-writing</code></a><br>Career Education workflow for Career Skills. Focus: Writing, Expression. | <code>CLI: adult-workplace-writing</code><br><code>source: --skill adult-workplace-writing</code> | ✓ | Adult | Career Education | - | Writing, Expression | Career Skills |
-| <a href="skills/career-learning/adult-vocational-certificate/SKILL.md"><code>adult-vocational-certificate</code></a><br>Career Education workflow for Certification. Focus: Knowledge Memorization, Exam Sprint. | <code>CLI: adult-vocational-certificate</code><br><code>source: --skill adult-vocational-certificate</code> | ✓ | Adult | Career Education | - | Knowledge Memorization, Exam Sprint | Certification |
-| <a href="skills/career-learning/college-ai-foundation/SKILL.md"><code>college-ai-foundation</code></a><br>Computer Science workflow for Interest Learning. Focus: AI Foundations. | <code>CLI: college-ai-foundation</code><br><code>source: --skill college-ai-foundation</code> | ✓ | College<br>Adult | Computer Science | - | AI Foundations | Interest Learning |
-| <a href="skills/career-learning/college-cs-python/SKILL.md"><code>college-cs-python</code></a><br>Computer Science workflow for Career Skills. Focus: Programming. | <code>CLI: college-cs-python</code><br><code>source: --skill college-cs-python</code> | ✓ | College<br>Adult | Computer Science | - | Programming | Career Skills |
-
 ## Project Structure
 
 ```text
@@ -680,7 +687,8 @@ hermes-edu-skills/
 ├─ .well-known/skills/index.json
 ├─ skills/
 │  ├─ textbook-sync/
-│  ├─ learning-core/
+│  ├─ preschool/
+│  ├─ learning-assistant/
 │  ├─ daily-practice/
 │  ├─ exam-prep/
 │  ├─ teacher-tools/

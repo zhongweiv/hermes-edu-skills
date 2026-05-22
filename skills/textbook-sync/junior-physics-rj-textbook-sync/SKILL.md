@@ -1,7 +1,7 @@
 ---
 name: "junior-physics-rj-textbook-sync"
 description: "把人教版初中物理的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把物理教材同步变成现象-模型-证据-应用的清晰学习路径。 Workflow: junior_physics_rj_textbook_sync.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_physics_rj_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["junior-physics-rj-textbook-sync"]
     stages: ["junior"]
     subjects: ["物理"]
     abilities: ["教材同步", "实验理解"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `junior_physics_rj_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `junior-physics-rj-textbook-sync`
 - Stages: `junior`
 - Subjects: `物理`
 - Abilities: `教材同步`, `实验理解`

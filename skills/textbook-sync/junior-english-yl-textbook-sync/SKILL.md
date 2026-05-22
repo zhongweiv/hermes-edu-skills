@@ -1,7 +1,7 @@
 ---
 name: "junior-english-yl-textbook-sync"
 description: "把译林版初中英语的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让英语同步学习从背单词变成会听、会读、会说、会写的短任务。 Workflow: junior_english_yl_textbook_sync.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_english_yl_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["junior-english-yl-textbook-sync"]
     stages: ["junior"]
     subjects: ["英语"]
     abilities: ["教材同步", "词汇", "语法"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `junior_english_yl_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `junior-english-yl-textbook-sync`
 - Stages: `junior`
 - Subjects: `英语`
 - Abilities: `教材同步`, `词汇`, `语法`

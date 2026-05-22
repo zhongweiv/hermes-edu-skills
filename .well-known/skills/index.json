@@ -1,16 +1,22 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.16.7",
-  "generatedAt": "2026-05-21T08:35:20.316Z",
+  "version": "0.17.0",
+  "generatedAt": "2026-05-22T10:10:30.344Z",
   "skills": [
     {
       "name": "adult-language-learning",
       "description": "把成人语言学习从收藏资料变成真实场景输入、主动输出、纠错和复现。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/language-learning/adult-language-learning/SKILL.md",
+      "path": "skills/learning-assistant/adult-language-learning/SKILL.md",
       "tags": [
         "adult",
         "语言学习",
         "每日打卡",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -18,11 +24,15 @@
     {
       "name": "adult-vocational-certificate",
       "description": "把职业证书备考从买课和刷题变成考纲拆解、知识框架、练习、错题和复测计划。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/career-learning/adult-vocational-certificate/SKILL.md",
+      "path": "skills/exam-prep/adult-vocational-certificate/SKILL.md",
       "tags": [
         "adult",
         "职业教育",
         "考证",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -30,11 +40,16 @@
     {
       "name": "adult-workplace-writing",
       "description": "把职场写作从漂亮话变成目标明确、对象清楚、行动可落地的沟通文本。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/career-learning/adult-workplace-writing/SKILL.md",
+      "path": "skills/reading-writing/adult-workplace-writing/SKILL.md",
       "tags": [
         "adult",
         "职业教育",
         "职业技能",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -48,6 +63,10 @@
         "职业教育",
         "考证",
         "专项训练",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -61,6 +80,10 @@
         "职业教育",
         "考证",
         "写作提升",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -73,6 +96,10 @@
         "adult",
         "职业教育",
         "考证",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -85,6 +112,11 @@
         "college",
         "通识",
         "论文训练",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -97,6 +129,10 @@
         "college",
         "英语",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -109,6 +145,10 @@
         "college",
         "英语",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -116,11 +156,17 @@
     {
       "name": "college-cs-data-structure",
       "description": "把数据结构从抽象概念变成图示理解、手写过程、代码实现和题目迁移。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/career-learning/college-cs-data-structure/SKILL.md",
+      "path": "skills/learning-assistant/college-cs-data-structure/SKILL.md",
       "tags": [
         "college",
         "计算机",
         "课程学习",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -128,12 +174,18 @@
     {
       "name": "college-ai-foundation",
       "description": "把 AI 基础学习从热词堆砌变成概念地图、可运行小实验、产品场景和伦理边界。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/career-learning/college-ai-foundation/SKILL.md",
+      "path": "skills/learning-assistant/college-ai-foundation/SKILL.md",
       "tags": [
         "college",
         "adult",
         "计算机",
         "兴趣学习",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -141,12 +193,18 @@
     {
       "name": "college-cs-algorithm-interview",
       "description": "把算法面试准备从盲目刷题变成题型识别、思路表达、复杂度分析和复盘沉淀。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/career-learning/college-cs-algorithm-interview/SKILL.md",
+      "path": "skills/learning-assistant/college-cs-algorithm-interview/SKILL.md",
       "tags": [
         "college",
         "adult",
         "计算机",
         "面试准备",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -154,12 +212,18 @@
     {
       "name": "college-cs-python",
       "description": "把 Python 学习从“看完教程就忘”变成语法理解、小项目、调试反馈和作品沉淀。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/career-learning/college-cs-python/SKILL.md",
+      "path": "skills/learning-assistant/college-cs-python/SKILL.md",
       "tags": [
         "college",
         "adult",
         "计算机",
         "职业技能",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -167,12 +231,18 @@
     {
       "name": "college-data-analysis",
       "description": "把数据分析学习从工具教程变成业务问题、数据清洗、可视化、结论和报告表达。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/career-learning/college-data-analysis/SKILL.md",
+      "path": "skills/learning-assistant/college-data-analysis/SKILL.md",
       "tags": [
         "college",
         "adult",
         "计算机",
         "职业技能",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -180,12 +250,16 @@
     {
       "name": "ielts-prep",
       "description": "把雅思备考从背资料变成听说读写诊断、分项训练、输出反馈和复测节奏。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/language-learning/ielts-prep/SKILL.md",
+      "path": "skills/exam-prep/ielts-prep/SKILL.md",
       "tags": [
         "college",
         "adult",
         "英语",
         "出国考试",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -199,6 +273,10 @@
         "adult",
         "英语",
         "考研复习",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -206,12 +284,16 @@
     {
       "name": "toefl-prep",
       "description": "把托福备考从材料堆积变成听说读写任务链、学术场景输入和可复测的输出反馈。核心不是再推荐一堆资料，而是让用户今天能完成一个可检查的小成果。",
-      "path": "skills/language-learning/toefl-prep/SKILL.md",
+      "path": "skills/exam-prep/toefl-prep/SKILL.md",
       "tags": [
         "college",
         "adult",
         "英语",
         "出国考试",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -230,6 +312,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -243,6 +329,10 @@
         "生物",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -256,6 +346,11 @@
         "生物",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -274,6 +369,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -287,6 +386,10 @@
         "化学",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -305,6 +408,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -318,6 +425,11 @@
         "化学",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -336,6 +448,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -348,6 +464,11 @@
         "junior",
         "语文",
         "写作提升",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -361,6 +482,10 @@
         "语文",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -373,6 +498,11 @@
         "junior",
         "语文",
         "中考复习",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -386,6 +516,11 @@
         "语文",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -404,6 +539,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -417,6 +556,10 @@
         "英语",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -430,6 +573,11 @@
         "英语",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -448,6 +596,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -461,6 +613,11 @@
         "英语",
         "每日打卡",
         "中考复习",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -473,6 +630,11 @@
         "junior",
         "英语",
         "中考复习",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -491,6 +653,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -509,6 +675,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -522,6 +692,10 @@
         "地理",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -535,6 +709,11 @@
         "地理",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -553,6 +732,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -571,6 +754,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -584,6 +771,10 @@
         "历史",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -597,6 +788,11 @@
         "历史",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -615,6 +811,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -633,6 +833,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -646,6 +850,11 @@
         "数学",
         "每日打卡",
         "专项训练",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -659,6 +868,10 @@
         "数学",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -672,6 +885,11 @@
         "数学",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -690,6 +908,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -708,6 +930,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -721,6 +947,10 @@
         "物理",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -739,6 +969,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -752,6 +986,11 @@
         "物理",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -770,6 +1009,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -783,6 +1026,10 @@
         "政治",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -796,6 +1043,11 @@
         "政治",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -814,6 +1066,10 @@
         "错题巩固",
         "期中期末复习",
         "中考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -827,46 +1083,388 @@
         "综合",
         "中考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
     },
     {
-      "name": "preschool-general-readiness-textbook-sync",
-      "description": "把幼小衔接通用学前综合的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。把零散陪学变成清楚、有节奏、孩子愿意参与的小任务。",
-      "path": "skills/textbook-sync/preschool-general-readiness-textbook-sync/SKILL.md",
+      "name": "preschool-attention-training",
+      "description": "学前专注力训练 Skill把专注力做成孩子愿意参与、家长能照着做、过程可观察的专注游戏任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-attention-training/SKILL.md",
+      "tags": [
+        "preschool",
+        "学习能力",
+        "专注游戏",
+        "每日打卡",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-classroom-rules",
+      "description": "学前课堂规则准备 Skill把规则感做成孩子愿意参与、家长能照着做、过程可观察的入学准备任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-classroom-rules/SKILL.md",
+      "tags": [
+        "preschool",
+        "综合",
+        "入学准备",
+        "亲子演练",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-color-shape",
+      "description": "学前颜色形状 Skill把颜色形状做成孩子愿意参与、家长能照着做、过程可观察的每日启蒙任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-color-shape/SKILL.md",
       "tags": [
         "preschool",
         "综合",
         "每日启蒙",
         "亲子共学",
-        "入学准备",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
         "curated",
         "needs_user_input"
       ]
     },
     {
-      "name": "preschool-literacy-daily",
-      "description": "把学前识字做成“看见、读出、理解、会用”的轻量游戏，不让孩子在机械认字里失去兴趣。",
-      "path": "skills/daily-practice/preschool-literacy-daily/SKILL.md",
+      "name": "preschool-emotion-expression",
+      "description": "学前情绪表达 Skill把情绪表达做成孩子愿意参与、家长能照着做、过程可观察的亲子沟通任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-emotion-expression/SKILL.md",
+      "tags": [
+        "preschool",
+        "家庭教育",
+        "亲子沟通",
+        "情绪支持",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-family-readiness",
+      "description": "幼小衔接家庭准备 Skill把陪学建议做成孩子愿意参与、家长能照着做、过程可观察的入学准备任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-family-readiness/SKILL.md",
+      "tags": [
+        "preschool",
+        "家庭教育",
+        "入学准备",
+        "家长陪学",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "family-school-readiness",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-fine-motor-writing",
+      "description": "学前控笔与书写准备 Skill把控笔做成孩子愿意参与、家长能照着做、过程可观察的入学准备任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-fine-motor-writing/SKILL.md",
+      "tags": [
+        "preschool",
+        "学习能力",
+        "入学准备",
+        "每日练习",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-growth-report",
+      "description": "学前成长观察报告 Skill把成长观察做成孩子愿意参与、家长能照着做、过程可观察的成长报告任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-growth-report/SKILL.md",
+      "tags": [
+        "preschool",
+        "家庭教育",
+        "成长报告",
+        "家园沟通",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-language-expression",
+      "description": "学前语言表达 Skill把语言表达做成孩子愿意参与、家长能照着做、过程可观察的表达训练任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-language-expression/SKILL.md",
+      "tags": [
+        "preschool",
+        "语文",
+        "表达训练",
+        "亲子互动",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-life-habits",
+      "description": "学前生活习惯 Skill把生活习惯做成孩子愿意参与、家长能照着做、过程可观察的家庭陪伴任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-life-habits/SKILL.md",
+      "tags": [
+        "preschool",
+        "家庭教育",
+        "家庭陪伴",
+        "习惯培养",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-literacy-foundation",
+      "description": "学前识字启蒙 Skill把识字启蒙做成孩子愿意参与、家长能照着做、过程可观察的每日启蒙任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-literacy-foundation/SKILL.md",
       "tags": [
         "preschool",
         "语文",
         "每日启蒙",
-        "每日打卡",
+        "亲子共学",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "preschool-literacy-daily",
         "curated",
         "needs_user_input"
       ]
     },
     {
-      "name": "preschool-number-sense-daily",
-      "description": "把学前数感训练变成可触摸、可比较、可说出来的日常小游戏，而不是提前刷小学题。",
-      "path": "skills/daily-practice/preschool-number-sense-daily/SKILL.md",
+      "name": "preschool-logic-thinking",
+      "description": "学前逻辑规律 Skill把分类排序做成孩子愿意参与、家长能照着做、过程可观察的逻辑游戏任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-logic-thinking/SKILL.md",
+      "tags": [
+        "preschool",
+        "数学",
+        "逻辑游戏",
+        "亲子共学",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-memory-observation",
+      "description": "学前观察记忆 Skill把观察力做成孩子愿意参与、家长能照着做、过程可观察的观察游戏任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-memory-observation/SKILL.md",
+      "tags": [
+        "preschool",
+        "学习能力",
+        "观察游戏",
+        "亲子共学",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-number-sense-foundation",
+      "description": "学前数感启蒙 Skill把数感启蒙做成孩子愿意参与、家长能照着做、过程可观察的数感游戏任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-number-sense-foundation/SKILL.md",
       "tags": [
         "preschool",
         "数学",
         "数感游戏",
-        "每日打卡",
+        "每日启蒙",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "preschool-number-sense-daily",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-parent-daily-play",
+      "description": "亲子每日启蒙 Skill把亲子陪伴做成孩子愿意参与、家长能照着做、过程可观察的每日启蒙任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-parent-daily-play/SKILL.md",
+      "tags": [
+        "preschool",
+        "家庭教育",
+        "每日启蒙",
+        "亲子共学",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-picture-book-reading",
+      "description": "学前绘本共读 Skill把绘本阅读做成孩子愿意参与、家长能照着做、过程可观察的亲子共读任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-picture-book-reading/SKILL.md",
+      "tags": [
+        "preschool",
+        "语文",
+        "亲子共读",
+        "睡前阅读",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-pinyin-foundation",
+      "description": "学前拼音启蒙 Skill把拼音启蒙做成孩子愿意参与、家长能照着做、过程可观察的入学准备任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-pinyin-foundation/SKILL.md",
+      "tags": [
+        "preschool",
+        "语文",
+        "入学准备",
+        "每日启蒙",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-school-readiness",
+      "description": "幼小衔接综合 Skill把入学准备做成孩子愿意参与、家长能照着做、过程可观察的入学准备任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-school-readiness/SKILL.md",
+      "tags": [
+        "preschool",
+        "综合",
+        "入学准备",
+        "暑假提升",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "preschool-general-readiness-textbook-sync",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-self-care",
+      "description": "学前自理能力 Skill把自理能力做成孩子愿意参与、家长能照着做、过程可观察的家庭陪伴任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-self-care/SKILL.md",
+      "tags": [
+        "preschool",
+        "家庭教育",
+        "家庭陪伴",
+        "入学准备",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-shape-space",
+      "description": "学前图形空间 Skill把图形空间做成孩子愿意参与、家长能照着做、过程可观察的图形游戏任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-shape-space/SKILL.md",
+      "tags": [
+        "preschool",
+        "数学",
+        "图形游戏",
+        "亲子共学",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-social-skills",
+      "description": "学前社交规则 Skill把同伴交往做成孩子愿意参与、家长能照着做、过程可观察的社交练习任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-social-skills/SKILL.md",
+      "tags": [
+        "preschool",
+        "家庭教育",
+        "社交练习",
+        "幼儿园适应",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-story-retelling",
+      "description": "学前故事复述 Skill把故事复述做成孩子愿意参与、家长能照着做、过程可观察的绘本复述任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-story-retelling/SKILL.md",
+      "tags": [
+        "preschool",
+        "语文",
+        "绘本复述",
+        "睡前表达",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
+        "curated",
+        "needs_user_input"
+      ]
+    },
+    {
+      "name": "preschool-task-awareness",
+      "description": "学前任务意识 Skill把任务意识做成孩子愿意参与、家长能照着做、过程可观察的习惯培养任务。重点不是提前小学化，而是在真实生活、绘本、游戏和表达里建立安全感、兴趣和基础能力。",
+      "path": "skills/preschool/preschool-task-awareness/SKILL.md",
+      "tags": [
+        "preschool",
+        "学习能力",
+        "习惯培养",
+        "入学准备",
+        "学前启蒙",
+        "学龄前",
+        "幼小衔接",
+        "preschool",
         "curated",
         "needs_user_input"
       ]
@@ -881,6 +1479,10 @@
         "junior",
         "家庭教育",
         "家长陪学",
+        "家庭教育",
+        "亲子陪学",
+        "family",
+        "family-education",
         "curated",
         "needs_user_input"
       ]
@@ -895,6 +1497,10 @@
         "junior",
         "家庭教育",
         "亲子沟通",
+        "家庭教育",
+        "亲子陪学",
+        "family",
+        "family-education",
         "curated",
         "needs_user_input"
       ]
@@ -909,6 +1515,10 @@
         "junior",
         "家庭教育",
         "寒暑假提升",
+        "家庭教育",
+        "亲子陪学",
+        "family",
+        "family-education",
         "curated",
         "needs_user_input"
       ]
@@ -923,6 +1533,10 @@
         "junior",
         "家庭教育",
         "作业陪伴",
+        "家庭教育",
+        "亲子陪学",
+        "family",
+        "family-education",
         "curated",
         "needs_user_input"
       ]
@@ -937,6 +1551,10 @@
         "junior",
         "家庭教育",
         "亲子共读",
+        "家庭教育",
+        "亲子陪学",
+        "family",
+        "family-education",
         "curated",
         "needs_user_input"
       ]
@@ -951,20 +1569,10 @@
         "junior",
         "家庭教育",
         "家长沟通",
-        "curated",
-        "needs_user_input"
-      ]
-    },
-    {
-      "name": "family-school-readiness",
-      "description": "幼小衔接家庭准备把幼小衔接从提前刷题改成生活习惯、表达、规则感和基础学习准备。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。",
-      "path": "skills/family-education/family-school-readiness/SKILL.md",
-      "tags": [
-        "preschool",
-        "primary",
-        "junior",
         "家庭教育",
-        "入学准备",
+        "亲子陪学",
+        "family",
+        "family-education",
         "curated",
         "needs_user_input"
       ]
@@ -979,6 +1587,10 @@
         "junior",
         "家庭教育",
         "习惯培养",
+        "家庭教育",
+        "亲子陪学",
+        "family",
+        "family-education",
         "curated",
         "needs_user_input"
       ]
@@ -986,7 +1598,7 @@
     {
       "name": "agent-study-plan",
       "description": "把模糊目标拆成今天、这一周和下一轮可执行的学习安排。",
-      "path": "skills/learning-core/agent-study-plan/SKILL.md",
+      "path": "skills/learning-assistant/agent-study-plan/SKILL.md",
       "tags": [
         "preschool",
         "primary",
@@ -998,6 +1610,12 @@
         "今日学习",
         "寒暑假提升",
         "考前规划",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1011,6 +1629,11 @@
         "语文",
         "听写默写",
         "每日打卡",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -1023,6 +1646,11 @@
         "primary",
         "语文",
         "阅读训练",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -1036,6 +1664,11 @@
         "语文",
         "背诵记忆",
         "每日打卡",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -1053,6 +1686,10 @@
         "单元复习",
         "错题巩固",
         "期中期末复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1065,6 +1702,11 @@
         "primary",
         "语文",
         "写作提升",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -1082,6 +1724,10 @@
         "单元复习",
         "错题巩固",
         "期中期末复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1094,6 +1740,11 @@
         "primary",
         "英语",
         "阅读训练",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -1107,6 +1758,11 @@
         "英语",
         "每日打卡",
         "听写默写",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -1124,6 +1780,10 @@
         "单元复习",
         "错题巩固",
         "期中期末复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1141,6 +1801,10 @@
         "单元复习",
         "错题巩固",
         "期中期末复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1153,6 +1817,10 @@
         "primary",
         "综合",
         "期中期末复习",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -1171,6 +1839,10 @@
         "错题巩固",
         "期中期末复习",
         "口算速练",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1184,6 +1856,11 @@
         "数学",
         "口算速练",
         "每日打卡",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -1202,6 +1879,10 @@
         "错题巩固",
         "期中期末复习",
         "口算速练",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1220,6 +1901,10 @@
         "错题巩固",
         "期中期末复习",
         "口算速练",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1233,6 +1918,11 @@
         "语文",
         "阅读训练",
         "每日打卡",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -1240,13 +1930,19 @@
     {
       "name": "agent-focus-training",
       "description": "把“孩子不专心”拆成可观察的学习环境、任务长度和反馈节奏，生成能立刻执行的专注训练方案。",
-      "path": "skills/learning-core/agent-focus-training/SKILL.md",
+      "path": "skills/learning-assistant/agent-focus-training/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "每日打卡",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1254,13 +1950,19 @@
     {
       "name": "agent-holiday-plan",
       "description": "把寒暑假从“报复性补课”改成有节奏的巩固、预习、阅读和休息计划。",
-      "path": "skills/learning-core/agent-holiday-plan/SKILL.md",
+      "path": "skills/learning-assistant/agent-holiday-plan/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "寒暑假提升",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1268,13 +1970,19 @@
     {
       "name": "agent-homework-companion",
       "description": "陪学生完成作业全过程：先规划顺序，再在卡住时提示，不替写，最后做自查和订正。",
-      "path": "skills/learning-core/agent-homework-companion/SKILL.md",
+      "path": "skills/learning-assistant/agent-homework-companion/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "课后作业",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1282,13 +1990,19 @@
     {
       "name": "agent-learning-habit",
       "description": "把抽象的“养成学习习惯”落到固定触发、最小动作、即时反馈和家庭协作上。",
-      "path": "skills/learning-core/agent-learning-habit/SKILL.md",
+      "path": "skills/learning-assistant/agent-learning-habit/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "每日打卡",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1296,7 +2010,7 @@
     {
       "name": "agent-learning-report",
       "description": "把零散练习记录整理成家长、老师和学生都能看懂的学情判断。",
-      "path": "skills/learning-core/agent-learning-report/SKILL.md",
+      "path": "skills/learning-assistant/agent-learning-report/SKILL.md",
       "tags": [
         "primary",
         "junior",
@@ -1304,6 +2018,12 @@
         "学习能力",
         "学习报告",
         "家长沟通",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1311,13 +2031,19 @@
     {
       "name": "agent-memory-method",
       "description": "把需要背的内容变成可提取、可复述、可间隔复习的记忆任务，而不是反复机械朗读。",
-      "path": "skills/learning-core/agent-memory-method/SKILL.md",
+      "path": "skills/learning-assistant/agent-memory-method/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "背诵记忆",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1325,7 +2051,7 @@
     {
       "name": "agent-mistake-review",
       "description": "把错题从改正答案升级为找到错误模式并安排复习。",
-      "path": "skills/learning-core/agent-mistake-review/SKILL.md",
+      "path": "skills/learning-assistant/agent-mistake-review/SKILL.md",
       "tags": [
         "primary",
         "junior",
@@ -1333,6 +2059,12 @@
         "学习能力",
         "错题订正",
         "单元复习",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1340,7 +2072,7 @@
     {
       "name": "agent-photo-question",
       "description": "把拍照题目转成先识题、再讲思路、最后追问确认的学习过程，而不是只给答案。",
-      "path": "skills/learning-core/agent-photo-question/SKILL.md",
+      "path": "skills/learning-assistant/agent-photo-question/SKILL.md",
       "tags": [
         "primary",
         "junior",
@@ -1348,6 +2080,15 @@
         "综合",
         "拍照答疑",
         "课后作业",
+        "拍照答疑",
+        "拍题讲解",
+        "photo-question",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "requires_tools"
       ]
@@ -1355,13 +2096,19 @@
     {
       "name": "agent-preview-assistant",
       "description": "把预习从“提前看一遍”变成带问题进入课堂：先扫知识、再标疑问、最后准备课堂关注点。",
-      "path": "skills/learning-core/agent-preview-assistant/SKILL.md",
+      "path": "skills/learning-assistant/agent-preview-assistant/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "课前预习",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1369,13 +2116,19 @@
     {
       "name": "agent-review-assistant",
       "description": "把复习从重新看笔记变成检索、纠错、归纳和再练习的闭环。",
-      "path": "skills/learning-core/agent-review-assistant/SKILL.md",
+      "path": "skills/learning-assistant/agent-review-assistant/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "单元复习",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1383,13 +2136,19 @@
     {
       "name": "agent-socratic-tutor",
       "description": "用启发式追问帮助学生自己走到答案，而不是把标准答案一次性倒出来。",
-      "path": "skills/learning-core/agent-socratic-tutor/SKILL.md",
+      "path": "skills/learning-assistant/agent-socratic-tutor/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "AI 讲题",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1397,13 +2156,19 @@
     {
       "name": "agent-weakness-boost",
       "description": "把“薄弱项”从模糊标签变成一个可诊断、可练习、可复测的小专题提升闭环。",
-      "path": "skills/learning-core/agent-weakness-boost/SKILL.md",
+      "path": "skills/learning-assistant/agent-weakness-boost/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "专项训练",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1411,13 +2176,19 @@
     {
       "name": "agent-weekly-review",
       "description": "把一周学习从流水账整理成进步、问题、下周行动三件事，让学生和家长都知道下一步做什么。",
-      "path": "skills/learning-core/agent-weekly-review/SKILL.md",
+      "path": "skills/learning-assistant/agent-weekly-review/SKILL.md",
       "tags": [
         "primary",
         "junior",
         "senior",
         "学习能力",
         "学习报告",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1432,6 +2203,11 @@
         "senior",
         "生物",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1446,6 +2222,11 @@
         "senior",
         "生物",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1460,6 +2241,11 @@
         "senior",
         "生物",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1474,6 +2260,11 @@
         "senior",
         "化学",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1488,6 +2279,11 @@
         "senior",
         "化学",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1502,6 +2298,11 @@
         "senior",
         "化学",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1516,6 +2317,11 @@
         "senior",
         "语文",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1530,6 +2336,11 @@
         "senior",
         "语文",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1544,6 +2355,11 @@
         "senior",
         "语文",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1558,6 +2374,11 @@
         "senior",
         "教学管理",
         "学情分析",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1572,6 +2393,11 @@
         "senior",
         "英语",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1586,6 +2412,11 @@
         "senior",
         "英语",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1600,6 +2431,11 @@
         "senior",
         "英语",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1614,6 +2450,11 @@
         "senior",
         "地理",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1628,6 +2469,11 @@
         "senior",
         "地理",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1642,6 +2488,11 @@
         "senior",
         "地理",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1656,6 +2507,11 @@
         "senior",
         "历史",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1670,6 +2526,11 @@
         "senior",
         "历史",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1684,6 +2545,11 @@
         "senior",
         "历史",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1698,6 +2564,11 @@
         "senior",
         "教学管理",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1712,6 +2583,11 @@
         "senior",
         "教学管理",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1726,6 +2602,11 @@
         "senior",
         "数学",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1740,6 +2621,11 @@
         "senior",
         "数学",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1754,6 +2640,11 @@
         "senior",
         "数学",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1768,6 +2659,11 @@
         "senior",
         "教学管理",
         "家长沟通",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1782,6 +2678,11 @@
         "senior",
         "物理",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1796,6 +2697,11 @@
         "senior",
         "物理",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1810,6 +2716,11 @@
         "senior",
         "物理",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1824,6 +2735,11 @@
         "senior",
         "政治",
         "班级作业",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1838,6 +2754,11 @@
         "senior",
         "政治",
         "老师备课",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1852,6 +2773,11 @@
         "senior",
         "政治",
         "单元复习",
+        "教师与机构",
+        "老师工具",
+        "教师工具",
+        "teacher-tools",
+        "teaching",
         "curated",
         "needs_user_input"
       ]
@@ -1859,7 +2785,7 @@
     {
       "name": "agent-question-explanation",
       "description": "把一道题讲到学生真正会复述思路：先定位卡点，再用年级能听懂的语言拆解，最后用变式题确认理解。",
-      "path": "skills/learning-core/agent-question-explanation/SKILL.md",
+      "path": "skills/learning-assistant/agent-question-explanation/SKILL.md",
       "tags": [
         "primary",
         "junior",
@@ -1868,6 +2794,12 @@
         "学习能力",
         "课后作业",
         "同步巩固",
+        "学习助手",
+        "学习方法",
+        "学习核心",
+        "learning",
+        "learning-core",
+        "learning-assistant",
         "curated",
         "needs_user_input"
       ]
@@ -1886,6 +2818,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1899,6 +2835,10 @@
         "生物",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -1912,6 +2852,11 @@
         "生物",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -1930,6 +2875,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1943,6 +2892,10 @@
         "化学",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -1961,6 +2914,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -1974,6 +2931,11 @@
         "化学",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -1992,6 +2954,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2004,6 +2970,11 @@
         "senior",
         "语文",
         "写作提升",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -2017,6 +2988,10 @@
         "语文",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -2030,6 +3005,11 @@
         "语文",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -2042,6 +3022,11 @@
         "senior",
         "语文",
         "高考复习",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -2060,6 +3045,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2073,6 +3062,10 @@
         "英语",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -2086,6 +3079,11 @@
         "英语",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -2104,6 +3102,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2117,6 +3119,11 @@
         "英语",
         "每日打卡",
         "高考复习",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -2129,6 +3136,11 @@
         "senior",
         "英语",
         "高考复习",
+        "阅读写作",
+        "读写表达",
+        "reading",
+        "writing",
+        "reading-writing",
         "curated",
         "needs_user_input"
       ]
@@ -2147,6 +3159,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2160,6 +3176,10 @@
         "综合",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -2173,6 +3193,10 @@
         "地理",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -2186,6 +3210,11 @@
         "地理",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -2204,6 +3233,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2222,6 +3255,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2235,6 +3272,10 @@
         "历史",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -2248,6 +3289,11 @@
         "历史",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -2266,6 +3312,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2284,6 +3334,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2297,6 +3351,10 @@
         "数学",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -2310,6 +3368,11 @@
         "数学",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -2328,6 +3391,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2346,6 +3413,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2359,6 +3430,10 @@
         "物理",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -2377,6 +3452,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2390,6 +3469,11 @@
         "物理",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -2408,6 +3492,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]
@@ -2421,6 +3509,10 @@
         "政治",
         "高考复习",
         "考前冲刺",
+        "考试备考",
+        "备考复习",
+        "exam",
+        "exam-prep",
         "curated",
         "needs_user_input"
       ]
@@ -2434,6 +3526,11 @@
         "政治",
         "每日打卡",
         "同步巩固",
+        "每日练习",
+        "每日训练",
+        "daily",
+        "practice",
+        "daily-practice",
         "curated",
         "needs_user_input"
       ]
@@ -2452,6 +3549,10 @@
         "错题巩固",
         "期中期末复习",
         "高考复习",
+        "教材同步",
+        "同步教材",
+        "textbook",
+        "textbook-sync",
         "curated",
         "needs_user_input"
       ]

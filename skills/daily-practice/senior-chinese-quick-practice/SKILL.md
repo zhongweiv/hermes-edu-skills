@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_chinese_quick_practice.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["senior-chinese-quick-practice"]
     stages: ["senior"]
     subjects: ["语文"]
     abilities: ["同步巩固", "专项训练"]
@@ -119,6 +122,8 @@ metadata:
 
 - Workflow: `senior_chinese_quick_practice.run`
 - Category: `daily-practice`
+
+- Install Aliases: `senior-chinese-quick-practice`
 - Stages: `senior`
 - Subjects: `语文`
 - Abilities: `同步巩固`, `专项训练`

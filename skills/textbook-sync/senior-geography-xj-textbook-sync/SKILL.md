@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_geography_xj_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["senior-geography-xj-textbook-sync"]
     stages: ["senior"]
     subjects: ["地理"]
     abilities: ["教材同步", "图表分析"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `senior_geography_xj_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `senior-geography-xj-textbook-sync`
 - Stages: `senior`
 - Subjects: `地理`
 - Abilities: `教材同步`, `图表分析`

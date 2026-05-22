@@ -1,7 +1,7 @@
 ---
 name: "primary-reading-daily"
 description: "把小学阅读练成“读懂、找依据、会表达”的短训练，而不是泛泛问读后感。 Workflow: primary_reading_daily.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "primary_reading_daily.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["primary-reading-daily"]
     stages: ["primary"]
     subjects: ["语文"]
     abilities: ["阅读理解"]
@@ -115,6 +118,8 @@ metadata:
 
 - Workflow: `primary_reading_daily.run`
 - Category: `daily-practice`
+
+- Install Aliases: `primary-reading-daily`
 - Stages: `primary`
 - Subjects: `语文`
 - Abilities: `阅读理解`

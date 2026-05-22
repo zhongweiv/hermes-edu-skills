@@ -1,7 +1,7 @@
 ---
 name: "family-school-communication"
 description: "家校沟通准备帮家长把问题说清楚、语气放稳、目标对齐，提升和老师沟通的效率。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: family_school_communication.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "family_school_communication.run"
     category: "family-education"
+    category_aliases: ["家庭教育", "亲子陪学", "family", "family-education"]
+    legacy_slugs: []
+    install_aliases: ["family-school-communication"]
     stages: ["preschool", "primary", "junior"]
     subjects: ["家庭教育"]
     abilities: ["陪学建议"]
@@ -111,6 +114,8 @@ metadata:
 
 - Workflow: `family_school_communication.run`
 - Category: `family-education`
+
+- Install Aliases: `family-school-communication`
 - Stages: `preschool`, `primary`, `junior`
 - Subjects: `家庭教育`
 - Abilities: `陪学建议`

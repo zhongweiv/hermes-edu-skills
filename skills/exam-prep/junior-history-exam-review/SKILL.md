@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_history_exam_review.run"
     category: "exam-prep"
+    category_aliases: ["考试备考", "备考复习", "exam", "exam-prep"]
+    legacy_slugs: []
+    install_aliases: ["junior-history-exam-review"]
     stages: ["junior"]
     subjects: ["历史"]
     abilities: ["考试复习", "查漏补缺"]
@@ -123,6 +126,8 @@ metadata:
 
 - Workflow: `junior_history_exam_review.run`
 - Category: `exam-prep`
+
+- Install Aliases: `junior-history-exam-review`
 - Stages: `junior`
 - Subjects: `历史`
 - Abilities: `考试复习`, `查漏补缺`

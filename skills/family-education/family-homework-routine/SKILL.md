@@ -1,7 +1,7 @@
 ---
 name: "family-homework-routine"
 description: "家庭作业习惯帮家庭建立固定、轻量、可坚持的作业流程，让孩子知道先做什么、做到什么算完成。重点不是替家长管孩子，而是把家庭学习场景拆成可沟通、可执行、可复盘的小步骤。 Workflow: family_homework_routine.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "family_homework_routine.run"
     category: "family-education"
+    category_aliases: ["家庭教育", "亲子陪学", "family", "family-education"]
+    legacy_slugs: []
+    install_aliases: ["family-homework-routine"]
     stages: ["preschool", "primary", "junior"]
     subjects: ["家庭教育"]
     abilities: ["陪学建议"]
@@ -111,6 +114,8 @@ metadata:
 
 - Workflow: `family_homework_routine.run`
 - Category: `family-education`
+
+- Install Aliases: `family-homework-routine`
 - Stages: `preschool`, `primary`, `junior`
 - Subjects: `家庭教育`
 - Abilities: `陪学建议`

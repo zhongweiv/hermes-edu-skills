@@ -1,7 +1,7 @@
 ---
 name: "primary-english-vocabulary-daily"
 description: "让小学英语单词练习从“背拼写”升级为音、形、义、句一起掌握。 Workflow: primary_english_vocabulary_daily.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "primary_english_vocabulary_daily.run"
     category: "daily-practice"
+    category_aliases: ["每日练习", "每日训练", "daily", "practice", "daily-practice"]
+    legacy_slugs: []
+    install_aliases: ["primary-english-vocabulary-daily"]
     stages: ["primary"]
     subjects: ["英语"]
     abilities: ["词汇", "默写"]
@@ -114,6 +117,8 @@ metadata:
 
 - Workflow: `primary_english_vocabulary_daily.run`
 - Category: `daily-practice`
+
+- Install Aliases: `primary-english-vocabulary-daily`
 - Stages: `primary`
 - Subjects: `英语`
 - Abilities: `词汇`, `默写`

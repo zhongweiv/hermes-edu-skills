@@ -1,7 +1,7 @@
 ---
 name: "senior-english-writing"
 description: "高中英语写作帮助英语学习者把英语写作从套模板变成任务回应、结构清楚、句子准确和表达有亮点，输出可修改、可复盘、可继续练的阅读/写作任务，而不是替用户一次性完成任务。 Workflow: senior_english_writing.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "senior_english_writing.run"
     category: "reading-writing"
+    category_aliases: ["阅读写作", "读写表达", "reading", "writing", "reading-writing"]
+    legacy_slugs: []
+    install_aliases: ["senior-english-writing"]
     stages: ["senior"]
     subjects: ["英语"]
     abilities: ["写作"]
@@ -113,6 +116,8 @@ metadata:
 
 - Workflow: `senior_english_writing.run`
 - Category: `reading-writing`
+
+- Install Aliases: `senior-english-writing`
 - Stages: `senior`
 - Subjects: `英语`
 - Abilities: `写作`

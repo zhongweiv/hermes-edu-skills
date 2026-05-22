@@ -1,7 +1,7 @@
 ---
 name: "junior-chemistry-lk-textbook-sync"
 description: "把鲁科版初中化学的年级、册别、单元和学习场景，转成预习、同步练习、错题追练、单元复习和考前巩固等可直接执行的学习任务。让化学同步学习不止记结论，而是能解释现象、写对符号、看懂实验。 Workflow: junior_chemistry_lk_textbook_sync.run."
-version: "0.16.7"
+version: "0.17.0"
 author: zhongwei
 license: MIT
 platforms: [windows, linux, macos]
@@ -11,6 +11,9 @@ metadata:
     source: hermes-edu-skills
     workflow: "junior_chemistry_lk_textbook_sync.run"
     category: "textbook-sync"
+    category_aliases: ["教材同步", "同步教材", "textbook", "textbook-sync"]
+    legacy_slugs: []
+    install_aliases: ["junior-chemistry-lk-textbook-sync"]
     stages: ["junior"]
     subjects: ["化学"]
     abilities: ["教材同步", "实验理解"]
@@ -134,6 +137,8 @@ metadata:
 
 - Workflow: `junior_chemistry_lk_textbook_sync.run`
 - Category: `textbook-sync`
+
+- Install Aliases: `junior-chemistry-lk-textbook-sync`
 - Stages: `junior`
 - Subjects: `化学`
 - Abilities: `教材同步`, `实验理解`
