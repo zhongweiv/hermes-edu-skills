@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -27,9 +27,13 @@ const commandAliases = {
   ls: 'list',
   match: 'match',
   prompt: 'prompt',
+  repair: 'repair',
   route: 'match',
   run: 'ask',
   search: 'search',
+  uninstall: 'uninstall',
+  update: 'update',
+  verify: 'verify',
 };
 
 const toolAliases = {
@@ -150,6 +154,7 @@ function usage() {
   console.log(`Hermes Edu Skills Agent Pack
 
 Usage:
+  hermes-edu-skills install
   hermes-edu-skills install <hermes|openclaw|codex|claude|cursor|generic> [skill-or-category] [options]
   hermes-edu-skills export <openclaw|codex|claude|cursor|generic> [skill-or-category] [options]
   hermes-edu-skills list [category]
@@ -160,6 +165,10 @@ Usage:
   hermes-edu-skills chat
   hermes-edu-skills prompt
   hermes-edu-skills doctor
+  hermes-edu-skills verify
+  hermes-edu-skills repair
+  hermes-edu-skills update
+  hermes-edu-skills uninstall
 
 Source-mode usage:
   node scripts/agent-pack.mjs install --tool <hermes|openclaw|codex|claude-code|cursor|generic-agent> [options]
@@ -171,8 +180,11 @@ Compatibility aliases:
   node scripts/agent-pack.mjs export --target <path> [--format agent-skills|openclaw|codex|claude-code|cursor|flat] [--dry-run]
 
 Examples:
+  npx --yes hermes-edu-skills install
+  npx --yes hermes-edu-skills update
+  npx hermes-edu-skills install textbook-sync
+  npx hermes-edu-skills install primary-math-mental-arithmetic
   npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
-  npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
   npx hermes-edu-skills install openclaw textbook-sync
   npx hermes-edu-skills install codex agent-socratic-tutor
   npx hermes-edu-skills install claude --workspace .
@@ -185,8 +197,9 @@ Examples:
   npx hermes-edu-skills match "八年级下册物理力学题"
   npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
   npx hermes-edu-skills prompt > HERMES.md
-  npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --no-prompt
   npx hermes-edu-skills doctor
+  npx hermes-edu-skills repair
+  npx hermes-edu-skills uninstall
 
 Short npm commands:
   npm run install:hermes
@@ -354,6 +367,10 @@ function applyPositionalArgs(args) {
 
     for (const positional of positionals) {
       addSelector(args, positional);
+    }
+
+    if (args.command === 'install' && !args.tool) {
+      args.tool = 'hermes';
     }
   }
 
@@ -1210,7 +1227,7 @@ function doctorCommand(args) {
     }
     if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) {
       suggestions.add(`npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
-      suggestions.add('Start chats with: hermes chat --toolsets skills');
+      suggestions.add('After repair, start a fresh Hermes session with: hermes');
     }
     if (!existsSync(configPath) && suggestions.size === 0) {
       suggestions.add(`Create/update Hermes config by running: npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
@@ -1223,6 +1240,8 @@ function doctorCommand(args) {
     console.log('');
     console.log('Result: ok. Local files, pack manifest, Hermes config, and Hermes visible list look consistent.');
   }
+
+  return problems.length;
 }
 
 function ensureTool(tool) {
@@ -1321,6 +1340,23 @@ function ensureHermesCliSkillsToolset(content) {
   if (hasSkills) return content;
   lines.splice(insertIndex, 0, `${' '.repeat(cliIndent + 2)}- skills`);
   return `${lines.join('\n').trimEnd()}\n`;
+}
+
+function removeHermesExternalDir(content, skillsDir) {
+  const normalizedSkillsDir = normalizePathForConfig(skillsDir);
+  const lines = content.split(/\r?\n/);
+  const nextLines = [];
+
+  for (const line of lines) {
+    const item = line.match(/^(\s*)-\s*(.+?)\s*(?:#.*)?$/);
+    if (item) {
+      const value = item[2].trim().replace(/^["']|["']$/g, '');
+      if (normalizePathForConfig(value) === normalizedSkillsDir) continue;
+    }
+    nextLines.push(line);
+  }
+
+  return `${nextLines.join('\n').trimEnd()}\n`;
 }
 
 function defaultExportTarget(tool, args) {
@@ -1473,27 +1509,7 @@ function installHermes(args) {
   const shouldWritePrompt = !args.skipPrompt;
 
   const skillsDir = normalizePathForConfig(selectedRoot);
-
-  if (!args.config) {
-    console.log('Add this to your Hermes config.yaml:');
-    console.log('');
-    console.log('skills:');
-    console.log('  external_dirs:');
-    console.log(`    - ${skillsDir}`);
-    if (args.enableSkillsToolset) {
-      console.log('');
-      console.log('platform_toolsets:');
-      console.log('  cli:');
-      console.log('    - skills');
-    }
-    console.log('');
-    console.log('Start Hermes with:');
-    console.log('  hermes chat --toolsets skills');
-    if (shouldWritePrompt) writeActivationPrompt(args, skills);
-    return;
-  }
-
-  const configPath = resolve(expandHome(args.config));
+  const configPath = defaultHermesConfigPath(args);
   let content = existsSync(configPath) ? readFileSync(configPath, 'utf8') : '';
   const before = content;
 
@@ -1530,9 +1546,62 @@ function installHermes(args) {
   }
   console.log(`[hermes-edu-skills] skills external dir: ${skillsDir}`);
   if (args.enableSkillsToolset) console.log('[hermes-edu-skills] Hermes CLI skills toolset: enabled');
-  console.log('[hermes-edu-skills] Start Hermes with: hermes chat --toolsets skills');
-  console.log('[hermes-edu-skills] Or run: npx hermes-edu-skills chat');
+  console.log('[hermes-edu-skills] Start a fresh Hermes session with: hermes');
+  console.log('[hermes-edu-skills] If your Hermes build ignores config toolsets, use: npx hermes-edu-skills chat');
   if (shouldWritePrompt) writeActivationPrompt(args, skills);
+}
+
+function verifyCommand(args) {
+  const problemCount = doctorCommand(args);
+  if (problemCount > 0) {
+    process.exitCode = 1;
+    console.log('');
+    console.log(`[hermes-edu-skills] verify failed with ${problemCount} finding${problemCount > 1 ? 's' : ''}. Run: npx --yes hermes-edu-skills@latest repair`);
+  } else {
+    console.log('');
+    console.log('[hermes-edu-skills] verify passed. You can start Hermes normally with: hermes');
+  }
+}
+
+function repairCommand(args) {
+  console.log('[hermes-edu-skills] repairing Hermes installation...');
+  installHermes({ ...args, command: 'install', tool: 'hermes' });
+  console.log('');
+  doctorCommand(args);
+}
+
+function updateCommand(args) {
+  console.log('[hermes-edu-skills] updating Hermes Edu Skills installation from the current package version...');
+  console.log('[hermes-edu-skills] Tip: use `npx --yes hermes-edu-skills@latest update` to force npm latest.');
+  installHermes({ ...args, command: 'install', tool: 'hermes' });
+  console.log('');
+  doctorCommand(args);
+}
+
+function uninstallCommand(args) {
+  const selectedRoot = ensureSafeTarget(defaultHermesSelectedTarget(args));
+  const skillsDir = normalizePathForConfig(selectedRoot);
+  const configPath = defaultHermesConfigPath(args);
+
+  if (args.dryRun) {
+    console.log(`[dry-run] remove ${selectedRoot}`);
+    if (existsSync(configPath)) console.log(`[dry-run] remove ${skillsDir} from ${configPath}`);
+    return;
+  }
+
+  rmSync(selectedRoot, { recursive: true, force: true });
+  console.log(`[hermes-edu-skills] removed Skill Pack directory: ${selectedRoot}`);
+
+  if (existsSync(configPath)) {
+    const before = readFileSync(configPath, 'utf8');
+    const after = removeHermesExternalDir(before, selectedRoot);
+    if (after !== before) {
+      writeFileSync(configPath, after, 'utf8');
+      console.log(`[hermes-edu-skills] removed Skill Pack external dir from Hermes config: ${configPath}`);
+    }
+  }
+
+  console.log('[hermes-edu-skills] uninstall complete. Existing HERMES.md files are left untouched.');
 }
 
 function installTool(args) {
@@ -1585,6 +1654,14 @@ try {
     promptCommand(args);
   } else if (args.command === 'doctor') {
     doctorCommand(args);
+  } else if (args.command === 'verify') {
+    verifyCommand(args);
+  } else if (args.command === 'repair') {
+    repairCommand(args);
+  } else if (args.command === 'update') {
+    updateCommand(args);
+  } else if (args.command === 'uninstall') {
+    uninstallCommand(args);
   } else if (args.command === 'install-hermes') {
     installHermes(args);
   } else if (args.command === 'install-openclaw') {

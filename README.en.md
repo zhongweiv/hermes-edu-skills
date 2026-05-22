@@ -48,14 +48,14 @@ If you are building an AI learning assistant, AI teacher, curriculum tool, famil
 Hermes Agent is the default target. For first-time use, install one category or one Skill first, then install the full pack once you confirm the workflow.
 
 ```bash
-# Install all 188 installable Skills into Hermes Agent
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
+# One-command install and enable. After this, keep using hermes / hermes chat
+npx --yes hermes-edu-skills install
 
 # Install only the textbook-sync category
-npx hermes-edu-skills install hermes textbook-sync --config ~/.hermes/config.yaml
+npx --yes hermes-edu-skills install textbook-sync
 
 # Install one Skill
-npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
+npx --yes hermes-edu-skills install agent-study-plan
 
 # Search before installing
 npx hermes-edu-skills search mistake
@@ -71,7 +71,13 @@ npx hermes-edu-skills chat
 npx hermes-edu-skills prompt > HERMES.md
 
 # Diagnose install count, versions, config, and Hermes visibility
-npx hermes-edu-skills doctor
+npx --yes hermes-edu-skills doctor
+
+# Repair / update / verify / uninstall
+npx --yes hermes-edu-skills repair
+npx --yes hermes-edu-skills update
+npx --yes hermes-edu-skills verify
+npx --yes hermes-edu-skills uninstall
 ```
 
 Export to other Agent tools:
@@ -150,21 +156,34 @@ If your environment cannot resolve the package through `npx` yet, use the source
 Method 1: First-class CLI install (recommended)
 
 ```bash
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
+npx --yes hermes-edu-skills install
 ```
 
-This command does two things:
+This command does four things:
 
 - Installs 188 available Skills and updates Hermes `skills.external_dirs`.
 - Merges `skills` into Hermes CLI `platform_toolsets.cli`, so ordinary `hermes chat` sessions can access Skill tools more reliably.
 - Generates `HERMES.md` in the current directory by default, so Hermes searches the `hermes-edu-skills` Skill Pack before answering education questions directly.
+- Uses the default Hermes config path `~/.hermes/config.yaml`. After installation, users can keep starting Hermes with `hermes` or `hermes chat`.
+
+After installation, start a fresh Hermes session:
+
+```bash
+hermes
+```
+
+If your Hermes installation uses a non-default config file, pass it explicitly:
+
+```bash
+npx --yes hermes-edu-skills install --config /path/to/config.yaml
+```
 
 When you install only one category or one Skill, the installer generates a scoped prompt by default: category installs list only Skills from that category, and single-Skill installs explicitly tell Hermes to load that Skill first when the request is in scope.
 
 To skip prompt generation:
 
 ```bash
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --no-prompt
+npx --yes hermes-edu-skills install --no-prompt
 ```
 
 If `HERMES.md` already exists, the installer will not overwrite it. Run `npx hermes-edu-skills prompt` to inspect the prompt and merge it into your existing project instructions. The prompt includes the current installable Skill count and category map, and explicitly tells Hermes to search `hermes-edu-skills` first. Add `--overwrite-prompt` only when you really want to replace the file.
@@ -172,14 +191,14 @@ If `HERMES.md` already exists, the installer will not overwrite it. Run `npx her
 Install a category, for example textbook sync:
 
 ```bash
-npx hermes-edu-skills install hermes textbook-sync --config ~/.hermes/config.yaml
-npx hermes-edu-skills install hermes 教材同步 --config ~/.hermes/config.yaml
+npx --yes hermes-edu-skills install textbook-sync
+npx --yes hermes-edu-skills install 教材同步
 ```
 
 Install one Skill into Hermes Agent:
 
 ```bash
-npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml
+npx --yes hermes-edu-skills install agent-study-plan
 ```
 
 This also generates a `HERMES.md` scoped to `agent-study-plan`, so Hermes prioritizes that Skill for study-planning requests. Existing `HERMES.md` files are not overwritten; use `--prompt-target` to write elsewhere.
@@ -196,11 +215,11 @@ npx hermes-edu-skills info agent-mistake-review
 After installation, you have two usage modes: use Hermes `-s` when you already know the Skill slug, or use the built-in Skill Router when you want to ask naturally and see which Skill is selected.
 
 ```bash
-# Start a native Hermes session. This is equivalent to hermes chat --toolsets skills
+# Start a native Hermes session. After install, plain hermes is the normal path
 npx hermes-edu-skills chat
 
-# If you call official Hermes directly, explicitly enable the skills toolset
-hermes chat --toolsets skills
+# Most users can keep using the normal Hermes command
+hermes
 
 # Show matching results only; do not call Hermes
 npx hermes-edu-skills match "grade 8 physics mechanics practice"
@@ -237,7 +256,7 @@ hermes skills list
 If Hermes shows a different count than the README or catalog, run:
 
 ```bash
-npx hermes-edu-skills doctor
+npx --yes hermes-edu-skills doctor
 ```
 
 See [Diagnostics And Troubleshooting](#diagnostics-and-troubleshooting) for the detailed checklist.
@@ -267,13 +286,13 @@ npx hermes-edu-skills prompt
 npx hermes-edu-skills prompt > HERMES.md
 
 # Install the Skill Pack and generate HERMES.md
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
+npx --yes hermes-edu-skills install
 
 # Choose the prompt target
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --prompt-target ./HERMES.md
+npx --yes hermes-edu-skills install --prompt-target ./HERMES.md
 
 # Skip HERMES.md generation
-npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --no-prompt
+npx --yes hermes-edu-skills install --no-prompt
 ```
 
 This is not a replacement for deterministic `ask` routing. It strengthens Hermes-native behavior from "check Skills generally" to "search `hermes-edu-skills` first for education requests." If you need a stable `Using Skill: ...` line, use `npx hermes-edu-skills ask "<question>"`, which matches a Skill first and then calls official Hermes.
@@ -307,8 +326,18 @@ That makes the pack feel like a usable product rather than a folder of commands.
 A successful file install does not always mean every Skill is visible to Hermes. Different machines can have different Hermes config files, disabled lists, install directories, or npm cache states. `doctor` is the health check for that situation.
 
 ```bash
-npx hermes-edu-skills doctor
+npx --yes hermes-edu-skills doctor
 ```
+
+User-facing reliability commands:
+
+| Goal | Command |
+| --- | --- |
+| Diagnose install count, version, config, and Hermes visibility | `npx --yes hermes-edu-skills doctor` |
+| Repair missing files, config links, and CLI skills toolset | `npx --yes hermes-edu-skills repair` |
+| Update to npm latest and re-enable | `npx --yes hermes-edu-skills@latest update` |
+| Script/CI health check with non-zero failure exit | `npx --yes hermes-edu-skills verify` |
+| Remove install directory and config external-dir link | `npx --yes hermes-edu-skills uninstall` |
 
 | Check | What doctor inspects |
 | --- | --- |
@@ -327,7 +356,7 @@ Common readings:
 | Local file count is correct, but Hermes visible count is lower | Check whether Hermes config disables or filters some Skills. |
 | Local file count is 0 | The pack was not installed into the Hermes default directory, or Hermes runs under a different user. |
 | Config linked = no | Hermes config does not include `skills.external_dirs`; rerun install with `--config ~/.hermes/config.yaml`. |
-| Chat says the Skill Pack is not installed | Start with `hermes chat --toolsets skills`, or use `npx hermes-edu-skills chat` / `npx hermes-edu-skills ask "<question>"`. |
+| Chat says the Skill Pack is not installed | Run `npx --yes hermes-edu-skills repair`, then open a fresh `hermes` session; for temporary debugging, use `npx hermes-edu-skills chat`. |
 | npm is published but npx still uses an older version | Run `npx --yes hermes-edu-skills@latest doctor`, or wait for npm cache propagation. |
 
 ## Install A Single Skill
@@ -336,7 +365,7 @@ Many users only want to try one capability first instead of installing the full 
 
 | Target | Command |
 | --- | --- |
-| Hermes single Skill | `npx hermes-edu-skills install hermes agent-study-plan --config ~/.hermes/config.yaml` |
+| Hermes single Skill | `npx --yes hermes-edu-skills install agent-study-plan` |
 | OpenClaw single Skill | `npx hermes-edu-skills install openclaw primary-math-mental-arithmetic` |
 | Codex single Skill | `npx hermes-edu-skills install codex agent-socratic-tutor` |
 | Claude Code single Skill | `npx hermes-edu-skills install claude agent-study-plan` |
@@ -737,7 +766,7 @@ Validation checks:
 
 ## Compatibility Notes
 
-- Hermes Agent: use `npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml` to update `skills.external_dirs`.
+- Hermes Agent: use `npx --yes hermes-edu-skills install` for one-command install and enablement.
 - OpenClaw / Codex / Claude Code: use `npx hermes-edu-skills install <tool>` to export a flat directory where every Skill is `<skill-name>/SKILL.md`.
 - Cursor: use `npx hermes-edu-skills install cursor --workspace <project>` to generate `.cursor/rules/*.mdc` plus a local Skill Pack copy.
 - Other agents: use `npx hermes-edu-skills export generic --target <dir>`, then connect the exported directory to the target Agent's Skill / prompt / tool registry.

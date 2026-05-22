@@ -1,8 +1,32 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.17.1",
+  "version": "0.18.0",
   "license": "MIT",
-  "generatedAt": "2026-05-22T10:10:30.344Z",
+  "runtimeActivationPolicy": {
+    "targetRuntime": "hermes-agent",
+    "installMode": "auto_enable",
+    "defaultInstallCommand": "npx --yes hermes-edu-skills install",
+    "defaultConfigPath": "~/.hermes/config.yaml",
+    "installTarget": "~/.hermes/skills/hermes-edu-skills",
+    "requiredToolsets": [
+      "skills"
+    ],
+    "cliPlatformToolsets": [
+      "skills"
+    ],
+    "activationScope": "global_pack",
+    "promptStrategy": "pack_router_first",
+    "supportsPlainHermesCommand": true,
+    "restartRequired": true,
+    "healthCommands": [
+      "doctor",
+      "verify",
+      "repair",
+      "update",
+      "uninstall"
+    ]
+  },
+  "generatedAt": "2026-05-22T14:19:29.751Z",
   "skillCount": 188,
   "skills": [
     {

@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 0.18.0 - 2026-05-22
+
+- Makes the default public path `npx --yes hermes-edu-skills install`, which installs and enables the full Hermes Skill Pack using the default Hermes config path.
+- Adds Pack-level `runtimeActivationPolicy` to public catalog metadata, exported from the commercial Skill system.
+- Adds `repair`, `update`, `verify`, and `uninstall` reliability commands around the Hermes installation lifecycle.
+- Keeps `install hermes --config ...` and category/single-Skill selectors for advanced users while promoting the one-command install path.
+- Updates Chinese and English README onboarding around "install means enabled", plain `hermes` / `hermes chat` usage, and health commands.
+
 ## 0.17.1 - 2026-05-22
 
 - Makes `install hermes` also enable the Hermes CLI `skills` toolset through `platform_toolsets.cli` so normal Hermes chat sessions can access Skill tools more reliably.
