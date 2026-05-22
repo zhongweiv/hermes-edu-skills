@@ -4,7 +4,7 @@ description: "把小学期末备考从“泛泛刷题”变成诊断、提分优
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "综合", "考试复习", "期中期末复习"]

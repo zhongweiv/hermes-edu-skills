@@ -4,7 +4,7 @@ description: "把零散练习记录整理成家长、老师和学生都能看懂
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "学情报告", "学习建议", "学习报告", "家长沟通"]

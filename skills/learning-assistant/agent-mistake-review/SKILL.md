@@ -4,7 +4,7 @@ description: "把错题从改正答案升级为找到错误模式并安排复习
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "错题订正", "复习计划", "错题订正", "单元复习"]

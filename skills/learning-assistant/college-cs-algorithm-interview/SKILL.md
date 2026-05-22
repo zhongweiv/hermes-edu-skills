@@ -4,7 +4,7 @@ description: "把算法面试准备从盲目刷题变成题型识别、思路表
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "college", "adult", "计算机", "算法", "面试准备"]

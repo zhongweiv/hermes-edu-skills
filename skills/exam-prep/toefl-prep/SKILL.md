@@ -4,7 +4,7 @@ description: "把托福备考从材料堆积变成听说读写任务链、学术
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "college", "adult", "英语", "听力", "口语", "阅读理解", "写作", "出国考试"]

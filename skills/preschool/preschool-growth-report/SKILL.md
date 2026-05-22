@@ -4,7 +4,7 @@ description: "学前成长观察报告 Skill把成长观察做成孩子愿意参
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "家庭教育", "成长观察", "家庭反馈", "成长报告", "家园沟通"]

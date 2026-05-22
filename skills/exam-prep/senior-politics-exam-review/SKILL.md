@@ -4,7 +4,7 @@ description: "把高中政治考试备考从“泛泛刷题”变成诊断、提
 version: "0.13.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "senior", "政治", "考试复习", "查漏补缺", "高考复习", "考前冲刺"]

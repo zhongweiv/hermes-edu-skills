@@ -4,7 +4,7 @@ description: "高中作文提升帮助学生把作文辅导从“代写一篇”
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "senior", "语文", "写作", "写作提升"]

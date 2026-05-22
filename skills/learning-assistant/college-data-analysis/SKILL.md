@@ -4,7 +4,7 @@ description: "把数据分析学习从工具教程变成业务问题、数据清
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "college", "adult", "计算机", "数据分析", "职业技能"]

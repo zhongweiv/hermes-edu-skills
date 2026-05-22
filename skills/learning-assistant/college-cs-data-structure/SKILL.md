@@ -4,7 +4,7 @@ description: "把数据结构从抽象概念变成图示理解、手写过程、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "college", "计算机", "算法", "编程", "课程学习"]

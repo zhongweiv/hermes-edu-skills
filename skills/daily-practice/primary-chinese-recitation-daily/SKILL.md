@@ -4,7 +4,7 @@ description: "把课文和古诗背诵拆成理解、分段、提取线索和复
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "语文", "背诵", "朗读", "背诵记忆", "每日打卡"]

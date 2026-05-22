@@ -4,7 +4,7 @@ description: "把“孩子不专心”拆成可观察的学习环境、任务长
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "专注", "每日打卡"]

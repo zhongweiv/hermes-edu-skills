@@ -4,7 +4,7 @@ description: "把初中化学考试备考从“泛泛刷题”变成诊断、提
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "junior", "化学", "考试复习", "查漏补缺", "中考复习", "考前冲刺"]

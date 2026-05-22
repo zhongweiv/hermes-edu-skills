@@ -4,7 +4,7 @@ description: "学前控笔与书写准备 Skill把控笔做成孩子愿意参与
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "学习能力", "控笔", "书写准备", "入学准备", "每日练习"]

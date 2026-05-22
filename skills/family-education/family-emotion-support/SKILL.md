@@ -4,7 +4,7 @@ description: "学习情绪支持在学习受挫、厌学、亲子冲突时，给
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "primary", "junior", "家庭教育", "陪学建议", "亲子沟通"]

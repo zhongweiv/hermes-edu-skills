@@ -4,7 +4,7 @@ description: "学术写作帮助成人学习者把学术写作从零散资料堆
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "college", "通识", "写作", "论文训练"]

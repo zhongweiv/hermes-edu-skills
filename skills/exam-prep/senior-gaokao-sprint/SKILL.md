@@ -4,7 +4,7 @@ description: "把高考备考从“泛泛刷题”变成诊断、提分优先级
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "senior", "综合", "考试冲刺", "高考复习", "考前冲刺"]

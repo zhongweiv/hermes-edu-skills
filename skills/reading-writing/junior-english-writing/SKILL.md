@@ -4,7 +4,7 @@ description: "初中英语写作帮助英语学习者把英语写作从套模板
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "junior", "英语", "写作", "中考复习"]

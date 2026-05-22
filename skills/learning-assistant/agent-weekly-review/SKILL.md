@@ -4,7 +4,7 @@ description: "把一周学习从流水账整理成进步、问题、下周行动
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "阶段复盘", "学习报告"]

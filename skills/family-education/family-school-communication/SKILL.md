@@ -4,7 +4,7 @@ description: "家校沟通准备帮家长把问题说清楚、语气放稳、目
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "primary", "junior", "家庭教育", "陪学建议", "家长沟通"]

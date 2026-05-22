@@ -4,7 +4,7 @@ description: "帮助物理老师生成少而准、可批改、能反映真实掌
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "物理", "作业生成", "班级作业"]

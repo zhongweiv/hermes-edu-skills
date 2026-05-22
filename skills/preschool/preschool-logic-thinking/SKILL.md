@@ -4,7 +4,7 @@ description: "学前逻辑规律 Skill把分类排序做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "数学", "分类排序", "规律发现", "逻辑游戏", "亲子共学"]

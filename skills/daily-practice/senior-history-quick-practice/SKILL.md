@@ -4,7 +4,7 @@ description: "把高中历史每日打卡做成 10-15 分钟可坚持、可反�
 version: "0.13.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "senior", "历史", "同步巩固", "专项训练", "每日打卡", "同步巩固"]

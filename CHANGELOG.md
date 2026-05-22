@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.18.3 - 2026-05-22
+
+- Fixes Hermes CLI visibility by exporting every public Skill with `cli` in frontmatter `platforms`.
+- Regenerates all 188 public Skills so `hermes skills list` can include them instead of filtering them out as non-CLI Skills.
+- Documents the Hermes platform-filter rule so future Skill exports do not use operating-system-only platform lists.
+
 ## 0.18.2 - 2026-05-22
 
 - Fixes Hermes config YAML merging when an existing `platform_toolsets.cli` list uses YAML indentless sequence style, for example `cli:\n- hermes-cli`.

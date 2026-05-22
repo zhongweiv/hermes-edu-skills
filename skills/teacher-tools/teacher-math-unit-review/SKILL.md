@@ -4,7 +4,7 @@ description: "帮助数学老师把一个单元复习成知识结构、典型错
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "数学", "复习计划", "单元复习"]

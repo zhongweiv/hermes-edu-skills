@@ -4,7 +4,7 @@ description: "学前专注力训练 Skill把专注力做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "学习能力", "专注力", "专注游戏", "每日打卡"]

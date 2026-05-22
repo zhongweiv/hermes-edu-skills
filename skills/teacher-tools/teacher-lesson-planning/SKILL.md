@@ -4,7 +4,7 @@ description: "把备课从罗列知识点变成目标、活动、评价一致的
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "教学管理", "教学设计", "学情分析", "老师备课"]

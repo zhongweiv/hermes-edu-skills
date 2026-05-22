@@ -4,7 +4,7 @@ description: "帮助政治老师把一个单元复习成知识结构、典型错
 version: "0.13.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "政治", "复习计划", "单元复习"]

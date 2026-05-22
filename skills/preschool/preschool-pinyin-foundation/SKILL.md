@@ -4,7 +4,7 @@ description: "学前拼音启蒙 Skill把拼音启蒙做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "语文", "拼音启蒙", "入学准备", "每日启蒙"]

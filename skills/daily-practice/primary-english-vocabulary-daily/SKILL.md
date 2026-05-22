@@ -4,7 +4,7 @@ description: "让小学英语单词练习从“背拼写”升级为音、形、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "英语", "词汇", "默写", "每日打卡", "听写默写"]

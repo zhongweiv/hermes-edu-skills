@@ -4,7 +4,7 @@ description: "学前自理能力 Skill把自理能力做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "家庭教育", "自理能力", "家庭陪伴", "入学准备"]

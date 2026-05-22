@@ -4,7 +4,7 @@ description: "为小学生生成短、准、可批改的口算训练，让每天
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "数学", "计算", "数感", "口算速练", "每日打卡"]

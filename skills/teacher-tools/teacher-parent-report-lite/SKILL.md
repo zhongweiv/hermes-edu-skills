@@ -4,7 +4,7 @@ description: "帮助老师把学习表现转成家长听得懂、愿意配合、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "教学管理", "报告生成", "家长沟通"]

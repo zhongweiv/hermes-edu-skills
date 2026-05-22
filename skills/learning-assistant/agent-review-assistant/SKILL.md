@@ -4,7 +4,7 @@ description: "把复习从重新看笔记变成检索、纠错、归纳和再练
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "复习计划", "单元复习"]

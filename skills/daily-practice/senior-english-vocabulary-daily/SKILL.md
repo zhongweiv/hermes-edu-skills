@@ -4,7 +4,7 @@ description: "把高中英语每日打卡做成 10-15 分钟可坚持、可反�
 version: "0.12.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "senior", "英语", "词汇", "每日打卡", "高考复习"]

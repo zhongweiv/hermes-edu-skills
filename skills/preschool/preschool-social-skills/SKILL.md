@@ -4,7 +4,7 @@ description: "学前社交规则 Skill把同伴交往做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "家庭教育", "同伴交往", "规则感", "社交练习", "幼儿园适应"]

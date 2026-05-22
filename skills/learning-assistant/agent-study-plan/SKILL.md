@@ -4,7 +4,7 @@ description: "把模糊目标拆成今天、这一周和下一轮可执行的学
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "primary", "junior", "senior", "college", "adult", "学习能力", "学习计划", "目标管理", "今日学习", "寒暑假提升", "考前规划"]

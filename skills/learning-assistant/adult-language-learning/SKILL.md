@@ -4,7 +4,7 @@ description: "把成人语言学习从收藏资料变成真实场景输入、主
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "adult", "语言学习", "口语", "听力", "词汇", "每日打卡"]

@@ -4,7 +4,7 @@ description: "把一道题讲到学生真正会复述思路：先定位卡点，
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "college", "学习能力", "AI 讲题", "举一反三", "课后作业", "同步巩固"]

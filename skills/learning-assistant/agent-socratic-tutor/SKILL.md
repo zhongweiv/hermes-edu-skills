@@ -4,7 +4,7 @@ description: "用启发式追问帮助学生自己走到答案，而不是把标
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "启发提问", "AI 讲题"]

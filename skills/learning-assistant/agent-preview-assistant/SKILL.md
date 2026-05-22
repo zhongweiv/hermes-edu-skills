@@ -4,7 +4,7 @@ description: "把预习从“提前看一遍”变成带问题进入课堂：先
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "预习", "课前预习"]

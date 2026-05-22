@@ -4,7 +4,7 @@ description: "学前任务意识 Skill把任务意识做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "学习能力", "任务意识", "习惯培养", "入学准备"]

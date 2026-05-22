@@ -4,7 +4,7 @@ description: "把班级练习、错题和课堂观察整理成老师能立刻调
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "教学管理", "学情分析", "学情分析"]

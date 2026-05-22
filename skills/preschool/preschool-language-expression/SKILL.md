@@ -4,7 +4,7 @@ description: "学前语言表达 Skill把语言表达做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "语文", "语言表达", "表达训练", "亲子互动"]

@@ -4,7 +4,7 @@ description: "小学语文阅读理解帮助学生把阅读训练从“做题对
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "语文", "阅读理解", "阅读训练"]

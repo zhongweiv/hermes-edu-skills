@@ -4,7 +4,7 @@ description: "把人教版初中地理的年级、册别、单元和学习场景
 version: "0.14.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "junior", "地理", "教材同步", "图表分析", "课前预习", "课后作业", "同步巩固", "单元复习", "错题巩固", "期中期末复习", "中考复习"]

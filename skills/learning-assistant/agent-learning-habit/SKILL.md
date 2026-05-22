@@ -4,7 +4,7 @@ description: "把抽象的“养成学习习惯”落到固定触发、最小动
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "习惯培养", "每日打卡"]

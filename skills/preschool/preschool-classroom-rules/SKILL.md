@@ -4,7 +4,7 @@ description: "学前课堂规则准备 Skill把规则感做成孩子愿意参与
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "综合", "规则感", "课堂准备", "入学准备", "亲子演练"]

@@ -4,7 +4,7 @@ description: "初中现代文阅读帮助学生把阅读训练从“做题对答
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "junior", "语文", "阅读理解", "中考复习"]

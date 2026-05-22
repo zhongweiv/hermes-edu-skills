@@ -4,7 +4,7 @@ description: "亲子每日启蒙 Skill把亲子陪伴做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "家庭教育", "亲子陪伴", "每日启蒙", "每日启蒙", "亲子共学"]

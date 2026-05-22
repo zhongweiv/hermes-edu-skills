@@ -4,7 +4,7 @@ description: "幼小衔接家庭准备 Skill把陪学建议做成孩子愿意参
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "家庭教育", "陪学建议", "入学准备", "入学准备", "家长陪学"]

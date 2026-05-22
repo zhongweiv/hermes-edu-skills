@@ -4,7 +4,7 @@ description: "学前故事复述 Skill把故事复述做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "语文", "故事复述", "绘本复述", "睡前表达"]

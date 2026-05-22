@@ -4,7 +4,7 @@ description: "把北师大版初中生物的年级、册别、单元和学习场
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "junior", "生物", "教材同步", "知识记忆", "课前预习", "课后作业", "同步巩固", "单元复习", "错题巩固", "期中期末复习", "中考复习"]

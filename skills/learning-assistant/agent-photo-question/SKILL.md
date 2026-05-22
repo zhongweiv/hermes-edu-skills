@@ -4,7 +4,7 @@ description: "把拍照题目转成先识题、再讲思路、最后追问确认
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "综合", "AI 讲题", "图片识题", "拍照答疑", "课后作业"]

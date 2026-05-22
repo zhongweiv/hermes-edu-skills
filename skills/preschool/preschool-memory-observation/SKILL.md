@@ -4,7 +4,7 @@ description: "学前观察记忆 Skill把观察力做成孩子愿意参与、家
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "学习能力", "观察力", "记忆力", "观察游戏", "亲子共学"]

@@ -4,7 +4,7 @@ description: "学前图形空间 Skill把图形空间做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "数学", "图形空间", "图形游戏", "亲子共学"]

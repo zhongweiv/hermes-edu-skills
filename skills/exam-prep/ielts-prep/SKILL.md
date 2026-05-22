@@ -4,7 +4,7 @@ description: "把雅思备考从背资料变成听说读写诊断、分项训练
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "college", "adult", "英语", "听力", "口语", "阅读理解", "写作", "出国考试"]

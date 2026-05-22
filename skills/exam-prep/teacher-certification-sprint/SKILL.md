@@ -4,7 +4,7 @@ description: "把教师资格证备考从“泛泛刷题”变成诊断、提分
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "adult", "职业教育", "考试冲刺", "考证"]

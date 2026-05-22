@@ -4,7 +4,7 @@ description: "帮助英语老师把“这节课讲什么”升级为目标、活
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "英语", "教学设计", "老师备课"]

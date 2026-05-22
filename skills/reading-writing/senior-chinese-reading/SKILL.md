@@ -4,7 +4,7 @@ description: "高中语文阅读帮助学生把阅读训练从“做题对答案
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "senior", "语文", "阅读理解", "高考复习"]

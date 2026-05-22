@@ -4,7 +4,7 @@ description: "屏幕时间管理把屏幕时间管理从对抗变成规则共创
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "primary", "junior", "家庭教育", "陪学建议", "习惯培养"]

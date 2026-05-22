@@ -4,7 +4,7 @@ description: "把“薄弱项”从模糊标签变成一个可诊断、可练习
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "查漏补缺", "专项训练"]

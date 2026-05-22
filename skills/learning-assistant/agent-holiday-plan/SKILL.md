@@ -4,7 +4,7 @@ description: "把寒暑假从“报复性补课”改成有节奏的巩固、预
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "学习能力", "假期计划", "寒暑假提升"]

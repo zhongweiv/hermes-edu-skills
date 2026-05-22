@@ -4,7 +4,7 @@ description: "帮助老师生成分层、可批改、不过量的作业，而不
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "primary", "junior", "senior", "教学管理", "作业生成", "分层练习", "班级作业"]

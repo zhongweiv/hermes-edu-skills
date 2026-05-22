@@ -4,7 +4,7 @@ description: "学前绘本共读 Skill把绘本阅读做成孩子愿意参与、
 version: "0.17.0"
 author: zhongwei
 license: MIT
-platforms: [windows, linux, macos]
+platforms: [cli, windows, linux, macos]
 metadata:
   hermes:
     tags: ["education", "preschool", "语文", "绘本阅读", "理解表达", "亲子共读", "睡前阅读"]
