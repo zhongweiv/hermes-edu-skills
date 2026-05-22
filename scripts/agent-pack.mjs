@@ -157,6 +157,7 @@ Usage:
   hermes-edu-skills info <skill>
   hermes-edu-skills match <question>
   hermes-edu-skills ask <question>
+  hermes-edu-skills chat
   hermes-edu-skills prompt
   hermes-edu-skills doctor
 
@@ -201,6 +202,8 @@ Options:
   --config <path>         Hermes config path.
   --include-examples      Include doc_only example Skills.
   --hermes-bin <command>  Hermes executable for ask/doctor. Default: hermes.
+  --no-enable-skills-toolset
+                         Do not update Hermes platform_toolsets.cli during install.
   --with-prompt           Compatibility flag. Hermes install writes the activation prompt by default.
   --no-prompt             Do not write the project HERMES.md activation prompt during Hermes install.
   --prompt-target <path>  Prompt file path for Hermes install. Default: ./HERMES.md.
@@ -229,6 +232,7 @@ function parseArgs(argv) {
     format: '',
     hermesBin: 'hermes',
     includeExamples: false,
+    enableSkillsToolset: true,
     overwritePrompt: false,
     promptTarget: '',
     skipPrompt: false,
@@ -267,6 +271,8 @@ function parseArgs(argv) {
       args.format = arg.slice('--format='.length);
     } else if (arg === '--include-examples') {
       args.includeExamples = true;
+    } else if (arg === '--no-enable-skills-toolset') {
+      args.enableSkillsToolset = false;
     } else if (arg === '--hermes-bin') {
       args.hermesBin = readValue();
     } else if (arg.startsWith('--hermes-bin=')) {
@@ -683,6 +689,13 @@ function scoreSkill(skill, query) {
     }
   }
 
+  if (/(口算|心算|计算题|算术题|加减法|乘除法)/.test(normalizedQuery)) {
+    if (skill.name.includes('mental-arithmetic')) {
+      score += 88;
+      matched.add('口算');
+    }
+  }
+
   if (/(学前|学龄前|幼儿园|幼小衔接|小班|中班|大班|启蒙|绘本|亲子|控笔|数感|识字)/.test(normalizedQuery)) {
     if (skill.category === 'preschool') {
       score += 44;
@@ -758,9 +771,16 @@ function rankedSkills(args, query) {
 }
 
 function hermesChatCommand(skillName, query, args) {
-  const hermesArgs = ['chat', '-s', skillName, '-q', query];
+  const hermesArgs = ['chat', '--toolsets', 'skills', '-s', skillName, '-q', query];
   if (args.verbose) hermesArgs.push('-v');
   return { command: args.hermesBin || 'hermes', hermesArgs };
+}
+
+function hermesPlainChatCommand(args) {
+  return {
+    command: args.hermesBin || 'hermes',
+    hermesArgs: ['chat', '--toolsets', 'skills'],
+  };
 }
 
 function commandCandidates(command) {
@@ -839,6 +859,23 @@ function askCommand(args) {
     console.log(`[dry-run] ${printableCommand(command, hermesArgs)}`);
     return;
   }
+
+  const result = spawnCommand(command, hermesArgs, {
+    stdio: 'inherit',
+  });
+
+  if (result.error) {
+    throw new Error(`Failed to run Hermes command "${command}". Install Hermes Agent or pass --hermes-bin <path>. ${result.error.message}`);
+  }
+
+  if (typeof result.status === 'number' && result.status !== 0) {
+    process.exitCode = result.status;
+  }
+}
+
+function chatCommand(args) {
+  const { command, hermesArgs } = hermesPlainChatCommand(args);
+  console.log(`[hermes-edu-skills] Starting Hermes with skills toolset: ${printableCommand(command, hermesArgs)}`);
 
   const result = spawnCommand(command, hermesArgs, {
     stdio: 'inherit',
@@ -1085,10 +1122,12 @@ function doctorCommand(args) {
 
   let configContent = '';
   let externalDirs = [];
+  let cliToolsets = [];
   let disabledSkills = [];
   if (existsSync(configPath)) {
     configContent = readFileSync(configPath, 'utf8');
     externalDirs = extractYamlListBlock(configContent, 'skills.external_dirs');
+    cliToolsets = extractYamlListBlock(configContent, 'platform_toolsets.cli');
     disabledSkills = extractDisabledSkills(configContent);
   }
 
@@ -1113,6 +1152,7 @@ function doctorCommand(args) {
   console.log(`Pack manifest:    ${installedPack ? `${installedPack.name || 'unknown'}@${installedPack.version || 'unknown'} (${installedPack.skillCount ?? 'unknown'} skills)` : 'missing'}`);
   console.log(`Hermes config:    ${existsSync(configPath) ? configPath : `missing (${configPath})`}`);
   console.log(`Config linked:    ${configContainsTarget ? 'yes' : 'no'}`);
+  console.log(`CLI skills tools: ${cliToolsets.includes('skills') || cliToolsets.includes('hermes-cli') ? 'enabled' : 'not explicit'}`);
   console.log(`Disabled Skills:  ${disabledSkills.length}`);
   if (hermes.status === 0) {
     console.log(`Hermes visible:   ${visibleNames.length}`);
@@ -1128,6 +1168,7 @@ function doctorCommand(args) {
   if (extraLocal.length) problems.push(`${extraLocal.length} local Skills are not in the catalog.`);
   if (!existsSync(configPath)) problems.push(`Hermes config file is missing: ${configPath}`);
   if (existsSync(configPath) && !configContainsTarget) problems.push('Hermes config does not include this Skill Pack in skills.external_dirs.');
+  if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) problems.push('Hermes CLI platform_toolsets.cli does not explicitly enable skills.');
   if (hermes.status !== 0) problems.push(`Could not run Hermes skills list. Install Hermes Agent or pass --hermes-bin <path>.`);
   if (missingVisible.length) problems.push(`${missingVisible.length} local Skills are not visible in Hermes list.`);
 
@@ -1167,6 +1208,10 @@ function doctorCommand(args) {
     if (existsSync(configPath) && !configContainsTarget) {
       suggestions.add(`Add ${targetForConfig} to skills.external_dirs in ${configPath}`);
     }
+    if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) {
+      suggestions.add(`npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
+      suggestions.add('Start chats with: hermes chat --toolsets skills');
+    }
     if (!existsSync(configPath) && suggestions.size === 0) {
       suggestions.add(`Create/update Hermes config by running: npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
     }
@@ -1204,6 +1249,78 @@ function defaultFlatTarget(tool, args) {
 function defaultHermesSelectedTarget(args) {
   if (args.target) return args.target;
   return join(homeDir(), '.hermes', 'skills', 'hermes-edu-skills');
+}
+
+function lineIndent(line) {
+  return (line.match(/^\s*/) || [''])[0].length;
+}
+
+function hasListValue(line, value) {
+  const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(?:^|[\\s,[\\\"'])${escaped}(?:$|[\\s,\\]\\\"'])`).test(line);
+}
+
+function ensureHermesCliSkillsToolset(content) {
+  const lines = content.split(/\r?\n/);
+  const platformIndex = lines.findIndex((line) => /^\s*platform_toolsets:\s*(?:#.*)?$/.test(line));
+
+  if (platformIndex === -1) {
+    const base = content.trimEnd();
+    const block = 'platform_toolsets:\n  cli:\n    - skills\n';
+    return `${base}${base ? '\n\n' : ''}${block}`;
+  }
+
+  const platformIndent = lineIndent(lines[platformIndex]);
+  let sectionEnd = lines.length;
+  for (let index = platformIndex + 1; index < lines.length; index += 1) {
+    if (lines[index].trim() && lineIndent(lines[index]) <= platformIndent) {
+      sectionEnd = index;
+      break;
+    }
+  }
+
+  const cliIndex = lines.findIndex((line, index) => {
+    if (index <= platformIndex || index >= sectionEnd) return false;
+    return lineIndent(line) > platformIndent && /^\s*cli:\s*/.test(line);
+  });
+
+  const childIndent = ' '.repeat(platformIndent + 2);
+  if (cliIndex === -1) {
+    lines.splice(platformIndex + 1, 0, `${childIndent}cli:`, `${childIndent}  - skills`);
+    return `${lines.join('\n').trimEnd()}\n`;
+  }
+
+  const cliLine = lines[cliIndex];
+  if (hasListValue(cliLine, 'skills')) return content;
+
+  if (/^\s*cli:\s*\[.*\]\s*(?:#.*)?$/.test(cliLine)) {
+    lines[cliIndex] = cliLine.replace(/\]\s*(#.*)?$/, (suffix, comment = '') => `, skills]${comment ? ` ${comment}` : ''}`);
+    return `${lines.join('\n').trimEnd()}\n`;
+  }
+
+  if (/^\s*cli:\s*\S+/.test(cliLine)) {
+    const cliIndent = lineIndent(cliLine);
+    const rawValue = cliLine.replace(/^\s*cli:\s*/, '').replace(/\s+#.*$/, '').trim();
+    const values = rawValue && rawValue !== '[]' ? [rawValue] : [];
+    const replacement = [`${' '.repeat(cliIndent)}cli:`, ...[...values, 'skills'].map((value) => `${' '.repeat(cliIndent + 2)}- ${value}`)];
+    lines.splice(cliIndex, 1, ...replacement);
+    return `${lines.join('\n').trimEnd()}\n`;
+  }
+
+  const cliIndent = lineIndent(cliLine);
+  let insertIndex = sectionEnd;
+  let hasSkills = false;
+  for (let index = cliIndex + 1; index < sectionEnd; index += 1) {
+    if (lines[index].trim() && lineIndent(lines[index]) <= cliIndent) {
+      insertIndex = index;
+      break;
+    }
+    if (/^\s*-\s*skills\s*(?:#.*)?$/.test(lines[index])) hasSkills = true;
+  }
+
+  if (hasSkills) return content;
+  lines.splice(insertIndex, 0, `${' '.repeat(cliIndent + 2)}- skills`);
+  return `${lines.join('\n').trimEnd()}\n`;
 }
 
 function defaultExportTarget(tool, args) {
@@ -1363,27 +1480,37 @@ function installHermes(args) {
     console.log('skills:');
     console.log('  external_dirs:');
     console.log(`    - ${skillsDir}`);
+    if (args.enableSkillsToolset) {
+      console.log('');
+      console.log('platform_toolsets:');
+      console.log('  cli:');
+      console.log('    - skills');
+    }
+    console.log('');
+    console.log('Start Hermes with:');
+    console.log('  hermes chat --toolsets skills');
     if (shouldWritePrompt) writeActivationPrompt(args, skills);
     return;
   }
 
   const configPath = resolve(expandHome(args.config));
   let content = existsSync(configPath) ? readFileSync(configPath, 'utf8') : '';
+  const before = content;
 
-  if (content.includes(skillsDir)) {
-    console.log(`[hermes-edu-skills] Hermes config already contains ${skillsDir}`);
-    if (shouldWritePrompt) writeActivationPrompt(args, skills);
-    return;
+  if (!content.includes(skillsDir)) {
+    if (!content.trim()) {
+      content = `skills:\n  external_dirs:\n    - ${skillsDir}\n`;
+    } else if (/^skills:\s*$/m.test(content) && !/^\s*external_dirs:\s*$/m.test(content)) {
+      content = content.replace(/^skills:\s*$/m, `skills:\n  external_dirs:\n    - ${skillsDir}`);
+    } else if (/^\s*external_dirs:\s*$/m.test(content)) {
+      content = content.replace(/^(\s*)external_dirs:\s*$/m, `$1external_dirs:\n$1  - ${skillsDir}`);
+    } else {
+      content = `${content.trimEnd()}\n\nskills:\n  external_dirs:\n    - ${skillsDir}\n`;
+    }
   }
 
-  if (!content.trim()) {
-    content = `skills:\n  external_dirs:\n    - ${skillsDir}\n`;
-  } else if (/^skills:\s*$/m.test(content) && !/^\s*external_dirs:\s*$/m.test(content)) {
-    content = content.replace(/^skills:\s*$/m, `skills:\n  external_dirs:\n    - ${skillsDir}`);
-  } else if (/^\s*external_dirs:\s*$/m.test(content)) {
-    content = content.replace(/^(\s*)external_dirs:\s*$/m, `$1external_dirs:\n$1  - ${skillsDir}`);
-  } else {
-    content = `${content.trimEnd()}\n\nskills:\n  external_dirs:\n    - ${skillsDir}\n`;
+  if (args.enableSkillsToolset) {
+    content = ensureHermesCliSkillsToolset(content);
   }
 
   if (args.dryRun) {
@@ -1394,10 +1521,17 @@ function installHermes(args) {
     return;
   }
 
-  mkdirSync(dirname(configPath), { recursive: true });
-  writeFileSync(configPath, content, 'utf8');
-  console.log(`[hermes-edu-skills] updated Hermes config: ${configPath}`);
+  if (content !== before) {
+    mkdirSync(dirname(configPath), { recursive: true });
+    writeFileSync(configPath, content, 'utf8');
+    console.log(`[hermes-edu-skills] updated Hermes config: ${configPath}`);
+  } else {
+    console.log(`[hermes-edu-skills] Hermes config already contains ${skillsDir} and skills toolset`);
+  }
   console.log(`[hermes-edu-skills] skills external dir: ${skillsDir}`);
+  if (args.enableSkillsToolset) console.log('[hermes-edu-skills] Hermes CLI skills toolset: enabled');
+  console.log('[hermes-edu-skills] Start Hermes with: hermes chat --toolsets skills');
+  console.log('[hermes-edu-skills] Or run: npx hermes-edu-skills chat');
   if (shouldWritePrompt) writeActivationPrompt(args, skills);
 }
 
@@ -1445,6 +1579,8 @@ try {
     matchCommand(args);
   } else if (args.command === 'ask') {
     askCommand(args);
+  } else if (args.command === 'chat') {
+    chatCommand(args);
   } else if (args.command === 'prompt') {
     promptCommand(args);
   } else if (args.command === 'doctor') {

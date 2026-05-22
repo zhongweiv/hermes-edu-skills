@@ -64,6 +64,9 @@ npx hermes-edu-skills info agent-mistake-review
 # 像普通 Agent 一样直接提问：先显示匹配到的 Skill，再调用 Hermes
 npx hermes-edu-skills ask "帮我出5道八年级下册物理力学选择题"
 
+# 启动原生 Hermes 会话，并强制启用 skills toolset
+npx hermes-edu-skills chat
+
 # 只查看或手动生成项目级 Hermes Edu Skills 启动 Prompt
 npx hermes-edu-skills prompt > HERMES.md
 
@@ -153,6 +156,7 @@ npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 这条命令会同时完成两件事：
 
 - 安装 188 个可用 Skill，并写入 Hermes `skills.external_dirs`。
+- 自动把 Hermes CLI 的 `platform_toolsets.cli` 合并为启用 `skills`，避免普通 `hermes chat` 无法访问 Skill 工具。
 - 默认在当前目录生成 `HERMES.md` 启动 Prompt，让 Hermes 在教育问题里先去 `hermes-edu-skills` 这套 Skill Pack 里找，而不是直接普通回答。
 
 如果你只安装某个分类或单个 Skill，安装器也会默认生成“范围收缩版” Prompt：分类安装会只列出该分类内的 Skill，单个 Skill 安装会明确要求 Hermes 在相关问题里优先加载这个具体 Skill。
@@ -192,6 +196,12 @@ npx hermes-edu-skills info agent-mistake-review
 安装后，你有两种使用方式：熟悉 Skill 名时直接用 Hermes 的 `-s` 手动指定；不知道该选哪个 Skill 时，用内置 Skill Router 自然提问，并让它先显示本次匹配到的 Skill。
 
 ```bash
+# 启动原生 Hermes 会话。这个命令等价于 hermes chat --toolsets skills
+npx hermes-edu-skills chat
+
+# 如果你直接使用官方 Hermes 命令，也请显式启用 skills toolset
+hermes chat --toolsets skills
+
 # 只查看匹配结果，不调用 Hermes
 npx hermes-edu-skills match "八年级下册物理力学题"
 
@@ -283,7 +293,7 @@ npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml --no-prompt
 | 传递 Hermes 详细输出 | `npx hermes-edu-skills ask "制定一周学习计划" --verbose` |
 | 使用自定义 Hermes 命令路径 | `npx hermes-edu-skills ask "初中英语阅读训练" --hermes-bin /path/to/hermes` |
 
-`match` 适合调试和选择，`ask` 适合日常使用。它们不会替代 Hermes Agent，而是自动完成“匹配 Skill -> 显示 Skill -> 调用 `hermes chat -s`”这一步。
+`match` 适合调试和选择，`ask` 适合日常使用。它们不会替代 Hermes Agent，而是自动完成“匹配 Skill -> 显示 Skill -> 调用 `hermes chat --toolsets skills -s`”这一步。
 
 | 使用建议 | 说明 |
 | --- | --- |
@@ -306,6 +316,7 @@ npx hermes-edu-skills doctor
 | 本地文件 | `~/.hermes/skills/hermes-edu-skills` 下实际有多少个 `SKILL.md`。 |
 | 安装清单 | `AGENT_SKILL_PACK.json` 的版本、skillCount 和安装时间。 |
 | Hermes 配置 | `~/.hermes/config.yaml` 是否通过 `skills.external_dirs` 指向 Skill Pack。 |
+| CLI Toolset | `platform_toolsets.cli` 是否启用了 `skills`，否则普通 `hermes chat` 可能看不到 Skill 工具。 |
 | 禁用状态 | `skills.disabled` / `platform_disabled` 是否屏蔽了某些 Skill。 |
 | Hermes 可见性 | `hermes skills list --source local` 实际能看到多少个 Skill。 |
 
@@ -316,6 +327,7 @@ npx hermes-edu-skills doctor
 | 本地文件数量正常，但 Hermes 可见数量偏少 | 是否有 Skill 被 Hermes 配置禁用，或 Hermes 对同名 Skill 做了过滤。 |
 | 本地文件是 0 | 还没有安装到 Hermes 默认目录，或当前用户目录和运行 Hermes 的用户不一致。 |
 | Config linked = no | Hermes 配置没有接入 `skills.external_dirs`，重新执行安装命令并带上 `--config ~/.hermes/config.yaml`。 |
+| 提问时提示 Skill Pack 未安装 | 用 `hermes chat --toolsets skills` 启动，或直接运行 `npx hermes-edu-skills chat` / `npx hermes-edu-skills ask "<问题>"`。 |
 | npm 已发布但 npx 还是旧版本 | 使用 `npx --yes hermes-edu-skills@latest doctor`，或等待 npm 缓存刷新。 |
 
 ## 只安装单个 Skill

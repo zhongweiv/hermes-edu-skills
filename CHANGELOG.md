@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.17.1 - 2026-05-22
+
+- Makes `install hermes` also enable the Hermes CLI `skills` toolset through `platform_toolsets.cli` so normal Hermes chat sessions can access Skill tools more reliably.
+- Adds `hermes-edu-skills chat` as a convenience wrapper for `hermes chat --toolsets skills`.
+- Makes `hermes-edu-skills ask` invoke Hermes with `--toolsets skills` before preloading the matched Skill.
+- Updates Chinese and English README troubleshooting to explain the difference between installing Skill files and starting Hermes with the skills toolset enabled.
+
 ## 0.17.0 - 2026-05-22
 
 - Adds a first-class `preschool` category for ages 3-6, school readiness, picture-book reading, early literacy, pinyin, number sense, attention, fine-motor writing, habits, emotion expression, and parent-child play.

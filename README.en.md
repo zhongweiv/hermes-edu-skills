@@ -64,6 +64,9 @@ npx hermes-edu-skills info agent-mistake-review
 # Ask naturally: show the matched Skill, then invoke Hermes
 npx hermes-edu-skills ask "Create 5 grade-8 physics mechanics questions with answers"
 
+# Start a native Hermes session with the skills toolset enabled
+npx hermes-edu-skills chat
+
 # Inspect or manually generate the project-level Hermes Edu Skills activation prompt
 npx hermes-edu-skills prompt > HERMES.md
 
@@ -153,6 +156,7 @@ npx hermes-edu-skills install hermes --config ~/.hermes/config.yaml
 This command does two things:
 
 - Installs 188 available Skills and updates Hermes `skills.external_dirs`.
+- Merges `skills` into Hermes CLI `platform_toolsets.cli`, so ordinary `hermes chat` sessions can access Skill tools more reliably.
 - Generates `HERMES.md` in the current directory by default, so Hermes searches the `hermes-edu-skills` Skill Pack before answering education questions directly.
 
 When you install only one category or one Skill, the installer generates a scoped prompt by default: category installs list only Skills from that category, and single-Skill installs explicitly tell Hermes to load that Skill first when the request is in scope.
@@ -192,6 +196,12 @@ npx hermes-edu-skills info agent-mistake-review
 After installation, you have two usage modes: use Hermes `-s` when you already know the Skill slug, or use the built-in Skill Router when you want to ask naturally and see which Skill is selected.
 
 ```bash
+# Start a native Hermes session. This is equivalent to hermes chat --toolsets skills
+npx hermes-edu-skills chat
+
+# If you call official Hermes directly, explicitly enable the skills toolset
+hermes chat --toolsets skills
+
 # Show matching results only; do not call Hermes
 npx hermes-edu-skills match "grade 8 physics mechanics practice"
 
@@ -283,7 +293,7 @@ That makes the pack feel like a usable product rather than a folder of commands.
 | Pass verbose output to Hermes | `npx hermes-edu-skills ask "make a one-week study plan" --verbose` |
 | Use a custom Hermes executable | `npx hermes-edu-skills ask "junior English reading practice" --hermes-bin /path/to/hermes` |
 
-`match` is for debugging and selection. `ask` is for daily use. It does not replace Hermes Agent; it automates "match Skill -> show Skill -> call `hermes chat -s`".
+`match` is for debugging and selection. `ask` is for daily use. It does not replace Hermes Agent; it automates "match Skill -> show Skill -> call `hermes chat --toolsets skills -s`".
 
 | Usage Pattern | Notes |
 | --- | --- |
@@ -306,6 +316,7 @@ npx hermes-edu-skills doctor
 | Local files | How many `SKILL.md` files exist under `~/.hermes/skills/hermes-edu-skills`. |
 | Install manifest | `AGENT_SKILL_PACK.json` version, skillCount, and install time. |
 | Hermes config | Whether `~/.hermes/config.yaml` links the pack through `skills.external_dirs`. |
+| CLI Toolset | Whether `platform_toolsets.cli` enables `skills`; otherwise plain `hermes chat` may not expose Skill tools. |
 | Disabled Skills | Whether `skills.disabled` / `platform_disabled` hides any Skills. |
 | Hermes visibility | How many Skills `hermes skills list --source local` actually sees. |
 
@@ -316,6 +327,7 @@ Common readings:
 | Local file count is correct, but Hermes visible count is lower | Check whether Hermes config disables or filters some Skills. |
 | Local file count is 0 | The pack was not installed into the Hermes default directory, or Hermes runs under a different user. |
 | Config linked = no | Hermes config does not include `skills.external_dirs`; rerun install with `--config ~/.hermes/config.yaml`. |
+| Chat says the Skill Pack is not installed | Start with `hermes chat --toolsets skills`, or use `npx hermes-edu-skills chat` / `npx hermes-edu-skills ask "<question>"`. |
 | npm is published but npx still uses an older version | Run `npx --yes hermes-edu-skills@latest doctor`, or wait for npm cache propagation. |
 
 ## Install A Single Skill
