@@ -1,6 +1,6 @@
 {
   "name": "hermes-edu-skills",
-  "version": "0.18.5",
+  "version": "0.18.6",
   "runtimeActivationPolicy": {
     "targetRuntime": "hermes-agent",
     "installMode": "auto_enable",
@@ -28,7 +28,7 @@
       "version"
     ]
   },
-  "generatedAt": "2026-05-22T15:49:09.212Z",
+  "generatedAt": "2026-05-22T16:05:49.551Z",
   "skills": [
     {
       "name": "adult-language-learning",

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.18.6 - 2026-05-23
+
+- Adds `fix` as a friendly alias for `repair`.
+- Improves Windows Hermes Agent detection when the official venv binary exists but `hermes` is not on PATH.
+- Lets `repair` create a safe `hermes.cmd` shim and add `~/.local/bin` to the user PATH so plain `hermes` sessions work after installation.
+
 ## 0.18.5 - 2026-05-22
 
 - Improves `doctor` visibility reporting by separating Hermes' total local Skill count from the `hermes-edu-skills` Pack visibility count.

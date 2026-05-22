@@ -19,6 +19,7 @@ const commandAliases = {
   convert: 'convert',
   doctor: 'doctor',
   export: 'export',
+  fix: 'repair',
   help: 'help',
   i: 'install',
   info: 'info',
@@ -174,6 +175,7 @@ Usage:
   hermes-edu-skills prompt
   hermes-edu-skills version
   hermes-edu-skills doctor
+  hermes-edu-skills fix
   hermes-edu-skills verify
   hermes-edu-skills repair
   hermes-edu-skills update
@@ -860,12 +862,12 @@ function rankedSkills(args, query) {
 function hermesChatCommand(skillName, query, args) {
   const hermesArgs = ['chat', '--toolsets', 'skills', '-s', skillName, '-q', query];
   if (args.verbose) hermesArgs.push('-v');
-  return { command: args.hermesBin || 'hermes', hermesArgs };
+  return { command: resolveHermesCommand(args), hermesArgs };
 }
 
 function hermesPlainChatCommand(args) {
   return {
-    command: args.hermesBin || 'hermes',
+    command: resolveHermesCommand(args),
     hermesArgs: ['chat', '--toolsets', 'skills'],
   };
 }
@@ -876,6 +878,104 @@ function commandCandidates(command) {
     candidates.push(`${command}.cmd`, `${command}.exe`);
   }
   return candidates;
+}
+
+function officialWindowsHermesBin() {
+  if (process.platform !== 'win32') return '';
+  const localAppData = process.env.LOCALAPPDATA;
+  if (!localAppData) return '';
+  const candidate = join(localAppData, 'hermes', 'hermes-agent', 'venv', 'Scripts', 'hermes.exe');
+  return existsSync(candidate) ? candidate : '';
+}
+
+function hermesCommandIsAvailable(command = 'hermes') {
+  const result = spawnCommand(command, ['--version'], {
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      NO_COLOR: process.env.NO_COLOR || '1',
+      FORCE_COLOR: '0',
+    },
+  });
+  return !result.error && result.status === 0;
+}
+
+function resolveHermesCommand(args) {
+  if (args.hermesBin) return args.hermesBin;
+  if (hermesCommandIsAvailable('hermes')) return 'hermes';
+  const windowsBin = officialWindowsHermesBin();
+  if (windowsBin) return windowsBin;
+  return 'hermes';
+}
+
+function localBinDir() {
+  return join(homeDir(), '.local', 'bin');
+}
+
+function isPathEntryPresent(pathValue, entry) {
+  const normalizedEntry = entry.trim().replace(/[\\/]+$/g, '').toLowerCase();
+  return String(pathValue || '')
+    .split(';')
+    .filter(Boolean)
+    .some((part) => part.trim().replace(/[\\/]+$/g, '').toLowerCase() === normalizedEntry);
+}
+
+function powershellEnvironmentPath(scope) {
+  if (process.platform !== 'win32') return '';
+  const result = spawnSync('powershell.exe', ['-NoProfile', '-Command', `[Environment]::GetEnvironmentVariable("Path","${scope}")`], {
+    encoding: 'utf8',
+  });
+  return result.status === 0 ? String(result.stdout || '').trim() : '';
+}
+
+function setUserEnvironmentPath(pathValue) {
+  if (process.platform !== 'win32') return;
+  spawnSync('powershell.exe', ['-NoProfile', '-Command', `[Environment]::SetEnvironmentVariable("Path", ${JSON.stringify(pathValue)}, "User")`], {
+    encoding: 'utf8',
+  });
+}
+
+function ensureWindowsHermesShim(args = {}) {
+  if (process.platform !== 'win32') return { changed: false, reason: 'not-windows' };
+  const hermesBin = officialWindowsHermesBin();
+  if (!hermesBin) return { changed: false, reason: 'missing-official-binary' };
+
+  const shimDir = localBinDir();
+  const shimPath = join(shimDir, 'hermes.cmd');
+  const shimContent = `@echo off\r\n"${hermesBin}" %*\r\n`;
+  let changed = false;
+
+  if (!existsSync(shimPath) || readFileSync(shimPath, 'utf8') !== shimContent) {
+    if (!args.dryRun) {
+      mkdirSync(shimDir, { recursive: true });
+      writeFileSync(shimPath, shimContent, 'utf8');
+    }
+    changed = true;
+  }
+
+  const runtimePath = process.env.Path || process.env.PATH || '';
+  const userPath = powershellEnvironmentPath('User');
+  const pathNeedsRuntime = !isPathEntryPresent(runtimePath, shimDir);
+  const pathNeedsPersist = !isPathEntryPresent(userPath, shimDir);
+
+  if (pathNeedsRuntime && !args.dryRun) {
+    process.env.Path = `${shimDir};${runtimePath}`;
+    process.env.PATH = process.env.Path;
+  }
+
+  if (pathNeedsPersist && !args.dryRun) {
+    const next = userPath ? `${userPath};${shimDir}` : shimDir;
+    setUserEnvironmentPath(next);
+  }
+
+  return {
+    changed: changed || pathNeedsRuntime || pathNeedsPersist,
+    hermesBin,
+    shimPath,
+    shimDir,
+    pathNeedsRuntime,
+    pathNeedsPersist,
+  };
 }
 
 function spawnCommand(command, args, options = {}) {
@@ -1102,7 +1202,7 @@ function readInstalledPack(target) {
 function defaultHermesConfigPath(args) {
   if (args.config) return resolve(expandHome(args.config));
   if (detectedHermesConfigPath) return detectedHermesConfigPath;
-  const detected = spawnCommand(args.hermesBin || 'hermes', ['config', 'path'], {
+  const detected = spawnCommand(resolveHermesCommand(args), ['config', 'path'], {
     encoding: 'utf8',
   });
   const line = detected.status === 0
@@ -1285,7 +1385,7 @@ function parseHermesSkillListNames(output) {
 }
 
 function runHermesSkillsList(args) {
-  const result = spawnCommand(args.hermesBin || 'hermes', ['skills', 'list', '--source', 'local'], {
+  const result = spawnCommand(resolveHermesCommand(args), ['skills', 'list', '--source', 'local'], {
     encoding: 'utf8',
     env: {
       ...process.env,
@@ -1346,6 +1446,9 @@ function doctorCommand(args) {
     globalPromptContent = readFileSync(globalPromptPath, 'utf8');
   }
   const hasGlobalPrompt = globalPromptContent.includes(globalPromptStart) && globalPromptContent.includes(globalPromptEnd);
+  const hermesPlainAvailable = args.hermesBin ? true : hermesCommandIsAvailable('hermes');
+  const windowsHermesBin = officialWindowsHermesBin();
+  const hermesFallbackOnly = !args.hermesBin && !hermesPlainAvailable && Boolean(windowsHermesBin);
 
   const targetForConfig = normalizePathForConfig(target);
   const configContainsTarget = externalDirs
@@ -1373,6 +1476,15 @@ function doctorCommand(args) {
   console.log(`Local files:      ${localNames.length}`);
   console.log(`Pack manifest:    ${installedPack ? `${installedPack.name || 'unknown'}@${installedPack.version || 'unknown'} (${installedPack.skillCount ?? 'unknown'} skills)` : 'missing'}`);
   console.log(`Hermes config:    ${existsSync(configPath) ? configPath : `missing (${configPath})`}`);
+  if (args.hermesBin) {
+    console.log(`Hermes command:   ${args.hermesBin}`);
+  } else if (hermesPlainAvailable) {
+    console.log('Hermes command:   available (hermes)');
+  } else if (windowsHermesBin) {
+    console.log(`Hermes command:   fallback only (${windowsHermesBin})`);
+  } else {
+    console.log('Hermes command:   unavailable');
+  }
   console.log(`Config linked:    ${configContainsTarget ? 'yes' : 'no'}`);
   if (duplicateExternalDirs) console.log(`Config warning:   duplicate skills.external_dirs blocks (${duplicateExternalDirs + 1})`);
   console.log(`CLI skills tools: ${cliToolsets.includes('skills') || cliToolsets.includes('hermes-cli') ? 'enabled' : 'not explicit'}`);
@@ -1394,6 +1506,7 @@ function doctorCommand(args) {
   if (extraLocal.length) problems.push(`${extraLocal.length} local Skills are not in the catalog.`);
   if (!existsSync(configPath)) problems.push(`Hermes config file is missing: ${configPath}`);
   if (duplicateExternalDirs) problems.push('Hermes config contains duplicate skills.external_dirs blocks; YAML keeps the last one, so earlier Skill Pack paths may be ignored.');
+  if (hermesFallbackOnly) problems.push('Hermes Agent is installed, but the plain `hermes` command is not on PATH. Normal user sessions may fail unless a shim/PATH entry is repaired.');
   if (existsSync(configPath) && !configContainsTarget) problems.push('Hermes config does not include this Skill Pack in skills.external_dirs.');
   if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) problems.push('Hermes CLI platform_toolsets.cli does not explicitly enable skills.');
   if (!args.skipPrompt && !hasGlobalPrompt) problems.push('Hermes global SOUL.md activation addendum is missing, so plain `hermes` sessions outside the install directory may not auto-route to this Skill Pack.');
@@ -1444,6 +1557,7 @@ function doctorCommand(args) {
       suggestions.add(`Run: npx --yes hermes-edu-skills@latest repair --config ${configPath}`);
     }
     if (duplicateExternalDirs) suggestions.add(`Run: npx --yes hermes-edu-skills@latest repair --config ${configPath}`);
+    if (hermesFallbackOnly) suggestions.add('Run: npx --yes hermes-edu-skills@latest fix');
     if (existsSync(configPath) && !cliToolsets.includes('skills') && !cliToolsets.includes('hermes-cli')) {
       suggestions.add(`npx --yes hermes-edu-skills@latest install hermes --config ${configPath}`);
       suggestions.add('After repair, start a fresh Hermes session with: hermes');
@@ -1808,6 +1922,16 @@ function verifyCommand(args) {
 
 function repairCommand(args) {
   console.log('[hermes-edu-skills] repairing Hermes installation...');
+  const shim = ensureWindowsHermesShim(args);
+  if (shim.reason === 'missing-official-binary') {
+    console.log('[hermes-edu-skills] Hermes Windows venv binary was not found; skipping PATH shim repair.');
+  } else if (shim.hermesBin) {
+    console.log(`[hermes-edu-skills] Hermes binary: ${shim.hermesBin}`);
+    console.log(`[hermes-edu-skills] Hermes command shim: ${shim.shimPath}`);
+    if (shim.changed) {
+      console.log('[hermes-edu-skills] Windows hermes command shim/PATH repaired. Open a fresh terminal if the current shell still cannot find hermes.');
+    }
+  }
   installHermes({ ...args, command: 'install', tool: 'hermes' });
   console.log('');
   doctorCommand(args);

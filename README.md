@@ -74,6 +74,7 @@ npx hermes-edu-skills prompt > HERMES.md
 npx --yes hermes-edu-skills doctor
 
 # 自动修复 / 更新 / 验证 / 卸载
+npx --yes hermes-edu-skills fix
 npx --yes hermes-edu-skills repair
 npx --yes hermes-edu-skills update
 npx --yes hermes-edu-skills verify
@@ -336,7 +337,8 @@ npx --yes hermes-edu-skills doctor
 | --- | --- |
 | 诊断安装、版本、配置和 Hermes 可见性 | `npx --yes hermes-edu-skills doctor` |
 | 查看 npm 包、catalog 和已安装 Pack 版本 | `npx --yes hermes-edu-skills version` |
-| 自动修复缺失目录、config 链接和 CLI skills toolset | `npx --yes hermes-edu-skills repair` |
+| 一键修复常见问题，适合普通用户 | `npx --yes hermes-edu-skills fix` |
+| 自动修复缺失目录、config 链接、CLI skills toolset 和 Windows `hermes` 命令入口 | `npx --yes hermes-edu-skills repair` |
 | 更新到当前 npm latest 并重新启用 | `npx --yes hermes-edu-skills@latest update` |
 | 用于脚本/CI 的健康检查，失败时返回非 0 | `npx --yes hermes-edu-skills verify` |
 | 移除安装目录和 config 外部目录链接 | `npx --yes hermes-edu-skills uninstall` |
@@ -347,6 +349,7 @@ npx --yes hermes-edu-skills doctor
 | 本地文件 | `~/.hermes/skills/hermes-edu-skills` 下实际有多少个 `SKILL.md`。 |
 | 安装清单 | `AGENT_SKILL_PACK.json` 的版本、skillCount 和安装时间。 |
 | Hermes 配置 | `~/.hermes/config.yaml` 是否通过 `skills.external_dirs` 指向 Skill Pack。 |
+| Hermes 命令入口 | Windows 下是否存在官方 Hermes venv binary，以及普通 `hermes` 命令是否可用。 |
 | CLI Toolset | `platform_toolsets.cli` 是否启用了 `skills`，否则普通 `hermes chat` 可能看不到 Skill 工具。 |
 | Global Prompt | 当前 Hermes Home 的 `SOUL.md` 是否包含 `hermes-edu-skills` 全局激活区块。 |
 | 禁用状态 | `skills.disabled` / `platform_disabled` 是否屏蔽了某些 Skill。 |
@@ -359,6 +362,7 @@ npx --yes hermes-edu-skills doctor
 | 本地文件数量正常，但 Hermes 可见数量偏少 | 是否有 Skill 被 Hermes 配置禁用，或 Hermes 对同名 Skill 做了过滤。 |
 | 本地文件是 0 | 还没有安装到 Hermes 默认目录，或当前用户目录和运行 Hermes 的用户不一致。 |
 | Config linked = no | Hermes 配置没有接入 `skills.external_dirs`，重新执行安装命令并带上 `--config ~/.hermes/config.yaml`。 |
+| Windows 已安装 Hermes，但命令行提示找不到 `hermes` | 运行 `npx --yes hermes-edu-skills fix`，它会为官方 venv binary 创建安全 shim，并把 `~/.local/bin` 补入用户 PATH。 |
 | 提问时提示 Skill Pack 未安装 | 先运行 `npx --yes hermes-edu-skills doctor` 看 Global Prompt / Hermes visible，再运行 `npx --yes hermes-edu-skills repair` 并重新打开 `hermes` 会话；临时调试可用 `npx hermes-edu-skills chat`。 |
 | npm 已发布但 npx 还是旧版本 | 使用 `npx --yes hermes-edu-skills@latest doctor`，或等待 npm 缓存刷新。 |
 

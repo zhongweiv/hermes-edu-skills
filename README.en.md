@@ -74,6 +74,7 @@ npx hermes-edu-skills prompt > HERMES.md
 npx --yes hermes-edu-skills doctor
 
 # Repair / update / verify / uninstall
+npx --yes hermes-edu-skills fix
 npx --yes hermes-edu-skills repair
 npx --yes hermes-edu-skills update
 npx --yes hermes-edu-skills verify
@@ -336,7 +337,8 @@ User-facing reliability commands:
 | --- | --- |
 | Diagnose install count, version, config, and Hermes visibility | `npx --yes hermes-edu-skills doctor` |
 | Show npm package, catalog, and installed Pack versions | `npx --yes hermes-edu-skills version` |
-| Repair missing files, config links, and CLI skills toolset | `npx --yes hermes-edu-skills repair` |
+| One-command repair for common user issues | `npx --yes hermes-edu-skills fix` |
+| Repair missing files, config links, CLI skills toolset, and the Windows `hermes` command shim | `npx --yes hermes-edu-skills repair` |
 | Update to npm latest and re-enable | `npx --yes hermes-edu-skills@latest update` |
 | Script/CI health check with non-zero failure exit | `npx --yes hermes-edu-skills verify` |
 | Remove install directory and config external-dir link | `npx --yes hermes-edu-skills uninstall` |
@@ -347,6 +349,7 @@ User-facing reliability commands:
 | Local files | How many `SKILL.md` files exist under `~/.hermes/skills/hermes-edu-skills`. |
 | Install manifest | `AGENT_SKILL_PACK.json` version, skillCount, and install time. |
 | Hermes config | Whether `~/.hermes/config.yaml` links the pack through `skills.external_dirs`. |
+| Hermes command | On Windows, whether the official Hermes venv binary exists and whether plain `hermes` is callable. |
 | CLI Toolset | Whether `platform_toolsets.cli` enables `skills`; otherwise plain `hermes chat` may not expose Skill tools. |
 | Global Prompt | Whether the current Hermes Home `SOUL.md` contains the `hermes-edu-skills` global activation block. |
 | Disabled Skills | Whether `skills.disabled` / `platform_disabled` hides any Skills. |
@@ -359,6 +362,7 @@ Common readings:
 | Local file count is correct, but Hermes visible count is lower | Check whether Hermes config disables or filters some Skills. |
 | Local file count is 0 | The pack was not installed into the Hermes default directory, or Hermes runs under a different user. |
 | Config linked = no | Hermes config does not include `skills.external_dirs`; rerun install with `--config ~/.hermes/config.yaml`. |
+| Windows has Hermes installed but the shell cannot find `hermes` | Run `npx --yes hermes-edu-skills fix`; it creates a safe shim for the official venv binary and adds `~/.local/bin` to the user PATH. |
 | Chat says the Skill Pack is not installed | Run `npx --yes hermes-edu-skills doctor` and inspect Global Prompt / Hermes visible, then run `npx --yes hermes-edu-skills repair` and open a fresh `hermes` session; for temporary debugging, use `npx hermes-edu-skills chat`. |
 | npm is published but npx still uses an older version | Run `npx --yes hermes-edu-skills@latest doctor`, or wait for npm cache propagation. |
 
